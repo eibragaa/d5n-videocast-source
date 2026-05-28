@@ -19,9 +19,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 3. 3. Investigação da AP revela que detentos do ICE estão morrendo por suicídio em taxa alarmante
 
-
-### 🇧🇷 BRASIL
-
 4. 4. Brasil lidera ranking global de otimismo em relação a criptomoedas
 
 
