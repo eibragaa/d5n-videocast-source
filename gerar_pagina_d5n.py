@@ -1,377 +1,516 @@
 #!/usr/bin/env python3
 """
-gerar_pagina_d5n.py — Gera página Netlify + feed para NotebookLM.
-Lê os dados do pipeline D5N e gera:
-  - index.html     (página principal, últimas notícias)
-  - 2026/MM-DD.md  (notícias do dia)
-  - feed.json      (feed estruturado)
-  - d5n-feed.xml   (RSS alternativo)
-
-Uso:
-  python3 gerar_pagina_d5n.py --data "2026-05-27" --titulo "Quarta, 27 de Maio"
-
-  # Sem argumentos → usa data de hoje
-  python3 gerar_pagina_d5n.py
+gerar_pagina_d5n.py — Gera site D5N estilo telejornal premium.
+- Tipografia: DM Serif Display (títulos) + Inter (corpo)
+- Hierarquia: notícia principal destacada, demais compactas
+- Player inline no topo com áudio do dia
+- Bloco "Brief Executivo — premium"
+- Dark mode calibrado com cores intencionais
 """
-import os, sys, json, argparse
-from datetime import datetime
+
+import os, sys, re, json, argparse
+from datetime import datetime, timedelta
 
 BASE = "/root/repositorio/d5n-videocast-source"
+AUDIO_DIR = f"{BASE}/audio"
+ARQUIVO_DIR = f"{BASE}/2026"
 DATE = datetime.now().strftime("%Y-%m-%d")
 
-def slug(text):
-    import re
-    return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')[:60]
+PILARES_META = {
+    "Global":   {"icon": "🌍", "cor": "#3B82F6", "bg": "#1E2D4A", "label": "GLOBAL"},
+    "Brasil":   {"icon": "🇧🇷", "cor": "#22C55E", "bg": "#1A3A28", "label": "BRASIL"},
+    "Tech":     {"icon": "🤖", "cor": "#A855F7", "bg": "#2D1B4E", "label": "TECH & IA"},
+    "Economia": {"icon": "💰", "cor": "#F59E0B", "bg": "#3D2A10", "label": "ECONOMIA"},
+}
 
-def gerar_index_html(dias):
-    """Gera index.html com as últimas N páginas diárias."""
-    
-    # Path da capa do D5N
-    cover_rel = f"/{dias[0]['date']}.png" if dias else ""
-    
-    html = f"""<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DropFiveNews — Curadoria diária de notícias trending. Fonte para NotebookLM VideoCast.">
-  <meta name="author" content="Jean Braga — @ojeanbraga.s">
-  <title>DropFiveNews • Fonte de Dados</title>
-  <link rel="alternate" type="application/rss+xml" title="D5N RSS" href="/d5n-feed.xml">
-  <link rel="alternate" type="application/json" title="D5N Feed" href="/feed.json">
-  <style>
-    * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-    body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-           background: #1A1A2E; color: #E8E8E8; line-height: 1.6; }}
-    .container {{ max-width: 800px; margin: 0 auto; padding: 40px 20px; }}
-    h1 {{ color: #E94560; font-size: 2.5em; margin-bottom: 8px; }}
-    h2 {{ color: #FFE66D; font-size: 1.6em; margin: 30px 0 15px; 
-          border-bottom: 2px solid #E94560; padding-bottom: 8px; }}
-    h3 {{ color: #4ECDC4; font-size: 1.2em; margin: 20px 0 10px; }}
-    .subtitle {{ color: #888; font-size: 1.1em; margin-bottom: 30px; }}
-    a {{ color: #4ECDC4; text-decoration: none; }}
-    a:hover {{ text-decoration: underline; }}
-    .card {{ background: #16213E; border-radius: 12px; padding: 24px; margin: 16px 0;
-             border-left: 4px solid #E94560; }}
-    .card h3 {{ margin-top: 0; }}
-    .card .meta {{ color: #888; font-size: 0.9em; margin-bottom: 8px; }}
-    .card a {{ color: #FFE66D; }}
-    .pillar {{ display: inline-block; padding: 2px 10px; border-radius: 12px;
-               font-size: 0.8em; font-weight: bold; margin: 0 4px 4px 0; }}
-    .pillar-global {{ background: #28527A; color: #8AB4F8; }}
-    .pillar-brasil {{ background: #1A5A3C; color: #81C784; }}
-    .pillar-tech {{ background: #6A1B9A; color: #CE93D8; }}
-    .pillar-econ {{ background: #7A4A1A; color: #FFD54F; }}
-    .day-link {{ display: block; padding: 12px 20px; margin: 8px 0;
-                 background: #16213E; border-radius: 8px;
-                 border: 1px solid #333; }}
-    footer {{ margin-top: 60px; padding-top: 20px; border-top: 1px solid #333;
-              color: #666; font-size: 0.9em; text-align: center; }}
-    ul {{ list-style: none; }}
-    li {{ padding: 6px 0; border-bottom: 1px solid #2A2A4A; }}
-    li:last-child {{ border-bottom: none; }}
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>📡 DropFiveNews</h1>
-    <p class="subtitle">Curadoria diária de notícias trending • Fonte oficial para NotebookLM</p>
-    
-    <section>
-      <h2>📰 Últimas Notícias</h2>
-"""
-    
-    for dia in dias[:3]:
-        html += f"""
-    <div class="card">
-      <div class="meta">{dia['data_br']}</div>
-      <ul>"""
-        for n in dia['noticias'][:8]:
-            pclass = f"pillar-{n['pilar'].lower()}" if n.get('pilar') else ""
-            html += f"""
-        <li><span class="pillar {pclass}">{n.get('pilar','')}</span> {n['titulo']}</li>"""
-        html += """
-      </ul>
+def load_today_news(date_str, silent=False):
+    path = f"/root/.hermes/cron/output/drop5news-trends-{date_str}.txt"
+    if not os.path.exists(path):
+        if not silent:
+            print(f"⚠️  Trends não encontrados: {path}")
+        return []
+    with open(path, encoding="utf-8", errors="replace") as f:
+        content = f.read()
+    noticias = []
+    sections = re.split(r'=== (\w+) ===', content)
+    current_pilar = ""
+    pilar_map = {'GLOBAL': 'Global', 'BRASIL': 'Brasil', 'TECH': 'Tech',
+                 'ECONOMIA': 'Economia', 'ECON': 'Economia'}
+    for i, part in enumerate(sections):
+        part = part.strip()
+        if part in pilar_map:
+            current_pilar = pilar_map[part]
+        elif part and len(part) > 20:
+            for line in part.split('\n'):
+                line = line.strip()
+                if not line or line.startswith('='): continue
+                if re.match(r'^[\U0001f44d\U0001f4ac]', line): continue
+                if line.startswith('🔗') or line.startswith('http'): continue
+                if len(line) > 25 and not line.startswith('[') and not line.startswith('r/'):
+                    titulo = re.sub(r'\s+\d{1,2}h\s*$', '', line).strip()[:120]
+                    noticias.append({
+                        'pilar': current_pilar,
+                        'titulo': titulo,
+                        'descricao': '',
+                        'fonte': 'D5N Pipeline',
+                    })
+    return noticias[:20]
+
+def format_data_br(date_str):
+    d = datetime.strptime(date_str, '%Y-%m-%d')
+    dias = {0:'Segunda-feira',1:'Terça-feira',2:'Quarta-feira',3:'Quinta-feira',
+            4:'Sexta-feira',5:'Sábado',6:'Domingo'}
+    meses = {1:'Janeiro',2:'Fevereiro',3:'Março',4:'Abril',5:'Maio',6:'Junho',
+             7:'Julho',8:'Agosto',9:'Setembro',10:'Outubro',11:'Novembro',12:'Dezembro'}
+    return f"{dias[d.weekday()]}, {d.day} de {meses[d.month]} de {d.year}"
+
+def find_latest_podcast():
+    if not os.path.isdir(AUDIO_DIR):
+        return None
+    mp3s = sorted([f for f in os.listdir(AUDIO_DIR) if f.endswith('.mp3')], reverse=True)
+    if not mp3s:
+        return None
+    latest = mp3s[0]
+    path = f"{AUDIO_DIR}/{latest}"
+    dur = 0
+    try:
+        import subprocess
+        r = subprocess.run(
+            ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+             "-of", "csv=p=0", path],
+            capture_output=True, text=True, timeout=10)
+        dur = round(float(r.stdout.strip()))
+    except:
+        dur = 0
+    return {"file": latest, "path": f"/audio/{latest}", "duration": dur,
+            "dur_str": f"{dur//60}:{dur%60:02d}"}
+
+def list_episodes():
+    if not os.path.isdir(AUDIO_DIR):
+        return []
+    mp3s = sorted([f for f in os.listdir(AUDIO_DIR) if f.endswith('.mp3')], reverse=True)
+    eps = []
+    for f in mp3s:
+        path = f"{AUDIO_DIR}/{f}"
+        dur = 0
+        try:
+            import subprocess
+            r = subprocess.run(
+                ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                 "-of", "csv=p=0", path],
+                capture_output=True, text=True, timeout=10)
+            dur = round(float(r.stdout.strip()))
+        except:
+            dur = 0
+        eps.append({"file": f, "path": f"/audio/{f}",
+                    "dur_str": f"{dur//60}:{dur%60:02d}", "duration": dur})
+    return eps
+
+def gerar_html(date, data_br, noticias, podcast, episodios):
+    n = len(noticias)
+
+    # ── Player ──
+    player_html = ""
+    if podcast:
+        player_html = f"""
+    <div class="player-wrap">
+      <div class="player-inner">
+        <div class="player-meta">
+          <span class="player-label">🎙️ Episódio do Dia</span>
+          <span class="player-dur">{podcast['dur_str']}</span>
+        </div>
+        <div class="player-bar">
+          <audio controls preload="metadata">
+            <source src="{podcast['path']}" type="audio/mpeg">
+          </audio>
+          <a href="{podcast['path']}" class="dl-btn" download title="Download MP3">⬇</a>
+        </div>
+      </div>
     </div>"""
-    
-    html += """
-    </section>
-    
-    <section>
-      <h2>📅 Arquivo Diário</h2>"""
-    
-    for dia in dias:
-        html += f"""
-      <a class="day-link" href="/{dia['date']}.html">
-        <strong>{dia['data_br']}</strong>
-        <span style="float:right;color:#888;">{len(dia['noticias'])} notícias →</span>
-      </a>"""
-    
-    html += """
-    </section>
-    
-    <section>
-      <h2>📡 Fontes de Dados</h2>
-      <p>Esta página serve como fonte estruturada para o NotebookLM.</p>
-      <ul>
-        <li><a href="/d5n-feed.xml">📻 RSS Feed</a></li>
-        <li><a href="/feed.json">📊 JSON Feed</a></li>
-      </ul>
-      <p style="margin-top:12px;color:#888;">
-        <strong>Como usar no NotebookLM:</strong><br>
-        Copie a URL base deste site e adicione como fonte no NotebookLM.<br>
-        Ele vai ler todas as páginas e gerar o VideoCast automaticamente.
-      </p>
-    </section>
-    
-    <footer>
-      <p>DropFiveNews por <a href="https://instagram.com/ojeanbraga.s">@ojeanbraga.s</a></p>
-      <p>Atualizado automaticamente • {datetime.now().strftime("%d/%m/%Y %H:%M")}</p>
-    </footer>
-  </div>
-</body>
-</html>
-"""
-    return html
 
+    # ── Notícias por pilar ──
+    por_pilar = {}
+    for ntc in noticias:
+        por_pilar.setdefault(ntc['pilar'] or 'Global', []).append(ntc)
 
-def gerar_dia_html(date, data_br, noticias):
-    """Gera página HTML específica do dia."""
-    articles = ""
-    for i, n in enumerate(noticias, 1):
-        pclass = f"pillar-{n['pilar'].lower()}" if n.get('pilar') else ""
-        articles += f"""
-      <article>
-        <h3><span class="pillar {pclass}">{n.get('pilar','')}</span> {n['titulo']}</h3>
-        <p>{n.get('descricao', '')}</p>
-        <p style="font-size:0.9em;color:#888;">
-          Fonte: {n.get('fonte', 'D5N Pipeline')}
-        </p>
-      </article>"""
+    cards_html = ""
+    for pilar, lista in por_pilar.items():
+        meta = PILARES_META.get(pilar, {"icon":"📰","cor":"#888","bg":"#222","label":pilar})
+        # Primeira = destaque
+        primeira = lista[0]
+        demais = lista[1:]
+        items_destaque = f"""
+          <div class="headline-wrap">
+            <span class="headline-num">01</span>
+            <div class="headline-content">
+              <strong class="headline-title">{primeira['titulo']}</strong>
+              <span class="headline-src">{primeira.get('fonte','D5N')}</span>
+            </div>
+          </div>"""
+        items_compacto = ""
+        for i, ntc in enumerate(demais, 2):
+            items_compacto += f"""
+          <div class="compact-item">
+            <span class="compact-num">{i:02d}</span>
+            <span class="compact-title">{ntc['titulo']}</span>
+          </div>"""
+
+        cards_html += f"""
+      <div class="pilar-card" style="--acc:{meta['cor']};--bgc:{meta['bg']}">
+        <h3 class="pilar-label">{meta['icon']} {meta['label']}</h3>
+        {items_destaque}
+        {items_compacto}
+      </div>"""
+
+    if not cards_html:
+        cards_html = '<p class="empty">📭 Nenhuma notícia hoje ainda.</p>'
+
+    # ── Ticker ──
+    ticker_items = " • ".join(n['titulo'] for n in noticias[:15]) if noticias else "Aguardando..."
+
+    # ── Premium teaser ──
+    premium_html = """
+    <div class="premium-teaser">
+      <span class="premium-icon">🔒</span>
+      <div class="premium-text">
+        <strong>Brief Executivo</strong>
+        <p>Análise aprofundada e contexto completo de cada notícia. Acesso reservado.</p>
+      </div>
+    </div>"""
+
+    # ── Histórico ──
+    historico_html = ""
+    if episodios:
+        rows = "".join(f"""
+          <a href="{ep['path']}" class="ep-row">
+            <span>{ep['file'].replace('.mp3','')}</span>
+            <span class="ep-dur">{ep['dur_str']}</span>
+            <span class="ep-play">▶</span>
+          </a>""" for ep in episodios)
+        historico_html = f"""
+    <section class="historico">
+      <h2>📻 Episódios</h2>
+      <div class="ep-list">{rows}</div>
+    </section>"""
 
     html = f"""<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DropFiveNews • {data_br} — Notícias diárias">
-  <title>D5N • {data_br}</title>
-  <link rel="canonical" href="/{date}.html">
+  <meta name="description" content="DropFiveNews — Curadoria diária de notícias. Ouça o podcast, leia as headlines.">
+  <meta property="og:title" content="DropFiveNews — {data_br}">
+  <meta property="og:description" content="{n} notícias em {len(por_pilar)} pilares.">
+  <meta property="og:url" content="https://d5n-daily.netlify.app/">
+  <meta name="color-scheme" content="dark">
+  <title>DropFiveNews — {data_br}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
   <style>
-    * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-    body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-           background: #1A1A2E; color: #E8E8E8; line-height: 1.6; }}
-    .container {{ max-width: 700px; margin: 0 auto; padding: 40px 20px; }}
-    h1 {{ color: #E94560; font-size: 2em; }}
-    h2 {{ color: #FFE66D; font-size: 1.3em; margin: 30px 0 10px; }}
-    article {{ margin: 20px 0; padding: 16px; background: #16213E; border-radius: 8px; }}
-    .pillar {{ display: inline-block; padding: 2px 10px; border-radius: 12px;
-               font-size: 0.8em; font-weight: bold; margin: 0 4px 4px 0; }}
-    .pillar-global {{ background: #28527A; color: #8AB4F8; }}
-    .pillar-brasil {{ background: #1A5A3C; color: #81C784; }}
-    .pillar-tech {{ background: #6A1B9A; color: #CE93D8; }}
-    .pillar-econ {{ background: #7A4A1A; color: #FFD54F; }}
-    footer {{ margin-top: 40px; color: #666; font-size: 0.9em; }}
-    a {{ color: #4ECDC4; }}
-    .back {{ display: block; margin-bottom: 20px; }}
+    * {{ margin:0; padding:0; box-sizing:border-box; }}
+    body {{
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      background: #08081A;
+      color: #E2E2E8;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }}
+    .wrapper {{ max-width: 900px; margin: 0 auto; padding: 28px 20px 80px; }}
+
+    /* ── HEADER ── */
+    .site-header {{
+      text-align: center;
+      padding: 32px 0 20px;
+      border-bottom: 1px solid #1A1A30;
+      margin-bottom: 28px;
+    }}
+    .site-header h1 {{
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 2.4em; font-weight: 400;
+      color: #E94560; letter-spacing: -0.3px;
+    }}
+    .site-header h1 em {{ font-style: italic; color: #FFE66D; }}
+    .site-header .date {{
+      font-size: 0.85em; color: #6B6B80; margin-top: 6px;
+    }}
+    .site-header .sub {{
+      font-size: 0.8em; color: #4A4A60; letter-spacing: 1.5px;
+      text-transform: uppercase; margin-top: 2px;
+    }}
+
+    /* ── PLAYER ── */
+    .player-wrap {{
+      margin-bottom: 28px;
+    }}
+    .player-inner {{
+      background: #0F0F2A;
+      border: 1px solid #2A2A4A;
+      border-radius: 12px;
+      padding: 16px 20px;
+    }}
+    .player-meta {{
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 10px;
+    }}
+    .player-label {{ font-size: 0.85em; font-weight: 600; color: #8AB4F8; }}
+    .player-dur {{ font-size: 0.8em; color: #6B6B80; font-variant-numeric: tabular-nums; }}
+    .player-bar {{
+      display: flex; gap: 10px; align-items: center;
+    }}
+    .player-bar audio {{ flex: 1; height: 36px; border-radius: 6px; }}
+    .dl-btn {{
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 8px;
+      background: #E94560; color: #fff; text-decoration: none;
+      font-size: 1em; flex-shrink: 0;
+    }}
+    .dl-btn:hover {{ background: #D13450; }}
+
+    /* ── NOTÍCIAS — 2 colunas ── */
+    .news-grid {{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 24px;
+    }}
+    .pilar-card {{
+      background: linear-gradient(180deg, var(--bgc) 0%, #0A0A20 100%);
+      border-radius: 12px;
+      padding: 18px;
+      border: 1px solid color-mix(in srgb, var(--acc) 25%, transparent);
+    }}
+    .pilar-label {{
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1em; font-weight: 400;
+      color: var(--acc);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid color-mix(in srgb, var(--acc) 20%, transparent);
+    }}
+
+    /* Headline destaque */
+    .headline-wrap {{
+      display: flex; gap: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }}
+    .headline-num {{
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.6em; color: var(--acc);
+      line-height: 1; opacity: 0.5;
+      min-width: 28px;
+    }}
+    .headline-content {{ flex: 1; }}
+    .headline-title {{
+      display: block; font-size: 0.92em; font-weight: 600;
+      line-height: 1.4; color: #F0F0F5;
+      margin-bottom: 4px;
+    }}
+    .headline-src {{
+      font-size: 0.72em; color: #5A5A70; letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }}
+
+    /* Itens compactos */
+    .compact-item {{
+      display: flex; gap: 8px; align-items: baseline;
+      padding: 5px 0;
+    }}
+    .compact-num {{
+      font-size: 0.7em; color: var(--acc); opacity: 0.4;
+      min-width: 18px; font-variant-numeric: tabular-nums;
+    }}
+    .compact-title {{
+      font-size: 0.82em; color: #A0A0B5; line-height: 1.35;
+    }}
+    .empty {{ color: #5A5A70; text-align: center; padding: 40px;
+              grid-column: 1 / -1; }}
+
+    /* ── PREMIUM TEASER ── */
+    .premium-teaser {{
+      display: flex; gap: 14px; align-items: flex-start;
+      background: linear-gradient(135deg, #1A1A30 0%, #12122A 100%);
+      border: 1px solid #2A2A4A;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+    }}
+    .premium-icon {{ font-size: 1.2em; line-height: 1.4; }}
+    .premium-text {{ flex: 1; }}
+    .premium-text strong {{
+      display: block; font-size: 0.85em; color: #FFE66D;
+      margin-bottom: 2px;
+    }}
+    .premium-text p {{
+      font-size: 0.78em; color: #6B6B80; margin: 0;
+    }}
+
+    /* ── HISTÓRICO ── */
+    .historico {{ margin-bottom: 20px; }}
+    .historico h2 {{
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.1em; font-weight: 400; color: #8AB4F8;
+      margin-bottom: 10px;
+    }}
+    .ep-list {{ display: flex; flex-direction: column; gap: 4px; }}
+    .ep-row {{
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 8px 14px; border-radius: 8px;
+      background: #0F0F25; border: 1px solid #1A1A3A;
+      text-decoration: none; color: #A0A0B5; font-size: 0.82em;
+    }}
+    .ep-row:hover {{ border-color: #E94560; }}
+    .ep-dur {{ color: #5A5A70; }}
+    .ep-play {{ color: #E94560; font-size: 0.9em; }}
+
+    /* ── TICKER ── */
+    .ticker-wrap {{
+      position: fixed; bottom: 0; left: 0; right: 0; height: 34px;
+      background: #0A0A20;
+      border-top: 1px solid #2A2A4A;
+      overflow: hidden; z-index: 100;
+    }}
+    .ticker {{
+      display: flex; white-space: nowrap;
+      animation: marquee 40s linear infinite;
+    }}
+    .ticker:hover {{ animation-play-state: paused; }}
+    .ticker-item {{
+      display: inline-flex; align-items: center;
+      padding: 0 20px; font-size: 0.78em; color: #8AB4F8; height: 34px;
+      opacity: 0.8;
+    }}
+    .ticker-item::before {{ content: "•"; margin-right: 8px; color: #E94560; }}
+    @keyframes marquee {{
+      0%   {{ transform: translateX(0); }}
+      100% {{ transform: translateX(-50%); }}
+    }}
+
+    /* ── FOOTER ── */
+    .site-footer {{
+      text-align: center; padding: 20px 0 50px;
+      color: #3A3A50; font-size: 0.75em;
+    }}
+    .site-footer a {{ color: #E94560; text-decoration: none; }}
+
+    /* ── RESPONSIVO ── */
+    @media (max-width: 640px) {{
+      .wrapper {{ padding: 16px 12px 70px; }}
+      .site-header h1 {{ font-size: 1.6em; }}
+      .news-grid {{ grid-template-columns: 1fr; }}
+      .player-bar {{ flex-direction: column; }}
+      .player-bar audio {{ width: 100%; }}
+    }}
   </style>
 </head>
 <body>
-  <div class="container">
-    <a class="back" href="/">← Voltar</a>
-    <h1>📰 DropFiveNews</h1>
-    <h2>{data_br}</h2>
-    {articles}
-    <footer>
-      <p>Atualizado em {datetime.now().strftime("%d/%m/%Y %H:%M")}</p>
+  <div class="wrapper">
+
+    <header class="site-header">
+      <h1>DROP <em>Five</em> NEWS</h1>
+      <p class="date">{data_br}</p>
+      <p class="sub">Curadoria Diária</p>
+    </header>
+
+    {player_html}
+
+    <div class="news-grid">
+      {cards_html}
+    </div>
+
+    {premium_html}
+
+    {historico_html}
+
+    <footer class="site-footer">
+      <p><a href="https://instagram.com/ojeanbraga.s">@ojeanbraga.s</a> &middot; {n} notícias</p>
     </footer>
+
+  </div>
+
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span class="ticker-item">{ticker_items}</span>
+      <span class="ticker-item">{ticker_items}</span>
+      <span class="ticker-item">{ticker_items}</span>
+      <span class="ticker-item">{ticker_items}</span>
+    </div>
   </div>
 </body>
 </html>"""
     return html
 
+def gerar_source_md(date, data_br, noticias):
+    if not noticias:
+        return None
+    md = f"""# DROP FIVE NEWS — Boletim Diário
+## {data_br}
 
-def gerar_feed_json(dias):
-    """Gera feed.json para NotebookLM."""
-    items = []
-    for dia in dias[:7]:
-        items.append({
-            "id": dia['date'],
-            "title": f"D5N • {dia['data_br']}",
-            "url": f"https://d5n-videocast.netlify.app/{dia['date']}.html",
-            "date_published": dia['date'],
-            "summary": f"Curadoria de {len(dia['noticias'])} notícias trending",
-            "tags": ["notícias", "D5N", "curadoria"],
-            "content_text": "\n".join(f"[{n.get('pilar','')}] {n['titulo']}" for n in dia['noticias'])
-        })
-    return json.dumps({
-        "version": "https://jsonfeed.org/version/1",
-        "title": "DropFiveNews - Feed de Notícias",
-        "home_page_url": "https://d5n-videocast.netlify.app",
-        "feed_url": "https://d5n-videocast.netlify.app/feed.json",
-        "description": "Curadoria diária de notícias trending para geração de VideoCast no NotebookLM",
-        "author": {"name": "Jean Braga", "url": "https://instagram.com/ojeanbraga.s"},
-        "items": items
-    }, ensure_ascii=False, indent=2)
+INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
+- Idioma: português brasileiro (NÃO use português de Portugal)
+- Contexto: Você é um apresentador de boletim de rádio. Apresente APENAS as notícias abaixo.
+- NÃO analise, avalie ou comente sobre o site, o projeto, a curadoria ou as fontes.
+- NÃO mencione NotebookLM, GitHub, feeds, JSON, RSS ou qualquer estrutura técnica.
+- Organize por blocos temáticos na ordem abaixo.
+- Use linguagem natural, coloquial brasileira, como um locutor de rádio.
+- Cada bloco começa com uma transição curta entre os temas.
 
-
-def gerar_feed_rss(dias):
-    """Gera RSS feed XML."""
-    import xml.sax.saxutils as saxutils
-    items = ""
-    for dia in dias[:7]:
-        desc = saxutils.escape(f"Curadoria de {len(dia['noticias'])} notícias trending: " +
-                               ". ".join(n['titulo'] for n in dia['noticias'][:3]))
-        items += f"""
-    <item>
-      <title>D5N • {saxutils.escape(dia['data_br'])}</title>
-      <link>https://d5n-videocast.netlify.app/{dia['date']}.html</link>
-      <guid isPermaLink="true">https://d5n-videocast.netlify.app/{dia['date']}.html</guid>
-      <pubDate>{dia['date']}T03:00:00-04:00</pubDate>
-      <description>{desc}</description>
-    </item>"""
-    
-    return f"""<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>DropFiveNews • RSS</title>
-    <link>https://d5n-videocast.netlify.app</link>
-    <description>Curadoria diária de notícias trending para NotebookLM VideoCast</description>
-    <language>pt-br</language>
-    <lastBuildDate>{datetime.now().strftime("%a, %d %b %Y %H:%M:%S -0400")}</lastBuildDate>
-    <atom:link href="https://d5n-videocast.netlify.app/d5n-feed.xml" rel="self" type="application/rss+xml"/>
-    {items}
-  </channel>
-</rss>"""
-
+"""
+    pilares = {'Global': '🌍 GLOBAL', 'Brasil': '🇧🇷 BRASIL',
+               'Tech': '🤖 TECH & IA', 'Economia': '💰 ECONOMIA & CRYPTO'}
+    current = ''
+    idx = 1
+    for n in noticias:
+        p = n.get('pilar', '')
+        if p != current:
+            current = p
+            md += f'\n### {pilares.get(p, p)}\n\n'
+        md += f'{idx}. {n["titulo"]}\n\n'
+        idx += 1
+    return md
 
 def main():
-    parser = argparse.ArgumentParser(description='Gera página Netlify D5N')
-    parser.add_argument('--data', default=DATE, help='Data YYYY-MM-DD')
-    parser.add_argument('--titulo', default=datetime.now().strftime("%A, %d de %B").replace("Monday","Segunda").replace("Tuesday","Terça").replace("Wednesday","Quarta").replace("Thursday","Quinta").replace("Friday","Sexta").replace("Saturday","Sábado").replace("Sunday","Domingo"), help='Título da data')
-    parser.add_argument('--noticias', nargs='*', help='Notícias no formato "PILAR::Título::Descrição"')
+    parser = argparse.ArgumentParser(description='Gera site D5N')
+    parser.add_argument('--data', default=DATE)
+    parser.add_argument('--no-podcast', action='store_true')
     args = parser.parse_args()
-    
-    # Se não veio notícias, buscar do pipeline
-    if not args.noticias:
-        noticias = load_today_news(args.data)
-    else:
-        noticias = []
-        for n in args.noticias:
-            parts = n.split('::', 2)
-            noticias.append({
-                'pilar': parts[0] if len(parts) > 0 else '',
-                'titulo': parts[1] if len(parts) > 1 else n,
-                'descricao': parts[2] if len(parts) > 2 else '',
-                'fonte': 'D5N Pipeline',
-            })
-    
-    data_br = args.titulo
+
     date = args.data
-    
-    # Carregar dias anteriores também
-    dias = [{'date': date, 'data_br': data_br, 'noticias': noticias}]
-    
-    # Buscar dias anteriores
-    from datetime import timedelta
-    for i in range(1, 3):
-        d = datetime.strptime(date, '%Y-%m-%d') - timedelta(days=i)
-        d_str = d.strftime('%Y-%m-%d')
-        prev = load_today_news(d_str, silent=True)
-        if prev:
-            dias.append({'date': d_str, 'data_br': d.strftime("%A, %d de %B").replace("Monday","Segunda").replace("Tuesday","Terça").replace("Wednesday","Quarta").replace("Thursday","Quinta").replace("Friday","Sexta").replace("Saturday","Sábado").replace("Sunday","Domingo"), 'noticias': prev})
-    
-    # Gerar arquivos
-    index_html = gerar_index_html(dias)
-    dia_html = gerar_dia_html(date, data_br, noticias)
-    feed_json = gerar_feed_json(dias)
-    feed_rss = gerar_feed_rss(dias)
-    
-    # Salvar
-    os.makedirs(f"{BASE}/2026", exist_ok=True)
-    
+    data_br = format_data_br(date)
+
+    noticias = load_today_news(date)
+
+    podcast = None if args.no_podcast else find_latest_podcast()
+    episodios = list_episodes() if not args.no_podcast else []
+
+    os.makedirs(ARQUIVO_DIR, exist_ok=True)
+
+    html = gerar_html(date, data_br, noticias, podcast, episodios)
     with open(f"{BASE}/index.html", 'w') as f:
-        f.write(index_html)
-    print(f"✅ index.html — {len(index_html)} bytes")
-    
-    page_file = f"{BASE}/{date}.html"
-    with open(page_file, 'w') as f:
-        f.write(dia_html)
-    print(f"✅ {date}.html — {len(dia_html)} bytes")
-    
-    # Também salvar como MD (NotebookLM prefere Markdown)
-    md = f"# DropFiveNews • {data_br}\n\n"
+        f.write(html)
+    print(f"✅ index.html — {len(html)} bytes, {len(noticias)} notícias")
+
+    # source.md
+    md = gerar_source_md(date, data_br, noticias)
+    if md:
+        with open(f"{BASE}/source.md", 'w') as f:
+            f.write(md)
+        print(f"✅ source.md — {len(md)} bytes")
+
+    # Markdown diário
+    md_daily = f"# DropFiveNews • {data_br}\n\n"
     for n in noticias:
-        md += f"## [{n.get('pilar','')}] {n['titulo']}\n\n{n.get('descricao', '')}\n\n"
-    md_file = f"{BASE}/2026/{date}.md"
-    with open(md_file, 'w') as f:
-        f.write(md)
-    print(f"✅ 2026/{date}.md — {len(md)} bytes")
-    
-    with open(f"{BASE}/feed.json", 'w') as f:
-        f.write(feed_json)
-    print(f"✅ feed.json — {len(feed_json)} bytes")
-    
-    with open(f"{BASE}/d5n-feed.xml", 'w') as f:
-        f.write(feed_rss)
-    print(f"✅ d5n-feed.xml — {len(feed_rss)} bytes")
-    
-    print(f"\n📊 {len(noticias)} notícias do dia + {len(dias)-1} dias anteriores")
-    print(f"🌐 Netlify URL base: https://d5n-videocast.netlify.app")
+        md_daily += f"## [{n.get('pilar','')}] {n['titulo']}\n\n{n.get('descricao', '')}\n\n"
+    with open(f"{ARQUIVO_DIR}/{date}.md", 'w') as f:
+        f.write(md_daily)
+    print(f"✅ 2026/{date}.md — {len(md_daily)} bytes")
 
-
-# Módulo auxiliar para carregar dados do pipeline D5N
-if __name__ != '__main__':
-    exit(0)
-
-# Pipeline loader
-def load_today_news(date_str, silent=False):
-    """Carrega notícias do pipeline D5N para uma data."""
-    import json, re
-    path = f"/root/.hermes/cron/output/drop5news-trends-{date_str}.txt"
-    if not os.path.exists(path):
-        if not silent:
-            print(f"⚠️  Arquivo não encontrado: {path}")
-        return []
-    
-    with open(path) as f:
-        content = f.read()
-    
-    # Extrair títulos com pilar
-    noticias = []
-    sections = re.split(r'=== (\w+) ===', content)
-    current_pilar = ''
-    
-    for i, part in enumerate(sections):
-        part = part.strip()
-        if part in ('GLOBAL', 'BRASIL', 'TECH', 'ECONOMIA', 'ECON'):
-            current_pilar = {
-                'GLOBAL': 'Global',
-                'BRASIL': 'Brasil',
-                'TECH': 'Tech',
-                'ECONOMIA': 'Economia',
-                'ECON': 'Economia',
-            }.get(part, part)
-        elif part and len(part) > 20:
-            # Linhas que parecem títulos
-            for line in part.split('\n'):
-                line = line.strip()
-                if not line or line.startswith('='):
-                    continue
-                # Pular linhas de metadados
-                if re.match(r'^[\U0001f44d\U0001f4ac]', line):
-                    continue
-                if line.startswith('🔗') or line.startswith('http'):
-                    continue
-                if len(line) > 25 and not line.startswith('[') and not line.startswith('r/'):
-                    noticias.append({
-                        'pilar': current_pilar,
-                        'titulo': re.sub(r'\s+\d{1,2}h\s*$', '', line).strip()[:120],
-                        'descricao': '',
-                        'fonte': 'D5N Pipeline',
-                    })
-    
-    return noticias[:15]
+    print(f"\n📊 {len(noticias)} notícias, {len(episodios)} episódios")
+    print(f"🌐 https://d5n-daily.netlify.app/")
 
 if __name__ == '__main__':
     main()

@@ -3,411 +3,357 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DropFiveNews — Notícias diárias. Ouça o podcast e acompanhe a curadoria.">
-  <meta property="og:title" content="DropFiveNews — Quarta-feira, 27 de Maio de 2026">
-  <meta property="og:description" content="12 notícias em 3 pilares. Ouça o podcast.">
-  <meta property="og:type" content="website">
+  <meta name="description" content="DropFiveNews — Curadoria diária de notícias. Ouça o podcast, leia as headlines.">
+  <meta property="og:title" content="DropFiveNews — Quinta-feira, 28 de Maio de 2026">
+  <meta property="og:description" content="12 notícias em 4 pilares.">
   <meta property="og:url" content="https://d5n-daily.netlify.app/">
-  <meta property="og:image" content="https://d5n-daily.netlify.app/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
   <meta name="color-scheme" content="dark">
-  <title>DropFiveNews — Curadoria Diária</title>
-  <link rel="alternate" type="application/rss+xml" title="D5N RSS" href="/d5n-feed.xml">
-  <link rel="alternate" type="application/json" title="D5N Feed" href="/feed.json">
+  <title>DropFiveNews — Quinta-feira, 28 de Maio de 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
   <style>
-    :root {
-      --surface: #0F0F1A;
-      --surface-secondary: #1A1A2E;
-      --surface-tertiary: #16213E;
-      --text: #E8E8E8;
-      --text-secondary: #9CA3AF;
-      --text-muted: #6B7280;
-      --border: #2A2A4A;
-      --accent: #E94560;
-      --accent-secondary: #FFE66D;
-      --accent-tech: #7C3AED;
-      --accent-econ: #F59E0B;
-      --accent-global: #3B82F6;
-      --radius: 6px;
-      --radius-lg: 10px;
-      --shadow: 0 1px 3px 0 rgba(0,0,0,0.3);
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    }
-    *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: var(--font-sans);
-      background: var(--surface);
-      color: var(--text);
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      background: #08081A;
+      color: #E2E2E8;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
     }
-    .container { max-width: 920px; margin: 72px auto 0; padding: 0 24px; }
+    .wrapper { max-width: 900px; margin: 0 auto; padding: 28px 20px 80px; }
 
-    /* ── NAVBAR com player compacto fixo ── */
-    .navbar {
-      border-bottom: 1px solid var(--border);
-      background: rgba(15,15,26,0.92);
-      backdrop-filter: blur(16px);
-      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-    }
-    .navbar-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      height: 56px; max-width: 1080px; margin: 0 auto; padding: 0 24px;
-    }
-    .navbar-brand { font-weight: 700; font-size: 1.15em; letter-spacing: -0.3px; text-decoration: none; color: var(--text); }
-    .navbar-brand em { color: var(--accent); font-style: normal; }
-    .navbar-links { display: flex; gap: 20px; align-items: center; }
-    .navbar-links a { font-size: 0.875em; color: var(--text-secondary); text-decoration: none; transition: color .15s; }
-    .navbar-links a:hover { color: var(--text); }
-
-    /* Player compacto fixo na navbar */
-    .nav-player {
-      display: flex; align-items: center; gap: 8px;
-      background: var(--surface-secondary);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 2px 6px 2px 14px;
-      height: 34px;
-      font-size: 0.78em;
-    }
-    .nav-player .np-label { color: var(--text-muted); white-space: nowrap; }
-    .nav-player .np-label strong { color: var(--text-secondary); font-weight: 500; }
-    .nav-player audio {
-      height: 28px; width: 140px;
-      border-radius: 999px;
-    }
-    .nav-player audio::-webkit-media-controls-panel {
-      background: var(--surface-secondary);
-    }
-    .nav-player .np-dl {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 26px; height: 26px;
-      background: var(--accent); color: #fff;
-      border-radius: 50%;
-      text-decoration: none; font-size: 0.9em;
-      transition: opacity .15s;
-    }
-    .nav-player .np-dl:hover { opacity: 0.8; }
-
-    /* ── HERO ── */
-    .hero { padding: 48px 0 32px; text-align: center; }
-    .hero h1 { font-size: clamp(2.2em,4vw,3em); font-weight: 700; letter-spacing: -1px; line-height: 1.1; margin-bottom: 10px; }
-    .hero h1 span { color: var(--accent); }
-    .hero p { color: var(--text-secondary); font-size: 1em; max-width: 560px; margin: 0 auto; }
-    .stats-bar { display: flex; justify-content: center; gap: 40px; padding: 20px 0; }
-    .stat { text-align: center; }
-    .stat-value { font-size: 1.6em; font-weight: 700; }
-    .stat-label { font-size: 0.8em; color: var(--text-muted); }
-
-    /* ── SECTION HEADERS ── */
-    .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
-    .section-header h2 { font-size: 1.05em; font-weight: 600; }
-    .section-header .count { font-size: 0.75em; color: var(--text-muted); background: var(--surface-secondary); padding: 2px 10px; border-radius: 999px; font-weight: 400; }
-
-    /* ── NEWS GRID ── */
-    .news-grid { display: flex; flex-direction: column; gap: 6px; margin-bottom: 32px; }
-    .news-card { display: flex; align-items: flex-start; gap: 14px; padding: 14px 18px; background: var(--surface-secondary); border-radius: var(--radius); border: 1px solid var(--border); transition: border-color 0.15s; }
-    .news-card:hover { border-color: var(--accent); }
-    .news-num { flex-shrink: 0; width: 28px; color: var(--text-muted); font-size: 0.85em; font-weight: 500; text-align: right; }
-    .news-body { flex: 1; }
-    .news-text { font-size: 0.9375em; line-height: 1.5; }
-    .pillar-tag { font-size: 0.68em; font-weight: 600; padding: 2px 8px; border-radius: 999px; letter-spacing: 0.3px; }
-    .source-tag { font-size: 0.75em; color: var(--text-muted); }
-    .transition-block {
+    /* ── HEADER ── */
+    .site-header {
       text-align: center;
-      padding: 24px 0 16px;
-      color: var(--text-muted);
-      font-size: 0.85em;
-      font-style: italic;
-      letter-spacing: 0.5px;
+      padding: 32px 0 20px;
+      border-bottom: 1px solid #1A1A30;
+      margin-bottom: 28px;
     }
-    .transition-block::before, .transition-block::after {
-      content: " ── ";
-      color: var(--border);
+    .site-header h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 2.4em; font-weight: 400;
+      color: #E94560; letter-spacing: -0.3px;
+    }
+    .site-header h1 em { font-style: italic; color: #FFE66D; }
+    .site-header .date {
+      font-size: 0.85em; color: #6B6B80; margin-top: 6px;
+    }
+    .site-header .sub {
+      font-size: 0.8em; color: #4A4A60; letter-spacing: 1.5px;
+      text-transform: uppercase; margin-top: 2px;
     }
 
-    /* ── ARCHIVE ── */
-    .archive-card { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit; margin-bottom: 6px; transition: border-color .15s; }
-    .archive-card:hover { border-color: var(--accent); }
+    /* ── PLAYER ── */
+    .player-wrap {
+      margin-bottom: 28px;
+    }
+    .player-inner {
+      background: #0F0F2A;
+      border: 1px solid #2A2A4A;
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+    .player-meta {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 10px;
+    }
+    .player-label { font-size: 0.85em; font-weight: 600; color: #8AB4F8; }
+    .player-dur { font-size: 0.8em; color: #6B6B80; font-variant-numeric: tabular-nums; }
+    .player-bar {
+      display: flex; gap: 10px; align-items: center;
+    }
+    .player-bar audio { flex: 1; height: 36px; border-radius: 6px; }
+    .dl-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 8px;
+      background: #E94560; color: #fff; text-decoration: none;
+      font-size: 1em; flex-shrink: 0;
+    }
+    .dl-btn:hover { background: #D13450; }
 
-    /* ── FEEDS ── */
-    .feeds-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .feed-card { display: flex; align-items: center; gap: 12px; padding: 18px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; transition: border-color .15s; color: inherit; }
-    .feed-card:hover { border-color: var(--accent); }
-    .feed-name { font-weight: 600; }
+    /* ── NOTÍCIAS — 2 colunas ── */
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .pilar-card {
+      background: linear-gradient(180deg, var(--bgc) 0%, #0A0A20 100%);
+      border-radius: 12px;
+      padding: 18px;
+      border: 1px solid color-mix(in srgb, var(--acc) 25%, transparent);
+    }
+    .pilar-label {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1em; font-weight: 400;
+      color: var(--acc);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid color-mix(in srgb, var(--acc) 20%, transparent);
+    }
 
-    /* ── NOTEBOOKLM — DISCRETO ── */
-    .nb-premium {
-      margin: 40px 0 48px;
-      padding: 20px 24px;
-      background: var(--surface-secondary);
-      border: 1px dashed var(--border);
-      border-radius: var(--radius-lg);
-      opacity: 0.55;
-      transition: opacity .2s;
+    /* Headline destaque */
+    .headline-wrap {
+      display: flex; gap: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
     }
-    .nb-premium:hover { opacity: 0.85; }
-    .nb-premium summary {
-      cursor: pointer;
-      font-size: 0.85em;
-      font-weight: 500;
-      color: var(--text-muted);
-      user-select: none;
+    .headline-num {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.6em; color: var(--acc);
+      line-height: 1; opacity: 0.5;
+      min-width: 28px;
     }
-    .nb-premium summary::before { content: "🔒 "; }
-    .nb-premium[open] summary::before { content: "🔓 "; }
-    .nb-premium .nb-body {
-      margin-top: 12px;
-      font-size: 0.9em;
-      color: var(--text-secondary);
+    .headline-content { flex: 1; }
+    .headline-title {
+      display: block; font-size: 0.92em; font-weight: 600;
+      line-height: 1.4; color: #F0F0F5;
+      margin-bottom: 4px;
     }
-    .nb-premium code {
-      display: inline-block;
-      padding: 4px 12px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      font-family: 'SF Mono', monospace;
-      font-size: 0.85em;
-      word-break: break-all;
-      margin: 4px 0;
+    .headline-src {
+      font-size: 0.72em; color: #5A5A70; letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    /* Itens compactos */
+    .compact-item {
+      display: flex; gap: 8px; align-items: baseline;
+      padding: 5px 0;
+    }
+    .compact-num {
+      font-size: 0.7em; color: var(--acc); opacity: 0.4;
+      min-width: 18px; font-variant-numeric: tabular-nums;
+    }
+    .compact-title {
+      font-size: 0.82em; color: #A0A0B5; line-height: 1.35;
+    }
+    .empty { color: #5A5A70; text-align: center; padding: 40px;
+              grid-column: 1 / -1; }
+
+    /* ── PREMIUM TEASER ── */
+    .premium-teaser {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: linear-gradient(135deg, #1A1A30 0%, #12122A 100%);
+      border: 1px solid #2A2A4A;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+    }
+    .premium-icon { font-size: 1.2em; line-height: 1.4; }
+    .premium-text { flex: 1; }
+    .premium-text strong {
+      display: block; font-size: 0.85em; color: #FFE66D;
+      margin-bottom: 2px;
+    }
+    .premium-text p {
+      font-size: 0.78em; color: #6B6B80; margin: 0;
+    }
+
+    /* ── HISTÓRICO ── */
+    .historico { margin-bottom: 20px; }
+    .historico h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.1em; font-weight: 400; color: #8AB4F8;
+      margin-bottom: 10px;
+    }
+    .ep-list { display: flex; flex-direction: column; gap: 4px; }
+    .ep-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 8px 14px; border-radius: 8px;
+      background: #0F0F25; border: 1px solid #1A1A3A;
+      text-decoration: none; color: #A0A0B5; font-size: 0.82em;
+    }
+    .ep-row:hover { border-color: #E94560; }
+    .ep-dur { color: #5A5A70; }
+    .ep-play { color: #E94560; font-size: 0.9em; }
+
+    /* ── TICKER ── */
+    .ticker-wrap {
+      position: fixed; bottom: 0; left: 0; right: 0; height: 34px;
+      background: #0A0A20;
+      border-top: 1px solid #2A2A4A;
+      overflow: hidden; z-index: 100;
+    }
+    .ticker {
+      display: flex; white-space: nowrap;
+      animation: marquee 40s linear infinite;
+    }
+    .ticker:hover { animation-play-state: paused; }
+    .ticker-item {
+      display: inline-flex; align-items: center;
+      padding: 0 20px; font-size: 0.78em; color: #8AB4F8; height: 34px;
+      opacity: 0.8;
+    }
+    .ticker-item::before { content: "•"; margin-right: 8px; color: #E94560; }
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     /* ── FOOTER ── */
-    footer { border-top: 1px solid var(--border); padding: 28px 0; text-align: center; font-size: 0.85em; color: var(--text-muted); }
-    footer a { color: var(--text-secondary); text-decoration: none; transition: color .15s; }
-    footer a:hover { color: var(--text); }
-
-    @media (max-width:768px) {
-      .navbar-links { display: none; }
-      .nav-player audio { width: 100px; }
-      .nav-player .np-label { display: none; }
+    .site-footer {
+      text-align: center; padding: 20px 0 50px;
+      color: #3A3A50; font-size: 0.75em;
     }
-    @media (max-width:480px) {
-      .stats-bar { gap: 16px; flex-wrap: wrap; }
-      .feeds-grid { grid-template-columns: 1fr; }
-      .container { padding: 0 16px; }
+    .site-footer a { color: #E94560; text-decoration: none; }
+
+    /* ── RESPONSIVO ── */
+    @media (max-width: 640px) {
+      .wrapper { padding: 16px 12px 70px; }
+      .site-header h1 { font-size: 1.6em; }
+      .news-grid { grid-template-columns: 1fr; }
+      .player-bar { flex-direction: column; }
+      .player-bar audio { width: 100%; }
     }
   </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar-inner">
-      <a href="/" class="navbar-brand">drop<span style="color:var(--accent);">five</span>news</a>
-      <div class="nav-player">
-        <span class="np-label"><strong>#003</strong> 2:29</span>
-        <audio controls preload="metadata">
-          <source src="/audio/d5n-ep003.mp3" type="audio/mpeg">
-        </audio>
-        <a href="/audio/d5n-ep003.mp3" class="np-dl" download title="Baixar MP3">⬇</a>
-      </div>
-    </div>
-  </nav>
-  
-  <div class="container">
-    <section class="hero">
-      <h1>drop<span>five</span>news</h1>
-      <p>Curadoria diária das notícias mais relevantes do mundo, selecionadas por inteligência artificial.</p>
-    </section>
+  <div class="wrapper">
+
+    <header class="site-header">
+      <h1>DROP <em>Five</em> NEWS</h1>
+      <p class="date">Quinta-feira, 28 de Maio de 2026</p>
+      <p class="sub">Curadoria Diária</p>
+    </header>
+
     
-    <div class="stats-bar">
-      <div class="stat"><div class="stat-value">12</div><div class="stat-label">notícias</div></div>
-      <div class="stat"><div class="stat-value">3</div><div class="stat-label">pilares</div></div>
-      <div class="stat"><div class="stat-value">Quarta</div><div class="stat-label">27 de Maio de 2026</div></div>
+    <div class="player-wrap">
+      <div class="player-inner">
+        <div class="player-meta">
+          <span class="player-label">🎙️ Episódio do Dia</span>
+          <span class="player-dur">2:29</span>
+        </div>
+        <div class="player-bar">
+          <audio controls preload="metadata">
+            <source src="/audio/d5n-ep003.mp3" type="audio/mpeg">
+          </audio>
+          <a href="/audio/d5n-ep003.mp3" class="dl-btn" download title="Download MP3">⬇</a>
+        </div>
+      </div>
     </div>
 
-    <!-- GLOBAL -->
-    <div class="section-header">
-      <h2>🌍 Global</h2>
-      <span class="count">3</span>
-    </div>
     <div class="news-grid">
-      <div class="news-card">
-        <span class="news-num">01</span>
-        <div class="news-body">
-          <div class="news-text">Pam Bondi, ex-procuradora-geral dos EUA, é diagnosticada com câncer</div>
-          <div class="news-meta">
-            <span class="pillar-tag" style="background:rgba(59,130,246,0.15);color:#93C5FD;">GLOBAL</span>
-            <span class="source-tag">AP News</span>
+      
+      <div class="pilar-card" style="--acc:#3B82F6;--bgc:#1E2D4A">
+        <h3 class="pilar-label">🌍 GLOBAL</h3>
+        
+          <div class="headline-wrap">
+            <span class="headline-num">01</span>
+            <div class="headline-content">
+              <strong class="headline-title">1. Trump volta a ameaçar Omã publicamente: 'se comporte ou será atacado pelos Estados Unidos'</strong>
+              <span class="headline-src">D5N Pipeline</span>
+            </div>
           </div>
-        </div>
+        
+          <div class="compact-item">
+            <span class="compact-num">02</span>
+            <span class="compact-title">2. Ex-procuradora-geral dos EUA, Pam Bondi, é diagnosticada com câncer</span>
+          </div>
+          <div class="compact-item">
+            <span class="compact-num">03</span>
+            <span class="compact-title">3. Investigação da AP revela que detentos do ICE estão morrendo por suicídio em taxa alarmante</span>
+          </div>
       </div>
-      <div class="news-card">
-        <span class="news-num">02</span>
-        <div class="news-body">
-          <div class="news-text">Detentos do ICE morrendo por suicídio em taxa alarmante, revela investigação da AP</div>
-          <div class="news-meta">
-            <span class="pillar-tag" style="background:rgba(59,130,246,0.15);color:#93C5FD;">GLOBAL</span>
-            <span class="source-tag">Associated Press</span>
+      <div class="pilar-card" style="--acc:#22C55E;--bgc:#1A3A28">
+        <h3 class="pilar-label">🇧🇷 BRASIL</h3>
+        
+          <div class="headline-wrap">
+            <span class="headline-num">01</span>
+            <div class="headline-content">
+              <strong class="headline-title">4. Brasil lidera ranking global de otimismo em relação a criptomoedas</strong>
+              <span class="headline-src">D5N Pipeline</span>
+            </div>
           </div>
-        </div>
+        
       </div>
-      <div class="news-card">
-        <span class="news-num">03</span>
-        <div class="news-body">
-          <div class="news-text">Trump ameaça Omã: "se comporte ou será atacado pelos Estados Unidos"</div>
-          <div class="news-meta">
-            <span class="pillar-tag" style="background:rgba(59,130,246,0.15);color:#93C5FD;">GLOBAL</span>
-            <span class="source-tag">Reuters</span>
+      <div class="pilar-card" style="--acc:#A855F7;--bgc:#2D1B4E">
+        <h3 class="pilar-label">🤖 TECH & IA</h3>
+        
+          <div class="headline-wrap">
+            <span class="headline-num">01</span>
+            <div class="headline-content">
+              <strong class="headline-title">5. CEOs de tecnologia estão sofrendo de 'psicose de IA', movidos pelo medo de ficar para trás</strong>
+              <span class="headline-src">D5N Pipeline</span>
+            </div>
           </div>
-        </div>
+        
+          <div class="compact-item">
+            <span class="compact-num">02</span>
+            <span class="compact-title">6. DuckDuckGo cresceu 28% após Google declarar que 'as pessoas amam o modo IA'</span>
+          </div>
+          <div class="compact-item">
+            <span class="compact-num">03</span>
+            <span class="compact-title">7. Gemini Omni mostra que o futuro da IA está na manipulação de vídeo em tempo real</span>
+          </div>
+          <div class="compact-item">
+            <span class="compact-num">04</span>
+            <span class="compact-title">8. Funcionário do Google é acusado de insider trading com criptomoeda Polygon</span>
+          </div>
+      </div>
+      <div class="pilar-card" style="--acc:#F59E0B;--bgc:#3D2A10">
+        <h3 class="pilar-label">💰 ECONOMIA</h3>
+        
+          <div class="headline-wrap">
+            <span class="headline-num">01</span>
+            <div class="headline-content">
+              <strong class="headline-title">9. Bitcoin ameaça perder os 75 mil dólares com avanço das negociações de paz EUA-Irã</strong>
+              <span class="headline-src">D5N Pipeline</span>
+            </div>
+          </div>
+        
+          <div class="compact-item">
+            <span class="compact-num">02</span>
+            <span class="compact-title">10. Prêmio Nobel de Economia 2025 concedido a trio por estudos sobre inovação</span>
+          </div>
+          <div class="compact-item">
+            <span class="compact-num">03</span>
+            <span class="compact-title">11. 'Venda em maio e vá embora?' — Bitcoin fechou o mês no vermelho</span>
+          </div>
+          <div class="compact-item">
+            <span class="compact-num">04</span>
+            <span class="compact-title">12. Valve aumentou preços do Steam Deck em mais de 200 dólares</span>
+          </div>
       </div>
     </div>
 
-    <div class="transition-block">Um pouco do que foi notícia pelo MUNDO</div>
-
-    <!-- TECH -->
-    <div class="section-header">
-      <h2>🤖 Tech</h2>
-      <span class="count">5</span>
-    </div>
-    <div class="news-grid">
-      <div class="news-card">
-        <span class="news-num">04</span>
-        <div class="news-body">
-          <div class="news-text">CEOs de tecnologia sofrendo de "psicose de IA", alerta Vale do Silício</div>
-          <div class="news-meta">
-            <span class="pillar-tag" style="background:rgba(124,58,237,0.15);color:#C4B5FD;">TECH</span>
-            <span class="source-tag">Reddit</span>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <span class="news-num">05</span>
-        <div class="news-body">
-          <div class="news-text">DuckDuckGo cresce 28% após Google dizer que "as pessoas amam o modo IA"</div>
-          <div class="news-meta">
-            <span class="pillar-tag" style="background:rgba(124,58,237,0.15);color:#C4B5FD;">TECH</span>
-            <span class="source-tag">TechCrunch</span>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <span class="news-num">06</span>
-        <div class="news-body">
-          <div class="news-text">Valve aumenta preços do Steam Deck em mais de US$ 200 — OLED 1TB sobe US$ 300</div>
-          <div class="news-meta">
-            <span class="pillar-tag" style="background:rgba(124,58,237,0.15);color:#C4B5FD;">TECH</span>
-            <span class="source-tag">The Verge</span>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <span class="news-num">07</span>
-        <div class="news-body">
-          <div class="news-text">Gemini Omni: a força da IA está na manipulação de vídeo, mostra pesquisa</div>
-          <div class="news-meta">
-            <span class="pillar-tag" style="background:rgba(124,58,237,0.15);color:#C4B5FD;">TECH</span>
-            <span class="source-tag">Reddit</span>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <span class="news-num">08</span>
-        <div class="news-body">
-          <div class="news-text">Funcionário do Google acusado de insider trading com Polygon — lucro de US$ 1 milhão</div>
-          <div class="news-meta">
-            <span class="pillar-tag" style="background:rgba(124,58,237,0.15);color:#C4B5FD;">TECH</span>
-            <span class="source-tag">Bloomberg</span>
-          </div>
-        </div>
+    
+    <div class="premium-teaser">
+      <span class="premium-icon">🔒</span>
+      <div class="premium-text">
+        <strong>Brief Executivo</strong>
+        <p>Análise aprofundada e contexto completo de cada notícia. Acesso reservado.</p>
       </div>
     </div>
 
-    <div class="transition-block">Atualizando com notícias TECH</div>
+    
+    <section class="historico">
+      <h2>📻 Episódios</h2>
+      <div class="ep-list">
+          <a href="/audio/d5n-ep003.mp3" class="ep-row">
+            <span>d5n-ep003</span>
+            <span class="ep-dur">2:29</span>
+            <span class="ep-play">▶</span>
+          </a></div>
+    </section>
 
-    <!-- ECONOMIA -->
-    <div class="section-header">
-      <h2>💰 Economia &amp; Crypto</h2>
-      <span class="count">4</span>
-    </div>
-    <div class="news-grid">
-      <div class="news-card">
-        <span class="news-num">09</span>
-        <div class="news-body">
-          <div class="news-text">Bitcoin ameaça perder US$ 75 mil com paz EUA-Irã impulsionando ações tradicionais</div>
-          <div class="news-meta">
-            <span class="pillar-tag" style="background:rgba(245,158,11,0.15);color:#FCD34D;">ECON</span>
-            <span class="source-tag">Cointelegraph</span>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <span class="news-num">10</span>
-        <div class="news-body">
-          <div class="news-text">Nobel de Economia 2025 concedido a Joel Mokyr, Philippe Aghion e Peter Howitt</div>
-          <div class="news-meta">
-            <span class="pillar-tag" style="background:rgba(245,158,11,0.15);color:#FCD34D;">ECON</span>
-            <span class="source-tag">Nobel Foundation</span>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <span class="news-num">11</span>
-        <div class="news-body">
-          <div class="news-text">"Venda em maio e vá embora?" Bitcoin corre risco de cair mais 10% após maio fechar no vermelho</div>
-          <div class="news-meta">
-            <span class="pillar-tag" style="background:rgba(245,158,11,0.15);color:#FCD34D;">ECON</span>
-            <span class="source-tag">Cointelegraph</span>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <span class="news-num">12</span>
-        <div class="news-body">
-          <div class="news-text">Brasil lidera otimismo global em relação a criptomoedas, aponta estudo</div>
-          <div class="news-meta">
-            <span class="pillar-tag" style="background:rgba(245,158,11,0.15);color:#FCD34D;">ECON</span>
-            <span class="source-tag">Cointelegraph</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <footer class="site-footer">
+      <p><a href="https://instagram.com/ojeanbraga.s">@ojeanbraga.s</a> &middot; 12 notícias</p>
+    </footer>
 
-    <!-- ARQUIVO -->
-    <div class="section-header" style="margin-top:48px;">
-      <h2>📅 Arquivo</h2>
-    </div>
-    <a class="archive-card" href="/2026-05-27.html">
-      <div><div style="font-weight:600;">Quarta-feira, 27 de Maio de 2026</div><div style="font-size:0.85em;color:var(--text-secondary);">12 notícias · 3 pilares · 2:29 min</div></div>
-      <span style="color:var(--text-muted);">→</span>
-    </a>
-
-    <!-- FEEDS -->
-    <div class="section-header" style="margin-top:40px;">
-      <h2>📡 Feeds</h2>
-    </div>
-    <div class="feeds-grid">
-      <a class="feed-card" href="/feed.json"><div style="font-size:1.5em;">📊</div><div><div class="feed-name">JSON Feed</div><div style="font-size:0.82em;color:var(--text-secondary);">Dados estruturados</div></div></a>
-      <a class="feed-card" href="/d5n-feed.xml"><div style="font-size:1.5em;">📻</div><div><div class="feed-name">RSS Feed</div><div style="font-size:0.82em;color:var(--text-secondary);">Clássico universal</div></div></a>
-    </div>
-
-    <!-- NOTEBOOKLM — RECURSO PREMIUM (DISCRETO) -->
-    <details class="nb-premium">
-      <summary>NotebookLM — Integração Premium</summary>
-      <div class="nb-body">
-        <p>Adicione esta URL como fonte no NotebookLM para gerar o boletim em áudio:</p>
-        <code>https://d5n-daily.netlify.app/source.md</code>
-        <ol style="margin:12px 0 0 20px;font-size:0.9em;">
-          <li>Abra o <a href="https://notebooklm.google.com" style="color:var(--text);text-decoration:underline;">NotebookLM</a></li>
-          <li>Crie um notebook</li>
-          <li>Adicione a URL acima como fonte</li>
-          <li>Solicite: <strong>"Gere um VideoCast com as notícias de hoje"</strong></li>
-        </ol>
-      </div>
-    </details>
   </div>
-  
-  <footer>
-    <div style="font-weight:600;color:var(--text);">dropfivenews</div>
-    <p>Curadoria por <a href="https://instagram.com/ojeanbraga.s">@ojeanbraga.s</a></p>
-    <p style="font-size:0.9em;">Atualizado em 2026-05-27</p>
-    <div style="display:flex;gap:16px;justify-content:center;margin-top:4px;">
-      <a href="/feed.json">JSON Feed</a>
-      <a href="/d5n-feed.xml">RSS</a>
-      <a href="https://github.com/eibragaa/d5n-videocast-source">GitHub</a>
+
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span class="ticker-item">1. Trump volta a ameaçar Omã publicamente: 'se comporte ou será atacado pelos Estados Unidos' • 2. Ex-procuradora-geral dos EUA, Pam Bondi, é diagnosticada com câncer • 3. Investigação da AP revela que detentos do ICE estão morrendo por suicídio em taxa alarmante • 4. Brasil lidera ranking global de otimismo em relação a criptomoedas • 5. CEOs de tecnologia estão sofrendo de 'psicose de IA', movidos pelo medo de ficar para trás • 6. DuckDuckGo cresceu 28% após Google declarar que 'as pessoas amam o modo IA' • 7. Gemini Omni mostra que o futuro da IA está na manipulação de vídeo em tempo real • 8. Funcionário do Google é acusado de insider trading com criptomoeda Polygon • 9. Bitcoin ameaça perder os 75 mil dólares com avanço das negociações de paz EUA-Irã • 10. Prêmio Nobel de Economia 2025 concedido a trio por estudos sobre inovação • 11. 'Venda em maio e vá embora?' — Bitcoin fechou o mês no vermelho • 12. Valve aumentou preços do Steam Deck em mais de 200 dólares</span>
+      <span class="ticker-item">1. Trump volta a ameaçar Omã publicamente: 'se comporte ou será atacado pelos Estados Unidos' • 2. Ex-procuradora-geral dos EUA, Pam Bondi, é diagnosticada com câncer • 3. Investigação da AP revela que detentos do ICE estão morrendo por suicídio em taxa alarmante • 4. Brasil lidera ranking global de otimismo em relação a criptomoedas • 5. CEOs de tecnologia estão sofrendo de 'psicose de IA', movidos pelo medo de ficar para trás • 6. DuckDuckGo cresceu 28% após Google declarar que 'as pessoas amam o modo IA' • 7. Gemini Omni mostra que o futuro da IA está na manipulação de vídeo em tempo real • 8. Funcionário do Google é acusado de insider trading com criptomoeda Polygon • 9. Bitcoin ameaça perder os 75 mil dólares com avanço das negociações de paz EUA-Irã • 10. Prêmio Nobel de Economia 2025 concedido a trio por estudos sobre inovação • 11. 'Venda em maio e vá embora?' — Bitcoin fechou o mês no vermelho • 12. Valve aumentou preços do Steam Deck em mais de 200 dólares</span>
+      <span class="ticker-item">1. Trump volta a ameaçar Omã publicamente: 'se comporte ou será atacado pelos Estados Unidos' • 2. Ex-procuradora-geral dos EUA, Pam Bondi, é diagnosticada com câncer • 3. Investigação da AP revela que detentos do ICE estão morrendo por suicídio em taxa alarmante • 4. Brasil lidera ranking global de otimismo em relação a criptomoedas • 5. CEOs de tecnologia estão sofrendo de 'psicose de IA', movidos pelo medo de ficar para trás • 6. DuckDuckGo cresceu 28% após Google declarar que 'as pessoas amam o modo IA' • 7. Gemini Omni mostra que o futuro da IA está na manipulação de vídeo em tempo real • 8. Funcionário do Google é acusado de insider trading com criptomoeda Polygon • 9. Bitcoin ameaça perder os 75 mil dólares com avanço das negociações de paz EUA-Irã • 10. Prêmio Nobel de Economia 2025 concedido a trio por estudos sobre inovação • 11. 'Venda em maio e vá embora?' — Bitcoin fechou o mês no vermelho • 12. Valve aumentou preços do Steam Deck em mais de 200 dólares</span>
+      <span class="ticker-item">1. Trump volta a ameaçar Omã publicamente: 'se comporte ou será atacado pelos Estados Unidos' • 2. Ex-procuradora-geral dos EUA, Pam Bondi, é diagnosticada com câncer • 3. Investigação da AP revela que detentos do ICE estão morrendo por suicídio em taxa alarmante • 4. Brasil lidera ranking global de otimismo em relação a criptomoedas • 5. CEOs de tecnologia estão sofrendo de 'psicose de IA', movidos pelo medo de ficar para trás • 6. DuckDuckGo cresceu 28% após Google declarar que 'as pessoas amam o modo IA' • 7. Gemini Omni mostra que o futuro da IA está na manipulação de vídeo em tempo real • 8. Funcionário do Google é acusado de insider trading com criptomoeda Polygon • 9. Bitcoin ameaça perder os 75 mil dólares com avanço das negociações de paz EUA-Irã • 10. Prêmio Nobel de Economia 2025 concedido a trio por estudos sobre inovação • 11. 'Venda em maio e vá embora?' — Bitcoin fechou o mês no vermelho • 12. Valve aumentou preços do Steam Deck em mais de 200 dólares</span>
     </div>
-  </footer>
+  </div>
 </body>
 </html>
