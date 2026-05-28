@@ -15,6 +15,11 @@ echo "[$(date '+%H:%M:%S')] 🚀 Deploy D5N - ${DATE}" | tee "$LOG"
 
 cd "$REPO"
 
+# Salvar hash do último commit bom ANTES de qualquer alteração
+LAST_GOOD=$(git rev-parse HEAD)
+echo "$LAST_GOOD" > /tmp/.deploy-d5n-last-good
+echo "✅ Último commit bom salvo: ${LAST_GOOD:0:8}" | tee -a "$LOG"
+
 # ── Validação 1: Pipeline rodou? ──
 TRENDS_FILE="/root/.hermes/cron/output/drop5news-trends-${DATE}.txt"
 FALLBACK_FILE="${REPO}/source.md"
