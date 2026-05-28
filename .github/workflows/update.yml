@@ -1,0 +1,35 @@
+name: Atualizar D5N VideoCast Source
+
+on:
+  schedule:
+    # Todo dia às 04:00 UTC (01h Manaus) depois do pipeline D5N
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+    # Permite execução manual também
+
+jobs:
+  gerar-e-publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Gerar página
+        run: |
+          python3 gerar_pagina_d5n.py --data $(date +%Y-%m-%d)
+        env:
+          PYTHONUNBUFFERED: 1
+
+      - name: Commit e push
+        run: |
+          git config user.name "D5N Bot"
+          git config user.email "d5n-bot@dropfivenews.com"
+          git add .
+          git diff --quiet && git diff --staged --quiet || \
+            git commit -m "📰 Atualização D5N - $(date +%Y-%m-%d)"
+          git push

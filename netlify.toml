@@ -1,0 +1,40 @@
+# Config do site Netlify
+# Deploy automático via GitHub push
+
+[build]
+  publish = "/"
+  command = ""
+
+[build.processing]
+  skip_processing = true
+
+[build.environment]
+  HUGO_VERSION = ""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/feed.json"
+  [headers.values]
+    Content-Type = "application/json; charset=utf-8"
+
+[[headers]]
+  for = "/d5n-feed.xml"
+  [headers.values]
+    Content-Type = "application/rss+xml; charset=utf-8"
+
+[[headers]]
+  for = "/*.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"
+
+# 404
+[[redirects]]
+  from = "/404"
+  to = "/index.html"
+  status = 200

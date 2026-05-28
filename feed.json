@@ -1,0 +1,26 @@
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "DropFiveNews - Feed de Notícias",
+  "home_page_url": "https://d5n-videocast.netlify.app",
+  "feed_url": "https://d5n-videocast.netlify.app/feed.json",
+  "description": "Curadoria diária de notícias trending para geração de VideoCast no NotebookLM",
+  "author": {
+    "name": "Jean Braga",
+    "url": "https://instagram.com/ojeanbraga.s"
+  },
+  "items": [
+    {
+      "id": "2026-05-27",
+      "title": "D5N • Quarta, 27 de Maio",
+      "url": "https://d5n-videocast.netlify.app/2026-05-27.html",
+      "date_published": "2026-05-27",
+      "summary": "Curadoria de 0 notícias trending",
+      "tags": [
+        "notícias",
+        "D5N",
+        "curadoria"
+      ],
+      "content_text": ""
+    }
+  ]
+}
