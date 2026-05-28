@@ -65,6 +65,8 @@
   .player-time { font-size:0.65rem; color:var(--muted); flex-shrink:0; font-variant-numeric:tabular-nums; }
   .player-download { color:var(--muted); text-decoration:none; font-size:0.7rem; letter-spacing:0.05em; flex-shrink:0; transition:color 0.2s; }
   .player-download:hover { color:var(--accent); }
+  .speed-btn { width:32px; height:32px; border-radius:4px; border:1px solid var(--accent-dim); background:transparent; color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-family:'DM Sans',sans-serif; font-size:0.65rem; font-weight:500; letter-spacing:0.02em; transition:all 0.2s; }
+  .speed-btn:hover { color:var(--accent); border-color:var(--accent); background:rgba(148,163,184,0.08); }
 
   .section { padding:2.5rem 0; border-bottom:1px solid var(--border-lt); }
   .section-header { display:flex; align-items:baseline; gap:0.75rem; margin-bottom:1.75rem; padding-bottom:0.75rem; border-bottom:1px solid var(--border); }
@@ -199,6 +201,7 @@
       </div>
       <span class="player-time" id="playerTime">0:00 / 2:29</span>
       <a class="player-download" href="/audio/d5n-ep003.mp3" download title="Baixar MP3">↓ MP3</a>
+      <button class="speed-btn" id="speedBtn" onclick="cycleSpeed()" title="Velocidade">1×</button>
     </div>
     <audio id="audioEl" src="/audio/d5n-ep003.mp3" preload="none"></audio>
   </div>
@@ -361,6 +364,8 @@
   const icons = { play:'<polygon points="5,3 19,12 5,21"/>', pause:'<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>' };
   function fmt(s) { const m=Math.floor(s/60); const sec=Math.floor(s%60).toString().padStart(2,'0'); return `${m}:${sec}`; }
   function togglePlay() { if(audio.paused){audio.play();playIcon.innerHTML=icons.pause;}else{audio.pause();playIcon.innerHTML=icons.play;} }
+  const speeds=[0.75,1,1.25,1.5,2]; let speedIdx=1;
+  function cycleSpeed() { speedIdx=(speedIdx+1)%speeds.length; audio.playbackRate=speeds[speedIdx]; document.getElementById('speedBtn').textContent=speeds[speedIdx]+'×'; }
   audio.addEventListener('timeupdate',()=>{ if(!audio.duration)return; const pct=(audio.currentTime/audio.duration)*100; fill.style.width=pct+'%'; timeEl.textContent=`${fmt(audio.currentTime)} / ${fmt(audio.duration)}`; });
   audio.addEventListener('ended',()=>{ playIcon.innerHTML=icons.play; fill.style.width='0%'; });
   function seekAudio(e){ if(!audio.duration)return; const rect=e.currentTarget.getBoundingClientRect(); const pct=(e.clientX-rect.left)/rect.width; audio.currentTime=pct*audio.duration; }
