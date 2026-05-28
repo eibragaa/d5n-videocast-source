@@ -389,7 +389,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios):
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
-        <strong>dropfivenews</strong> · Curadoria por <a href="https://instagram.com/ojeanbraga.s" style="color:var(--accent);text-decoration:none">@ojeanbraga.s</a><br>
+        <strong>dropfivenews</strong> · Curadoria por <a href="https://www.instagram.com/jeanbraga.ai" style="color:var(--accent);text-decoration:none">@jeanbraga.ai</a><br>
         <span style="font-size:0.65rem">Atualizado em {data_br.lower()}</span>
       </div>
       <div class="footer-links">
