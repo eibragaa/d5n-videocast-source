@@ -3,36 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DropFiveNews • Quarta, 27 de Maio — Notícias diárias">
-  <title>D5N • Quarta, 27 de Maio</title>
-  <link rel="canonical" href="/2026-05-27.html">
+  <meta name="description" content="DropFiveNews • Quarta, 27 de Maio de 2026 — 12 notícias em 3 pilares: Global, Tech e Economia.">
+  <meta name="author" content="Jean Braga">
+  <meta property="og:title" content="DropFiveNews — Quarta, 27 de Maio">
+  <meta property="og:description" content="12 notícias selecionadas: Pam Bondi, psicose de IA, Bitcoin, DuckDuckGo e mais.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://d5n-daily.netlify.app/2026-05-27.html">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary">
+  <title>D5N — Quarta, 27 de Maio de 2026</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-           background: #1A1A2E; color: #E8E8E8; line-height: 1.6; }
-    .container { max-width: 700px; margin: 0 auto; padding: 40px 20px; }
-    h1 { color: #E94560; font-size: 2em; }
-    h2 { color: #FFE66D; font-size: 1.3em; margin: 30px 0 10px; }
-    article { margin: 20px 0; padding: 16px; background: #16213E; border-radius: 8px; }
-    .pillar { display: inline-block; padding: 2px 10px; border-radius: 12px;
-               font-size: 0.8em; font-weight: bold; margin: 0 4px 4px 0; }
-    .pillar-global { background: #28527A; color: #8AB4F8; }
-    .pillar-brasil { background: #1A5A3C; color: #81C784; }
-    .pillar-tech { background: #6A1B9A; color: #CE93D8; }
-    .pillar-econ { background: #7A4A1A; color: #FFD54F; }
-    footer { margin-top: 40px; color: #666; font-size: 0.9em; }
-    a { color: #4ECDC4; }
-    .back { display: block; margin-bottom: 20px; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0F0F23; color: #E0E0E0; line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 760px; margin: 0 auto; padding: 40px 24px; }
+    .back {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: #4ECDC4; text-decoration: none; font-size: 0.9em;
+      margin-bottom: 32px; padding: 8px 0;
+    }
+    .back:hover { text-decoration: underline; }
+    h1 {
+      font-size: 2.2em; font-weight: 800; letter-spacing: -0.5px;
+      color: #E94560; margin-bottom: 4px;
+    }
+    .date { color: #FFE66D; font-size: 1.1em; margin-bottom: 32px; }
+    .stats {
+      display: flex; gap: 20px; margin-bottom: 32px;
+      padding: 16px 20px;
+      background: rgba(233,69,96,0.06);
+      border-radius: 10px; border: 1px solid rgba(233,69,96,0.12);
+    }
+    .stat { flex: 1; text-align: center; }
+    .stat-val { font-size: 1.5em; font-weight: 700; color: #FFE66D; }
+    .stat-label { font-size: 0.8em; color: #888; }
+    .section-title {
+      font-size: 1.2em; font-weight: 700; color: #E94560;
+      margin: 36px 0 16px; padding-bottom: 8px;
+      border-bottom: 1px solid rgba(233,69,96,0.15);
+    }
+    .pillar-tag {
+      display: inline-block; padding: 3px 10px; border-radius: 6px;
+      font-size: 0.7em; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.5px; margin-bottom: 16px;
+    }
+    .pillar-Global   { background: rgba(40,82,122,0.3); color: #8AB4F8; border: 1px solid rgba(138,180,248,0.2); }
+    .pillar-Tech     { background: rgba(106,27,154,0.3); color: #CE93D8; border: 1px solid rgba(206,147,216,0.2); }
+    .pillar-Economia { background: rgba(122,74,26,0.3);  color: #FFD54F; border: 1px solid rgba(255,213,79,0.2); }
+    .articles { display: flex; flex-direction: column; gap: 0; }
+    .article-item {
+      padding: 14px 18px;
+      background: rgba(22,33,62,0.4);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .article-item:first-child { border-radius: 10px 10px 0 0; }
+    .article-item:last-child { border-radius: 0 0 10px 10px; border-bottom: none; }
+    .article-num {
+      flex-shrink: 0; width: 28px; color: #555; font-size: 0.85em; font-weight: 600;
+      text-align: right; margin-top: 2px;
+    }
+    .article-text { flex: 1; font-size: 0.95em; }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; font-size: 0.85em; color: #555; }
+    footer a { color: #4ECDC4; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .source-tag {
+      font-size: 0.75em; color: #555; margin-left: 8px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <a class="back" href="/">← Voltar</a>
-    <h1>📰 DropFiveNews</h1>
-    <h2>Quarta, 27 de Maio</h2>
+    <a class="back" href="/">← Home</a>
+    <h1>DROP FIVE NEWS</h1>
+    <div class="date">Quarta-feira, 27 de Maio de 2026</div>
+    
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-val">12</div>
+        <div class="stat-label">notícias</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">3</div>
+        <div class="stat-label">pilares</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">8.4k</div>
+        <div class="stat-label">↓ maturidade</div>
+      </div>
+    </div>
+    
+    <h2 class="section-title">🌍 Global</h2>
+    <div class="articles">
+      <div class="article-item">
+        <span class="article-num">1.</span>
+        <span class="article-text">Pam Bondi, ex-procuradora-geral dos EUA, é diagnosticada com câncer<span class="source-tag">• AP News</span></span>
+      </div>
+      <div class="article-item">
+        <span class="article-num">2.</span>
+        <span class="article-text">Detentos do ICE morrendo por suicídio em taxa alarmante, revela investigação da Associated Press<span class="source-tag">• AP</span></span>
+      </div>
+      <div class="article-item">
+        <span class="article-num">3.</span>
+        <span class="article-text">Trump ameaça Omã: "se comporte ou será atacado pelos Estados Unidos"<span class="source-tag">• Reuters</span></span>
+      </div>
+    </div>
+    
+    <h2 class="section-title">🤖 Tech</h2>
+    <div class="articles">
+      <div class="article-item">
+        <span class="article-num">4.</span>
+        <span class="article-text">CEOs de tecnologia sofrendo de "psicose de IA", alerta Vale do Silício<span class="source-tag">• Reddit</span></span>
+      </div>
+      <div class="article-item">
+        <span class="article-num">5.</span>
+        <span class="article-text">DuckDuckGo cresce 28% após Google dizer que "as pessoas amam o modo IA"<span class="source-tag">• TechCrunch</span></span>
+      </div>
+      <div class="article-item">
+        <span class="article-num">6.</span>
+        <span class="article-text">Valve aumenta preços do Steam Deck em mais de US$ 200 — modelo OLED 1TB sobe US$ 300<span class="source-tag">• The Verge</span></span>
+      </div>
+      <div class="article-item">
+        <span class="article-num">7.</span>
+        <span class="article-text">Gemini Omni: a força da IA está na manipulação de vídeo, mostra nova pesquisa<span class="source-tag">• Reddit r/singularity</span></span>
+      </div>
+      <div class="article-item">
+        <span class="article-num">8.</span>
+        <span class="article-text">Funcionário do Google acusado de usar informação privilegiada para lucrar US$ 1 milhão com Polygon<span class="source-tag">• Bloomberg</span></span>
+      </div>
+    </div>
+    
+    <h2 class="section-title">💰 Economia & Crypto</h2>
+    <div class="articles">
+      <div class="article-item">
+        <span class="article-num">9.</span>
+        <span class="article-text">Bitcoin ameaça perder US$ 75 mil com avanço da paz entre EUA e Irã impulsionando ações tradicionais<span class="source-tag">• Cointelegraph</span></span>
+      </div>
+      <div class="article-item">
+        <span class="article-num">10.</span>
+        <span class="article-text">Nobel de Economia 2025 concedido a Joel Mokyr, Philippe Aghion e Peter Howitt<span class="source-tag">• Nobel Foundation</span></span>
+      </div>
+      <div class="article-item">
+        <span class="article-num">11.</span>
+        <span class="article-text">"Venda em maio e vá embora?" Bitcoin corre risco de cair mais 10% após maio fechar no vermelho<span class="source-tag">• Cointelegraph</span></span>
+      </div>
+      <div class="article-item">
+        <span class="article-num">12.</span>
+        <span class="article-text">Brasil lidera otimismo global em relação a criptomoedas, aponta estudo<span class="source-tag">• Cointelegraph</span></span>
+      </div>
+    </div>
     
     <footer>
-      <p>Atualizado em 27/05/2026 20:06</p>
+      <p>DropFiveNews · <a href="/">Home</a> · <a href="https://instagram.com/ojeanbraga.s">@ojeanbraga.s</a></p>
+      <p style="margin-top:2px;">Dados atualizados em 27 de maio de 2026</p>
     </footer>
   </div>
 </body>

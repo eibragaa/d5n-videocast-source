@@ -3,85 +3,363 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DropFiveNews — Curadoria diária de notícias trending. Fonte para NotebookLM VideoCast.">
-  <meta name="author" content="Jean Braga — @ojeanbraga.s">
-  <title>DropFiveNews • Fonte de Dados</title>
-  <link rel="alternate" type="application/rss+xml" title="D5N RSS" href="/d5n-feed.xml">
-  <link rel="alternate" type="application/json" title="D5N Feed" href="/feed.json">
+  <meta name="description" content="DropFiveNews — Curadoria diária de notícias trending. Fonte oficial para NotebookLM gerar VideoCasts automáticos.">
+  <meta name="author" content="Jean Braga">
+  <meta name="keywords" content="notícias, curadoria, D5N, DropFiveNews, trending, Brasil, global, tecnologia">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="DropFiveNews — Curadoria Diária">
+  <meta property="og:description" content="As notícias mais relevantes do dia, selecionadas por inteligência artificial e validadas por curadoria editorial.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://d5n-daily.netlify.app/">
+  <meta property="og:image" content="https://d5n-daily.netlify.app/og-image.png">
+  <meta property="og:locale" content="pt_BR">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DropFiveNews — Curadoria Diária">
+  <meta name="twitter:description" content="As notícias mais relevantes do dia, selecionadas por IA e curadoria editorial.">
+  
+  <title>DropFiveNews — Curadoria Diária de Notícias</title>
+  <link rel="alternate" type="application/rss+xml" title="D5N RSS Feed" href="/d5n-feed.xml">
+  <link rel="alternate" type="application/json" title="D5N JSON Feed" href="/feed.json">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+  
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-           background: #1A1A2E; color: #E8E8E8; line-height: 1.6; }
-    .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-    h1 { color: #E94560; font-size: 2.5em; margin-bottom: 8px; }
-    h2 { color: #FFE66D; font-size: 1.6em; margin: 30px 0 15px; 
-          border-bottom: 2px solid #E94560; padding-bottom: 8px; }
-    h3 { color: #4ECDC4; font-size: 1.2em; margin: 20px 0 10px; }
-    .subtitle { color: #888; font-size: 1.1em; margin-bottom: 30px; }
-    a { color: #4ECDC4; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .card { background: #16213E; border-radius: 12px; padding: 24px; margin: 16px 0;
-             border-left: 4px solid #E94560; }
-    .card h3 { margin-top: 0; }
-    .card .meta { color: #888; font-size: 0.9em; margin-bottom: 8px; }
-    .card a { color: #FFE66D; }
-    .pillar { display: inline-block; padding: 2px 10px; border-radius: 12px;
-               font-size: 0.8em; font-weight: bold; margin: 0 4px 4px 0; }
-    .pillar-global { background: #28527A; color: #8AB4F8; }
-    .pillar-brasil { background: #1A5A3C; color: #81C784; }
-    .pillar-tech { background: #6A1B9A; color: #CE93D8; }
-    .pillar-econ { background: #7A4A1A; color: #FFD54F; }
-    .day-link { display: block; padding: 12px 20px; margin: 8px 0;
-                 background: #16213E; border-radius: 8px;
-                 border: 1px solid #333; }
-    footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #333;
-              color: #666; font-size: 0.9em; text-align: center; }
-    ul { list-style: none; }
-    li { padding: 6px 0; border-bottom: 1px solid #2A2A4A; }
-    li:last-child { border-bottom: none; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #0F0F23;
+      color: #E0E0E0;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+    
+    /* Header */
+    header {
+      text-align: center;
+      padding: 60px 0 48px;
+      position: relative;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, #E94560, #FF6B6B);
+      border-radius: 2px;
+    }
+    .logo {
+      font-size: 3em;
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #E94560, #FF6B6B);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .logo em { font-style: normal; color: #FFE66D; -webkit-text-fill-color: #FFE66D; }
+    .tagline {
+      color: #888;
+      font-size: 1.15em;
+      margin-top: 12px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Stats bar */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 24px 0;
+      margin: 32px 0;
+      background: rgba(233, 69, 96, 0.06);
+      border-radius: 12px;
+      border: 1px solid rgba(233, 69, 96, 0.15);
+    }
+    .stat-item { text-align: center; }
+    .stat-value { font-size: 1.8em; font-weight: 700; color: #FFE66D; }
+    .stat-label { font-size: 0.85em; color: #888; margin-top: 2px; }
+    
+    /* Sections */
+    .section-title {
+      font-size: 1.4em;
+      font-weight: 700;
+      color: #E94560;
+      margin: 48px 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(233, 69, 96, 0.2);
+    }
+    
+    /* News cards */
+    .news-list { display: flex; flex-direction: column; gap: 10px; }
+    .news-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 18px;
+      background: rgba(22, 33, 62, 0.6);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      transition: background 0.15s;
+    }
+    .news-item:hover { background: rgba(22, 33, 62, 0.9); }
+    
+    .pillar-tag {
+      flex-shrink: 0;
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.7em;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-top: 3px;
+      min-width: 52px;
+      text-align: center;
+    }
+    .pillar-Global   { background: rgba(40, 82, 122, 0.3); color: #8AB4F8; border: 1px solid rgba(138, 180, 248, 0.2); }
+    .pillar-Brasil   { background: rgba(26, 90, 60, 0.3);  color: #81C784; border: 1px solid rgba(129, 199, 132, 0.2); }
+    .pillar-Tech     { background: rgba(106, 27, 154, 0.3); color: #CE93D8; border: 1px solid rgba(206, 147, 216, 0.2); }
+    .pillar-Economia { background: rgba(122, 74, 26, 0.3);  color: #FFD54F; border: 1px solid rgba(255, 213, 79, 0.2); }
+    
+    .news-text { flex: 1; font-size: 0.95em; line-height: 1.5; }
+    
+    /* Archive */
+    .archive-list { display: flex; flex-direction: column; gap: 8px; }
+    .archive-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 18px;
+      background: rgba(22, 33, 62, 0.4);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      transition: background 0.15s, border-color 0.15s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .archive-item:hover {
+      background: rgba(22, 33, 62, 0.7);
+      border-color: rgba(78, 205, 196, 0.3);
+    }
+    .archive-date { font-weight: 600; color: #E0E0E0; }
+    .archive-meta { color: #666; font-size: 0.85em; }
+    .archive-arrow { color: #4ECDC4; font-size: 1.2em; }
+    
+    /* Feeds section */
+    .feeds-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .feed-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px;
+      background: rgba(22, 33, 62, 0.4);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .feed-card:hover { background: rgba(22, 33, 62, 0.7); }
+    .feed-icon { font-size: 2em; }
+    .feed-info { flex: 1; }
+    .feed-name { font-weight: 600; color: #E0E0E0; }
+    .feed-desc { font-size: 0.82em; color: #666; }
+    
+    /* NB LM box */
+    .notebooklm-box {
+      margin-top: 24px;
+      padding: 24px;
+      background: linear-gradient(135deg, rgba(78, 205, 196, 0.08), rgba(233, 69, 96, 0.05));
+      border-radius: 12px;
+      border: 1px solid rgba(78, 205, 196, 0.15);
+    }
+    .notebooklm-box h3 { color: #4ECDC4; font-size: 1.1em; margin-bottom: 8px; }
+    .notebooklm-box code {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 4px;
+      font-family: 'SF Mono', Menlo, monospace;
+      font-size: 0.9em;
+      color: #FFE66D;
+      word-break: break-all;
+    }
+    .notebooklm-box ol {
+      margin: 12px 0 0 20px;
+      font-size: 0.9em;
+      color: #AAA;
+    }
+    .notebooklm-box ol li { margin: 4px 0; }
+    
+    /* Footer */
+    footer {
+      margin-top: 60px;
+      padding: 32px 0 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+      color: #555;
+      font-size: 0.85em;
+    }
+    footer a { color: #4ECDC4; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-brand { font-weight: 600; color: #777; margin-bottom: 4px; }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .news-item { animation: fadeIn 0.3s ease both; }
+    .news-item:nth-child(1) { animation-delay: 0.05s; }
+    .news-item:nth-child(2) { animation-delay: 0.10s; }
+    .news-item:nth-child(3) { animation-delay: 0.15s; }
+    .news-item:nth-child(4) { animation-delay: 0.20s; }
+    .news-item:nth-child(5) { animation-delay: 0.25s; }
+    .news-item:nth-child(6) { animation-delay: 0.30s; }
+    .news-item:nth-child(7) { animation-delay: 0.35s; }
+    .news-item:nth-child(8) { animation-delay: 0.40s; }
+    .news-item:nth-child(9) { animation-delay: 0.45s; }
+    .news-item:nth-child(10) { animation-delay: 0.50s; }
+    
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container { padding: 24px 16px; }
+      header { padding: 32px 0 32px; }
+      .logo { font-size: 2.2em; }
+      .stats { gap: 16px; flex-wrap: wrap; }
+      .stat-value { font-size: 1.4em; }
+      .feeds-grid { grid-template-columns: 1fr; }
+      .news-item { padding: 12px 14px; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>📡 DropFiveNews</h1>
-    <p class="subtitle">Curadoria diária de notícias trending • Fonte oficial para NotebookLM</p>
-    
-    <section>
-      <h2>📰 Últimas Notícias</h2>
-
-    <div class="card">
-      <div class="meta">Quarta, 27 de Maio</div>
-      <ul>
-      </ul>
-    </div>
-    </section>
-    
-    <section>
-      <h2>📅 Arquivo Diário</h2>
-      <a class="day-link" href="/2026-05-27.html">
-        <strong>Quarta, 27 de Maio</strong>
-        <span style="float:right;color:#888;">0 notícias →</span>
-      </a>
-    </section>
-    
-    <section>
-      <h2>📡 Fontes de Dados</h2>
-      <p>Esta página serve como fonte estruturada para o NotebookLM.</p>
-      <ul>
-        <li><a href="/d5n-feed.xml">📻 RSS Feed</a></li>
-        <li><a href="/feed.json">📊 JSON Feed</a></li>
-      </ul>
-      <p style="margin-top:12px;color:#888;">
-        <strong>Como usar no NotebookLM:</strong><br>
-        Copie a URL base deste site e adicione como fonte no NotebookLM.<br>
-        Ele vai ler todas as páginas e gerar o VideoCast automaticamente.
+    <header>
+      <div class="logo">DROP FIVE NEWS</div>
+      <p class="tagline">
+        Curadoria diária das notícias mais relevantes do mundo, selecionadas por inteligência artificial e organizadas por pilares temáticos.
       </p>
-    </section>
+    </header>
+    
+    <div class="stats">
+      <div class="stat-item">
+        <div class="stat-value">12</div>
+        <div class="stat-label">notícias hoje</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">4</div>
+        <div class="stat-label">pilares temáticos</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">27</div>
+        <div class="stat-label">mai 2026</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">🎙️</div>
+        <div class="stat-label">NotebookLM</div>
+      </div>
+    </div>
+    
+    <h2 class="section-title">📰 Notícias de Hoje</h2>
+    <div class="news-list" id="news-list"></div>
+    
+    <h2 class="section-title">📅 Arquivo</h2>
+    <div class="archive-list">
+      <a class="archive-item" href="/2026-05-27.html">
+        <div>
+          <div class="archive-date">Quarta, 27 de Maio de 2026</div>
+          <div class="archive-meta">12 notícias · 4 pilares</div>
+        </div>
+        <span class="archive-arrow">→</span>
+      </a>
+    </div>
+    
+    <h2 class="section-title">📡 Feeds & Integração</h2>
+    <div class="feeds-grid">
+      <a class="feed-card" href="/feed.json">
+        <div class="feed-icon">📊</div>
+        <div class="feed-info">
+          <div class="feed-name">JSON Feed</div>
+          <div class="feed-desc">Estruturado, leve, para apps</div>
+        </div>
+      </a>
+      <a class="feed-card" href="/d5n-feed.xml">
+        <div class="feed-icon">📻</div>
+        <div class="feed-info">
+          <div class="feed-name">RSS Feed</div>
+          <div class="feed-desc">Clássico, universal</div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="notebooklm-box">
+      <h3>🎙️ Google NotebookLM</h3>
+      <p style="color:#AAA;font-size:0.9em;">
+        Use esta URL como fonte no NotebookLM para gerar VideoCasts automáticos com as notícias do dia:
+      </p>
+      <code>https://d5n-daily.netlify.app/</code>
+      <ol>
+        <li>Abra o <a href="https://notebooklm.google.com" style="color:#4ECDC4;">NotebookLM</a></li>
+        <li>Crie um novo notebook ou abra um existente</li>
+        <li>Adicione a URL acima como fonte</li>
+        <li>Solicite a geração de um <strong>VideoCast</strong> ou <strong>resumo em áudio</strong></li>
+      </ol>
+    </div>
     
     <footer>
-      <p>DropFiveNews por <a href="https://instagram.com/ojeanbraga.s">@ojeanbraga.s</a></p>
-      <p>Atualizado automaticamente • {datetime.now().strftime("%d/%m/%Y %H:%M")}</p>
+      <div class="footer-brand">DropFiveNews</div>
+      <p>Curadoria por <a href="https://instagram.com/ojeanbraga.s">@ojeanbraga.s</a> · Dados atualizados em 27 de maio de 2026</p>
+      <p style="margin-top:2px;">
+        <a href="https://github.com/eibragaa/d5n-videocast-source">GitHub</a> · 
+        <a href="/feed.json">JSON Feed</a> · 
+        <a href="/d5n-feed.xml">RSS</a>
+      </p>
     </footer>
   </div>
+  
+  <script>
+    // Dados das notícias injetados inline para carregamento rápido
+    const NOTICIAS = [
+      ["Global",   "Pam Bondi, ex-procuradora-geral dos EUA, é diagnosticada com câncer"],
+      ["Global",   "Detentos do ICE morrendo por suicídio em taxa alarmante, revela investigação da AP"],
+      ["Global",   "Trump ameaça Omã: 'se comporte ou será atacado pelos Estados Unidos'"],
+      ["Tech",     "CEOs de tecnologia sofrendo de 'psicose de IA', alerta Vale do Silício"],
+      ["Tech",     "DuckDuckGo cresce 28% após Google dizer que 'as pessoas amam o modo IA'"],
+      ["Tech",     "Valve aumenta preços do Steam Deck em mais de US$ 200"],
+      ["Tech",     "Gemini Omni: a força da IA está na manipulação de vídeo"],
+      ["Tech",     "Funcionário do Google acusado de insider trading com Polygon e lucro de US$ 1 milhão"],
+      ["Economia", "Bitcoin ameaça perder US$ 75 mil com paz EUA-Irã impulsionando ações"],
+      ["Economia", "Nobel de Economia 2025 concedido a Mokyr, Aghion e Howitt"],
+      ["Economia", "Venda em maio e vá embora? Bitcoin corre risco de cair mais 10%"],
+      ["Economia", "Brasil lidera otimismo global em relação a criptomoedas, aponta estudo"],
+    ];
+    
+    const list = document.getElementById('news-list');
+    NOTICIAS.forEach(function(n) {
+      var item = document.createElement('div');
+      item.className = 'news-item';
+      item.innerHTML = '<span class="pillar-tag pillar-' + n[0] + '">' + n[0].toUpperCase() + '</span>' +
+                       '<span class="news-text">' + n[1] + '</span>';
+      list.appendChild(item);
+    });
+  </script>
 </body>
 </html>

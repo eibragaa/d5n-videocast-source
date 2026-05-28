@@ -1,26 +1,23 @@
 {
   "version": "https://jsonfeed.org/version/1",
-  "title": "DropFiveNews - Feed de Notícias",
-  "home_page_url": "https://d5n-videocast.netlify.app",
-  "feed_url": "https://d5n-videocast.netlify.app/feed.json",
-  "description": "Curadoria diária de notícias trending para geração de VideoCast no NotebookLM",
+  "title": "DropFiveNews — Curadoria Diária de Notícias",
+  "home_page_url": "https://d5n-daily.netlify.app/",
+  "feed_url": "https://d5n-daily.netlify.app/feed.json",
+  "description": "As notícias mais relevantes do dia, organizadas por pilares temáticos. Fonte para NotebookLM VideoCast.",
   "author": {
     "name": "Jean Braga",
     "url": "https://instagram.com/ojeanbraga.s"
   },
+  "language": "pt-BR",
   "items": [
     {
       "id": "2026-05-27",
-      "title": "D5N • Quarta, 27 de Maio",
-      "url": "https://d5n-videocast.netlify.app/2026-05-27.html",
-      "date_published": "2026-05-27",
-      "summary": "Curadoria de 0 notícias trending",
-      "tags": [
-        "notícias",
-        "D5N",
-        "curadoria"
-      ],
-      "content_text": ""
+      "title": "DropFiveNews — Quarta, 27 de Maio de 2026",
+      "url": "https://d5n-daily.netlify.app/2026-05-27.html",
+      "date_published": "2026-05-27T03:00:00-04:00",
+      "summary": "12 notícias em 3 pilares: Pam Bondi, psicose de IA, Bitcoin, DuckDuckGo, Steam Deck, Nobel de Economia e mais.",
+      "tags": ["notícias", "Brasil", "global", "tecnologia", "economia", "crypto", "D5N"],
+      "content_text": "GLOBAL: Pam Bondi diagnosticada com câncer. ICE: detentos morrendo por suicídio. Trump ameaça Omã.\nTECH: CEOs com psicose de IA. DuckDuckGo cresce 28%. Steam Deck +$200. Gemini Omni manipula vídeo. Google insider trading.\nECONOMIA: Bitcoin ameaça US$ 75k. Nobel de Economia 2025. Brasil líder em otimismo crypto."
     }
   ]
 }

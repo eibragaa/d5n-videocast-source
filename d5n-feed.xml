@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>DropFiveNews • RSS</title>
-    <link>https://d5n-videocast.netlify.app</link>
-    <description>Curadoria diária de notícias trending para NotebookLM VideoCast</description>
+    <title>DropFiveNews — Curadoria Diária de Notícias</title>
+    <link>https://d5n-daily.netlify.app/</link>
+    <description>As notícias mais relevantes do dia, organizadas por pilares temáticos: Global, Brasil, Tech, Economia.</description>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 27 May 2026 20:06:14 -0400</lastBuildDate>
-    <atom:link href="https://d5n-videocast.netlify.app/d5n-feed.xml" rel="self" type="application/rss+xml"/>
-    
+    <lastBuildDate>Wed, 27 May 2026 20:30:00 -0400</lastBuildDate>
+    <atom:link href="https://d5n-daily.netlify.app/d5n-feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://d5n-daily.netlify.app/og-image.png</url>
+      <title>DropFiveNews</title>
+      <link>https://d5n-daily.netlify.app/</link>
+    </image>
     <item>
-      <title>D5N • Quarta, 27 de Maio</title>
-      <link>https://d5n-videocast.netlify.app/2026-05-27.html</link>
-      <guid isPermaLink="true">https://d5n-videocast.netlify.app/2026-05-27.html</guid>
-      <pubDate>2026-05-27T03:00:00-04:00</pubDate>
-      <description>Curadoria de 0 notícias trending: </description>
+      <title>DropFiveNews — Quarta, 27 de Maio de 2026</title>
+      <link>https://d5n-daily.netlify.app/2026-05-27.html</link>
+      <guid isPermaLink="true">https://d5n-daily.netlify.app/2026-05-27.html</guid>
+      <pubDate>Wed, 27 May 2026 03:00:00 -0400</pubDate>
+      <description>12 notícias: Pam Bondi, psicose de IA, Bitcoin US$ 75k, DuckDuckGo, Nobel de Economia, Steam Deck, Gemini Omni e mais.</description>
+      <category>notícias</category>
+      <category>tecnologia</category>
+      <category>economia</category>
+      <category>política</category>
     </item>
   </channel>
 </rss>
