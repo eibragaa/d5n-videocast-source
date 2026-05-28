@@ -488,8 +488,11 @@ def main():
                     m = re.match(r'^\d+\.\s+(.+)$', line.strip())
                     if m:
                         noticias.append({'pilar':'','titulo':m.group(1).strip()[:120],'fonte':'D5N'})
-            if noticias:
-                print(f"📄 Fallback: {len(noticias)} notícias recuperadas de source.md")
+    if noticias:
+        print(f"📄 Fallback: {len(noticias)} notícias recuperadas de source.md")
+    else:
+        print("❌ ERRO: Nenhuma notícia disponível (sem trends e sem fallback)")
+        sys.exit(1)
     podcast = None if args.no_podcast else find_latest_podcast()
     episodios = list_episodes() if not args.no_podcast else []
     os.makedirs(ARQUIVO_DIR, exist_ok=True)
