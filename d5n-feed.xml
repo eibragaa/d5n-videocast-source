@@ -1,27 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>DropFiveNews — Curadoria Diária de Notícias</title>
-    <link>https://d5n-daily.netlify.app/</link>
-    <description>As notícias mais relevantes do dia, organizadas por pilares temáticos: Global, Brasil, Tech, Economia.</description>
+    <title>DropFiveNews</title>
+    <link>https://d5n-daily.netlify.app</link>
+    <description>Curadoria diária de notícias</description>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 27 May 2026 20:30:00 -0400</lastBuildDate>
     <atom:link href="https://d5n-daily.netlify.app/d5n-feed.xml" rel="self" type="application/rss+xml"/>
-    <image>
-      <url>https://d5n-daily.netlify.app/og-image.png</url>
-      <title>DropFiveNews</title>
-      <link>https://d5n-daily.netlify.app/</link>
-    </image>
     <item>
-      <title>DropFiveNews — Quarta, 27 de Maio de 2026</title>
-      <link>https://d5n-daily.netlify.app/2026-05-27.html</link>
-      <guid isPermaLink="true">https://d5n-daily.netlify.app/2026-05-27.html</guid>
-      <pubDate>Wed, 27 May 2026 03:00:00 -0400</pubDate>
-      <description>12 notícias: Pam Bondi, psicose de IA, Bitcoin US$ 75k, DuckDuckGo, Nobel de Economia, Steam Deck, Gemini Omni e mais.</description>
-      <category>notícias</category>
-      <category>tecnologia</category>
-      <category>economia</category>
-      <category>política</category>
+      <title>D5N • Quinta-feira, 28 de Maio de 2026</title>
+      <link>https://d5n-daily.netlify.app/</link>
+      <guid isPermaLink="true">https://d5n-daily.netlify.app/</guid>
+      <pubDate>2026-05-28T03:00:00-04:00</pubDate>
+      <description>12 notícias: 1. Trump volta a ameaçar Omã publicamente: 'se comporte ou será atacado pelos Estados Unidos'. 2. Ex-procuradora-geral dos EUA, Pam Bondi, é diagnosticada com câncer. 3. Investigação da AP revela que detentos do ICE estão morrendo por suicídio em taxa alarmante</description>
     </item>
   </channel>
 </rss>

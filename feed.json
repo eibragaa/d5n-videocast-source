@@ -1,23 +1,25 @@
 {
   "version": "https://jsonfeed.org/version/1",
-  "title": "DropFiveNews — Curadoria Diária de Notícias",
-  "home_page_url": "https://d5n-daily.netlify.app/",
+  "title": "DropFiveNews",
+  "home_page_url": "https://d5n-daily.netlify.app",
   "feed_url": "https://d5n-daily.netlify.app/feed.json",
-  "description": "As notícias mais relevantes do dia, organizadas por pilares temáticos. Fonte para NotebookLM VideoCast.",
+  "description": "Curadoria diária de notícias",
   "author": {
     "name": "Jean Braga",
     "url": "https://instagram.com/ojeanbraga.s"
   },
-  "language": "pt-BR",
   "items": [
     {
-      "id": "2026-05-27",
-      "title": "DropFiveNews — Quarta, 27 de Maio de 2026",
-      "url": "https://d5n-daily.netlify.app/2026-05-27.html",
-      "date_published": "2026-05-27T03:00:00-04:00",
-      "summary": "12 notícias em 3 pilares: Pam Bondi, psicose de IA, Bitcoin, DuckDuckGo, Steam Deck, Nobel de Economia e mais.",
-      "tags": ["notícias", "Brasil", "global", "tecnologia", "economia", "crypto", "D5N"],
-      "content_text": "GLOBAL: Pam Bondi diagnosticada com câncer. ICE: detentos morrendo por suicídio. Trump ameaça Omã.\nTECH: CEOs com psicose de IA. DuckDuckGo cresce 28%. Steam Deck +$200. Gemini Omni manipula vídeo. Google insider trading.\nECONOMIA: Bitcoin ameaça US$ 75k. Nobel de Economia 2025. Brasil líder em otimismo crypto."
+      "id": "2026-05-28",
+      "title": "D5N • Quinta-feira, 28 de Maio de 2026",
+      "url": "https://d5n-daily.netlify.app/",
+      "date_published": "2026-05-28",
+      "summary": "12 notícias",
+      "tags": [
+        "notícias",
+        "D5N"
+      ],
+      "content_text": "[Global] 1. Trump volta a ameaçar Omã publicamente: 'se comporte ou será atacado pelos Estados Unidos'\n[Global] 2. Ex-procuradora-geral dos EUA, Pam Bondi, é diagnosticada com câncer\n[Global] 3. Investigação da AP revela que detentos do ICE estão morrendo por suicídio em taxa alarmante\n[Brasil] 4. Brasil lidera ranking global de otimismo em relação a criptomoedas\n[Tech] 5. CEOs de tecnologia estão sofrendo de 'psicose de IA', movidos pelo medo de ficar para trás\n[Tech] 6. DuckDuckGo cresceu 28% após Google declarar que 'as pessoas amam o modo IA'\n[Tech] 7. Gemini Omni mostra que o futuro da IA está na manipulação de vídeo em tempo real\n[Tech] 8. Funcionário do Google é acusado de insider trading com criptomoeda Polygon\n[Economia] 9. Bitcoin ameaça perder os 75 mil dólares com avanço das negociações de paz EUA-Irã\n[Economia] 10. Prêmio Nobel de Economia 2025 concedido a trio por estudos sobre inovação\n[Economia] 11. 'Venda em maio e vá embora?' — Bitcoin fechou o mês no vermelho\n[Economia] 12. Valve aumentou preços do Steam Deck em mais de 200 dólares"
     }
   ]
 }
