@@ -3,59 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DropFiveNews — Curadoria diária de notícias trending. Fonte oficial para NotebookLM gerar VideoCasts automáticos.">
-  <meta name="author" content="Jean Braga">
-  <meta name="keywords" content="notícias, curadoria, D5N, DropFiveNews, trending, Brasil, global, tecnologia">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="DropFiveNews — Curadoria Diária de Notícias">
-  <meta property="og:description" content="As notícias mais relevantes do dia, selecionadas por IA e validadas por curadoria editorial.">
+  <meta name="description" content="DropFiveNews — 12 notícias em 3 pilares. Ouça o podcast e baixe o episódio.">
+  <meta property="og:title" content="DropFiveNews — Quarta-feira, 27 de Maio de 2026">
+  <meta property="og:description" content="12 notícias em 3 pilares. Ouça o podcast.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://d5n-daily.netlify.app/">
   <meta property="og:image" content="https://d5n-daily.netlify.app/og-image.png">
-  <meta property="og:locale" content="pt_BR">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DropFiveNews — Curadoria Diária">
-  <meta name="twitter:description" content="12 notícias selecionadas: Pam Bondi, psicose de IA, Bitcoin US$ 75k e mais.">
-  
-  <title>DropFiveNews — Curadoria Diária de Notícias</title>
-  <link rel="alternate" type="application/rss+xml" title="D5N RSS Feed" href="/d5n-feed.xml">
-  <link rel="alternate" type="application/json" title="D5N JSON Feed" href="/feed.json">
+  <title>DropFiveNews — Curadoria Diária</title>
+  <link rel="alternate" type="application/rss+xml" title="D5N RSS" href="/d5n-feed.xml">
+  <link rel="alternate" type="application/json" title="D5N Feed" href="/feed.json">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
-  
-  <!-- Shadcn-inspired Design System -->
   <style>
-    /* ============================================
-       DESIGN TOKENS — Shadcn/ui minimal monochrome
-       ============================================ */
     :root {
       --primary: #000000;
-      --primary-foreground: #FFFFFF;
-      --secondary: #111111;
-      --secondary-foreground: #F8F8F8;
       --surface: #FFFFFF;
       --surface-secondary: #F5F5F5;
       --text: #111827;
       --text-secondary: #6B7280;
       --text-muted: #9CA3AF;
       --border: #E5E7EB;
-      --border-light: #F3F4F6;
       --accent: #DC2626;
-      --accent-soft: #FEF2F2;
-      --success: #16A34A;
-      --warning: #D97706;
-      --danger: #DC2626;
       --radius: 6px;
       --radius-lg: 10px;
-      --shadow: 0 1px 3px 0 rgba(0,0,0,0.06), 0 1px 2px -1px rgba(0,0,0,0.06);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.05);
-      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --shadow: 0 1px 3px 0 rgba(0,0,0,0.06);
       --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-      --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
     }
-    
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    
+    *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: var(--font-sans);
       background: var(--surface);
@@ -63,345 +37,107 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    
-    /* ============================================
-       LAYOUT
-       ============================================ */
-    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-    
-    /* ============================================
-       NAVBAR
-       ============================================ */
+    .container { max-width: 920px; margin: 0 auto; padding: 0 24px; }
     .navbar {
       border-bottom: 1px solid var(--border);
-      background: var(--surface);
-      position: sticky;
-      top: 0;
-      z-index: 50;
       background: rgba(255,255,255,0.95);
       backdrop-filter: blur(12px);
+      position: sticky; top: 0; z-index: 50;
     }
     .navbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 56px;
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 56px; max-width: 1080px; margin: 0 auto; padding: 0 24px;
     }
-    .navbar-brand {
-      font-weight: 700;
-      font-size: 1.15em;
-      letter-spacing: -0.3px;
-      text-decoration: none;
-      color: var(--text);
-    }
+    .navbar-brand { font-weight: 700; font-size: 1.15em; letter-spacing: -0.3px; text-decoration: none; color: var(--text); }
     .navbar-brand em { color: var(--accent); font-style: normal; }
-    .navbar-links { display: flex; gap: 24px; align-items: center; }
-    .navbar-links a {
-      font-size: 0.875em;
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
+    .navbar-links { display: flex; gap: 20px; align-items: center; }
+    .navbar-links a { font-size: 0.875em; color: var(--text-secondary); text-decoration: none; }
     .navbar-links a:hover { color: var(--text); }
-    
-    /* ============================================
-       HERO
-       ============================================ */
-    .hero {
-      padding: 64px 0 48px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: clamp(2.2em, 4vw, 3.2em);
-      font-weight: 700;
-      letter-spacing: -1px;
-      line-height: 1.15;
-      margin-bottom: 12px;
-    }
+    .hero { padding: 56px 0 40px; text-align: center; }
+    .hero h1 { font-size: clamp(2.4em,4vw,3.4em); font-weight: 700; letter-spacing: -1px; line-height: 1.1; margin-bottom: 12px; }
     .hero h1 span { color: var(--accent); }
-    .hero p {
-      color: var(--text-secondary);
-      font-size: 1.1em;
-      max-width: 640px;
-      margin: 0 auto 32px;
-      line-height: 1.7;
-    }
-    
-    /* ============================================
-       STATS BAR
-       ============================================ */
-    .stats-bar {
-      display: flex;
-      justify-content: center;
-      gap: 48px;
-      padding: 24px 0;
-      margin-bottom: 48px;
-    }
-    .stat {
-      text-align: center;
-    }
-    .stat-value {
-      font-size: 1.8em;
-      font-weight: 700;
-    }
-    .stat-label {
-      font-size: 0.82em;
-      color: var(--text-muted);
-      margin-top: 2px;
-      letter-spacing: 0.3px;
-    }
-    
-    /* ============================================
-       NEWS GRID
-       ============================================ */
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
-    .section-header h2 {
-      font-size: 1.15em;
-      font-weight: 600;
-    }
-    .section-header .count {
-      font-size: 0.8em;
-      color: var(--text-muted);
-      font-weight: 400;
-      background: var(--surface-secondary);
-      padding: 2px 10px;
-      border-radius: 999px;
-    }
-    
-    .news-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 8px;
-      margin-bottom: 48px;
-    }
-    
-    .news-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 16px 20px;
-      background: var(--surface-secondary);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      transition: border-color 0.15s, box-shadow 0.15s;
-      cursor: default;
-    }
-    .news-card:hover {
-      border-color: var(--text-muted);
-      box-shadow: var(--shadow);
-    }
-    
-    .news-num {
-      flex-shrink: 0;
-      width: 28px;
-      color: var(--text-muted);
-      font-size: 0.85em;
-      font-weight: 500;
-      text-align: right;
-      margin-top: 1px;
-    }
+    .hero p { color: var(--text-secondary); font-size: 1.05em; max-width: 600px; margin: 0 auto; }
+    .stats-bar { display: flex; justify-content: center; gap: 48px; padding: 24px 0; }
+    .stat { text-align: center; }
+    .stat-value { font-size: 1.8em; font-weight: 700; }
+    .stat-label { font-size: 0.82em; color: var(--text-muted); }
+    .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .section-header h2 { font-size: 1.1em; font-weight: 600; }
+    .section-header .count { font-size: 0.78em; color: var(--text-muted); background: var(--surface-secondary); padding: 2px 10px; border-radius: 999px; }
+    .news-grid { display: flex; flex-direction: column; gap: 6px; margin-bottom: 40px; }
+    .news-card { display: flex; align-items: flex-start; gap: 14px; padding: 14px 18px; background: var(--surface-secondary); border-radius: var(--radius); border: 1px solid var(--border); transition: border-color 0.15s; }
+    .news-card:hover { border-color: var(--text-muted); }
+    .news-num { flex-shrink: 0; width: 28px; color: var(--text-muted); font-size: 0.85em; font-weight: 500; text-align: right; }
     .news-body { flex: 1; }
-    .news-text {
-      font-size: 0.9375em;
-      line-height: 1.5;
-      color: var(--text);
+    .news-text { font-size: 0.9375em; line-height: 1.5; }
+    .news-meta { display: flex; gap: 8px; margin-top: 6px; align-items: center; }
+    .pillar-tag { font-size: 0.68em; font-weight: 600; padding: 2px 8px; border-radius: 999px; letter-spacing: 0.3px; }
+    .source-tag { font-size: 0.75em; color: var(--text-muted); }
+    .player-section { margin-bottom: 48px; }
+    .player-card {
+      background: var(--surface-secondary); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 20px;
     }
-    .news-meta {
-      display: flex;
-      gap: 8px;
-      margin-top: 6px;
-      align-items: center;
-    }
-    .pillar-tag {
-      font-size: 0.7em;
-      font-weight: 500;
-      padding: 2px 8px;
-      border-radius: 999px;
-      letter-spacing: 0.3px;
-      text-transform: uppercase;
-    }
-    .pillar-global   { background: #EBF5FF; color: #1E40AF; }
-    .pillar-tech     { background: #F3E8FF; color: #7C3AED; }
-    .pillar-economia { background: #FEF3C7; color: #92400E; }
-    .pillar-brasil   { background: #DCFCE7; color: #166534; }
-    
-    .source-tag {
-      font-size: 0.75em;
-      color: var(--text-muted);
-    }
-    
-    /* ============================================
-       ARCHIVE
-       ============================================ */
-    .archive-card {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 20px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      text-decoration: none;
-      color: inherit;
-      transition: border-color 0.15s, box-shadow 0.15s;
-      margin-bottom: 8px;
-    }
-    .archive-card:hover {
-      border-color: var(--text-muted);
-      box-shadow: var(--shadow);
-    }
-    .archive-date { font-weight: 600; }
-    .archive-meta { color: var(--text-secondary); font-size: 0.85em; }
-    .archive-arrow { color: var(--text-muted); font-size: 1.2em; }
-    
-    /* ============================================
-       FEEDS
-       ============================================ */
-    .feeds-section { margin: 48px 0; }
-    .feeds-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .feed-card {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 20px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      text-decoration: none;
-      transition: border-color 0.15s, box-shadow 0.15s;
-    }
-    .feed-card:hover {
-      border-color: var(--text-muted);
-      box-shadow: var(--shadow);
-    }
-    .feed-icon { font-size: 1.5em; }
+    .player-card audio { width: 100%; border-radius: var(--radius); margin-bottom: 12px; }
+    .player-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.85em; color: var(--text-secondary); }
+    .download-btn { display: inline-block; padding: 6px 18px; background: var(--text); color: white !important; border-radius: 999px; font-size: 0.85em; font-weight: 500; text-decoration: none; }
+    .archive-card { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit; margin-bottom: 6px; }
+    .archive-card:hover { border-color: var(--text-muted); }
+    .feeds-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .feed-card { display: flex; align-items: center; gap: 12px; padding: 18px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; }
+    .feed-card:hover { border-color: var(--text-muted); }
     .feed-name { font-weight: 600; color: var(--text); }
-    .feed-desc { font-size: 0.82em; color: var(--text-secondary); }
-    
-    /* NB LM Box */
-    .notebooklm-box {
-      margin: 32px 0 48px;
-      padding: 28px;
-      background: var(--surface-secondary);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-    }
-    .notebooklm-box h3 {
-      font-size: 1.05em;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .notebooklm-box code {
-      display: inline-block;
-      padding: 6px 14px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      font-family: var(--font-mono);
-      font-size: 0.85em;
-      word-break: break-all;
-      margin: 8px 0;
-    }
-    .notebooklm-box ol {
-      margin: 12px 0 0 20px;
-      font-size: 0.9em;
-      color: var(--text-secondary);
-    }
-    .notebooklm-box ol li { margin: 4px 0; }
-    .notebooklm-box a { color: var(--text); text-decoration: underline; }
-    
-    /* ============================================
-       FOOTER
-       ============================================ */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 0;
-      text-align: center;
-      font-size: 0.85em;
-      color: var(--text-muted);
-    }
+    .nb-box { margin: 32px 0 48px; padding: 24px; background: var(--surface-secondary); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+    .nb-box code { display: inline-block; padding: 6px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); font-family: 'SF Mono', monospace; font-size: 0.85em; word-break: break-all; }
+    footer { border-top: 1px solid var(--border); padding: 28px 0; text-align: center; font-size: 0.85em; color: var(--text-muted); }
     footer a { color: var(--text-secondary); text-decoration: none; }
-    footer a:hover { color: var(--text); text-decoration: underline; }
-    .footer-brand { font-weight: 600; color: var(--text); margin-bottom: 4px; }
-    .footer-links { display: flex; gap: 16px; justify-content: center; margin-top: 4px; }
-    
-    /* ============================================
-       RESPONSIVE
-       ============================================ */
-    @media (max-width: 768px) {
-      .hero { padding: 40px 0 32px; }
-      .stats-bar { gap: 24px; }
-      .feeds-grid { grid-template-columns: 1fr; }
-      .news-card { padding: 14px 16px; }
-    }
-    @media (max-width: 480px) {
-      .stats-bar { gap: 16px; flex-wrap: wrap; }
-      .stat-value { font-size: 1.4em; }
-      .navbar-links { display: none; }
-      .container { padding: 0 16px; }
-    }
+    @media (max-width:600px) { .stats-bar { gap: 16px; flex-wrap: wrap; } .player-meta { flex-direction: column; gap: 8px; } .navbar-links { display: none; } .feeds-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="navbar-inner">
-      <a href="/" class="navbar-brand">drop<em>five</em>news</a>
+      <a href="/" class="navbar-brand">drop<span style="color:var(--accent);">five</span>news</a>
       <div class="navbar-links">
         <a href="/2026-05-27.html">Hoje</a>
+        <a href="/episodio-003.html">Podcast</a>
         <a href="/feed.json">JSON</a>
         <a href="/d5n-feed.xml">RSS</a>
-        <a href="https://instagram.com/ojeanbraga.s" style="font-weight:500;">@ojeanbraga.s</a>
       </div>
     </div>
   </nav>
   
   <div class="container">
-    <!-- HERO -->
     <section class="hero">
       <h1>drop<span>five</span>news</h1>
-      <p>
-        Curadoria diária das notícias mais relevantes do mundo, 
-        selecionadas por inteligência artificial e organizadas 
-        por pilares temáticos.
-      </p>
+      <p>Curadoria diária das notícias mais relevantes do mundo, selecionadas por inteligência artificial e organizadas por pilares temáticos.</p>
     </section>
     
-    <!-- STATS -->
     <div class="stats-bar">
-      <div class="stat">
-        <div class="stat-value">12</div>
-        <div class="stat-label">notícias</div>
+      <div class="stat"><div class="stat-value">12</div><div class="stat-label">notícias</div></div>
+      <div class="stat"><div class="stat-value">3</div><div class="stat-label">pilares</div></div>
+      <div class="stat"><div class="stat-value">Quarta-feira</div><div class="stat-label">de 27 de Maio de 2026</div></div>
+      <div class="stat"><div class="stat-value">🎙️</div><div class="stat-label">NotebookLM</div></div>
+    </div>
+    
+        <div class="player-section">
+      <div class="section-header">
+        <h2>🎙️ Ouça o Episódio #003</h2>
+        <span class="count">2:29</span>
       </div>
-      <div class="stat">
-        <div class="stat-value">3</div>
-        <div class="stat-label">pilares</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">27</div>
-        <div class="stat-label">mai 2026</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">🎙️</div>
-        <div class="stat-label">NotebookLM</div>
+      <div class="player-card">
+        <audio controls style="width:100%;" preload="metadata">
+          <source src="/audio/d5n-ep003.mp3" type="audio/mpeg">
+          Seu navegador não suporta áudio HTML5.
+        </audio>
+        <div class="player-meta">
+          <span>Quarta-feira, 27 de Maio de 2026</span>
+          <a href="/audio/d5n-ep003.mp3" class="download-btn" download>⬇️ Baixar MP3 (2min)</a>
+        </div>
       </div>
     </div>
     
-    <!-- GLOBAL -->
-    <div class="section-header">
+        <div class="section-header">
       <h2>🌍 Global</h2>
       <span class="count">3</span>
     </div>
@@ -411,7 +147,8 @@
         <div class="news-body">
           <div class="news-text">Pam Bondi, ex-procuradora-geral dos EUA, é diagnosticada com câncer</div>
           <div class="news-meta">
-            <span class="pillar-tag pillar-global">Global</span>
+            <span class="pillar-tag" style="background:#EBF5FF;color:#1E40AF;">
+              GLOBAL</span>
             <span class="source-tag">AP News</span>
           </div>
         </div>
@@ -419,10 +156,11 @@
       <div class="news-card">
         <span class="news-num">02</span>
         <div class="news-body">
-          <div class="news-text">Detentos do ICE morrendo por suicídio em taxa alarmante, revela investigação da Associated Press</div>
+          <div class="news-text">Detentos do ICE morrendo por suicídio em taxa alarmante, revela investigação da AP</div>
           <div class="news-meta">
-            <span class="pillar-tag pillar-global">Global</span>
-            <span class="source-tag">AP</span>
+            <span class="pillar-tag" style="background:#EBF5FF;color:#1E40AF;">
+              GLOBAL</span>
+            <span class="source-tag">Associated Press</span>
           </div>
         </div>
       </div>
@@ -431,173 +169,157 @@
         <div class="news-body">
           <div class="news-text">Trump ameaça Omã: "se comporte ou será atacado pelos Estados Unidos"</div>
           <div class="news-meta">
-            <span class="pillar-tag pillar-global">Global</span>
+            <span class="pillar-tag" style="background:#EBF5FF;color:#1E40AF;">
+              GLOBAL</span>
             <span class="source-tag">Reuters</span>
           </div>
         </div>
       </div>
-    </div>
-    
-    <!-- TECH -->
-    <div class="section-header">
+    </div>    <div class="section-header">
       <h2>🤖 Tech</h2>
       <span class="count">5</span>
     </div>
     <div class="news-grid">
       <div class="news-card">
-        <span class="news-num">04</span>
+        <span class="news-num">11</span>
         <div class="news-body">
           <div class="news-text">CEOs de tecnologia sofrendo de "psicose de IA", alerta Vale do Silício</div>
           <div class="news-meta">
-            <span class="pillar-tag pillar-tech">Tech</span>
-            <span class="source-tag">Reddit r/technology</span>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <span class="news-num">05</span>
-        <div class="news-body">
-          <div class="news-text">DuckDuckGo cresce 28% após Google dizer que "as pessoas amam o modo IA"</div>
-          <div class="news-meta">
-            <span class="pillar-tag pillar-tech">Tech</span>
-            <span class="source-tag">TechCrunch</span>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <span class="news-num">06</span>
-        <div class="news-body">
-          <div class="news-text">Valve aumenta preços do Steam Deck em mais de US$ 200 — modelo OLED 1TB sobe US$ 300</div>
-          <div class="news-meta">
-            <span class="pillar-tag pillar-tech">Tech</span>
-            <span class="source-tag">The Verge</span>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <span class="news-num">07</span>
-        <div class="news-body">
-          <div class="news-text">Gemini Omni: a força da IA está na manipulação de vídeo, mostra nova pesquisa</div>
-          <div class="news-meta">
-            <span class="pillar-tag pillar-tech">Tech</span>
-            <span class="source-tag">Reddit r/singularity</span>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <span class="news-num">08</span>
-        <div class="news-body">
-          <div class="news-text">Funcionário do Google acusado de usar informação privilegiada para lucrar US$ 1 milhão com Polygon</div>
-          <div class="news-meta">
-            <span class="pillar-tag pillar-tech">Tech</span>
-            <span class="source-tag">Bloomberg</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- ECONOMIA -->
-    <div class="section-header">
-      <h2>💰 Economia &amp; Crypto</h2>
-      <span class="count">4</span>
-    </div>
-    <div class="news-grid">
-      <div class="news-card">
-        <span class="news-num">09</span>
-        <div class="news-body">
-          <div class="news-text">Bitcoin ameaça perder US$ 75 mil com avanço da paz entre EUA e Irã impulsionando ações tradicionais</div>
-          <div class="news-meta">
-            <span class="pillar-tag pillar-economia">Economia</span>
-            <span class="source-tag">Cointelegraph</span>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <span class="news-num">10</span>
-        <div class="news-body">
-          <div class="news-text">Nobel de Economia 2025 concedido a Joel Mokyr, Philippe Aghion e Peter Howitt</div>
-          <div class="news-meta">
-            <span class="pillar-tag pillar-economia">Economia</span>
-            <span class="source-tag">Nobel Foundation</span>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <span class="news-num">11</span>
-        <div class="news-body">
-          <div class="news-text">"Venda em maio e vá embora?" Bitcoin corre risco de cair mais 10% após maio fechar no vermelho</div>
-          <div class="news-meta">
-            <span class="pillar-tag pillar-economia">Economia</span>
-            <span class="source-tag">Cointelegraph</span>
+            <span class="pillar-tag" style="background:#F3E8FF;color:#7C3AED;">
+              TECH</span>
+            <span class="source-tag">Reddit</span>
           </div>
         </div>
       </div>
       <div class="news-card">
         <span class="news-num">12</span>
         <div class="news-body">
+          <div class="news-text">DuckDuckGo cresce 28% após Google dizer que "as pessoas amam o modo IA"</div>
+          <div class="news-meta">
+            <span class="pillar-tag" style="background:#F3E8FF;color:#7C3AED;">
+              TECH</span>
+            <span class="source-tag">TechCrunch</span>
+          </div>
+        </div>
+      </div>
+      <div class="news-card">
+        <span class="news-num">13</span>
+        <div class="news-body">
+          <div class="news-text">Valve aumenta preços do Steam Deck em mais de US$ 200 — OLED 1TB sobe US$ 300</div>
+          <div class="news-meta">
+            <span class="pillar-tag" style="background:#F3E8FF;color:#7C3AED;">
+              TECH</span>
+            <span class="source-tag">The Verge</span>
+          </div>
+        </div>
+      </div>
+      <div class="news-card">
+        <span class="news-num">14</span>
+        <div class="news-body">
+          <div class="news-text">Gemini Omni: a força da IA está na manipulação de vídeo, mostra pesquisa</div>
+          <div class="news-meta">
+            <span class="pillar-tag" style="background:#F3E8FF;color:#7C3AED;">
+              TECH</span>
+            <span class="source-tag">Reddit</span>
+          </div>
+        </div>
+      </div>
+      <div class="news-card">
+        <span class="news-num">15</span>
+        <div class="news-body">
+          <div class="news-text">Funcionário do Google acusado de insider trading com Polygon — lucro de US$ 1 milhão</div>
+          <div class="news-meta">
+            <span class="pillar-tag" style="background:#F3E8FF;color:#7C3AED;">
+              TECH</span>
+            <span class="source-tag">Bloomberg</span>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="section-header">
+      <h2>💰 Economia</h2>
+      <span class="count">4</span>
+    </div>
+    <div class="news-grid">
+      <div class="news-card">
+        <span class="news-num">21</span>
+        <div class="news-body">
+          <div class="news-text">Bitcoin ameaça perder US$ 75 mil com paz EUA-Irã impulsionando ações tradicionais</div>
+          <div class="news-meta">
+            <span class="pillar-tag" style="background:#FEF3C7;color:#92400E;">
+              ECON</span>
+            <span class="source-tag">Cointelegraph</span>
+          </div>
+        </div>
+      </div>
+      <div class="news-card">
+        <span class="news-num">22</span>
+        <div class="news-body">
+          <div class="news-text">Nobel de Economia 2025 concedido a Joel Mokyr, Philippe Aghion e Peter Howitt</div>
+          <div class="news-meta">
+            <span class="pillar-tag" style="background:#FEF3C7;color:#92400E;">
+              ECON</span>
+            <span class="source-tag">Nobel Foundation</span>
+          </div>
+        </div>
+      </div>
+      <div class="news-card">
+        <span class="news-num">23</span>
+        <div class="news-body">
+          <div class="news-text">"Venda em maio e vá embora?" Bitcoin corre risco de cair mais 10% após maio fechar no vermelho</div>
+          <div class="news-meta">
+            <span class="pillar-tag" style="background:#FEF3C7;color:#92400E;">
+              ECON</span>
+            <span class="source-tag">Cointelegraph</span>
+          </div>
+        </div>
+      </div>
+      <div class="news-card">
+        <span class="news-num">24</span>
+        <div class="news-body">
           <div class="news-text">Brasil lidera otimismo global em relação a criptomoedas, aponta estudo</div>
           <div class="news-meta">
-            <span class="pillar-tag pillar-economia">Economia</span>
+            <span class="pillar-tag" style="background:#FEF3C7;color:#92400E;">
+              ECON</span>
             <span class="source-tag">Cointelegraph</span>
           </div>
         </div>
       </div>
     </div>
     
-    <!-- ARCHIVE -->
     <div class="section-header">
       <h2>📅 Arquivo</h2>
     </div>
     <a class="archive-card" href="/2026-05-27.html">
-      <div>
-        <div class="archive-date">Quarta, 27 de Maio de 2026</div>
-        <div class="archive-meta">12 notícias · 3 pilares</div>
-      </div>
-      <span class="archive-arrow">→</span>
+      <div><div style="font-weight:600;">Quarta-feira, 27 de Maio de 2026</div><div style="font-size:0.85em;color:var(--text-secondary);">12 notícias · 3 pilares</div></div>
+      <span style="color:var(--text-muted);">→</span>
     </a>
     
-    <!-- FEEDS -->
-    <div class="feeds-section">
-      <div class="section-header">
-        <h2>📡 Feeds &amp; Integração</h2>
-      </div>
-      <div class="feeds-grid">
-        <a class="feed-card" href="/feed.json">
-          <div class="feed-icon">📊</div>
-          <div>
-            <div class="feed-name">JSON Feed</div>
-            <div class="feed-desc">Dados estruturados para apps</div>
-          </div>
-        </a>
-        <a class="feed-card" href="/d5n-feed.xml">
-          <div class="feed-icon">📻</div>
-          <div>
-            <div class="feed-name">RSS Feed</div>
-            <div class="feed-desc">Formato clássico universal</div>
-          </div>
-        </a>
-      </div>
-      
-      <div class="notebooklm-box">
-        <h3>🎙️ Google NotebookLM</h3>
-        <p>Use esta URL como fonte no NotebookLM para gerar VideoCasts automáticos:</p>
-        <code>https://d5n-daily.netlify.app/</code>
-        <ol>
-          <li>Abra o <a href="https://notebooklm.google.com">NotebookLM</a></li>
-          <li>Crie um notebook ou abra um existente</li>
-          <li>Adicione a URL acima como fonte</li>
-          <li>Solicite: <strong>"Gere um VideoCast com as notícias de hoje"</strong></li>
-        </ol>
-      </div>
+    <div class="section-header" style="margin-top:40px;">
+      <h2>📡 Feeds & Integração</h2>
+    </div>
+    <div class="feeds-grid">
+      <a class="feed-card" href="/feed.json"><div style="font-size:1.5em;">📊</div><div><div class="feed-name">JSON Feed</div><div style="font-size:0.82em;color:var(--text-secondary);">Dados estruturados</div></div></a>
+      <a class="feed-card" href="/d5n-feed.xml"><div style="font-size:1.5em;">📻</div><div><div class="feed-name">RSS Feed</div><div style="font-size:0.82em;color:var(--text-secondary);">Clássico universal</div></div></a>
+    </div>
+
+    <div class="nb-box">
+      <h3 style="font-size:1.05em;font-weight:600;margin-bottom:8px;">🎙️ Google NotebookLM</h3>
+      <p style="font-size:0.9em;color:var(--text-secondary);margin-bottom:8px;">Use esta URL como fonte no NotebookLM para gerar VideoCasts automáticos:</p>
+      <code>https://d5n-daily.netlify.app/</code>
+      <ol style="margin:12px 0 0 20px;font-size:0.9em;color:var(--text-secondary);">
+        <li>Abra o <a href="https://notebooklm.google.com" style="color:var(--text);text-decoration:underline;">NotebookLM</a></li>
+        <li>Crie um notebook ou abra um existente</li>
+        <li>Adicione a URL acima como fonte</li>
+        <li>Solicite: <strong>"Gere um VideoCast com as notícias de hoje"</strong></li>
+      </ol>
     </div>
   </div>
   
-  <!-- FOOTER -->
   <footer>
-    <div class="footer-brand">dropfivenews</div>
-    <p style="margin-bottom:4px;">Curadoria por <a href="https://instagram.com/ojeanbraga.s">@ojeanbraga.s</a></p>
-    <p style="font-size:0.9em;">Dados atualizados em 27 de maio de 2026</p>
-    <div class="footer-links">
+    <div style="font-weight:600;color:var(--text);">dropfivenews</div>
+    <p>Curadoria por <a href="https://instagram.com/ojeanbraga.s">@ojeanbraga.s</a></p>
+    <p style="font-size:0.9em;">Atualizado em 2026-05-27</p>
+    <div style="display:flex;gap:16px;justify-content:center;margin-top:4px;">
       <a href="/feed.json">JSON Feed</a>
       <a href="/d5n-feed.xml">RSS</a>
       <a href="https://github.com/eibragaa/d5n-videocast-source">GitHub</a>
