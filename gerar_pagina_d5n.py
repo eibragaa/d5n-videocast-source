@@ -226,7 +226,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios):
 
   .ticker-wrap {{ border-bottom:1px solid var(--border-lt); background:var(--surface); overflow:hidden; height:34px; display:flex; align-items:center; }}
   .ticker-label {{ flex-shrink:0; font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent); background:var(--bg); padding:0 1rem; height:100%; display:flex; align-items:center; border-right:1px solid var(--border); z-index:1; }}
-  .ticker-track {{ display:flex; white-space:nowrap; animation:ticker 42s linear infinite; gap:0; }}
+  .ticker-track {{ display:flex; white-space:nowrap; animation:ticker 60s linear infinite; gap:0; }}
   .ticker-item {{ font-size:0.7rem; color:var(--muted); padding:0 2.5rem; letter-spacing:0.03em; border-right:1px solid var(--border-lt); height:34px; display:flex; align-items:center; gap:0.5rem; transition:color 0.2s; }}
   .ticker-item:hover {{ color:var(--text); }}
   .ticker-dot {{ width:4px; height:4px; border-radius:50%; flex-shrink:0; }}
