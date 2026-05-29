@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Quinta-feira, 28 de Maio de 2026
+## Sexta-feira, 29 de Maio de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -13,33 +13,52 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 ### 🌍 GLOBAL
 
-1. 1. Trump volta a ameaçar Omã publicamente: 'se comporte ou será atacado pelos Estados Unidos'
+1. 1. EUA e Irã estão 'muito perto' de um acordo de paz, diz Vance
 
-2. 2. Ex-procuradora-geral dos EUA, Pam Bondi, é diagnosticada com câncer
+2. 2. Trump ameaça Omã: 'se comportem ou serão atacados'
 
-3. 3. Investigação da AP revela que detentos do ICE estão morrendo por suicídio em taxa alarmante
+3. 3. Suprema Corte permite que condenado à morte conteste exclusão de jurados negros
 
-4. 4. Brasil lidera ranking global de otimismo em relação a criptomoedas
+4. 4. Detentos do ICE morrendo por suicídio em taxa 'alarmante', aponta investigação
+
+5. 5. Drone russo atinge prédio residencial na Romênia
+
+6. 6. Soldado morto em ataque de drone do Hezbollah enquanto Israel amplia ataques
+
+
+### 🇧🇷 BRASIL
+
+7. 7. Meta lança planos de assinatura para WhatsApp, Instagram e Facebook com recursos exclusivos
+
+8. 8. Conheça o data center bilionário de IA no interior de SP
+
+9. 9. Golpes com álbum de figurinhas da Copa disparam: mais de 160 sites falsos
+
+10. 10. Balconista de farmácia que lançou movimento pelo fim da escala 6x1 consegue vitória
 
 
 ### 🤖 TECH & IA
 
-5. 5. CEOs de tecnologia estão sofrendo de 'psicose de IA', movidos pelo medo de ficar para trás
+11. 11. CEOs de tecnologia sofrendo de 'psicose de IA'
 
-6. 6. DuckDuckGo cresceu 28% após Google declarar que 'as pessoas amam o modo IA'
+12. 12. DuckDuckGo vê 28% mais visitas após Google dizer que 'todo mundo ama modo IA'
 
-7. 7. Gemini Omni mostra que o futuro da IA está na manipulação de vídeo em tempo real
+13. 13. Valve aumenta preços do Steam Deck em mais de $200
 
-8. 8. Funcionário do Google é acusado de insider trading com criptomoeda Polygon
+14. 14. Funcionário do Google acusado de usar dados internos para lucrar US$ 1 milhão na Polymarket
+
+15. 15. Wix anuncia demissão de mil funcionários e cita avanço da IA
+
+16. 16. Nave da Blue Origin explode durante teste; Musk reage
+
+17. 17. Robô viaja de avião como passageiro e reclama de proibição: 'Conspiração'
 
 
 ### 💰 ECONOMIA & CRYPTO
 
-9. 9. Bitcoin ameaça perder os 75 mil dólares com avanço das negociações de paz EUA-Irã
+18. 18. Bitcoin cai para perto de US$ 73 mil com 'distribuição ativa'
 
-10. 10. Prêmio Nobel de Economia 2025 concedido a trio por estudos sobre inovação
+19. 19. Bitcoin recupera para US$ 74 mil com esperanças de trégua EUA-Irã
 
-11. 11. 'Venda em maio e vá embora?' — Bitcoin fechou o mês no vermelho
-
-12. 12. Valve aumentou preços do Steam Deck em mais de 200 dólares
+20. 20. ETF de Bitcoin da BlackRock registra saídas próximas ao recorde
 
