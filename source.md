@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Sexta-feira, 29 de Maio de 2026
+## Sábado, 30 de Maio de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -9,9 +9,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Organize por blocos temáticos na ordem abaixo.
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
-
-
-### 🌍 GLOBAL
 
 1. 1. EUA e Irã estão 'muito perto' de um acordo de paz, diz Vance
 
@@ -25,9 +22,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 6. 6. Soldado morto em ataque de drone do Hezbollah enquanto Israel amplia ataques
 
-
-### 🇧🇷 BRASIL
-
 7. 7. Meta lança planos de assinatura para WhatsApp, Instagram e Facebook com recursos exclusivos
 
 8. 8. Conheça o data center bilionário de IA no interior de SP
@@ -35,9 +29,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 9. 9. Golpes com álbum de figurinhas da Copa disparam: mais de 160 sites falsos
 
 10. 10. Balconista de farmácia que lançou movimento pelo fim da escala 6x1 consegue vitória
-
-
-### 🤖 TECH & IA
 
 11. 11. CEOs de tecnologia sofrendo de 'psicose de IA'
 
@@ -52,9 +43,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 16. 16. Nave da Blue Origin explode durante teste; Musk reage
 
 17. 17. Robô viaja de avião como passageiro e reclama de proibição: 'Conspiração'
-
-
-### 💰 ECONOMIA & CRYPTO
 
 18. 18. Bitcoin cai para perto de US$ 73 mil com 'distribuição ativa'
 
