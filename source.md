@@ -11,33 +11,33 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Cada bloco começa com uma transição curta entre os temas.
 
 
-### 🤖 TECH & IA
+### 🌍 GLOBAL & BRASIL
 
 1. Malásia proíbe redes sociais para menores de 16 anos
 
-2. Brasil x Panamá: veja memes da goleada da seleção brasileira de Carlo Ancelotti
+2. BCs dos EUA e Reino Unido divergem sobre regulação de stablecoins
 
-3. Mercado cripto entra em nova fase — e investidores correm para organizar o Imposto de Renda
 
-4. White hat hacker recovers $2M from faulty 2016 ICO smart contract
+### 💻 TECH & IA
 
-5. A white-hat hacker has helped the creators of Hong Coin by showing them how to exploit a flawed admin function on a smar
+3. Nvidia lança CPU Vera para cargas de trabalho de agentes de IA
 
-6. US, UK central bankers offer contrary views on stablecoins
+4. Plataforma Vera Rubin da Nvidia entra em produção total para IA
 
-7. Federal Reserve governor Christopher Waller told a conference on Sunday that stablecoins expand the reach of US policy w
+5. Nvidia anuncia investimento recorde em data centers especializados para IA
 
-8. Strategy's Michael Saylor teases BTC buy with 'working better' tweet
 
-9. Strategy could be set to announce it has resumed buying Bitcoin after pausing in recent weeks as the biggest crypto look
+### 📈 ECONOMIA & MERCADOS
 
-10. Kraken ‘plans’ regulated perp contracts as rivals are quick off the blocks
+6. Ibovespa e dólar: Trump adia acordo com Irã pré-semana de empregos nos EUA
 
-11. In the wake of CFTC approval of perpetual futures contracts tied to the spot price of Bitcoin, Kraken expects to offer t
+7. Ações asiáticas sobem com otimismo em IA; KOSPI atinge recorde histórico
 
-12. Bitcoin preps 3% May downside, but US PMI data may boost BTC price
+8. Ações da LG disparam para máximas históricas com especulações sobre parceria com Nvidia
 
-13. Bitcoin faced ending May lower by around 3%, with the possibility of US PMI data giving BTC price action a boost next we
+9. Mercado cripto entra em nova fase — investidores correm para organizar o IR
 
-14. ✅ Coleta completa em /root/.hermes/cron/output/drop5news-trends-2026-06-01.txt
+10. Strategy's Michael Saylor sugere que pode retomar compras de Bitcoin
+
+11. Bitcoin prepara queda de 3% em maio, mas PMI dos EUA pode impulsionar preço
 
