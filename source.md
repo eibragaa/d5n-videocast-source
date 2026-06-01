@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Domingo, 31 de Maio de 2026
+## Segunda-feira, 1 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -10,43 +10,40 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
 
-1. 1. EUA e Irã estão 'muito perto' de um acordo de paz, diz Vance
 
-2. 2. Trump ameaça Omã: 'se comportem ou serão atacados'
+### 🤖 TECH & IA
 
-3. 3. Suprema Corte permite que condenado à morte conteste exclusão de jurados negros
+1. Malásia proíbe redes sociais para menores de 16 anos
 
-4. 4. Detentos do ICE morrendo por suicídio em taxa 'alarmante', aponta investigação
+2. Brasil x Panamá: veja memes da goleada da seleção brasileira de Carlo Ancelotti
 
-5. 5. Drone russo atinge prédio residencial na Romênia
+3. Slopaganda: como inteligência artificial virou arma de guerra para espalhar vídeos falsos
 
-6. 6. Soldado morto em ataque de drone do Hezbollah enquanto Israel amplia ataques
+4. A guerra invisível que está confundindo sinais de GPS e colocando aviões em risco
 
-7. 7. Meta lança planos de assinatura para WhatsApp, Instagram e Facebook com recursos exclusivos
+5. CEOs do setor de IA tentam conter temor sobre desemprego em massa causado pela tecnologia
 
-8. 8. Conheça o data center bilionário de IA no interior de SP
+6. Mercado cripto entra em nova fase — e investidores correm para organizar o Imposto de Renda
 
-9. 9. Golpes com álbum de figurinhas da Copa disparam: mais de 160 sites falsos
+7. White hat hacker recovers $2M from faulty 2016 ICO smart contract
 
-10. 10. Balconista de farmácia que lançou movimento pelo fim da escala 6x1 consegue vitória
+8. A white-hat hacker has helped the creators of Hong Coin by showing them how to exploit a flawed admin function on a smar
 
-11. 11. CEOs de tecnologia sofrendo de 'psicose de IA'
+9. US, UK central bankers offer contrary views on stablecoins
 
-12. 12. DuckDuckGo vê 28% mais visitas após Google dizer que 'todo mundo ama modo IA'
+10. Federal Reserve governor Christopher Waller told a conference on Sunday that stablecoins expand the reach of US policy w
 
-13. 13. Valve aumenta preços do Steam Deck em mais de $200
+11. Strategy's Michael Saylor teases BTC buy with 'working better' tweet
 
-14. 14. Funcionário do Google acusado de usar dados internos para lucrar US$ 1 milhão na Polymarket
+12. Strategy could be set to announce it has resumed buying Bitcoin after pausing in recent weeks as the biggest crypto look
 
-15. 15. Wix anuncia demissão de mil funcionários e cita avanço da IA
+13. Kraken ‘plans’ regulated perp contracts as rivals are quick off the blocks
 
-16. 16. Nave da Blue Origin explode durante teste; Musk reage
+14. In the wake of CFTC approval of perpetual futures contracts tied to the spot price of Bitcoin, Kraken expects to offer t
 
-17. 17. Robô viaja de avião como passageiro e reclama de proibição: 'Conspiração'
+15. Bitcoin preps 3% May downside, but US PMI data may boost BTC price
 
-18. 18. Bitcoin cai para perto de US$ 73 mil com 'distribuição ativa'
+16. Bitcoin faced ending May lower by around 3%, with the possibility of US PMI data giving BTC price action a boost next we
 
-19. 19. Bitcoin recupera para US$ 74 mil com esperanças de trégua EUA-Irã
-
-20. 20. ETF de Bitcoin da BlackRock registra saídas próximas ao recorde
+17. ✅ Coleta completa em /root/.hermes/cron/output/drop5news-trends-2026-06-01.txt
 

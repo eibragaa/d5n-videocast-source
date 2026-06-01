@@ -38,11 +38,19 @@ CRON_AUDIO="/root/.hermes/cron/output"
 mkdir -p audio
 LATEST_MP3=$(ls -t "$CRON_AUDIO"/*.mp3 2>/dev/null | head -1)
 if [ -n "$LATEST_MP3" ]; then
-    EP_NUM=$(basename "$LATEST_MP3" | grep -oP '^\d+' || echo "NNN")
+    # Extrair o próximo número de episódio da pasta audio/
+    # Formato válido: d5n-ep{NNN}-{DATE}.mp3 ou d5n-ep{NNN}.mp3
+    LAST_NUM=$(ls audio/d5n-ep*.mp3 2>/dev/null | grep -oP 'ep\K\d+' | sort -n | tail -1)
+    if [ -z "$LAST_NUM" ]; then
+        NEXT_NUM=1
+    else
+        NEXT_NUM=$((10#$LAST_NUM + 1))
+    fi
+    EP_NUM=$(printf "%03d" "$NEXT_NUM")
     DEST="audio/d5n-ep${EP_NUM}-${DATE}.mp3"
     if [ ! -f "$DEST" ] || [ "$LATEST_MP3" -nt "$DEST" ]; then
         cp "$LATEST_MP3" "$DEST"
-        echo "✅ Áudio copiado: $DEST ($(du -h "$DEST" | cut -f1))" | tee -a "$LOG"
+        echo "✅ Áudio copiado: $DEST (ep #$EP_NUM, $(du -h "$DEST" | cut -f1))" | tee -a "$LOG"
     else
         echo "ℹ️  Áudio já atualizado" | tee -a "$LOG"
     fi
