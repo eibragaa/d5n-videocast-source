@@ -17,33 +17,27 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 2. Brasil x Panamá: veja memes da goleada da seleção brasileira de Carlo Ancelotti
 
-3. Slopaganda: como inteligência artificial virou arma de guerra para espalhar vídeos falsos
+3. Mercado cripto entra em nova fase — e investidores correm para organizar o Imposto de Renda
 
-4. A guerra invisível que está confundindo sinais de GPS e colocando aviões em risco
+4. White hat hacker recovers $2M from faulty 2016 ICO smart contract
 
-5. CEOs do setor de IA tentam conter temor sobre desemprego em massa causado pela tecnologia
+5. A white-hat hacker has helped the creators of Hong Coin by showing them how to exploit a flawed admin function on a smar
 
-6. Mercado cripto entra em nova fase — e investidores correm para organizar o Imposto de Renda
+6. US, UK central bankers offer contrary views on stablecoins
 
-7. White hat hacker recovers $2M from faulty 2016 ICO smart contract
+7. Federal Reserve governor Christopher Waller told a conference on Sunday that stablecoins expand the reach of US policy w
 
-8. A white-hat hacker has helped the creators of Hong Coin by showing them how to exploit a flawed admin function on a smar
+8. Strategy's Michael Saylor teases BTC buy with 'working better' tweet
 
-9. US, UK central bankers offer contrary views on stablecoins
+9. Strategy could be set to announce it has resumed buying Bitcoin after pausing in recent weeks as the biggest crypto look
 
-10. Federal Reserve governor Christopher Waller told a conference on Sunday that stablecoins expand the reach of US policy w
+10. Kraken ‘plans’ regulated perp contracts as rivals are quick off the blocks
 
-11. Strategy's Michael Saylor teases BTC buy with 'working better' tweet
+11. In the wake of CFTC approval of perpetual futures contracts tied to the spot price of Bitcoin, Kraken expects to offer t
 
-12. Strategy could be set to announce it has resumed buying Bitcoin after pausing in recent weeks as the biggest crypto look
+12. Bitcoin preps 3% May downside, but US PMI data may boost BTC price
 
-13. Kraken ‘plans’ regulated perp contracts as rivals are quick off the blocks
+13. Bitcoin faced ending May lower by around 3%, with the possibility of US PMI data giving BTC price action a boost next we
 
-14. In the wake of CFTC approval of perpetual futures contracts tied to the spot price of Bitcoin, Kraken expects to offer t
-
-15. Bitcoin preps 3% May downside, but US PMI data may boost BTC price
-
-16. Bitcoin faced ending May lower by around 3%, with the possibility of US PMI data giving BTC price action a boost next we
-
-17. ✅ Coleta completa em /root/.hermes/cron/output/drop5news-trends-2026-06-01.txt
+14. ✅ Coleta completa em /root/.hermes/cron/output/drop5news-trends-2026-06-01.txt
 
