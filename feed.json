@@ -6,17 +6,20 @@
   "description": "Curadoria diária de notícias",
   "author": {
     "name": "Jean Braga",
-    "url": "https://instagram.com/jeanbraga.ai"
+    "url": "https://instagram.com/ojeanbraga.s"
   },
   "items": [
     {
-      "id": "2026-06-01",
-      "title": "D5N #006 • Segunda-feira, 1 de Junho de 2026",
+      "id": "2026-06-02",
+      "title": "D5N • Terça-feira, 2 de Junho de 2026",
       "url": "https://d5n-daily.netlify.app/",
-      "date_published": "2026-06-01",
-      "summary": "11 notícias em 3 pilares — 5:35 de podcast",
-      "tags": ["notícias", "D5N", "tech", "economia", "regulação"],
-      "content_text": "[Global] Malásia proíbe redes sociais para menores de 16 anos\n[Global] BCs dos EUA e Reino Unido divergem sobre stablecoins\n[Tech] Nvidia lança CPU Vera para agentes de IA\n[Tech] Plataforma Vera Rubin da Nvidia entra em produção total\n[Tech] Nvidia anuncia investimento recorde em data centers\n[Economia] Ibovespa: Trump adia acordo com Irã\n[Economia] Ações asiáticas sobem com IA; KOSPI bate recorde\n[Economia] LG dispara com especulações de parceria Nvidia\n[Economia] Mercado cripto entra em nova fase\n[Economia] Strategy pode retomar compras de Bitcoin\n[Economia] Bitcoin prepara queda de 3% em maio, PMI pode impulsionar"
+      "date_published": "2026-06-02",
+      "summary": "15 notícias",
+      "tags": [
+        "notícias",
+        "D5N"
+      ],
+      "content_text": "[Global] 1. Primárias na Califórnia definem pré-candidatos democratas para 2028\n[Global] 2. Suprema Corte dos EUA avalia lei de imigração do Alabama\n[Global] 3. EUA lançam novos ataques contra alvos iranianos no Iêmen\n[Global] 4. Trump abandona fundo de infraestrutura bipartidário\n[Global] 5. República Tcheca desmantela rede de tráfico humano na Europa Central\n[Brasil] 6. Câmara aprova urgência para projeto de reforma tributária\n[Brasil] 7. Selic mantida em 14,25% pelo Copom\n[Brasil] 8. Governo anuncia novo PAC para mobilidade urbana\n[Tech] 9. Nvidia anuncia parceria com LG para chips de IA personalizados\n[Tech] 10. SEC define mercado cripto como prioridade de fiscalização para 2026\n[Tech] 11. Stablecoins avançam no Reino Unido com nova regulamentação\n[Tech] 12. Congressistas dos EUA se opõem a inclusão de cripto em planos 401(k)\n[Tech] 13. TapTools anuncia encerramento das operações\n[Economia] 14. Mercado global corrige US$ 176 bilhões após dados de emprego nos EUA\n[Economia] 15. Bitcoin oscila com expectativa de cortes de juros no segundo semestre"
     }
   ]
 }

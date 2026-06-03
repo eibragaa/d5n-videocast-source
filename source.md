@@ -1,61 +1,54 @@
 # DROP FIVE NEWS — Boletim Diário
-## Segunda-feira, 1 de Junho de 2026
+## Terça-feira, 2 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
 - Contexto: Você é um apresentador de boletim de rádio. Apresente APENAS as notícias abaixo.
-- NOME DO PROGRAMA: sempre falar "Drop Five News" (NÃO usar "D5N" ou "DropFiveNews")
 - NÃO analise, avalie ou comente sobre o site, o projeto, a curadoria ou as fontes.
 - NÃO mencione NotebookLM, GitHub, feeds, JSON, RSS ou qualquer estrutura técnica.
 - Organize por blocos temáticos na ordem abaixo.
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
-- Abertura: "Você está ouvindo o Drop Five News, sua curadoria diária de notícias. Hoje é [dia da semana], [data]."
 
 
-### 🌍 GLOBAL & BRASIL
+### 🌍 GLOBAL
 
-1. Malásia proíbe redes sociais para menores de 16 anos
+1. 1. Primárias na Califórnia definem pré-candidatos democratas para 2028
 
-2. BCs dos EUA e Reino Unido divergem sobre regulação de stablecoins
+2. 2. Suprema Corte dos EUA avalia lei de imigração do Alabama
 
+3. 3. EUA lançam novos ataques contra alvos iranianos no Iêmen
 
-### 💻 TECH & IA
+4. 4. Trump abandona fundo de infraestrutura bipartidário
 
-3. Nvidia lança CPU Vera para cargas de trabalho de agentes de IA
-
-4. Plataforma Vera Rubin da Nvidia entra em produção total para IA
-
-5. Nvidia anuncia investimento recorde em data centers especializados para IA
+5. 5. República Tcheca desmantela rede de tráfico humano na Europa Central
 
 
-### 📈 ECONOMIA & MERCADOS
+### 🇧🇷 BRASIL
 
-6. Ibovespa e dólar: Trump adia acordo com Irã pré-semana de empregos nos EUA
+6. 6. Câmara aprova urgência para projeto de reforma tributária
 
-7. Ações asiáticas sobem com otimismo em IA; KOSPI atinge recorde histórico
+7. 7. Selic mantida em 14,25% pelo Copom
 
-8. Ações da LG disparam para máximas históricas com especulações sobre parceria com Nvidia
-
-9. Mercado cripto entra em nova fase — investidores correm para organizar o IR
-
-10. Strategy's Michael Saylor sugere que pode retomar compras de Bitcoin
-
-11. Bitcoin prepara queda de 3% em maio, mas PMI dos EUA pode impulsionar preço
+8. 8. Governo anuncia novo PAC para mobilidade urbana
 
 
-### 💬 MENSAGEM DO DIA
+### 🤖 TECH & IA
 
-Tema: gratidão e recomeço. Conecte com a energia do início do mês: junho chegou, novas oportunidades, cada passo conta.
+9. 9. Nvidia anuncia parceria com LG para chips de IA personalizados
 
-NÃO usar frases prontas do site pensador.com. Criar mensagem original no mesmo espírito:
-- Agradecer pelo que já construiu
-- Manter os olhos no que ainda quer alcançar
-- Lembrar que o processo é tão valioso quanto o destino
+10. 10. SEC define mercado cripto como prioridade de fiscalização para 2026
 
-Finalize com: "Essa foi mais uma edição do Drop Five News. Me siga no Instagram @jeanbraga.ai para continuar essa conversa. E lembre-se: cada notícia que você leva daqui é uma ferramenta a mais no seu cinto. Use bem."
+11. 11. Stablecoins avançam no Reino Unido com nova regulamentação
+
+12. 12. Congressistas dos EUA se opõem a inclusão de cripto em planos 401(k)
+
+13. 13. TapTools anuncia encerramento das operações
 
 
-### 🎬 SÉRIE/FILME DO DIA
+### 💰 ECONOMIA & CRYPTO
 
-Sugerir uma obra conectada a um dos temas. Ex: "Quem curte o universo das criptomoedas, vale revisitar Casa de Papel — não pelo lado técnico, mas pela engenharia financeira. Ou, se preferir ficção científica, Black Mirror tem um episódio sobre redes sociais e controle que dialoga com a notícia de hoje sobre a Malásia."
+14. 14. Mercado global corrige US$ 176 bilhões após dados de emprego nos EUA
+
+15. 15. Bitcoin oscila com expectativa de cortes de juros no segundo semestre
+

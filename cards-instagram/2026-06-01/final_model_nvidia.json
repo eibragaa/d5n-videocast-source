@@ -1,0 +1,29 @@
+{
+  "scene_type": "graphic",
+  "main_subject": [
+    "NVIDIA logo",
+    "NVIDIA wordmark"
+  ],
+  "composition": "The NVIDIA logo, a stylized eye/geometric shape in bright green and black, is centered prominently in the upper half of the frame. Below it, the white 'NVIDIA' wordmark is clearly displayed. The background is a dark, subtly textured or blurred gradient, providing contrast and making the brand elements stand out.",
+  "lighting": "artificial",
+  "mood": "neutral",
+  "colors_dominant": [
+    "#65C028",
+    "#FFFFFF",
+    "#1C1C1C"
+  ],
+  "empty_space_for_text": "none",
+  "photojournalism_style": false,
+  "relevance_to_news": 0.0,
+  "visual_keywords": [
+    "NVIDIA",
+    "logo",
+    "brand",
+    "technology",
+    "corporate",
+    "green",
+    "black",
+    "white",
+    "graphic"
+  ]
+}

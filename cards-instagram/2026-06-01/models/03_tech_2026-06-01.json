@@ -1,0 +1,38 @@
+{
+  "image_url": "",
+  "scene_type": "graphic",
+  "main_subject": [
+    "Nvidia logo",
+    "Nvidia text"
+  ],
+  "composition": "centered, minimalist, bold",
+  "lighting": "flat",
+  "mood": "neutral, corporate, technological",
+  "colors_dominant": [
+    "#000000",
+    "#76B900",
+    "#FFFFFF"
+  ],
+  "framing": "medium",
+  "empty_space_for_text": "top, bottom, left, right",
+  "background_elements": [
+    "plain black background"
+  ],
+  "photo_quality": "high",
+  "relevance_to_news": 1.0,
+  "photojournalism_style": false,
+  "suggested_overlay_color": "#000000",
+  "visual_keywords": [
+    "Nvidia",
+    "logo",
+    "brand",
+    "technology",
+    "AI",
+    "CPU",
+    "corporate",
+    "computing"
+  ],
+  "noticia": "Nvidia lança CPU Vera para agentes de IA",
+  "categoria": "Tech",
+  "data": "1 de Junho de 2026"
+}

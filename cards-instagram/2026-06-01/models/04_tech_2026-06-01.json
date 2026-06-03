@@ -1,0 +1,43 @@
+{
+  "image_url": "",
+  "scene_type": "indoor",
+  "main_subject": [
+    "two men",
+    "scribe",
+    "mentor",
+    "parchment",
+    "pen"
+  ],
+  "composition": "Two men are centrally framed, with one seated or leaning and writing, and the other standing behind and slightly to the side, placing a hand on the writer's shoulder. The composition is a medium shot, focusing on their interaction and the act of writing, set against a dark, textured background.",
+  "lighting": "dramatic",
+  "mood": "serious",
+  "colors_dominant": [
+    "#6F5A48",
+    "#A38B74",
+    "#2C1E16"
+  ],
+  "framing": "medium",
+  "empty_space_for_text": "top",
+  "background_elements": [
+    "dark textured wall",
+    "soft glowing light source"
+  ],
+  "photo_quality": "high",
+  "relevance_to_news": 0.0,
+  "photojournalism_style": false,
+  "suggested_overlay_color": "#302018",
+  "visual_keywords": [
+    "ancient",
+    "historical",
+    "writing",
+    "scribe",
+    "mentor",
+    "guidance",
+    "contemplation",
+    "robe",
+    "parchment"
+  ],
+  "noticia": "Plataforma Vera Rubin da Nvidia entra em produção total",
+  "categoria": "Tech",
+  "data": "1 de Junho de 2026"
+}

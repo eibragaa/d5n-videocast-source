@@ -1,0 +1,18 @@
+{
+  "image_url": "/tmp/d5n_bg_53747.jpg",
+  "scene_type": "unknown",
+  "main_subject": [
+    "news scene"
+  ],
+  "composition": "standard",
+  "lighting": "unknown",
+  "mood": "neutral",
+  "colors_dominant": [
+    "#1a1a2e",
+    "#16213e",
+    "#0f3460"
+  ],
+  "empty_space_for_text": "bottom",
+  "photojournalism_style": true,
+  "relevance_to_news": 0.5
+}

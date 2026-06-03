@@ -1,0 +1,38 @@
+{
+  "image_url": "",
+  "scene_type": "outdoor",
+  "main_subject": [
+    "football player",
+    "Vinicius Jr."
+  ],
+  "composition": "The subject, a male athlete, is positioned slightly off-center to the left, looking upwards and to the right with an expressive, positive facial expression. One hand is near his ear, the other tugging at his jersey. The background is heavily blurred, creating a shallow depth of field that isolates the subject.",
+  "lighting": "natural",
+  "mood": "positive",
+  "colors_dominant": [
+    "#FFFFFF",
+    "#DC2626",
+    "#262626"
+  ],
+  "framing": "medium",
+  "empty_space_for_text": "right",
+  "background_elements": [
+    "blurred stadium crowd",
+    "red stadium seats"
+  ],
+  "photo_quality": "high",
+  "relevance_to_news": 0.0,
+  "photojournalism_style": true,
+  "suggested_overlay_color": "#1A1A1A",
+  "visual_keywords": [
+    "football",
+    "athlete",
+    "celebration",
+    "sports",
+    "stadium",
+    "player",
+    "outdoor"
+  ],
+  "noticia": "Ibovespa: Trump adia acordo com Irã",
+  "categoria": "Economia",
+  "data": "1 de Junho de 2026"
+}
