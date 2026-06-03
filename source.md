@@ -1,64 +1,67 @@
-# DROP FIVE NEWS — Boletim Diário
+# DROP FIVE NEWS — Boletim Diário (Expandido)
 ## Quarta-feira, 3 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
-- Contexto: Você é um apresentador de boletim de rádio. Apresente APENAS as notícias abaixo.
-- NÃO analise, avalie ou comente sobre o site, o projeto, a curadoria ou as fontes.
-- NÃO mencione NotebookLM, GitHub, feeds, JSON, RSS ou qualquer estrutura técnica.
-- Organize por blocos temáticos na ordem abaixo.
-- Use linguagem natural, coloquial brasileira, como um locutor de rádio.
-- Cada bloco começa com uma transição curta entre os temas.
+- Contexto: Você é um apresentador de boletim de rádio
+- NÃO analise, avalie ou comente sobre o site, o projeto, a curadoria ou as fontes
+- NÃO mencione NotebookLM, GitHub, feeds, JSON, RSS ou qualquer estrutura técnica
+- Use linguagem natural, coloquial brasileira, como um locutor de rádio
+- Organize por blocos temáticos na ordem abaixo
+- Cada bloco começa com uma transição curta entre os temas
 
+INTRODUÇÃO:
+Você está ouvindo o Drop Five News, sua curadoria diária de notícias. Hoje é quarta-feira, 3 de junho de 2026. As primárias americanas estão pegando fogo, as tensões com o Irã escalam de novo, e a Nvidia quer mudar a forma como você usa o computador. Tudo isso e muito mais nos próximos minutos. Fica comigo.
 
 ### 🌍 GLOBAL
 
-1. 1. EUA: primárias de meio de mandato — Becerra e Hilton empatados na Califórnia, Feenstra perde em Iowa, Deb Haaland ava
+1. Começamos pelo cenário internacional. As primárias de meio de mandato nos Estados Unidos estão pegando fogo. Na Califórnia, o procurador-geral Xavier Becerra e a prefeita de Los Angeles Karen Hilton estão tecnicamente empatados na corrida democrata para governador, enquanto Katie Porter avança firme na disputa para o Senado. Em Iowa, o deputado Randy Feenstra, apoiado por Trump, perdeu a primária para governo — um sinal de que o apoio do ex-presidente não é mais garantia de vitória. Em New Mexico, a ex-secretária do Interior Deb Haaland ganhou a candidatura democrata para governadora com folga. Na Colômbia, a eleição presidencial trouxe surpresas — celebração, choque e ceticismo marcam o resultado nas urnas. E na Coreia do Sul, eleições importantes se aproximam em meio a tensões regionais.
 
-2. 2. EUA intensificam ataques contra o Irã — sanções a exchanges de criptomoedas; Bitcoin cai abaixo de US$66 mil
+2. Enquanto isso, as tensões entre Estados Unidos e Irã escalam novamente. Novos ataques foram lançados contra alvos iranianos, e as negociações de paz estagnaram. O secretário do Tesouro americano emitiu sanções contra o Irã, mirando quatro exchanges de criptomoedas usadas para contornar o bloqueio financeiro. O Bitcoin caiu abaixo dos sessenta e seis mil dólares — a maior queda diária desde fevereiro. E a OCDE reduziu a previsão de crescimento global, citando justamente os riscos geopolíticos. As bolsas europeias recuaram e o petróleo subiu com as tensões no Oriente Médio.
 
-3. 3. OCDE reduz previsão de crescimento global — bolsas europeias recuam, petróleo sobe com tensões no Oriente Médio
+3. No Reino Unido, o assassinato de Henry Nowak, um homem que estava algemado pela polícia enquanto morria, gerou uma onda de indignação. O caso reacendeu o debate sobre o uso de força policial e os protocolos de contenção.
 
-4. 4. Reino Unido: assassinato de Henry Nowak reacende debate sobre força policial
-
-5. 5. Colômbia: eleição presidencial traz surpresas; Coreia do Sul se aproxima de eleições regionais
-
+CTA: Isso foi o Drop Five News de hoje. Siga @jeanbraga.ai no Instagram para continuar essa conversa — todos os dias, um resumo do que realmente importa. Agora vamos pros próximos temas.
 
 ### 🇧🇷 BRASIL
 
-6. 6. Trump anuncia novas tarifas contra o Brasil — Ibovespa e dólar de olho no anúncio
+4. No Brasil, as atenções estão voltadas para as novas tarifas que Trump anunciou contra o país, em mais um capítulo da guerra comercial. O Ibovespa e o dólar operam de olho nesse anúncio, junto com o relatório ADP de emprego nos Estados Unidos e o Livro Bege do Federal Reserve.
 
-7. 7. Crime organizado descobre novo playground na Faria Lima: fintechs viram meio fácil para lavagem de dinheiro
+5. Um alerta importante: o crime organizado descobriu um novo playground na Faria Lima. Fintechs viraram um meio fácil para lavagem de dinheiro, segundo investigações recentes. O caso expõe fragilidades na regulação do sistema financeiro digital brasileiro.
 
-8. 8. Inclusão digital dos idosos: urgência para milhões de brasileiros excluídos de serviços online
+6. E um debate necessário: por que é urgente a inclusão digital dos idosos? Com cada vez mais serviços migrando para o ambiente online, milhões de brasileiros na terceira idade ficam excluídos de serviços essenciais.
 
+### 🏥 SAÚDE
 
-### 🤖 TECH & IA
+7. Em saúde e longevidade, um dos tópicos mais promissores hoje é o uso de inteligência artificial na área médica. A OpenAI foi acusada nos Estados Unidos de causar danos a crianças — mas paralelamente, o uso de IA para diagnósticos médicos continua avançando em ritmo acelerado. Hospitais ao redor do mundo já usam algoritmos de visão computacional para detectar câncer em estágio inicial, com taxas de acerto superiores a noventa por cento em alguns casos. A biotecnologia aliada à IA promete revolucionar não só o tratamento de doenças, mas a própria expectativa de vida humana nos próximos anos.
 
-9. 9. Nvidia aposta em PCs com IA integrada — chips dedicados para rodar modelos localmente sem depender da nuvem
+### 🔬 CIÊNCIA
 
-10. 10. Meta expande globalmente filtros de conteúdo para contas de adolescentes — privacidade mais restrita por padrão
+8. Falando em avanços científicos, a robótica deu um passo impressionante. A empresa Figure, especializada em robôs humanoides inteligentes, publicou vários vídeos ao longo de maio mostrando seus robôs realizando tarefas básicas — pegar objetos, navegar por ambientes, interagir com ferramentas. Mas os especialistas são categóricos: esses robôs ainda estão a anos de distância de substituir humanos em tarefas do dia a dia. A coordenação motora fina, o senso de contexto e a adaptabilidade humana continuam sendo um desafio monumental para a robótica. Essa cobertura me lembrou o documentário "Hi, AI" da HBO, que explora exatamente essa linha tênue entre o que os robôs já fazem e o que ainda está no campo da ficção.
 
-11. 11. Nova York e União Europeia fecham acordo inédito para fiscalizar stablecoins
+### ⚖️ POLÍTICA
 
-12. 12. Cardano perde TapTools — plataforma encerra operações após saída de executivos
+9. Na política internacional, além das primárias americanas, um episódio chama a atenção no Reino Unido — o caso Henry Nowak que já mencionamos, sobre força policial. O cenário político global está longe de ser previsível neste momento.
 
-13. 13. Reino Unido: parlamentares alertam que regras rígidas podem inviabilizar stablecoins em libras
+### 🤖 TECNOLOGIA
 
-14. 14. Figure Robótica: robôs humanoides realizam tarefas básicas — ainda longe de substituir humanos
+10. Agora o que você realmente veio ouvir: tecnologia. Começando pela Nvidia, que anunciou uma nova aposta: PCs com inteligência artificial integrada. A ideia é que os notebooks da próxima geração tenham chips dedicados a rodar modelos de IA localmente, sem depender da nuvem. Isso muda completamente a forma como usamos o computador.
 
-15. 15. OpenAI acusada nos EUA de causar danos a crianças; IA para diagnósticos médicos avança
+11. A Meta expandiu globalmente os filtros de conteúdo para contas de adolescentes. Agora, jovens de todo o mundo terão configurações de privacidade mais restritas por padrão, uma resposta direta às pressões de reguladores sobre segurança infantil online.
 
-16. 16. PCs com IA: a nova geração de notebooks com chips dedicados
+12. No mundo cripto, Nova York e a União Europeia fecharam um acordo inédito para fiscalizar stablecoins em conjunto. Os reguladores vão compartilhar informações sobre emissão, volume total e compliance. Ao mesmo tempo, o Cardano perdeu o TapTools — a plataforma vai encerrar operações após a saída de cinco executivos. Parlamentares britânicos alertam que regras muito rígidas podem tornar as stablecoins em libras inviáveis comercialmente.
 
+13. E não podemos esquecer dos robôs da Figure — eles são o exemplo mais recente de como a inteligência artificial incorporada está saindo dos laboratórios e encontrando aplicações no mundo real.
 
-### 💰 ECONOMIA & CRYPTO
+### 💰 ECONOMIA
 
-17. 17. Inditex (Zara) sobe mais de 4% na bolsa após resultados fortes no 1º trimestre
+14. No front econômico, o cenário é de cautela. A OCDE cortou sua previsão de crescimento global e alertou que, sem um acordo de paz com o Irã, os riscos para a economia mundial aumentam significativamente. O Morgan Stanley elevou a recomendação da Yum! Brands (dona do KFC, Pizza Hut e Taco Bell) e rebaixou Chipotle e Shake Shack, sinalizando mudanças nos hábitos de consumo americano.
 
-18. 18. Morgan Stanley eleva Yum! Brands (KFC, Pizza Hut, Taco Bell); rebaixa Chipotle e Shake Shack
+15. A Inditex, gigante espanhola dona da Zara, subiu mais de quatro por cento na bolsa após resultados fortes no primeiro trimestre. E o Bitcoin, como mencionamos, despencou com o agravamento das tensões no Oriente Médio.
 
-19. 19. Bitcoin despenca com tensões no Oriente Médio — cripto vira aposta contrária
+### 💬 MENSAGEM DO DIA
 
-20. 20. OCDE corta previsão de crescimento global — alerta sobre riscos sem acordo com Irã
+Sabe, tem horas que a gente olha pro noticiário e pensa: "nossa, o mundo é um turbilhão". E é mesmo. Mas cada história que a gente escuta por aqui — cada crise, cada inovação, cada movimento geopolítico — é uma peça de um quebra-cabeça que a gente monta todo dia. O segredo é não se deixar levar pelo barulho. É respirar fundo e lembrar que informação é poder quando a gente sabe o que fazer com ela. Cada notícia é uma ferramenta a mais no seu cinto. Use bem. E se quiser continuar essa conversa, me segue no Instagram @jeanbraga.ai.
 
+ENCERRAMENTO:
+Essa foi mais uma edição do Drop Five News. Me siga no Instagram @jeanbraga.ai para continuar essa conversa. Até amanhã.
