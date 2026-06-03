@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Terça-feira, 2 de Junho de 2026
+## Quarta-feira, 3 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -13,42 +13,46 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 ### 🌍 GLOBAL
 
-1. 1. Primárias na Califórnia definem pré-candidatos democratas para 2028
+1. 1. EUA propõem tarifas amplas de pelo menos 10% sobre importações com trabalho forçado
 
-2. 2. Suprema Corte dos EUA avalia lei de imigração do Alabama
+2. 2. EUA e Irã lançam novos ataques enquanto negociações de cessar-fogo estagnam
 
-3. 3. EUA lançam novos ataques contra alvos iranianos no Iêmen
+3. 3. Midterm primaries 2026: Califórnia e Iowa nas urnas; resultados ao vivo
 
-4. 4. Trump abandona fundo de infraestrutura bipartidário
+4. 4. Japão: Nikkei atinge recorde histórico com alta nos mercados asiáticos
 
-5. 5. República Tcheca desmantela rede de tráfico humano na Europa Central
+5. 5. Israel ordena ataques em subúrbios de Beirute com escalada do conflito com Hezbollah
 
 
 ### 🇧🇷 BRASIL
 
-6. 6. Câmara aprova urgência para projeto de reforma tributária
+6. 6. Crime organizado na Faria Lima: por que fintechs viraram meio 'fácil' de lavar dinheiro?
 
-7. 7. Selic mantida em 14,25% pelo Copom
+7. 7. Inclusão digital dos idosos: por que é urgente?
 
-8. 8. Governo anuncia novo PAC para mobilidade urbana
+8. 8. Uniforme da Seleção Brasileira para viagem aos EUA vira meme
 
 
 ### 🤖 TECH & IA
 
-9. 9. Nvidia anuncia parceria com LG para chips de IA personalizados
+9. 9. PCs com IA: a nova aposta da Nvidia para mudar a forma de usar notebooks
 
-10. 10. SEC define mercado cripto como prioridade de fiscalização para 2026
+10. 10. DeepSeek deve captar US$ 7 bilhões com Tencent e CATL como principais investidores
 
-11. 11. Stablecoins avançam no Reino Unido com nova regulamentação
+11. 11. Figura mostra robôs humanoides realizando tarefas básicas, mas substituição humana ainda leva anos
 
-12. 12. Congressistas dos EUA se opõem a inclusão de cripto em planos 401(k)
+12. 12. Meta expande globalmente filtros de conteúdo para contas de adolescentes
 
-13. 13. TapTools anuncia encerramento das operações
+13. 13. Dona do ChatGPT é acusada nos EUA de causar danos a crianças — Flórida processa OpenAI
+
+14. 14. Polymarket e Kalshi viralizam na direita como alternativa às pesquisas eleitorais
 
 
 ### 💰 ECONOMIA & CRYPTO
 
-14. 14. Mercado global corrige US$ 176 bilhões após dados de emprego nos EUA
+15. 15. Crypto como 'aposta contrária' enquanto ações de IA dominam atenção de investidores, diz Bitwise
 
-15. 15. Bitcoin oscila com expectativa de cortes de juros no segundo semestre
+16. 16. SEC define ativos digitais como prioridade estratégica até 2030
+
+17. 17. Correção cripto vaporiza US$ 176 bilhões em fundos de investidores
 
