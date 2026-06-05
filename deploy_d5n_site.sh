@@ -36,23 +36,31 @@ fi
 # ── Validação 2: Áudio do pipeline ──
 CRON_AUDIO="/root/.hermes/cron/output"
 mkdir -p audio
-LATEST_MP3=$(ls -t "$CRON_AUDIO"/*.mp3 2>/dev/null | head -1)
+COUNTER_FILE="episode-counter.json"
+LATEST_MP3=$(ls -t "$CRON_AUDIO"/d5n-podcast-*.mp3 2>/dev/null | head -1)
 if [ -n "$LATEST_MP3" ]; then
-    # Extrair o próximo número de episódio da pasta audio/
-    # Formato válido: d5n-ep{NNN}-{DATE}.mp3 ou d5n-ep{NNN}.mp3
-    LAST_NUM=$(ls audio/d5n-ep*.mp3 2>/dev/null | grep -oP 'ep\K\d+' | sort -n | tail -1)
-    if [ -z "$LAST_NUM" ]; then
-        NEXT_NUM=1
+    # Lê o contador persistente — FONTE ÚNICA DA VERDADE para numeração
+    if [ -f "$COUNTER_FILE" ]; then
+        LAST_NUM=$(python3 -c "import json; d=json.load(open('$COUNTER_FILE')); print(d.get('last_episode',0))" 2>/dev/null)
     else
-        NEXT_NUM=$((10#$LAST_NUM + 1))
+        LAST_NUM=0
     fi
+    if [ -z "$LAST_NUM" ] || [ "$LAST_NUM" = "0" ]; then
+        # Fallback: tenta extrair do maior arquivo existente
+        LAST_NUM=$(ls audio/d5n-ep*.mp3 2>/dev/null | grep -oP 'ep\K\d+' | sort -n | tail -1)
+        LAST_NUM=${LAST_NUM:-0}
+    fi
+    NEXT_NUM=$((10#$LAST_NUM + 1))
     EP_NUM=$(printf "%03d" "$NEXT_NUM")
     DEST="audio/d5n-ep${EP_NUM}-${DATE}.mp3"
-    if [ ! -f "$DEST" ] || [ "$LATEST_MP3" -nt "$DEST" ]; then
+    if [ ! -f "$DEST" ]; then
         cp "$LATEST_MP3" "$DEST"
         echo "✅ Áudio copiado: $DEST (ep #$EP_NUM, $(du -h "$DEST" | cut -f1))" | tee -a "$LOG"
+        # Atualiza contador persistente
+        python3 -c "import json; json.dump({'last_episode':$NEXT_NUM,'updated':'$DATE','format':'d5n-ep{NNN}-{DATE}.mp3'}, open('$COUNTER_FILE','w'), indent=2)"
+        echo "✅ Contador atualizado: episode-counter.json → #$EP_NUM" | tee -a "$LOG"
     else
-        echo "ℹ️  Áudio já atualizado" | tee -a "$LOG"
+        echo "ℹ️  Áudio já atualizado: $DEST" | tee -a "$LOG"
     fi
 else
     echo "ℹ️  Nenhum MP3 novo no pipeline" | tee -a "$LOG"

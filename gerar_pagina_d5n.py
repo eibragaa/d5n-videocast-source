@@ -10,6 +10,14 @@ from datetime import datetime, timedelta
 BASE = "/root/repositorio/d5n-videocast-source"
 AUDIO_DIR = f"{BASE}/audio"
 ARQUIVO_DIR = f"{BASE}/2026"
+COUNTER_FILE = f"{BASE}/episode-counter.json"
+
+def get_last_episode_num():
+    """Retorna o último número de episódio do contador persistente."""
+    try:
+        with open(COUNTER_FILE) as f:
+            return json.load(f).get("last_episode", 0)
+    except: return 0
 DATE = datetime.now().strftime("%Y-%m-%d")
 
 PILAR_MAP = {"Global":"global","Brasil":"global","Tech":"tech","Economia":"econ"}
