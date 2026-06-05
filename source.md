@@ -13,49 +13,41 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 ### 🌍 GLOBAL
 
-1. Republicans Defeat Move to Bar Trump's Payout Fund
+1. 1. EUA: Senado debate limites ao acordo de US$ 1,8 bi de Trump em sessão noturna
 
-2. House Republicans break with Trump again to approve Ukraine aid
+2. 2. Republicanos na Câmara aprovam ajuda à Ucrânia contrariando Trump
 
-3. John Bolton expected to plead guilty in classified-documents case
+3. 3. Zelensky propõe encontro com Putin para negociações diretas
 
-4. In public letter, Ukraine's Zelenskyy calls on Putin for direct negotiations in a neutral country
+4. 4. Xi Jinping viajará à Coreia do Norte — primeira visita desde 2019
 
-5. Judge dismisses murder charge against Arkansas sheriff nominee who killed daughter's alleged abuser
-
-6. Donald Trump unveils $700m 'beautiful, clean coal' investment
+5. 5. Trump anuncia US$ 700 milhões em carvão limpo
 
 
 ### 🇧🇷 BRASIL
 
-7. Lula diz que faltou à Marcha para Jesus para não "tirar proveito"
+6. 1. Prazo de inscrição do Enem 2026 termina hoje
 
-8. 53% aprovam decisão dos EUA contra PCC e CV, diz Atlas/Intel
+7. 2. Entenda as diferenças entre o PIX e o Zelle americano
 
-9. Reações à sugestão de Eduardo Bolsonaro sobre Pix e Zelle, dos EUA
-
-10. Deputados da base de Lula vão aos Estados Unidos contra Flávio, PCC e tarifaço
-
-11. O que Trump realmente quer do Brasil? O Planalto tenta entender
-
-12. Quem criou e como surgiu o Pix, sucesso brasileiro que entrou na mira dos EUA
-
-13. Dados de 1,2 milhão de usuários do iFood são vazados
-
-14. EUA prendem CEO de tecnologia na Califórnia acusado de fornecer equipamentos para programas nuclear e militar do Irã
+8. 3. Parada LGBT+ de SP: veja programação e interdições
 
 
 ### 🤖 TECH & IA
 
-15. Como funciona sistema antidrones comprado em negócio de US$ 1,5 bilhão
+9. 1. Anthropic: IA auto-aprimorável pode estar mais próxima do que se esperava
 
-16. Site rastreia jatos de super-ricos para 'prever o apocalipse'
+10. 2. Android passa a detectar ligações falsas feitas com IA
 
-17. Instagram Plus começa a ser liberado no Brasil; veja preço e recursos exclusivos
+11. 3. Como funciona sistema antidrones de US$ 1,5 bilhão
 
-18. WhatsApp lança filtros e figurinhas para a Copa do Mundo; veja como usar
+12. 4. Instagram Plus começa a ser liberado no Brasil
 
-19. Android passa a detectar possíveis ligações falsas feitas com IA
+13. 5. Rússia mira adolescente britânico por denunciar contorno de sanções com cripto
 
-20. Deputada britânica processa empresa de Elon Musk por imagens geradas por IA em que aparece usando biquíni
+14. 1. Bitcoin cai 21% após recompra de dívida da Strategy
+
+15. 2. Interactive Brokers oferece IPO da SpaceX a clientes do Reino Unido
+
+16. 3. Ibovespa e dólar: Payroll concentra atenções do dia
 
