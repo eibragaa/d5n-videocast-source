@@ -124,6 +124,10 @@
   .archive-link-date { font-family:'Libre Baskerville',serif; font-size:0.88rem; color:var(--text); font-style:italic; }
   .archive-link-arrow { color:var(--accent); font-size:0.8rem; transition:transform 0.2s; }
   .archive-link:hover .archive-link-arrow { transform:translateX(4px); }
+  .archive-link--missing { opacity:0.35; cursor:default; }
+  .archive-link--missing .archive-link-date { color:var(--muted); }
+  .archive-link--missing .archive-link-text { font-style:italic; color:var(--faint); }
+  .archive-link-archive-ghost { color:var(--faint); font-size:0.7rem; }
 
   @media (max-width:600px) {
     header { padding:0 1rem; } .container { padding:0 1rem; }
@@ -139,7 +143,7 @@
   <a class="logo" href="/">drop<em style="font-style:italic">five</em><span>news</span></a>
   <span class="header-meta">Sexta-feira, 5 de Junho de 2026</span>
   <div class="header-right">
-    <span class="edition-badge">#011</span>
+    <span class="edition-badge">#11</span>
   </div>
 </header>
 
@@ -200,7 +204,7 @@
         <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
       </button>
       <div class="player-info">
-        <div class="player-title">D5N Episódio #011 — 5 Jun 2026</div>
+        <div class="player-title">D5N Episódio #11 — 5 Jun 2026</div>
         <div class="player-progress" id="progressBar" onclick="seekAudio(event)">
           <div class="player-progress-fill" id="progressFill"></div>
         </div>
@@ -344,39 +348,81 @@
     
     <a class="archive-link" href="/audio/d5n-ep011-2026-06-05.mp3">
       <div>
-        <div class="archive-link-date">d5n-ep011-2026-06-05</div>
+        <div class="archive-link-date">Ep #011 · 5 Jun 2026</div>
         <div class="archive-link-text">6:12</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
     <a class="archive-link" href="/audio/d5n-ep010-2026-06-05.mp3">
       <div>
-        <div class="archive-link-date">d5n-ep010-2026-06-05</div>
+        <div class="archive-link-date">Ep #010 · 5 Jun 2026</div>
         <div class="archive-link-text">6:12</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
     <a class="archive-link" href="/audio/d5n-ep009-2026-06-04.mp3">
       <div>
-        <div class="archive-link-date">d5n-ep009-2026-06-04</div>
+        <div class="archive-link-date">Ep #009 · 4 Jun 2026</div>
         <div class="archive-link-text">8:49</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
     <a class="archive-link" href="/audio/d5n-ep008-2026-06-03.mp3">
       <div>
-        <div class="archive-link-date">d5n-ep008-2026-06-03</div>
+        <div class="archive-link-date">Ep #008 · 3 Jun 2026</div>
         <div class="archive-link-text">8:13</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
+    <div class="archive-link archive-link--missing">
+      <div>
+        <div class="archive-link-date">Ep #007 · 2 Jun 2026</div>
+        <div class="archive-link-text">indisponível</div>
+      </div>
+      <span class="archive-link-archive-ghost">◌</span>
+    </div>
     <a class="archive-link" href="/audio/d5n-ep006-2026-06-01.mp3">
       <div>
-        <div class="archive-link-date">d5n-ep006-2026-06-01</div>
+        <div class="archive-link-date">Ep #006 · 1 Jun 2026</div>
         <div class="archive-link-text">5:35</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
+    <a class="archive-link" href="/audio/d5n-ep005-2026-05-29.mp3">
+      <div>
+        <div class="archive-link-date">Ep #005 · 29 Mai 2026</div>
+        <div class="archive-link-text">7:51</div>
+      </div>
+      <span class="archive-link-arrow">→</span>
+    </a>
+    <a class="archive-link" href="/audio/d5n-ep004-2026-05-28.mp3">
+      <div>
+        <div class="archive-link-date">Ep #004 · 28 Mai 2026</div>
+        <div class="archive-link-text">2:46</div>
+      </div>
+      <span class="archive-link-arrow">→</span>
+    </a>
+    <div class="archive-link archive-link--missing">
+      <div>
+        <div class="archive-link-date">Ep #003 · 27 Mai 2026</div>
+        <div class="archive-link-text">indisponível</div>
+      </div>
+      <span class="archive-link-archive-ghost">◌</span>
+    </div>
+    <div class="archive-link archive-link--missing">
+      <div>
+        <div class="archive-link-date">Ep #002 · 26 Mai 2026</div>
+        <div class="archive-link-text">indisponível</div>
+      </div>
+      <span class="archive-link-archive-ghost">◌</span>
+    </div>
+    <div class="archive-link archive-link--missing">
+      <div>
+        <div class="archive-link-date">Ep #001 · 24 Mai 2026</div>
+        <div class="archive-link-text">indisponível</div>
+      </div>
+      <span class="archive-link-archive-ghost">◌</span>
+    </div>
   </section>
 
 </div>

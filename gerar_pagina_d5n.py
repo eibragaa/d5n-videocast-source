@@ -60,34 +60,55 @@ def format_data_curta(date_str):
     meses = {1:'Jan',2:'Fev',3:'Mar',4:'Abr',5:'Mai',6:'Jun',7:'Jul',8:'Ago',9:'Set',10:'Out',11:'Nov',12:'Dez'}
     return f"{d.day} {meses[d.month]} {d.year}"
 
-def find_latest_podcast():
-    if not os.path.isdir(AUDIO_DIR): return None
-    mp3s = sorted([f for f in os.listdir(AUDIO_DIR) if f.endswith('.mp3')], reverse=True)
-    if not mp3s: return None
-    latest = mp3s[0]
-    path = f"{AUDIO_DIR}/{latest}"
-    dur = 0; ep_num = "000"
+def load_episode_history():
+    """Carrega o histórico completo de episódios do JSON persistente."""
+    try:
+        with open(COUNTER_FILE) as f:
+            return json.load(f).get("history", [])
+    except: return []
+
+def get_duration(filepath):
+    """Obtém duração do MP3 via ffprobe, retorna 0 em erro."""
     try:
         import subprocess
-        r = subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",path],capture_output=True,text=True,timeout=10)
-        dur = round(float(r.stdout.strip()))
-        m = re.search(r'ep(\d+)', latest)
-        if m: ep_num = m.group(1)
-    except: dur = 0
-    return {"file":latest,"path":f"/audio/{latest}","duration":dur,"dur_str":f"{dur//60}:{dur%60:02d}","num":ep_num}
+        r = subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",filepath],capture_output=True,text=True,timeout=10)
+        return round(float(r.stdout.strip()))
+    except: return 0
+
+def find_latest_podcast():
+    history = load_episode_history()
+    if not history: return None
+    latest_entry = history[-1]  # último da lista = mais recente
+    f = latest_entry["file"]
+    path = f"{AUDIO_DIR}/{f}"
+    dur = get_duration(path) if os.path.exists(path) else 0
+    return {
+        "file": f,
+        "path": f"/audio/{f}",
+        "duration": dur,
+        "dur_str": f"{dur//60}:{dur%60:02d}",
+        "num": latest_entry["num"].lstrip("0") or "0"
+    }
 
 def list_episodes():
-    if not os.path.isdir(AUDIO_DIR): return []
-    mp3s = sorted([f for f in os.listdir(AUDIO_DIR) if f.endswith('.mp3')], reverse=True)
+    """Lista episódios do histórico persistente (reverso, mais recente primeiro).
+    Só mostra episódios que existem em audio/. Os perdidos viram placeholder
+    com link desabilitado."""
+    history = load_episode_history()
     eps = []
-    for f in mp3s:
-        path = f"{AUDIO_DIR}/{f}"; dur = 0
-        try:
-            import subprocess
-            r = subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",path],capture_output=True,text=True,timeout=10)
-            dur = round(float(r.stdout.strip()))
-        except: dur = 0
-        eps.append({"file":f,"path":f"/audio/{f}","dur_str":f"{dur//60}:{dur%60:02d}"})
+    for entry in reversed(history):
+        f = entry["file"]
+        path = f"{AUDIO_DIR}/{f}"
+        exists = os.path.exists(path)
+        dur = get_duration(path) if exists else 0
+        eps.append({
+            "file": f,
+            "path": f"/audio/{f}",
+            "dur_str": f"{dur//60}:{dur%60:02d}" if exists else "—",
+            "exists": exists,
+            "num": entry["num"],
+            "date": entry["date"]
+        })
     return eps
 
 def gerar_html(date, data_br, data_curta, noticias, podcast, episodios):
@@ -188,15 +209,25 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios):
     # ── Episódios anteriores (archive) ──
     archive_html = ""
     if episodios:
-        for ep in episodios[:5]:
-            archive_html += f'''
+        for ep in episodios[:20]:  # mostra até 20
+            if ep.get("exists", False):
+                archive_html += f'''
     <a class="archive-link" href="{ep["path"]}">
       <div>
-        <div class="archive-link-date">{ep["file"].replace('.mp3','')}</div>
+        <div class="archive-link-date">Ep #{ep["num"]} · {format_data_curta(ep["date"])}</div>
         <div class="archive-link-text">{ep["dur_str"]}</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>'''
+            else:
+                archive_html += f'''
+    <div class="archive-link archive-link--missing">
+      <div>
+        <div class="archive-link-date">Ep #{ep["num"]} · {format_data_curta(ep["date"])}</div>
+        <div class="archive-link-text">indisponível</div>
+      </div>
+      <span class="archive-link-archive-ghost">◌</span>
+    </div>'''
 
     html = f'''<!DOCTYPE html>
 <html lang="pt-BR">
@@ -324,6 +355,10 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios):
   .archive-link-date {{ font-family:'Libre Baskerville',serif; font-size:0.88rem; color:var(--text); font-style:italic; }}
   .archive-link-arrow {{ color:var(--accent); font-size:0.8rem; transition:transform 0.2s; }}
   .archive-link:hover .archive-link-arrow {{ transform:translateX(4px); }}
+  .archive-link--missing {{ opacity:0.35; cursor:default; }}
+  .archive-link--missing .archive-link-date {{ color:var(--muted); }}
+  .archive-link--missing .archive-link-text {{ font-style:italic; color:var(--faint); }}
+  .archive-link-archive-ghost {{ color:var(--faint); font-size:0.7rem; }}
 
   @media (max-width:600px) {{
     header {{ padding:0 1rem; }} .container {{ padding:0 1rem; }}

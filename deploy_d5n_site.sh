@@ -70,7 +70,17 @@ if [ -n "$LATEST_MP3" ]; then
             cp "$LATEST_MP3" "$DEST"
             echo "✅ Áudio copiado: $DEST (ep #$EP_NUM, $(du -h "$DEST" | cut -f1))" | tee -a "$LOG"
             # Atualiza contador persistente
-            python3 -c "import json; json.dump({'last_episode':$NEXT_NUM,'updated':'$DATE','format':'d5n-ep{NNN}-{DATE}.mp3'}, open('$COUNTER_FILE','w'), indent=2)"
+            python3 -c "
+import json
+with open('$COUNTER_FILE') as f: d=json.load(f)
+if 'history' not in d: d['history']=[]
+# Evita duplicatas
+if not any(e['num']=='$EP_NUM' for e in d['history']):
+    d['history'].append({'num':'$EP_NUM','date':'$DATE','file':'d5n-ep$EP_NUM-$DATE.mp3','exists':True})
+d['last_episode']=$NEXT_NUM
+d['updated']='$DATE'
+json.dump(d,open('$COUNTER_FILE','w'),indent=2)
+"
             echo "✅ Contador atualizado: episode-counter.json → #$EP_NUM" | tee -a "$LOG"
         else
             echo "ℹ️  Áudio já atualizado: $DEST" | tee -a "$LOG"
