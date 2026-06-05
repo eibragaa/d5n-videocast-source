@@ -52,39 +52,66 @@ if [ -n "$LATEST_MP3" ]; then
     fi
 
     if [ "$FAILED" -eq 0 ]; then
-        # Lê o contador persistente — FONTE ÚNICA DA VERDADE para numeração
+        # 🔥 CORREÇÃO: verificar se já existe episódio para a DATA DE HOJE
+        # Se sim, reutilizar o número (sobrescrever) em vez de criar novo
+        TODAY_EP=""
         if [ -f "$COUNTER_FILE" ]; then
-            LAST_NUM=$(python3 -c "import json; d=json.load(open('$COUNTER_FILE')); print(d.get('last_episode',0))" 2>/dev/null)
+            TODAY_EP=$(python3 -c "
+import json
+d=json.load(open('$COUNTER_FILE'))
+history=d.get('history',[])
+# Procura episódio com a data de hoje
+for e in history:
+    if e.get('date')=='$DATE':
+        print(e['num'])
+        break
+" 2>/dev/null)
+        fi
+
+        if [ -n "$TODAY_EP" ]; then
+            # Já existe episódio para hoje — REUTILIZAR número e sobrescrever
+            EP_NUM="$TODAY_EP"
+            echo "♻️  Episódio #$EP_NUM já existe para hoje — sobrescrevendo" | tee -a "$LOG"
         else
-            LAST_NUM=0
+            # Lê o contador persistente e calcula próximo
+            if [ -f "$COUNTER_FILE" ]; then
+                LAST_NUM=$(python3 -c "import json; d=json.load(open('$COUNTER_FILE')); print(d.get('last_episode',0))" 2>/dev/null)
+            else
+                LAST_NUM=0
+            fi
+            if [ -z "$LAST_NUM" ] || [ "$LAST_NUM" = "0" ]; then
+                LAST_NUM=$(ls audio/d5n-ep*.mp3 2>/dev/null | grep -oP 'ep\K\d+' | sort -n | tail -1)
+                LAST_NUM=${LAST_NUM:-0}
+            fi
+            NEXT_NUM=$((10#$LAST_NUM + 1))
+            EP_NUM=$(printf "%03d" "$NEXT_NUM")
         fi
-        if [ -z "$LAST_NUM" ] || [ "$LAST_NUM" = "0" ]; then
-            # Fallback: tenta extrair do maior arquivo existente
-            LAST_NUM=$(ls audio/d5n-ep*.mp3 2>/dev/null | grep -oP 'ep\K\d+' | sort -n | tail -1)
-            LAST_NUM=${LAST_NUM:-0}
-        fi
-        NEXT_NUM=$((10#$LAST_NUM + 1))
-        EP_NUM=$(printf "%03d" "$NEXT_NUM")
+
         DEST="audio/d5n-ep${EP_NUM}-${DATE}.mp3"
-        if [ ! -f "$DEST" ]; then
-            cp "$LATEST_MP3" "$DEST"
-            echo "✅ Áudio copiado: $DEST (ep #$EP_NUM, $(du -h "$DEST" | cut -f1))" | tee -a "$LOG"
-            # Atualiza contador persistente
-            python3 -c "
+        cp "$LATEST_MP3" "$DEST"
+        echo "✅ Áudio copiado: $DEST (ep #$EP_NUM, $(du -h "$DEST" | cut -f1))" | tee -a "$LOG"
+
+        # Atualiza contador persistente (sempre, mesmo se sobrescrevendo)
+        python3 -c "
 import json
 with open('$COUNTER_FILE') as f: d=json.load(f)
 if 'history' not in d: d['history']=[]
-# Evita duplicatas
-if not any(e['num']=='$EP_NUM' for e in d['history']):
+today_idx = next((i for i,e in enumerate(d['history']) if e.get('date')=='$DATE'), -1)
+if today_idx >= 0:
+    d['history'][today_idx]['exists']=True
+    d['history'][today_idx]['file']='d5n-ep$EP_NUM-$DATE.mp3'
+else:
     d['history'].append({'num':'$EP_NUM','date':'$DATE','file':'d5n-ep$EP_NUM-$DATE.mp3','exists':True})
-d['last_episode']=$NEXT_NUM
+# last_episode só avança se EP_NUM > actual
+ep_int = int('$EP_NUM')
+if ep_int > d.get('last_episode',0):
+    d['last_episode']=ep_int
+else:
+    d['last_episode']=d.get('last_episode',ep_int)
 d['updated']='$DATE'
 json.dump(d,open('$COUNTER_FILE','w'),indent=2)
 "
-            echo "✅ Contador atualizado: episode-counter.json → #$EP_NUM" | tee -a "$LOG"
-        else
-            echo "ℹ️  Áudio já atualizado: $DEST" | tee -a "$LOG"
-        fi
+        echo "✅ Contador atualizado: episode-counter.json → #$EP_NUM" | tee -a "$LOG"
     fi
 else
     echo "ℹ️  Nenhum MP3 novo no pipeline" | tee -a "$LOG"
