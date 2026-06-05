@@ -10,43 +10,46 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
 
-1. 1. EUA: primárias de meio de mandato — Becerra e Hilton empatados na Califórnia, Feenstra perde em Iowa, Deb Haaland ava
 
-2. 2. EUA intensificam ataques contra o Irã — sanções a exchanges de criptomoedas; Bitcoin cai abaixo de US$66 mil
+### 🤖 TECH & IA
 
-3. 3. OCDE reduz previsão de crescimento global — bolsas europeias recuam, petróleo sobe com tensões no Oriente Médio
+1. Como funciona sistema antidrones comprado em negócio de US$ 1,5 bilhão
 
-4. 4. Reino Unido: assassinato de Henry Nowak reacende debate sobre força policial
+2. Site rastreia jatos de super-ricos para 'prever o apocalipse'
 
-5. 5. Colômbia: eleição presidencial traz surpresas; Coreia do Sul se aproxima de eleições regionais
+3. Instagram Plus começa a ser liberado no Brasil; veja preço e recursos exclusivos
 
-6. 6. Trump anuncia novas tarifas contra o Brasil — Ibovespa e dólar de olho no anúncio
+4. WhatsApp lança filtros e figurinhas para a Copa do Mundo; veja como usar
 
-7. 7. Crime organizado descobre novo playground na Faria Lima: fintechs viram meio fácil para lavagem de dinheiro
+5. Android passa a detectar possíveis ligações falsas feitas com IA
 
-8. 8. Inclusão digital dos idosos: urgência para milhões de brasileiros excluídos de serviços online
+6. Deputada britânica processa empresa de Elon Musk por imagens geradas por IA em que aparece usando biquíni
 
-9. 9. Nvidia aposta em PCs com IA integrada — chips dedicados para rodar modelos localmente sem depender da nuvem
+7. Uber demite 23% da equipe de RH e recrutamento
 
-10. 10. Meta expande globalmente filtros de conteúdo para contas de adolescentes — privacidade mais restrita por padrão
+8. Instagram Plus é liberado no Brasil; veja preço e benefícios
 
-11. 11. Nova York e União Europeia fecham acordo inédito para fiscalizar stablecoins
+9. Dados de 1,2 milhão de usuários do iFood são vazados
 
-12. 12. Cardano perde TapTools — plataforma encerra operações após saída de executivos
+10. EUA prendem CEO de tecnologia na Califórnia acusado de fornecer equipamentos para programas nuclear e militar do Irã
 
-13. 13. Reino Unido: parlamentares alertam que regras rígidas podem inviabilizar stablecoins em libras
+11. Crypto billionaires bankroll Nigel Farage's pro-crypto party
 
-14. 14. Figure Robótica: robôs humanoides realizam tarefas básicas — ainda longe de substituir humanos
+12. Tether-linked billionaire Christopher Harborne and BitMEX co-founder Ben Delo donated $9.4 million to Nigel Farage’s Ref
 
-15. 15. OpenAI acusada nos EUA de causar danos a crianças; IA para diagnósticos médicos avança
+13. Strategy’s leveraged Bitcoin model has faced its first stress test: Grayscale
 
-16. 16. PCs com IA: a nova geração de notebooks com chips dedicados
+14. “Less Bitcoin on levered DAT balance sheets and more on diversified corporate balance sheets will be a positive,” said G
 
-17. 17. Inditex (Zara) sobe mais de 4% na bolsa após resultados fortes no 1º trimestre
+15. Anthropic says self-improving AI may be closer than expected
 
-18. 18. Morgan Stanley eleva Yum! Brands (KFC, Pizza Hut, Taco Bell); rebaixa Chipotle e Shake Shack
+16. Companies have been developing AI very quickly to stay ahead of the market, but
 
-19. 19. Bitcoin despenca com tensões no Oriente Médio — cripto vira aposta contrária
+17. Favaro and Clark argue that a slowdown would allow more time to deal with the technology’s implications.
 
-20. 20. OCDE corta previsão de crescimento global — alerta sobre riscos sem acordo com Irã
+18. ZEC drops 30% as Shielded Labs reveals more about infinite counterfeit bug
+
+19. ZEC market capitalization fell by almost $3 billion over the past 24 hours following the disclosure of a critical vulner
+
+20. Senate Republicans push finance watchdogs to clarify crypto capital rules
 
