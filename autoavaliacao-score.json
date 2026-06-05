@@ -1,0 +1,18 @@
+[
+  {
+    "date": "2026-06-05",
+    "grade": 9.6,
+    "exit_code": 0,
+    "needs_manual": false,
+    "created_at": "2026-06-05T05:38:48.226685",
+    "updated_at": "2026-06-05T05:46:55.640088",
+    "metrics": {
+      "total_eps": 11,
+      "mp3_disk": 7,
+      "coverage_pct": 63.6,
+      "pilares": "3/3",
+      "gaps": 0,
+      "corujao_blocked": true
+    }
+  }
+]

@@ -328,22 +328,40 @@ def main():
         report.append("✅ Tudo OK — nenhuma ação necessária")
         exit_code = 0
     
-    # ── Autoavaliação e Métricas ──
+    # ── Autoavaliação e Métricas (Master OS style) ──
     metrics = calculate_metrics(counter)
     grade, desc = calculate_grade(exit_code, metrics, needs_fix, needs_manual)
-    report.append(f"📊 Métricas: {metrics['total_episodes']}eps · {metrics['mp3s_on_disk']}mp3 · {metrics['pilares_present']}/{metrics['pilares_esperados']} pilares · corujão {'✅' if metrics['corujao_blocked'] else '⛔'} · counter {'✅' if metrics['counter_integrity'] else '⚠️'}")
-    report.append(f"🎯 Nota: {grade}/10 — {desc}")
-    save_daily_score(grade, exit_code, needs_manual)
     
-    # ── Mensagem de motivação (das 45 frases do Pensador.com) ──
-    if not quiet:
+    # Rastreamento de issues persistentes com escalação
+    persistent_issues, escalations = track_persistent_issues(exit_code, metrics, needs_manual)
+    
+    # Linha de métricas compacta
+    report.append(f"📊 {metrics['total_episodes']}eps · {metrics['mp3s_on_disk']}mp3 · {metrics['coverage_pct']}% · {metrics['pilares_present']}/{metrics['pilares_esperados']} · gaps={metrics['num_gaps']} · {'🔒' if metrics['corujao_blocked'] else '🚨'} · {'✅' if metrics['counter_integrity'] else '⚠️'}")
+    report.append(f"🎯 Nota: {grade}/10 — {desc}")
+    
+    # Tendência
+    trend = analyze_trend(grade)
+    if trend:
+        report.append(f"📈 Tendência: {trend[0]} ({trend[1]})")
+    
+    # Escalações
+    for esc in escalations:
+        report.append(f"  🔔 {esc}")
+    
+    # Salvar histórico com métricas detalhadas
+    save_daily_score(grade, exit_code, needs_manual, metrics)
+    
+    # ── Decisão de notificação (Master OS style: silencioso se OK) ──
+    should_notify = (exit_code != 0) or (needs_manual) or bool(escalations)
+    
+    # ── Mensagem de motivação (das frases reais do Pensador.com) ──
+    if should_notify:
         msg = get_motivational_message(grade, exit_code)
         report.append("")
         report.append(f"💪 {msg}")
-    
-    if not quiet:
         for line in report:
             print(line)
+    # else: silencioso — saudável, não perturba
     
     return exit_code
 
@@ -400,11 +418,26 @@ def get_motivational_message(grade, exit_code):
 
 
 SCORE_HISTORY_FILE = os.path.join(BASE, "autoavaliacao-score.json")
+PERSISTENT_ISSUES_FILE = os.path.join(BASE, "autoavaliacao-issues.json")
+
+
+# ═══════════════════════════════════════════════════
+# SISTEMA MASTER OS — Autoavaliação Avançada
+# ═══════════════════════════════════════════════════
+# Inspirado no Homelab Health Intelligence (Master OS):
+#   - Score 0-100 com métricas pesadas
+#   - Silencioso quando saudável (notificação seletiva)
+#   - Escalação de problemas (3+ dias consecutivos)
+#   - Análise de tendência (melhora/piora)
+#   - Histórico persistente com ações corretivas
+#   - Múltiplas dimensões: conteúdo, deploy, reparo, segurança
+# ═══════════════════════════════════════════════════
+
 
 def calculate_metrics(counter):
-    """Calcula métricas do ecossistema para autoavaliação."""
+    """Calcula métricas do ecossistema para autoavaliação (Master OS style)."""
     audio_dir = os.path.join(BASE, "audio")
-    mp3_files = [f for f in os.listdir(audio_dir) if f.endswith(".mp3")]
+    mp3_files = [f for f in os.listdir(audio_dir) if f.endswith(".mp3")] if os.path.isdir(audio_dir) else []
     
     history = counter.get("history", [])
     total_eps = len(history)
@@ -413,115 +446,275 @@ def calculate_metrics(counter):
     # Pilares esperados vs presentes
     pilares_esperados = 3  # Global, Brasil, Tech
     site_file = os.path.join(BASE, "index.html")
-    pilares_present = 0
+    content = ""
     if os.path.exists(site_file):
-        content = open(site_file, "r", encoding="utf-8").read()
-        for pilar in ["Global", "Brasil", "Tech"]:
-            if pilar in content:
-                pilares_present += 1
+        with open(site_file, "r", encoding="utf-8") as f:
+            content = f.read()
+    pilares_present = sum(1 for p in ["Global", "Brasil", "Tech"] if p in content)
     
     # Corujão bloqueado?
     corujao_blocked = True
-    if os.path.exists(site_file):
-        content = open(site_file, "r", encoding="utf-8").read()
-        if "corujao" in content.lower() or "homelab" in content.lower():
-            corujao_blocked = False
+    if "corujao" in content.lower() or "homelab" in content.lower() or "epNNN" in content.lower():
+        corujao_blocked = False
     
-    # Integridade do counter
+    # Integridade do counter — toda numeração de audio/ está no history
     counter_integrity = True
-    expected_nums = set()
+    history_nums = set()
     for entry in history:
         num = entry.get("num", "")
-        expected_nums.add(num)
+        if num:
+            history_nums.add(num)
+    
     last = counter.get("last_episode", 0)
-    # Verifica se o número máximo tem MP3 correspondente
     max_mp3 = f"d5n-ep{last:03d}"
     has_latest = any(max_mp3 == f"d5n-ep{entry['num']}" for entry in history)
-    counter_integrity = has_latest
+    counter_integrity = has_latest and bool(history_nums)
+    
+    # MP3s em disco vs history — quantos % do history estão em disco?
+    history_files = set(h.get("file", "") for h in history)
+    disk_files = set(f for f in mp3_files)
+    files_on_disk = len(history_files & disk_files)
+    coverage_pct = round((files_on_disk / total_eps * 100), 1) if total_eps > 0 else 0
+    
+    # Player mais recente OK?
+    player_ok = False
+    if content:
+        if f"Ep #{last}" in content or f"Episódio #{last}" in content:
+            player_ok = True
+    
+    # Gaps na numeração (ex: tem ep001, ep003 mas não ep002)
+    sorted_nums = sorted(int(h["num"]) for h in history if h.get("num", "").isdigit())
+    gaps = []
+    if sorted_nums:
+        expected = list(range(1, sorted_nums[-1] + 1))
+        gaps = [e for e in expected if e not in sorted_nums]
     
     return {
         "total_episodes": total_eps,
         "mp3s_on_disk": mp3_on_disk,
+        "files_on_disk": files_on_disk,
+        "coverage_pct": coverage_pct,
         "pilares_present": pilares_present,
         "pilares_esperados": pilares_esperados,
         "corujao_blocked": corujao_blocked,
         "counter_integrity": counter_integrity,
+        "player_ok": player_ok,
+        "gaps": gaps,
+        "num_gaps": len(gaps),
     }
 
 
 def calculate_grade(exit_code, metrics, needs_fix, needs_manual):
-    """Calcula nota 0-10 baseada em múltiplos fatores."""
+    """Calcula nota 0-10 baseada em múltiplos fatores (Master OS style)."""
     grade = 10.0
     
-    # Penalidades por exit_code
+    # ── Penalidades (peso: exit_code primeiro) ──
     if exit_code == 2:
-        grade -= 4.0  # Requer ação manual
+        grade -= 4.0  # AÇÃO MANUAL — crítico
     elif exit_code == 1:
-        grade -= 1.5  # Precisou de correção
+        grade -= 1.5  # Autocorreção acionada
     
-    # Penalidades por métricas
+    # ── Penalidades por métricas (dimensões) ──
+    
+    # Dimensão CONTEÚDO (até -3.0)
     if metrics["total_episodes"] == 0:
         grade -= 3.0
-    if metrics["mp3s_on_disk"] < metrics["total_episodes"]:
-        grade -= 1.0
     if metrics["pilares_present"] < metrics["pilares_esperados"]:
         diff = metrics["pilares_esperados"] - metrics["pilares_present"]
         grade -= diff * 0.5
-    if not metrics["corujao_blocked"]:
-        grade -= 2.0
+    
+    # Dimensão DISCO / INTEGRIDADE (até -2.0)
+    if metrics["mp3s_on_disk"] < metrics["total_episodes"]:
+        missing = metrics["total_episodes"] - metrics["mp3s_on_disk"]
+        grade -= min(1.5, missing * 0.3)
     if not metrics["counter_integrity"]:
         grade -= 1.0
     
-    # Bônus por estabilidade
+    # Dimensão SEGURANÇA (até -2.0)
+    if not metrics["corujao_blocked"]:
+        grade -= 2.0
+    
+    # Dimensão QUALIDADE (até -1.0)
+    if not metrics["player_ok"]:
+        grade -= 0.5
+    if metrics.get("num_gaps", 0) > 0:
+        grade -= min(0.5, metrics["num_gaps"] * 0.1)
+    
+    # ── Bônus (até +1.0) ──
     if exit_code == 0 and not needs_fix:
-        grade += 0.5
+        grade += 0.5                     # Estabilidade
+    if metrics["coverage_pct"] >= 90:
+        grade += 0.2                     # Alta cobertura de MP3s em disco
+    if metrics["num_gaps"] == 0 and metrics["total_episodes"] > 0:
+        grade += 0.3                     # Numeração sem gaps
     
-    grade = max(0, min(10, grade))
+    grade = max(0, min(10, round(grade, 1)))
     
-    if grade >= 9:
-        desc = "Excelente! Ecossistema saudável e autônomo."
+    # ── Descrição com nuance ──
+    if grade >= 9.5:
+        desc = "🏆 Excelência! Ecossistema autônomo e saudável."
+    elif grade >= 9:
+        desc = "⭐ Excelente! Ecossistema saudável e autônomo."
     elif grade >= 7:
-        desc = "Bom! Pequenos ajustes, mas funcionando."
+        desc = "✅ Bom! Pequenos ajustes, mas funcionando."
     elif grade >= 5:
-        desc = "Regular. Precisa de atenção em algumas áreas."
+        desc = "⚠️ Regular. Precisa de atenção em algumas áreas."
     elif grade >= 3:
-        desc = "Ruim. Vários problemas detectados."
+        desc = "🔴 Ruim. Vários problemas detectados."
     else:
-        desc = "Crítico. Sistema precisa de intervenção urgente."
+        desc = "🚨 Crítico. Sistema precisa de intervenção urgente."
     
-    return round(grade, 1), desc
+    return grade, desc
 
 
-def save_daily_score(grade, exit_code, needs_manual):
-    """Acumula histórico de autoavaliação para análise de tendências."""
+def track_persistent_issues(exit_code, metrics, needs_manual):
+    """Rastreia problemas recorrentes e escala alertas (igual Master OS)."""
+    today = datetime.now().strftime("%Y-%m-%d")
+    
+    ledger = {"persistent_issues": {}, "updated": today}
+    if os.path.exists(PERSISTENT_ISSUES_FILE):
+        try:
+            with open(PERSISTENT_ISSUES_FILE) as f:
+                ledger = json.load(f)
+        except (json.JSONDecodeError, IOError):
+            ledger = {"persistent_issues": {}, "updated": today}
+    
+    persistent = ledger.get("persistent_issues", {})
+    escalations = []
+    
+    # Identificar issues do dia
+    issues_today = []
+    if exit_code == 2:
+        issues_today.append("acao_manual_requerida")
+    if needs_manual:
+        issues_today.append("falha_autocorrecao")
+    if metrics.get("corujao_blocked") is False:
+        issues_today.append("corujao_no_ar")
+    if metrics.get("num_gaps", 0) > 0:
+        issues_today.append(f"gaps_numeracao: {metrics['num_gaps']}")
+    if metrics.get("coverage_pct", 100) < 50:
+        issues_today.append("baixa_cobertura_disco")
+    if metrics.get("player_ok") is False:
+        issues_today.append("player_offline")
+    if metrics.get("total_episodes", 0) == 0:
+        issues_today.append("sem_episodios")
+    
+    # Se não tem issues hoje, registrar saúde
+    if not issues_today:
+        # Issues persistentes que sumiram
+        for issue in list(persistent.keys()):
+            if persistent[issue].get("last_seen") and persistent[issue]["last_seen"] != today:
+                last = datetime.strptime(persistent[issue]["last_seen"], "%Y-%m-%d")
+                if (datetime.now() - last).days > 3:
+                    del persistent[issue]
+    
+    # Atualizar contagem de dias consecutivos
+    for issue in issues_today:
+        if issue in persistent:
+            prev = persistent[issue]
+            persistent[issue] = {
+                "first_seen": prev["first_seen"],
+                "consecutive_days": prev["consecutive_days"] + 1,
+                "last_seen": today,
+            }
+        else:
+            persistent[issue] = {
+                "first_seen": today,
+                "consecutive_days": 1,
+                "last_seen": today,
+            }
+    
+    # Escalação por dias consecutivos
+    for issue, info in persistent.items():
+        days = info["consecutive_days"]
+        if days >= 5:
+            escalations.append(f"{issue}: {days} dias consecutivos — 🔴 CRÍTICO, ação manual necessária")
+        elif days >= 3:
+            escalations.append(f"{issue}: {days} dias consecutivos — 🟠 escalando atenção")
+    
+    ledger["persistent_issues"] = persistent
+    ledger["escalations"] = escalations
+    ledger["updated"] = today
+    
+    try:
+        with open(PERSISTENT_ISSUES_FILE, "w") as f:
+            json.dump(ledger, f, indent=2, ensure_ascii=False)
+    except IOError:
+        pass
+    
+    return persistent, escalations
+
+
+def analyze_trend(grade):
+    """Analisa tendência baseada no histórico de 7 dias (melhorou/piorou)."""
+    history = []
+    if os.path.exists(SCORE_HISTORY_FILE):
+        try:
+            with open(SCORE_HISTORY_FILE) as f:
+                history = json.load(f)
+        except (json.JSONDecodeError, IOError):
+            return None
+    
+    # Últimos 7 dias (excluindo hoje)
+    recent = [h for h in history if h["date"] != datetime.now().strftime("%Y-%m-%d")]
+    recent = sorted(recent, key=lambda x: x["date"])[-7:]
+    
+    if len(recent) < 2:
+        return None
+    
+    avg_before = sum(h["grade"] for h in recent[:-1]) / len(recent[:-1])
+    avg_after = grade
+    
+    diff = avg_after - avg_before
+    if diff >= 0.5:
+        return "📈 Melhorou", f"+{diff:.1f} pts vs média de {len(recent[:-1])} dias"
+    elif diff <= -0.5:
+        return "📉 Piorou", f"{diff:.1f} pts vs média de {len(recent[:-1])} dias"
+    else:
+        return "➡️ Estável", f"{diff:+.1f} pts vs média de {len(recent[:-1])} dias"
+
+
+def save_daily_score(grade, exit_code, needs_manual, metrics=None):
+    """Acumula histórico de autoavaliação para análise de tendências (Master OS style)."""
     today = datetime.now().strftime("%Y-%m-%d")
     
     history = []
     if os.path.exists(SCORE_HISTORY_FILE):
         try:
-            history = json.load(open(SCORE_HISTORY_FILE, "r"))
+            with open(SCORE_HISTORY_FILE) as f:
+                history = json.load(f)
         except (json.JSONDecodeError, IOError):
             history = []
     
-    # Atualizar ou adicionar entrada de hoje
-    found = False
-    for entry in history:
-        if entry["date"] == today:
-            entry["grade"] = grade
-            entry["exit_code"] = exit_code
-            entry["needs_manual"] = needs_manual
-            entry["updated_at"] = datetime.now().isoformat()
-            found = True
+    # Encontrar ou criar entrada de hoje
+    entry = None
+    for e in history:
+        if e["date"] == today:
+            entry = e
             break
     
-    if not found:
-        history.append({
-            "date": today,
-            "grade": grade,
-            "exit_code": exit_code,
-            "needs_manual": needs_manual,
-            "created_at": datetime.now().isoformat(),
-        })
+    new_entry = {
+        "date": today,
+        "grade": grade,
+        "exit_code": exit_code,
+        "needs_manual": needs_manual,
+        "updated_at": datetime.now().isoformat(),
+    }
+    
+    if metrics:
+        new_entry["metrics"] = {
+            "total_eps": metrics["total_episodes"],
+            "mp3_disk": metrics["mp3s_on_disk"],
+            "coverage_pct": metrics["coverage_pct"],
+            "pilares": f"{metrics['pilares_present']}/{metrics['pilares_esperados']}",
+            "gaps": metrics["num_gaps"],
+            "corujao_blocked": metrics["corujao_blocked"],
+        }
+    
+    if entry:
+        entry.update(new_entry)
+    else:
+        history.append(new_entry)
     
     # Manter só últimos 90 dias
     history = sorted(history, key=lambda x: x["date"])[-90:]
