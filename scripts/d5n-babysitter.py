@@ -328,11 +328,209 @@ def main():
         report.append("✅ Tudo OK — nenhuma ação necessária")
         exit_code = 0
     
+    # ── Autoavaliação e Métricas ──
+    metrics = calculate_metrics(counter)
+    grade, desc = calculate_grade(exit_code, metrics, needs_fix, needs_manual)
+    report.append(f"📊 Métricas: {metrics['total_episodes']}eps · {metrics['mp3s_on_disk']}mp3 · {metrics['pilares_present']}/{metrics['pilares_esperados']} pilares · corujão {'✅' if metrics['corujao_blocked'] else '⛔'} · counter {'✅' if metrics['counter_integrity'] else '⚠️'}")
+    report.append(f"🎯 Nota: {grade}/10 — {desc}")
+    save_daily_score(grade, exit_code, needs_manual)
+    
+    # ── Mensagem de motivação (das 45 frases do Pensador.com) ──
+    if not quiet:
+        msg = get_motivational_message(grade, exit_code)
+        report.append("")
+        report.append(f"💪 {msg}")
+    
     if not quiet:
         for line in report:
             print(line)
     
     return exit_code
+
+
+# ═══════════════════════════════════════════════════
+# SISTEMA DE MOTIVAÇÃO E AUTOAVALIAÇÃO
+# ═══════════════════════════════════════════════════
+
+MOTIVATIONAL_PHRASES = {
+    "excellent": [
+        "Nossa maior fraqueza está em desistir. O caminho mais certo de vencer é tentar mais uma vez. — Thomas Edison",
+        "O otimismo é a fé daquele que conduz à realização; nada pode ser feito sem esperança. — Helen Keller",
+        "A vida se contrai e se expande proporcionalmente à coragem do indivíduo. — Anaïs Nin",
+        "Qualquer pessoa de sucesso sabe que é uma peça importante, mas sabe que não conseguirá nada sozinho. — Bernardinho",
+        "A felicidade não é algo pronto. Ela é feita das suas próprias ações. — Dalai Lama",
+    ],
+    "good": [
+        "Comece onde você está, use o que você tem e faça o que você pode. — Arthur Ashe",
+        "Tudo o que um sonho precisa para ser realizado é alguém que acredite que ele possa ser realizado. — Roberto Shinyashiki",
+        "Não importa que você vá devagar, contanto que você não pare. — Confúcio",
+        "O sucesso nasce do querer, e da determinação para persistir. — Augusto Cury",
+        "A inspiração existe, porém temos que encontrá-la trabalhando. — Pablo Picasso",
+    ],
+    "warning": [
+        "Devíamos ser ensinados a não esperar por inspiração para começar algo. Ação sempre gera inspiração. — Frank Tibolt",
+        "Não é a carga que o derruba, mas a maneira como você a carrega. — Lou Holtz",
+        "A vida é 10% o que acontece a você e 90% como você reage a isso. — Charles Swindoll",
+        "Acredite em milagres, mas não dependa deles. — Immanuel Kant",
+        "Se a montanha que você está subindo parece cada vez mais imponente é sinal que você está mais próximo ao topo.",
+    ],
+    "error": [
+        "Só é lutador quem sabe lutar consigo mesmo. — Carlos Drummond de Andrade",
+        "A vitalidade é demonstrada não apenas pela persistência, mas pela capacidade de começar de novo. — F. Scott Fitzgerald",
+        "Sonhar é verbo: é seguir, é pensar, inspirar e fazer força, insistir, é lutar, transpirar. — Bráulio Bessa",
+        "Um dia, quando olhares para trás, verás que os dias mais belos foram aqueles em que lutaste. — Sigmund Freud",
+        "Não existe nada de completamente errado no mundo, mesmo um relógio parado consegue estar certo duas vezes por dia. — Paulo Coelho",
+    ],
+}
+
+def get_motivational_message(grade, exit_code):
+    """Retorna uma frase de motivação baseada no estado do sistema."""
+    import random
+    
+    if exit_code == 2:
+        pool = MOTIVATIONAL_PHRASES["error"]
+    elif exit_code == 1:
+        pool = MOTIVATIONAL_PHRASES["warning"]
+    elif grade >= 9:
+        pool = MOTIVATIONAL_PHRASES["excellent"]
+    else:
+        pool = MOTIVATIONAL_PHRASES["good"]
+    
+    return random.choice(pool)
+
+
+SCORE_HISTORY_FILE = os.path.join(BASE, "autoavaliacao-score.json")
+
+def calculate_metrics(counter):
+    """Calcula métricas do ecossistema para autoavaliação."""
+    audio_dir = os.path.join(BASE, "audio")
+    mp3_files = [f for f in os.listdir(audio_dir) if f.endswith(".mp3")]
+    
+    history = counter.get("history", [])
+    total_eps = len(history)
+    mp3_on_disk = len(mp3_files)
+    
+    # Pilares esperados vs presentes
+    pilares_esperados = 3  # Global, Brasil, Tech
+    site_file = os.path.join(BASE, "index.html")
+    pilares_present = 0
+    if os.path.exists(site_file):
+        content = open(site_file, "r", encoding="utf-8").read()
+        for pilar in ["Global", "Brasil", "Tech"]:
+            if pilar in content:
+                pilares_present += 1
+    
+    # Corujão bloqueado?
+    corujao_blocked = True
+    if os.path.exists(site_file):
+        content = open(site_file, "r", encoding="utf-8").read()
+        if "corujao" in content.lower() or "homelab" in content.lower():
+            corujao_blocked = False
+    
+    # Integridade do counter
+    counter_integrity = True
+    expected_nums = set()
+    for entry in history:
+        num = entry.get("num", "")
+        expected_nums.add(num)
+    last = counter.get("last_episode", 0)
+    # Verifica se o número máximo tem MP3 correspondente
+    max_mp3 = f"d5n-ep{last:03d}"
+    has_latest = any(max_mp3 == f"d5n-ep{entry['num']}" for entry in history)
+    counter_integrity = has_latest
+    
+    return {
+        "total_episodes": total_eps,
+        "mp3s_on_disk": mp3_on_disk,
+        "pilares_present": pilares_present,
+        "pilares_esperados": pilares_esperados,
+        "corujao_blocked": corujao_blocked,
+        "counter_integrity": counter_integrity,
+    }
+
+
+def calculate_grade(exit_code, metrics, needs_fix, needs_manual):
+    """Calcula nota 0-10 baseada em múltiplos fatores."""
+    grade = 10.0
+    
+    # Penalidades por exit_code
+    if exit_code == 2:
+        grade -= 4.0  # Requer ação manual
+    elif exit_code == 1:
+        grade -= 1.5  # Precisou de correção
+    
+    # Penalidades por métricas
+    if metrics["total_episodes"] == 0:
+        grade -= 3.0
+    if metrics["mp3s_on_disk"] < metrics["total_episodes"]:
+        grade -= 1.0
+    if metrics["pilares_present"] < metrics["pilares_esperados"]:
+        diff = metrics["pilares_esperados"] - metrics["pilares_present"]
+        grade -= diff * 0.5
+    if not metrics["corujao_blocked"]:
+        grade -= 2.0
+    if not metrics["counter_integrity"]:
+        grade -= 1.0
+    
+    # Bônus por estabilidade
+    if exit_code == 0 and not needs_fix:
+        grade += 0.5
+    
+    grade = max(0, min(10, grade))
+    
+    if grade >= 9:
+        desc = "Excelente! Ecossistema saudável e autônomo."
+    elif grade >= 7:
+        desc = "Bom! Pequenos ajustes, mas funcionando."
+    elif grade >= 5:
+        desc = "Regular. Precisa de atenção em algumas áreas."
+    elif grade >= 3:
+        desc = "Ruim. Vários problemas detectados."
+    else:
+        desc = "Crítico. Sistema precisa de intervenção urgente."
+    
+    return round(grade, 1), desc
+
+
+def save_daily_score(grade, exit_code, needs_manual):
+    """Acumula histórico de autoavaliação para análise de tendências."""
+    today = datetime.now().strftime("%Y-%m-%d")
+    
+    history = []
+    if os.path.exists(SCORE_HISTORY_FILE):
+        try:
+            history = json.load(open(SCORE_HISTORY_FILE, "r"))
+        except (json.JSONDecodeError, IOError):
+            history = []
+    
+    # Atualizar ou adicionar entrada de hoje
+    found = False
+    for entry in history:
+        if entry["date"] == today:
+            entry["grade"] = grade
+            entry["exit_code"] = exit_code
+            entry["needs_manual"] = needs_manual
+            entry["updated_at"] = datetime.now().isoformat()
+            found = True
+            break
+    
+    if not found:
+        history.append({
+            "date": today,
+            "grade": grade,
+            "exit_code": exit_code,
+            "needs_manual": needs_manual,
+            "created_at": datetime.now().isoformat(),
+        })
+    
+    # Manter só últimos 90 dias
+    history = sorted(history, key=lambda x: x["date"])[-90:]
+    
+    try:
+        with open(SCORE_HISTORY_FILE, "w") as f:
+            json.dump(history, f, indent=2, ensure_ascii=False)
+    except IOError:
+        pass  # Falha ao salvar não interrompe o fluxo
 
 if __name__ == "__main__":
     sys.exit(main())
