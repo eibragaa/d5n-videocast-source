@@ -10,35 +10,39 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
 
-1. 1. EUA: Senado debate limites ao acordo de US$ 1,8 bi de Trump em sessão noturna
 
-2. 2. Republicanos na Câmara aprovam ajuda à Ucrânia contrariando Trump
+### 🌍 GLOBAL
 
-3. 3. Zelensky propõe encontro com Putin para negociações diretas
+1. 1. Israel-Hezbollah ceasefire remains elusive, leaving Lebanon in the crossfire
 
-4. 4. Xi Jinping viajará à Coreia do Norte — primeira visita desde 2019
+2. 2. Gulf countries targeted by Iran after exchange of fire with US
 
-5. 5. Trump anuncia US$ 700 milhões em carvão limpo
+3. 3. Putin to Zelenskyy: No peace talks — and don't call me old
 
-6. 1. Prazo de inscrição do Enem 2026 termina hoje
 
-7. 2. Entenda as diferenças entre o PIX e o Zelle americano
+### 🇧🇷 BRASIL
 
-8. 3. Parada LGBT+ de SP: veja programação e interdições
+4. 4. PCC e CV terroristas: entenda possíveis impactos após classificação dos EUA
 
-9. 1. Anthropic: IA auto-aprimorável pode estar mais próxima do que se esperava
+5. 5. Mega-Sena pode pagar R$ 32 milhões hoje
 
-10. 2. Android passa a detectar ligações falsas feitas com IA
 
-11. 3. Como funciona sistema antidrones de US$ 1,5 bilhão
+### 🤖 TECH & IA
 
-12. 4. Instagram Plus começa a ser liberado no Brasil
+6. 6. Google accidentally enabled a new Gemini feature
 
-13. 5. Rússia mira adolescente britânico por denunciar contorno de sanções com cripto
+7. 7. How a USB-connected speaker can infect a PC
 
-14. 1. Bitcoin cai 21% após recompra de dívida da Strategy
+8. 8. Summer Game Fest 2026: anúncios e novidades
 
-15. 2. Interactive Brokers oferece IPO da SpaceX a clientes do Reino Unido
+9. 9. Crossfire: novo shooter PS5 de ex-Naughty Dog
 
-16. 3. Ibovespa e dólar: Payroll concentra atenções do dia
+
+### 💰 ECONOMIA & CRYPTO
+
+10. 10. O boom de IA em Wall Street está chegando à economia real?
+
+11. 11. Boeing estuda elevar produção do 737 MAX para recorde
+
+12. 12. Trump promete apoio a agricultores com custos elevados
 
