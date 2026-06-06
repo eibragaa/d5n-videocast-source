@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Sexta-feira, 5 de Junho de 2026
+## Sábado, 6 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -9,9 +9,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Organize por blocos temáticos na ordem abaixo.
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
-
-
-### 🌍 GLOBAL
 
 1. 1. EUA: Senado debate limites ao acordo de US$ 1,8 bi de Trump em sessão noturna
 
@@ -23,17 +20,11 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 5. 5. Trump anuncia US$ 700 milhões em carvão limpo
 
-
-### 🇧🇷 BRASIL
-
 6. 1. Prazo de inscrição do Enem 2026 termina hoje
 
 7. 2. Entenda as diferenças entre o PIX e o Zelle americano
 
 8. 3. Parada LGBT+ de SP: veja programação e interdições
-
-
-### 🤖 TECH & IA
 
 9. 1. Anthropic: IA auto-aprimorável pode estar mais próxima do que se esperava
 
