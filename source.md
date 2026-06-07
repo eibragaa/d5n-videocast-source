@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Sábado, 6 de Junho de 2026
+## Domingo, 7 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -10,24 +10,15 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
 
-
-### 🌍 GLOBAL
-
 1. 1. Israel-Hezbollah ceasefire remains elusive, leaving Lebanon in the crossfire
 
 2. 2. Gulf countries targeted by Iran after exchange of fire with US
 
 3. 3. Putin to Zelenskyy: No peace talks — and don't call me old
 
-
-### 🇧🇷 BRASIL
-
 4. 4. PCC e CV terroristas: entenda possíveis impactos após classificação dos EUA
 
 5. 5. Mega-Sena pode pagar R$ 32 milhões hoje
-
-
-### 🤖 TECH & IA
 
 6. 6. Google accidentally enabled a new Gemini feature
 
@@ -36,9 +27,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 8. 8. Summer Game Fest 2026: anúncios e novidades
 
 9. 9. Crossfire: novo shooter PS5 de ex-Naughty Dog
-
-
-### 💰 ECONOMIA & CRYPTO
 
 10. 10. O boom de IA em Wall Street está chegando à economia real?
 
