@@ -13,40 +13,52 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 ### 🌍 GLOBAL
 
-1. 1. Neo-Nazi Party Reaches Mayoral Runoff in German Town — The New York Times
+1. 1. US weighs using Iranian assets to compensate Gulf allies for war damage
 
-2. 2. US weighs using Iranian assets to compensate Gulf allies for war damage — Financial Times
+2. 2. Ukraine war briefing: Kyiv unleashes hundreds of drones on Russia
 
-3. 3. Pope begins Spain visit with praise for country's opposition to war and support for migrants — BBC
+3. 3. Israel has reportedly used white phosphorus near Lebanese cities
 
-4. 4. Ukraine war briefing: Kyiv unleashes hundreds of drones on Russia after Putin rejected Zelenskyy meeting — The Guardi
+4. 4. Member of Neo-Nazi Party Reaches Mayoral Runoff in German Town
 
-5. 5. Atiradores abrem fogo durante festival de rua em Ohio, nos EUA — G1
+5. 5. Pope begins Spain visit with praise for country's opposition to war and support for migrants
+
+6. 6. What to know about the ongoing protests outside a New Jersey detention center
+
+7. 7. At least 12 people shot at Toledo festival; search for suspects ongoing
 
 
 ### 🇧🇷 BRASIL
 
-6. 1. Infográfico mostra possíveis candidatos de Lula e Flávio nos estados — G1
+8. 8. Governo se reúne com União Europeia e tenta reverter veto à carne brasileira
 
-7. 2. CNJ identifica magistrados que ganharam mais de R$ 1 milhão por mês — G1
+9. 9. CNJ identifica magistrados que ganharam mais de R$ 1 milhão por mês
 
-8. 3. Governo se reúne com União Europeia e tenta reverter veto à carne brasileira — G1
+10. 10. Crise e impeachment express levaram Peru a ter 9 presidentes em 10 anos
 
 
 ### 🤖 TECH & IA
 
-9. 1. Waymo x Tesla: quem lidera a corrida pelos carros autônomos? — Investing.com
+11. 11. When Claude changed: Managing AI blast radius in production (VentureBeat)
 
-10. 2. I Tested All 4 of Microsoft's New AI Models. Here's the Brutal Truth — PCMag
+12. 12. Hands-on: BenQ's MA270S 27-inch 5K display made for Mac (9to5Mac)
 
-11. 3. O que a SpaceX espera ao estrear na bolsa de valores — G1 Tecnologia
+13. 13. Microsoft AI chief says company was set free from OpenAI to pursue superintelligence
+
+14. 14. Meta's AI support agent bound recovery emails for anyone who asked
+
+15. 15. Anthropic says 80% of its new production code is now authored by Claude
 
 
 ### 💰 ECONOMIA & CRYPTO
 
-12. 1. Bitcoin oversold desde 2020: pode o BTC recuperar para $70K? — Cointelegraph
+16. 16. Manifestantes em Seul exigem novas eleições após falta de cédulas
 
-13. 2. Banco central da China amplia compra de ouro pelo 19º mês consecutivo — Investing.com
+17. 17. Banco central da China amplia compra de ouro pelo 19º mês consecutivo
 
-14. 3. Investidores buscam proteção com rali da bolsa da Coreia do Sul em superaquecimento — Investing.com
+18. 18. Índia eleva preços do gás de cozinha com guerra no Irã pressionando importações
+
+19. 19. Bitcoin most oversold since 2020 crash
+
+20. 20. British Airways planeja aumento de tarifas para compensar custos de combustível
 
