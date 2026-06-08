@@ -49,6 +49,151 @@ def load_today_news(date_str, silent=False):
                     noticias.append({'pilar':cur,'titulo':titulo,'fonte':'D5N'})
     return noticias[:20]
 
+def load_coverage_for_date(date_str):
+    """Carrega scores do Coverage Ledger SQLite para as notícias do dia.
+    Retorna dict: {titulo_normalizado: {score, source_name, source_authority, pillar, quality_score}}
+    """
+    db_path = "/root/.hermes/d5n-coverage-ledger/coverage.db"
+    result = {"scores": {}, "quality_score": None, "episode_num": None, "pillars_covered": []}
+    try:
+        import sqlite3
+        conn = sqlite3.connect(db_path)
+        conn.row_factory = sqlite3.Row
+        
+        # Pega quality_score do episódio — primeiro tenta o mais recente com score, se não achar, pega qualquer um
+        cur = conn.execute(
+            "SELECT episode_num, quality_score, pillars_covered FROM episodes WHERE covered_date = ? AND quality_score IS NOT NULL ORDER BY episode_num DESC LIMIT 1",
+            (date_str,)
+        )
+        ep = cur.fetchone()
+        if not ep:
+            cur = conn.execute(
+                "SELECT episode_num, quality_score, pillars_covered FROM episodes WHERE covered_date = ? ORDER BY episode_num DESC LIMIT 1",
+                (date_str,)
+            )
+            ep = cur.fetchone()
+        if ep:
+            result["quality_score"] = ep["quality_score"]
+            result["episode_num"] = ep["episode_num"]
+            try:
+                result["pillars_covered"] = json.loads(ep["pillars_covered"])
+            except:
+                pass
+        
+        # Pega scores das notícias do dia
+        cur = conn.execute(
+            "SELECT title, score, source_name, source_authority, pillar FROM coverage WHERE covered_date = ? AND episode_num IS NOT NULL",
+            (date_str,)
+        )
+        for row in cur.fetchall():
+            # Normaliza título para match
+            key = row["title"].strip().lower()
+            # Remove pontuação
+            key = re.sub(r'[^\w\s]', '', key)
+            result["scores"][key] = {
+                "score": row["score"],
+                "source": row["source_name"] or "D5N",
+                "authority": row["source_authority"] or 50,
+                "pillar": row["pillar"],
+            }
+        conn.close()
+    except Exception as e:
+        print(f"⚠️  Coverage Ledger não disponível: {e}")
+    return result
+
+def match_coverage(titulo, coverage_data):
+    """Tenta encontrar score no coverage para um título de notícia.
+    Usa fuzzy match: direto, parcial, e por palavras-chave."""
+    if not coverage_data or "scores" not in coverage_data:
+        return None
+    key = re.sub(r'[^\w\s]', '', titulo.strip().lower())
+    
+    # 1. Match direto
+    if key in coverage_data["scores"]:
+        return coverage_data["scores"][key]
+    
+    # 2. Um título contém o outro
+    for k, v in coverage_data["scores"].items():
+        if k in key or key in k:
+            return v
+    
+    # 3. Match parcial (primeiros 40 chars)
+    for k, v in coverage_data["scores"].items():
+        if len(key) > 25 and len(k) > 25:
+            if key[:35] == k[:35] or k[:35] in key or key[:35] in k:
+                return v
+    
+    # 4. Match por palavras-chave (pelo menos 2 palavras significativas em comum)
+    words = set(w for w in key.split() if len(w) > 3)
+    best = None
+    best_count = 0
+    for k, v in coverage_data["scores"].items():
+        kw = set(w for w in k.split() if len(w) > 3)
+        common = len(words & kw)
+        if common > best_count and common >= 2:
+            best_count = common
+            best = v
+    if best:
+        return best
+    
+    return None
+
+def get_badge_html(score, source_name, authority):
+    """Gera badge de score + tooltip 'Por que essa?'"""
+    if score is None:
+        return '<span class="score-badge score-none">—</span>'
+    
+    if score >= 85:
+        badge_class = "score-hot"
+        label = f"🔥 {int(score)}"
+        tag = "⭐ Destaque"
+    elif score >= 70:
+        badge_class = "score-warm"
+        label = f"🔥 {int(score)}"
+        tag = "🔥 Tendência"
+    elif score >= 50:
+        badge_class = "score-mid"
+        label = f"{int(score)}"
+        tag = ""
+    else:
+        badge_class = "score-low"
+        label = f"📉 {int(score)}"
+        tag = ""
+    
+    tooltip = f"Score: {int(score)}/100 · Fonte: {source_name or 'D5N'} · Autoridade: {authority}/100"
+    tag_html = f'<span class="curation-tag">{tag}</span>' if tag else ""
+    return f'<span class="score-badge {badge_class}" title="{tooltip}">{label}</span>{tag_html}'
+
+def get_pillar_avg_scores(coverage_data):
+    """Calcula score medio por pilar a partir do coverage ledger."""
+    if not coverage_data or "scores" not in coverage_data:
+        return {}
+    pillar_scores = {}
+    for k, v in coverage_data["scores"].items():
+        p = v.get("pillar", "").upper()
+        if p not in pillar_scores:
+            pillar_scores[p] = {"scores": [], "sources": set()}
+        pillar_scores[p]["scores"].append(v["score"])
+        pillar_scores[p]["sources"].add(v.get("source", ""))
+    result = {}
+    for p, data in pillar_scores.items():
+        avg = sum(data["scores"]) / len(data["scores"]) if data["scores"] else 50
+        result[p] = {"avg": round(avg), "count": len(data["scores"]), "sources": ", ".join(sorted(data["sources"])[:3])}
+    return result
+
+def get_voice_of_day(date_str):
+    """Alterna vozes baseado no dia (par/impar)."""
+    try:
+        d = datetime.strptime(date_str, '%Y-%m-%d')
+        day_num = d.day
+        voices = [
+            {"name": "Marina", "bio": "Especialista em geopolítica e relações internacionais", "avatar": "🎙️"},
+            {"name": "Talita", "bio": "Jornalista de tecnologia e inovação", "avatar": "🎧"},
+        ]
+        return voices[day_num % 2]
+    except:
+        return {"name": "Marina", "bio": "Especialista em geopolítica e relações internacionais", "avatar": "🎙️"}
+
 def format_data_br(date_str):
     d = datetime.strptime(date_str, '%Y-%m-%d')
     dias = {0:'Segunda-feira',1:'Terça-feira',2:'Quarta-feira',3:'Quinta-feira',4:'Sexta-feira',5:'Sábado',6:'Domingo'}
@@ -111,7 +256,7 @@ def list_episodes():
         })
     return eps
 
-def gerar_html(date, data_br, data_curta, noticias, podcast, episodios):
+def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage_data=None, voice=None):
     n = len(noticias)
     por_pilar = {}
     for ntc in noticias:
@@ -128,6 +273,10 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios):
     # ── Hero stats ──
     n_pilares = len([p for p in por_pilar if p])
     pod_dur = podcast['dur_str'] if podcast else "0:00"
+    
+    # Quality score do Coverage Ledger
+    qs = coverage_data.get("quality_score") if coverage_data else None
+    qs_stat = f'\n      <div class="divider-v"></div>\n      <div class="hero-stat quality-stat"><strong>{int(qs)}</strong><span>qualidade</span></div>' if qs is not None else ''
 
     # ── Player ──
     player_html = ""
@@ -148,6 +297,20 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios):
       <button class="speed-btn" id="speedBtn" onclick="cycleSpeed()" title="Velocidade">1×</button>
     </div>
     <audio id="audioEl" src="{podcast["path"]}" preload="none"></audio>'''
+    else:
+        player_html = ''
+
+    # ── Voice of the Day ──
+    voice_html = ""
+    if voice:
+        voice_html = f'''
+    <div class="voice-section">
+      <div class="voice-avatar">{voice["avatar"]}</div>
+      <div class="voice-info">
+        <div class="voice-name">Apresentação: {voice["name"]}</div>
+        <div class="voice-bio">{voice["bio"]}</div>
+      </div>
+    </div>'''
 
     # ── Notícias ──
     sections_html = ""
@@ -188,11 +351,20 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios):
             num = f"{idx:02d}"
             featured = ' featured' if i == 0 else ''
             fonte = ntc.get('fonte', 'D5N') or 'D5N'
+            # Tenta match com coverage ledger
+            cov = match_coverage(ntc['titulo'], coverage_data)
+            if not cov and coverage_data:
+                # Fallback: usar media do pilar
+                pavg = get_pillar_avg_scores(coverage_data)
+                pkey = (ntc.get('pilar') or 'GLOBAL').upper()
+                if pkey in pavg:
+                    cov = {"score": pavg[pkey]["avg"], "source": pavg[pkey]["sources"][:30] if pavg[pkey]["sources"] else "D5N", "authority": 50}
+            score_badge = get_badge_html(cov['score'] if cov else None, cov['source'] if cov else 'D5N', cov['authority'] if cov else 50) if coverage_data else ''
             news_items += f'''
       <div class="news-item{featured}" data-animate>
         <span class="news-num">{num}</span>
         <span class="news-headline">{ntc['titulo']}</span>
-        <span class="news-source">{fonte}</span>
+        <span class="news-meta"><span class="news-source">{fonte}</span>{score_badge}</span>
       </div>'''
 
         sections_html += f'''
@@ -322,6 +494,28 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios):
   .news-item.featured .news-num {{ font-size:0.8rem; color:var(--accent-dim); }}
 
   .premium-block {{ margin:2.5rem 0; padding:1.5rem; border:1px solid var(--accent-dim); border-radius:3px; background:linear-gradient(135deg,rgba(200,169,110,0.04) 0%,transparent 60%); position:relative; overflow:hidden; }}
+
+  /* ── Score Badges ── */
+  .news-meta {{ display:flex; align-items:center; gap:0.5rem; padding-top:0.2rem; }}
+  .score-badge {{ display:inline-flex; align-items:center; gap:0.25rem; font-size:0.58rem; font-weight:500; letter-spacing:0.04em; padding:1px 6px; border-radius:3px; cursor:help; transition:all 0.2s; }}
+  .score-badge:hover {{ transform:scale(1.05); }}
+  .score-hot {{ background:rgba(230,180,60,0.15); color:#e6b43c; border:1px solid rgba(230,180,60,0.3); }}
+  .score-warm {{ background:rgba(230,140,60,0.12); color:#e68c3c; border:1px solid rgba(230,140,60,0.25); }}
+  .score-mid {{ background:rgba(148,163,184,0.1); color:var(--muted); border:1px solid rgba(148,163,184,0.15); }}
+  .score-low {{ background:rgba(224,96,96,0.1); color:var(--red); border:1px solid rgba(224,96,96,0.2); }}
+  .score-none {{ background:rgba(148,163,184,0.05); color:var(--faint); border:1px solid rgba(148,163,184,0.08); }}
+  .curation-tag {{ display:inline-flex; font-size:0.55rem; font-weight:500; letter-spacing:0.05em; padding:1px 5px; border-radius:2px; }}
+  .curation-tag:first-letter {{ display:none; }}
+
+  /* ── Quality Stat ── */
+  .quality-stat strong {{ color:var(--global) !important; }}
+
+  /* ── Voice of the Day ── */
+  .voice-section {{ margin:2rem 0 1rem; padding:1.25rem; border:1px solid var(--border); border-radius:3px; background:var(--surface); display:flex; align-items:center; gap:1rem; }}
+  .voice-avatar {{ width:40px; height:40px; border-radius:50%; background:var(--bg); border:1px solid var(--accent-dim); display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }}
+  .voice-info {{ flex:1; min-width:0; }}
+  .voice-name {{ font-family:'Libre Baskerville',serif; font-size:0.82rem; font-weight:700; color:var(--text); }}
+  .voice-bio {{ font-size:0.7rem; color:var(--muted); }}
   .premium-block::before {{ content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,var(--accent),transparent); opacity:0.5; }}
   .premium-eyebrow {{ font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:0.6rem; display:flex; align-items:center; gap:0.5rem; }}
   .premium-eyebrow::after {{ content:''; flex:1; height:1px; background:var(--accent-dim); opacity:0.4; }}
@@ -397,9 +591,10 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios):
       <div class="divider-v"></div>
       <div class="hero-stat"><strong>{n_pilares}</strong><span>pilares</span></div>
       <div class="divider-v"></div>
-      <div class="hero-stat"><strong>{pod_dur}</strong><span>podcast</span></div>
+      <div class="hero-stat"><strong>{pod_dur}</strong><span>podcast</span></div>{qs_stat}
     </div>
     {player_html}
+    {voice_html}
   </div>
 
   {sections_html}
@@ -521,26 +716,58 @@ def main():
     data_br = format_data_br(date)
     data_curta = format_data_curta(date)
     noticias = load_today_news(date)
+    
+    # Carrega dados do Coverage Ledger (usado para badges, quality score e fallback)
+    coverage_data = load_coverage_for_date(date)
 
-    # Fallback: se não achou trends, ler source.md existente do repo
-    if not noticias:
-        src_path = f"{BASE}/source.md"
-        if os.path.exists(src_path):
-            with open(src_path) as f:
-                for line in f:
-                    m = re.match(r'^\d+\.\s+(.+)$', line.strip())
-                    if m:
-                        noticias.append({'pilar':'','titulo':m.group(1).strip()[:120],'fonte':'D5N'})
+    # Fallback: se não achou trends, tentar coverage ledger primeiro
     if noticias:
-        print(f"📄 Fallback: {len(noticias)} notícias recuperadas de source.md")
+        print(f"📄 {len(noticias)} notícias dos trends do dia")
     else:
-        print("❌ ERRO: Nenhuma notícia disponível (sem trends e sem fallback)")
+        # Coverage Fallback: se não tem trends, usar dados do Coverage Ledger
+        noticias = []
+        if coverage_data and coverage_data.get("scores"):
+            db_path = "/root/.hermes/d5n-coverage-ledger/coverage.db"
+            try:
+                import sqlite3
+                conn = sqlite3.connect(db_path)
+                cur = conn.execute(
+                    "SELECT title, pillar, source_name FROM coverage WHERE covered_date = ? AND episode_num IS NOT NULL ORDER BY score DESC",
+                    (date,)
+                )
+                for row in cur.fetchall():
+                    noticias.append({'pilar': row[1] or 'Global', 'titulo': row[0][:120], 'fonte': row[2] or 'D5N'})
+                conn.close()
+            except Exception as e:
+                print(f"⚠️  Erro ao carregar do coverage: {e}")
+        
+        # Último fallback: source.md existente
+        if not noticias:
+            src_path = f"{BASE}/source.md"
+            if os.path.exists(src_path):
+                with open(src_path) as f:
+                    for line in f:
+                        m = re.match(r'^\d+\.\s+(.+)$', line.strip())
+                        if m:
+                            noticias.append({'pilar':'','titulo':m.group(1).strip()[:120],'fonte':'D5N'})
+        
+        if noticias:
+            src = "Coverage Ledger" if not any(noticias[0].get('pilar') == '' for _ in [1]) else "source.md"
+            print(f"📄 {len(noticias)} notícias via fallback ({src})")
+    
+    if not noticias:
+        print("❌ ERRO: Nenhuma notícia disponível")
         sys.exit(1)
     podcast = None if args.no_podcast else find_latest_podcast()
     episodios = list_episodes() if not args.no_podcast else []
+    
+    voice = get_voice_of_day(date)
+    if coverage_data.get("quality_score"):
+        print(f"📊 Coverage Ledger: quality_score={coverage_data['quality_score']}, {len(coverage_data['scores'])} notícias com score")
+    
     os.makedirs(ARQUIVO_DIR, exist_ok=True)
 
-    html = gerar_html(date, data_br, data_curta, noticias, podcast, episodios)
+    html = gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage_data=coverage_data, voice=voice)
     with open(f"{BASE}/index.html",'w') as f: f.write(html)
     print(f"✅ index.html — {len(html)} bytes, {len(noticias)} notícias")
 
