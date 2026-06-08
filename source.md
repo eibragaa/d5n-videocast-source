@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Domingo, 7 de Junho de 2026
+## Segunda-feira, 8 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -9,9 +9,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Organize por blocos temáticos na ordem abaixo.
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
-
-
-### 🌍 GLOBAL
 
 1. 1. US weighs using Iranian assets to compensate Gulf allies for war damage
 
@@ -27,17 +24,11 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 7. 7. At least 12 people shot at Toledo festival; search for suspects ongoing
 
-
-### 🇧🇷 BRASIL
-
 8. 8. Governo se reúne com União Europeia e tenta reverter veto à carne brasileira
 
 9. 9. CNJ identifica magistrados que ganharam mais de R$ 1 milhão por mês
 
 10. 10. Crise e impeachment express levaram Peru a ter 9 presidentes em 10 anos
-
-
-### 🤖 TECH & IA
 
 11. 11. When Claude changed: Managing AI blast radius in production (VentureBeat)
 
@@ -48,9 +39,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 14. 14. Meta's AI support agent bound recovery emails for anyone who asked
 
 15. 15. Anthropic says 80% of its new production code is now authored by Claude
-
-
-### 💰 ECONOMIA & CRYPTO
 
 16. 16. Manifestantes em Seul exigem novas eleições após falta de cédulas
 
