@@ -13,44 +13,20 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 ### 🌍 GLOBAL
 
-1. 1. Irã dispara mísseis contra Israel pela primeira vez desde o cessar-fogo de abril
+1. 1. Iran and Israel Halt Exchanges of Fire After Trump Call
 
-2. 2. Tremor devastador atinge as Filipinas: ao menos 15 mortos
+2. 2. Why Is Xi Jinping in North Korea? — BBC
 
-3. 3. Trump walks out of NBC interview after clash over election claims
+3. 3. Powerful Earthquake Hits Philippines, Killing at Least 32
 
-4. 4. Xi Jinping vai à Coreia do Norte em visita de Estado
-
-5. 5. South Korea's KOSPI cai mais de 8% com temores do Fed
+4. 4. Starmer Tells Apple and Google to Ban Nude Images on Children's Phones
 
 
 ### 🇧🇷 BRASIL
 
-6. 1. Tráfico e milícia controlam até venda de comida para mercados e padarias no RJ
+5. 5. Latam reduz oferta de voos em junho e julho após alta do combustível, diz CEO
 
-7. 2. Rio registra recorde de frio em 2026 pelo terceiro dia consecutivo
+6. 6. Dólar oscila e Ibovespa sobe, com novos ataques entre Israel e Irã no radar
 
-8. 3. Boca de urna aponta Keiko Fujimori com 50,7% e Sánchez com 49,3% no Peru
-
-9. 4. TCE pede explicações sobre contratação de empresa para cursos por quase R$ 50 milhões no RJ
-
-
-### 🤖 TECH & IA
-
-10. 1. Startup brasileira cria 'cérebro' com IA para deixar robôs mais inteligentes
-
-11. 2. Dona do Claude sugere pausa no desenvolvimento da IA por risco de sistemas saírem do controle humano
-
-12. 3. Trump diz que EUA avaliam comprar participação em empresas de inteligência artificial
-
-13. 4. SpaceX se prepara para estrear na bolsa de valores
-
-
-### 💰 ECONOMIA & CRYPTO
-
-14. 1. Ibovespa e dólar sob pressão com juros altos e tensão geopolítica
-
-15. 2. Strategy's Saylor signals BTC buy as preferred dividend pay date vote looms
-
-16. 3. Tokenization firm Securitize clears key SEC hurdle for NYSE listing
+7. 7. Estudo aponta que Amazonas perde diariamente água tratada suficiente para encher 178 piscinas olímpicas
 
