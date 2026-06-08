@@ -10,43 +10,47 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
 
-1. 1. US weighs using Iranian assets to compensate Gulf allies for war damage
 
-2. 2. Ukraine war briefing: Kyiv unleashes hundreds of drones on Russia
+### 🌍 GLOBAL
 
-3. 3. Israel has reportedly used white phosphorus near Lebanese cities
+1. 1. Irã dispara mísseis contra Israel pela primeira vez desde o cessar-fogo de abril
 
-4. 4. Member of Neo-Nazi Party Reaches Mayoral Runoff in German Town
+2. 2. Tremor devastador atinge as Filipinas: ao menos 15 mortos
 
-5. 5. Pope begins Spain visit with praise for country's opposition to war and support for migrants
+3. 3. Trump walks out of NBC interview after clash over election claims
 
-6. 6. What to know about the ongoing protests outside a New Jersey detention center
+4. 4. Xi Jinping vai à Coreia do Norte em visita de Estado
 
-7. 7. At least 12 people shot at Toledo festival; search for suspects ongoing
+5. 5. South Korea's KOSPI cai mais de 8% com temores do Fed
 
-8. 8. Governo se reúne com União Europeia e tenta reverter veto à carne brasileira
 
-9. 9. CNJ identifica magistrados que ganharam mais de R$ 1 milhão por mês
+### 🇧🇷 BRASIL
 
-10. 10. Crise e impeachment express levaram Peru a ter 9 presidentes em 10 anos
+6. 1. Tráfico e milícia controlam até venda de comida para mercados e padarias no RJ
 
-11. 11. When Claude changed: Managing AI blast radius in production (VentureBeat)
+7. 2. Rio registra recorde de frio em 2026 pelo terceiro dia consecutivo
 
-12. 12. Hands-on: BenQ's MA270S 27-inch 5K display made for Mac (9to5Mac)
+8. 3. Boca de urna aponta Keiko Fujimori com 50,7% e Sánchez com 49,3% no Peru
 
-13. 13. Microsoft AI chief says company was set free from OpenAI to pursue superintelligence
+9. 4. TCE pede explicações sobre contratação de empresa para cursos por quase R$ 50 milhões no RJ
 
-14. 14. Meta's AI support agent bound recovery emails for anyone who asked
 
-15. 15. Anthropic says 80% of its new production code is now authored by Claude
+### 🤖 TECH & IA
 
-16. 16. Manifestantes em Seul exigem novas eleições após falta de cédulas
+10. 1. Startup brasileira cria 'cérebro' com IA para deixar robôs mais inteligentes
 
-17. 17. Banco central da China amplia compra de ouro pelo 19º mês consecutivo
+11. 2. Dona do Claude sugere pausa no desenvolvimento da IA por risco de sistemas saírem do controle humano
 
-18. 18. Índia eleva preços do gás de cozinha com guerra no Irã pressionando importações
+12. 3. Trump diz que EUA avaliam comprar participação em empresas de inteligência artificial
 
-19. 19. Bitcoin most oversold since 2020 crash
+13. 4. SpaceX se prepara para estrear na bolsa de valores
 
-20. 20. British Airways planeja aumento de tarifas para compensar custos de combustível
+
+### 💰 ECONOMIA & CRYPTO
+
+14. 1. Ibovespa e dólar sob pressão com juros altos e tensão geopolítica
+
+15. 2. Strategy's Saylor signals BTC buy as preferred dividend pay date vote looms
+
+16. 3. Tokenization firm Securitize clears key SEC hurdle for NYSE listing
 
