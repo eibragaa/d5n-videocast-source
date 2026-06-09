@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Segunda-feira, 8 de Junho de 2026
+## Terça-feira, 9 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -10,9 +10,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
 
-
-### 🌍 GLOBAL
-
 1. 1. Iran and Israel Halt Exchanges of Fire After Trump Call
 
 2. 2. Why Is Xi Jinping in North Korea? — BBC
@@ -20,9 +17,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 3. 3. Powerful Earthquake Hits Philippines, Killing at Least 32
 
 4. 4. Starmer Tells Apple and Google to Ban Nude Images on Children's Phones
-
-
-### 🇧🇷 BRASIL
 
 5. 5. Latam reduz oferta de voos em junho e julho após alta do combustível, diz CEO
 

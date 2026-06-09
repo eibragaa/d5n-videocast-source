@@ -631,6 +631,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
         <span style="font-size:0.65rem">Atualizado em {data_br.lower()}</span>
       </div>
       <div class="footer-links">
+        <a href="/privacidade">Privacidade</a>
         <a href="/feed.json">JSON Feed</a>
         <a href="/d5n-feed.xml">RSS</a>
         <a href="https://github.com/eibragaa/d5n-videocast-source">GitHub</a>

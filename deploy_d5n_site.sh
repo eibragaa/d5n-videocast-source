@@ -156,8 +156,17 @@ if [ "$FAILED" -eq 0 ]; then
         echo "📭 Nada novo para commitar" | tee -a "$LOG"
     else
         git commit -m "📰 D5N - ${DATE}" 2>&1 | tee -a "$LOG"
-        git push origin master 2>&1 | tee -a "$LOG"
-        echo "✅ Push feito! Netlify fará deploy automático." | tee -a "$LOG"
+        if git push origin master 2>&1 | tee -a "$LOG"; then
+            echo "✅ Push feito! Netlify fará deploy automático." | tee -a "$LOG"
+        else
+            echo "⚠️  GitHub instável — tentando Plan B (deploy direto Netlify)..." | tee -a "$LOG"
+            if python3 "${REPO}/deploy_netlify_direct.py" 2>&1 | tee -a "$LOG"; then
+                echo "✅ Plan B: deploy direto concluído!" | tee -a "$LOG"
+            else
+                echo "❌ Plan B também falhou — deploy bloqueado" | tee -a "$LOG"
+                FAILED=1
+            fi
+        fi
     fi
     # Limpar marcador de falha se existir
     rm -f /tmp/.deploy-d5n-failed
@@ -167,7 +176,7 @@ else
     # Marcar para recuperação por outro agente
     echo "$DATE" > /tmp/.deploy-d5n-failed
     echo "Motivo:" >> /tmp/.deploy-d5n-failed
-    grep 'BLOQUEADO\|ERRO\|❌' "$LOG" | head -3 >> /tmp/.deploy-d5n-failed
+    grep 'BLOQUEADO\\|ERRO\\|❌' "$LOG" | head -3 >> /tmp/.deploy-d5n-failed
     echo "Log: $LOG" >> /tmp/.deploy-d5n-failed
 fi
 
