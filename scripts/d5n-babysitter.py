@@ -136,6 +136,12 @@ def validate_pilares(counter):
     missing = required - found
     if missing:
         return [f"⚠️  Trends de hoje sem pilares: {', '.join(missing)}"]
+    
+    # Validação Extra: Verificar se a data do arquivo de trends corresponde à data atual do sistema
+    # para evitar que a babysitter valide arquivos de dias anteriores como se fossem de hoje.
+    if today not in trends_path:
+        return [f"❌ Erro Crítico: Arquivo de trends detectado não pertence ao dia de hoje ({today})"]
+        
     return []
 
 def validate_site_has_player(counter):

@@ -1,0 +1,18 @@
+📈 RELATÓRIO DE AUDIÊNCIA — Método Científico
+📅 Período: 2026-06-05 a 2026-06-09 (5 dias)
+───────────────────────────────────────────────────────
+
+🔬 OBSERVAÇÕES:
+  • 15 episódios publicados no total
+  • 1.0 episódios/dia
+  • Nota inicial: 9.6/10
+  • Nota atual: 8.6/10
+  • Variação: -1.0 📉
+
+🔬 PROBLEMATIZAÇÃO:
+  Qualidade está estável/em queda. Hipótese: formato da curadoria pode ser ajustado.
+
+🔬 HIPÓTESES PARA TESTAR:
+  H1: Se reduzirmos para 5 notícias, a cobertura de áudio melhora
+  H2: Se alternarmos temas (mais tech, menos política), o engajamento sobe
+  H3: Se padronizarmos a abertura, a identidade sonora fortalece
