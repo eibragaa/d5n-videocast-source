@@ -1,6 +1,6 @@
 {
-  "last_episode": 17,
-  "updated": "2026-06-11",
+  "last_episode": 16,
+  "updated": "2026-06-10",
   "format": "d5n-ep{NNN}-{DATE}.mp3",
   "history": [
     {
@@ -97,12 +97,6 @@
       "num": "016",
       "date": "2026-06-10",
       "file": "d5n-ep016-2026-06-10.mp3",
-      "exists": true
-    },
-    {
-      "num": "017",
-      "date": "2026-06-11",
-      "file": "d5n-ep017-2026-06-11.mp3",
       "exists": true
     }
   ]

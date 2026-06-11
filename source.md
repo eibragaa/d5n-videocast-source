@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Quinta-feira, 11 de Junho de 2026
+## Quarta-feira, 10 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -10,6 +10,9 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
 
+
+### 🌍 GLOBAL
+
 1. 1. Iran-US conflict escalates: Tehran targets US Gulf bases, declares Strait of Hormuz closed
 
 2. 2. Trump reacts to US inflation topping 4% with provocative tweet "I love inflation"
@@ -18,17 +21,26 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 4. 4. China-based operatives used ChatGPT to shape AI data centers and tariff debates
 
+
+### 🇧🇷 BRASIL
+
 5. 5. EUA bombardeiam Irã pelo 2º dia; Teerã diz que Ormuz está fechado
 
 6. 6. Diplomatas apostam em encontro de Lula e Trump no G7 para conter tarifas
 
 7. 7. Chuva atípica deve atingir Sudeste e Centro-Oeste a partir de hoje
 
+
+### 🤖 TECH & IA
+
 8. 8. Startup brasileira cria cérebro com IA para deixar robôs mais inteligentes
 
 9. 9. Apple's new Siri AI knows when to shut up
 
 10. 10. Analysts tip pressure for Bitcoin as US inflation tops 4%
+
+
+### 💰 ECONOMIA & CRYPTO
 
 11. 11. Ibovespa e dólar hoje: BCE abre decisões de juros em meio a novas tensões com Irã
 
