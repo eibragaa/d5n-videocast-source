@@ -62,6 +62,13 @@ checks:
   name: 'Gate pré-geração: data e weekday'
   timeout: 10
   type: command
+- command: python3 /root/.hermes/scripts/d5n-mensagem-validate.py
+  critical: true
+  detail: CTA ou Mensagem contêm clichês proibidos (blocklist)
+  id: cta-mensagem-quality
+  name: CTA e Mensagem do Dia sem clichês
+  timeout: 10
+  type: command
 path: /root/repositorio/d5n-videocast-source
 project: Drop Five News
 version: 1
