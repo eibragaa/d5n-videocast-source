@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Quarta-feira, 10 de Junho de 2026
+## Quinta-feira, 11 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -10,17 +10,27 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
 
-1. 1. Iran and Israel Halt Exchanges of Fire After Trump Call
+1. 1. Iran-US conflict escalates: Tehran targets US Gulf bases, declares Strait of Hormuz closed
 
-2. 2. Why Is Xi Jinping in North Korea? — BBC
+2. 2. Trump reacts to US inflation topping 4% with provocative tweet "I love inflation"
 
-3. 3. Powerful Earthquake Hits Philippines, Killing at Least 32
+3. 3. FISA surveillance law may expire after Trump picks Bill Pulte for intel post
 
-4. 4. Starmer Tells Apple and Google to Ban Nude Images on Children's Phones
+4. 4. China-based operatives used ChatGPT to shape AI data centers and tariff debates
 
-5. 5. Latam reduz oferta de voos em junho e julho após alta do combustível, diz CEO
+5. 5. EUA bombardeiam Irã pelo 2º dia; Teerã diz que Ormuz está fechado
 
-6. 6. Dólar oscila e Ibovespa sobe, com novos ataques entre Israel e Irã no radar
+6. 6. Diplomatas apostam em encontro de Lula e Trump no G7 para conter tarifas
 
-7. 7. Estudo aponta que Amazonas perde diariamente água tratada suficiente para encher 178 piscinas olímpicas
+7. 7. Chuva atípica deve atingir Sudeste e Centro-Oeste a partir de hoje
+
+8. 8. Startup brasileira cria cérebro com IA para deixar robôs mais inteligentes
+
+9. 9. Apple's new Siri AI knows when to shut up
+
+10. 10. Analysts tip pressure for Bitcoin as US inflation tops 4%
+
+11. 11. Ibovespa e dólar hoje: BCE abre decisões de juros em meio a novas tensões com Irã
+
+12. 12. Ouro sobe durante sessão asiática como refúgio em meio à volatilidade
 
