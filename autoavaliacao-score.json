@@ -92,14 +92,14 @@
   },
   {
     "date": "2026-06-11",
-    "grade": 9.1,
-    "exit_code": 0,
+    "grade": 6.8,
+    "exit_code": 1,
     "needs_manual": false,
-    "updated_at": "2026-06-11T02:37:48.114589",
+    "updated_at": "2026-06-11T05:11:10.768571",
     "metrics": {
-      "total_eps": 16,
-      "mp3_disk": 12,
-      "coverage_pct": 75.0,
+      "total_eps": 18,
+      "mp3_disk": 13,
+      "coverage_pct": 72.2,
       "pilares": "2/3",
       "gaps": 0,
       "corujao_blocked": true
