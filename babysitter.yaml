@@ -1,64 +1,67 @@
-# Master OS Babysitter v1 — D5N (Drop Five News)
-project: "Drop Five News"
-path: "/root/repositorio/d5n-videocast-source"
-version: 1
-
 checks:
-  - id: counter-integrity
-    name: "Integridade do episode-counter.json"
-    type: command
-    command: "python3 scripts/d5n-babysitter.py --report-only --quiet 2>&1; exit 0"
-    critical: true
-    timeout: 30
-    detail: "Counter corrompido ou inconsistente"
-
-  - id: audio-vs-counter
-    name: "MP3s em disco vs histórico"
-    type: command
-    command: "python3 /root/.hermes/scripts/babysitter-engine/validators/d5n-audio-check.py"
-    critical: false
-    timeout: 15
-    detail: "Discrepância entre MP3s e histórico"
-
-  - id: no-corujao
-    name: "Corujão bloqueado do site"
-    type: file
-    not_contain:
-      - file: index.html
-        patterns: ["corujao", "epNNN"]
-    critical: true
-    detail: "Conteúdo do Corujão vazou para o site"
-
-  - id: site-player
-    name: "Player com episódio mais recente"
-    type: file
-    must_contain:
-      - file: index.html
-        patterns: ["Ep #\\d+"]
-    critical: false
-    detail: "Player não mostra episódio recente"
-
-  - id: site-pilares
-    name: "4 pilares de conteúdo no site"
-    type: command
-    command: "python3 /root/.hermes/scripts/babysitter-engine/validators/d5n-pilares-check.py"
-    critical: false
-    timeout: 10
-    detail: "Pilares ausentes no site de hoje (normal domingo/feriado)"
-
-  - id: deploy-health
-    name: "Site no ar (Netlify)"
-    type: http
-    url: "https://d5n-daily.netlify.app"
-    expected_status: 200
-    critical: true
-    timeout: 15
-    detail: "Site D5N fora do ar"
-
-  - id: git-clean
-    name: "Repositório sem sujeira"
-    type: command
-    command: "cd /root/repositorio/d5n-videocast-source && git diff --quiet && git diff --cached --quiet"
-    critical: false
-    timeout: 5
-    detail: "Há arquivos modificados não commitados"
+- command: python3 scripts/d5n-babysitter.py --report-only --quiet 2>&1; exit 0
+  critical: true
+  detail: Counter corrompido ou inconsistente
+  id: counter-integrity
+  name: Integridade do episode-counter.json
+  timeout: 30
+  type: command
+- command: python3 /root/.hermes/scripts/babysitter-engine/validators/d5n-audio-check.py
+  critical: false
+  detail: Discrepância entre MP3s e histórico
+  id: audio-vs-counter
+  name: MP3s em disco vs histórico
+  timeout: 15
+  type: command
+- critical: true
+  detail: Conteúdo do Corujão vazou para o site
+  id: no-corujao
+  name: Corujão bloqueado do site
+  not_contain:
+  - file: index.html
+    patterns:
+    - corujao
+    - epNNN
+  type: file
+- critical: false
+  detail: Player não mostra episódio recente
+  id: site-player
+  must_contain:
+  - file: index.html
+    patterns:
+    - 'Ep #\d+'
+  name: Player com episódio mais recente
+  type: file
+- command: python3 /root/.hermes/scripts/babysitter-engine/validators/d5n-pilares-check.py
+  critical: false
+  detail: Pilares ausentes no site de hoje (normal domingo/feriado)
+  id: site-pilares
+  name: 4 pilares de conteúdo no site
+  timeout: 10
+  type: command
+- critical: true
+  detail: Site D5N fora do ar
+  expected_status: 200
+  id: deploy-health
+  name: Site no ar (Netlify)
+  timeout: 15
+  type: http
+  url: https://d5n-daily.netlify.app
+- command: cd /root/repositorio/d5n-videocast-source && git diff --quiet && git diff
+    --cached --quiet
+  critical: false
+  detail: Há arquivos modificados não commitados
+  id: git-clean
+  name: Repositório sem sujeira
+  timeout: 5
+  type: command
+- command: python3 /root/.hermes/scripts/d5n-pre-gen-gate.py
+  critical: true
+  detail: Weekday ou data incorretos no roteiro (preventivo)
+  id: pre-gen-date-gate
+  name: 'Gate pré-geração: data e weekday'
+  timeout: 10
+  type: command
+path: /root/repositorio/d5n-videocast-source
+project: Drop Five News
+version: 1
