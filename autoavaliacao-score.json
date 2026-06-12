@@ -95,7 +95,22 @@
     "grade": 6.8,
     "exit_code": 1,
     "needs_manual": false,
-    "updated_at": "2026-06-11T05:11:10.768571",
+    "updated_at": "2026-06-11T23:58:14.561736",
+    "metrics": {
+      "total_eps": 18,
+      "mp3_disk": 13,
+      "coverage_pct": 72.2,
+      "pilares": "2/3",
+      "gaps": 0,
+      "corujao_blocked": true
+    }
+  },
+  {
+    "date": "2026-06-12",
+    "grade": 6.8,
+    "exit_code": 1,
+    "needs_manual": false,
+    "updated_at": "2026-06-12T03:39:11.376983",
     "metrics": {
       "total_eps": 18,
       "mp3_disk": 13,

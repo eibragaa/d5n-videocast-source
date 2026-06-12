@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Quinta-feira, 11 de Junho de 2026
+## Sexta-feira, 12 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -10,17 +10,11 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
 
-
-### 🌍 GLOBAL
-
 1. 1. US strikes Iran in retaliation for Apache shoot-down (NPR)
 
 2. 2. Hegseth says US will "negotiate with bombs" if needed (CBS News)
 
 3. 3. China-based operatives used ChatGPT to shape AI data centers (Axios)
-
-
-### 🇧🇷 BRASIL
 
 4. 4. Copa começa hoje em meio a guerra e política anti-imigração de Trump (G1)
 
@@ -28,17 +22,11 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 6. 6. Eleições no Peru: Keiko Fujimori lidera sobre Sánchez (G1)
 
-
-### 🤖 TECH & IA
-
 7. 7. Apple's new Siri AI knows when to shut up (Google News)
 
 8. 8. Intel Project Firefly: phones to laptops (Google News)
 
 9. 9. Starbase: como é a vida na cidade de Elon Musk (G1)
-
-
-### 💰 ECONOMIA & CRYPTO
 
 10. 10. BCE abre decisões de juros em meio a novas tensões com Irã (Investing)
 
