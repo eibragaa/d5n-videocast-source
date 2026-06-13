@@ -41,7 +41,7 @@ COUNTER_FILE="episode-counter.json"
 VALIDATOR="${REPO}/scripts/validate_mp3.py"
 # Busca MP3 do D5N: prioriza d5n-ep*-{DATE}.mp3 (novo padrão) ou d5n-podcast-*.mp3 (legado)
 # Procura em ambos os diretórios de cron output (default e profile d5n)
-LATEST_MP3=$(ls -t "$CRON_AUDIO"/d5n-ep*-${DATE}.mp3 "$CRON_AUDIO_D5N"/d5n-ep*-${DATE}.mp3 "$CRON_AUDIO"/d5n-podcast-*.mp3 "$CRON_AUDIO_D5N"/d5n-podcast-*.mp3 2>/dev/null | head -1)
+LATEST_MP3=$(ls -t "$CRON_AUDIO"/d5n-ep*-${DATE}.mp3 "$CRON_AUDIO_D5N"/d5n-ep*-${DATE}.mp3 "$CRON_AUDIO"/d5n-podcast-*.mp3 "$CRON_AUDIO_D5N"/d5n-podcast-*.mp3 2>/dev/null | head -1) || true
 if [ -n "$LATEST_MP3" ]; then
     # 🔒 VALIDAÇÃO MULTI-CAMADA: só copia se o MP3 for realmente do D5N
     # Camada 1: Nome (d5n-podcast-*.mp3), Camada 2: Tamanho >5MB,
@@ -92,6 +92,8 @@ for e in history:
 
         DEST="audio/d5n-ep${EP_NUM}-${DATE}.mp3"
         cp "$LATEST_MP3" "$DEST"
+        # Também copia para cron output padrão (formato legado) para compatibilidade
+        cp "$LATEST_MP3" "/root/.hermes/cron/output/d5n-podcast-${DATE}.mp3"
         echo "✅ Áudio copiado: $DEST (ep #$EP_NUM, $(du -h "$DEST" | cut -f1))" | tee -a "$LOG"
 
         # Atualiza contador persistente (sempre, mesmo se sobrescrevendo)
