@@ -122,15 +122,15 @@
   },
   {
     "date": "2026-06-13",
-    "grade": 5.8,
+    "grade": 7.3,
     "exit_code": 1,
     "needs_manual": false,
-    "updated_at": "2026-06-13T05:11:40.708658",
+    "updated_at": "2026-06-13T05:49:56.891220",
     "metrics": {
       "total_eps": 20,
-      "mp3_disk": 15,
-      "coverage_pct": 75.0,
-      "pilares": "1/3",
+      "mp3_disk": 14,
+      "coverage_pct": 70.0,
+      "pilares": "3/3",
       "gaps": 0,
       "corujao_blocked": true
     }

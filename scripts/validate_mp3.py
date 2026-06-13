@@ -21,7 +21,7 @@ import os, sys, struct, json
 
 MIN_SIZE_BYTES = 5_000_000      # 5MB
 MIN_DURATION_SEC = 180          # 3 minutos
-VALID_PREFIXES = ("d5n-podcast-",)
+VALID_PREFIXES = ("d5n-podcast-", "d5n-ep")
 
 def check_name(path):
     fname = os.path.basename(path)

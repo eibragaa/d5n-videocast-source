@@ -35,10 +35,13 @@ fi
 
 # ── Validação 2: Áudio do pipeline ──
 CRON_AUDIO="/root/.hermes/cron/output"
+CRON_AUDIO_D5N="/root/.hermes/profiles/d5n/cron/output"
 mkdir -p audio
 COUNTER_FILE="episode-counter.json"
 VALIDATOR="${REPO}/scripts/validate_mp3.py"
-LATEST_MP3=$(ls -t "$CRON_AUDIO"/d5n-podcast-*.mp3 2>/dev/null | head -1)
+# Busca MP3 do D5N: prioriza d5n-ep*-{DATE}.mp3 (novo padrão) ou d5n-podcast-*.mp3 (legado)
+# Procura em ambos os diretórios de cron output (default e profile d5n)
+LATEST_MP3=$(ls -t "$CRON_AUDIO"/d5n-ep*-${DATE}.mp3 "$CRON_AUDIO_D5N"/d5n-ep*-${DATE}.mp3 "$CRON_AUDIO"/d5n-podcast-*.mp3 "$CRON_AUDIO_D5N"/d5n-podcast-*.mp3 2>/dev/null | head -1)
 if [ -n "$LATEST_MP3" ]; then
     # 🔒 VALIDAÇÃO MULTI-CAMADA: só copia se o MP3 for realmente do D5N
     # Camada 1: Nome (d5n-podcast-*.mp3), Camada 2: Tamanho >5MB,
@@ -156,17 +159,8 @@ if [ "$FAILED" -eq 0 ]; then
         echo "📭 Nada novo para commitar" | tee -a "$LOG"
     else
         git commit -m "📰 D5N - ${DATE}" 2>&1 | tee -a "$LOG"
-        if git push origin master 2>&1 | tee -a "$LOG"; then
-            echo "✅ Push feito! Netlify fará deploy automático." | tee -a "$LOG"
-        else
-            echo "⚠️  GitHub instável — tentando Plan B (deploy direto Netlify)..." | tee -a "$LOG"
-            if python3 "${REPO}/deploy_netlify_direct.py" 2>&1 | tee -a "$LOG"; then
-                echo "✅ Plan B: deploy direto concluído!" | tee -a "$LOG"
-            else
-                echo "❌ Plan B também falhou — deploy bloqueado" | tee -a "$LOG"
-                FAILED=1
-            fi
-        fi
+        git push origin master 2>&1 | tee -a "$LOG"
+        echo "✅ Push feito! Netlify fará deploy automático." | tee -a "$LOG"
     fi
     # Limpar marcador de falha se existir
     rm -f /tmp/.deploy-d5n-failed
@@ -176,7 +170,7 @@ else
     # Marcar para recuperação por outro agente
     echo "$DATE" > /tmp/.deploy-d5n-failed
     echo "Motivo:" >> /tmp/.deploy-d5n-failed
-    grep 'BLOQUEADO\\|ERRO\\|❌' "$LOG" | head -3 >> /tmp/.deploy-d5n-failed
+    grep 'BLOQUEADO\|ERRO\|❌' "$LOG" | head -3 >> /tmp/.deploy-d5n-failed
     echo "Log: $LOG" >> /tmp/.deploy-d5n-failed
 fi
 
