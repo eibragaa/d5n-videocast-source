@@ -107,15 +107,30 @@
   },
   {
     "date": "2026-06-12",
-    "grade": 6.8,
+    "grade": 6.3,
     "exit_code": 1,
     "needs_manual": false,
-    "updated_at": "2026-06-12T03:39:11.376983",
+    "updated_at": "2026-06-12T07:16:15.645196",
     "metrics": {
-      "total_eps": 18,
-      "mp3_disk": 13,
-      "coverage_pct": 72.2,
-      "pilares": "2/3",
+      "total_eps": 19,
+      "mp3_disk": 14,
+      "coverage_pct": 73.7,
+      "pilares": "1/3",
+      "gaps": 0,
+      "corujao_blocked": true
+    }
+  },
+  {
+    "date": "2026-06-13",
+    "grade": 5.8,
+    "exit_code": 1,
+    "needs_manual": false,
+    "updated_at": "2026-06-13T05:11:40.708658",
+    "metrics": {
+      "total_eps": 20,
+      "mp3_disk": 15,
+      "coverage_pct": 75.0,
+      "pilares": "1/3",
       "gaps": 0,
       "corujao_blocked": true
     }

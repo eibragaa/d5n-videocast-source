@@ -1,5 +1,11 @@
 {
-  "persistent_issues": {},
-  "updated": "2026-06-12",
+  "persistent_issues": {
+    "player_offline": {
+      "first_seen": "2026-06-13",
+      "consecutive_days": 1,
+      "last_seen": "2026-06-13"
+    }
+  },
+  "updated": "2026-06-13",
   "escalations": []
 }

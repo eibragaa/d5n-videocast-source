@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Sexta-feira, 12 de Junho de 2026
+## Sábado, 13 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -10,23 +10,49 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
 
-1. 1. US strikes Iran in retaliation for Apache shoot-down (NPR)
 
-2. 2. Hegseth says US will "negotiate with bombs" if needed (CBS News)
+### 🌍 GLOBAL
 
-3. 3. China-based operatives used ChatGPT to shape AI data centers (Axios)
+1. - Final agreed text of U.S.-Iran peace deal has been reached, Pakistan says (CBS News)
 
-4. 4. Copa começa hoje em meio a guerra e política anti-imigração de Trump (G1)
+2. - Trump anti-weaponisation fund indefinitely blocked as judge wants guarantee it's abandoned (BBC)
 
-5. 5. Quaest: Lula à frente de Flávio após caso Master (G1)
+3. - Trump says U.S. military strike killed leader of Tren de Aragua gang (NPR)
 
-6. 6. Eleições no Peru: Keiko Fujimori lidera sobre Sánchez (G1)
+4. - Pope Leo had to catch a ride from the king of Spain after plane's engine failed (Washington Post)
 
-7. 7. Apple's new Siri AI knows when to shut up (Google News)
+5. - Elon Musk Reaches a Historic $1 Trillion Net Worth (Visual Capitalist)
 
-8. 8. Intel Project Firefly: phones to laptops (Google News)
 
-9. 9. Starbase: como é a vida na cidade de Elon Musk (G1)
+### 🇧🇷 BRASIL
 
-10. 10. BCE abre decisões de juros em meio a novas tensões com Irã (Investing)
+6. - Entenda as lesões que tiraram os jogadores do Brasil da Copa do Mundo 2026 (G1)
+
+7. - Novo tenta se equilibrar entre candidatura de Zema e alianças com Flávio (G1)
+
+8. - TCU cria penduricalho que pode elevar salários em até 15% (G1)
+
+9. - Justiça nega pedido e mantém projeto da Times Square de SP suspenso (G1)
+
+
+### 🤖 TECH & IA
+
+10. - Anthropic suspende modelos de IA após EUA restringirem acesso de estrangeiros (G1 Tecnologia)
+
+11. - DJI processa Insta360 por violação de patentes do Osmo Pocket (PetaPixel)
+
+12. - MrBeast bate recorde e supera 500 milhões de inscritos no YouTube (G1 Tecnologia)
+
+13. - Siri AI chega apenas em dispositivos Apple mais novos (9to5Mac)
+
+
+### 💰 ECONOMIA & CRYPTO
+
+14. - Major crypto exchanges cancel SpaceX IPO allocations, promising refunds (Cointelegraph)
+
+15. - Sam Bankman-Fried loses appeal to overturn 25-year prison sentence (Cointelegraph)
+
+16. - Bitcoin rally to $70K builds as orderbook structure highlights traders' confidence (Cointelegraph)
+
+17. - China protesta contra designação do Pentágono de grandes empresas de tecnologia como vinculadas ao exército (Investing
 
