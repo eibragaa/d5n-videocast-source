@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Sábado, 13 de Junho de 2026
+## Domingo, 14 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -9,9 +9,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Organize por blocos temáticos na ordem abaixo.
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
-
-
-### 🌍 GLOBAL
 
 1. - Final agreed text of U.S.-Iran peace deal has been reached, Pakistan says (CBS News)
 
@@ -23,9 +20,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 5. - Elon Musk Reaches a Historic $1 Trillion Net Worth (Visual Capitalist)
 
-
-### 🇧🇷 BRASIL
-
 6. - Entenda as lesões que tiraram os jogadores do Brasil da Copa do Mundo 2026 (G1)
 
 7. - Novo tenta se equilibrar entre candidatura de Zema e alianças com Flávio (G1)
@@ -34,9 +28,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 9. - Justiça nega pedido e mantém projeto da Times Square de SP suspenso (G1)
 
-
-### 🤖 TECH & IA
-
 10. - Anthropic suspende modelos de IA após EUA restringirem acesso de estrangeiros (G1 Tecnologia)
 
 11. - DJI processa Insta360 por violação de patentes do Osmo Pocket (PetaPixel)
@@ -44,9 +35,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 12. - MrBeast bate recorde e supera 500 milhões de inscritos no YouTube (G1 Tecnologia)
 
 13. - Siri AI chega apenas em dispositivos Apple mais novos (9to5Mac)
-
-
-### 💰 ECONOMIA & CRYPTO
 
 14. - Major crypto exchanges cancel SpaceX IPO allocations, promising refunds (Cointelegraph)
 
