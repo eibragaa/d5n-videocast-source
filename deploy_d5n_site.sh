@@ -41,7 +41,21 @@ COUNTER_FILE="episode-counter.json"
 VALIDATOR="${REPO}/scripts/validate_mp3.py"
 # Busca MP3 do D5N: prioriza d5n-ep*-{DATE}.mp3 (novo padrão) ou d5n-podcast-*.mp3 (legado)
 # Procura em ambos os diretórios de cron output (default e profile d5n)
-LATEST_MP3=$(ls -t "$CRON_AUDIO"/d5n-ep*-${DATE}.mp3 "$CRON_AUDIO_D5N"/d5n-ep*-${DATE}.mp3 "$CRON_AUDIO"/d5n-podcast-*.mp3 "$CRON_AUDIO_D5N"/d5n-podcast-*.mp3 2>/dev/null | head -1) || true
+# 🔒 FIX 2026-06-16: PROTEGER contra copiar MP3 de dia errado.
+# O bug anterior: quando o podcast pipeline falha (dias 14-15/06), o deploy_d5n_site.sh
+# achava o último MP3 disponível (de sábado 13) e copiava com novo número de episódio.
+# Resultado: site mostrava sábado 13/06 com nomes de domingo/segunda.
+# FIX: filtrar por data ATUAL ({DATE}) E exigir que o MP3 foi modificado HOJE.
+LATEST_MP3=$(ls -t "$CRON_AUDIO"/d5n-ep*-${DATE}.mp3 "$CRON_AUDIO_D5N"/d5n-ep*-${DATE}.mp3 "$CRON_AUDIO"/d5n-podcast-${DATE}.mp3 "$CRON_AUDIO_D5N"/d5n-podcast-${DATE}.mp3 2>/dev/null | head -1) || true
+# Validação extra: MP3 deve ter sido modificado HOJE (mtime)
+if [ -n "$LATEST_MP3" ]; then
+    MP3_MTIME=$(stat -c %Y "$LATEST_MP3" 2>/dev/null || echo 0)
+    TODAY_START=$(date -d "$DATE 00:00:00" +%s 2>/dev/null || echo 0)
+    if [ "$MP3_MTIME" -lt "$TODAY_START" ]; then
+        echo "⚠️  FIX: MP3 '$LATEST_MP3' tem data antiga (mtime < hoje). Pulando para evitar deploy de arquivo errado." | tee -a "$LOG"
+        LATEST_MP3=""
+    fi
+fi
 if [ -n "$LATEST_MP3" ]; then
     # 🔒 VALIDAÇÃO MULTI-CAMADA: só copia se o MP3 for realmente do D5N
     # Camada 1: Nome (d5n-podcast-*.mp3), Camada 2: Tamanho >5MB,
