@@ -10,37 +10,43 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
 
-1. - Final agreed text of U.S.-Iran peace deal has been reached, Pakistan says (CBS News)
 
-2. - Trump anti-weaponisation fund indefinitely blocked as judge wants guarantee it's abandoned (BBC)
+### 🌍 GLOBAL
 
-3. - Trump says U.S. military strike killed leader of Tren de Aragua gang (NPR)
+1. 1. G7: Trump says 'very good' meeting with Zelenskiy (Reuters)
 
-4. - Pope Leo had to catch a ride from the king of Spain after plane's engine failed (Washington Post)
+2. 2. US-Iran deal requires Israeli forces to leave Lebanon, says Iran (CBS)
 
-5. - Elon Musk Reaches a Historic $1 Trillion Net Worth (Visual Capitalist)
+3. 3. Israeli Air Force chief confirms major strike on Iran was called off (Times of Israel)
 
-6. - Entenda as lesões que tiraram os jogadores do Brasil da Copa do Mundo 2026 (G1)
 
-7. - Novo tenta se equilibrar entre candidatura de Zema e alianças com Flávio (G1)
+### 🇧🇷 BRASIL
 
-8. - TCU cria penduricalho que pode elevar salários em até 15% (G1)
+4. 4. STF julga Eduardo Bolsonaro por coação em processo de golpe de 2022 (G1)
 
-9. - Justiça nega pedido e mantém projeto da Times Square de SP suspenso (G1)
+5. 5. Motta anuncia votação do PL da misoginia na Câmara (InfoMoney)
 
-10. - Anthropic suspende modelos de IA após EUA restringirem acesso de estrangeiros (G1 Tecnologia)
+6. 6. Vendas no varejo do Brasil recuam 1,5% em abril (InfoMoney)
 
-11. - DJI processa Insta360 por violação de patentes do Osmo Pocket (PetaPixel)
+7. 7. Moraes libera compartilhamento de provas da trama golpista para PRF (InfoMoney)
 
-12. - MrBeast bate recorde e supera 500 milhões de inscritos no YouTube (G1 Tecnologia)
 
-13. - Siri AI chega apenas em dispositivos Apple mais novos (9to5Mac)
+### 🤖 TECH & IA
 
-14. - Major crypto exchanges cancel SpaceX IPO allocations, promising refunds (Cointelegraph)
+8. 8. Após IPO da SpaceX, Musk anuncia que vai comprar empresa de IA (G1 Tecnologia)
 
-15. - Sam Bankman-Fried loses appeal to overturn 25-year prison sentence (Cointelegraph)
+9. 9. Nvidia amplia dívida em US$ 20 bi para transição de mineradoras de Bitcoin para IA (Cointelegraph)
 
-16. - Bitcoin rally to $70K builds as orderbook structure highlights traders' confidence (Cointelegraph)
+10. 10. Índia bloqueia Telegram por fraude em exame de medicina (G1 Tecnologia)
 
-17. - China protesta contra designação do Pentágono de grandes empresas de tecnologia como vinculadas ao exército (Investing
+11. 11. Oracle lança assistente de IA para software de gestão hoteleira (Investing.com)
+
+
+### 💰 ECONOMIA & CRYPTO
+
+12. 12. Petróleo atinge menor valor em 3 meses; Brent a US$ 80 com acordo EUA-Irã (InfoMoney)
+
+13. 13. Bitcoin chega a US$ 66 mil com mais um dia de alta (Cointelegraph)
+
+14. 14. Ibovespa Futuro cai apesar de alívio geopolítico (InfoMoney)
 
