@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Segunda-feira, 15 de Junho de 2026
+## Terça-feira, 16 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
