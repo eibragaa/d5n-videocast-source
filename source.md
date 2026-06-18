@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Quarta-feira, 17 de Junho de 2026
+## Quinta-feira, 18 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -9,9 +9,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Organize por blocos temáticos na ordem abaixo.
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
-
-
-### 🌍 GLOBAL
 
 1. 1. June 16, 2026 — Mike Collins will win Georgia Senate primary; Rick Jackson will win governor runoff (CNN)
 
@@ -23,9 +20,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 5. 5. 'I'm the boss', Trump says at G7, as he warms to Ukraine's war aims (Reuters)
 
-
-### 🤖 TECH & IA
-
 6. 1. Big techs são condenadas por falha na proteção de crianças em jogos eletrônicos (G1)
 
 7. 2. Grupo hacker diz ter roubado dados sobre medicamentos da dona do Ozempic (G1)
@@ -35,9 +29,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 9. 4. 'Vikings' na escada rolante: torcida da Noruega viraliza com simulação de barco em metrô dos EUA; VEJA VÍDEO (G1)
 
 10. 5. Roblox começa liberar novos tipos de conta para menores de 16 anos (G1)
-
-
-### 💰 ECONOMIA & CRYPTO
 
 11. 1. Diana Shipping eleva oferta de aquisição da Genco para US$ 27,34 por ação (Investing.com)
 
