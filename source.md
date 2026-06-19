@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Quinta-feira, 18 de Junho de 2026
+## Sexta-feira, 19 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -10,33 +10,49 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
 
-1. 1. June 16, 2026 — Mike Collins will win Georgia Senate primary; Rick Jackson will win governor runoff (CNN)
 
-2. 2. US primaries in Oklahoma, Georgia, others: Key takeaways from the results (Al Jazeera)
+### 🌍 GLOBAL
 
-3. 3. Trump’s endorsement power just met its $100M limit (Politico)
+1. 1. Vance adia viagem à Suíça para negociações sobre acordo com Irã
 
-4. 4. Group planned to attack White House UFC event using snipers and drones, FBI says (BBC)
+2. 2. Ucrânia ataca refinaria de Moscou em grande ataque de drones
 
-5. 5. 'I'm the boss', Trump says at G7, as he warms to Ukraine's war aims (Reuters)
+3. 3. EUA reduzem tropas na Europa; Hegseth critica aliados da Otan
 
-6. 1. Big techs são condenadas por falha na proteção de crianças em jogos eletrônicos (G1)
+4. 4. Israel reage a acordo EUA-Irã com novos ataques no Líbano
 
-7. 2. Grupo hacker diz ter roubado dados sobre medicamentos da dona do Ozempic (G1)
 
-8. 3. Torcida da Noruega viraliza com simulação de barco em metrô dos EUA (G1)
+### 🇧🇷 BRASIL
 
-9. 4. 'Vikings' na escada rolante: torcida da Noruega viraliza com simulação de barco em metrô dos EUA; VEJA VÍDEO (G1)
+5. 1. Caso Master: investigação chega ao líder do PT no Senado
 
-10. 5. Roblox começa liberar novos tipos de conta para menores de 16 anos (G1)
+6. 2. Gonet é contra suspender lei que pode reduzir pena de Bolsonaro
 
-11. 1. Diana Shipping eleva oferta de aquisição da Genco para US$ 27,34 por ação (Investing.com)
+7. 3. Celulares de Deolane e Marcola viram prova central em ação penal
 
-12. 2. Dyne Therapeutics amplia linha de crédito para US$ 400 milhões (Investing.com)
+8. 4. STF ajusta responsabilização das big techs; decisão é definitiva
 
-13. 3. Diretor da Onemednet investe US$ 100.000 em ações da empresa (Investing.com)
+9. 5. Câmara convoca BC e Receita para discutir lei das stablecoins
 
-14. 4. LME e bolsa de Xangai firmam parceria para novo contrato de aço (Investing.com)
 
-15. 5. Cantor Fitzgerald reitera classificação da Gilead Sciences como acima da média (Investing.com)
+### 🤖 TECH & IA
+
+10. 1. Amazon traz Alexa+ ao Brasil com IA generativa
+
+11. 2. iPhone no Brasil aceita lojas de apps rivais após acordo com Cade
+
+12. 3. Photoshop e Premiere ganham assistentes de IA
+
+13. 4. Google descontinua Nest Home Mini e Nest Audio
+
+
+### 💰 ECONOMIA & CRYPTO
+
+14. 1. Petróleo sobe com cancelamento de encontro EUA-Irã
+
+15. 2. Bitcoin miners correm para se transformar em data centers de IA
+
+16. 3. Ethereum Foundation enfrenta debandada na liderança
+
+17. 4. Mercado de crédito mais arriscado, mas com oportunidades, diz XP
 

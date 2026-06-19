@@ -179,5 +179,20 @@
       "gaps": 0,
       "corujao_blocked": true
     }
+  },
+  {
+    "date": "2026-06-18",
+    "grade": 6.3,
+    "exit_code": 1,
+    "needs_manual": false,
+    "updated_at": "2026-06-18T09:36:33.845715",
+    "metrics": {
+      "total_eps": 23,
+      "mp3_disk": 16,
+      "coverage_pct": 69.6,
+      "pilares": "1/3",
+      "gaps": 0,
+      "corujao_blocked": true
+    }
   }
 ]
