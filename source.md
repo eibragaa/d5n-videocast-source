@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Sexta-feira, 19 de Junho de 2026
+## Sábado, 20 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -10,9 +10,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
 
-
-### 🌍 GLOBAL
-
 1. 1. Vance adia viagem à Suíça para negociações sobre acordo com Irã
 
 2. 2. Ucrânia ataca refinaria de Moscou em grande ataque de drones
@@ -20,9 +17,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 3. 3. EUA reduzem tropas na Europa; Hegseth critica aliados da Otan
 
 4. 4. Israel reage a acordo EUA-Irã com novos ataques no Líbano
-
-
-### 🇧🇷 BRASIL
 
 5. 1. Caso Master: investigação chega ao líder do PT no Senado
 
@@ -34,9 +28,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 9. 5. Câmara convoca BC e Receita para discutir lei das stablecoins
 
-
-### 🤖 TECH & IA
-
 10. 1. Amazon traz Alexa+ ao Brasil com IA generativa
 
 11. 2. iPhone no Brasil aceita lojas de apps rivais após acordo com Cade
@@ -44,9 +35,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 12. 3. Photoshop e Premiere ganham assistentes de IA
 
 13. 4. Google descontinua Nest Home Mini e Nest Audio
-
-
-### 💰 ECONOMIA & CRYPTO
 
 14. 1. Petróleo sobe com cancelamento de encontro EUA-Irã
 
