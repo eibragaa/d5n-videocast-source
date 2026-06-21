@@ -13,30 +13,38 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 ### 🌍 GLOBAL
 
-1. 1. Iranian fire kills nine people in Gaza, including a child and journalist, medics say (Reuters)
+1. 1. Iran closes Strait of Hormuz, testing fragile agreement with U.S. (Washington Post)
 
-2. 2. Iran says it is closing Strait of Hormuz, testing fragile agreement with U.S. (Washington Post)
+2. 2. Polish president strips Zelensky of honor after special forces renaming (Washington Post)
 
-3. 3. Polish president strips Zelensky of honor after special forces unit's renaming (Washington Post)
+3. 3. Colombia's brutal internal conflict is defining its presidential election (BBC)
 
-4. 4. Colombia's brutal internal conflict is defining its presidential election (BBC)
+4. 4. Meloni's Spat With Trump Shows Readiness to Risk a Bigger Fight (Bloomberg)
 
 
 ### 🇧🇷 BRASIL
 
-5. 5. Datafolha: 38% têm avaliação negativa sobre o governo Lula; 32%, positiva (InfoMoney)
+5. 1. Sucessão do Congresso: Motta e Alcolumbre em lados opostos (G1)
 
-6. 6. Alerta extremo falso da Defesa Civil gera pânico; PF investiga invasão ao sistema (G1)
+6. 2. Governo não pagou 10% das emendas parlamentares previstas (G1)
+
+7. 3. Sistema de alerta da Defesa Civil invadido com mensagens falsas (G1)
 
 
 ### 🤖 TECH & IA
 
-7. 7. Snap's $2,195 smart glasses: are they the next big thing in tech? (NPR)
+8. 1. Apple's M6 chip launches this fall with new products (9to5Mac)
 
-8. 8. Three Apple Stores in U.S. Are Permanently Closing Today (MacRumors)
+9. 2. visionOS 27 gives M5 Vision Pro two unique new advantages (9to5Mac)
+
+10. 3. Apple working on deep Siri overhaul with generative AI (9to5Mac)
+
+11. 4. iPhone parts factory in India faces new health probe (9to5Mac)
 
 
 ### 💰 ECONOMIA & CRYPTO
 
-9. 9. Accenture Q3 results trigger sharp stock decline; cloud and AI growth decelerates (Investing.com)
+12. 1. Accenture Q3 results disappoint, stock plunges (Investing.com)
+
+13. 2. Strait of Hormuz closure: economic risks for 2027 (Investing.com)
 
