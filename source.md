@@ -10,37 +10,33 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
 
-1. 1. Vance adia viagem à Suíça para negociações sobre acordo com Irã
 
-2. 2. Ucrânia ataca refinaria de Moscou em grande ataque de drones
+### 🌍 GLOBAL
 
-3. 3. EUA reduzem tropas na Europa; Hegseth critica aliados da Otan
+1. 1. Trump envoys head to Switzerland for potential Iran talks (Axios)
 
-4. 4. Israel reage a acordo EUA-Irã com novos ataques no Líbano
+2. 2. Israel continues attacks on Lebanon despite agreeing to ceasefire (Al Jazeera)
 
-5. 1. Caso Master: investigação chega ao líder do PT no Senado
+3. 3. How China's Navy Is Tightening the Noose on Taiwan (WSJ)
 
-6. 2. Gonet é contra suspender lei que pode reduzir pena de Bolsonaro
 
-7. 3. Celulares de Deolane e Marcola viram prova central em ação penal
+### 🇧🇷 BRASIL
 
-8. 4. STF ajusta responsabilização das big techs; decisão é definitiva
+4. 4. Defesa Civil: sistema invadido dispara alerta falso 'misantropia' em celulares (G1)
 
-9. 5. Câmara convoca BC e Receita para discutir lei das stablecoins
+5. 5. Trump diz ter 'observado' Lula no G7 e afirma que brasileiro é 'muito volátil' (G1)
 
-10. 1. Amazon traz Alexa+ ao Brasil com IA generativa
 
-11. 2. iPhone no Brasil aceita lojas de apps rivais após acordo com Cade
+### 🤖 TECH & IA
 
-12. 3. Photoshop e Premiere ganham assistentes de IA
+6. 6. Hospital italiano testa robô que conversa com pacientes e auxilia equipes de saúde (G1)
 
-13. 4. Google descontinua Nest Home Mini e Nest Audio
+7. 7. iPhone no Brasil passa a aceitar lojas de apps rivais e pagamentos de terceiros (G1)
 
-14. 1. Petróleo sobe com cancelamento de encontro EUA-Irã
 
-15. 2. Bitcoin miners correm para se transformar em data centers de IA
+### 💰 ECONOMIA & CRYPTO
 
-16. 3. Ethereum Foundation enfrenta debandada na liderança
+8. 8. Bitcoin despenca a US$ 63 mil com apostas em alta de juros do Fed (Cointelegraph)
 
-17. 4. Mercado de crédito mais arriscado, mas com oportunidades, diz XP
+9. 9. Oil Prices Rise as U.S.-Iran Deal Faces Tests (NYT)
 
