@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Sábado, 20 de Junho de 2026
+## Domingo, 21 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -13,30 +13,30 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 ### 🌍 GLOBAL
 
-1. 1. Trump envoys head to Switzerland for potential Iran talks (Axios)
+1. 1. Iranian fire kills nine people in Gaza, including a child and journalist, medics say (Reuters)
 
-2. 2. Israel continues attacks on Lebanon despite agreeing to ceasefire (Al Jazeera)
+2. 2. Iran says it is closing Strait of Hormuz, testing fragile agreement with U.S. (Washington Post)
 
-3. 3. How China's Navy Is Tightening the Noose on Taiwan (WSJ)
+3. 3. Polish president strips Zelensky of honor after special forces unit's renaming (Washington Post)
+
+4. 4. Colombia's brutal internal conflict is defining its presidential election (BBC)
 
 
 ### 🇧🇷 BRASIL
 
-4. 4. Defesa Civil: sistema invadido dispara alerta falso 'misantropia' em celulares (G1)
+5. 5. Datafolha: 38% têm avaliação negativa sobre o governo Lula; 32%, positiva (InfoMoney)
 
-5. 5. Trump diz ter 'observado' Lula no G7 e afirma que brasileiro é 'muito volátil' (G1)
+6. 6. Alerta extremo falso da Defesa Civil gera pânico; PF investiga invasão ao sistema (G1)
 
 
 ### 🤖 TECH & IA
 
-6. 6. Hospital italiano testa robô que conversa com pacientes e auxilia equipes de saúde (G1)
+7. 7. Snap's $2,195 smart glasses: are they the next big thing in tech? (NPR)
 
-7. 7. iPhone no Brasil passa a aceitar lojas de apps rivais e pagamentos de terceiros (G1)
+8. 8. Three Apple Stores in U.S. Are Permanently Closing Today (MacRumors)
 
 
 ### 💰 ECONOMIA & CRYPTO
 
-8. 8. Bitcoin despenca a US$ 63 mil com apostas em alta de juros do Fed (Cointelegraph)
-
-9. 9. Oil Prices Rise as U.S.-Iran Deal Faces Tests (NYT)
+9. 9. Accenture Q3 results trigger sharp stock decline; cloud and AI growth decelerates (Investing.com)
 
