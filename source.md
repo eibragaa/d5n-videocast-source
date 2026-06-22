@@ -10,9 +10,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
 
-
-### 🌍 GLOBAL
-
 1. 1. Iran closes Strait of Hormuz, testing fragile agreement with U.S. (Washington Post)
 
 2. 2. Polish president strips Zelensky of honor after special forces renaming (Washington Post)
@@ -21,17 +18,11 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 4. 4. Meloni's Spat With Trump Shows Readiness to Risk a Bigger Fight (Bloomberg)
 
-
-### 🇧🇷 BRASIL
-
 5. 1. Sucessão do Congresso: Motta e Alcolumbre em lados opostos (G1)
 
 6. 2. Governo não pagou 10% das emendas parlamentares previstas (G1)
 
 7. 3. Sistema de alerta da Defesa Civil invadido com mensagens falsas (G1)
-
-
-### 🤖 TECH & IA
 
 8. 1. Apple's M6 chip launches this fall with new products (9to5Mac)
 
@@ -40,9 +31,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 10. 3. Apple working on deep Siri overhaul with generative AI (9to5Mac)
 
 11. 4. iPhone parts factory in India faces new health probe (9to5Mac)
-
-
-### 💰 ECONOMIA & CRYPTO
 
 12. 1. Accenture Q3 results disappoint, stock plunges (Investing.com)
 

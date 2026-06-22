@@ -24,7 +24,7 @@ PILAR_MAP = {"Global":"global","Brasil":"global","Tech":"tech","Economia":"econ"
 PILAR_DOT = {"global":"dot-global","tech":"dot-tech","econ":"dot-econ"}
 
 def load_today_news(date_str, silent=False):
-    path = f"{BASE}/drop5news-trends-{date_str}.txt"
+    path = f"/root/.hermes/cron/output/drop5news-trends-{date_str}.txt"
     if not os.path.exists(path):
         if not silent: print(f"⚠️  Trends não encontrados: {path}")
         return []
@@ -378,16 +378,13 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
     </div>
   </section>'''
 
-    # ── Episódios anteriores (archive) — 3 visíveis + dropdown ──
+    # ── Episódios anteriores (archive) ──
     archive_html = ""
-    archive_count = 0
     if episodios:
-        archive_count = len(episodios)
-        for i, ep in enumerate(episodios):
-            vis_class = "archive-link--visible" if i < 3 else "archive-link--hidden"
+        for ep in episodios[:20]:  # mostra até 20
             if ep.get("exists", False):
                 archive_html += f'''
-    <a class="archive-link {vis_class}" href="{ep["path"]}">
+    <a class="archive-link" href="{ep["path"]}">
       <div>
         <div class="archive-link-date">Ep #{ep["num"]} · {format_data_curta(ep["date"])}</div>
         <div class="archive-link-text">{ep["dur_str"]}</div>
@@ -396,20 +393,13 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
     </a>'''
             else:
                 archive_html += f'''
-    <div class="archive-link {vis_class} archive-link--missing">
+    <div class="archive-link archive-link--missing">
       <div>
         <div class="archive-link-date">Ep #{ep["num"]} · {format_data_curta(ep["date"])}</div>
         <div class="archive-link-text">indisponível</div>
       </div>
       <span class="archive-link-archive-ghost">◌</span>
     </div>'''
-        if archive_count > 3:
-            archive_html += f'''
-    <button class="archive-toggle" type="button" aria-expanded="false" aria-controls="archive-list">
-      <span class="archive-toggle-label">Ver episódios anteriores ({archive_count - 3})</span>
-      <span class="archive-toggle-arrow">↓</span>
-    </button>'''
-        archive_html = f'<div class="archive-archive" id="archive-list">\n{archive_html}\n  </div>'
 
     html = f'''<!DOCTYPE html>
 <html lang="pt-BR">
@@ -540,17 +530,6 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .btn-premium {{ display:inline-flex; align-items:center; gap:0.5rem; background:transparent; border:1px solid var(--accent); color:var(--accent); font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; padding:0.5rem 1.1rem; border-radius:2px; cursor:pointer; text-decoration:none; transition:all 0.2s; }}
   .btn-premium:hover {{ background:var(--accent); color:var(--bg); }}
 
-  /* Premium programs grid (Manhã Conectada + Fechamento) */
-  .premium-programs {{ display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin:1.25rem 0 1.5rem; }}
-  .premium-program {{ padding:1rem; background:rgba(0,0,0,0.25); border:1px solid var(--border); border-radius:4px; }}
-  .premium-program-time {{ font-family:'Libre Baskerville',serif; font-size:1.4rem; font-weight:700; color:var(--accent); margin-bottom:0.3rem; letter-spacing:-0.02em; }}
-  .premium-program-name {{ font-size:0.85rem; font-weight:500; color:var(--text); margin-bottom:0.6rem; }}
-  .premium-program-hook {{ font-size:0.72rem; line-height:1.55; color:var(--muted); margin-bottom:0.75rem; }}
-  .premium-program-hook strong {{ color:var(--text); font-weight:500; }}
-  .premium-program-meta {{ font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint); padding-top:0.5rem; border-top:1px solid var(--border-lt); }}
-  .premium-fineprint {{ font-size:0.65rem; color:var(--faint); margin-top:0.75rem; line-height:1.5; }}
-  @media (max-width:600px) {{ .premium-programs {{ grid-template-columns:1fr; }} }}
-
   footer {{ border-top:1px solid var(--border); padding:2rem 0; margin-top:1rem; }}
   .footer-inner {{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }}
   .footer-brand {{ font-family:'Libre Baskerville',serif; font-size:0.8rem; color:var(--muted); }}
@@ -575,24 +554,6 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .archive-link--missing .archive-link-text {{ font-style:italic; color:var(--faint); }}
   .archive-link-archive-ghost {{ color:var(--faint); font-size:0.7rem; }}
 
-  /* Dropdown: 3 visíveis por padrão, resto oculto até clicar */
-  .archive-link--hidden {{ display:none; }}
-  .archive-archive.expanded .archive-link--hidden {{ display:flex; }}
-  .archive-toggle {{
-    display:flex; align-items:center; justify-content:center; gap:0.5rem;
-    width:100%; margin-top:0.75rem; padding:0.7rem 1rem;
-    background:transparent; border:1px solid var(--border);
-    border-radius:6px; color:var(--muted); cursor:pointer;
-    font-family:inherit; font-size:0.78rem; font-weight:400;
-    transition:all 0.2s ease;
-  }}
-  .archive-toggle:hover {{
-    border-color:var(--accent-dim); color:var(--text);
-    background:rgba(148,163,184,0.04);
-  }}
-  .archive-toggle-arrow {{ font-size:0.85rem; transition:transform 0.25s ease; }}
-  .archive-archive.expanded .archive-toggle-arrow {{ transform:rotate(180deg); }}
-
   @media (max-width:600px) {{
     header {{ padding:0 1rem; }} .container {{ padding:0 1rem; }}
     .header-meta {{ display:none; }} .hero {{ padding:2rem 0 1.5rem; }}
@@ -600,7 +561,6 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
     .footer-inner {{ flex-direction:column; align-items:flex-start; }}
   }}
 </style>
-<script defer src="https://cloud.umami.is/script.js" data-website-id="e0919f78-6147-42e0-a382-d3792662ea3a"></script>
 </head>
 <body>
 
@@ -640,28 +600,16 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   {sections_html}
 
   <div class="premium-block" data-animate>
-    <div class="premium-eyebrow">✦ Premium · Em Breve</div>
-    <h3 class="premium-title">Dois novos programas diários. Você entra antes de todo mundo.</h3>
-    <p class="premium-desc">Curadoria de bolso pra começar e terminar o dia. Cinco minutos que valem por vinte.</p>
-
-    <div class="premium-programs">
-      <div class="premium-program">
-        <div class="premium-program-time">☀ 06:30</div>
-        <div class="premium-program-name">Amanhã Conectada</div>
-        <div class="premium-program-hook">Acordou, cheirou o café, abriu o celular. Antes do mundo girar, três blocos pra você entrar no dia no comando: <strong>HOOK</strong> (o que importa nas próximas 12h), <strong>3 BLOCOS</strong> (Brasil, Mundo, Tech do dia), <strong>CTA</strong> (uma ação sua pra hoje).</div>
-        <div class="premium-program-meta">~5 min · Áudio + bullets no app</div>
-      </div>
-
-      <div class="premium-program">
-        <div class="premium-program-time">🌙 17:00</div>
-        <div class="premium-program-name">Fechamento do Mercado</div>
-        <div class="premium-program-hook">Saiu do trabalho, mercado já fechou. Antes de fechar a tela: ibovespa, dólar, crypto, Focus BCB, e o <strong>HOOK</strong> do dia seguinte. <strong>CHUNK</strong> com o que moveu grana. <strong>CTA</strong> com o que observar no dia seguinte.</div>
-        <div class="premium-program-meta">~5 min · Áudio + 1 gráfico</div>
-      </div>
+    <div class="premium-eyebrow">✦ Premium</div>
+    <h3 class="premium-title">Brief Executivo de hoje</h3>
+    <p class="premium-desc">3 bullets acionáveis — o que aconteceu, por que importa, o que observar. Sem ruído.</p>
+    <div class="premium-preview" aria-hidden="true">
+      <div class="premium-preview-line"></div>
+      <div class="premium-preview-line"></div>
+      <div class="premium-preview-line"></div>
+      <div class="premium-preview-line"></div>
     </div>
-
-    <a href="https://forms.gle/SUBSTITUIR_PELO_SEU_LINK" target="_blank" rel="noopener" class="btn-premium">Entrar na lista de espera →</a>
-    <p class="premium-fineprint">Lança nas próximas semanas. Você fica sabendo primeiro. Sem spam, só o aviso de quando abrir.</p>
+    <a href="#" class="btn-premium">Acessar Brief ↗</a>
   </div>
 
   <section class="section" style="border-bottom:none;padding-bottom:0">
@@ -719,19 +667,6 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   audio.addEventListener('timeupdate',()=>{{ if(!audio.duration)return; const pct=(audio.currentTime/audio.duration)*100; fill.style.width=pct+'%'; timeEl.textContent=`${{fmt(audio.currentTime)}} / ${{fmt(audio.duration)}}`; }});
   audio.addEventListener('ended',()=>{{ playIcon.innerHTML=icons.play; fill.style.width='0%'; }});
   function seekAudio(e){{ if(!audio.duration)return; const rect=e.currentTarget.getBoundingClientRect(); const pct=(e.clientX-rect.left)/rect.width; audio.currentTime=pct*audio.duration; }}
-
-  // Archive dropdown toggle (episódios anteriores)
-  const archiveEl = document.querySelector('.archive-archive');
-  const toggleBtn = document.querySelector('.archive-toggle');
-  const hiddenCount = {archive_count - 3};
-  if (archiveEl && toggleBtn) {{
-    toggleBtn.addEventListener('click', () => {{
-      const expanded = archiveEl.classList.toggle('expanded');
-      toggleBtn.setAttribute('aria-expanded', expanded);
-      const label = toggleBtn.querySelector('.archive-toggle-label');
-      if (label) label.textContent = expanded ? 'Ver menos' : `Ver episódios anteriores (${{hiddenCount}})`;
-    }});
-  }}
 </script>
 </body>
 </html>'''

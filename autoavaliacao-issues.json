@@ -1,5 +1,16 @@
 {
-  "persistent_issues": {},
-  "updated": "2026-06-18",
+  "persistent_issues": {
+    "acao_manual_requerida": {
+      "first_seen": "2026-06-21",
+      "consecutive_days": 1,
+      "last_seen": "2026-06-21"
+    },
+    "falha_autocorrecao": {
+      "first_seen": "2026-06-21",
+      "consecutive_days": 1,
+      "last_seen": "2026-06-21"
+    }
+  },
+  "updated": "2026-06-21",
   "escalations": []
 }

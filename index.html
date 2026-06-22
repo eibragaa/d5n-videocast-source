@@ -127,6 +127,17 @@
   .btn-premium { display:inline-flex; align-items:center; gap:0.5rem; background:transparent; border:1px solid var(--accent); color:var(--accent); font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; padding:0.5rem 1.1rem; border-radius:2px; cursor:pointer; text-decoration:none; transition:all 0.2s; }
   .btn-premium:hover { background:var(--accent); color:var(--bg); }
 
+  /* Premium programs grid (Manhã Conectada + Fechamento) */
+  .premium-programs { display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin:1.25rem 0 1.5rem; }
+  .premium-program { padding:1rem; background:rgba(0,0,0,0.25); border:1px solid var(--border); border-radius:4px; }
+  .premium-program-time { font-family:'Libre Baskerville',serif; font-size:1.4rem; font-weight:700; color:var(--accent); margin-bottom:0.3rem; letter-spacing:-0.02em; }
+  .premium-program-name { font-size:0.85rem; font-weight:500; color:var(--text); margin-bottom:0.6rem; }
+  .premium-program-hook { font-size:0.72rem; line-height:1.55; color:var(--muted); margin-bottom:0.75rem; }
+  .premium-program-hook strong { color:var(--text); font-weight:500; }
+  .premium-program-meta { font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint); padding-top:0.5rem; border-top:1px solid var(--border-lt); }
+  .premium-fineprint { font-size:0.65rem; color:var(--faint); margin-top:0.75rem; line-height:1.5; }
+  @media (max-width:600px) { .premium-programs { grid-template-columns:1fr; } }
+
   footer { border-top:1px solid var(--border); padding:2rem 0; margin-top:1rem; }
   .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
   .footer-brand { font-family:'Libre Baskerville',serif; font-size:0.8rem; color:var(--muted); }
@@ -151,6 +162,24 @@
   .archive-link--missing .archive-link-text { font-style:italic; color:var(--faint); }
   .archive-link-archive-ghost { color:var(--faint); font-size:0.7rem; }
 
+  /* Dropdown: 3 visíveis por padrão, resto oculto até clicar */
+  .archive-link--hidden { display:none; }
+  .archive-archive.expanded .archive-link--hidden { display:flex; }
+  .archive-toggle {
+    display:flex; align-items:center; justify-content:center; gap:0.5rem;
+    width:100%; margin-top:0.75rem; padding:0.7rem 1rem;
+    background:transparent; border:1px solid var(--border);
+    border-radius:6px; color:var(--muted); cursor:pointer;
+    font-family:inherit; font-size:0.78rem; font-weight:400;
+    transition:all 0.2s ease;
+  }
+  .archive-toggle:hover {
+    border-color:var(--accent-dim); color:var(--text);
+    background:rgba(148,163,184,0.04);
+  }
+  .archive-toggle-arrow { font-size:0.85rem; transition:transform 0.25s ease; }
+  .archive-archive.expanded .archive-toggle-arrow { transform:rotate(180deg); }
+
   @media (max-width:600px) {
     header { padding:0 1rem; } .container { padding:0 1rem; }
     .header-meta { display:none; } .hero { padding:2rem 0 1.5rem; }
@@ -158,6 +187,7 @@
     .footer-inner { flex-direction:column; align-items:flex-start; }
   }
 </style>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="e0919f78-6147-42e0-a382-d3792662ea3a"></script>
 </head>
 <body>
 
@@ -179,12 +209,12 @@
     <span class="ticker-item"><span class="ticker-dot dot-global"></span>1. Sucessão do Congresso: Motta e Alcolumbre em lados opostos (G1)</span>
     <span class="ticker-item"><span class="ticker-dot dot-global"></span>2. Governo não pagou 10% das emendas parlamentares previstas (G1)</span>
     <span class="ticker-item"><span class="ticker-dot dot-global"></span>3. Sistema de alerta da Defesa Civil invadido com mensagens falsas (G1)</span>
-    <span class="ticker-item"><span class="ticker-dot dot-tech"></span>1. Apple's M6 chip launches this fall with new products (9to5Mac)</span>
-    <span class="ticker-item"><span class="ticker-dot dot-tech"></span>2. visionOS 27 gives M5 Vision Pro two unique new advantages (9to5Mac)</span>
-    <span class="ticker-item"><span class="ticker-dot dot-tech"></span>3. Apple working on deep Siri overhaul with generative AI (9to5Mac)</span>
-    <span class="ticker-item"><span class="ticker-dot dot-tech"></span>4. iPhone parts factory in India faces new health probe (9to5Mac)</span>
-    <span class="ticker-item"><span class="ticker-dot dot-econ"></span>1. Accenture Q3 results disappoint, stock plunges (Investing.com)</span>
-    <span class="ticker-item"><span class="ticker-dot dot-econ"></span>2. Strait of Hormuz closure: economic risks for 2027 (Investing.com)</span>
+    <span class="ticker-item"><span class="ticker-dot dot-global"></span>1. Apple's M6 chip launches this fall with new products (9to5Mac)</span>
+    <span class="ticker-item"><span class="ticker-dot dot-global"></span>2. visionOS 27 gives M5 Vision Pro two unique new advantages (9to5Mac)</span>
+    <span class="ticker-item"><span class="ticker-dot dot-global"></span>3. Apple working on deep Siri overhaul with generative AI (9to5Mac)</span>
+    <span class="ticker-item"><span class="ticker-dot dot-global"></span>4. iPhone parts factory in India faces new health probe (9to5Mac)</span>
+    <span class="ticker-item"><span class="ticker-dot dot-global"></span>1. Accenture Q3 results disappoint, stock plunges (Investing.com)</span>
+    <span class="ticker-item"><span class="ticker-dot dot-global"></span>2. Strait of Hormuz closure: economic risks for 2027 (Investing.com)</span>
     
     <span class="ticker-item"><span class="ticker-dot dot-global"></span>1. Iran closes Strait of Hormuz, testing fragile agreement with U.S. (Washington Post)</span>
     <span class="ticker-item"><span class="ticker-dot dot-global"></span>2. Polish president strips Zelensky of honor after special forces renaming (Washington Post)</span>
@@ -193,12 +223,12 @@
     <span class="ticker-item"><span class="ticker-dot dot-global"></span>1. Sucessão do Congresso: Motta e Alcolumbre em lados opostos (G1)</span>
     <span class="ticker-item"><span class="ticker-dot dot-global"></span>2. Governo não pagou 10% das emendas parlamentares previstas (G1)</span>
     <span class="ticker-item"><span class="ticker-dot dot-global"></span>3. Sistema de alerta da Defesa Civil invadido com mensagens falsas (G1)</span>
-    <span class="ticker-item"><span class="ticker-dot dot-tech"></span>1. Apple's M6 chip launches this fall with new products (9to5Mac)</span>
-    <span class="ticker-item"><span class="ticker-dot dot-tech"></span>2. visionOS 27 gives M5 Vision Pro two unique new advantages (9to5Mac)</span>
-    <span class="ticker-item"><span class="ticker-dot dot-tech"></span>3. Apple working on deep Siri overhaul with generative AI (9to5Mac)</span>
-    <span class="ticker-item"><span class="ticker-dot dot-tech"></span>4. iPhone parts factory in India faces new health probe (9to5Mac)</span>
-    <span class="ticker-item"><span class="ticker-dot dot-econ"></span>1. Accenture Q3 results disappoint, stock plunges (Investing.com)</span>
-    <span class="ticker-item"><span class="ticker-dot dot-econ"></span>2. Strait of Hormuz closure: economic risks for 2027 (Investing.com)</span>
+    <span class="ticker-item"><span class="ticker-dot dot-global"></span>1. Apple's M6 chip launches this fall with new products (9to5Mac)</span>
+    <span class="ticker-item"><span class="ticker-dot dot-global"></span>2. visionOS 27 gives M5 Vision Pro two unique new advantages (9to5Mac)</span>
+    <span class="ticker-item"><span class="ticker-dot dot-global"></span>3. Apple working on deep Siri overhaul with generative AI (9to5Mac)</span>
+    <span class="ticker-item"><span class="ticker-dot dot-global"></span>4. iPhone parts factory in India faces new health probe (9to5Mac)</span>
+    <span class="ticker-item"><span class="ticker-dot dot-global"></span>1. Accenture Q3 results disappoint, stock plunges (Investing.com)</span>
+    <span class="ticker-item"><span class="ticker-dot dot-global"></span>2. Strait of Hormuz closure: economic risks for 2027 (Investing.com)</span>
     
   </div>
 </div>
@@ -212,11 +242,11 @@
     <div class="hero-sub">
       <div class="hero-stat"><strong>13</strong><span>notícias</span></div>
       <div class="divider-v"></div>
-      <div class="hero-stat"><strong>4</strong><span>pilares</span></div>
+      <div class="hero-stat"><strong>1</strong><span>pilares</span></div>
       <div class="divider-v"></div>
       <div class="hero-stat"><strong>6:48</strong><span>podcast</span></div>
       <div class="divider-v"></div>
-      <div class="hero-stat quality-stat"><strong>78</strong><span>qualidade</span></div>
+      <div class="hero-stat quality-stat"><strong>72</strong><span>qualidade</span></div>
     </div>
     
     <div class="player-bar">
@@ -249,7 +279,7 @@
     <div class="section-header">
       <span class="section-icon">🌍</span>
       <span class="section-name global">Global</span>
-      <span class="section-count">7 notícias</span>
+      <span class="section-count">13 notícias</span>
     </div>
     <div class="news-list">
       <div class="news-item featured" data-animate>
@@ -287,16 +317,7 @@
         <span class="news-headline">3. Sistema de alerta da Defesa Civil invadido com mensagens falsas (G1)</span>
         <span class="news-meta"><span class="news-source">D5N</span><span class="score-badge score-none">—</span></span>
       </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="section-header">
-      <span class="section-icon">🤖</span>
-      <span class="section-name tech">Tech</span>
-      <span class="section-count">4 notícias</span>
-    </div>
-    <div class="news-list">
-      <div class="news-item featured" data-animate>
+      <div class="news-item" data-animate>
         <span class="news-num">08</span>
         <span class="news-headline">1. Apple's M6 chip launches this fall with new products (9to5Mac)</span>
         <span class="news-meta"><span class="news-source">D5N</span><span class="score-badge score-none">—</span></span>
@@ -316,16 +337,7 @@
         <span class="news-headline">4. iPhone parts factory in India faces new health probe (9to5Mac)</span>
         <span class="news-meta"><span class="news-source">D5N</span><span class="score-badge score-none">—</span></span>
       </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="section-header">
-      <span class="section-icon">💰</span>
-      <span class="section-name econ">Economia & Crypto</span>
-      <span class="section-count">2 notícias</span>
-    </div>
-    <div class="news-list">
-      <div class="news-item featured" data-animate>
+      <div class="news-item" data-animate>
         <span class="news-num">12</span>
         <span class="news-headline">1. Accenture Q3 results disappoint, stock plunges (Investing.com)</span>
         <span class="news-meta"><span class="news-source">D5N</span><span class="score-badge score-none">—</span></span>
@@ -339,16 +351,28 @@
   </section>
 
   <div class="premium-block" data-animate>
-    <div class="premium-eyebrow">✦ Premium</div>
-    <h3 class="premium-title">Brief Executivo de hoje</h3>
-    <p class="premium-desc">3 bullets acionáveis — o que aconteceu, por que importa, o que observar. Sem ruído.</p>
-    <div class="premium-preview" aria-hidden="true">
-      <div class="premium-preview-line"></div>
-      <div class="premium-preview-line"></div>
-      <div class="premium-preview-line"></div>
-      <div class="premium-preview-line"></div>
+    <div class="premium-eyebrow">✦ Premium · Em Breve</div>
+    <h3 class="premium-title">Dois novos programas diários. Você entra antes de todo mundo.</h3>
+    <p class="premium-desc">Curadoria de bolso pra começar e terminar o dia. Cinco minutos que valem por vinte.</p>
+
+    <div class="premium-programs">
+      <div class="premium-program">
+        <div class="premium-program-time">☀ 06:30</div>
+        <div class="premium-program-name">Amanhã Conectada</div>
+        <div class="premium-program-hook">Acordou, cheirou o café, abriu o celular. Antes do mundo girar, três blocos pra você entrar no dia no comando: <strong>HOOK</strong> (o que importa nas próximas 12h), <strong>3 BLOCOS</strong> (Brasil, Mundo, Tech do dia), <strong>CTA</strong> (uma ação sua pra hoje).</div>
+        <div class="premium-program-meta">~5 min · Áudio + bullets no app</div>
+      </div>
+
+      <div class="premium-program">
+        <div class="premium-program-time">🌙 17:00</div>
+        <div class="premium-program-name">Fechamento do Mercado</div>
+        <div class="premium-program-hook">Saiu do trabalho, mercado já fechou. Antes de fechar a tela: ibovespa, dólar, crypto, Focus BCB, e o <strong>HOOK</strong> do dia seguinte. <strong>CHUNK</strong> com o que moveu grana. <strong>CTA</strong> com o que observar no dia seguinte.</div>
+        <div class="premium-program-meta">~5 min · Áudio + 1 gráfico</div>
+      </div>
     </div>
-    <a href="#" class="btn-premium">Acessar Brief ↗</a>
+
+    <a href="https://forms.gle/SUBSTITUIR_PELO_SEU_LINK" target="_blank" rel="noopener" class="btn-premium">Entrar na lista de espera →</a>
+    <p class="premium-fineprint">Lança nas próximas semanas. Você fica sabendo primeiro. Sem spam, só o aviso de quando abrir.</p>
   </div>
 
   <section class="section" style="border-bottom:none;padding-bottom:0">
@@ -356,147 +380,195 @@
       <span class="section-icon">📅</span>
       <span class="section-name" style="color:var(--muted)">Episódios</span>
     </div>
-    
-    <a class="archive-link" href="/audio/d5n-ep026-2026-06-21.mp3">
+    <div class="archive-archive" id="archive-list">
+
+    <a class="archive-link archive-link--visible" href="/audio/d5n-ep026-2026-06-21.mp3">
       <div>
         <div class="archive-link-date">Ep #026 · 21 Jun 2026</div>
         <div class="archive-link-text">6:48</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
-    <a class="archive-link" href="/audio/d5n-ep025-2026-06-20.mp3">
+    <a class="archive-link archive-link--visible" href="/audio/d5n-ep025-2026-06-20.mp3">
       <div>
         <div class="archive-link-date">Ep #025 · 20 Jun 2026</div>
         <div class="archive-link-text">7:35</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
-    <a class="archive-link" href="/audio/d5n-ep024-2026-06-19.mp3">
+    <a class="archive-link archive-link--visible" href="/audio/d5n-ep024-2026-06-19.mp3">
       <div>
         <div class="archive-link-date">Ep #024 · 19 Jun 2026</div>
         <div class="archive-link-text">6:45</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
-    <a class="archive-link" href="/audio/d5n-ep023-2026-06-16.mp3">
+    <a class="archive-link archive-link--hidden" href="/audio/d5n-ep023-2026-06-16.mp3">
       <div>
         <div class="archive-link-date">Ep #023 · 16 Jun 2026</div>
         <div class="archive-link-text">8:01</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
-    <div class="archive-link archive-link--missing">
+    <div class="archive-link archive-link--hidden archive-link--missing">
       <div>
         <div class="archive-link-date">Ep #022 · 15 Jun 2026</div>
         <div class="archive-link-text">indisponível</div>
       </div>
       <span class="archive-link-archive-ghost">◌</span>
     </div>
-    <div class="archive-link archive-link--missing">
+    <div class="archive-link archive-link--hidden archive-link--missing">
       <div>
         <div class="archive-link-date">Ep #021 · 14 Jun 2026</div>
         <div class="archive-link-text">indisponível</div>
       </div>
       <span class="archive-link-archive-ghost">◌</span>
     </div>
-    <a class="archive-link" href="/audio/d5n-ep020-2026-06-13.mp3">
+    <a class="archive-link archive-link--hidden" href="/audio/d5n-ep020-2026-06-13.mp3">
       <div>
         <div class="archive-link-date">Ep #020 · 13 Jun 2026</div>
         <div class="archive-link-text">8:15</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
-    <a class="archive-link" href="/audio/d5n-ep019-2026-06-12.mp3">
+    <a class="archive-link archive-link--hidden" href="/audio/d5n-ep019-2026-06-12.mp3">
       <div>
         <div class="archive-link-date">Ep #019 · 12 Jun 2026</div>
         <div class="archive-link-text">5:21</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
-    <a class="archive-link" href="/audio/d5n-ep018-2026-06-11.mp3">
+    <a class="archive-link archive-link--hidden" href="/audio/d5n-ep018-2026-06-11.mp3">
       <div>
         <div class="archive-link-date">Ep #018 · 11 Jun 2026</div>
         <div class="archive-link-text">4:58</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
-    <div class="archive-link archive-link--missing">
+    <div class="archive-link archive-link--hidden archive-link--missing">
       <div>
         <div class="archive-link-date">Ep #017 · 11 Jun 2026</div>
         <div class="archive-link-text">indisponível</div>
       </div>
       <span class="archive-link-archive-ghost">◌</span>
     </div>
-    <a class="archive-link" href="/audio/d5n-ep016-2026-06-10.mp3">
+    <a class="archive-link archive-link--hidden" href="/audio/d5n-ep016-2026-06-10.mp3">
       <div>
         <div class="archive-link-date">Ep #016 · 10 Jun 2026</div>
         <div class="archive-link-text">6:08</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
-    <a class="archive-link" href="/audio/d5n-ep015-2026-06-09.mp3">
+    <a class="archive-link archive-link--hidden" href="/audio/d5n-ep015-2026-06-09.mp3">
       <div>
         <div class="archive-link-date">Ep #015 · 9 Jun 2026</div>
         <div class="archive-link-text">5:31</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
-    <a class="archive-link" href="/audio/d5n-ep014-2026-06-08.mp3">
+    <a class="archive-link archive-link--hidden" href="/audio/d5n-ep014-2026-06-08.mp3">
       <div>
         <div class="archive-link-date">Ep #014 · 8 Jun 2026</div>
         <div class="archive-link-text">8:08</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
-    <a class="archive-link" href="/audio/d5n-ep013-2026-06-07.mp3">
+    <a class="archive-link archive-link--hidden" href="/audio/d5n-ep013-2026-06-07.mp3">
       <div>
         <div class="archive-link-date">Ep #013 · 7 Jun 2026</div>
         <div class="archive-link-text">8:08</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
-    <a class="archive-link" href="/audio/d5n-ep012-2026-06-06.mp3">
+    <a class="archive-link archive-link--hidden" href="/audio/d5n-ep012-2026-06-06.mp3">
       <div>
         <div class="archive-link-date">Ep #012 · 6 Jun 2026</div>
         <div class="archive-link-text">7:31</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
-    <a class="archive-link" href="/audio/d5n-ep011-2026-06-05.mp3">
+    <a class="archive-link archive-link--hidden" href="/audio/d5n-ep011-2026-06-05.mp3">
       <div>
         <div class="archive-link-date">Ep #011 · 5 Jun 2026</div>
         <div class="archive-link-text">6:12</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
-    <a class="archive-link" href="/audio/d5n-ep010-2026-06-05.mp3">
+    <a class="archive-link archive-link--hidden" href="/audio/d5n-ep010-2026-06-05.mp3">
       <div>
         <div class="archive-link-date">Ep #010 · 5 Jun 2026</div>
         <div class="archive-link-text">6:12</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
-    <a class="archive-link" href="/audio/d5n-ep009-2026-06-04.mp3">
+    <a class="archive-link archive-link--hidden" href="/audio/d5n-ep009-2026-06-04.mp3">
       <div>
         <div class="archive-link-date">Ep #009 · 4 Jun 2026</div>
         <div class="archive-link-text">8:49</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
-    <a class="archive-link" href="/audio/d5n-ep008-2026-06-03.mp3">
+    <a class="archive-link archive-link--hidden" href="/audio/d5n-ep008-2026-06-03.mp3">
       <div>
         <div class="archive-link-date">Ep #008 · 3 Jun 2026</div>
         <div class="archive-link-text">8:13</div>
       </div>
       <span class="archive-link-arrow">→</span>
     </a>
-    <div class="archive-link archive-link--missing">
+    <div class="archive-link archive-link--hidden archive-link--missing">
       <div>
         <div class="archive-link-date">Ep #007 · 2 Jun 2026</div>
         <div class="archive-link-text">indisponível</div>
       </div>
       <span class="archive-link-archive-ghost">◌</span>
     </div>
+    <a class="archive-link archive-link--hidden" href="/audio/d5n-ep006-2026-06-01.mp3">
+      <div>
+        <div class="archive-link-date">Ep #006 · 1 Jun 2026</div>
+        <div class="archive-link-text">5:35</div>
+      </div>
+      <span class="archive-link-arrow">→</span>
+    </a>
+    <a class="archive-link archive-link--hidden" href="/audio/d5n-ep005-2026-05-29.mp3">
+      <div>
+        <div class="archive-link-date">Ep #005 · 29 Mai 2026</div>
+        <div class="archive-link-text">7:51</div>
+      </div>
+      <span class="archive-link-arrow">→</span>
+    </a>
+    <a class="archive-link archive-link--hidden" href="/audio/d5n-ep004-2026-05-28.mp3">
+      <div>
+        <div class="archive-link-date">Ep #004 · 28 Mai 2026</div>
+        <div class="archive-link-text">2:46</div>
+      </div>
+      <span class="archive-link-arrow">→</span>
+    </a>
+    <div class="archive-link archive-link--hidden archive-link--missing">
+      <div>
+        <div class="archive-link-date">Ep #003 · 27 Mai 2026</div>
+        <div class="archive-link-text">indisponível</div>
+      </div>
+      <span class="archive-link-archive-ghost">◌</span>
+    </div>
+    <div class="archive-link archive-link--hidden archive-link--missing">
+      <div>
+        <div class="archive-link-date">Ep #002 · 26 Mai 2026</div>
+        <div class="archive-link-text">indisponível</div>
+      </div>
+      <span class="archive-link-archive-ghost">◌</span>
+    </div>
+    <div class="archive-link archive-link--hidden archive-link--missing">
+      <div>
+        <div class="archive-link-date">Ep #001 · 24 Mai 2026</div>
+        <div class="archive-link-text">indisponível</div>
+      </div>
+      <span class="archive-link-archive-ghost">◌</span>
+    </div>
+    <button class="archive-toggle" type="button" aria-expanded="false" aria-controls="archive-list">
+      <span class="archive-toggle-label">Ver episódios anteriores (23)</span>
+      <span class="archive-toggle-arrow">↓</span>
+    </button>
+  </div>
   </section>
 
 </div>
@@ -546,6 +618,19 @@
   audio.addEventListener('timeupdate',()=>{ if(!audio.duration)return; const pct=(audio.currentTime/audio.duration)*100; fill.style.width=pct+'%'; timeEl.textContent=`${fmt(audio.currentTime)} / ${fmt(audio.duration)}`; });
   audio.addEventListener('ended',()=>{ playIcon.innerHTML=icons.play; fill.style.width='0%'; });
   function seekAudio(e){ if(!audio.duration)return; const rect=e.currentTarget.getBoundingClientRect(); const pct=(e.clientX-rect.left)/rect.width; audio.currentTime=pct*audio.duration; }
+
+  // Archive dropdown toggle (episódios anteriores)
+  const archiveEl = document.querySelector('.archive-archive');
+  const toggleBtn = document.querySelector('.archive-toggle');
+  const hiddenCount = 23;
+  if (archiveEl && toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const expanded = archiveEl.classList.toggle('expanded');
+      toggleBtn.setAttribute('aria-expanded', expanded);
+      const label = toggleBtn.querySelector('.archive-toggle-label');
+      if (label) label.textContent = expanded ? 'Ver menos' : `Ver episódios anteriores (${hiddenCount})`;
+    });
+  }
 </script>
 </body>
 </html>
