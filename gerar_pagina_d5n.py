@@ -740,11 +740,11 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
 def gerar_source_md(date, data_br, noticias):
     if not noticias: return None
     md = f"# DROP FIVE NEWS — Boletim Diário\n## {data_br}\n\nINSTRUÇÕES (LEIA ANTES DE APRESENTAR):\n- Idioma: português brasileiro (NÃO use português de Portugal)\n- Contexto: Você é um apresentador de boletim de rádio. Apresente APENAS as notícias abaixo.\n- NÃO analise, avalie ou comente sobre o site, o projeto, a curadoria ou as fontes.\n- NÃO mencione NotebookLM, GitHub, feeds, JSON, RSS ou qualquer estrutura técnica.\n- Organize por blocos temáticos na ordem abaixo.\n- Use linguagem natural, coloquial brasileira, como um locutor de rádio.\n- Cada bloco começa com uma transição curta entre os temas.\n\n"
-    pilares = {'Global':'🌍 GLOBAL','Brasil':'🇧🇷 BRASIL','Tech':'🤖 TECH & IA','Economia':'💰 ECONOMIA & CRYPTO'}
+    pilares = {'Global':'🌍 GLOBAL','Brasil':'🇧🇷 BRASIL','Tech':'🤖 TECH & IA','Economia':'💰 ECONOMIA & CRYPTO','':'📰 GERAL'}
     cur = ''; idx = 1
     for n in noticias:
         p = n.get('pilar','')
-        if p != cur: cur = p; md += f'\n### {pilares.get(p,p)}\n\n'
+        if p != cur: cur = p; md += f'\n### {pilares.get(p, p.upper() or "GERAL")}\n\n'
         md += f'{idx}. {n["titulo"]}\n\n'; idx += 1
     return md
 

@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Segunda-feira, 22 de Junho de 2026
+## Quarta-feira, 24 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -10,29 +10,51 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
 
-1. 1. Iran closes Strait of Hormuz, testing fragile agreement with U.S. (Washington Post)
 
-2. 2. Polish president strips Zelensky of honor after special forces renaming (Washington Post)
+### 🌍 GLOBAL
 
-3. 3. Colombia's brutal internal conflict is defining its presidential election (BBC)
+1. 1. Congresso dos EUA aprova medida de poderes de guerra e repreende Trump por conflito com o Irã (BBC)
 
-4. 4. Meloni's Spat With Trump Shows Readiness to Risk a Bigger Fight (Bloomberg)
+2. 2. Trump compartilha texto que aponta eleição no Brasil como seu próximo 'teste' na América Latina (CartaCapital)
 
-5. 1. Sucessão do Congresso: Motta e Alcolumbre em lados opostos (G1)
+3. 3. Flórida: primárias democratas têm vitória de candidato apoiado por grupos de IA (NBC News)
 
-6. 2. Governo não pagou 10% das emendas parlamentares previstas (G1)
+4. 4. Espanha: oito condenados a 450 anos por motim anti-ICE onde policial foi baleado (BBC)
 
-7. 3. Sistema de alerta da Defesa Civil invadido com mensagens falsas (G1)
+5. 5. Primárias em Nova York 2026: resultados ao vivo (The New York Times)
 
-8. 1. Apple's M6 chip launches this fall with new products (9to5Mac)
 
-9. 2. visionOS 27 gives M5 Vision Pro two unique new advantages (9to5Mac)
+### 🇧🇷 BRASIL
 
-10. 3. Apple working on deep Siri overhaul with generative AI (9to5Mac)
+6. 1. Justiça dos EUA permite entrada da AGU em processo contra Moraes (Poder360)
 
-11. 4. iPhone parts factory in India faces new health probe (9to5Mac)
+7. 2. Planalto se prepara para receber mais denúncias contra 'República da Bahia' e blindar Lula (Estadão)
 
-12. 1. Accenture Q3 results disappoint, stock plunges (Investing.com)
+8. 3. MEC publica desempenho de escolas no Enem de 2025; saiba como consultar (CNN Brasil)
 
-13. 2. Strait of Hormuz closure: economic risks for 2027 (Investing.com)
+9. 4. Banco Digimais, de Edir Macedo, replicou 'modus operandi' do Master, diz PF (Valor Econômico)
+
+10. 5. Flávio Bolsonaro pede espaço em audiência nos EUA para falar de tarifas (Correio Braziliense)
+
+11. 6. Casa da família de Vorcaro é roubada em MG; ladrão leva relógio de R$ 1 mi (CNN Brasil)
+
+
+### 🤖 TECH & IA
+
+12. 1. Mamdani aposta política paga conforme candidatos endossados varrem primárias (NPR)
+
+13. 2. Congresso aprova grande projeto de habitação com apoio bipartisan (Axios)
+
+14. 3. Brad Lander derruba Rep. Dan Goldman após desafio de esquerda (Politico)
+
+15. 4. Candidato democrata Micah Lasher vence primária na Câmara com gasto grande de grupos de IA (NBC News)
+
+
+### 💰 ECONOMIA & CRYPTO
+
+16. 1. Petróleo: guerra de poderes no Congresso dos EUA pressiona mercado (BBC)
+
+17. 2. Bancos brasileiros: caso Digimais amplia pressão regulatória sobre instituições menores (Valor Econômico)
+
+18. 3. Eleições nos EUA: gastos com IA em primárias levantam debate sobre financiamento político (NBC News)
 
