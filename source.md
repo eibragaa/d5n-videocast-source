@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Quarta-feira, 24 de Junho de 2026
+## Sexta-feira, 26 de Junho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
@@ -10,9 +10,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Use linguagem natural, coloquial brasileira, como um locutor de rádio.
 - Cada bloco começa com uma transição curta entre os temas.
 
-
-### 🌍 GLOBAL
-
 1. 1. Congresso dos EUA aprova medida de poderes de guerra e repreende Trump por conflito com o Irã (BBC)
 
 2. 2. Trump compartilha texto que aponta eleição no Brasil como seu próximo 'teste' na América Latina (CartaCapital)
@@ -22,9 +19,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 4. 4. Espanha: oito condenados a 450 anos por motim anti-ICE onde policial foi baleado (BBC)
 
 5. 5. Primárias em Nova York 2026: resultados ao vivo (The New York Times)
-
-
-### 🇧🇷 BRASIL
 
 6. 1. Justiça dos EUA permite entrada da AGU em processo contra Moraes (Poder360)
 
@@ -38,9 +32,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 
 11. 6. Casa da família de Vorcaro é roubada em MG; ladrão leva relógio de R$ 1 mi (CNN Brasil)
 
-
-### 🤖 TECH & IA
-
 12. 1. Mamdani aposta política paga conforme candidatos endossados varrem primárias (NPR)
 
 13. 2. Congresso aprova grande projeto de habitação com apoio bipartisan (Axios)
@@ -48,9 +39,6 @@ INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 14. 3. Brad Lander derruba Rep. Dan Goldman após desafio de esquerda (Politico)
 
 15. 4. Candidato democrata Micah Lasher vence primária na Câmara com gasto grande de grupos de IA (NBC News)
-
-
-### 💰 ECONOMIA & CRYPTO
 
 16. 1. Petróleo: guerra de poderes no Congresso dos EUA pressiona mercado (BBC)
 
