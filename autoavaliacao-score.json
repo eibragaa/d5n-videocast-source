@@ -224,5 +224,20 @@
       "gaps": 0,
       "corujao_blocked": true
     }
+  },
+  {
+    "date": "2026-06-27",
+    "grade": 6.3,
+    "exit_code": 2,
+    "needs_manual": true,
+    "updated_at": "2026-06-27T05:30:48.960932",
+    "metrics": {
+      "total_eps": 30,
+      "mp3_disk": 30,
+      "coverage_pct": 76.7,
+      "pilares": "3/3",
+      "gaps": 0,
+      "corujao_blocked": true
+    }
   }
 ]

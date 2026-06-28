@@ -2,15 +2,18 @@
   "persistent_issues": {
     "acao_manual_requerida": {
       "first_seen": "2026-06-21",
-      "consecutive_days": 2,
-      "last_seen": "2026-06-22"
+      "consecutive_days": 3,
+      "last_seen": "2026-06-27"
     },
     "falha_autocorrecao": {
       "first_seen": "2026-06-21",
-      "consecutive_days": 2,
-      "last_seen": "2026-06-22"
+      "consecutive_days": 3,
+      "last_seen": "2026-06-27"
     }
   },
-  "updated": "2026-06-22",
-  "escalations": []
+  "updated": "2026-06-27",
+  "escalations": [
+    "acao_manual_requerida: 3 dias consecutivos — 🟠 escalando atenção",
+    "falha_autocorrecao: 3 dias consecutivos — 🟠 escalando atenção"
+  ]
 }
