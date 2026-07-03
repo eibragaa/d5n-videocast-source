@@ -7,7 +7,7 @@ Libre Baskerville + DM Sans · Ticker com dots · Player custom · Scroll-reveal
 import os, sys, re, json, argparse
 from datetime import datetime, timedelta
 
-BASE = "/root/repositorio/d5n-videocast-source"
+BASE = os.environ.get("D5N_BASE", os.path.dirname(os.path.abspath(__file__)))
 AUDIO_DIR = f"{BASE}/audio"
 ARQUIVO_DIR = f"{BASE}/2026"
 COUNTER_FILE = f"{BASE}/episode-counter.json"
@@ -53,7 +53,7 @@ def load_coverage_for_date(date_str):
     """Carrega scores do Coverage Ledger SQLite para as notícias do dia.
     Retorna dict: {titulo_normalizado: {score, source_name, source_authority, pillar, quality_score}}
     """
-    db_path = "/root/.hermes/d5n-coverage-ledger/coverage.db"
+    db_path = os.environ.get("D5N_COVERAGE_DB", os.path.join(BASE, ".coverage-ledger", "coverage.db"))
     result = {"scores": {}, "quality_score": None, "episode_num": None, "pillars_covered": []}
     try:
         import sqlite3
@@ -793,7 +793,7 @@ def main():
         # Coverage Fallback: se não tem trends, usar dados do Coverage Ledger
         noticias = []
         if coverage_data and coverage_data.get("scores"):
-            db_path = "/root/.hermes/d5n-coverage-ledger/coverage.db"
+            db_path = os.environ.get("D5N_COVERAGE_DB", os.path.join(BASE, ".coverage-ledger", "coverage.db"))
             try:
                 import sqlite3
                 conn = sqlite3.connect(db_path)
