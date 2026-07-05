@@ -1,5 +1,5 @@
 # DROP FIVE NEWS — Boletim Diário
-## Sábado, 4 de Julho de 2026
+## Domingo, 5 de Julho de 2026
 
 INSTRUÇÕES (LEIA ANTES DE APRESENTAR):
 - Idioma: português brasileiro (NÃO use português de Portugal)
