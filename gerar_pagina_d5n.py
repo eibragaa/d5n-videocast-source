@@ -182,17 +182,24 @@ def get_pillar_avg_scores(coverage_data):
     return result
 
 def get_voice_of_day(date_str):
-    """Alterna vozes baseado no dia (par/impar)."""
+    """Retorna a personalidade do dia conforme calendario D5N:
+    Seg/Qua/Sab = Thalita | Ter/Qui/Dom = Francisca | Sex = Dual
+    """
     try:
         d = datetime.strptime(date_str, '%Y-%m-%d')
-        day_num = d.day
-        voices = [
-            {"name": "Marina", "bio": "Especialista em geopolítica e relações internacionais", "avatar": "🎙️"},
-            {"name": "Talita", "bio": "Jornalista de tecnologia e inovação", "avatar": "🎧"},
-        ]
-        return voices[day_num % 2]
+        weekday = d.weekday()  # 0=Seg, 6=Dom
+        if weekday in (0, 2, 5):      # Seg, Qua, Sab
+            return {"name": "Thalita", "bio": "Jornalista formal, precisa e analitica", "avatar": "🎙️",
+                    "tone": "formal", "tagline": "Boletim Drop Five News, eu sou Thalita"}
+        elif weekday in (1, 3, 6):    # Ter, Qui, Dom
+            return {"name": "Francisca", "bio": "Comunicadora casual, envolvente e direta", "avatar": "🎧",
+                    "tone": "casual", "tagline": "Drop Five News na area, aqui e a Francisca"}
+        else:                          # Sex = Dual
+            return {"name": "Thalita & Francisca", "bio": "Edicao dupla, formato especial de sexta", "avatar": "🎶",
+                    "tone": "dual", "tagline": "Edicao especial de sexta, Thalita e Francisca juntas"}
     except:
-        return {"name": "Marina", "bio": "Especialista em geopolítica e relações internacionais", "avatar": "🎙️"}
+        return {"name": "Thalita", "bio": "Jornalista formal, precisa e analitica", "avatar": "🎙️",
+                "tone": "formal", "tagline": "Boletim Drop Five News, eu sou Thalita"}
 
 def format_data_br(date_str):
     d = datetime.strptime(date_str, '%Y-%m-%d')
@@ -912,15 +919,106 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
 </html>'''
     return html
 
-def gerar_source_md(date, data_br, noticias):
+def gerar_source_md(date, data_br, noticias, voice=None):
     if not noticias: return None
-    md = f"# DROP FIVE NEWS — Boletim Diário\n## {data_br}\n\nINSTRUÇÕES (LEIA ANTES DE APRESENTAR):\n- Idioma: português brasileiro (NÃO use português de Portugal)\n- Contexto: Você é um apresentador de boletim de rádio. Apresente APENAS as notícias abaixo.\n- NÃO analise, avalie ou comente sobre o site, o projeto, a curadoria ou as fontes.\n- NÃO mencione NotebookLM, GitHub, feeds, JSON, RSS ou qualquer estrutura técnica.\n- Organize por blocos temáticos na ordem abaixo.\n- Use linguagem natural, coloquial brasileira, como um locutor de rádio.\n- Cada bloco começa com uma transição curta entre os temas.\n\n"
-    pilares = {'Global':'🌍 GLOBAL','Brasil':'🇧🇷 BRASIL','Tech':'🤖 TECH & IA','Economia':'💰 ECONOMIA & CRYPTO','':'📰 GERAL'}
+
+    # Determinar personalidade do dia
+    if not voice:
+        voice = get_voice_of_day(date)
+    name = voice.get("name", "Thalita")
+    tone = voice.get("tone", "formal")
+    tagline = voice.get("tagline", "Boletim Drop Five News")
+
+    # Personas com tom, vocabulario e estilo proprios
+    personas = {
+        "formal": {
+            "intro": f"Bom dia. {tagline}. Sejam bem-vindos ao boletim desta {data_br}. "
+                     f"Vamos aos principais acontecimentos do dia, organizados em quatro blocos.",
+            "transitions": {
+                "Global": "Comecamos pelos acontecimentos de repercussao global.",
+                "Brasil": "Voltamos o olhar agora para o Brasil.",
+                "Tech": "No bloco de tecnologia e inteligencia artificial.",
+                "Economia": "Para fechar, as noticias de economia e criptomoedas.",
+                "": "Agora as demais noticias.",
+            },
+            "outro": f"E assim encerramos o boletim de hoje. Eu sou Thalita, e este foi o Drop Five News. "
+                     f"Ate amanha.",
+            "instruction_extra": "- Tom: formal, claro, jornalistico. Frases completas, vocabulario preciso.\n"
+                                 "- Voce e a Thalita: apresentadora de boletim. NUNCA diga o nome do produtor ou criador.\n"
+                                 "- NUNCA diga 'eu sou Jean' ou mencione o nome Jean, Jean Braga, ou qualquer pessoa real.\n"
+        },
+        "casual": {
+            "intro": f"E ai galera, {tagline}. Bem-vindos ao D5N de {data_br}. "
+                     f"Bora pro resumo do dia, direto ao ponto, como sempre.",
+            "transitions": {
+                "Global": "Primeiro, o que ta bombando no mundo.",
+                "Brasil": "Agora, o que ta rolando aqui no Brasil.",
+                "Tech": "Bora falar de tech e IA, que ta uma loucura.",
+                "Economia": "Pra fechar, mercado e crypto. Presta atencao nessa.",
+                "": "Mais noticias pra voces agora.",
+            },
+            "outro": f"E isso e o D5N de hoje. Eu sou a Francisca, ate o proximo boletim. "
+                     f"Voces sao demais, valeu.",
+            "instruction_extra": "- Tom: casual, envolvente, direto. Use gírias naturais brasileiras sem exagerar.\n"
+                                 "- Voce e a Francisca: comunicadora popular. NUNCA diga o nome do produtor ou criador.\n"
+                                 "- NUNCA diga 'eu sou Jean' ou mencione o nome Jean, Jean Braga, ou qualquer pessoa real.\n"
+        },
+        "dual": {
+            "intro": f"Hoje e especial! {tagline}. Vamos alternar os blocos entre nos duas "
+                     f"para trazer o melhor de cada estilo. Boletim D5N, {data_br}.",
+            "transitions": {
+                "Global": "Thalita inicia: os principais fatos do mundo.",
+                "Brasil": "Francisca assume: e no Brasil a coisa ta quente.",
+                "Tech": "Thalita de volta: tecnologia e inteligencia artificial.",
+                "Economia": "Francisca fecha: economia e criptomoedas.",
+                "": "Continuando o boletim.",
+            },
+            "outro": f"E assim fechamos mais uma edicao. Thalita e Francisca, Drop Five News. "
+                     f"Bom dia, ate amanha.",
+            "instruction_extra": "- Tom: dual. Thalita e formal e precisa; Francisca e casual e envolvente.\n"
+                                 "- Alternar a voz entre as duas em blocos pares/impares.\n"
+                                 "- NUNCA diga o nome do produtor ou criador. NUNCA mencione Jean, Jean Braga ou qualquer pessoa real.\n"
+        },
+    }
+
+    persona = personas.get(tone, personas["formal"])
+
+    pilares_labels = {'Global':'GLOBAL','Brasil':'BRASIL','Tech':'TECH & IA','Economia':'ECONOMIA & CRYPTO','':'GERAL'}
+
+    md = f"# DROP FIVE NEWS - Boletim Diario\n## {data_br}\n\n"
+    md += f"INSTRUCOES PARA APRESENTACAO (LEIA ANTES DE GRAVAR):\n"
+    md += f"- Idioma: portugues brasileiro (NAO use portugues de Portugal).\n"
+    md += f"- Contexto: Voce e {name}, apresentadora do boletim Drop Five News.\n"
+    md += f"- NUNCA diga o nome do produtor, criador, proprietario ou qualquer pessoa real envolvida no projeto.\n"
+    md += f"- NUNCA diga 'Jean', 'Jean Braga', 'ojeanbraga' ou qualquer variacao.\n"
+    md += f"- Apresente APENAS as noticias abaixo.\n"
+    md += f"- NAO analise, avalie ou comente sobre o site, o projeto, a curadoria ou as fontes.\n"
+    md += f"- NAO mencione NotebookLM, GitHub, feeds, JSON, RSS ou qualquer estrutura tecnica.\n"
+    md += f"- Organize por blocos tematicos na ordem abaixo.\n"
+    md += f"- Use linguagem natural, coloquial brasileira, como um locutor de radio.\n"
+    md += f"- Apresente-se pelo seu nome ({name}) no inicio e no encerramento.\n"
+    md += f"- {persona['instruction_extra']}\n\n"
+
+    md += f"INTRO:\n{persona['intro']}\n\n"
+
+    md += "---\n\n"
+
     cur = ''; idx = 1
     for n in noticias:
         p = n.get('pilar','')
-        if p != cur: cur = p; md += f'\n### {pilares.get(p, p.upper() or "GERAL")}\n\n'
-        md += f'{idx}. {n["titulo"]}\n\n'; idx += 1
+        if p != cur:
+            cur = p
+            label = pilares_labels.get(p, p.upper() or 'GERAL')
+            md += f"\n### {label}\n"
+            transition = persona['transitions'].get(p, '')
+            if transition:
+                md += f"[TRANSICAO] {transition}\n\n"
+        md += f'{idx}. {n["titulo"]}\n\n'
+        idx += 1
+
+    md += "---\n\n"
+    md += f"ENCERRAMENTO:\n{persona['outro']}\n"
+
     return md
 
 def gerar_feeds_json(date, data_br, noticias):
@@ -987,10 +1085,26 @@ def main():
             src_path = f"{BASE}/source.md"
             if os.path.exists(src_path):
                 with open(src_path) as f:
+                    cur_pillar = ''
                     for line in f:
-                        m = re.match(r'^\d+\.\s+(.+)$', line.strip())
+                        line = line.strip()
+                        # Capturar headers de pilar
+                        pm = re.match(r'^###\s+(.+)$', line)
+                        if pm:
+                            raw = pm.group(1).upper().strip()
+                            for k, v in [('GLOBAL', 'Global'), ('BRASIL', 'Brasil'),
+                                         ('TECH', 'Tech'), ('ECONOMIA', 'Economia')]:
+                                if k in raw:
+                                    cur_pillar = v
+                                    break
+                            continue
+                        # Capturar itens numerados, removendo numeração duplicada
+                        m = re.match(r'^\d+\.\s+(.+)$', line)
                         if m:
-                            noticias.append({'pilar':'','titulo':m.group(1).strip()[:120],'fonte':'D5N'})
+                            titulo = m.group(1).strip()[:120]
+                            # Strip leading numeração interna (ex: "1. Congresso..." -> "Congresso...")
+                            titulo = re.sub(r'^\d+\.\s+', '', titulo)
+                            noticias.append({'pilar': cur_pillar, 'titulo': titulo, 'fonte': 'D5N'})
         
         if noticias:
             src = "Coverage Ledger" if not any(noticias[0].get('pilar') == '' for _ in [1]) else "source.md"
@@ -1012,7 +1126,7 @@ def main():
     with open(f"{BASE}/index.html",'w') as f: f.write(html)
     print(f"✅ index.html — {len(html)} bytes, {len(noticias)} notícias")
 
-    md = gerar_source_md(date, data_br, noticias)
+    md = gerar_source_md(date, data_br, noticias, voice=voice)
     if md:
         with open(f"{BASE}/source.md",'w') as f: f.write(md)
         print(f"✅ source.md — {len(md)} bytes")
