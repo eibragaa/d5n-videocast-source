@@ -851,6 +851,62 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
       updateVisibility();
     }});
   }});
+
+  // Buscar dados de mercado em tempo real
+  async function fetchMarketData() {{
+    try {{
+      // Buscar IBOV, USD, BTC, PETR4 via APIs públicas
+      const [ibovRes, usdRes, btcRes, petr4Res] = await Promise.all([
+        fetch('https://api.exchangerate-api.com/v4/latest/USD').catch(() => null),
+        fetch('https://api.exchangerate-api.com/v4/latest/USD').catch(() => null),
+        fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd').catch(() => null),
+        fetch('https://brapi.dev/api/quote/PETR4').catch(() => null)
+      ]);
+
+      // USD para BRL
+      if (usdRes && usdRes.ok) {{
+        const usdData = await usdRes.json();
+        const usdBrl = usdData.rates?.BRL;
+        if (usdBrl) {{
+          const usdEl = document.querySelector('.tech-item:nth-child(2) .tech-value');
+          if (usdEl) usdEl.textContent = `R$ ${{usdBrl.toFixed(2)}}`;
+        }}
+      }}
+
+      // BTC
+      if (btcRes && btcRes.ok) {{
+        const btcData = await btcRes.json();
+        const btcUsd = btcData.bitcoin?.usd;
+        if (btcUsd) {{
+          const btcEl = document.querySelector('.tech-item:nth-child(3) .tech-value');
+          if (btcEl) btcEl.textContent = `$${{(btcUsd/1000).toFixed(1)}}k`;
+        }}
+      }}
+
+      // PETR4 (se API estiver disponível)
+      if (petr4Res && petr4Res.ok) {{
+        const petr4Data = await petr4Res.json();
+        const petr4Price = petr4Data.results?.[0]?.regularMarketPrice;
+        if (petr4Price) {{
+          const petr4El = document.querySelector('.tech-item:nth-child(4) .tech-value');
+          if (petr4El) petr4El.textContent = `R$ ${{petr4Price.toFixed(2)}}`;
+        }}
+      }}
+
+      // IBOV (placeholder - API requer autenticação)
+      const ibovEl = document.querySelector('.tech-item:nth-child(1) .tech-value');
+      if (ibovEl) ibovEl.textContent = '—';
+
+    }} catch (e) {{
+      console.log('Erro ao buscar dados de mercado:', e);
+    }}
+  }}
+
+  // Buscar dados ao carregar a página
+  fetchMarketData();
+
+  // Atualizar a cada 5 minutos
+  setInterval(fetchMarketData, 300000);
 </script>
 </body>
 </html>'''
