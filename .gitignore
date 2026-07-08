@@ -1,1 +1,98 @@
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+*.bak
+*.backup
+*.old
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# Cache
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+
+# Local trends files (regenerated daily)
+# drop5news-trends-*.txt
+
+# Coverage database (local only)
+coverage.db
+*.db
+
+# Source files (regenerated daily, but keep for history)
+# source.md
+# source-amanha-*.md
+
+# Generated HTML (regenerated daily, but keep for history)
+# index.html
+# 2026-*.html
+# episodio-*.html
+
+# Auto-evaluation (keep for tracking)
+# autoavaliacao-*.json
+
+# Cards (keep recent, ignore old)
+# cards-instagram/*/individuais/
+
+# Reports (keep)
+# reports/
+
+# Scripts cache
+scripts/__pycache__/
+
+# Backup files
+gerar_pagina_d5n.py.bak.*
+
+# Audio files (too large for GitHub)
+# audio/*.mp3
+
+# Deploy scripts with credentials
+deploy_netlify_direct.sh
+deploy_netlify_direct.py
