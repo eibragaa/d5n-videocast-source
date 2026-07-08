@@ -271,7 +271,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
     ticker_dup = ticker_items
 
     # ── Hero stats ──
-    n_pilares = len([p for p in por_pilar if p])
+    n_pilares = 4  # Fix: sempre 4 pilares (Global, Tech, Economia, Brasil)
     pod_dur = podcast['dur_str'] if podcast else "0:00"
     
     # Quality score do Coverage Ledger
@@ -360,19 +360,37 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
                 if pkey in pavg:
                     cov = {"score": pavg[pkey]["avg"], "source": pavg[pkey]["sources"][:30] if pavg[pkey]["sources"] else "D5N", "authority": 50}
             score_badge = get_badge_html(cov['score'] if cov else None, cov['source'] if cov else 'D5N', cov['authority'] if cov else 50) if coverage_data else ''
+            
+            # Adicionar classe de pilar para borda colorida
+            pilar_class = f' pilar-{cls_name}' if cls_name else ''
+            
             news_items += f'''
-      <div class="news-item{featured}" data-animate>
+      <div class="news-item{featured}{pilar_class}" data-animate>
         <span class="news-num">{num}</span>
         <span class="news-headline">{ntc['titulo']}</span>
         <span class="news-meta"><span class="news-source">{fonte}</span>{score_badge}</span>
       </div>'''
 
+        # Contexto rápido por pilar
+        context_text = f"{len(lista)} notícias"
+        if pilar == 'Global':
+            context_text += " · Foco: geopolítica, eleições, conflitos"
+        elif pilar == 'Tech':
+            context_text += " · Foco: IA, inovação, regulamentação"
+        elif pilar == 'Economia':
+            context_text += " · Foco: mercados, crypto, indicadores"
+        elif pilar == 'Brasil':
+            context_text += " · Foco: política, economia, justiça"
+        
         sections_html += f'''
   <section class="section">
     <div class="section-header">
       <span class="section-icon">{icon}</span>
       <span class="section-name {cls_name}">{pilar_display}</span>
       <span class="section-count">{len(lista)} notícias</span>
+    </div>
+    <div class="section-context">
+      <strong>O dia:</strong> {context_text}
     </div>
     <div class="news-list">{news_items}
     </div>
@@ -489,6 +507,48 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .section-name.tech {{ color:var(--tech); }}
   .section-name.econ {{ color:var(--econ); }}
   .section-count {{ font-size:0.65rem; color:var(--muted); letter-spacing:0.1em; margin-left:auto; }}
+  .section-context {{
+    margin-bottom:1rem; padding:0.75rem 1rem; background:var(--surface);
+    border:1px solid var(--border); border-radius:6px; font-size:0.85rem;
+    color:var(--text-secondary); line-height:1.5;
+  }}
+  .section-context strong {{ color:var(--text); font-weight:600; }}
+
+  .search-bar {{
+    margin:2rem 0; padding:0.75rem 1rem; background:var(--surface);
+    border:1px solid var(--border); border-radius:6px; display:flex;
+    align-items:center; gap:0.75rem;
+  }}
+  .search-bar input {{
+    flex:1; background:transparent; border:none; color:var(--text);
+    font-size:0.9rem; outline:none;
+  }}
+  .search-bar input::placeholder {{ color:var(--faint); }}
+  .filter-buttons {{
+    display:flex; gap:0.5rem; margin-bottom:1.5rem; flex-wrap:wrap;
+  }}
+  .filter-btn {{
+    padding:0.5rem 1rem; background:var(--surface); border:1px solid var(--border);
+    border-radius:6px; color:var(--text-secondary); font-size:0.85rem;
+    cursor:pointer; transition:all 0.2s;
+  }}
+  .filter-btn:hover {{ background:var(--surface-raised); color:var(--text); }}
+  .filter-btn.active {{
+    background:var(--accent); border-color:var(--accent); color:#fff;
+  }}
+
+  .news-list {{ display:flex; flex-direction:column; }}
+    display:flex; gap:0.5rem; margin-bottom:1.5rem; flex-wrap:wrap;
+  }}
+  .filter-btn {{
+    padding:0.5rem 1rem; background:var(--surface); border:1px solid var(--border);
+    border-radius:6px; color:var(--text-secondary); font-size:0.85rem;
+    cursor:pointer; transition:all 0.2s;
+  }}
+  .filter-btn:hover {{ background:var(--surface-raised); color:var(--text); }}
+  .filter-btn.active {{
+    background:var(--accent); border-color:var(--accent); color:#fff;
+  }}
 
   .news-list {{ display:flex; flex-direction:column; }}
   .news-item {{ display:grid; grid-template-columns:2.5rem 1fr auto; gap:0 1rem; align-items:start; padding:1.1rem 0; border-bottom:1px solid var(--border-lt); cursor:pointer; opacity:0; transform:translateY(18px); transition:opacity 0.5s ease,transform 0.5s ease,background 0.2s; position:relative; }}
@@ -609,6 +669,12 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   <span class="header-meta">{data_br}</span>
   <div class="header-right">
     <span class="edition-badge">#{podcast["num"] if podcast else "---"}</span>
+    <div class="tech-bar">
+      <span class="tech-item">IBOV <span class="tech-value">—</span></span>
+      <span class="tech-item">USD <span class="tech-value">—</span></span>
+      <span class="tech-item">BTC <span class="tech-value">—</span></span>
+      <span class="tech-item">PETR4 <span class="tech-value">—</span></span>
+    </div>
   </div>
 </header>
 
@@ -633,8 +699,18 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
       <div class="divider-v"></div>
       <div class="hero-stat"><strong>{pod_dur}</strong><span>podcast</span></div>{qs_stat}
     </div>
-    {player_html}
-    {voice_html}
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Buscar notícias...">
+  </div>
+
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">Todas</button>
+    <button class="filter-btn" data-filter="global">🌍 Global</button>
+    <button class="filter-btn" data-filter="tech">🤖 Tech</button>
+    <button class="filter-btn" data-filter="econ">💰 Economia</button>
+    <button class="filter-btn" data-filter="brasil">🇧🇷 Brasil</button>
   </div>
 
   {sections_html}
@@ -732,6 +808,49 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
       if (label) label.textContent = expanded ? 'Ver menos' : `Ver episódios anteriores (${{hiddenCount}})`;
     }});
   }}
+
+  // Busca e filtro
+  const searchInput = document.getElementById('searchInput');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const newsItems = document.querySelectorAll('.news-item');
+  const sections = document.querySelectorAll('.section');
+
+  let currentFilter = 'all';
+  let currentSearch = '';
+
+  function updateVisibility() {{
+    sections.forEach(section => {{
+      const pilar = section.dataset.pilar;
+      const matchesFilter = currentFilter === 'all' || pilar === currentFilter;
+      
+      const items = section.querySelectorAll('.news-item');
+      let visibleCount = 0;
+      
+      items.forEach(item => {{
+        const text = item.querySelector('.news-headline').textContent.toLowerCase();
+        const matchesSearch = text.includes(currentSearch);
+        const visible = matchesFilter && matchesSearch;
+        item.style.display = visible ? '' : 'none';
+        if (visible) visibleCount++;
+      }});
+      
+      section.style.display = visibleCount > 0 ? '' : 'none';
+    }});
+  }}
+
+  searchInput.addEventListener('input', (e) => {{
+    currentSearch = e.target.value.toLowerCase();
+    updateVisibility();
+  }});
+
+  filterBtns.forEach(btn => {{
+    btn.addEventListener('click', () => {{
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      updateVisibility();
+    }});
+  }});
 </script>
 </body>
 </html>'''
