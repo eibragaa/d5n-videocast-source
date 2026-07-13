@@ -25,6 +25,15 @@ for arg in "$@"; do
     esac
 done
 
+# Calcular dia da semana em PT-BR
+WEEKDAY_PT=$(python3 -c "
+from datetime import date
+dias = ['segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado','domingo']
+d = date.fromisoformat('$DATE')
+print(dias[d.weekday()])
+")
+echo "📅 Hoje: $DATE ($WEEKDAY_PT)"
+
 # Paths
 REPO="/root/repositorio/d5n-videocast-source"
 SCRIPTS="$REPO/scripts"
@@ -61,6 +70,8 @@ echo "🧠 Etapa 2/6: Gerando roteiro via $OPENCODE_GO_MODEL..."
 # Prepara prompt - versão ENXUTA (o modelo consome muito em reasoning)
 PROMPT=$(cat <<'PROMPT_EOF'
 Você é apresentador do flash "Amanhã Conectada" (3min30s, pt-BR coloquial, ~600 palavras).
+
+HOJE É ${WEEKDAY_PT} (${DATE}). Use o dia da semana correto no hook — NUNCA diga outro dia.
 
 TAREFA: Escolha 3 destaques das notícias abaixo e gere roteiro EXPANDIDO com:
 - HOOK (1-2 frases, 10-15s)

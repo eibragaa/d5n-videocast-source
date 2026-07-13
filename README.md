@@ -2,16 +2,16 @@
 
 **Curadoria diária de notícias via IA** — site, podcast, cards Instagram e distribuição multi-canal.
 
-🌐 **Site:** [d5n-daily.netlify.app](https://d5n-daily.netlify.app/)  
-📱 **Instagram:** [@jeanbraga.ai](https://instagram.com/jeanbraga.ai)  
-🎧 **Podcast:** Spotify / Telegram (diário, seg-sex)  
+🌐 **Site:** [d5n-daily.netlify.app](https://d5n-daily.netlify.app/)
+📱 **Instagram:** [@jeanbraga.ai](https://instagram.com/jeanbraga.ai)
+🎧 **Podcast:** Spotify / Telegram (diário, seg-sex)
 📡 **RSS:** `/d5n-feed.xml` | **JSON Feed:** `/feed.json`
 
 ---
 
 ## O que é
 
-D5N é um boletim diário de notícias curado por IA, publicado automaticamente todo dia útil. O pipeline coleta notícias de 6+ fontes (Yahoo Finance BR, Folha, UOL, etc.), processa via LLM (Claude/GPT), gera um site estático, podcast em áudio (TTS) e cards para Instagram — tudo sem intervenção humana.
+D5N é um boletim diário de notícias curado por IA, publicado automaticamente todo dia útil. O pipeline coleta notícias de 6+ fontes (Google News, G1, Cointelegraph, Investing.com, VentureBeat, Yahoo Finance), processa via LLM, gera um site estático premium, podcast em áudio (TTS edge-tts) e cards para Instagram — tudo automatizado via Hermes Agent.
 
 ### Pilares editoriais
 
@@ -27,7 +27,7 @@ D5N é um boletim diário de notícias curado por IA, publicado automaticamente 
 | Formato | Descrição |
 |---------|-----------|
 | **Site HTML** | Página estática com design premium (Libre Baskerville + DM Sans) |
-| **Podcast MP3** | ~5-7 min, vozes alternadas (Thalita/Francisca) |
+| **Podcast MP3** | ~5-7 min, 13 blocos, vozes alternadas (Thalita/Francisca) |
 | **Cards Instagram** | PNG 1080×1080 com foto de fundo + headline |
 | **Feed JSON/RSS** | Para apps e agregadores |
 | **Arquivo Markdown** | Histórico diário em `/2026/YYYY-MM-DD.md` |
@@ -46,18 +46,79 @@ D5N é um boletim diário de notícias curado por IA, publicado automaticamente 
                           ▼                    ▼                    ▼
                    ┌────────────┐     ┌──────────────┐     ┌────────────┐
                    │ index.html  │     │  MP3 (TTS)   │     │  Cards PNG │
-                   │  (Netlify)  │     │  (Spotify)   │     │ (Instagram)│
+                   │  (Netlify)  │     │  (Telegram)  │     │ (Instagram)│
                    └────────────┘     └──────────────┘     └────────────┘
 ```
 
-### Fluxo diário (cron 03:00 BRT)
+### Pipeline de áudio (detalhado)
 
-1. **Coleta** — 6+ fontes via scraping (Yahoo Finance BR, Folha, UOL, etc.)
-2. **Curadoria** — LLM seleciona e organiza 18-25 notícias por pilar
-3. **Geração** — `gerar_pagina_d5n.py` cria HTML, source.md, feed.json, RSS
-4. **Podcast** — TTS via OpenAI/ElevenLabs (vozes Thalita/Francisca alternadas)
-5. **Deploy** — Git push → Netlify auto-deploy
-6. **Distribuição** — Telegram bot + Instagram cards
+O pipeline de áudio é a parte mais crítica do D5N. Funciona em 5 etapas:
+
+```
+gerar_pagina_d5n.py::gerar_source_md()
+    │
+    ▼
+source.md (roteiro com 13 seções)
+    │
+    ├──▶ /tmp/d5n_audio/source.md (staging)
+    │
+    ▼
+d5n-inject-date.py + d5n-date-context.py
+    │  (injeta data correta: "Hoje é [dia], [data]")
+    │
+    ▼
+gerar-secoes-v2.py
+    │  (divide source.md em 13 arquivos .txt)
+    │
+    ▼
+drop5news-mixer-v9.py
+    │  (TTS via edge-tts + mixagem com trilhas)
+    │
+    ▼
+d5n_mixado_v9.mp3 (áudio final ~6 min)
+```
+
+### As 13 seções do mixer v9
+
+| # | Seção | Voz | Trilha | Origem |
+|:-:|-------|:---:|--------|:---------:|
+| 1 | intro | Thalita/Francisca | intro_bg | Mixer (lê intro.txt) |
+| 2 | mundo | Antonio (header) + Thalita/Francisca | trilha1 | Agente (mundo.txt/mp3) |
+| 3 | cta | Thalita/Francisca | trilha2 | Mixer (lê cta.txt) |
+| 4 | brasil | Antonio + Thalita/Francisca | trilha2 | Agente (brasil.txt/mp3) |
+| 5 | saude | Antonio + Thalita/Francisca | ciencia_bg | Opcional |
+| 6 | ciencia | Antonio + Thalita/Francisca | ciencia_bg | Opcional |
+| 7 | politica | Antonio + Thalita/Francisca | economia_bg | Opcional |
+| 8 | tecnologia | Antonio + Thalita/Francisca | tech_bg | Agente (tecnologia.txt/mp3) |
+| 9 | economia | Antonio + Thalita/Francisca | economia_bg | Agente (economia.txt/mp3) |
+| 10 | ofertas | Antonio + Thalita/Francisca | mensagem_bg | Agente (ofertas.txt/mp3) |
+| 11 | frase | Antonio + Thalita/Francisca | mensagem_bg | Agente (frase.txt/mp3) |
+| 12 | historia | Antonio + Thalita/Francisca | tech_bg | Agente (historia.txt/mp3) |
+| 13 | outro | Thalita/Francisca | trilha1 | Mixer (lê outro.txt) |
+
+### Sistema de vozes (TTS edge-tts)
+
+| Dia da semana | Apresentadora | Voz edge-tts |
+|---------------|---------------|--------------|
+| Segunda, Quarta, Sábado | **Thalita** | pt-BR-ThalitaMultilingualNeural |
+| Terça, Quinta, Domingo | **Francisca** | pt-BR-FranciscaNeural |
+| Sexta (dual) | **Thalita** (notícias) + **Francisca** (intro/CTA/ofertas/outro) | Ambas |
+
+Headers de seção usam voz masculina: **Antonio** (pt-BR-AntonioNeural).
+
+⚠️ **NUNCA usar o nome "Marina"** — não existe no persona system. As apresentadoras são Thalita e Francisca apenas.
+
+### Cronograma diário
+
+| Horário | Tarefa | Descrição |
+|---------|--------|-----------|
+| 03:00 | Geração do site | `gerar_pagina_d5n.py` coleta, curadoria, HTML, feeds |
+| 04:00 | Pipeline do podcast | TTS + mixagem → MP3 final |
+| 08:00 | Radar matinal | Prévia dos 5 temas quentes do dia |
+| 10:00 | Global + Brasil | Bloco de notícias globais e nacionais |
+| 14:00 | Tech & IA | Bloco de tecnologia e inteligência artificial |
+| 17:00 | Kinetic + Telegram | D5N Kinetic Pipeline (Remotion) → entrega Telegram |
+| 21:00 | Seleção do Dia | Curadoria final para o episódio |
 
 ---
 
@@ -65,50 +126,93 @@ D5N é um boletim diário de notícias curado por IA, publicado automaticamente 
 
 ```
 d5n-videocast-source/
-├── gerar_pagina_d5n.py      # Script principal — gera HTML, feeds, source.md
-├── gerar_cards_pipeline.py   # Gera cards PNG para Instagram
-├── gerar_cards_instagram_d5n.py  # Cards individuais por notícia
-├── deploy_d5n_site.sh        # Script de deploy (legacy)
-├── deploy_netlify_direct.py  # Deploy direto via API Netlify (backup)
+├── gerar_pagina_d5n.py          # Script principal — gera HTML, feeds, source.md
+├── gerar_cards_pipeline.py      # Gera cards PNG para Instagram
+├── gerar_cards_instagram_d5n.py # Cards individuais por notícia
+├── deploy_d5n_site.sh           # Script de deploy (legacy)
+├── deploy_netlify_direct.py     # Deploy direto via API Netlify (backup)
 │
-├── index.html                # Site principal (gerado diariamente)
-├── feed.json                 # JSON Feed (gerado diariamente)
-├── d5n-feed.xml              # RSS Feed (gerado diariamente)
-├── source.md                 # Roteiro do podcast (gerado diariamente)
-├── episode-counter.json      # Contador persistente de episódios
+├── index.html                   # Site principal (gerado diariamente)
+├── feed.json                    # JSON Feed (gerado diariamente)
+├── d5n-feed.xml                  # RSS Feed (gerado diariamente)
+├── source.md                    # Roteiro do podcast (gerado diariamente)
+├── episode-counter.json         # Contador persistente de episódios
+├── autoavaliacao-score.json     # Score diário de qualidade
+├── autoavaliacao-issues.json    # Issues de qualidade detectadas
 │
-├── 2026/                     # Arquivo histórico (1 .md por dia)
+├── 2026/                        # Arquivo histórico (1 .md por dia)
 │   ├── 2026-05-24.md
 │   ├── 2026-05-25.md
 │   └── ...
 │
-├── audio/                    # Episódios MP3
+├── audio/                       # Episódios MP3
 │   ├── d5n-ep004-2026-05-28.mp3
 │   ├── d5n-ep032-2026-06-29.mp3
 │   └── ...
 │
-├── cards-instagram/          # Cards PNG por data
+├── cards-instagram/             # Cards PNG por data
 │   └── YYYY-MM-DD/
 │       ├── resumo_YYYY-MM-DD.png
 │       └── individuais/
 │
-├── scripts/                  # Scripts auxiliares
-│   ├── amanha-conectada/     # Programa "Amanhã Conectada"
-│   ├── amanha_conectada_mixer.py
-│   ├── d5n-babysitter.py     # Validação automática
-│   ├── d5n_marketing.py      # Geração de copy marketing
-│   ├── validate_mp3.py       # Validação de arquivos MP3
-│   └── reports/              # Relatórios de qualidade
+├── scripts/                     # Scripts auxiliares
+│   ├── amanha-conectada-pipeline.sh  # Pipeline "Amanhã Conectada"
+│   ├── amanha_conectada_mixer.py     # Mixer do Amanhã Conectada
+│   ├── d5n-babysitter.py            # Validação automática
+│   ├── d5n_marketing.py              # Geração de copy marketing
+│   ├── validate_mp3.py              # Validação de MP3
+│   └── reports/                      # Relatórios de qualidade
 │
-├── trilhas/                  # Trilhas sonoras do podcast
-├── privacidade.html          # Política de privacidade
-├── netlify.toml              # Config Netlify (headers, redirects)
-├── og-image.png              # Open Graph image
+├── trilhas/                     # Trilhas sonoras do podcast
+│   ├── intro_bg.mp3             # Background da intro
+│   ├── trilha1.mp3              # Trilha principal (mundo/brasil)
+│   ├── trilha2.mp3              # Trilha secundária (cta/brasil)
+│   ├── tech_bg.mp3              # Background tech
+│   ├── economia_bg.mp3          # Background economia
+│   ├── ciencia_bg.mp3           # Background ciência/saúde
+│   └── mensagem_bg.mp3          # Background ofertas/frase
+│
+├── docs/                        # Documentação
+│   └── SPRINTS_CORRECAO.md      # Plano de correção em sprints
+│
+├── privacidade.html             # Política de privacidade
+├── netlify.toml                 # Config Netlify (headers, redirects)
+├── og-image.png                 # Open Graph image
 │
 ├── .github/workflows/
-│   └── update.yml            # GitHub Actions (cron 04:00 UTC)
+│   └── update.yml               # GitHub Actions (cron 04:00 UTC)
 │
+├── README.md                    # Este arquivo
+├── CHANGELOG.md                 # Histórico de mudanças
+├── CONTRIBUTING.md              # Guia de contribuição
+├── ARCHITECTURE.md              # Documentação de arquitetura
 └── .gitignore
+```
+
+### Scripts do pipeline de áudio (Hermes Agent Skills)
+
+Os scripts de áudio vivem em dois perfis do Hermes Agent:
+
+```
+# Profile default
+~/.hermes/skills/media/trends-podcast/scripts/
+├── d5n-inject-date.py           # Injeta data correta no source.md
+├── d5n-date-context.py          # Provê contexto de data (weekday, mês, etc)
+├── drop5news-mixer-v9.py        # Mixer principal (13 seções, TTS, mixagem)
+├── pipeline_selecao.py          # Seleção matinal de 3-5 tópicos
+├── gerar-secoes-v2.py           # Divide source.md em 13 arquivos .txt
+└── d5n-pre-gen-gate.py          # Gate de pré-validação
+
+# Profile d5n (cópia sincronizada)
+~/.hermes/profiles/d5n/skills/media/trends-podcast/scripts/
+└── (mesmos arquivos)
+
+# Scripts do scheduler
+~/.hermes/scripts/
+├── drop5news-pipeline.sh        # Pipeline orquestrador
+├── drop5news-mixer-exec.sh      # Executor do mixer (sync source.md + inject-date)
+└── _deprecated/
+    └── split_roteiro.py         # Código morto (movido em 12/07/2026)
 ```
 
 ---
@@ -124,13 +228,32 @@ python3 gerar_pagina_d5n.py --data $(date +%Y-%m-%d)
 # Sem podcast (apenas site)
 python3 gerar_pagina_d5n.py --data 2026-07-08 --no-podcast
 
-# Cards Instagram
-python3 gerar_cards_pipeline.py --data 2026-07-08
+# Mixer (áudio only)
+cd /tmp/d5n_audio
+python3 ~/.hermes/skills/media/trends-podcast/scripts/drop5news-mixer-v9.py
+
+# Deploy
+git add -A && git commit -m "D5N $(date +%Y-%m-%d)" && git push
 ```
 
-### GitHub Actions (backup)
+### Pipeline de áudio (passo a passo)
 
-O workflow `.github/workflows/update.yml` roda diariamente às 04:00 UTC como fallback caso o cron local falhe.
+```bash
+# 1. Copiar source.md para staging
+cp /root/repositorio/d5n-videocast-source/source.md /tmp/d5n_audio/source.md
+
+# 2. Injetar data correta
+python3 ~/.hermes/skills/media/trends-podcast/scripts/d5n-inject-date.py
+
+# 3. Dividir em seções
+cd /tmp/d5n_audio
+python3 ~/.hermes/skills/media/trends-podcast/scripts/gerar-secoes-v2.py
+
+# 4. Mixar
+python3 ~/.hermes/skills/media/trends-podcast/scripts/drop5news-mixer-v9.py
+
+# 5. Output: /tmp/d5n_mixado_v9.mp3
+```
 
 ### Deploy
 
@@ -157,9 +280,9 @@ O workflow `.github/workflows/update.yml` roda diariamente às 04:00 UTC como fa
 - **Archive dropdown** — 3 episódios visíveis + "Ver mais"
 
 ### Personalidades (Sprint 1 — Julho 2026)
-- **Thalita** (Seg/Qua/Sáb) — Tom formal, preciso
-- **Francisca** (Ter/Qui/Dom) — Tom casual, envolvente
-- **Dual** (Sexta) — Ambos os estilos
+- **Thalita** (Seg/Qua/Sáb) — Tom formal, preciso — pt-BR-ThalitaMultilingualNeural
+- **Francisca** (Ter/Qui/Dom) — Tom casual, envolvente — pt-BR-FranciscaNeural
+- **Dual** (Sexta) — Ambas as vozes
 
 ---
 
@@ -175,9 +298,10 @@ D5N_BASE=/root/repositorio/d5n-videocast-source  # Diretório base
 
 ```bash
 # Python 3.11+
-# Sem dependências externas — usa apenas stdlib
-# Para TTS: openai, elevenlabs (via pipeline Hermes)
-# Para cards: Pillow, requests, google-generativeai
+# Para site: apenas stdlib (sem dependências externas)
+# Para TTS: edge-tts, pydub
+# Para cards: Pillow, requests
+# Para deploy: curl, git
 ```
 
 ### Netlify
@@ -194,12 +318,17 @@ Configuração em `netlify.toml`:
 
 ### Babysitter (via Hermes Agent)
 
-Validação automática diária:
+Validação automática diária (05:05):
 - ✅ Arquivo MP3 existe e tem duração > 0
 - ✅ HTML tem > 10 notícias
 - ✅ Source.md gerado corretamente
 - ✅ Feeds (JSON + RSS) válidos
 - ✅ 4 pilares presentes
+
+Validators:
+- `d5n-audio-check.py` — valida MP3 (duração, tamanho)
+- `d5n-pilares-check.py` — valida presença dos 4 pilares
+- `d5n-date-check.py` — valida data no source.md
 
 ### Auto-avaliação
 
@@ -211,13 +340,42 @@ Scores diários em `autoavaliacao-score.json`:
 
 ---
 
+## Plano de Correção — Sprint 2026-07-12
+
+Em 12/07/2026, foram identificados e corrigidos 11 bugs no pipeline D5N que causavam:
+- Data errada nos áudios ("sábado" em vez de "domingo")
+- Voz errada ("Marina" — nome inexistente no persona system)
+- Seções não processadas (frase e historia ignoradas)
+- Hook com dia errado no "Amanhã Conectada"
+
+Ver [docs/SPRINTS_CORRECAO.md](docs/SPRINTS_CORRECAO.md) para o plano completo de sprints.
+
+### Bugs críticos corrigidos
+
+| # | Bug | Severidade | Root Cause |
+|:-:|-----|:----------:|------------|
+| 1 | inject-date: path inexistente | CRÍTICO | `os.popen()` retornava vazio, `json.loads("")` falhava |
+| 2 | source.md stale em /tmp/ | CRÍTICO | Mixer lê .txt do disco; .txt desatualizado = áudio errado |
+| 3 | pipeline_selecao: KeyError | CRÍTICO | Dict só tinha MUNDO; append para GLOBAL quebrava |
+| 4 | Mixer: nomes marina/talita | ALTO | Variáveis apontavam para vozes erradas |
+| 5 | Mixer: mensagem vs ofertas | CRÍTICO | dual_sections e regenação TTS desalinhados com SECOES |
+| 6 | Validador: falso positivo | MÉDIO | Substring search por "sábado" pegava notícias |
+| 7 | intro.txt: "Aqui é Marina" | ALTO | Nome não existe no persona system |
+| 8 | SKILL.md: refs Marina | MÉDIO | 16 referências desatualizadas |
+| 9 | split_roteiro.py: código morto | BAIXO | Não referenciado em pipeline ativo |
+| 10 | frase/historia ignorados | MÉDIO | Gerador criava arquivos não processados |
+| 11 | Amanhã Conectada: hook errado | MÉDIO | LLM não recebia dia da semana |
+
+---
+
 ## Histórico
 
 | Data | Marco |
 |------|-------|
 | **Mai 2026** | Lançamento — site básico + podcast |
-| **Jun 2026** | 32 episódios, cards Instagram, Umami analytics |
-| **Jul 2026** | Sprint 1-3: Bug fixes, visual upgrade, busca/filtros, dados de mercado |
+| **Jun 2026** | 32 episódios, cards Instagram, analytics |
+| **Jul 2026** | Sprint 1-3: Bug fixes, visual upgrade, busca/filtros |
+| **12/07/2026** | Sprint correção: 11 bugs corrigidos, 13 seções no mixer |
 
 Ver [CHANGELOG.md](CHANGELOG.md) para detalhes completos.
 
@@ -225,7 +383,7 @@ Ver [CHANGELOG.md](CHANGELOG.md) para detalhes completos.
 
 ## Licença
 
-Projeto pessoal de [Jean Braga](https://instagram.com/jeanbraga.ai).  
+Projeto pessoal de [Jean Braga](https://instagram.com/jeanbraga.ai).
 Código fonte disponível para referência.
 
 ---
