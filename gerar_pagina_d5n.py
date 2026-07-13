@@ -212,6 +212,14 @@ def format_data_curta(date_str):
     meses = {1:'Jan',2:'Fev',3:'Mar',4:'Abr',5:'Mai',6:'Jun',7:'Jul',8:'Ago',9:'Set',10:'Out',11:'Nov',12:'Dez'}
     return f"{d.day} {meses[d.month]} {d.year}"
 
+def is_weekend(date_str):
+    """Retorna True se a data cai em sábado (5) ou domingo (6)."""
+    from datetime import datetime
+    try:
+        return datetime.strptime(date_str, '%Y-%m-%d').weekday() >= 5
+    except:
+        return False
+
 def load_episode_history():
     """Carrega o histórico completo de episódios do JSON persistente."""
     try:
@@ -228,24 +236,45 @@ def get_duration(filepath):
     except: return 0
 
 def find_latest_podcast():
+    """Encontra o último episódio que REALMENTE existe em audio/.
+    Pula episódios de fim de semana (não publicados) para manter sequência limpa."""
     history = load_episode_history()
     if not history: return None
-    latest_entry = history[-1]  # último da lista = mais recente
-    f = latest_entry["file"]
-    path = f"{AUDIO_DIR}/{f}"
-    dur = get_duration(path) if os.path.exists(path) else 0
-    return {
-        "file": f,
-        "path": f"/audio/{f}",
-        "duration": dur,
-        "dur_str": f"{dur//60}:{dur%60:02d}",
-        "num": latest_entry["num"].lstrip("0") or "0"
-    }
+    from datetime import datetime as _dt
+    # Varre do mais recente para o mais antigo, acha o primeiro que existe (dia útil)
+    for entry in reversed(history):
+        f = entry["file"]
+        path = f"{AUDIO_DIR}/{f}"
+        if not os.path.exists(path):
+            continue
+        # Pula fim de semana — não aparecem no player público
+        try:
+            ep_date = _dt.strptime(entry["date"], "%Y-%m-%d")
+            if ep_date.weekday() >= 5:
+                continue
+        except:
+            continue  # se não consegue parsear data, pula
+        dur = get_duration(path)
+        # Voice do dia baseado no weekday
+        wd = ep_date.weekday()
+        voice_map = {0:"Thalita",1:"Francisca",2:"Thalita",3:"Francisca",4:"Thalita",5:"Dual",6:"Francisca"}
+        voice_name = voice_map.get(wd, "")
+        return {
+            "file": f,
+            "path": f"/audio/{f}",
+            "duration": dur,
+            "dur_str": f"{dur//60}:{dur%60:02d}",
+            "num": entry["num"].lstrip("0") or "0",
+            "date": entry["date"],
+            "voice": voice_name
+        }
+    return None
 
 def list_episodes():
     """Lista episódios do histórico persistente (reverso, mais recente primeiro).
-    Só mostra episódios que existem em audio/. Os perdidos viram placeholder
-    com link desabilitado."""
+    Inclui voz do dia e duração para cada episódio existente."""
+    from datetime import datetime as _dt
+    voice_map = {0:"Thalita",1:"Francisca",2:"Thalita",3:"Francisca",4:"Thalita",5:"Dual",6:"Francisca"}
     history = load_episode_history()
     eps = []
     for entry in reversed(history):
@@ -253,13 +282,19 @@ def list_episodes():
         path = f"{AUDIO_DIR}/{f}"
         exists = os.path.exists(path)
         dur = get_duration(path) if exists else 0
+        # Voice do dia
+        try:
+            wd = _dt.strptime(entry["date"], "%Y-%m-%d").weekday()
+            vname = voice_map.get(wd, "")
+        except: vname = ""
         eps.append({
             "file": f,
             "path": f"/audio/{f}",
             "dur_str": f"{dur//60}:{dur%60:02d}" if exists else "—",
             "exists": exists,
             "num": entry["num"],
-            "date": entry["date"]
+            "date": entry["date"],
+            "voice": vname
         })
     return eps
 
@@ -285,25 +320,97 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
     qs = coverage_data.get("quality_score") if coverage_data else None
     qs_stat = f'\n      <div class="divider-v"></div>\n      <div class="hero-stat quality-stat"><strong>{int(qs)}</strong><span>qualidade</span></div>' if qs is not None else ''
 
-    # ── Player ──
+    # ── Player com capítulos e download ──
     player_html = ""
     if podcast:
+        # Calcular capítulos baseado na distribuição de notícias por pilar
+        total = len(noticias)
+        pod_dur_sec = int(podcast.get("duration", 0))
+        cap_intro = max(8, int(pod_dur_sec * 0.10))  # ~10% para abertura
+        
+        # Ordem dos pilares: Global(+Brasil), Tech, Economia
+        pilares_ordem = ["Global", "Tech", "Economia"]
+        cap_nomes = {"Global": "🌍 Mundo", "Tech": "💻 Tech", "Economia": "📈 Economia"}
+        cap_labels = {"Global": "GLOBAL", "Tech": "TECH", "Economia": "ECONOMIA"}
+        
+        chapters = [{"time": 0, "label": "🎬 Abertura", "short": "ABERTURA"}]
+        # Distribui capítulos mesmo se apenas um pilar tiver notícias
+        active_pilars = []
+        for p in pilares_ordem:
+            count = len(por_pilar.get(p, []))
+            if p == "Global":
+                br = por_pilar.get('Brasil', [])
+                if not br:
+                    for k in por_pilar:
+                        if k and 'brasil' in k.lower():
+                            br = por_pilar[k]; break
+                count += len(br)
+            if count > 0:
+                active_pilars.append(p)
+        
+        if len(active_pilars) >= 2:
+            # Distribution based on actual news count
+            acc_pct = 0.10  # intro takes 10%
+            news_share = 0.85
+            for p in pilares_ordem:
+                if p not in active_pilars: continue
+                count = len(por_pilar.get(p, []))
+                if p == "Global":
+                    br = por_pilar.get('Brasil', [])
+                    if not br:
+                        for k in por_pilar:
+                            if k and 'brasil' in k.lower():
+                                br = por_pilar[k]; break
+                    count += len(br)
+                share = count / total * news_share if total > 0 else 0
+                acc_pct += share
+                t = int(pod_dur_sec * min(acc_pct, 0.95))
+                chapters.append({"time": t, "label": cap_nomes.get(p, p), "short": cap_labels.get(p, p.upper())})
+        else:
+            # Only one pilar — use even distribution for visual chapters
+            p = active_pilars[0] if active_pilars else "Global"
+            segment = 0.25
+            for sub_seg, (suffix, short) in enumerate([("Notícias", "BLOCO 1"), ("Aprofundamento", "BLOCO 2"), ("Análise", "BLOCO 3")], 1):
+                t = int(pod_dur_sec * (0.10 + sub_seg * segment * 0.85))
+                chapters.append({"time": t, "label": f"📰 {suffix}", "short": short})
+        
+        # Outro towards the end
+        outro_t = max(pod_dur_sec - 15, int(pod_dur_sec * 0.90))
+        chapters.append({"time": outro_t, "label": "🎯 Encerramento", "short": "FIM"})
+        
+        import json as _json_default
+        chapters_json = _json_default.dumps(chapters)
+        total_dur_min = pod_dur_sec // 60
+        total_dur_sec = pod_dur_sec % 60
+        
         player_html = f'''
     <div class="player-bar">
-      <button class="play-btn" id="playBtn" onclick="togglePlay()">
-        <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-      </button>
-      <div class="player-info">
-        <div class="player-title">D5N Episódio #{podcast["num"]} — {data_curta}</div>
+      <div class="player-track">
+        <button class="play-btn" id="playBtn" onclick="togglePlay()">
+          <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </button>
         <div class="player-progress" id="progressBar" onclick="seekAudio(event)">
           <div class="player-progress-fill" id="progressFill"></div>
+          <div class="player-chapters" id="chaptersContainer" data-chapters=\'{chapters_json}\'></div>
         </div>
+        <span class="player-time" id="playerTime">0:00 / {total_dur_min}:{total_dur_sec:02d}</span>
+        <a class="player-download" href="{podcast["path"]}" download title="Baixar MP3">↓ MP3</a>
+        <button class="player-copy-btn" onclick="copyAudioLink()" title="Copiar link do áudio" id="copyBtn">🔗</button>
+        <button class="speed-btn" id="speedBtn" onclick="cycleSpeed()" title="Velocidade">1×</button>
       </div>
-      <span class="player-time" id="playerTime">0:00 / {podcast["dur_str"]}</span>
-      <a class="player-download" href="{podcast["path"]}" download title="Baixar MP3">↓ MP3</a>
-      <button class="speed-btn" id="speedBtn" onclick="cycleSpeed()" title="Velocidade">1×</button>
+      <div class="player-title">D5N Episódio #{podcast["num"]} — {data_curta}</div>
     </div>
     <audio id="audioEl" src="{podcast["path"]}" preload="none"></audio>'''
+    elif is_weekend(date):
+        player_html = '''
+    <div class="weekend-notice">
+      <span class="weekend-icon">📅</span>
+      <div class="weekend-info">
+        <div class="weekend-title">Edição de fim de semana</div>
+        <div class="weekend-desc">Podcast interno — curadoria de notícias sem publicação.</div>
+      </div>
+    </div>'''
     else:
         player_html = ''
 
@@ -410,21 +517,22 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
         archive_count = len(episodios)
         for i, ep in enumerate(episodios):
             vis_class = "archive-link--visible" if i < 3 else "archive-link--hidden"
+            voice_badge = f'<span class="archive-voice">{ep.get("voice","")}</span>' if ep.get("voice") else ""
             if ep.get("exists", False):
                 archive_html += f'''
-    <a class="archive-link {vis_class}" href="{ep["path"]}">
+    <div class="archive-link {vis_class}" data-audio="{ep["path"]}" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #{ep["num"]} · {format_data_curta(ep["date"])}</div>
-        <div class="archive-link-text">{ep["dur_str"]}</div>
+        <div class="archive-link-meta">{ep["dur_str"]} {voice_badge}</div>
       </div>
-      <span class="archive-link-arrow">→</span>
-    </a>'''
+      <span class="archive-link-play">▶</span>
+    </div>'''
             else:
                 archive_html += f'''
     <div class="archive-link {vis_class} archive-link--missing">
       <div>
         <div class="archive-link-date">Ep #{ep["num"]} · {format_data_curta(ep["date"])}</div>
-        <div class="archive-link-text">indisponível</div>
+        <div class="archive-link-meta">indisponível</div>
       </div>
       <span class="archive-link-archive-ghost">◌</span>
     </div>'''
@@ -492,19 +600,27 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .hero-stat span {{ font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }}
   .divider-v {{ width:1px; height:24px; background:var(--border); }}
 
-  .player-bar {{ margin:2rem 0 0; padding:1rem 1.25rem; background:var(--surface); border:1px solid var(--border); border-radius:3px; display:flex; align-items:center; gap:1rem; }}
-  .play-btn {{ width:36px; height:36px; border-radius:50%; border:1px solid var(--accent-dim); background:transparent; color:var(--accent); cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:all 0.2s; }}
-  .play-btn:hover {{ background:var(--accent); color:var(--bg); border-color:var(--accent); }}
+  .player-bar {{ margin:2rem 0 0; padding:0.75rem 1.25rem; background:var(--surface); border:1px solid var(--border); border-radius:3px; }}
+  .player-track {{ display:flex; align-items:center; gap:0.5rem; }}
+  .play-btn {{ width:32px; height:32px; border-radius:50%; border:1px solid var(--accent-dim); background:transparent; color:var(--accent); cursor:pointer; flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:all 0.2s; }}
+  .play-btn:hover {{ background:var(--accent-dim); color:#fff; }}
   .play-btn svg {{ width:14px; height:14px; }}
-  .player-info {{ flex:1; min-width:0; }}
-  .player-title {{ font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--text); margin-bottom:0.2rem; }}
-  .player-progress {{ width:100%; height:2px; background:var(--border); border-radius:1px; cursor:pointer; margin-top:0.4rem; position:relative; overflow:hidden; }}
-  .player-progress-fill {{ height:100%; width:0%; background:var(--accent); border-radius:1px; transition:width 0.1s linear; }}
-  .player-time {{ font-size:0.65rem; color:var(--muted); flex-shrink:0; font-variant-numeric:tabular-nums; }}
-  .player-download {{ color:var(--muted); text-decoration:none; font-size:0.7rem; letter-spacing:0.05em; flex-shrink:0; transition:color 0.2s; }}
+  .player-progress {{ flex:1; height:6px; background:var(--border); border-radius:3px; cursor:pointer; position:relative; overflow:visible; }}
+  .player-progress-fill {{ height:100%; width:0%; background:var(--accent); border-radius:3px; transition:width 0.1s linear; position:relative; }}
+  .player-chapters {{ position:absolute; top:-3px; left:0; right:0; bottom:-3px; z-index:3; }}
+  .chapter-marker {{ position:absolute; top:-3px; width:2px; height:12px; background:rgba(255,255,255,0.2); border-radius:1px; cursor:pointer; transition:all 0.15s; z-index:4; }}
+  .chapter-marker:hover {{ background:var(--accent); width:3px; }}
+  .chapter-tooltip {{ display:none; position:absolute; bottom:16px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.85); color:#fff; font-size:0.55rem; padding:2px 6px; border-radius:3px; white-space:nowrap; }}
+  .chapter-marker:hover .chapter-tooltip {{ display:block; }}
+  .player-time {{ font-family:'DM Mono',monospace; font-size:0.6rem; color:var(--muted); white-space:nowrap; flex-shrink:0; }}
+  .player-download {{ color:var(--muted); text-decoration:none; font-size:0.6rem; flex-shrink:0; transition:color 0.2s; }}
   .player-download:hover {{ color:var(--accent); }}
-  .speed-btn {{ width:32px; height:32px; border-radius:4px; border:1px solid var(--accent-dim); background:transparent; color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-family:'DM Sans',sans-serif; font-size:0.65rem; font-weight:500; letter-spacing:0.02em; transition:all 0.2s; }}
-  .speed-btn:hover {{ color:var(--accent); border-color:var(--accent); background:rgba(148,163,184,0.08); }}
+  .player-copy-btn {{ width:22px; height:22px; border:none; background:transparent; color:var(--muted); cursor:pointer; font-size:0.65rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:3px; transition:all 0.15s; }}
+  .player-copy-btn:hover {{ color:var(--accent); background:rgba(200,169,110,0.06); }}
+  .player-copy-btn.copied {{ color:#4ade80; }}
+  .speed-btn {{ padding:2px 7px; border-radius:3px; border:1px solid var(--accent-dim); background:transparent; color:var(--muted); cursor:pointer; flex-shrink:0; font-family:'DM Sans',sans-serif; font-size:0.55rem; font-weight:500; letter-spacing:0.04em; transition:all 0.15s; }}
+  .speed-btn:hover {{ color:var(--accent); border-color:var(--accent); }}
+  .player-title {{ font-size:0.65rem; color:var(--muted); margin-top:0.4rem; letter-spacing:0.04em; }}
 
   .section {{ padding:2.5rem 0; border-bottom:1px solid var(--border-lt); }}
   .section-header {{ display:flex; align-items:baseline; gap:0.75rem; margin-bottom:1.75rem; padding-bottom:0.75rem; border-bottom:1px solid var(--border); }}
@@ -629,18 +745,24 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   @keyframes fadeSlideUp {{ from{{opacity:0;transform:translateY(12px);}} to{{opacity:1;transform:translateY(0);}} }}
   .hero {{ animation:fadeSlideUp 0.6s ease both; }}
   .player-bar {{ animation:fadeSlideUp 0.6s 0.15s ease both; }}
+
+  .weekend-notice {{ margin:2rem 0 0; padding:0.75rem 1rem; background:var(--surface); border:1px solid var(--border); border-radius:3px; display:flex; align-items:center; gap:0.75rem; opacity:0.7; }}
+  .weekend-icon {{ font-size:1.2rem; flex-shrink:0; }}
+  .weekend-title {{ font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); }}
+  .weekend-desc {{ font-size:0.7rem; color:var(--faint); }}
   .ticker-wrap {{ animation:fadeSlideUp 0.4s ease both; }}
 
-  .archive-link {{ display:flex; align-items:center; justify-content:space-between; padding:1rem 0; text-decoration:none; border-bottom:1px solid var(--border-lt); transition:padding 0.2s; }}
-  .archive-link:hover {{ padding-left:0.5rem; }}
-  .archive-link-text {{ font-size:0.82rem; color:var(--muted); }}
+  .archive-link {{ display:flex; align-items:center; justify-content:space-between; padding:1rem 0; text-decoration:none; border-bottom:1px solid var(--border-lt); transition:padding 0.2s; cursor:pointer; }}
+  .archive-link:hover {{ padding-left:0.5rem; background:rgba(148,163,184,0.03); }}
+  .archive-link-meta {{ font-size:0.78rem; color:var(--muted); display:flex; align-items:center; gap:0.5rem; }}
   .archive-link-date {{ font-family:'Libre Baskerville',serif; font-size:0.88rem; color:var(--text); font-style:italic; }}
-  .archive-link-arrow {{ color:var(--accent); font-size:0.8rem; transition:transform 0.2s; }}
-  .archive-link:hover .archive-link-arrow {{ transform:translateX(4px); }}
+  .archive-link-play {{ color:var(--accent); font-size:0.85rem; width:2rem; height:2rem; display:flex; align-items:center; justify-content:center; border-radius:50%; background:rgba(148,163,184,0.08); transition:all 0.2s; flex-shrink:0; }}
+  .archive-link:hover .archive-link-play {{ background:rgba(148,163,184,0.15); color:#fff; }}
   .archive-link--missing {{ opacity:0.35; cursor:default; }}
   .archive-link--missing .archive-link-date {{ color:var(--muted); }}
-  .archive-link--missing .archive-link-text {{ font-style:italic; color:var(--faint); }}
+  .archive-link--missing .archive-link-meta {{ font-style:italic; color:var(--faint); }}
   .archive-link-archive-ghost {{ color:var(--faint); font-size:0.7rem; }}
+  .archive-voice {{ font-size:0.68rem; padding:1px 6px; background:rgba(148,163,184,0.08); border:1px solid rgba(148,163,184,0.15); border-radius:3px; color:var(--accent); letter-spacing:0.03em; }}
 
   /* Dropdown: 3 visíveis por padrão, resto oculto até clicar */
   .archive-link--hidden {{ display:none; }}
@@ -707,6 +829,8 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
       <div class="hero-stat"><strong>{pod_dur}</strong><span>podcast</span></div>{qs_stat}
     </div>
   </div>
+
+  {player_html}
 
   <div class="search-bar">
     <input type="text" id="searchInput" placeholder="Buscar notícias...">
@@ -790,18 +914,107 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   }}, {{ threshold:0.1, rootMargin:'0px 0px -40px 0px' }});
   items.forEach(el => observer.observe(el));
 
+  // ── Player com capítulos ──
   const audio = document.getElementById('audioEl');
   const playIcon = document.getElementById('playIcon');
+  const pauseIcon = document.getElementById('pauseIcon');
   const fill = document.getElementById('progressFill');
   const timeEl = document.getElementById('playerTime');
-  const icons = {{ play:'<polygon points="5,3 19,12 5,21"/>', pause:'<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>' }};
-  function fmt(s) {{ const m=Math.floor(s/60); const sec=Math.floor(s%60).toString().padStart(2,'0'); return `${{m}}:${{sec}}`; }}
-  function togglePlay() {{ if(audio.paused){{audio.play();playIcon.innerHTML=icons.pause;}}else{{audio.pause();playIcon.innerHTML=icons.play;}} }}
+  const chaptersContainer = document.getElementById('chaptersContainer');
+  const bar = document.getElementById('progressBar');
+  
+  // Renderiza capítulos na barra
+  let chapters = [];
+  try {{ if (chaptersContainer) chapters = JSON.parse(chaptersContainer.dataset.chapters || '[]'); }} catch(e) {{}}
+  if (chapters.length > 0 && bar) {{
+    const dur = chapters.length > 1 ? chapters[chapters.length-1].time : 0;
+    chapters.forEach((ch, i) => {{
+      const pct = dur > 0 ? (ch.time / dur) * 100 : 0;
+      const mk = document.createElement('div');
+      mk.className = 'chapter-marker';
+      mk.style.left = pct + '%';
+      mk.title = ch.label;
+      mk.innerHTML = '<div class="chapter-tooltip">' + ch.label + '</div>';
+      mk.addEventListener('click', (e) => {{ e.stopPropagation(); if (audio.duration) audio.currentTime = ch.time; }});
+      bar.appendChild(mk);
+    }});
+  }}
+  
+  function togglePlay() {{
+    if (audio.paused) {{
+      audio.play();
+      playIcon.style.display = 'none';
+      pauseIcon.style.display = 'block';
+    }} else {{
+      audio.pause();
+      playIcon.style.display = 'block';
+      pauseIcon.style.display = 'none';
+    }}
+  }}
   const speeds=[0.75,1,1.25,1.5,2]; let speedIdx=1;
-  function cycleSpeed() {{ speedIdx=(speedIdx+1)%speeds.length; audio.playbackRate=speeds[speedIdx]; document.getElementById('speedBtn').textContent=speeds[speedIdx]+'×'; }}
-  audio.addEventListener('timeupdate',()=>{{ if(!audio.duration)return; const pct=(audio.currentTime/audio.duration)*100; fill.style.width=pct+'%'; timeEl.textContent=`${{fmt(audio.currentTime)}} / ${{fmt(audio.duration)}}`; }});
-  audio.addEventListener('ended',()=>{{ playIcon.innerHTML=icons.play; fill.style.width='0%'; }});
-  function seekAudio(e){{ if(!audio.duration)return; const rect=e.currentTarget.getBoundingClientRect(); const pct=(e.clientX-rect.left)/rect.width; audio.currentTime=pct*audio.duration; }}
+  function cycleSpeed() {{
+    speedIdx=(speedIdx+1)%speeds.length;
+    audio.playbackRate=speeds[speedIdx];
+    document.getElementById('speedBtn').textContent=speeds[speedIdx]+'×';
+  }}
+  
+  // Atualiza capitulo atual na timeline
+  let currentChapterIdx = -1;
+  audio.addEventListener('timeupdate', () => {{
+    if (!audio.duration) return;
+    const pct = (audio.currentTime / audio.duration) * 100;
+    fill.style.width = pct + '%';
+    timeEl.textContent = fmt(audio.currentTime) + ' / ' + fmt(audio.duration);
+    
+    // Destaca capítulo atual
+    if (chapters.length > 0) {{
+      let activeIdx = 0;
+      for (let i = chapters.length - 1; i >= 0; i--) {{
+        if (audio.currentTime >= chapters[i].time) {{ activeIdx = i; break; }}
+      }}
+      if (activeIdx !== currentChapterIdx) {{
+        currentChapterIdx = activeIdx;
+        // Destaca o capítulo ativo na timeline
+        document.querySelectorAll('.chapter-marker').forEach((mk, idx) => {{
+          mk.style.background = idx <= activeIdx ? 'var(--accent)' : 'rgba(255,255,255,0.25)';
+          mk.style.height = idx <= activeIdx ? '18px' : '16px';
+        }});
+      }}
+    }}
+  }});
+  audio.addEventListener('ended', () => {{
+    playIcon.style.display = 'block';
+    pauseIcon.style.display = 'none';
+  }});
+  function seekAudio(e) {{
+    if (!audio.duration) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const pct = (e.clientX - rect.left) / rect.width;
+    audio.currentTime = pct * audio.duration;
+  }}
+  function fmt(s) {{ const m=Math.floor(s/60); const sec=Math.floor(s%60).toString().padStart(2,'0'); return m+':'+sec; }}
+  
+  // Copiar link do audio
+  function copyAudioLink() {{
+    const src = audio ? audio.src : '';
+    if (!src) return;
+    const btn = event.currentTarget;
+    navigator.clipboard.writeText(src).then(() => {{
+      btn.classList.add('copied');
+      btn.textContent = '\u2713';
+      setTimeout(() => {{ btn.classList.remove('copied'); btn.innerHTML = '🔗'; }}, 2000);
+    }}).catch(() => {{
+      // fallback
+      const ta = document.createElement('textarea');
+      ta.value = src; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.classList.add('copied');
+      btn.textContent = '\u2713';
+      setTimeout(() => {{ btn.classList.remove('copied'); btn.innerHTML = '🔗'; }}, 2000);
+    }});
+  }}
 
   // Archive dropdown toggle (episódios anteriores)
   const archiveEl = document.querySelector('.archive-archive');
@@ -814,6 +1027,26 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
       const label = toggleBtn.querySelector('.archive-toggle-label');
       if (label) label.textContent = expanded ? 'Ver menos' : `Ver episódios anteriores (${{hiddenCount}})`;
     }});
+  }}
+
+  // Play archive episode inline
+  function playArchive(el) {{
+    const src = el.dataset.audio;
+    if (!src || !audio) return;
+    // Pausa o player principal se estiver tocando
+    if (!audio.paused) {{ audio.pause(); playIcon.innerHTML = icons.play; }}
+    // Troca a fonte e toca
+    audio.src = src;
+    audio.load();
+    audio.play().then(() => {{
+      playIcon.innerHTML = icons.pause;
+      // Atualiza o título do player
+      const titleEl = document.querySelector('.player-title');
+      if (titleEl) {{
+        const dateText = el.querySelector('.archive-link-date')?.textContent || '';
+        titleEl.textContent = 'D5N ' + dateText;
+      }}
+    }}).catch(e => console.warn('Play failed:', e));
   }}
 
   // Busca e filtro
@@ -1113,8 +1346,12 @@ def main():
     if not noticias:
         print("❌ ERRO: Nenhuma notícia disponível")
         sys.exit(1)
-    podcast = None if args.no_podcast else find_latest_podcast()
-    episodios = list_episodes() if not args.no_podcast else []
+    # Fim de semana: podcast é interno (não publicado)
+    is_weekend_page = is_weekend(date)
+    if is_weekend_page:
+        print(f"📅 Fim de semana ({format_data_curta(date)}) — podcast interno, ocultando player")
+    podcast = None if (args.no_podcast or is_weekend_page) else find_latest_podcast()
+    episodios = list_episodes() if not (args.no_podcast or is_weekend_page) else []
     
     voice = get_voice_of_day(date)
     if coverage_data.get("quality_score"):

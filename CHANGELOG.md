@@ -8,6 +8,10 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/), e este 
 
 ## [Unreleased]
 
+### Changed
+- **Episódios de fim de semana não consomem mais números de sequência** — `deploy_d5n_site.sh` detecta sáb/dom e salva áudio como `d5n-weekend-{DATE}.mp3` sem atualizar `last_episode` no contador. `find_latest_podcast()` pula entradas de fds no histórico para manter o player com sequência limpa.
+- **README, CHANGELOG, ARCHITECTURE** — Documentação atualizada com novo comportamento de fim de semana.
+
 ### Planned
 - Newsletter com captura de email (ConvertKit/Mailchimp)
 - Transcrições automáticas via Whisper API
@@ -183,5 +187,4 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/), e este 
 
 ---
 
-**Mantido por:** [Jean Braga](https://instagram.com/jeanbraga.ai)  
-**Última atualização:** 08 Jul 2026
+**Mantido por:** [Jean Braga](https://instagram.com/jeanbraga.ai)  \n**Última atualização:** 13 Jul 2026

@@ -49,6 +49,24 @@ def main():
         sys.exit(1)
     log(f"OK: {nc} noticias")
 
+    # ── Verification Engine /goal ──
+    log("")
+    log("Rodando Verification Engine...")
+    verify_script = Path("/root/.hermes/scripts/d5n-verify-site.py")
+    if verify_script.exists():
+        import subprocess
+        r = subprocess.run(
+            ["python3", str(verify_script)],
+            capture_output=True, text=True, timeout=60
+        )
+        print(r.stdout)
+        if r.returncode != 0:
+            log("⚠️  Verificação falhou — deploy bloqueado")
+            sys.exit(1)
+        log("✅ Verificação OK — prosseguindo com deploy")
+    else:
+        log("⚠️  Script de verificação não encontrado, pulando")
+
     # Criar zip
     log("Criando zip...")
     buf = io.BytesIO()

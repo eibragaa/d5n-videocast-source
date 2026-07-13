@@ -27,7 +27,7 @@ D5N é um boletim diário de notícias curado por IA, publicado automaticamente 
 | Formato | Descrição |
 |---------|-----------|
 | **Site HTML** | Página estática com design premium (Libre Baskerville + DM Sans) |
-| **Podcast MP3** | ~5-7 min, 13 blocos, vozes alternadas (Thalita/Francisca) |
+| **Podcast MP3** | ~5-7 min, 13 blocos, vozes alternadas (Thalita/Francisca). Dias úteis: `d5n-ep{NNN}-{DATE}.mp3`. Fins de semana: `d5n-weekend-{DATE}.mp3` (sem número de sequência). |
 | **Cards Instagram** | PNG 1080×1080 com foto de fundo + headline |
 | **Feed JSON/RSS** | Para apps e agregadores |
 | **Arquivo Markdown** | Histórico diário em `/2026/YYYY-MM-DD.md` |
@@ -113,11 +113,11 @@ Headers de seção usam voz masculina: **Antonio** (pt-BR-AntonioNeural).
 | Horário | Tarefa | Descrição |
 |---------|--------|-----------|
 | 03:00 | Geração do site | `gerar_pagina_d5n.py` coleta, curadoria, HTML, feeds |
-| 04:00 | Pipeline do podcast | TTS + mixagem → MP3 final |
+| 04:00 | Pipeline do podcast | TTS + mixagem → MP3 final. **Fds:** salvo como `d5n-weekend-{DATE}.mp3` sem número |
 | 08:00 | Radar matinal | Prévia dos 5 temas quentes do dia |
 | 10:00 | Global + Brasil | Bloco de notícias globais e nacionais |
 | 14:00 | Tech & IA | Bloco de tecnologia e inteligência artificial |
-| 17:00 | Kinetic + Telegram | D5N Kinetic Pipeline (Remotion) → entrega Telegram |
+| 17:00 | Kinetic + Telegram | D5N Kinetic Pipeline (Remotion) → entrega Telegram. **Fds:** pulado |
 | 21:00 | Seleção do Dia | Curadoria final para o episódio |
 
 ---
@@ -129,14 +129,14 @@ d5n-videocast-source/
 ├── gerar_pagina_d5n.py          # Script principal — gera HTML, feeds, source.md
 ├── gerar_cards_pipeline.py      # Gera cards PNG para Instagram
 ├── gerar_cards_instagram_d5n.py # Cards individuais por notícia
-├── deploy_d5n_site.sh           # Script de deploy (legacy)
+├── deploy_d5n_site.sh           # Deploy: valida MP3, copia com/sem número (fds) para audio/, atualiza contador e faz git push
 ├── deploy_netlify_direct.py     # Deploy direto via API Netlify (backup)
 │
 ├── index.html                   # Site principal (gerado diariamente)
 ├── feed.json                    # JSON Feed (gerado diariamente)
 ├── d5n-feed.xml                  # RSS Feed (gerado diariamente)
 ├── source.md                    # Roteiro do podcast (gerado diariamente)
-├── episode-counter.json         # Contador persistente de episódios
+├── episode-counter.json         # Contador persistente de episódios (dias úteis apenas — fds não incrementa)
 ├── autoavaliacao-score.json     # Score diário de qualidade
 ├── autoavaliacao-issues.json    # Issues de qualidade detectadas
 │
@@ -148,7 +148,8 @@ d5n-videocast-source/
 ├── audio/                       # Episódios MP3
 │   ├── d5n-ep004-2026-05-28.mp3
 │   ├── d5n-ep032-2026-06-29.mp3
-│   └── ...
+│   ├── d5n-ep033-2026-07-09.mp3
+│   └── d5n-weekend-2026-07-12.mp3  # sem número (fim de semana)
 │
 ├── cards-instagram/             # Cards PNG por data
 │   └── YYYY-MM-DD/
@@ -365,6 +366,7 @@ Ver [docs/SPRINTS_CORRECAO.md](docs/SPRINTS_CORRECAO.md) para o plano completo d
 | 9 | split_roteiro.py: código morto | BAIXO | Não referenciado em pipeline ativo |
 | 10 | frase/historia ignorados | MÉDIO | Gerador criava arquivos não processados |
 | 11 | Amanhã Conectada: hook errado | MÉDIO | LLM não recebia dia da semana |
+| **12** | **Fim de semana consome números de sequência** | **MÉDIO** | `deploy_d5n_site.sh` agora detecta sáb/dom e salva `d5n-weekend-{DATE}.mp3` sem incrementar `last_episode`. `find_latest_podcast()` pula entradas de fds no histórico. |
 
 ---
 
@@ -376,6 +378,7 @@ Ver [docs/SPRINTS_CORRECAO.md](docs/SPRINTS_CORRECAO.md) para o plano completo d
 | **Jun 2026** | 32 episódios, cards Instagram, analytics |
 | **Jul 2026** | Sprint 1-3: Bug fixes, visual upgrade, busca/filtros |
 | **12/07/2026** | Sprint correção: 11 bugs corrigidos, 13 seções no mixer |
+| **13/07/2026** | Fim de semana não consome número de episódio — `d5n-weekend-{DATE}.mp3`, skip em `find_latest_podcast()` |
 
 Ver [CHANGELOG.md](CHANGELOG.md) para detalhes completos.
 

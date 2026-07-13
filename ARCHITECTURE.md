@@ -137,7 +137,7 @@ d5n-feed.xml (1-2KB) — RSS 2.0
 2. **Mixer v9** — Adiciona vinheta + trilhas
 3. **Normalização** — -1.5dBFS master
 
-**Saída:** `audio/d5n-ep{NNN}-YYYY-MM-DD.mp3` (~5-7 min)
+**Saída:** `audio/d5n-ep{NNN}-YYYY-MM-DD.mp3` (~5-7 min)  \n**Fim de semana:** `audio/d5n-weekend-YYYY-MM-DD.mp3` (sem número, preserva sequência)
 
 ### Fase 5: Cards Instagram (03:08 BRT)
 
@@ -191,9 +191,10 @@ cards-instagram/YYYY-MM-DD/
 ```python
 load_today_news(date_str)              # Carrega notícias do trends file
 load_episode_history()                 # Carrega histórico de episódios
-get_last_episode_num()                 # Retorna último número de episódio
+get_last_episode_num()                 # Retorna último número de episódio (dias úteis)
 get_duration(mp3_path)                 # Calcula duração do MP3
-list_episodes()                        # Lista episódios disponíveis
+list_episodes()                        # Lista episódios disponíveis (todos, incluindo fds)
+find_latest_podcast()                  # Último episódio COM áudio (pula fins de semana)
 gerar_html(...)                        # Gera HTML completo
 gerar_source_md(...)                   # Gera roteiro do podcast
 gerar_feeds_json(...)                  # Gera JSON Feed
@@ -267,16 +268,23 @@ drop5news-trends-YYYY-MM-DD.txt
 └── Tamanho: ~50-100 notícias
 
 episode-counter.json
-├── Gerado por: gerar_pagina_d5n.py
+├── Gerado por: gerar_pagina_d5n.py + deploy_d5n_site.sh
 ├── Formato: JSON
-├── Campos: last_episode, history[]
+├── Campos: last_episode (dias úteis apenas), history[]
 └── Persistente entre execuções
+└── Fim de semana não atualiza last_episode (preserva sequência)
 
 audio/d5n-ep{NNN}-YYYY-MM-DD.mp3
-├── Gerado por: Pipeline TTS Hermes
+├── Gerado por: Pipeline TTS Hermes + deploy_d5n_site.sh
 ├── Formato: MP3 128kbps
 ├── Duração: ~5-7 minutos
 └── ~35 arquivos (1 por dia útil)
+
+audio/d5n-weekend-YYYY-MM-DD.mp3
+├── Gerado por: deploy_d5n_site.sh (fim de semana)
+├── Formato: MP3 128kbps
+├── Duração: ~5-7 minutos
+└── Sem número de episódio (preserva sequência dos dias úteis)
 ```
 
 ### Arquivos de Saída

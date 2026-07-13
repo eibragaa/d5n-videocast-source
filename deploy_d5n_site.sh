@@ -3,6 +3,10 @@
 # Totalmente no_agent (zero tokens por execução)
 # Só faz push se passar em todas as validações.
 # Em caso de falha, marca /tmp/.deploy-d5n-failed para recuperação
+# 
+# Comportamento:
+#   - Dia útil: copia MP3 como d5n-ep{NNN}-{DATE}.mp3, incrementa last_episode
+#   - Fim de semana: copia MP3 como d5n-weekend-{DATE}.mp3, NÃO incrementa contador
 
 set -euo pipefail
 
@@ -11,7 +15,15 @@ REPO="/root/repositorio/d5n-videocast-source"
 LOG="/tmp/deploy-d5n-${DATE}.log"
 FAILED=0
 
-echo "[$(date '+%H:%M:%S')] 🚀 Deploy D5N - ${DATE}" | tee "$LOG"
+# Detecta fim de semana — sáb (6) ou dom (7)
+WDAY=$(date +%u)  # 1=seg, 6=sab, 7=dom
+IS_WEEKEND=0
+if [ "$WDAY" -ge 6 ]; then
+    IS_WEEKEND=1
+    echo "[$(date '+%H:%M:%S')] 📅 Fim de semana — episódio salvo SEM número de sequência" | tee "$LOG"
+else
+    echo "[$(date '+%H:%M:%S')] 🚀 Deploy D5N - ${DATE}" | tee "$LOG"
+fi
 
 cd "$REPO"
 
@@ -69,11 +81,33 @@ if [ -n "$LATEST_MP3" ]; then
     fi
 
     if [ "$FAILED" -eq 0 ]; then
-        # 🔥 CORREÇÃO: verificar se já existe episódio para a DATA DE HOJE
-        # Se sim, reutilizar o número (sobrescrever) em vez de criar novo
-        TODAY_EP=""
-        if [ -f "$COUNTER_FILE" ]; then
-            TODAY_EP=$(python3 -c "
+        if [ "$IS_WEEKEND" -eq 1 ]; then
+            # ── Fim de semana: salva SEM número de episódio ──
+            if [ -f "$COUNTER_FILE" ]; then
+                TODAY_EXISTS=$(python3 -c "
+import json
+d=json.load(open('$COUNTER_FILE'))
+for e in d.get('history',[]):
+    if e.get('date')=='$DATE' and e.get('exists'):
+        print('1'); break
+" 2>/dev/null)
+            else
+                TODAY_EXISTS=""
+            fi
+            if [ -n "$TODAY_EXISTS" ]; then
+                echo "⚠️  Fim de semana — áudio já existe para hoje, sobrescrevendo" | tee -a "$LOG"
+            fi
+            DEST="audio/d5n-weekend-${DATE}.mp3"
+            cp "$LATEST_MP3" "$DEST"
+            cp "$LATEST_MP3" "/root/.hermes/cron/output/d5n-podcast-${DATE}.mp3"
+            echo "✅ Áudio salvo (sem número): $DEST ($(du -h "$DEST" | cut -f1))" | tee -a "$LOG"
+            # NÃO atualiza episode-counter.json — números sequenciais preservados
+        else
+            # 🔥 CORREÇÃO: verificar se já existe episódio para a DATA DE HOJE
+            # Se sim, reutilizar o número (sobrescrever) em vez de criar novo
+            TODAY_EP=""
+            if [ -f "$COUNTER_FILE" ]; then
+                TODAY_EP=$(python3 -c "
 import json
 d=json.load(open('$COUNTER_FILE'))
 history=d.get('history',[])
@@ -83,35 +117,35 @@ for e in history:
         print(e['num'])
         break
 " 2>/dev/null)
-        fi
+            fi
 
-        if [ -n "$TODAY_EP" ]; then
-            # Já existe episódio para hoje — REUTILIZAR número e sobrescrever
-            EP_NUM="$TODAY_EP"
-            echo "♻️  Episódio #$EP_NUM já existe para hoje — sobrescrevendo" | tee -a "$LOG"
-        else
-            # Lê o contador persistente e calcula próximo
-            if [ -f "$COUNTER_FILE" ]; then
-                LAST_NUM=$(python3 -c "import json; d=json.load(open('$COUNTER_FILE')); print(d.get('last_episode',0))" 2>/dev/null)
+            if [ -n "$TODAY_EP" ]; then
+                # Já existe episódio para hoje — REUTILIZAR número e sobrescrever
+                EP_NUM="$TODAY_EP"
+                echo "♻️  Episódio #$EP_NUM já existe para hoje — sobrescrevendo" | tee -a "$LOG"
             else
-                LAST_NUM=0
+                # Lê o contador persistente e calcula próximo
+                if [ -f "$COUNTER_FILE" ]; then
+                    LAST_NUM=$(python3 -c "import json; d=json.load(open('$COUNTER_FILE')); print(d.get('last_episode',0))" 2>/dev/null)
+                else
+                    LAST_NUM=0
+                fi
+                if [ -z "$LAST_NUM" ] || [ "$LAST_NUM" = "0" ]; then
+                    LAST_NUM=$(ls audio/d5n-ep*.mp3 2>/dev/null | grep -oP 'ep\K\d+' | sort -n | tail -1)
+                    LAST_NUM=${LAST_NUM:-0}
+                fi
+                NEXT_NUM=$((10#$LAST_NUM + 1))
+                EP_NUM=$(printf "%03d" "$NEXT_NUM")
             fi
-            if [ -z "$LAST_NUM" ] || [ "$LAST_NUM" = "0" ]; then
-                LAST_NUM=$(ls audio/d5n-ep*.mp3 2>/dev/null | grep -oP 'ep\K\d+' | sort -n | tail -1)
-                LAST_NUM=${LAST_NUM:-0}
-            fi
-            NEXT_NUM=$((10#$LAST_NUM + 1))
-            EP_NUM=$(printf "%03d" "$NEXT_NUM")
-        fi
 
-        DEST="audio/d5n-ep${EP_NUM}-${DATE}.mp3"
-        cp "$LATEST_MP3" "$DEST"
-        # Também copia para cron output padrão (formato legado) para compatibilidade
-        cp "$LATEST_MP3" "/root/.hermes/cron/output/d5n-podcast-${DATE}.mp3"
-        echo "✅ Áudio copiado: $DEST (ep #$EP_NUM, $(du -h "$DEST" | cut -f1))" | tee -a "$LOG"
+            DEST="audio/d5n-ep${EP_NUM}-${DATE}.mp3"
+            cp "$LATEST_MP3" "$DEST"
+            # Também copia para cron output padrão (formato legado) para compatibilidade
+            cp "$LATEST_MP3" "/root/.hermes/cron/output/d5n-podcast-${DATE}.mp3"
+            echo "✅ Áudio copiado: $DEST (ep #$EP_NUM, $(du -h "$DEST" | cut -f1))" | tee -a "$LOG"
 
-        # Atualiza contador persistente (sempre, mesmo se sobrescrevendo)
-        python3 -c "
+            # Atualiza contador persistente (sempre, mesmo se sobrescrevendo)
+            python3 -c "
 import json
 with open('$COUNTER_FILE') as f: d=json.load(f)
 if 'history' not in d: d['history']=[]
@@ -130,7 +164,8 @@ else:
 d['updated']='$DATE'
 json.dump(d,open('$COUNTER_FILE','w'),indent=2)
 "
-        echo "✅ Contador atualizado: episode-counter.json → #$EP_NUM" | tee -a "$LOG"
+            echo "✅ Contador atualizado: episode-counter.json → #$EP_NUM" | tee -a "$LOG"
+        fi
     fi
 else
     echo "ℹ️  Nenhum MP3 novo no pipeline" | tee -a "$LOG"
