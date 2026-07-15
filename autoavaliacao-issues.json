@@ -2,13 +2,13 @@
   "persistent_issues": {
     "acao_manual_requerida": {
       "first_seen": "2026-06-21",
-      "consecutive_days": 5,
-      "last_seen": "2026-07-12"
+      "consecutive_days": 6,
+      "last_seen": "2026-07-14"
     },
     "falha_autocorrecao": {
       "first_seen": "2026-06-21",
-      "consecutive_days": 5,
-      "last_seen": "2026-07-12"
+      "consecutive_days": 6,
+      "last_seen": "2026-07-14"
     },
     "player_offline": {
       "first_seen": "2026-07-12",
@@ -16,9 +16,9 @@
       "last_seen": "2026-07-12"
     }
   },
-  "updated": "2026-07-12",
+  "updated": "2026-07-14",
   "escalations": [
-    "acao_manual_requerida: 5 dias consecutivos — 🔴 CRÍTICO, ação manual necessária",
-    "falha_autocorrecao: 5 dias consecutivos — 🔴 CRÍTICO, ação manual necessária"
+    "acao_manual_requerida: 6 dias consecutivos — 🔴 CRÍTICO, ação manual necessária",
+    "falha_autocorrecao: 6 dias consecutivos — 🔴 CRÍTICO, ação manual necessária"
   ]
 }
