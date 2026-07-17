@@ -68,7 +68,7 @@ echo ""
 echo "🧠 Etapa 2/6: Gerando roteiro via $OPENCODE_GO_MODEL..."
 
 # Prepara prompt - versão ENXUTA (o modelo consome muito em reasoning)
-PROMPT=$(cat <<'PROMPT_EOF'
+PROMPT=$(cat <<PROMPT_EOF
 Você é apresentador do flash "Amanhã Conectada" (3min30s, pt-BR coloquial, ~600 palavras).
 
 HOJE É ${WEEKDAY_PT} (${DATE}). Use o dia da semana correto no hook — NUNCA diga outro dia.

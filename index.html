@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
-<title>DropFiveNews — Quinta-feira, 16 de Julho de 2026</title>
+<title>DropFiveNews — Sexta-feira, 17 de Julho de 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -249,9 +249,9 @@
 
 <header>
   <a class="logo" href="/">drop<em style="font-style:italic">five</em><span>news</span></a>
-  <span class="header-meta">Quinta-feira, 16 de Julho de 2026</span>
+  <span class="header-meta">Sexta-feira, 17 de Julho de 2026</span>
   <div class="header-right">
-    <span class="edition-badge">#37</span>
+    <span class="edition-badge">#38</span>
     <div class="tech-bar">
       <span class="tech-item">IBOV <span class="tech-value">—</span></span>
       <span class="tech-item">USD <span class="tech-value">—</span></span>
@@ -326,13 +326,13 @@
           <div class="player-chapters" id="chaptersContainer" data-chapters='[{"time": 0, "label": "\ud83c\udfac Abertura", "short": "ABERTURA"}, {"time": 117, "label": "\ud83d\udcf0 Not\u00edcias", "short": "BLOCO 1"}, {"time": 197, "label": "\ud83d\udcf0 Aprofundamento", "short": "BLOCO 2"}, {"time": 278, "label": "\ud83d\udcf0 An\u00e1lise", "short": "BLOCO 3"}, {"time": 362, "label": "\ud83c\udfaf Encerramento", "short": "FIM"}]'></div>
         </div>
         <span class="player-time" id="playerTime">0:00 / 6:17</span>
-        <a class="player-download" href="/audio/d5n-ep037-2026-07-16.mp3" download title="Baixar MP3">↓ MP3</a>
+        <a class="player-download" href="/audio/d5n-ep038-2026-07-17.mp3" download title="Baixar MP3">↓ MP3</a>
         <button class="player-copy-btn" onclick="copyAudioLink()" title="Copiar link do áudio" id="copyBtn">🔗</button>
         <button class="speed-btn" id="speedBtn" onclick="cycleSpeed()" title="Velocidade">1×</button>
       </div>
-      <div class="player-title">D5N Episódio #37 — 16 Jul 2026</div>
+      <div class="player-title">D5N Episódio #38 — 17 Jul 2026</div>
     </div>
-    <audio id="audioEl" src="/audio/d5n-ep037-2026-07-16.mp3" preload="none"></audio>
+    <audio id="audioEl" src="/audio/d5n-ep038-2026-07-17.mp3" preload="none"></audio>
 
   <div class="search-bar">
     <input type="text" id="searchInput" placeholder="Buscar notícias...">
@@ -482,6 +482,13 @@
     </div>
     <div class="archive-archive" id="archive-list">
 
+    <div class="archive-link archive-link--visible" data-audio="/audio/d5n-ep038-2026-07-17.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #038 · 17 Jul 2026</div>
+        <div class="archive-link-meta">6:17 <span class="archive-voice">Thalita</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
     <div class="archive-link archive-link--visible" data-audio="/audio/d5n-ep037-2026-07-16.mp3" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #037 · 16 Jul 2026</div>
@@ -496,7 +503,7 @@
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--visible" data-audio="/audio/d5n-ep035-2026-07-13.mp3" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep035-2026-07-13.mp3" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #035 · 13 Jul 2026</div>
         <div class="archive-link-meta">5:11 <span class="archive-voice">Thalita</span></div>
@@ -742,7 +749,7 @@
       <span class="archive-link-archive-ghost">◌</span>
     </div>
     <button class="archive-toggle" type="button" aria-expanded="false" aria-controls="archive-list">
-      <span class="archive-toggle-label">Ver episódios anteriores (34)</span>
+      <span class="archive-toggle-label">Ver episódios anteriores (35)</span>
       <span class="archive-toggle-arrow">↓</span>
     </button>
   </div>
@@ -756,7 +763,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <strong>dropfivenews</strong> · Curadoria por <a href="https://www.instagram.com/jeanbraga.ai" style="color:var(--accent);text-decoration:none">@jeanbraga.ai</a><br>
-        <span style="font-size:0.65rem">Atualizado em quinta-feira, 16 de julho de 2026</span>
+        <span style="font-size:0.65rem">Atualizado em sexta-feira, 17 de julho de 2026</span>
       </div>
       <div class="footer-links">
         <a href="/privacidade">Privacidade</a>
@@ -888,7 +895,7 @@
   // Archive dropdown toggle (episódios anteriores)
   const archiveEl = document.querySelector('.archive-archive');
   const toggleBtn = document.querySelector('.archive-toggle');
-  const hiddenCount = 34;
+  const hiddenCount = 35;
   if (archiveEl && toggleBtn) {
     toggleBtn.addEventListener('click', () => {
       const expanded = archiveEl.classList.toggle('expanded');
