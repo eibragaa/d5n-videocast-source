@@ -69,6 +69,13 @@ checks:
   name: CTA e Mensagem do Dia sem clichês
   timeout: 10
   type: command
+- command: python3 scripts/d5n-podcast-quality-gate.py
+  critical: true
+  detail: MP3, vozes, loudness ou roteiro falham no novo padrão editorial
+  id: podcast-final-quality
+  name: Gate final do podcast (roteiro, vozes e mixagem)
+  timeout: 180
+  type: command
 path: /root/repositorio/d5n-videocast-source
 project: Drop Five News
 version: 1

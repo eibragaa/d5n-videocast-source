@@ -151,34 +151,80 @@ def validate_pre_generation_content():
         "/root/.hermes/scripts/d5n-mensagem-validate.py",
     ]
     errors = []
+    env = os.environ.copy()
+    manifest_path = "/tmp/d5n_audio/manifest.json"
+    if os.path.isfile(manifest_path) and not env.get("D5N_EDITORIAL_DATE"):
+        try:
+            with open(manifest_path, encoding="utf-8") as f:
+                editorial_date = json.load(f).get("editorial_date")
+            if editorial_date:
+                env["D5N_EDITORIAL_DATE"] = editorial_date
+        except (OSError, ValueError, TypeError):
+            pass
     for validator in validators:
         if not os.path.isfile(validator):
             errors.append(f"❌ Validador obrigatório ausente: {validator}")
             continue
-        result = subprocess.run(["python3", validator], capture_output=True, text=True, timeout=20)
+        result = subprocess.run(["python3", validator], capture_output=True, text=True, timeout=20, env=env)
         if result.returncode != 0:
             detail = (result.stdout or result.stderr).strip()
             errors.append(f"❌ Gate de roteiro bloqueou a produção: {detail}")
     return errors
 
 
+def validate_final_podcast():
+    """Valida roteiro falado, manifesto de vozes e propriedades técnicas do MP3 mixado."""
+    validator = os.path.join(SCRIPTS_DIR, "d5n-podcast-quality-gate.py")
+    if not os.path.isfile(validator):
+        return [f"❌ Gate final obrigatório ausente: {validator}"]
+    try:
+        result = subprocess.run(
+            ["python3", validator], cwd=BASE, capture_output=True, text=True, timeout=180
+        )
+    except subprocess.TimeoutExpired:
+        return ["❌ Gate final do podcast excedeu 180 segundos"]
+    if result.returncode != 0:
+        detail = (result.stdout or result.stderr).strip()
+        return [f"❌ Gate final do podcast bloqueou a publicação: {detail}"]
+    return []
+
+
 def validate_site_has_player(counter):
-    """Valida que o index.html tem player com o episódio mais recente."""
+    """Valida player principal, arquivo de áudio e histórico no index.html."""
     if not os.path.isfile(INDEX_FILE):
         return ["❌ index.html não encontrado — site não gerado"]
-    
+
     with open(INDEX_FILE) as f:
         content = f.read()
-    
+
     latest = counter.get("last_episode", 0)
     if latest == 0:
         return ["⚠️  Nenhum episódio registrado para validação do player"]
-    
-    # Verifica se o player principal referencia o último episódio
+
+    errors = []
+    latest_entry = next(
+        (e for e in reversed(counter.get("history", [])) if int(e.get("num", 0)) == int(latest)),
+        None,
+    )
     if f"D5N EPISÓDIO #{latest}" not in content.upper() and f"Episódio #{latest}" not in content:
-        return [f"⚠️  Player do site não mostra episódio #{latest} como principal"]
-    
-    return []
+        errors.append(f"⚠️  Player do site não mostra episódio #{latest} como principal")
+    if not re.search(r'<audio\s+id="audioEl"[^>]+src="/audio/[^"]+\.mp3"', content):
+        errors.append("❌ Player principal sem fonte MP3 válida")
+    if latest_entry and f'/audio/{latest_entry.get("file", "")}' not in content:
+        errors.append(f"❌ Player não referencia o MP3 registrado do episódio #{latest}")
+
+    archive_eps = re.findall(r'class="archive-link [^"]*"', content)
+    expected_existing = sum(1 for e in counter.get("history", []) if e.get("exists"))
+    minimum_archive = min(expected_existing, 3)
+    if len(archive_eps) < minimum_archive:
+        errors.append(
+            f"❌ Histórico ausente ou incompleto: {len(archive_eps)} entradas no site; "
+            f"mínimo esperado {minimum_archive}"
+        )
+    if expected_existing > 3 and "archive-toggle" not in content:
+        errors.append("❌ Controle para abrir episódios anteriores não encontrado")
+
+    return errors
 
 # ── Ações corretivas ──
 
@@ -303,7 +349,13 @@ def main():
             report.append(f"  {e}")
             needs_manual = True
 
-        # ── Validação 6: Player do site ──
+        # ── Validação 6: Podcast final (editorial, vozes e mixagem) ──
+        errors = validate_final_podcast()
+        for e in errors:
+            report.append(f"  {e}")
+            needs_manual = True
+
+        # ── Validação 7: Player do site ──
         warnings = validate_site_has_player(counter)
         for w in warnings:
             report.append(f"  {w}")

@@ -2,9 +2,11 @@
 
 **Curadoria diária de notícias via IA** — site, podcast, cards Instagram e distribuição multi-canal.
 
+📘 **Padrão vigente:** [docs/PADRAO_EDITORIAL_AUDIO.md](docs/PADRAO_EDITORIAL_AUDIO.md)
+
 🌐 **Site:** [d5n-daily.netlify.app](https://d5n-daily.netlify.app/)
 📱 **Instagram:** [@jeanbraga.ai](https://instagram.com/jeanbraga.ai)
-🎧 **Podcast:** Spotify / Telegram (diário, seg-sex)
+🎧 **Podcast:** Spotify / Discord (segunda a sábado; domingo reservado para manutenção)
 📡 **RSS:** `/d5n-feed.xml` | **JSON Feed:** `/feed.json`
 
 ---
@@ -27,7 +29,7 @@ D5N é um boletim diário de notícias curado por IA, publicado automaticamente 
 | Formato | Descrição |
 |---------|-----------|
 | **Site HTML** | Página estática com design premium (Libre Baskerville + DM Sans) |
-| **Podcast MP3** | ~5-7 min, 13 blocos, vozes alternadas (Thalita/Francisca). Dias úteis: `d5n-ep{NNN}-{DATE}.mp3`. Fins de semana: `d5n-weekend-{DATE}.mp3` (sem número de sequência). |
+| **Podcast MP3** | ~5–7 min, seções factuais disponíveis, apresentação alternada entre Thalita e Francisca; sexta-feira usa ambas. Headers com Antonio. Segunda a sábado: `d5n-ep{NNN}-{DATE}.mp3`; domingo não há episódio. |
 | **Cards Instagram** | PNG 1080×1080 com foto de fundo + headline |
 | **Feed JSON/RSS** | Para apps e agregadores |
 | **Arquivo Markdown** | Histórico diário em `/2026/YYYY-MM-DD.md` |
@@ -80,40 +82,42 @@ d5n_mixado_v9.mp3 (áudio final ~6 min)
 
 ### As 13 seções do mixer v9
 
-| # | Seção | Voz | Trilha | Origem |
-|:-:|-------|:---:|--------|:---------:|
-| 1 | intro | Thalita/Francisca | intro_bg | Mixer (lê intro.txt) |
-| 2 | mundo | Antonio (header) + Thalita/Francisca | trilha1 | Agente (mundo.txt/mp3) |
-| 3 | cta | Thalita/Francisca | trilha2 | Mixer (lê cta.txt) |
-| 4 | brasil | Antonio + Thalita/Francisca | trilha2 | Agente (brasil.txt/mp3) |
-| 5 | saude | Antonio + Thalita/Francisca | ciencia_bg | Opcional |
-| 6 | ciencia | Antonio + Thalita/Francisca | ciencia_bg | Opcional |
-| 7 | politica | Antonio + Thalita/Francisca | economia_bg | Opcional |
-| 8 | tecnologia | Antonio + Thalita/Francisca | tech_bg | Agente (tecnologia.txt/mp3) |
-| 9 | economia | Antonio + Thalita/Francisca | economia_bg | Agente (economia.txt/mp3) |
-| 10 | ofertas | Antonio + Thalita/Francisca | mensagem_bg | Agente (ofertas.txt/mp3) |
-| 11 | frase | Antonio + Thalita/Francisca | mensagem_bg | Agente (frase.txt/mp3) |
-| 12 | historia | Antonio + Thalita/Francisca | tech_bg | Agente (historia.txt/mp3) |
-| 13 | outro | Thalita/Francisca | trilha1 | Mixer (lê outro.txt) |
+Os headers usam Antonio. O conteúdo usa a **apresentadora definida pela data editorial**; na sexta-feira, Francisca e Thalita alternam naturalmente a cada bloco disponível. Seções opcionais ausentes não quebram a alternância.
 
-### Sistema de vozes (TTS edge-tts)
+| # | Seção | Trilha | Origem |
+|:-:|-------|--------|:---------:|
+| 1 | intro | intro_bg | Mixer (lê intro.txt) |
+| 2 | mundo | trilha1 | Agente (mundo.txt/mp3) |
+| 3 | cta | trilha2 | Legado opcional; CTA deve ficar no outro |
+| 4 | brasil | trilha2 | Agente (brasil.txt/mp3) |
+| 5 | saude | ciencia_bg | Opcional |
+| 6 | ciencia | ciencia_bg | Opcional |
+| 7 | politica | economia_bg | Opcional |
+| 8 | tecnologia | tech_bg | Agente (tecnologia.txt/mp3) |
+| 9 | economia | economia_bg | Agente (economia.txt/mp3) |
+| 10 | ofertas | mensagem_bg | Agente (ofertas.txt/mp3) |
+| 11 | frase | mensagem_bg | Agente (frase.txt/mp3) |
+| 12 | historia | tech_bg | Agente (historia.txt/mp3) |
+| 13 | outro | trilha1 | Mixer (lê outro.txt) |
 
-| Dia da semana | Apresentadora | Voz edge-tts |
-|---------------|---------------|--------------|
-| Segunda, Quarta, Sábado | **Thalita** | pt-BR-ThalitaMultilingualNeural |
-| Terça, Quinta, Domingo | **Francisca** | pt-BR-FranciscaNeural |
-| Sexta (dual) | **Thalita** (notícias) + **Francisca** (intro/CTA/ofertas/outro) | Ambas |
+### Sistema de vozes (Edge TTS local)
 
-Headers de seção usam voz masculina: **Antonio** (pt-BR-AntonioNeural).
+| Regra editorial | Voz edge-tts |
+|---|---|
+| Segunda, quarta e sábado | Thalita — `pt-BR-ThalitaMultilingualNeural` |
+| Terça e quinta | Francisca — `pt-BR-FranciscaNeural` |
+| Sexta-feira especial | Francisca + Thalita, alternadas por bloco |
+| Headers de seção | Antonio — `pt-BR-AntonioNeural` |
+| Domingo | Sem episódio; manutenção |
 
-⚠️ **NUNCA usar o nome "Marina"** — não existe no persona system. As apresentadoras são Thalita e Francisca apenas.
+A seleção usa `D5N_EDITORIAL_DATE` ou a data corrente em `America/Sao_Paulo`; nunca o dia de execução de um reprocessamento histórico. Gemini TTS permanece proibido.
 
 ### Cronograma diário
 
 | Horário | Tarefa | Descrição |
 |---------|--------|-----------|
 | 03:00 | Geração do site | `gerar_pagina_d5n.py` coleta, curadoria, HTML, feeds |
-| 04:00 | Pipeline do podcast | TTS + mixagem → MP3 final. **Fds:** salvo como `d5n-weekend-{DATE}.mp3` sem número |
+| 04:00 | Pipeline do podcast | TTS + mixagem → MP3 final, de segunda a sábado; domingo é manutenção |
 | 08:00 | Radar matinal | Prévia dos 5 temas quentes do dia |
 | 10:00 | Global + Brasil | Bloco de notícias globais e nacionais |
 | 14:00 | Tech & IA | Bloco de tecnologia e inteligência artificial |
@@ -280,10 +284,12 @@ python3 ~/.hermes/skills/media/trends-podcast/scripts/drop5news-mixer-v9.py
 - **Scroll reveal** — Notícias aparecem com animação ao rolar
 - **Archive dropdown** — 3 episódios visíveis + "Ver mais"
 
-### Personalidades (Sprint 1 — Julho 2026)
-- **Thalita** (Seg/Qua/Sáb) — Tom formal, preciso — pt-BR-ThalitaMultilingualNeural
-- **Francisca** (Ter/Qui/Dom) — Tom casual, envolvente — pt-BR-FranciscaNeural
-- **Dual** (Sexta) — Ambas as vozes
+### Vozes oficiais (padrão vigente)
+- **Thalita** — conteúdo de segunda, quarta e sábado — `pt-BR-ThalitaMultilingualNeural`
+- **Francisca** — conteúdo de terça e quinta — `pt-BR-FranciscaNeural`
+- **Sexta-feira** — edição especial com Francisca e Thalita alternadas por bloco.
+- **Antonio** — headers de seção — `pt-BR-AntonioNeural`
+- A data editorial determina o plano de vozes; Gemini TTS permanece apenas como legado proibido.
 
 ---
 

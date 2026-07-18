@@ -251,7 +251,7 @@
   <a class="logo" href="/">drop<em style="font-style:italic">five</em><span>news</span></a>
   <span class="header-meta">Sábado, 18 de Julho de 2026</span>
   <div class="header-right">
-    <span class="edition-badge">#---</span>
+    <span class="edition-badge">#39</span>
     <div class="tech-bar">
       <span class="tech-item">IBOV <span class="tech-value">—</span></span>
       <span class="tech-item">USD <span class="tech-value">—</span></span>
@@ -310,18 +310,29 @@
       <div class="divider-v"></div>
       <div class="hero-stat"><strong>4</strong><span>pilares</span></div>
       <div class="divider-v"></div>
-      <div class="hero-stat"><strong>0:00</strong><span>podcast</span></div>
+      <div class="hero-stat"><strong>6:01</strong><span>podcast</span></div>
     </div>
   </div>
 
   
-    <div class="weekend-notice">
-      <span class="weekend-icon">📅</span>
-      <div class="weekend-info">
-        <div class="weekend-title">Edição de fim de semana</div>
-        <div class="weekend-desc">Podcast interno — curadoria de notícias sem publicação.</div>
+    <div class="player-bar">
+      <div class="player-track">
+        <button class="play-btn" id="playBtn" onclick="togglePlay()">
+          <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </button>
+        <div class="player-progress" id="progressBar" onclick="seekAudio(event)">
+          <div class="player-progress-fill" id="progressFill"></div>
+          <div class="player-chapters" id="chaptersContainer" data-chapters='[{"time": 0, "label": "\ud83c\udfac Abertura", "short": "ABERTURA"}, {"time": 112, "label": "\ud83d\udcf0 Not\u00edcias", "short": "BLOCO 1"}, {"time": 189, "label": "\ud83d\udcf0 Aprofundamento", "short": "BLOCO 2"}, {"time": 266, "label": "\ud83d\udcf0 An\u00e1lise", "short": "BLOCO 3"}, {"time": 346, "label": "\ud83c\udfaf Encerramento", "short": "FIM"}]'></div>
+        </div>
+        <span class="player-time" id="playerTime">0:00 / 6:01</span>
+        <a class="player-download" href="/audio/d5n-ep039-2026-07-18.mp3" download title="Baixar MP3">↓ MP3</a>
+        <button class="player-copy-btn" onclick="copyAudioLink()" title="Copiar link do áudio" id="copyBtn">🔗</button>
+        <button class="speed-btn" id="speedBtn" onclick="cycleSpeed()" title="Velocidade">1×</button>
       </div>
+      <div class="player-title">D5N Episódio #39 — 18 Jul 2026</div>
     </div>
+    <audio id="audioEl" src="/audio/d5n-ep039-2026-07-18.mp3" preload="none"></audio>
 
   <div class="search-bar">
     <input type="text" id="searchInput" placeholder="Buscar notícias...">
@@ -469,7 +480,286 @@
       <span class="section-icon">📅</span>
       <span class="section-name" style="color:var(--muted)">Episódios</span>
     </div>
-    <p style="font-size:0.82rem;color:var(--muted);padding:1rem 0">Nenhum episódio anterior.</p>
+    <div class="archive-archive" id="archive-list">
+
+    <div class="archive-link archive-link--visible" data-audio="/audio/d5n-ep039-2026-07-18.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #039 · 18 Jul 2026</div>
+        <div class="archive-link-meta">6:01 <span class="archive-voice">Thalita</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--visible" data-audio="/audio/d5n-ep038-2026-07-17.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #038 · 17 Jul 2026</div>
+        <div class="archive-link-meta">6:17 <span class="archive-voice">Thalita + Francisca</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--visible" data-audio="/audio/d5n-ep037-2026-07-16.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #037 · 16 Jul 2026</div>
+        <div class="archive-link-meta">6:17 <span class="archive-voice">Francisca</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep036-2026-07-15.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #036 · 15 Jul 2026</div>
+        <div class="archive-link-meta">3:37 <span class="archive-voice">Thalita</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep035-2026-07-13.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #035 · 13 Jul 2026</div>
+        <div class="archive-link-meta">5:11 <span class="archive-voice">Thalita</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden archive-link--missing">
+      <div>
+        <div class="archive-link-date">Ep #034 · 12 Jul 2026</div>
+        <div class="archive-link-meta">indisponível</div>
+      </div>
+      <span class="archive-link-archive-ghost">◌</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep033-2026-07-09.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #033 · 9 Jul 2026</div>
+        <div class="archive-link-meta">6:11 <span class="archive-voice">Francisca</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep032-2026-06-29.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #032 · 29 Jun 2026</div>
+        <div class="archive-link-meta">6:36 <span class="archive-voice">Thalita</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep031-2026-06-28.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #031 · 28 Jun 2026</div>
+        <div class="archive-link-meta">6:36 </div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep030-2026-06-27.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #030 · 27 Jun 2026</div>
+        <div class="archive-link-meta">3:47 <span class="archive-voice">Thalita</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep029-2026-06-26.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #029 · 26 Jun 2026</div>
+        <div class="archive-link-meta">7:48 <span class="archive-voice">Thalita + Francisca</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep028-2026-06-24.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #028 · 24 Jun 2026</div>
+        <div class="archive-link-meta">8:03 <span class="archive-voice">Thalita</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep027-2026-06-22.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #027 · 22 Jun 2026</div>
+        <div class="archive-link-meta">5:43 <span class="archive-voice">Thalita</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep026-2026-06-21.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #026 · 21 Jun 2026</div>
+        <div class="archive-link-meta">6:48 </div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep025-2026-06-20.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #025 · 20 Jun 2026</div>
+        <div class="archive-link-meta">7:35 <span class="archive-voice">Thalita</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep024-2026-06-19.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #024 · 19 Jun 2026</div>
+        <div class="archive-link-meta">6:45 <span class="archive-voice">Thalita + Francisca</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep023-2026-06-16.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #023 · 16 Jun 2026</div>
+        <div class="archive-link-meta">8:01 <span class="archive-voice">Francisca</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden archive-link--missing">
+      <div>
+        <div class="archive-link-date">Ep #022 · 15 Jun 2026</div>
+        <div class="archive-link-meta">indisponível</div>
+      </div>
+      <span class="archive-link-archive-ghost">◌</span>
+    </div>
+    <div class="archive-link archive-link--hidden archive-link--missing">
+      <div>
+        <div class="archive-link-date">Ep #021 · 14 Jun 2026</div>
+        <div class="archive-link-meta">indisponível</div>
+      </div>
+      <span class="archive-link-archive-ghost">◌</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep020-2026-06-13.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #020 · 13 Jun 2026</div>
+        <div class="archive-link-meta">8:15 <span class="archive-voice">Thalita</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep019-2026-06-12.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #019 · 12 Jun 2026</div>
+        <div class="archive-link-meta">5:21 <span class="archive-voice">Thalita + Francisca</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep018-2026-06-11.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #018 · 11 Jun 2026</div>
+        <div class="archive-link-meta">4:58 <span class="archive-voice">Francisca</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden archive-link--missing">
+      <div>
+        <div class="archive-link-date">Ep #017 · 11 Jun 2026</div>
+        <div class="archive-link-meta">indisponível</div>
+      </div>
+      <span class="archive-link-archive-ghost">◌</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep016-2026-06-10.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #016 · 10 Jun 2026</div>
+        <div class="archive-link-meta">6:08 <span class="archive-voice">Thalita</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep015-2026-06-09.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #015 · 9 Jun 2026</div>
+        <div class="archive-link-meta">5:31 <span class="archive-voice">Francisca</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep014-2026-06-08.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #014 · 8 Jun 2026</div>
+        <div class="archive-link-meta">8:08 <span class="archive-voice">Thalita</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep013-2026-06-07.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #013 · 7 Jun 2026</div>
+        <div class="archive-link-meta">8:08 </div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep012-2026-06-06.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #012 · 6 Jun 2026</div>
+        <div class="archive-link-meta">7:31 <span class="archive-voice">Thalita</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep011-2026-06-05.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #011 · 5 Jun 2026</div>
+        <div class="archive-link-meta">6:12 <span class="archive-voice">Thalita + Francisca</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep010-2026-06-05.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #010 · 5 Jun 2026</div>
+        <div class="archive-link-meta">6:12 <span class="archive-voice">Thalita + Francisca</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep009-2026-06-04.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #009 · 4 Jun 2026</div>
+        <div class="archive-link-meta">8:49 <span class="archive-voice">Francisca</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep008-2026-06-03.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #008 · 3 Jun 2026</div>
+        <div class="archive-link-meta">8:13 <span class="archive-voice">Thalita</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden archive-link--missing">
+      <div>
+        <div class="archive-link-date">Ep #007 · 2 Jun 2026</div>
+        <div class="archive-link-meta">indisponível</div>
+      </div>
+      <span class="archive-link-archive-ghost">◌</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep006-2026-06-01.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #006 · 1 Jun 2026</div>
+        <div class="archive-link-meta">5:35 <span class="archive-voice">Thalita</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep005-2026-05-29.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #005 · 29 Mai 2026</div>
+        <div class="archive-link-meta">7:51 <span class="archive-voice">Thalita + Francisca</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep004-2026-05-28.mp3" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #004 · 28 Mai 2026</div>
+        <div class="archive-link-meta">2:46 <span class="archive-voice">Francisca</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--hidden archive-link--missing">
+      <div>
+        <div class="archive-link-date">Ep #003 · 27 Mai 2026</div>
+        <div class="archive-link-meta">indisponível</div>
+      </div>
+      <span class="archive-link-archive-ghost">◌</span>
+    </div>
+    <div class="archive-link archive-link--hidden archive-link--missing">
+      <div>
+        <div class="archive-link-date">Ep #002 · 26 Mai 2026</div>
+        <div class="archive-link-meta">indisponível</div>
+      </div>
+      <span class="archive-link-archive-ghost">◌</span>
+    </div>
+    <div class="archive-link archive-link--hidden archive-link--missing">
+      <div>
+        <div class="archive-link-date">Ep #001 · 24 Mai 2026</div>
+        <div class="archive-link-meta">indisponível</div>
+      </div>
+      <span class="archive-link-archive-ghost">◌</span>
+    </div>
+    <button class="archive-toggle" type="button" aria-expanded="false" aria-controls="archive-list">
+      <span class="archive-toggle-label">Ver episódios anteriores (36)</span>
+      <span class="archive-toggle-arrow">↓</span>
+    </button>
+  </div>
   </section>
 
 </div>
@@ -612,7 +902,7 @@
   // Archive dropdown toggle (episódios anteriores)
   const archiveEl = document.querySelector('.archive-archive');
   const toggleBtn = document.querySelector('.archive-toggle');
-  const hiddenCount = -3;
+  const hiddenCount = 36;
   if (archiveEl && toggleBtn) {
     toggleBtn.addEventListener('click', () => {
       const expanded = archiveEl.classList.toggle('expanded');

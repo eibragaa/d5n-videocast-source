@@ -182,8 +182,8 @@ def get_pillar_avg_scores(coverage_data):
     return result
 
 def get_voice_of_day(date_str):
-    """Retorna a personalidade do dia conforme calendario D5N:
-    Seg/Qua/Sab = Thalita | Ter/Qui/Dom = Francisca | Sex = Dual
+    """Retorna a apresentação conforme a data editorial:
+    Seg/Qua/Sáb = Thalita | Ter/Qui = Francisca | Sex = dupla | Dom = manutenção.
     """
     try:
         d = datetime.strptime(date_str, '%Y-%m-%d')
@@ -191,12 +191,14 @@ def get_voice_of_day(date_str):
         if weekday in (0, 2, 5):      # Seg, Qua, Sab
             return {"name": "Thalita", "bio": "Jornalista formal, precisa e analitica", "avatar": "🎙️",
                     "tone": "formal", "tagline": "Boletim Drop Five News, eu sou Thalita"}
-        elif weekday in (1, 3, 6):    # Ter, Qui, Dom
+        elif weekday in (1, 3):       # Ter, Qui
             return {"name": "Francisca", "bio": "Comunicadora casual, envolvente e direta", "avatar": "🎧",
                     "tone": "casual", "tagline": "Drop Five News na area, aqui e a Francisca"}
-        else:                          # Sex = Dual
+        elif weekday == 4:            # Sex = Dual
             return {"name": "Thalita & Francisca", "bio": "Edicao dupla, formato especial de sexta", "avatar": "🎶",
                     "tone": "dual", "tagline": "Edicao especial de sexta, Thalita e Francisca juntas"}
+        else:                          # Domingo = manutenção
+            return None
     except:
         return {"name": "Thalita", "bio": "Jornalista formal, precisa e analitica", "avatar": "🎙️",
                 "tone": "formal", "tagline": "Boletim Drop Five News, eu sou Thalita"}
@@ -236,28 +238,27 @@ def get_duration(filepath):
     except: return 0
 
 def find_latest_podcast():
-    """Encontra o último episódio que REALMENTE existe em audio/.
-    Pula episódios de fim de semana (não publicados) para manter sequência limpa."""
+    """Encontra o episódio publicado mais recente que existe em audio/.
+
+    O podcast é público de segunda a sábado; domingo não gera episódio, mas o
+    site continua exibindo o último player disponível.
+    """
     history = load_episode_history()
-    if not history: return None
+    if not history:
+        return None
     from datetime import datetime as _dt
-    # Varre do mais recente para o mais antigo, acha o primeiro que existe (dia útil)
     for entry in reversed(history):
         f = entry["file"]
         path = f"{AUDIO_DIR}/{f}"
         if not os.path.exists(path):
             continue
-        # Pula fim de semana — não aparecem no player público
         try:
             ep_date = _dt.strptime(entry["date"], "%Y-%m-%d")
-            if ep_date.weekday() >= 5:
-                continue
-        except:
-            continue  # se não consegue parsear data, pula
+        except (KeyError, TypeError, ValueError):
+            continue
         dur = get_duration(path)
-        # Voice do dia baseado no weekday
         wd = ep_date.weekday()
-        voice_map = {0:"Thalita",1:"Francisca",2:"Thalita",3:"Francisca",4:"Thalita",5:"Dual",6:"Francisca"}
+        voice_map = {0:"Thalita",1:"Francisca",2:"Thalita",3:"Francisca",4:"Thalita + Francisca",5:"Thalita",6:""}
         voice_name = voice_map.get(wd, "")
         return {
             "file": f,
@@ -274,7 +275,7 @@ def list_episodes():
     """Lista episódios do histórico persistente (reverso, mais recente primeiro).
     Inclui voz do dia e duração para cada episódio existente."""
     from datetime import datetime as _dt
-    voice_map = {0:"Thalita",1:"Francisca",2:"Thalita",3:"Francisca",4:"Thalita",5:"Dual",6:"Francisca"}
+    voice_map = {0:"Thalita",1:"Francisca",2:"Thalita",3:"Francisca",4:"Thalita + Francisca",5:"Thalita",6:""}
     history = load_episode_history()
     eps = []
     for entry in reversed(history):
@@ -402,15 +403,6 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
       <div class="player-title">D5N Episódio #{podcast["num"]} — {data_curta}</div>
     </div>
     <audio id="audioEl" src="{podcast["path"]}" preload="none"></audio>'''
-    elif is_weekend(date):
-        player_html = '''
-    <div class="weekend-notice">
-      <span class="weekend-icon">📅</span>
-      <div class="weekend-info">
-        <div class="weekend-title">Edição de fim de semana</div>
-        <div class="weekend-desc">Podcast interno — curadoria de notícias sem publicação.</div>
-      </div>
-    </div>'''
     else:
         player_html = ''
 
@@ -1157,7 +1149,11 @@ def gerar_source_md(date, data_br, noticias, voice=None):
 
     # Determinar personalidade do dia
     if not voice:
-        voice = get_voice_of_day(date)
+        voice = get_voice_of_day(date) or {
+            "name": "Drop Five News",
+            "tone": "formal",
+            "tagline": "Boletim Drop Five News",
+        }
     name = voice.get("name", "Thalita")
     tone = voice.get("tone", "formal")
     tagline = voice.get("tagline", "Boletim Drop Five News")
@@ -1346,12 +1342,10 @@ def main():
     if not noticias:
         print("❌ ERRO: Nenhuma notícia disponível")
         sys.exit(1)
-    # Fim de semana: podcast é interno (não publicado)
-    is_weekend_page = is_weekend(date)
-    if is_weekend_page:
-        print(f"📅 Fim de semana ({format_data_curta(date)}) — podcast interno, ocultando player")
-    podcast = None if (args.no_podcast or is_weekend_page) else find_latest_podcast()
-    episodios = list_episodes() if not (args.no_podcast or is_weekend_page) else []
+    # O site mantém o último player e o histórico visíveis todos os dias.
+    # Domingo apenas impede a geração de um novo episódio; não oculta o acervo.
+    podcast = None if args.no_podcast else find_latest_podcast()
+    episodios = [] if args.no_podcast else list_episodes()
     
     voice = get_voice_of_day(date)
     if coverage_data.get("quality_score"):

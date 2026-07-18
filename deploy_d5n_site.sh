@@ -5,8 +5,8 @@
 # Em caso de falha, marca /tmp/.deploy-d5n-failed para recuperação
 # 
 # Comportamento:
-#   - Dia útil: copia MP3 como d5n-ep{NNN}-{DATE}.mp3, incrementa last_episode
-#   - Fim de semana: copia MP3 como d5n-weekend-{DATE}.mp3, NÃO incrementa contador
+#   - Segunda a sábado: copia MP3 como d5n-ep{NNN}-{DATE}.mp3 e atualiza contador
+#   - Domingo: manutenção, sem geração ou publicação de episódio
 
 set -euo pipefail
 
@@ -15,14 +15,14 @@ REPO="/root/repositorio/d5n-videocast-source"
 LOG="/tmp/deploy-d5n-${DATE}.log"
 FAILED=0
 
-# Detecta fim de semana — sáb (6) ou dom (7)
-WDAY=$(date +%u)  # 1=seg, 6=sab, 7=dom
-IS_WEEKEND=0
-if [ "$WDAY" -ge 6 ]; then
-    IS_WEEKEND=1
-    echo "[$(date '+%H:%M:%S')] 📅 Fim de semana — episódio salvo SEM número de sequência" | tee "$LOG"
+# Domingo é reservado para manutenção; sábado segue o fluxo normal de publicação.
+WDAY=$(date +%u)  # 1=seg, 6=sáb, 7=dom
+IS_SUNDAY=0
+if [ "$WDAY" -eq 7 ]; then
+    IS_SUNDAY=1
+    echo "[$(date '+%H:%M:%S')] 📅 Domingo — manutenção, sem novo episódio" | tee "$LOG"
 else
-    echo "[$(date '+%H:%M:%S')] 🚀 Deploy D5N - ${DATE}" | tee "$LOG"
+    echo "[$(date '+%H:%M:%S')] 🚀 Deploy Drop Five News - ${DATE}" | tee "$LOG"
 fi
 
 cd "$REPO"
@@ -81,27 +81,8 @@ if [ -n "$LATEST_MP3" ]; then
     fi
 
     if [ "$FAILED" -eq 0 ]; then
-        if [ "$IS_WEEKEND" -eq 1 ]; then
-            # ── Fim de semana: salva SEM número de episódio ──
-            if [ -f "$COUNTER_FILE" ]; then
-                TODAY_EXISTS=$(python3 -c "
-import json
-d=json.load(open('$COUNTER_FILE'))
-for e in d.get('history',[]):
-    if e.get('date')=='$DATE' and e.get('exists'):
-        print('1'); break
-" 2>/dev/null)
-            else
-                TODAY_EXISTS=""
-            fi
-            if [ -n "$TODAY_EXISTS" ]; then
-                echo "⚠️  Fim de semana — áudio já existe para hoje, sobrescrevendo" | tee -a "$LOG"
-            fi
-            DEST="audio/d5n-weekend-${DATE}.mp3"
-            cp "$LATEST_MP3" "$DEST"
-            cp "$LATEST_MP3" "/root/.hermes/cron/output/d5n-podcast-${DATE}.mp3"
-            echo "✅ Áudio salvo (sem número): $DEST ($(du -h "$DEST" | cut -f1))" | tee -a "$LOG"
-            # NÃO atualiza episode-counter.json — números sequenciais preservados
+        if [ "$IS_SUNDAY" -eq 1 ]; then
+            echo "ℹ️  MP3 ignorado: domingo é reservado para manutenção" | tee -a "$LOG"
         else
             # 🔥 CORREÇÃO: verificar se já existe episódio para a DATA DE HOJE
             # Se sim, reutilizar o número (sobrescrever) em vez de criar novo
