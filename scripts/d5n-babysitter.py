@@ -144,6 +144,24 @@ def validate_pilares(counter):
         
     return []
 
+def validate_pre_generation_content():
+    """Bloqueia roteiro ativo com frase proibida, data em inglês ou despedidas intermediárias."""
+    validators = [
+        "/root/.hermes/scripts/d5n-pre-gen-gate.py",
+        "/root/.hermes/scripts/d5n-mensagem-validate.py",
+    ]
+    errors = []
+    for validator in validators:
+        if not os.path.isfile(validator):
+            errors.append(f"❌ Validador obrigatório ausente: {validator}")
+            continue
+        result = subprocess.run(["python3", validator], capture_output=True, text=True, timeout=20)
+        if result.returncode != 0:
+            detail = (result.stdout or result.stderr).strip()
+            errors.append(f"❌ Gate de roteiro bloqueou a produção: {detail}")
+    return errors
+
+
 def validate_site_has_player(counter):
     """Valida que o index.html tem player com o episódio mais recente."""
     if not os.path.isfile(INDEX_FILE):
@@ -279,7 +297,13 @@ def main():
         for w in warnings:
             report.append(f"  {w}")
         
-        # ── Validação 5: Player do site ──
+        # ── Validação 5: Conteúdo antes do TTS ──
+        errors = validate_pre_generation_content()
+        for e in errors:
+            report.append(f"  {e}")
+            needs_manual = True
+
+        # ── Validação 6: Player do site ──
         warnings = validate_site_has_player(counter)
         for w in warnings:
             report.append(f"  {w}")
