@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-gerar_pagina_d5n.py — Gera site D5N no padrão premium do Google Drive.
-Libre Baskerville + DM Sans · Ticker com dots · Player custom · Scroll-reveal
+gerar_pagina_d5n.py — Gera o site do Drop Five News conforme o BrandBook v1.0.
+Inter · Midnight Navy · Electric Blue · Violet · Player custom
 """
 
 import os, sys, re, json, argparse
@@ -182,26 +182,27 @@ def get_pillar_avg_scores(coverage_data):
     return result
 
 def get_voice_of_day(date_str):
-    """Retorna a apresentação conforme a data editorial:
-    Seg/Qua/Sáb = Thalita | Ter/Qui = Francisca | Sex = dupla | Dom = manutenção.
-    """
+    """Política atual: Francisca no conteúdo; Antonio permanece nos headers."""
     try:
         d = datetime.strptime(date_str, '%Y-%m-%d')
         weekday = d.weekday()  # 0=Seg, 6=Dom
-        if weekday in (0, 2, 5):      # Seg, Qua, Sab
-            return {"name": "Thalita", "bio": "Jornalista formal, precisa e analitica", "avatar": "🎙️",
-                    "tone": "formal", "tagline": "Boletim Drop Five News, eu sou Thalita"}
-        elif weekday in (1, 3):       # Ter, Qui
+        if weekday < 6:
             return {"name": "Francisca", "bio": "Comunicadora casual, envolvente e direta", "avatar": "🎧",
-                    "tone": "casual", "tagline": "Drop Five News na area, aqui e a Francisca"}
-        elif weekday == 4:            # Sex = Dual
-            return {"name": "Thalita & Francisca", "bio": "Edicao dupla, formato especial de sexta", "avatar": "🎶",
-                    "tone": "dual", "tagline": "Edicao especial de sexta, Thalita e Francisca juntas"}
-        else:                          # Domingo = manutenção
-            return None
+                    "tone": "casual", "tagline": "Drop Five News, com Francisca"}
+        return None
     except:
-        return {"name": "Thalita", "bio": "Jornalista formal, precisa e analitica", "avatar": "🎙️",
-                "tone": "formal", "tagline": "Boletim Drop Five News, eu sou Thalita"}
+        return {"name": "Francisca", "bio": "Comunicadora casual, envolvente e direta", "avatar": "🎧",
+                "tone": "casual", "tagline": "Drop Five News, com Francisca"}
+
+def historical_voice_name(date_str):
+    """Preserva créditos antigos e aplica a voz pt-BR segura a partir de 18/07/2026."""
+    try:
+        d = datetime.strptime(date_str, '%Y-%m-%d')
+        if date_str >= "2026-07-18" and d.weekday() < 6:
+            return "Francisca"
+        return {0:"Thalita",1:"Francisca",2:"Thalita",3:"Francisca",4:"Thalita + Francisca",5:"Thalita",6:""}.get(d.weekday(), "")
+    except (TypeError, ValueError):
+        return ""
 
 def format_data_br(date_str):
     d = datetime.strptime(date_str, '%Y-%m-%d')
@@ -257,9 +258,7 @@ def find_latest_podcast():
         except (KeyError, TypeError, ValueError):
             continue
         dur = get_duration(path)
-        wd = ep_date.weekday()
-        voice_map = {0:"Thalita",1:"Francisca",2:"Thalita",3:"Francisca",4:"Thalita + Francisca",5:"Thalita",6:""}
-        voice_name = voice_map.get(wd, "")
+        voice_name = historical_voice_name(entry["date"])
         return {
             "file": f,
             "path": f"/audio/{f}",
@@ -275,7 +274,7 @@ def list_episodes():
     """Lista episódios do histórico persistente (reverso, mais recente primeiro).
     Inclui voz do dia e duração para cada episódio existente."""
     from datetime import datetime as _dt
-    voice_map = {0:"Thalita",1:"Francisca",2:"Thalita",3:"Francisca",4:"Thalita + Francisca",5:"Thalita",6:""}
+
     history = load_episode_history()
     eps = []
     for entry in reversed(history):
@@ -285,8 +284,7 @@ def list_episodes():
         dur = get_duration(path) if exists else 0
         # Voice do dia
         try:
-            wd = _dt.strptime(entry["date"], "%Y-%m-%d").weekday()
-            vname = voice_map.get(wd, "")
+            vname = historical_voice_name(entry["date"])
         except: vname = ""
         eps.append({
             "file": f,
@@ -542,7 +540,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#080b10">
+<meta name="theme-color" content="#0B1020">
 <meta name="description" content="Drop Five News: notícias essenciais, contexto e tecnologia em um podcast diário, de segunda a sábado.">
 <meta name="author" content="Drop Five News">
 <link rel="canonical" href="https://d5n-daily.netlify.app/">
@@ -563,7 +561,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"PodcastSeries","name":"Drop Five News","url":"https://d5n-daily.netlify.app/","description":"Notícias essenciais, contexto e tecnologia em um podcast diário.","inLanguage":"pt-BR"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after {{ box-sizing:border-box; margin:0; padding:0; }}
   :root {{
@@ -574,7 +572,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   html {{ font-size:16px; scroll-behavior:smooth; }}
   body {{
     background:var(--bg); color:var(--text);
-    font-family:'DM Sans',sans-serif; font-weight:300;
+    font-family:'Inter',sans-serif; font-weight:300;
     line-height:1.6; min-height:100vh; overflow-x:hidden;
   }}
   header {{
@@ -582,7 +580,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
     border-bottom:1px solid var(--border); padding:0 2rem;
     display:flex; align-items:center; justify-content:space-between; height:52px;
   }}
-  .logo {{ font-family:'Libre Baskerville',serif; font-size:1rem; font-weight:700; letter-spacing:0.04em; color:var(--text); text-decoration:none; }}
+  .logo {{ font-family:'Inter',sans-serif; font-size:1rem; font-weight:700; letter-spacing:0.04em; color:var(--text); text-decoration:none; }}
   .logo span {{ color:var(--accent); }}
   .header-meta {{ font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); }}
   .header-right {{ display:flex; align-items:center; gap:1.5rem; }}
@@ -602,11 +600,11 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .container {{ max-width:900px; margin:0 auto; padding:0 2rem; }}
   .hero {{ padding:3.5rem 0 2.5rem; border-bottom:1px solid var(--border); }}
   .hero-eyebrow {{ font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:1rem; }}
-  .hero-title {{ font-family:'Libre Baskerville',serif; font-size:clamp(2rem,5vw,3.2rem); font-weight:700; line-height:1.1; color:var(--text); margin-bottom:0.5rem; }}
+  .hero-title {{ font-family:'Inter',sans-serif; font-size:clamp(2rem,5vw,3.2rem); font-weight:700; line-height:1.1; color:var(--text); margin-bottom:0.5rem; }}
   .hero-title em {{ font-style:italic; color:var(--accent); }}
   .hero-sub {{ font-size:0.85rem; color:var(--muted); margin-top:1rem; display:flex; align-items:center; gap:1.5rem; }}
   .hero-stat {{ display:flex; align-items:baseline; gap:0.35rem; }}
-  .hero-stat strong {{ font-family:'Libre Baskerville',serif; font-size:1.4rem; color:var(--text); font-weight:400; }}
+  .hero-stat strong {{ font-family:'Inter',sans-serif; font-size:1.4rem; color:var(--text); font-weight:400; }}
   .hero-stat span {{ font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }}
   .divider-v {{ width:1px; height:24px; background:var(--border); }}
 
@@ -628,14 +626,14 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .player-copy-btn {{ width:22px; height:22px; border:none; background:transparent; color:var(--muted); cursor:pointer; font-size:0.65rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:3px; transition:all 0.15s; }}
   .player-copy-btn:hover {{ color:var(--accent); background:rgba(200,169,110,0.06); }}
   .player-copy-btn.copied {{ color:#4ade80; }}
-  .speed-btn {{ padding:2px 7px; border-radius:3px; border:1px solid var(--accent-dim); background:transparent; color:var(--muted); cursor:pointer; flex-shrink:0; font-family:'DM Sans',sans-serif; font-size:0.55rem; font-weight:500; letter-spacing:0.04em; transition:all 0.15s; }}
+  .speed-btn {{ padding:2px 7px; border-radius:3px; border:1px solid var(--accent-dim); background:transparent; color:var(--muted); cursor:pointer; flex-shrink:0; font-family:'Inter',sans-serif; font-size:0.55rem; font-weight:500; letter-spacing:0.04em; transition:all 0.15s; }}
   .speed-btn:hover {{ color:var(--accent); border-color:var(--accent); }}
   .player-title {{ font-size:0.65rem; color:var(--muted); margin-top:0.4rem; letter-spacing:0.04em; }}
 
   .section {{ padding:2.5rem 0; border-bottom:1px solid var(--border-lt); }}
   .section-header {{ display:flex; align-items:baseline; gap:0.75rem; margin-bottom:1.75rem; padding-bottom:0.75rem; border-bottom:1px solid var(--border); }}
   .section-icon {{ font-size:0.85rem; }}
-  .section-name {{ font-family:'Libre Baskerville',serif; font-size:0.9rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; }}
+  .section-name {{ font-family:'Inter',sans-serif; font-size:0.9rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; }}
   .section-name.global {{ color:var(--global); }}
   .section-name.tech {{ color:var(--tech); }}
   .section-name.econ {{ color:var(--econ); }}
@@ -688,12 +686,12 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .news-item:last-child {{ border-bottom:none; }}
   .news-item.visible {{ opacity:1; transform:translateY(0); }}
   .news-item:hover {{ background:var(--surface); margin:0 -1.25rem; padding-left:1.25rem; padding-right:1.25rem; border-radius:2px; }}
-  .news-num {{ font-family:'Libre Baskerville',serif; font-size:0.7rem; color:var(--faint); padding-top:0.15rem; text-align:right; font-style:italic; }}
+  .news-num {{ font-family:'Inter',sans-serif; font-size:0.7rem; color:var(--faint); padding-top:0.15rem; text-align:right; font-style:italic; }}
   .news-headline {{ font-size:0.925rem; font-weight:400; line-height:1.45; color:var(--text); transition:color 0.2s; }}
   .news-item:hover .news-headline {{ color:#fff; }}
   .news-source {{ font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); white-space:nowrap; padding-top:0.2rem; transition:color 0.2s; }}
   .news-item:hover .news-source {{ color:var(--accent); }}
-  .news-item.featured .news-headline {{ font-family:'Libre Baskerville',serif; font-size:1.05rem; font-weight:700; line-height:1.35; }}
+  .news-item.featured .news-headline {{ font-family:'Inter',sans-serif; font-size:1.05rem; font-weight:700; line-height:1.35; }}
   .news-item.featured .news-num {{ font-size:0.8rem; color:var(--accent-dim); }}
 
   .premium-block {{ margin:2.5rem 0; padding:1.5rem; border:1px solid var(--accent-dim); border-radius:3px; background:linear-gradient(135deg,rgba(200,169,110,0.04) 0%,transparent 60%); position:relative; overflow:hidden; }}
@@ -717,12 +715,12 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .voice-section {{ margin:2rem 0 1rem; padding:1.25rem; border:1px solid var(--border); border-radius:3px; background:var(--surface); display:flex; align-items:center; gap:1rem; }}
   .voice-avatar {{ width:40px; height:40px; border-radius:50%; background:var(--bg); border:1px solid var(--accent-dim); display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }}
   .voice-info {{ flex:1; min-width:0; }}
-  .voice-name {{ font-family:'Libre Baskerville',serif; font-size:0.82rem; font-weight:700; color:var(--text); }}
+  .voice-name {{ font-family:'Inter',sans-serif; font-size:0.82rem; font-weight:700; color:var(--text); }}
   .voice-bio {{ font-size:0.7rem; color:var(--muted); }}
   .premium-block::before {{ content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,var(--accent),transparent); opacity:0.5; }}
   .premium-eyebrow {{ font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:0.6rem; display:flex; align-items:center; gap:0.5rem; }}
   .premium-eyebrow::after {{ content:''; flex:1; height:1px; background:var(--accent-dim); opacity:0.4; }}
-  .premium-title {{ font-family:'Libre Baskerville',serif; font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:0.5rem; }}
+  .premium-title {{ font-family:'Inter',sans-serif; font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:0.5rem; }}
   .premium-desc {{ font-size:0.82rem; color:var(--muted); line-height:1.5; margin-bottom:1.2rem; }}
   .premium-preview {{ display:flex; flex-direction:column; gap:0.5rem; margin-bottom:1.25rem; padding:1rem; background:rgba(0,0,0,0.3); border-radius:2px; border-left:2px solid var(--accent-dim); filter:blur(3px); user-select:none; pointer-events:none; }}
   .premium-preview-line {{ height:10px; background:var(--faint); border-radius:2px; }}
@@ -730,13 +728,13 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .premium-preview-line:nth-child(2) {{ width:70%; }}
   .premium-preview-line:nth-child(3) {{ width:90%; }}
   .premium-preview-line:nth-child(4) {{ width:60%; }}
-  .btn-premium {{ display:inline-flex; align-items:center; gap:0.5rem; background:transparent; border:1px solid var(--accent); color:var(--accent); font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; padding:0.5rem 1.1rem; border-radius:2px; cursor:pointer; text-decoration:none; transition:all 0.2s; }}
+  .btn-premium {{ display:inline-flex; align-items:center; gap:0.5rem; background:transparent; border:1px solid var(--accent); color:var(--accent); font-family:'Inter',sans-serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; padding:0.5rem 1.1rem; border-radius:2px; cursor:pointer; text-decoration:none; transition:all 0.2s; }}
   .btn-premium:hover {{ background:var(--accent); color:var(--bg); }}
 
   /* Premium programs grid (Manhã Conectada + Fechamento) */
   .premium-programs {{ display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin:1.25rem 0 1.5rem; }}
   .premium-program {{ padding:1rem; background:rgba(0,0,0,0.25); border:1px solid var(--border); border-radius:4px; }}
-  .premium-program-time {{ font-family:'Libre Baskerville',serif; font-size:1.4rem; font-weight:700; color:var(--accent); margin-bottom:0.3rem; letter-spacing:-0.02em; }}
+  .premium-program-time {{ font-family:'Inter',sans-serif; font-size:1.4rem; font-weight:700; color:var(--accent); margin-bottom:0.3rem; letter-spacing:-0.02em; }}
   .premium-program-name {{ font-size:0.85rem; font-weight:500; color:var(--text); margin-bottom:0.6rem; }}
   .premium-program-hook {{ font-size:0.72rem; line-height:1.55; color:var(--muted); margin-bottom:0.75rem; }}
   .premium-program-hook strong {{ color:var(--text); font-weight:500; }}
@@ -746,7 +744,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
 
   footer {{ border-top:1px solid var(--border); padding:2rem 0; margin-top:1rem; }}
   .footer-inner {{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }}
-  .footer-brand {{ font-family:'Libre Baskerville',serif; font-size:0.8rem; color:var(--muted); }}
+  .footer-brand {{ font-family:'Inter',sans-serif; font-size:0.8rem; color:var(--muted); }}
   .footer-brand strong {{ color:var(--text); }}
   .footer-links {{ display:flex; gap:1.5rem; }}
   .footer-links a {{ font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); text-decoration:none; transition:color 0.2s; }}
@@ -765,7 +763,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .archive-link {{ display:flex; align-items:center; justify-content:space-between; padding:1rem 0; text-decoration:none; border-bottom:1px solid var(--border-lt); transition:padding 0.2s; cursor:pointer; }}
   .archive-link:hover {{ padding-left:0.5rem; background:rgba(148,163,184,0.03); }}
   .archive-link-meta {{ font-size:0.78rem; color:var(--muted); display:flex; align-items:center; gap:0.5rem; }}
-  .archive-link-date {{ font-family:'Libre Baskerville',serif; font-size:0.88rem; color:var(--text); font-style:italic; }}
+  .archive-link-date {{ font-family:'Inter',sans-serif; font-size:0.88rem; color:var(--text); font-style:italic; }}
   .archive-link-play {{ color:var(--accent); font-size:0.85rem; width:2rem; height:2rem; display:flex; align-items:center; justify-content:center; border-radius:50%; background:rgba(148,163,184,0.08); transition:all 0.2s; flex-shrink:0; }}
   .archive-link:hover .archive-link-play {{ background:rgba(148,163,184,0.15); color:#fff; }}
   .archive-link--missing {{ opacity:0.35; cursor:default; }}
@@ -792,32 +790,28 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .archive-toggle-arrow {{ font-size:0.85rem; transition:transform 0.25s ease; }}
   .archive-archive.expanded .archive-toggle-arrow {{ transform:rotate(180deg); }}
 
-  /* Identidade Drop Five News 2026 */
+  /* Identidade oficial — BrandBook Drop Five News v1.0 */
   :root {{
-    --bg:#080b10; --surface:#0f151e; --surface-raised:#151d28;
-    --border:#223043; --border-lt:#182231; --text:#f1f5f9;
-    --text-secondary:#cbd5e1; --muted:#8391a5; --faint:#405069;
-    --accent:#7dd3fc; --accent-2:#a78bfa; --accent-dim:#36536d;
+    --bg:#0B1020; --surface:#11182b; --surface-raised:#172039;
+    --border:#253252; --border-lt:#19243d; --text:#F8FAFC;
+    --text-secondary:#d7deea; --muted:#93a1b8; --faint:#52617a;
+    --accent:#00D4FF; --accent-2:#7C3AED; --accent-dim:#245c78;
     --brand-gradient:linear-gradient(115deg,var(--accent),var(--accent-2));
   }}
-  body {{ background:
-    radial-gradient(circle at 85% 5%,rgba(125,211,252,.07),transparent 24rem),
-    radial-gradient(circle at 12% 32%,rgba(167,139,250,.045),transparent 28rem),var(--bg); }}
-  body::before {{ content:''; position:fixed; inset:0; pointer-events:none; opacity:.16; z-index:-1;
-    background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-    background-size:48px 48px; mask-image:linear-gradient(to bottom,black,transparent 72%); }}
-  header {{ background:rgba(8,11,16,.88); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); height:64px; padding-top:env(safe-area-inset-top); }}
-  .logo {{ display:inline-flex; align-items:center; gap:.65rem; font-family:'DM Sans',sans-serif; font-size:.78rem; text-transform:uppercase; letter-spacing:.15em; }}
-  .brand-mark {{ width:30px; height:30px; border-radius:8px; box-shadow:0 0 24px rgba(125,211,252,.14); }}
-  .logo-wordmark {{ color:var(--text); }} .logo-wordmark strong {{ color:var(--accent); font-weight:500; }}
+  body {{ background:var(--bg); font-family:'Inter',sans-serif; font-weight:400; }}
+  body::before {{ content:''; position:fixed; inset:0; pointer-events:none; opacity:.1; z-index:-1; background-image:radial-gradient(rgba(0,212,255,.3) 1px,transparent 1px); background-size:32px 32px; mask-image:linear-gradient(to bottom,black,transparent 55%); }}
+  header {{ background:rgba(11,16,32,.94); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); height:64px; padding-top:env(safe-area-inset-top); }}
+  .logo {{ display:inline-flex; align-items:center; gap:.65rem; font-family:'Inter',sans-serif; font-size:.82rem; letter-spacing:.01em; text-transform:none; }}
+  .brand-mark {{ width:34px; height:34px; border-radius:8px; box-shadow:none; }}
+  .logo-wordmark {{ color:var(--text); font-weight:600; }} .logo-wordmark strong {{ color:var(--accent); font-weight:700; }}
   .hero {{ position:relative; padding:4.75rem 0 3rem; }}
-  .hero::after {{ content:'05'; position:absolute; right:0; top:1.5rem; font-family:'Libre Baskerville',serif; font-size:8rem; line-height:1; color:transparent; -webkit-text-stroke:1px rgba(125,211,252,.09); pointer-events:none; }}
+  .hero::after {{ content:'05'; position:absolute; right:0; top:1.5rem; font-family:'Inter',sans-serif; font-size:8rem; font-weight:700; line-height:1; color:transparent; -webkit-text-stroke:1px rgba(0,212,255,.10); pointer-events:none; }}
   .hero-eyebrow {{ color:var(--accent); font-weight:500; }}
-  .hero-title {{ max-width:680px; font-size:clamp(2.5rem,7vw,4.8rem); letter-spacing:-.045em; }}
-  .hero-title em {{ background:var(--brand-gradient); -webkit-background-clip:text; background-clip:text; color:transparent; }}
+  .hero-title {{ max-width:680px; font-family:'Inter',sans-serif; font-size:clamp(2.5rem,7vw,4.8rem); font-weight:700; letter-spacing:-.045em; }}
+  .hero-title em {{ font-style:normal; color:var(--accent); }}
   .hero-lead {{ max-width:610px; margin-top:1rem; color:var(--text-secondary); font-size:clamp(.95rem,2vw,1.08rem); line-height:1.7; }}
-  .player-bar {{ padding:1.15rem 1.25rem; border-radius:14px; border-color:#2a3b50; background:linear-gradient(145deg,rgba(21,29,40,.96),rgba(12,17,24,.96)); box-shadow:0 18px 48px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.025); }}
-  .play-btn {{ width:42px; height:42px; border:0; color:#071019; background:var(--brand-gradient); box-shadow:0 6px 22px rgba(125,211,252,.2); }}
+  .player-bar {{ padding:1.15rem 1.25rem; border-radius:10px; border-color:var(--border); background:var(--surface); box-shadow:none; }}
+  .play-btn {{ width:42px; height:42px; border:0; color:#0B1020; background:var(--brand-gradient); box-shadow:none; }}
   .play-btn:hover {{ transform:translateY(-1px); background:var(--brand-gradient); color:#071019; filter:brightness(1.08); }}
   .player-title {{ margin-top:.65rem; color:var(--text-secondary); }}
   .search-bar,.filter-btn,.section-context,.premium-block,.voice-section {{ border-radius:10px; }}

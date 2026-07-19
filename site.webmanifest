@@ -4,8 +4,8 @@
   "description": "Notícias essenciais, contexto e tecnologia em um podcast diário.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#080b10",
-  "theme_color": "#080b10",
+  "background_color": "#0B1020",
+  "theme_color": "#0B1020",
   "lang": "pt-BR",
   "icons": [
     {"src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}

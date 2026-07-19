@@ -20,7 +20,6 @@ EXPECTED = {
     "loudness_target_lufs": -16,
     "true_peak_target_dbtp": -1.5,
 }
-THALITA = "pt-BR-ThalitaMultilingualNeural"
 FRANCISCA = "pt-BR-FranciscaNeural"
 FORBIDDEN = ("cinto", "DropFiveNews", "Drop News")
 ENGLISH_DATE = re.compile(
@@ -122,21 +121,13 @@ def validate_manifest(errors: list[str]) -> dict:
 
     if weekday == 6:
         fail(errors, "manifesto representa episódio de domingo")
-    elif weekday == 4:
-        expected_map = {name: [FRANCISCA, THALITA][i % 2] for i, name in enumerate(sections)}
-        if mode != "sexta-dual-dinamica":
-            fail(errors, f"sexta-feira exige presentation_mode='sexta-dual-dinamica', recebido {mode!r}")
-        if voices != [THALITA, FRANCISCA]:
-            fail(errors, f"sexta-feira exige Thalita e Francisca, recebido {voices!r}")
-        if voice_map != expected_map:
-            fail(errors, "sexta-feira sem alternância dinâmica Francisca/Thalita por bloco")
     else:
-        expected_voice = THALITA if weekday in {0, 2, 5} else FRANCISCA
-        expected_mode = "solo-thalita" if expected_voice == THALITA else "solo-francisca"
+        expected_voice = FRANCISCA
+        expected_mode = "solo-francisca-ptbr"
         if voices != [expected_voice] or mode != expected_mode:
-            fail(errors, f"voz/modo divergente da data editorial: {voices!r}, {mode!r}")
+            fail(errors, f"conteúdo exige voz estritamente pt-BR: {voices!r}, {mode!r}")
         if any(voice != expected_voice for voice in voice_map.values()):
-            fail(errors, "section_voice_map diverge da apresentadora do dia")
+            fail(errors, "section_voice_map contém voz não aprovada para pt-BR")
     return data
 
 
