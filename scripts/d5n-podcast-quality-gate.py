@@ -20,6 +20,7 @@ EXPECTED = {
     "loudness_target_lufs": -16,
     "true_peak_target_dbtp": -1.5,
 }
+THALITA = "pt-BR-ThalitaMultilingualNeural"
 FRANCISCA = "pt-BR-FranciscaNeural"
 FORBIDDEN = ("cinto", "DropFiveNews", "Drop News")
 ENGLISH_DATE = re.compile(
@@ -121,13 +122,25 @@ def validate_manifest(errors: list[str]) -> dict:
 
     if weekday == 6:
         fail(errors, "manifesto representa episódio de domingo")
+    elif weekday in {0, 2, 5}:
+        if voices != [THALITA] or mode != "solo-thalita":
+            fail(errors, f"escala exige Thalita: {voices!r}, {mode!r}")
+        if any(voice != THALITA for voice in voice_map.values()):
+            fail(errors, "section_voice_map não segue a escala de Thalita")
+    elif weekday in {1, 3}:
+        if voices != [FRANCISCA] or mode != "solo-francisca":
+            fail(errors, f"escala exige Francisca: {voices!r}, {mode!r}")
+        if any(voice != FRANCISCA for voice in voice_map.values()):
+            fail(errors, "section_voice_map não segue a escala de Francisca")
     else:
-        expected_voice = FRANCISCA
-        expected_mode = "solo-francisca-ptbr"
-        if voices != [expected_voice] or mode != expected_mode:
-            fail(errors, f"conteúdo exige voz estritamente pt-BR: {voices!r}, {mode!r}")
-        if any(voice != expected_voice for voice in voice_map.values()):
-            fail(errors, "section_voice_map contém voz não aprovada para pt-BR")
+        expected_map = {
+            name: (THALITA if index % 2 == 0 else FRANCISCA)
+            for index, name in enumerate(sections)
+        }
+        if voices != [THALITA, FRANCISCA] or mode != "sexta-dual-dinamica":
+            fail(errors, f"sexta exige alternância Thalita/Francisca: {voices!r}, {mode!r}")
+        if voice_map != expected_map:
+            fail(errors, "section_voice_map não alterna Thalita e Francisca na sexta")
     return data
 
 
