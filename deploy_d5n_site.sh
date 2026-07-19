@@ -191,7 +191,11 @@ if [ "$FAILED" -eq 0 ]; then
         echo "📭 Nada novo para commitar" | tee -a "$LOG"
     else
         git commit -m "📰 D5N - ${DATE}" 2>&1 | tee -a "$LOG"
-        git push origin master 2>&1 | tee -a "$LOG"
+        if ! git push origin master 2>&1 | tee -a "$LOG"; then
+            echo "⚠️  Remoto avançou; integrando com rebase seguro..." | tee -a "$LOG"
+            git pull --rebase origin master 2>&1 | tee -a "$LOG"
+            git push origin master 2>&1 | tee -a "$LOG"
+        fi
         echo "✅ Push feito! Netlify fará deploy automático." | tee -a "$LOG"
     fi
     # Limpar marcador de falha se existir
