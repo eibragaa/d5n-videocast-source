@@ -1,227 +1,90 @@
 #!/usr/bin/env python3
-"""
-amanha_conectada_mixer.py — Mixer simplificado para o flash "Amanhã Conectada".
+"""Mixer da MANHÃ CONECTADA — identidade sonora própria e recursos versionados."""
+from __future__ import annotations
 
-Diferente do drop5news-mixer-v9 (que faz 8 seções temáticas), este é OTIMIZADO
-para o formato flash de 3-5min:
-  - HOOK (15s) com trilha enérgica
-  - 3-5 BLOCOS curtos (2-3 frases cada) com trilha mid-forward
-  - CTA (15s) com trilha cinematic
-
-Usa as 6 trilhas extraídas dos vídeos do Jean (D5N) em /root/d5n-trilhas/audios_extraidos/
-Tambem aceita override via TRILHAS_DIR env var.
-
-Uso:
-  python3 amanha_conectada_mixer.py --voz /tmp/voz.mp3 --output /tmp/amanha.mp3
-"""
-
-import os
-import sys
 import argparse
 import subprocess
+import sys
+import tempfile
 from pathlib import Path
 
 from pydub import AudioSegment
 
-# Diretórios
-TRILHAS_DIR = os.environ.get(
-    "TRILHAS_DIR", "/root/d5n-trilhas/audios_extraidos"
-)
-# Trilhas mapeadas (do MIXMAP)
-TRILHA_HOOK = "trilha-03-53s.mp3"      # energia/eletrônica
-TRILHA_CHUNK = "trilha-04-96s.mp3"     # mid-forward
-TRILHA_CTA = "trilha-01-147s.mp3"      # cinematic grave
-
-# Volumes (em dB) - ducking forte pra deixar voz passar
-BG_CHUNK_DB = -22      # trilha mid-forward por baixo da voz
-BG_HOOK_DB = -16       # hook mais alto (sem voz por cima)
-BG_CTA_DB = -20        # CTA
-
-FADE_HOOK_MS = 800
-FADE_CTA_MS = 1500
-FADE_CHUNK_IN_MS = 600
-FADE_CHUNK_OUT_MS = 600
-
-# Validação
-MIN_DUR_S = 180  # 3 min
-MAX_DUR_S = 300  # 5 min
+REPO = Path(__file__).resolve().parents[1]
+ASSETS = REPO / "assets" / "audio" / "manha-conectada"
+INTRO = ASSETS / "intro-jingle.mp3"
+BED = ASSETS / "bg-music.mp3"
+STING = ASSETS / "transition-sting.mp3"
+MIN_SECONDS = 225
+MAX_SECONDS = 390
 
 
-def get_duration_seconds(audio_path: str) -> float:
-    """Retorna duração do áudio em segundos."""
-    audio = AudioSegment.from_file(audio_path)
-    return len(audio) / 1000.0
+def loop_to(audio: AudioSegment, length: int) -> AudioSegment:
+    if not audio:
+        raise ValueError("trilha vazia")
+    result = AudioSegment.empty()
+    while len(result) < length:
+        result += audio
+    return result[:length]
 
 
-def load_trilha(name: str) -> AudioSegment:
-    """Carrega trilha do diretório TRILHAS_DIR."""
-    path = Path(TRILHAS_DIR) / name
-    if not path.exists():
-        raise FileNotFoundError(f"Trilha não encontrada: {path}")
-    return AudioSegment.from_file(str(path))
+def require(path: Path) -> None:
+    if not path.exists() or path.stat().st_size < 5_000:
+        raise FileNotFoundError(f"recurso de áudio ausente: {path}")
 
 
-def duck_under_voice(
-    trilha: AudioSegment,
-    voice: AudioSegment,
-    bg_db: float,
-    fade_in_ms: int,
-    fade_out_ms: int,
-) -> AudioSegment:
-    """Faz a trilha tocar por baixo da voz (com fade in/out)."""
-    # Ajusta volume
-    trilha = trilha + bg_db
-
-    # Loop se for menor que a voz
-    if len(trilha) < len(voice):
-        loops = (len(voice) // len(trilha)) + 1
-        trilha = trilha * loops
-
-    # Corta no tamanho da voz
-    trilha = trilha[: len(voice)]
-
-    # Fade in/out
-    if fade_in_ms > 0:
-        trilha = trilha.fade_in(fade_in_ms)
-    if fade_out_ms > 0:
-        trilha = trilha.fade_out(fade_out_ms)
-
-    return trilha
-
-
-def mix_hook_section(voice: AudioSegment, hook_trilha: AudioSegment) -> AudioSegment:
-    """Mix do HOOK: trilha de energia + voz por cima (hook mais alto)."""
-    hook_trilha = hook_trilha + BG_HOOK_DB
-    # Hook dura no máx 15s
-    hook_trilha = hook_trilha[: min(len(voice), 15_000)]
-    hook_trilha = hook_trilha.fade_in(FADE_HOOK_MS).fade_out(FADE_HOOK_MS)
-
-    # Trilha + voz (trilha mais alta no hook)
-    mix = hook_trilha.overlay(voice[: len(hook_trilha)])
-    return mix
-
-
-def mix_chunk_section(voice: AudioSegment, chunk_trilha: AudioSegment) -> AudioSegment:
-    """Mix do CHUNK: voz em cima + trilha mid-forward em loop com ducking."""
-    trilha = duck_under_voice(
-        chunk_trilha, voice, BG_CHUNK_DB, FADE_CHUNK_IN_MS, FADE_CHUNK_OUT_MS
-    )
-    # Trilha + voz
-    mix = trilha.overlay(voice)
-    return mix
-
-
-def mix_cta_section(voice_tail: AudioSegment, cta_trilha: AudioSegment) -> AudioSegment:
-    """Mix do CTA: trilha cinematic + voz do CTA."""
-    cta_trilha = cta_trilha + BG_CTA_DB
-    cta_trilha = cta_trilha[: len(voice_tail)]
-    cta_trilha = cta_trilha.fade_in(FADE_CTA_MS).fade_out(FADE_CTA_MS)
-
-    mix = cta_trilha.overlay(voice_tail)
-    return mix
-
-
-def main():
-    parser = argparse.ArgumentParser(description="Amanhã Conectada — Mixer")
-    parser.add_argument("--voz", required=True, help="Caminho do MP3 de voz (gerado pelo TTS)")
-    parser.add_argument("--output", required=True, help="Caminho do MP3 de saída")
-    parser.add_argument("--hook-seconds", type=float, default=15.0, help="Duração do HOOK em segundos")
-    parser.add_argument("--cta-seconds", type=float, default=18.0, help="Duração do CTA em segundos")
-    parser.add_argument("--skip-validation", action="store_true", help="Pula validação de duração")
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Mixer da MANHÃ CONECTADA")
+    parser.add_argument("--voz", required=True)
+    parser.add_argument("--output", required=True)
     args = parser.parse_args()
+    voice_path, output = Path(args.voz), Path(args.output)
+    for path in (voice_path, INTRO, BED, STING):
+        require(path)
 
-    # Valida entrada
-    if not Path(args.voz).exists():
-        print(f"❌ Voz não encontrada: {args.voz}")
-        sys.exit(1)
+    voice = AudioSegment.from_file(voice_path).set_channels(1).set_frame_rate(44100)
+    duration = len(voice) / 1000
+    if not MIN_SECONDS <= duration <= MAX_SECONDS:
+        raise ValueError(f"voz fora da faixa {MIN_SECONDS}-{MAX_SECONDS}s: {duration:.1f}s")
 
-    # Carrega voz
-    print(f"🎙️ Carregando voz: {args.voz}")
-    voice = AudioSegment.from_file(args.voz)
-    voice_dur = len(voice) / 1000.0
-    print(f"   Duração: {voice_dur:.1f}s")
+    intro = AudioSegment.from_file(INTRO).set_channels(1).set_frame_rate(44100)[:6000].fade_in(300).fade_out(900) - 13
+    bed = AudioSegment.from_file(BED).set_channels(1).set_frame_rate(44100)
+    sting = AudioSegment.from_file(STING).set_channels(1).set_frame_rate(44100)[:1800].fade_out(500) - 17
 
-    # Validação
-    if not args.skip_validation:
-        if voice_dur < MIN_DUR_S:
-            print(f"⚠️  ATENÇÃO: Áudio com {voice_dur:.0f}s (mínimo {MIN_DUR_S}s)")
-            print(f"    O TTS/LLM precisa expandir o texto!")
-        elif voice_dur > MAX_DUR_S:
-            print(f"⚠️  ATENÇÃO: Áudio com {voice_dur:.0f}s (máximo {MAX_DUR_S}s)")
-            print(f"    O TTS/LLM precisa condensar o texto!")
-        else:
-            print(f"✅ Duração dentro do range ({MIN_DUR_S}-{MAX_DUR_S}s)")
+    # Abertura de 1,2s antes da voz; cama discreta e marca de transição no terço final.
+    lead = intro[:1200]
+    voice_canvas = AudioSegment.silent(duration=1200, frame_rate=44100) + voice
+    music = loop_to(bed - 30, len(voice_canvas)).fade_in(900).fade_out(2200)
+    music = music.overlay(intro, position=0)
+    transition_at = max(20_000, int(len(voice_canvas) * 0.72))
+    music = music.overlay(sting, position=transition_at)
+    mixed = music.overlay(voice_canvas).fade_out(1800)
 
-    # Carrega trilhas
-    print(f"🎵 Carregando trilhas de {TRILHAS_DIR}")
-    hook_trilha = load_trilha(TRILHA_HOOK)
-    chunk_trilha = load_trilha(TRILHA_CHUNK)
-    cta_trilha = load_trilha(TRILHA_CTA)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
+        tmp_path = Path(tmp.name)
+    try:
+        mixed.export(tmp_path, format="wav")
+        cmd = [
+            "ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", str(tmp_path),
+            "-af", "highpass=f=65,loudnorm=I=-16:TP=-1.5:LRA=11",
+            "-ar", "44100", "-ac", "1", "-c:a", "libmp3lame", "-b:a", "192k", str(output),
+        ]
+        proc = subprocess.run(cmd, text=True, capture_output=True, timeout=600)
+        if proc.returncode != 0:
+            raise RuntimeError(proc.stderr[-500:])
+    finally:
+        tmp_path.unlink(missing_ok=True)
 
-    # Define cortes (em ms)
-    hook_ms = int(args.hook_seconds * 1000)
-    cta_ms = int(args.cta_seconds * 1000)
-    chunk_start_ms = hook_ms
-    chunk_end_ms = max(hook_ms, len(voice) - cta_ms)
-    cta_start_ms = chunk_end_ms
-
-    # Validação: chunk precisa ter pelo menos 30s
-    if (chunk_end_ms - chunk_start_ms) < 30_000:
-        print(f"❌ CHUNK muito curto ({chunk_end_ms - chunk_start_ms}ms). Áudio total: {len(voice)}ms")
-        sys.exit(1)
-
-    print(f"   HOOK: 0 → {hook_ms}ms ({args.hook_seconds}s)")
-    print(f"   CHUNK: {chunk_start_ms} → {chunk_end_ms}ms ({(chunk_end_ms - chunk_start_ms) / 1000:.1f}s)")
-    print(f"   CTA: {cta_start_ms} → {len(voice)}ms ({(len(voice) - cta_start_ms) / 1000:.1f}s)")
-
-    # Mix cada seção
-    print("🎚️ Mixando HOOK...")
-    voice_hook = voice[:chunk_start_ms]
-    out_hook = mix_hook_section(voice_hook, hook_trilha)
-
-    print("🎚️ Mixando CHUNK...")
-    voice_chunk = voice[chunk_start_ms:chunk_end_ms]
-    out_chunk = mix_chunk_section(voice_chunk, chunk_trilha)
-
-    print("🎚️ Mixando CTA...")
-    voice_cta = voice[cta_start_ms:]
-    out_cta = mix_cta_section(voice_cta, cta_trilha)
-
-    # Concatena
-    print("🔗 Concatenando seções...")
-    final = out_hook + out_chunk + out_cta
-
-    # Fade in/out geral (2s)
-    final = final.fade_in(1000).fade_out(2000)
-
-    # Normaliza (peak a -1dB)
-    print("📏 Normalizando...")
-    final = final.apply_gain(-1.0 - final.max_dBFS)
-
-    # Exporta
-    print(f"💾 Salvando em {args.output}")
-    final.export(args.output, format="mp3", bitrate="192k")
-
-    # Relatório
-    final_dur = len(final) / 1000.0
-    final_size_mb = Path(args.output).stat().st_size / (1024 * 1024)
-    print("")
-    print("=" * 50)
-    print(f"✅ MIX CONCLUÍDO")
-    print(f"   Duração final: {final_dur:.1f}s")
-    print(f"   Tamanho: {final_size_mb:.1f}MB")
-    print(f"   Peak: {final.max_dBFS:.1f}dB")
-    print(f"   Arquivo: {args.output}")
-    print("=" * 50)
-
-    if not args.skip_validation:
-        if final_dur < MIN_DUR_S or final_dur > MAX_DUR_S:
-            print(f"⚠️  Duração {final_dur:.0f}s fora do range {MIN_DUR_S}-{MAX_DUR_S}s")
-            print(f"    O roteiro precisa ser expandido/condensado")
-            # Não falha — só avisa (cron retry pode pegar)
-
+    if not output.exists() or output.stat().st_size < 500_000:
+        raise RuntimeError("MP3 final ausente ou pequeno demais")
+    print(f"OK {output}")
     return 0
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        raise SystemExit(main())
+    except Exception as exc:
+        print(f"ERRO: {exc}", file=sys.stderr)
+        raise SystemExit(1)

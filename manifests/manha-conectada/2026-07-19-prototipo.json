@@ -1,0 +1,202 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-07-19",
+  "timezone": "America/Sao_Paulo",
+  "prototype": true,
+  "business_day_override": true,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/audio/manha-conectada-2026-07-19-prototipo.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/source-manha-2026-07-19.md",
+  "sha256": "784694bbc1c2b51d7d3124b9b8b02fb4453f9ec8fc91644b6ab53405cd825cc0",
+  "text_gate": {
+    "words": 707,
+    "forbidden_hits": [],
+    "ending_ok": true
+  },
+  "audio": {
+    "duration": 298.684082,
+    "size": 7169088,
+    "bit_rate": 192017,
+    "lufs": -16.51,
+    "true_peak_dbtp": -1.7,
+    "lra": 2.6
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Piqué diz que via Brasil à frente da Argentina antes da Copa do Mundo - UOL",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOQzc1clJjZWRRYTRQSXpUNEJwXzBDbHMyM1lYV2dYT1ZDZDNiLV9XbWxCbmlseUhGUU0zRVV6em5rTXdTb3VJRkhfM2JOTGZtTFRCMlBuOWctVG9Ld2xaOWRfM0RQallueERrb01hTElOdlJRcWczQ3poY2EzMG5NZDhNWWQxT0toQkJDUUhfbUUtTllWZGwwN0lrT2dnNlFyWXNJUXJOS0M0UVZvUWdVRl9ROEpZTU1vcjZ4QWVvQVh6NnBLMGFyN1N1a2FGUnJHdkpKdEdVYjc?oc=5",
+      "source": "UOL",
+      "published": "Sun, 19 Jul 2026 13:15:25 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Brasil Urgente ao vivo: assista ao programa agora - band.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBFQmRyQ3g1SERSU19XNi1OVFFkNEU5dDhhbkJlWnJQNVBmWjJteXNEVGJtRG05dTZvSmRBMFE2ZnBCVEUxMGJoV3Z4UkxrY2dfQ3hBZlBWS1RDRHNPVWk1YVhOWVdZZnJCc1E1M2hid25jX01iZlE4SkNn?oc=5",
+      "source": "band.com.br",
+      "published": "Sun, 19 Jul 2026 01:59:08 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Vexame? Brasil é eliminado da VNL masculina com uma rodada de antecedência - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOOWw0WWN1YUdZM1BZOXJ2ZkNzTHpyS2o4U0Q0MVlGUUgwZzdRWmVRRGpBMWlpNUZtaWQycW9iWnVQNU9LQVZrT2ktY1lQbGFLSDhEc1NEOUpDbjVmaUZESm12bEttaXNKWGVxMm1XSllvSHNYNUR3QnRwWXpZUElpVUVBOHF4a2Zyc1RGaHNLbXRnYVFNa1ViLWR5RlNPY2cyOTN3Y05OQ0FMTWlZZ21HNkE1dDg2V1NDc2c?oc=5",
+      "source": "CNN Brasil",
+      "published": "Sun, 19 Jul 2026 10:00:32 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Resposta do Irã deixa mortos e aumenta escalada com EUA após rompimento do cessar-fogo - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1OVXJHeVVoOXBmTTNjbWk5U28tTS04ejZTbXNXSnV0Z29SVkNYZ0tDQUtob3BCamxDLWxuajdId1dsQXZvWDFHVnVlZ1lwQlQycUtGR3FpdFFFbUp2RGU0NXRB0gFnQVVfeXFMTVd3UmhpaFV6R3ZBeHRPSDRRTUFrOUpzVHlvSHltY21pdEkySTNWcEtUcUVSN1JQV3V4RHdhYXRNVUV6d3VnSGd6QWNabVdCdWwzQkU4b2h1YmFFY2t1SkJwelN4UFFpNA?oc=5",
+      "source": "BBC",
+      "published": "Sun, 19 Jul 2026 03:23:01 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Galvão Bueno narra última final de Copa após 52 anos - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQLXU1cnItNGhKUFJPajJhOHRfX3hvVUxqbDFWVkxkY1hQUkRVQkhiczA0TTQxbWNpY0dCZzNKNFI0R2N0dERQenVwcUdDc3lRUWJadGpuWThiUDM2WXcyeWhSdVJVZms3eTVMd05kUnAzSTVkYmhNTW0wSXo0VlJmWXhvb1oxODR5YTdQTW5PLWhiZnhxNmdPcTdB?oc=5",
+      "source": "SBT News",
+      "published": "Sun, 19 Jul 2026 09:05:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Torcida da Argentina toma conta de Buenos Aires para a final da Copa do Mundo - G1",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQVDdMRC1qWmcwZW1MM1VyVUU5ZjNYdGwwSWphRU1VSTZfdlJ3Yk5Lay1qeDdyVXNPQXhCaEl5d25vR3BORENoZGtScl9rcjRtOFdRZ2dPRjc0QWw0R3ViUUkydEJHUVJKQmdIS1Rha3piLWNVOFNLemgzUXNpVlR1T1p4YWpfUEFXZjdWczNLQTBqV1VKdW43bEY2SzBiMUcxNHJDb1ItVkVzajNSX19wVlVHT0F3NkZwUEFyUnE0UzhQaUZBSy03X2MzNkZPY0EtdkNEd3BMRVNNejRkd2FN0gHuAUFVX3lxTE94NTljYTJaVkJFcDlNallJZnVMX1ZYLW55cXkzZFl1VW1oNC04NVcwR0VRQnJaSUNBWHV1VERKQVhzckpVRFB3WG9reHQzdUs4WnNjYkh0ZFdSVVFDSV9pMWJ2VWh4X2ZLbEZsQUZwVlgzT1d3amcxR3FwTmR5eEJwTUxsNnNhdlNpa0NIbFZwVG42OVVBeU9hYlpoaVRDQ3lraDYxMWhJaE4zQW5kUlMzUVR2Y3VQV3pSNU9NX3RvZ0pqZE9LbVZBNUZiTkhlYkJZNG5pZ3h6V011Z0RPc094dW9VLTh3dlRjT2ZJUUE?oc=5",
+      "source": "G1",
+      "published": "Sun, 19 Jul 2026 16:17:18 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Notícias do Dia no Brasil e no Mundo - UOL Notícias",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBaWkd0cXJyQ25idTUwdk9CZW9MMU5oVkxjcXhUbTd6SjMtODBSMzVSMEpha2VnX2JGV2lHVFRHTmVTcTU0Zm8zb1hCQzF4WG9mVFVLUGpsZ3E?oc=5",
+      "source": "UOL Notícias",
+      "published": "Sun, 19 Jul 2026 08:30:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Após ofensiva dos EUA, Irã promete resposta “inesquecível” - Jornal Opção",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxONEFfNHpBS3FiT0VMY1AxbmpZZi1XckpnMXk3TURJVjJMeHJVc2szRUNaWTRpVnNjUlE0S3BOUTdRam5xTEFRcklUNHpNLUhsTk13M3RPZkh3bDRzZmxMbWVkVnFmZHVGZHpVYnJuQWdMZm5hc1lRa0doTEpYakFjOFlMMzcwZWZvRXpmTW5MbVpRM0tSeHNxb3lPdU5WWmlvbEE?oc=5",
+      "source": "Jornal Opção",
+      "published": "Sun, 19 Jul 2026 14:23:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Peru mobiliza mais de 300 agentes após terremoto - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQVmNocnB3TTlGUzdkeV9QZEtQbURNRmUzeUI3MUhIdzRXX2EwNkFfTHpqanVzSnN4cHU3R2hIUGxmU2RfMXJwc3R3THl2T0RRYjY2WTNHM2I3WnJxTVhFWEVrSGE3amdNWGM5Z1VsZnlVakZrR1lXallLSTA3VGlBT05sUjByME5aaERTd2xVSHdFT00?oc=5",
+      "source": "SBT News",
+      "published": "Sun, 19 Jul 2026 15:29:20 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Notícias Ao Vivo do Brasil e do Mundo - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQVlViRmplTHVrZXFOVHpQb1J6ZzdHSXFQODhSZEduY29SNjZPSVZvYmNTc1hucExoclZ4U3d0V0NtVnNPUGhCQ2J2ZVFRc0lwaUpVY3o4Q3BxSmM0Q3pCenZaLVpPWEVKQnJ4QmpneDRadjRQS19YVm5zT1VvTDNZNTlyRU9jZUFGUzA0MGZUVjRTRG9iQ3FTeEVzc2ZpTWFUcVNFdHk1UHphSElLaTI3emNUd0t4YUhpZlFjc0hLZmlWdkxzTGQ3TkZFaWdyUQ?oc=5",
+      "source": "CNN Brasil",
+      "published": "Sun, 19 Jul 2026 07:00:09 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Todo mundo quer, quase ninguém sabe usar - Jornal do Brasil",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQSnpKdHo1YzRWOTFnbVVwRUxUcVBEdXlPc1lVTHg5Rzh5THhDVnJoMEtENjRqa3FlaFZUUlp0eGVwcWt2RW5mZmRpbFhnT3puSmdycU5VQVRYQ0FYSWVOZTAycFpGdW9YVjhUc1Vud1lZZ3BzdU1ZdXpNamZZeVdYbjJmeW9BTnUwdk1hdUJOQldvVm4tSXgtdlA0RTYxcG45SzJyVUZpbE94ZmF2WXfSAa4BQVVfeXFMUEp6SnR6NWM0VjkxZ21VcEVMVHFQRHV5T3NZVUx4OUc4eUx4Q1ZyaDBLRDY0amtxZWhWVFJadHhlcHFrdkVuZmZkaWxYZ096bkpncnFOVUFUWENBWEllTmUwMnBaRnVvWFY4VHNVbndZWWdwc3VNWXV6TWpmWXlXWG4yZnlvQU51MHZNYXVCTkJXb1ZuLUl4LXZQNEU2MXBuOUsyclVGaWxPeGZhdll3?oc=5",
+      "source": "Jornal do Brasil",
+      "published": "Sun, 19 Jul 2026 13:05:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "IA já cabe no bolso: celulares de última geração encantam em uma feira na China - O GLOBO",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQeTlXWmFpakhOVkV3LWtBMTd6Rjc5b19LRVdqUXoyNVh1UWpXaGVOVEltNlNlaGI1LWhCOHFETHJXRHlvOFFJOUxIY3hXb3dQZ3dVOFo1c0l4eWMxRU10YmtGRDdDR1Ayb0V4dUNlVUNJMDcyaU5YR1hHNFJub0ZHUUhvTzJsQ081dUduVTY3NTlFbTZwS2M3cDliUjZGRXpJSDk1bk1qZ2ZCdFprREQ1dzZ5cmtfdjVoc2JkbXJoV1hhaWl1XzF2d0c5NVllelBnSmxBVEJKTmU2Z3V0M3dra0ln0gHwAUFVX3lxTFBuRzA4Qk9WOFlIejJCejRzU0tIOUdQWGRmMHViNjA5MGl3RDJSUEtzTEhodndaN251ckRTS2lScnV2d1U3dEFvS0Y4T3pFR1g1WV85OHA0aERCQVFyNERKcW5paHAtMGowNC1kcDZ1dFJSczRYZXBHNEpqcXlXNkVnX0Z6ZVR0dmpRRk1Uc2dodzhGZDZPWGcxbjZJT1NySjQ0TGNBeEU0R3RLaENZTklVcUhXdU4zZFJaaUNucTFhS2VmSzhCaXRLRWRraEZXY0N2Tkk4NTdPSjFKVVBxajhQd3lEUkhWZFdqRWRQVUlocw?oc=5",
+      "source": "O GLOBO",
+      "published": "Sun, 19 Jul 2026 14:11:48 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Alibaba quer ser mais agressiva para vencer a tecnologia CUDA, vista como o grande trunfo da Nvidia - Exame",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPc0NERU1nNzg0U2t0RXhGcVkwNkt4enpEd2VzZUF0WjByS2YwQk0xX3JPYkd6bzFoWWJFRDJGVmNaanljSll4NXZveFZsbVBKNnp3RkFZYTlLTkxUWU5MR3hVTGh4N0NKZlRRTVhBTmNRcG9EdGQ1eUJXbFRqc1A5U0x4LU5ZcFVXcEZieGhuV1hPZVlFSERzc3lsbXczTm9LVVZNTkNFaEdBa2thSmVHRDVJYzJyQldjSzN5cEhJZGRrZ0JsMzJ2eUFwZVVqOE1rQUkwdW9lUnA?oc=5",
+      "source": "Exame",
+      "published": "Sun, 19 Jul 2026 15:26:14 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Gazeta de Limeira - Gazeta de Limeira",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPWXNVZ0Z6S1VIMmFmaFFfdDJkNThIczl1eXNueVhqMk9yYXJRbUkzeUNDWi1JR05WTE1Xeld0c0VEaFB1THQzNGJLcnFuX18zajFCUWZLeEthVnRfeUIydHdvb2tZeE1VbDRsb09vQ2k5Q1p4eVVlbHNjRVpPXzFDNjB0MXl4N3dYNjVXT1RNNE5JRHpLU3ZPQ09YaFQ5M2Q2Tk85cXhlaWgxVWpYZWN3VHpSNzZrVFRCaU9hdVVFTzdFekx0Q3I1Mkc4Q0htTV96ZXRUM2UwU0hlV2JhOHBXb2xHS21ucUE?oc=5",
+      "source": "Gazeta de Limeira",
+      "published": "Sun, 19 Jul 2026 14:09:26 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Opinião - Ronaldo Lemos: O Império do Meio contra-ataca (em inteligência artificial) - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNajVacEs1NUJ1aGpFOS1XaWR1eElhaDExc1FRbm5kNDF6MV9WSHpIelMxRDUxTVQ2RzE2aWNKcy1hdlJROUkyMXFraGk2azFNelhjU0h6bzlLTEJ2ZXd5MkxiRGhhWG5KUkhwUl82R2UwbnBOdi1XV3Y3TlB6Njc5M2FYX1cxeXNNalB3enNJODJJVnExWHhoMzV4clRHaTF5bWVBb0Y1cDI4Z2xaYlZ2eHV6SWZqam4xZlZRbUxKNA?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Sun, 19 Jul 2026 15:00:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Opinião | Quem vai bater o pênalti? Brasil precisa atrair imigrantes para salvar economia e Seleção - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNSkc5TGd3a1VlMWFGbkVHX2s0VkNpeTdPUXpBM3FudkQtaDJsR0h1cXZxaXRCRlZxM0dNUzB0QXVNQWxxZE1OenIwUEJlTi0wdktlVXJsTkEwZHIxblVVMzFmNU9Bd0JMblRRamxTX0I5Qm9kbXI1bXgwdUhmN1VBZjR5OFRSSTYya1p4WVRyZllWNHM?oc=5",
+      "source": "Estadão",
+      "published": "Sun, 19 Jul 2026 14:31:39 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Como Kim Jong-un fez uma 'transformação milagrosa' da economia da Coreia do Norte: 'O regime está mais rico do que nunca' - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFAtT0NzTW1YQ3RsMzR0Y0ZCTzkyMXcyUy10ZGs5Q2lBNkdNcVliamo2S0Z4M0dVVFB4SHBpcnV1czhOUDFGT0xPbkFqUDdnYkstSzI5ZDRzX196eTJfM2JYN1pn0gFnQVVfeXFMT0ZLVHlGbHc5NDVfVXZNaHpxNExKNElJdUlJYnBodS1JYUYzN2VwWGppWnJHYllPcUpnX0ZfMU00NTRlNWR3MlMtZC10YWpMTE53UXktMF9iSzl0azFha2J4aWV4cWV2dw?oc=5",
+      "source": "BBC",
+      "published": "Sun, 19 Jul 2026 09:32:53 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "IA deve gerar inflação antes de ajudar economia, diz especialista - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNVFpCajhHV3dxMzJLYWMtRUEzd2RrQlljbWN3M29zT19YWllmUmdRWEZwUFJNU0xUUkdpeWF6ekdqYzNtSmdXaThUT3duUTkzZUlndi11alNBQy1LN0RMZjFZYkdQNENNeHlXbWxOcV95dlo3SEw4clAxdldJbG5McEQ4SGQxdjV4Sm9iY3NCU0xpMkJ2dWtVZUh5N1p1MEkzOGdBR2Z0aG5HM0haTnFYcDhR?oc=5",
+      "source": "CNN Brasil",
+      "published": "Sun, 19 Jul 2026 07:07:43 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Tarifaço pode abrir portas na China, mas analistas veem limites para avanço das exportações brasileiras - G1",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQaEtyRnl2MlVCNkdHT2tTMjFIcVBjalpaRmlwLTd2Z05qU3l0RmpCczV1YlQxRnRORmdHbEs2bFY2bjRmR3p5ZlFGbDJFWExpd2Q2Q0lCV2RfblhnZmZ2bXdEZmdFVXJBOFlWX0pnVDdaQ18ya1R5aXZZXzZITV9VZzBJRmd0T1Z4UEl2bjlBTWN0N25sSjk2MzZpUW9Dd05MdHhtMVFzVmJKRHlfcGNSOXFtczhwWUNGSV82N0F0aDk0TnZ2VG5mQ0tTZGtUMXZwQUNYb2xqNXpvQU82c2xHM0FzbGc3bV9wMk8wc09PeHV4RF9yc2hYX1JEcjVMRGvSAY4CQVVfeXFMT2pLdGY5bmt4Vm1yTHM3MjU2dGtJMXc3ekZaTG92ZElDc2x0Z01DbTIzbTFLNGJPdmhfcGRQeXR1M1lvLW9GUDBZYTJ1SllkWDhYYWpab2lZcGljRUZwbHBOTDFPX04zdWZ4QXJySXdoVTJtMkJWdTNRUEhROEZ3Q0FESVg2cTlzUlJOVzJUbUdFbjNuZGdiZ0Eyak1tNjJ1aUVFU0NIaGlSb3VpcEVTdHBUMFF3WXFkelJmV3ZYMTdjanJxalhnNklwR0Z1dkJUWlUxTmRnM3JtQ3BvcjBlMGlvZ1BoMjlrLXRKWk9vVFRZMDM3UXdybFdnUDlMd2hscUFYSnJrMElEOWt5RC13?oc=5",
+      "source": "G1",
+      "published": "Sun, 19 Jul 2026 08:00:38 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Economia: Estados Unidos pedem concessões ao Brasil - Portal Terra da Luz",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPY2x5Zy13RUxKcGY5T1NjZTZ2VzZ3SHZGYmFuLWhVZERFQ2lhNkkzRGUzMzR2MFZjemxDdXdGa202aUNHU3cteUVpSDFSUXJURTM1QTBkYmM5Y0U5Y3JRTHFFQjc3ZUtpWXVKODhmTVJuWjc2cDMwVjNIT3RfbTVDeW9iNTB6U2Y5Ymc?oc=5",
+      "source": "Portal Terra da Luz",
+      "published": "Sun, 19 Jul 2026 13:37:13 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Jogos de hoje da Copa: agenda e onde assistir - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQLXhqMVhoWVJfRFRna2hCTTFGTXFCNE92WDQzUkE1bWhCbDZjVTd5Y2N5Y0plalRyeUVlUHZRQjZ5cmd5RXpCRVdKOW1fVVAwbXVTdFM0YnUtV2FqZ2Q3TTJvMmpSVnlfd04yaGx1TE1MMzc3S3pnX2NnODJxeS1oVzBiWG9Oclg1UUk3QnhVaDNIVEZVQ2tEQ0hzd3IyaWxocHlfNVp5bjh2X0czWDdNTUtfWTFaS0JGYzZTTmI1bl9Kbm0wVktqRDlGX1NhLW9HOTN2VkdEd0l0UUx6UHdfWmdRNERQQQ?oc=5",
+      "source": "Estadão",
+      "published": "Sun, 19 Jul 2026 07:35:25 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda de mercados: Galípolo e decisão do BCE são destaque - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOUzJJMlBUTEZmUk1aZkFCbVpPMlRpZG5OYmZUREFnN2JnTk1nNTFRN2NmdlMtcFlwbkdyRktQMUlySHZFSmJhUC1LalRQY2hzNnpXTWYtRmhqWTZ0aXV4SG1HSkMtY2pmNk1LbXMxcnk5Q2dyUHRYYzQ2cXE0cUZ1dFBjNlNDUEVoQ1c4b0lYUUdDTi03V2tzZV9lWUpzaDFBUzBIQjcwVUlGMzVjZ0JGSlBROVVRTDRoMXVyeldOUzRRYVNL0gHEAUFVX3lxTE5TMkkyUFRMRmZSTVpmQUJtWk8yVGlkbk5iZlREQWc3YmdOTWc1MVE3Y2Z2Uy1wWXBuR3JGS1AxSXJIdkVKYmFQLUtqVFBjaHM2eldNZi1GaGpZNnRpdXhIbUdKQy1jamY2TUttczFyeTlDZ3JQdFhjNDZxcTRxRnV0UGM2U0NQRWhDVzhvSVhRR0NOLTdXa3NlX2VZSnNoMUFTMEhCNzBVSUYzNWNnQkZKUFE5VVFMNGgxdXJ6V05TNFFhU0s?oc=5",
+      "source": "Valor Econômico",
+      "published": "Sun, 19 Jul 2026 10:50:11 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Espanha e Argentina encerram mundial; a agenda da Copa neste domingo (19) - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPOVNVcmEwYzBfTi01anZJMnBnMHFJNTFURW1USzNnNmFMNG9FR1Z1bjAwTVJvbl92NTVmVk1NemhrSHdEM05xUU9VQTBIc3lFVk9KMFZhN3NPN1Z5aW5DZU94MGQ4d2dpVkJXUm83X2EtUXhXS1MyZDN1T1BiU29EeHowMGlORG82S3BKYm51bGV5STIxVHZnU2YtR25hQ281WS1DWWhKdmZXV3A5eDh5eGJLQ1RaZktfbGFTUmtaRlA1dHlHLW5KNy1XRmg?oc=5",
+      "source": "CNN Brasil",
+      "published": "Sun, 19 Jul 2026 07:00:30 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda: Decisão de juros na Europa e índices de atividade; confira os indicadores desta semana - Money Times",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNRGlicm85UXVieElyQXRFNC1GRFIwRzJ6dDVLV19Ea3JmdDJZZEFSNmVDOU1weUE2bUpCVUdVX0dIMWVBWTBJN0RIVS1TQUdGUlF4c2RpbEVBZlljMWx0WEloX1NRR0NMRU9JeVExUzFVQlcwT1hFVDNSNnJobjFlcHBlajZPdnJrVGJMcEszb3ZobWZLUlU5Y3h4cGZMdjNDOHdRN21Ea19lYldlRkRiRlZ1Q2tKVFk3OFR4WFU2Rm1JQXgxM1U0?oc=5",
+      "source": "Money Times",
+      "published": "Sun, 19 Jul 2026 15:00:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Notícia Agenda: Decisão de juros na Europa e índices de atividade; confira os indicadores desta semana - Kinvo",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOYUJLTjZKWFZaSG1uT1ZTd3ZyZGVyaHpPVmhMWDY5NWFWQzExTXJVMUhXN3ZRalhjaXdJZ1RLSzlKbjl1eGlvTWdOM0NmNUhVN1dpNzdsb3cwODhDeXM5Q0RJYzJGakMwVHc2cDhWX1RFd2FoQmJVSHJ3OWU3dm1CSFhEb3B5SkRTcnRmek9EYWViLU5VWC1xV3phY0h0eXozb25QNWlldUVBanltQmhXcmxpanM4US1Hb1V0ekdB?oc=5",
+      "source": "Kinvo",
+      "published": "Sun, 19 Jul 2026 15:07:00 GMT"
+    }
+  ],
+  "generated_at": "2026-07-19T13:37:13.426592-03:00"
+}
