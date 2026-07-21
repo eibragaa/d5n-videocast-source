@@ -329,5 +329,35 @@
       "gaps": 0,
       "corujao_blocked": true
     }
+  },
+  {
+    "date": "2026-07-19",
+    "grade": 6.3,
+    "exit_code": 2,
+    "needs_manual": true,
+    "updated_at": "2026-07-19T05:31:02.448469",
+    "metrics": {
+      "total_eps": 39,
+      "mp3_disk": 48,
+      "coverage_pct": 79.5,
+      "pilares": "3/3",
+      "gaps": 0,
+      "corujao_blocked": true
+    }
+  },
+  {
+    "date": "2026-07-20",
+    "grade": 6.3,
+    "exit_code": 2,
+    "needs_manual": true,
+    "updated_at": "2026-07-20T05:31:29.181140",
+    "metrics": {
+      "total_eps": 40,
+      "mp3_disk": 54,
+      "coverage_pct": 80.0,
+      "pilares": "3/3",
+      "gaps": 0,
+      "corujao_blocked": true
+    }
   }
 ]

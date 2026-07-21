@@ -2,18 +2,18 @@
   "persistent_issues": {
     "acao_manual_requerida": {
       "first_seen": "2026-06-21",
-      "consecutive_days": 9,
-      "last_seen": "2026-07-18"
+      "consecutive_days": 11,
+      "last_seen": "2026-07-20"
     },
     "falha_autocorrecao": {
       "first_seen": "2026-06-21",
-      "consecutive_days": 9,
-      "last_seen": "2026-07-18"
+      "consecutive_days": 11,
+      "last_seen": "2026-07-20"
     }
   },
-  "updated": "2026-07-18",
+  "updated": "2026-07-20",
   "escalations": [
-    "acao_manual_requerida: 9 dias consecutivos — 🔴 CRÍTICO, ação manual necessária",
-    "falha_autocorrecao: 9 dias consecutivos — 🔴 CRÍTICO, ação manual necessária"
+    "acao_manual_requerida: 11 dias consecutivos — 🔴 CRÍTICO, ação manual necessária",
+    "falha_autocorrecao: 11 dias consecutivos — 🔴 CRÍTICO, ação manual necessária"
   ]
 }

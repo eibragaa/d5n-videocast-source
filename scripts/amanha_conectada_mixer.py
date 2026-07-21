@@ -8,15 +8,17 @@ import sys
 import tempfile
 from pathlib import Path
 
-from pydub import AudioSegment
+from pydub import AudioSegment, silence
 
 REPO = Path(__file__).resolve().parents[1]
 ASSETS = REPO / "assets" / "audio" / "manha-conectada"
 INTRO = ASSETS / "intro-jingle.mp3"
-BED = ASSETS / "bg-music.mp3"
+BED = ASSETS / "bg-music-tech.wav"
 STING = ASSETS / "transition-sting.mp3"
 MIN_SECONDS = 225
 MAX_SECONDS = 390
+LEAD_MS = 1800
+THEME_PAUSE_EXTRA_MS = 700
 
 
 def loop_to(audio: AudioSegment, length: int) -> AudioSegment:
@@ -33,6 +35,33 @@ def require(path: Path) -> None:
         raise FileNotFoundError(f"recurso de áudio ausente: {path}")
 
 
+def extend_theme_pauses(voice: AudioSegment) -> tuple[AudioSegment, list[int]]:
+    """Abre quatro respiros naturais; nunca corta a locução por tempo fixo."""
+    detected = silence.detect_silence(
+        voice,
+        min_silence_len=700,
+        silence_thresh=int(voice.dBFS - 20),
+        seek_step=10,
+    )
+    targets = (60_000, 120_000, 180_000, 240_000)
+    available = [(start, end) for start, end in detected if 10_000 < start < len(voice) - 10_000]
+    selected: list[tuple[int, int]] = []
+    for target in targets:
+        candidates = [span for span in available if all(abs(span[0] - used[0]) > 20_000 for used in selected)]
+        if candidates:
+            selected.append(min(candidates, key=lambda span: abs(((span[0] + span[1]) // 2) - target)))
+
+    result = voice
+    transition_positions: list[int] = []
+    offset = 0
+    for start, end in sorted(selected):
+        insert_at = ((start + end) // 2) + offset
+        result = result[:insert_at] + AudioSegment.silent(duration=THEME_PAUSE_EXTRA_MS, frame_rate=44100) + result[insert_at:]
+        transition_positions.append(LEAD_MS + insert_at + THEME_PAUSE_EXTRA_MS // 2)
+        offset += THEME_PAUSE_EXTRA_MS
+    return result, transition_positions
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Mixer da MANHÃ CONECTADA")
     parser.add_argument("--voz", required=True)
@@ -43,21 +72,25 @@ def main() -> int:
         require(path)
 
     voice = AudioSegment.from_file(voice_path).set_channels(1).set_frame_rate(44100)
+    # Apply a 10ms fade-in to the voice to avoid clicks at the start
+    voice = voice.fade_in(10)
     duration = len(voice) / 1000
     if not MIN_SECONDS <= duration <= MAX_SECONDS:
         raise ValueError(f"voz fora da faixa {MIN_SECONDS}-{MAX_SECONDS}s: {duration:.1f}s")
 
-    intro = AudioSegment.from_file(INTRO).set_channels(1).set_frame_rate(44100)[:6000].fade_in(300).fade_out(900) - 13
+    voice, transition_positions = extend_theme_pauses(voice)
+    intro = AudioSegment.from_file(INTRO).set_channels(1).set_frame_rate(44100)[:6000].fade_in(250).fade_out(900) - 10
     bed = AudioSegment.from_file(BED).set_channels(1).set_frame_rate(44100)
     sting = AudioSegment.from_file(STING).set_channels(1).set_frame_rate(44100)[:1800].fade_out(500) - 17
 
-    # Abertura de 1,2s antes da voz; cama discreta e marca de transição no terço final.
-    lead = intro[:1200]
-    voice_canvas = AudioSegment.silent(duration=1200, frame_rate=44100) + voice
-    music = loop_to(bed - 30, len(voice_canvas)).fade_in(900).fade_out(2200)
+    # Abertura instrumental audível; cama sobe levemente e respira entre temas.
+    voice_canvas = AudioSegment.silent(duration=LEAD_MS, frame_rate=44100) + voice
+    music = loop_to(bed - 27, len(voice_canvas)).fade_in(500).fade_out(2200)
     music = music.overlay(intro, position=0)
-    transition_at = max(20_000, int(len(voice_canvas) * 0.72))
-    music = music.overlay(sting, position=transition_at)
+    # Assinatura em transições alternadas; as demais deixam só a trilha exposta.
+    for index, position in enumerate(transition_positions):
+        if index % 2 == 1:
+            music = music.overlay(sting, position=max(0, position - len(sting) // 2))
     mixed = music.overlay(voice_canvas).fade_out(1800)
 
     output.parent.mkdir(parents=True, exist_ok=True)
