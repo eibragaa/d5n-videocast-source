@@ -1,0 +1,70 @@
+{
+  "schema": 2,
+  "editorial_date": "2026-07-22",
+  "audio_duration": 360.176,
+  "chapters": [
+    {
+      "id": "intro",
+      "label": "Abertura",
+      "start": 0.0,
+      "end": 38.7,
+      "duration": 38.7
+    },
+    {
+      "id": "mundo",
+      "label": "Mundo",
+      "start": 38.7,
+      "end": 94.316,
+      "duration": 55.616
+    },
+    {
+      "id": "brasil",
+      "label": "Brasil",
+      "start": 94.316,
+      "end": 145.732,
+      "duration": 51.416
+    },
+    {
+      "id": "tecnologia",
+      "label": "Tecnologia e IA",
+      "start": 145.732,
+      "end": 201.42,
+      "duration": 55.688
+    },
+    {
+      "id": "economia",
+      "label": "Economia e mercados",
+      "start": 201.42,
+      "end": 251.252,
+      "duration": 49.832
+    },
+    {
+      "id": "ofertas",
+      "label": "Ofertas do dia",
+      "start": 251.252,
+      "end": 286.828,
+      "duration": 35.576
+    },
+    {
+      "id": "frase",
+      "label": "Frase do dia",
+      "start": 286.828,
+      "end": 296.268,
+      "duration": 9.44
+    },
+    {
+      "id": "cta",
+      "label": "Comunidade D5N",
+      "start": 296.268,
+      "end": 323.228,
+      "duration": 26.96
+    },
+    {
+      "id": "outro",
+      "label": "Encerramento",
+      "start": 323.228,
+      "end": 360.176,
+      "duration": 36.948
+    }
+  ]
+}

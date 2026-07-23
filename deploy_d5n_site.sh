@@ -17,6 +17,8 @@ RECEIPT="${STATE_DIR}/published-${DATE}.json"
 STATUS_SCRIPT="${REPO}/scripts/d5n_release_status.py"
 COUNTER_FILE="episode-counter.json"
 VALIDATOR="${REPO}/scripts/validate_mp3.py"
+CHAPTER_MANIFEST="/tmp/d5n_audio/manifest.json"
+CHAPTER_DEST="chapters/${DATE}.json"
 
 mkdir -p "$STATE_DIR"
 cd "$REPO"
@@ -106,6 +108,14 @@ fi
 DEST="audio/d5n-ep${EP_NUM}-${DATE}.mp3"
 cp "$LATEST_MP3" "$DEST"
 cp "$LATEST_MP3" "$CRON_AUDIO/d5n-podcast-${DATE}.mp3"
+if ! python3 "$REPO/scripts/d5n_chapter_manifest.py" \
+    --manifest "$CHAPTER_MANIFEST" \
+    --date "$DATE" \
+    --audio "$DEST" \
+    --output "$CHAPTER_DEST" >> "$LOG" 2>&1; then
+    block "manifesto obrigatório de capítulos ausente ou inválido"
+fi
+log "✅ Nove capítulos reais validados e preparados"
 
 python3 -c "
 import json
@@ -135,8 +145,9 @@ log "✅ Site gerado: ${NEWS_COUNT} notícias"
 
 # Staging/commit seletivo: jamais absorver arquivos de outros pipelines.
 git add -- "$DEST"
-git add -- episode-counter.json index.html source.md
-RELEASE_PATHS=("$DEST" episode-counter.json index.html source.md)
+git add -- "$CHAPTER_DEST"
+git add -- episode-counter.json index.html source.md scripts/d5n_chapter_manifest.py
+RELEASE_PATHS=("$DEST" "$CHAPTER_DEST" episode-counter.json index.html source.md scripts/d5n_chapter_manifest.py)
 for optional in feed.json d5n-feed.xml; do
     if [ -e "$optional" ]; then
         git add -- "$optional"

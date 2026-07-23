@@ -5,6 +5,7 @@ Inter · Midnight Navy · Electric Blue · Violet · Player custom
 """
 
 import os, sys, re, json, argparse
+import html as html_lib
 from datetime import datetime, timedelta
 
 BASE = os.environ.get("D5N_BASE", os.path.dirname(os.path.abspath(__file__)))
@@ -238,6 +239,102 @@ def get_duration(filepath):
         return round(float(r.stdout.strip()))
     except: return 0
 
+
+EXPECTED_CHAPTER_IDS = [
+    "intro", "mundo", "brasil", "tecnologia", "economia",
+    "ofertas", "frase", "cta", "outro",
+]
+CHAPTER_LABELS = {
+    "intro": "Abertura",
+    "mundo": "Mundo",
+    "brasil": "Brasil",
+    "tecnologia": "Tecnologia & IA",
+    "economia": "Economia & Mercados",
+    "ofertas": "Ofertas do Dia",
+    "frase": "Frase do Dia",
+    "cta": "Comunidade D5N",
+    "outro": "Encerramento",
+}
+
+
+def format_chapter_time(seconds):
+    seconds = max(0, int(float(seconds)))
+    return f"{seconds // 60}:{seconds % 60:02d}"
+
+
+def validate_chapters(chapters, duration):
+    """Valida e normaliza os nove capítulos canônicos contra o MP3 real."""
+    if not isinstance(chapters, list) or len(chapters) != len(EXPECTED_CHAPTER_IDS):
+        return []
+    if [chapter.get("id") for chapter in chapters] != EXPECTED_CHAPTER_IDS:
+        return []
+    try:
+        total = float(duration)
+        starts = [float(chapter["start"]) for chapter in chapters]
+    except (KeyError, TypeError, ValueError):
+        return []
+    if total <= 0 or abs(starts[0]) > 0.05:
+        return []
+    if any(current >= following for current, following in zip(starts, starts[1:])):
+        return []
+    if starts[-1] >= total:
+        return []
+
+    normalized = []
+    for index, chapter in enumerate(chapters):
+        start = starts[index]
+        end = starts[index + 1] if index + 1 < len(starts) else total
+        chapter_id = chapter["id"]
+        if end <= start:
+            return []
+        normalized.append({
+            "id": chapter_id,
+            "label": CHAPTER_LABELS[chapter_id],
+            "start": round(start, 3),
+            "end": round(end, 3),
+            "duration": round(end - start, 3),
+        })
+    return normalized
+
+
+def load_episode_chapters(date_str, duration):
+    """Carrega o manifesto versionado do episódio; episódios antigos têm fallback vazio."""
+    path = os.path.join(BASE, "chapters", f"{date_str}.json")
+    try:
+        with open(path, encoding="utf-8") as chapter_file:
+            manifest = json.load(chapter_file)
+        if manifest.get("editorial_date") != date_str:
+            return []
+        return validate_chapters(manifest.get("chapters"), duration)
+    except (OSError, TypeError, ValueError, json.JSONDecodeError):
+        return []
+
+
+def render_chapter_segments(chapters):
+    """Renderiza segmentos proporcionais, clicáveis e acessíveis como no YouTube."""
+    rendered = []
+    for index, chapter in enumerate(chapters):
+        chapter_id = chapter.get("id")
+        canonical_label = CHAPTER_LABELS[chapter_id] if chapter_id in CHAPTER_LABELS else str(chapter["label"])
+        label = html_lib.escape(canonical_label, quote=True)
+        timestamp = format_chapter_time(chapter["start"])
+        rendered.append(
+            f'<button type="button" class="chapter-segment" '
+            f'style="--chapter-weight:{chapter["duration"]:.3f}" '
+            f'data-chapter-index="{index}" data-chapter-start="{chapter["start"]:g}" '
+            f'aria-label="Ir para o capítulo {label}, em {timestamp}">'
+            f'<span class="chapter-segment-track"><span class="chapter-segment-fill"></span></span>'
+            f'<span class="chapter-tooltip">{label}<small>{timestamp}</small></span>'
+            f'</button>'
+        )
+    return "".join(rendered)
+
+
+def chapters_data_attribute(chapters):
+    payload = json.dumps(chapters, ensure_ascii=False, separators=(",", ":"))
+    return html_lib.escape(payload, quote=True)
+
+
 def find_latest_podcast():
     """Encontra o episódio publicado mais recente que existe em audio/.
 
@@ -266,7 +363,8 @@ def find_latest_podcast():
             "dur_str": f"{dur//60}:{dur%60:02d}",
             "num": entry["num"].lstrip("0") or "0",
             "date": entry["date"],
-            "voice": voice_name
+            "voice": voice_name,
+            "chapters": load_episode_chapters(entry["date"], dur),
         }
     return None
 
@@ -290,10 +388,12 @@ def list_episodes():
             "file": f,
             "path": f"/audio/{f}",
             "dur_str": f"{dur//60}:{dur%60:02d}" if exists else "—",
+            "duration": dur,
             "exists": exists,
             "num": entry["num"],
             "date": entry["date"],
-            "voice": vname
+            "voice": vname,
+            "chapters": load_episode_chapters(entry["date"], dur) if exists else [],
         })
     return eps
 
@@ -319,69 +419,27 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
     qs = coverage_data.get("quality_score") if coverage_data else None
     qs_stat = f'\n      <div class="divider-v"></div>\n      <div class="hero-stat quality-stat"><strong>{int(qs)}</strong><span>qualidade</span></div>' if qs is not None else ''
 
-    # ── Player com capítulos e download ──
+    # ── Player com capítulos reais e download ──
     player_html = ""
     if podcast:
-        # Calcular capítulos baseado na distribuição de notícias por pilar
-        total = len(noticias)
         pod_dur_sec = int(podcast.get("duration", 0))
-        cap_intro = max(8, int(pod_dur_sec * 0.10))  # ~10% para abertura
-        
-        # Ordem dos pilares: Global(+Brasil), Tech, Economia
-        pilares_ordem = ["Global", "Tech", "Economia"]
-        cap_nomes = {"Global": "🌍 Mundo", "Tech": "💻 Tech", "Economia": "📈 Economia"}
-        cap_labels = {"Global": "GLOBAL", "Tech": "TECH", "Economia": "ECONOMIA"}
-        
-        chapters = [{"time": 0, "label": "🎬 Abertura", "short": "ABERTURA"}]
-        # Distribui capítulos mesmo se apenas um pilar tiver notícias
-        active_pilars = []
-        for p in pilares_ordem:
-            count = len(por_pilar.get(p, []))
-            if p == "Global":
-                br = por_pilar.get('Brasil', [])
-                if not br:
-                    for k in por_pilar:
-                        if k and 'brasil' in k.lower():
-                            br = por_pilar[k]; break
-                count += len(br)
-            if count > 0:
-                active_pilars.append(p)
-        
-        if len(active_pilars) >= 2:
-            # Distribution based on actual news count
-            acc_pct = 0.10  # intro takes 10%
-            news_share = 0.85
-            for p in pilares_ordem:
-                if p not in active_pilars: continue
-                count = len(por_pilar.get(p, []))
-                if p == "Global":
-                    br = por_pilar.get('Brasil', [])
-                    if not br:
-                        for k in por_pilar:
-                            if k and 'brasil' in k.lower():
-                                br = por_pilar[k]; break
-                    count += len(br)
-                share = count / total * news_share if total > 0 else 0
-                acc_pct += share
-                t = int(pod_dur_sec * min(acc_pct, 0.95))
-                chapters.append({"time": t, "label": cap_nomes.get(p, p), "short": cap_labels.get(p, p.upper())})
-        else:
-            # Only one pilar — use even distribution for visual chapters
-            p = active_pilars[0] if active_pilars else "Global"
-            segment = 0.25
-            for sub_seg, (suffix, short) in enumerate([("Notícias", "BLOCO 1"), ("Aprofundamento", "BLOCO 2"), ("Análise", "BLOCO 3")], 1):
-                t = int(pod_dur_sec * (0.10 + sub_seg * segment * 0.85))
-                chapters.append({"time": t, "label": f"📰 {suffix}", "short": short})
-        
-        # Outro towards the end
-        outro_t = max(pod_dur_sec - 15, int(pod_dur_sec * 0.90))
-        chapters.append({"time": outro_t, "label": "🎯 Encerramento", "short": "FIM"})
-        
-        import json as _json_default
-        chapters_json = _json_default.dumps(chapters)
+        chapters = podcast.get("chapters") or []
+        display_chapters = chapters or [{
+            "id": "full",
+            "label": "Episódio completo",
+            "start": 0,
+            "end": pod_dur_sec,
+            "duration": pod_dur_sec,
+        }]
+        chapters_json = chapters_data_attribute(display_chapters)
+        chapter_segments = render_chapter_segments(display_chapters)
+        current_chapter = (
+            f'Capítulo 1 de {len(chapters)} · {html_lib.escape(chapters[0]["label"])}'
+            if chapters else "Episódio completo"
+        )
         total_dur_min = pod_dur_sec // 60
         total_dur_sec = pod_dur_sec % 60
-        
+
         player_html = f'''
     <div class="player-bar">
       <div class="player-track">
@@ -389,18 +447,20 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
           <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
           <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
         </button>
-        <div class="player-progress" id="progressBar" onclick="seekAudio(event)">
-          <div class="player-progress-fill" id="progressFill"></div>
-          <div class="player-chapters" id="chaptersContainer" data-chapters=\'{chapters_json}\'></div>
+        <div class="player-progress" id="progressBar" onclick="seekAudio(event)" role="slider" tabindex="0" aria-label="Progresso do episódio" aria-valuemin="0" aria-valuemax="{pod_dur_sec}" aria-valuenow="0">
+          <div class="player-chapters" id="chaptersContainer" data-chapters="{chapters_json}">{chapter_segments}</div>
         </div>
         <span class="player-time" id="playerTime">0:00 / {total_dur_min}:{total_dur_sec:02d}</span>
         <a class="player-download" href="{podcast["path"]}" download title="Baixar MP3">↓ MP3</a>
         <button class="player-copy-btn" onclick="copyAudioLink()" title="Copiar link do áudio" id="copyBtn">🔗</button>
         <button class="speed-btn" id="speedBtn" onclick="cycleSpeed()" title="Velocidade">1×</button>
       </div>
-      <div class="player-title">Drop Five News — Episódio #{podcast["num"]} — {data_curta}</div>
+      <div class="player-meta">
+        <div class="player-title">Drop Five News — Episódio #{podcast["num"]} — {data_curta}</div>
+        <div class="chapter-current" id="currentChapter" aria-live="polite">{current_chapter}</div>
+      </div>
     </div>
-    <audio id="audioEl" src="{podcast["path"]}" preload="none"></audio>'''
+    <audio id="audioEl" src="{podcast["path"]}" preload="metadata"></audio>'''
     else:
         player_html = ''
 
@@ -508,9 +568,15 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
         for i, ep in enumerate(episodios):
             vis_class = "archive-link--visible" if i < 3 else "archive-link--hidden"
             voice_badge = f'<span class="archive-voice">{ep.get("voice","")}</span>' if ep.get("voice") else ""
+            ep_duration = int(ep.get("duration", 0))
+            ep_chapters = ep.get("chapters") or [{
+                "id": "full", "label": "Episódio completo", "start": 0,
+                "end": ep_duration, "duration": ep_duration,
+            }]
+            ep_chapters_attr = chapters_data_attribute(ep_chapters)
             if ep.get("exists", False):
                 archive_html += f'''
-    <div class="archive-link {vis_class}" data-audio="{ep["path"]}" onclick="playArchive(this)">
+    <div class="archive-link {vis_class}" data-audio="{ep["path"]}" data-duration="{ep_duration}" data-episode="{ep["num"]}" data-date="{format_data_curta(ep["date"])}" data-chapters="{ep_chapters_attr}" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #{ep["num"]} · {format_data_curta(ep["date"])}</div>
         <div class="archive-link-meta">{ep["dur_str"]} {voice_badge}</div>
@@ -613,13 +679,16 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .play-btn {{ width:32px; height:32px; border-radius:50%; border:1px solid var(--accent-dim); background:transparent; color:var(--accent); cursor:pointer; flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:all 0.2s; }}
   .play-btn:hover {{ background:var(--accent-dim); color:#fff; }}
   .play-btn svg {{ width:14px; height:14px; }}
-  .player-progress {{ flex:1; height:6px; background:var(--border); border-radius:3px; cursor:pointer; position:relative; overflow:visible; }}
-  .player-progress-fill {{ height:100%; width:0%; background:var(--accent); border-radius:3px; transition:width 0.1s linear; position:relative; }}
-  .player-chapters {{ position:absolute; top:-3px; left:0; right:0; bottom:-3px; z-index:3; }}
-  .chapter-marker {{ position:absolute; top:-3px; width:2px; height:12px; background:rgba(255,255,255,0.2); border-radius:1px; cursor:pointer; transition:all 0.15s; z-index:4; }}
-  .chapter-marker:hover {{ background:var(--accent); width:3px; }}
-  .chapter-tooltip {{ display:none; position:absolute; bottom:16px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.85); color:#fff; font-size:0.55rem; padding:2px 6px; border-radius:3px; white-space:nowrap; }}
-  .chapter-marker:hover .chapter-tooltip {{ display:block; }}
+  .player-progress {{ flex:1; height:10px; cursor:pointer; position:relative; min-width:120px; }}
+  .player-chapters {{ position:absolute; inset:0; display:flex; gap:3px; align-items:center; z-index:3; }}
+  .chapter-segment {{ position:relative; flex:var(--chapter-weight) 1 0; min-width:4px; height:100%; padding:0; border:0; background:transparent; cursor:pointer; overflow:visible; }}
+  .chapter-segment-track {{ position:absolute; inset:1px 0; overflow:hidden; border-radius:999px; background:var(--border); transition:transform .15s ease,background .15s ease; }}
+  .chapter-segment-fill {{ display:block; height:100%; width:0; border-radius:inherit; background:var(--brand-gradient); transition:width .1s linear; }}
+  .chapter-segment:hover .chapter-segment-track,.chapter-segment:focus-visible .chapter-segment-track,.chapter-segment.is-active .chapter-segment-track {{ transform:scaleY(1.45); background:var(--accent-dim); }}
+  .chapter-segment:focus-visible {{ outline:2px solid var(--brand-cyan); outline-offset:4px; border-radius:3px; }}
+  .chapter-tooltip {{ position:absolute; z-index:20; bottom:20px; left:50%; transform:translate(-50%,4px); opacity:0; visibility:hidden; pointer-events:none; background:#05080d; border:1px solid var(--border); color:#fff; font-size:.62rem; font-weight:600; line-height:1.2; padding:7px 9px; border-radius:6px; white-space:nowrap; box-shadow:0 8px 24px rgba(0,0,0,.35); transition:opacity .15s ease,transform .15s ease; }}
+  .chapter-tooltip small {{ display:block; color:var(--text-secondary); font-size:.56rem; font-weight:500; margin-top:3px; }}
+  .chapter-segment:hover .chapter-tooltip,.chapter-segment:focus-visible .chapter-tooltip {{ opacity:1; visibility:visible; transform:translate(-50%,0); }}
   .player-time {{ font-family:'DM Mono',monospace; font-size:0.6rem; color:var(--muted); white-space:nowrap; flex-shrink:0; }}
   .player-download {{ color:var(--muted); text-decoration:none; font-size:0.6rem; flex-shrink:0; transition:color 0.2s; }}
   .player-download:hover {{ color:var(--accent); }}
@@ -628,7 +697,9 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .player-copy-btn.copied {{ color:#4ade80; }}
   .speed-btn {{ padding:2px 7px; border-radius:3px; border:1px solid var(--accent-dim); background:transparent; color:var(--muted); cursor:pointer; flex-shrink:0; font-family:'Inter',sans-serif; font-size:0.55rem; font-weight:500; letter-spacing:0.04em; transition:all 0.15s; }}
   .speed-btn:hover {{ color:var(--accent); border-color:var(--accent); }}
-  .player-title {{ font-size:0.65rem; color:var(--muted); margin-top:0.4rem; letter-spacing:0.04em; }}
+  .player-meta {{ display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-top:.55rem; }}
+  .player-title {{ font-size:0.65rem; color:var(--muted); letter-spacing:0.04em; }}
+  .chapter-current {{ font-size:.65rem; color:var(--brand-cyan); font-weight:600; letter-spacing:.02em; text-align:right; }}
 
   .section {{ padding:2.5rem 0; border-bottom:1px solid var(--border-lt); }}
   .section-header {{ display:flex; align-items:baseline; gap:0.75rem; margin-bottom:1.75rem; padding-bottom:0.75rem; border-bottom:1px solid var(--border); }}
@@ -813,7 +884,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .player-bar {{ padding:1.15rem 1.25rem; border-radius:10px; border-color:var(--border); background:var(--surface); box-shadow:none; }}
   .play-btn {{ width:42px; height:42px; border:0; color:#0B1020; background:var(--brand-gradient); box-shadow:none; }}
   .play-btn:hover {{ transform:translateY(-1px); background:var(--brand-gradient); color:#071019; filter:brightness(1.08); }}
-  .player-title {{ margin-top:.65rem; color:var(--text-secondary); }}
+  .player-meta {{ margin-top:.65rem; }}
   .search-bar,.filter-btn,.section-context,.premium-block,.voice-section {{ border-radius:10px; }}
   .news-item:hover {{ border-radius:10px; }}
   .archive-toggle {{ border-radius:10px; }}
@@ -825,7 +896,9 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
     .hero {{ padding:3rem 0 2rem; }} .hero::after {{ font-size:5rem; top:1rem; }}
     .hero-sub {{ gap:.8rem; flex-wrap:wrap; }} .divider-v {{ display:none; }}
     .player-bar {{ padding:1rem; }} .player-track {{ flex-wrap:wrap; }}
-    .player-progress {{ order:5; flex-basis:100%; margin-top:.4rem; }}
+    .player-progress {{ order:5; flex-basis:100%; margin-top:.4rem; height:12px; }}
+    .player-meta {{ align-items:flex-start; flex-direction:column; gap:.2rem; }}
+    .chapter-current {{ text-align:left; }}
     .player-title {{ font-size:.72rem; }} .edition-badge {{ display:none; }}
   }}
 
@@ -964,33 +1037,98 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   }}, {{ threshold:0.1, rootMargin:'0px 0px -40px 0px' }});
   items.forEach(el => observer.observe(el));
 
-  // ── Player com capítulos ──
+  // ── Player segmentado com capítulos reais ──
   const audio = document.getElementById('audioEl');
   const playIcon = document.getElementById('playIcon');
   const pauseIcon = document.getElementById('pauseIcon');
-  const fill = document.getElementById('progressFill');
   const timeEl = document.getElementById('playerTime');
+  const currentChapterEl = document.getElementById('currentChapter');
   const chaptersContainer = document.getElementById('chaptersContainer');
   const bar = document.getElementById('progressBar');
-  
-  // Renderiza capítulos na barra
+
   let chapters = [];
+  let currentChapterIdx = -1;
   try {{ if (chaptersContainer) chapters = JSON.parse(chaptersContainer.dataset.chapters || '[]'); }} catch(e) {{}}
-  if (chapters.length > 0 && bar) {{
-    const dur = chapters.length > 1 ? chapters[chapters.length-1].time : 0;
-    chapters.forEach((ch, i) => {{
-      const pct = dur > 0 ? (ch.time / dur) * 100 : 0;
-      const mk = document.createElement('div');
-      mk.className = 'chapter-marker';
-      mk.style.left = pct + '%';
-      mk.title = ch.label;
-      mk.innerHTML = '<div class="chapter-tooltip">' + ch.label + '</div>';
-      mk.addEventListener('click', (e) => {{ e.stopPropagation(); if (audio.duration) audio.currentTime = ch.time; }});
-      bar.appendChild(mk);
+
+  function makeChapterSegment(chapter, index) {{
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'chapter-segment';
+    button.dataset.chapterIndex = String(index);
+    button.dataset.chapterStart = String(chapter.start || 0);
+    const duration = Math.max(.001, Number(chapter.duration) || (Number(chapter.end) - Number(chapter.start)) || 1);
+    button.style.setProperty('--chapter-weight', duration.toFixed(3));
+    button.setAttribute('aria-label', `Ir para o capítulo ${{chapter.label}}, em ${{fmt(chapter.start)}}`);
+
+    const track = document.createElement('span');
+    track.className = 'chapter-segment-track';
+    const chapterFill = document.createElement('span');
+    chapterFill.className = 'chapter-segment-fill';
+    track.appendChild(chapterFill);
+
+    const tooltip = document.createElement('span');
+    tooltip.className = 'chapter-tooltip';
+    tooltip.textContent = chapter.label;
+    const time = document.createElement('small');
+    time.textContent = fmt(chapter.start);
+    tooltip.appendChild(time);
+    button.append(track, tooltip);
+    return button;
+  }}
+
+  function bindChapterSegments() {{
+    if (!chaptersContainer) return;
+    chaptersContainer.querySelectorAll('.chapter-segment').forEach((segment, index) => {{
+      segment.addEventListener('click', event => {{
+        event.stopPropagation();
+        if (!audio) return;
+        audio.currentTime = Number(chapters[index]?.start || 0);
+        updateChapterProgress();
+      }});
     }});
   }}
-  
+
+  function renderChapters(nextChapters) {{
+    chapters = Array.isArray(nextChapters) ? nextChapters : [];
+    currentChapterIdx = -1;
+    if (!chaptersContainer) return;
+    chaptersContainer.replaceChildren(...chapters.map(makeChapterSegment));
+    chaptersContainer.dataset.chapters = JSON.stringify(chapters);
+    bindChapterSegments();
+    updateChapterProgress();
+  }}
+
+  function updateChapterProgress() {{
+    if (!audio || !chapters.length) return;
+    const current = Number(audio.currentTime || 0);
+    let activeIdx = 0;
+    chapters.forEach((chapter, index) => {{
+      const start = Number(chapter.start || 0);
+      const end = Number(chapter.end || audio.duration || start + 1);
+      const progress = current <= start ? 0 : current >= end ? 100 : ((current - start) / Math.max(.001, end - start)) * 100;
+      const segment = chaptersContainer?.querySelector(`[data-chapter-index="${{index}}"]`);
+      const segmentFill = segment?.querySelector('.chapter-segment-fill');
+      if (segmentFill) segmentFill.style.width = `${{Math.max(0, Math.min(100, progress))}}%`;
+      if (current >= start) activeIdx = index;
+      segment?.classList.toggle('is-active', index === activeIdx);
+    }});
+    chaptersContainer?.querySelectorAll('.chapter-segment').forEach((segment, index) => {{
+      segment.classList.toggle('is-active', index === activeIdx);
+    }});
+    if (currentChapterEl && activeIdx !== currentChapterIdx) {{
+      currentChapterIdx = activeIdx;
+      currentChapterEl.textContent = chapters.length === 1
+        ? chapters[0].label
+        : `Capítulo ${{activeIdx + 1}} de ${{chapters.length}} · ${{chapters[activeIdx].label}}`;
+    }}
+    if (bar) bar.setAttribute('aria-valuenow', String(Math.floor(current)));
+  }}
+
+  bindChapterSegments();
+  updateChapterProgress();
+
   function togglePlay() {{
+    if (!audio) return;
     if (audio.paused) {{
       audio.play();
       playIcon.style.display = 'none';
@@ -1003,46 +1141,46 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   }}
   const speeds=[0.75,1,1.25,1.5,2]; let speedIdx=1;
   function cycleSpeed() {{
+    if (!audio) return;
     speedIdx=(speedIdx+1)%speeds.length;
     audio.playbackRate=speeds[speedIdx];
     document.getElementById('speedBtn').textContent=speeds[speedIdx]+'×';
   }}
-  
-  // Atualiza capitulo atual na timeline
-  let currentChapterIdx = -1;
-  audio.addEventListener('timeupdate', () => {{
-    if (!audio.duration) return;
-    const pct = (audio.currentTime / audio.duration) * 100;
-    fill.style.width = pct + '%';
-    timeEl.textContent = fmt(audio.currentTime) + ' / ' + fmt(audio.duration);
-    
-    // Destaca capítulo atual
-    if (chapters.length > 0) {{
-      let activeIdx = 0;
-      for (let i = chapters.length - 1; i >= 0; i--) {{
-        if (audio.currentTime >= chapters[i].time) {{ activeIdx = i; break; }}
-      }}
-      if (activeIdx !== currentChapterIdx) {{
-        currentChapterIdx = activeIdx;
-        // Destaca o capítulo ativo na timeline
-        document.querySelectorAll('.chapter-marker').forEach((mk, idx) => {{
-          mk.style.background = idx <= activeIdx ? 'var(--accent)' : 'rgba(255,255,255,0.25)';
-          mk.style.height = idx <= activeIdx ? '18px' : '16px';
-        }});
-      }}
-    }}
-  }});
-  audio.addEventListener('ended', () => {{
-    playIcon.style.display = 'block';
-    pauseIcon.style.display = 'none';
-  }});
-  function seekAudio(e) {{
-    if (!audio.duration) return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    const pct = (e.clientX - rect.left) / rect.width;
-    audio.currentTime = pct * audio.duration;
+
+  if (audio) {{
+    audio.addEventListener('timeupdate', () => {{
+      if (!audio.duration) return;
+      timeEl.textContent = fmt(audio.currentTime) + ' / ' + fmt(audio.duration);
+      updateChapterProgress();
+    }});
+    audio.addEventListener('loadedmetadata', () => {{
+      if (bar) bar.setAttribute('aria-valuemax', String(Math.floor(audio.duration || 0)));
+      timeEl.textContent = fmt(audio.currentTime) + ' / ' + fmt(audio.duration);
+      updateChapterProgress();
+    }});
+    audio.addEventListener('ended', () => {{
+      playIcon.style.display = 'block';
+      pauseIcon.style.display = 'none';
+      updateChapterProgress();
+    }});
   }}
-  function fmt(s) {{ const m=Math.floor(s/60); const sec=Math.floor(s%60).toString().padStart(2,'0'); return m+':'+sec; }}
+
+  function seekAudio(e) {{
+    if (!audio?.duration) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    audio.currentTime = pct * audio.duration;
+    updateChapterProgress();
+  }}
+  if (bar) bar.addEventListener('keydown', event => {{
+    if (!audio?.duration || !['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+    event.preventDefault();
+    if (event.key === 'Home') audio.currentTime = 0;
+    else if (event.key === 'End') audio.currentTime = audio.duration;
+    else audio.currentTime = Math.max(0, Math.min(audio.duration, audio.currentTime + (event.key === 'ArrowRight' ? 5 : -5)));
+    updateChapterProgress();
+  }});
+  function fmt(s) {{ const safe=Number.isFinite(Number(s))?Number(s):0; const m=Math.floor(safe/60); const sec=Math.floor(safe%60).toString().padStart(2,'0'); return m+':'+sec; }}
   
   // Copiar link do audio
   function copyAudioLink() {{
@@ -1079,23 +1217,27 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
     }});
   }}
 
-  // Play archive episode inline
+  // Reproduz episódio do arquivo mantendo capítulos corretos
   function playArchive(el) {{
     const src = el.dataset.audio;
     if (!src || !audio) return;
-    // Pausa o player principal se estiver tocando
-    if (!audio.paused) {{ audio.pause(); playIcon.innerHTML = icons.play; }}
-    // Troca a fonte e toca
+    if (!audio.paused) audio.pause();
+
+    let nextChapters = [];
+    try {{ nextChapters = JSON.parse(el.dataset.chapters || '[]'); }} catch(e) {{}}
+    renderChapters(nextChapters);
     audio.src = src;
     audio.load();
+
+    const titleEl = document.querySelector('.player-title');
+    if (titleEl) titleEl.textContent = `Drop Five News — Episódio #${{el.dataset.episode}} — ${{el.dataset.date}}`;
+    const download = document.querySelector('.player-download');
+    if (download) download.href = src;
+    document.querySelectorAll('.archive-link').forEach(link => link.classList.toggle('is-playing', link === el));
+
     audio.play().then(() => {{
-      playIcon.innerHTML = icons.pause;
-      // Atualiza o título do player
-      const titleEl = document.querySelector('.player-title');
-      if (titleEl) {{
-        const dateText = el.querySelector('.archive-link-date')?.textContent || '';
-        titleEl.textContent = 'D5N ' + dateText;
-      }}
+      playIcon.style.display = 'none';
+      pauseIcon.style.display = 'block';
     }}).catch(e => console.warn('Play failed:', e));
   }}
 
