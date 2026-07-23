@@ -410,6 +410,136 @@ def list_episodes():
         })
     return eps
 
+
+def _manha_summary(date_str):
+    """Extrai o cold open do roteiro canônico sem expor metadados técnicos."""
+    source_path = os.path.join(BASE, f"source-manha-{date_str}.md")
+    try:
+        with open(source_path, encoding="utf-8") as source_file:
+            content = source_file.read()
+        match = re.search(
+            r"## Roteiro aprovado\s+(.+?)(?:\n\s*\n|\n## )",
+            content,
+            flags=re.S,
+        )
+        if not match:
+            return "As notícias que já definiram a manhã e o que ainda pode mudar até o começo da tarde."
+        summary = re.sub(r"\s+", " ", match.group(1)).strip()
+        summary = re.sub(
+            r"\s*Eu sou Antonio e esta é a Manhã Conectada, do Drop Five News\.?",
+            "",
+            summary,
+            flags=re.I,
+        ).strip()
+        if len(summary) > 235:
+            summary = summary[:232].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
+        return summary
+    except OSError:
+        return "As notícias que já definiram a manhã e o que ainda pode mudar até o começo da tarde."
+
+
+def load_manha_conectada_episodes(limit=6):
+    """Carrega apenas edições canônicas, publicáveis e com áudio presente."""
+    manifest_dir = os.path.join(BASE, "manifests", "manha-conectada")
+    if not os.path.isdir(manifest_dir):
+        return []
+
+    episodes = []
+    for manifest_path in sorted(
+        (os.path.join(manifest_dir, name) for name in os.listdir(manifest_dir) if name.endswith(".json")),
+        reverse=True,
+    ):
+        try:
+            with open(manifest_path, encoding="utf-8") as manifest_file:
+                manifest = json.load(manifest_file)
+            date_str = str(manifest.get("date", ""))
+            datetime.strptime(date_str, "%Y-%m-%d")
+            expected_file = f"manha-conectada-{date_str}.mp3"
+            output_name = os.path.basename(str(manifest.get("output", "")))
+            audio_path = os.path.join(AUDIO_DIR, expected_file)
+            duration = round(float(manifest.get("audio", {}).get("duration", 0)))
+            if (
+                str(manifest.get("program", "")).strip().upper() != "MANHÃ CONECTADA"
+                or manifest.get("prototype") is not False
+                or output_name != expected_file
+                or not os.path.isfile(audio_path)
+                or duration <= 0
+            ):
+                continue
+            voice = str(manifest.get("voice", ""))
+            episodes.append({
+                "date": date_str,
+                "date_label": format_data_curta(date_str),
+                "file": expected_file,
+                "path": f"/audio/{expected_file}",
+                "duration": duration,
+                "dur_str": f"{duration // 60}:{duration % 60:02d}",
+                "presenter": "Antonio" if "Antonio" in voice else voice,
+                "summary": _manha_summary(date_str),
+                "words": int(manifest.get("text_gate", {}).get("words", 0) or 0),
+            })
+        except (OSError, TypeError, ValueError, json.JSONDecodeError):
+            continue
+        if len(episodes) >= limit:
+            break
+    return episodes
+
+
+def render_manha_conectada_program(episodes):
+    """Renderiza o programa matinal como produto próprio dentro da marca D5N."""
+    if not episodes:
+        return ""
+
+    latest = episodes[0]
+    episode_buttons = []
+    for index, episode in enumerate(episodes):
+        active = " is-active" if index == 0 else ""
+        episode_buttons.append(
+            f'<button type="button" class="morning-episode{active}" '
+            f'data-audio="{html_lib.escape(episode["path"], quote=True)}" '
+            f'data-date="{html_lib.escape(episode["date_label"], quote=True)}" '
+            f'data-duration="{episode["duration"]}" '
+            f'data-summary="{html_lib.escape(episode["summary"], quote=True)}" '
+            f'onclick="selectMorningEpisode(this)" '
+            f'aria-label="Ouvir Manhã Conectada de {html_lib.escape(episode["date_label"], quote=True)}">'
+            f'<span>{html_lib.escape(episode["date_label"])}</span>'
+            f'<small>{episode["dur_str"]}</small></button>'
+        )
+
+    return f'''
+  <section class="morning-program" id="manha-conectada" data-animate aria-labelledby="morningTitle">
+    <div class="morning-intro">
+      <div class="morning-kicker"><span class="morning-sun" aria-hidden="true"></span> Edição das 11</div>
+      <h2 id="morningTitle">Manhã<br><strong>Conectada</strong></h2>
+      <p>Um briefing para entender o que definiu a manhã — e o sinal que ainda pode mudar o dia.</p>
+      <div class="morning-byline"><span>Com Antonio</span><span>Seg–Sex · 11h</span></div>
+    </div>
+    <div class="morning-listen">
+      <div class="morning-now">
+        <span class="morning-live-dot" aria-hidden="true"></span>
+        <span id="morningDate">{html_lib.escape(latest["date_label"])}</span>
+        <span>Última edição</span>
+      </div>
+      <p class="morning-summary" id="morningSummary">{html_lib.escape(latest["summary"])}</p>
+      <div class="morning-player">
+        <button class="morning-play" id="morningPlayBtn" type="button" onclick="toggleMorningPlay()" aria-label="Reproduzir Manhã Conectada">
+          <span id="morningPlayGlyph" aria-hidden="true">▶</span>
+        </button>
+        <div class="morning-progress" id="morningProgress" role="slider" tabindex="0" aria-label="Progresso da Manhã Conectada" aria-valuemin="0" aria-valuemax="{latest["duration"]}" aria-valuenow="0">
+          <span id="morningProgressFill"></span>
+        </div>
+        <span class="morning-time" id="morningTime">0:00 / {latest["dur_str"]}</span>
+        <a class="morning-download" id="morningDownload" href="{html_lib.escape(latest["path"], quote=True)}" download aria-label="Baixar esta edição">↓</a>
+      </div>
+      <audio id="morningAudio" src="{html_lib.escape(latest["path"], quote=True)}" preload="metadata"></audio>
+      <div class="morning-history" aria-label="Edições anteriores da Manhã Conectada">
+        <span class="morning-history-label">Arquivo</span>
+        {''.join(episode_buttons)}
+      </div>
+    </div>
+  </section>'''
+
+
 def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage_data=None, voice=None):
     n = len(noticias)
     por_pilar = {}
@@ -427,6 +557,9 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
     # ── Hero stats ──
     n_pilares = 4  # Fix: sempre 4 pilares (Global, Tech, Economia, Brasil)
     pod_dur = podcast['dur_str'] if podcast else "0:00"
+    manha_episodes = load_manha_conectada_episodes()
+    morning_html = render_manha_conectada_program(manha_episodes)
+    morning_nav = '<a class="header-program-link" href="#manha-conectada">Manhã Conectada</a>' if morning_html else ''
     
     # Quality score do Coverage Ledger
     qs = coverage_data.get("quality_score") if coverage_data else None
@@ -905,6 +1038,52 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .skip-link:focus {{ top:1rem; }}
   :focus-visible {{ outline:2px solid var(--accent); outline-offset:3px; }}
   @media (prefers-reduced-motion:reduce) {{ *,*::before,*::after {{ animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; }} }}
+
+  /* ── Manhã Conectada ── */
+  :root {{ --morning:#f4b942; --morning-deep:#241d12; --morning-line:#5b4925; }}
+  .header-program-link {{ color:var(--text-secondary); font-size:.68rem; font-weight:600; letter-spacing:.04em; text-decoration:none; transition:color .2s ease; }}
+  .header-program-link:hover {{ color:var(--morning); }}
+  .morning-program {{ display:grid; grid-template-columns:minmax(230px,.82fr) minmax(0,1.35fr); margin:3rem 0 2.5rem; overflow:hidden; border:1px solid var(--border); border-radius:14px; background:var(--surface); box-shadow:inset 0 1px rgba(255,255,255,.025); }}
+  .morning-intro {{ position:relative; padding:2rem; border-right:1px solid var(--border); background:#101727; overflow:hidden; }}
+  .morning-intro::after {{ content:'11'; position:absolute; right:-.15rem; bottom:-1.3rem; color:transparent; -webkit-text-stroke:1px rgba(244,185,66,.14); font-size:8.5rem; font-weight:700; line-height:1; letter-spacing:-.08em; pointer-events:none; }}
+  .morning-kicker {{ display:flex; align-items:center; gap:.55rem; margin-bottom:1.3rem; color:var(--morning); font-size:.63rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }}
+  .morning-sun {{ width:10px; height:10px; border-radius:50%; background:var(--morning); box-shadow:0 0 0 4px rgba(244,185,66,.1); }}
+  .morning-intro h2 {{ position:relative; z-index:1; color:var(--text); font-size:clamp(1.8rem,4vw,2.55rem); font-weight:600; line-height:.98; letter-spacing:-.045em; }}
+  .morning-intro h2 strong {{ color:var(--morning); font-weight:700; }}
+  .morning-intro p {{ position:relative; z-index:1; max-width:26rem; margin-top:1.2rem; color:var(--text-secondary); font-size:.82rem; line-height:1.65; }}
+  .morning-byline {{ position:relative; z-index:1; display:flex; gap:1rem; margin-top:1.4rem; color:var(--muted); font-size:.62rem; letter-spacing:.08em; text-transform:uppercase; }}
+  .morning-byline span + span {{ padding-left:1rem; border-left:1px solid var(--border); }}
+  .morning-listen {{ display:flex; min-width:0; flex-direction:column; justify-content:center; padding:2rem; }}
+  .morning-now {{ display:flex; align-items:center; gap:.6rem; color:var(--morning); font-size:.63rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }}
+  .morning-now span:last-child {{ margin-left:auto; color:var(--muted); font-weight:500; }}
+  .morning-live-dot {{ width:6px; height:6px; border-radius:50%; background:var(--morning); box-shadow:0 0 0 4px rgba(244,185,66,.08); }}
+  .morning-summary {{ min-height:3.7rem; margin:1rem 0 1.35rem; color:var(--text); font-size:.92rem; font-weight:500; line-height:1.55; }}
+  .morning-player {{ display:flex; align-items:center; gap:.8rem; padding:.8rem; border:1px solid var(--morning-line); border-radius:10px; background:var(--morning-deep); }}
+  .morning-play {{ display:grid; width:38px; height:38px; flex:0 0 38px; place-items:center; border:0; border-radius:50%; background:var(--morning); color:#151006; cursor:pointer; font-size:.72rem; transition:transform .18s ease,filter .18s ease; }}
+  .morning-play:hover {{ transform:translateY(-1px); filter:brightness(1.08); }}
+  .morning-progress {{ position:relative; height:7px; min-width:90px; flex:1; overflow:hidden; border-radius:999px; background:#493b21; cursor:pointer; }}
+  .morning-progress span {{ display:block; width:0; height:100%; border-radius:inherit; background:var(--morning); transition:width .1s linear; }}
+  .morning-time {{ color:#c8b98f; font-family:'DM Mono',monospace; font-size:.58rem; white-space:nowrap; }}
+  .morning-download {{ display:grid; width:28px; height:28px; place-items:center; color:var(--morning); border:1px solid var(--morning-line); border-radius:7px; text-decoration:none; }}
+  .morning-history {{ display:flex; align-items:stretch; gap:.45rem; margin-top:1rem; overflow-x:auto; scrollbar-width:thin; }}
+  .morning-history-label {{ display:flex; align-items:center; padding-right:.45rem; color:var(--muted); font-size:.58rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; }}
+  .morning-episode {{ display:flex; min-width:max-content; align-items:center; gap:.55rem; padding:.45rem .65rem; border:1px solid var(--border); border-radius:7px; background:transparent; color:var(--muted); cursor:pointer; font:inherit; font-size:.64rem; transition:border-color .2s ease,color .2s ease,background .2s ease; }}
+  .morning-episode small {{ color:var(--faint); font-size:.56rem; }}
+  .morning-episode:hover,.morning-episode.is-active {{ border-color:var(--morning-line); background:rgba(244,185,66,.06); color:var(--morning); }}
+  .morning-program.visible {{ animation:fadeSlideUp .5s ease both; }}
+
+  @media (max-width:700px) {{
+    .morning-program {{ grid-template-columns:1fr; margin:2rem 0; }}
+    .morning-intro {{ padding:1.5rem; border-right:0; border-bottom:1px solid var(--border); }}
+    .morning-intro::after {{ font-size:7rem; }}
+    .morning-listen {{ padding:1.5rem; }}
+  }}
+  @media (max-width:600px) {{
+    .header-program-link {{ display:none; }}
+    .morning-player {{ flex-wrap:wrap; }}
+    .morning-progress {{ order:5; flex-basis:100%; height:9px; }}
+    .morning-summary {{ min-height:0; }}
+  }}
   @media (max-width:600px) {{
     .hero {{ padding:3rem 0 2rem; }} .hero::after {{ font-size:5rem; top:1rem; }}
     .hero-sub {{ gap:.8rem; flex-wrap:wrap; }} .divider-v {{ display:none; }}
@@ -934,6 +1113,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   </a>
   <span class="header-meta">{data_br}</span>
   <div class="header-right">
+    {morning_nav}
     <span class="edition-badge">#{podcast["num"] if podcast else "---"}</span>
     <div class="tech-bar">
       <span class="tech-item">IBOV <span class="tech-value">—</span></span>
@@ -969,6 +1149,8 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
 
   {player_html}
 
+{morning_html}
+
   <div class="search-bar">
     <input type="search" id="searchInput" placeholder="Buscar notícias..." aria-label="Buscar notícias">
   </div>
@@ -984,28 +1166,10 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   {sections_html}
 
   <div class="premium-block" data-animate>
-    <div class="premium-eyebrow">✦ Premium · Em Breve</div>
-    <h3 class="premium-title">Dois novos programas diários. Você entra antes de todo mundo.</h3>
-    <p class="premium-desc">Curadoria de bolso pra começar e terminar o dia. Cinco minutos que valem por vinte.</p>
-
-    <div class="premium-programs">
-      <div class="premium-program">
-        <div class="premium-program-time">☀ 06:30</div>
-        <div class="premium-program-name">Amanhã Conectada</div>
-        <div class="premium-program-hook">Um briefing direto para começar o dia: agenda, Brasil, mundo e tecnologia, com o contexto necessário para entender o que vem pela frente.</div>
-        <div class="premium-program-meta">~5 min · Áudio + bullets no app</div>
-      </div>
-
-      <div class="premium-program">
-        <div class="premium-program-time">🌙 17:00</div>
-        <div class="premium-program-name">Fechamento do Mercado</div>
-        <div class="premium-program-hook">O resumo que fecha o pregão: mercados, dólar, ativos e os movimentos que ajudam a preparar o próximo dia.</div>
-        <div class="premium-program-meta">~5 min · Áudio + 1 gráfico</div>
-      </div>
-    </div>
-
-    <span class="btn-premium" aria-label="Programas em desenvolvimento">Novidades em breve</span>
-    <p class="premium-fineprint">Novos formatos estão em desenvolvimento. Acompanhe as próximas edições do Drop Five News.</p>
+    <div class="premium-eyebrow">✦ Próximo formato · Em desenvolvimento</div>
+    <h3 class="premium-title">Fechamento do Mercado</h3>
+    <p class="premium-desc">O resumo das 17h com mercados, dólar, ativos e os movimentos que ajudam a preparar o próximo dia.</p>
+    <span class="btn-premium" aria-label="Fechamento do Mercado em desenvolvimento">Em breve</span>
   </div>
 
   <section class="section" style="border-bottom:none;padding-bottom:0">
@@ -1058,6 +1222,12 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   const currentChapterEl = document.getElementById('currentChapter');
   const chaptersContainer = document.getElementById('chaptersContainer');
   const bar = document.getElementById('progressBar');
+  const morningAudio = document.getElementById('morningAudio');
+  const morningPlayGlyph = document.getElementById('morningPlayGlyph');
+  const morningPlayBtn = document.getElementById('morningPlayBtn');
+  const morningProgress = document.getElementById('morningProgress');
+  const morningProgressFill = document.getElementById('morningProgressFill');
+  const morningTime = document.getElementById('morningTime');
 
   let chapters = [];
   let currentChapterIdx = -1;
@@ -1143,6 +1313,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   function togglePlay() {{
     if (!audio) return;
     if (audio.paused) {{
+      if (morningAudio && !morningAudio.paused) morningAudio.pause();
       audio.play();
       playIcon.style.display = 'none';
       pauseIcon.style.display = 'block';
@@ -1175,6 +1346,75 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
       playIcon.style.display = 'block';
       pauseIcon.style.display = 'none';
       updateChapterProgress();
+    }});
+  }}
+
+  // ── Player independente da Manhã Conectada ──
+  function updateMorningPlayer() {{
+    if (!morningAudio) return;
+    const current = Number(morningAudio.currentTime || 0);
+    const fallbackDuration = Number(morningProgress?.getAttribute('aria-valuemax') || 0);
+    const duration = Number(morningAudio.duration || fallbackDuration);
+    const pct = duration ? Math.min(100, Math.max(0, current / duration * 100)) : 0;
+    if (morningProgressFill) morningProgressFill.style.width = `${{pct}}%`;
+    if (morningTime) morningTime.textContent = `${{fmt(current)}} / ${{fmt(duration)}}`;
+    if (morningProgress) {{
+      morningProgress.setAttribute('aria-valuenow', String(Math.floor(current)));
+      if (duration) morningProgress.setAttribute('aria-valuemax', String(Math.floor(duration)));
+    }}
+  }}
+
+  function setMorningPlayState(playing) {{
+    if (morningPlayGlyph) morningPlayGlyph.textContent = playing ? 'Ⅱ' : '▶';
+    if (morningPlayBtn) morningPlayBtn.setAttribute('aria-label', playing ? 'Pausar Manhã Conectada' : 'Reproduzir Manhã Conectada');
+  }}
+
+  function toggleMorningPlay() {{
+    if (!morningAudio) return;
+    if (morningAudio.paused) {{
+      if (audio && !audio.paused) audio.pause();
+      morningAudio.play().then(() => setMorningPlayState(true)).catch(error => console.warn('Play failed:', error));
+    }} else {{
+      morningAudio.pause();
+    }}
+  }}
+
+  function selectMorningEpisode(button) {{
+    if (!morningAudio || !button?.dataset.audio) return;
+    morningAudio.pause();
+    morningAudio.src = button.dataset.audio;
+    morningAudio.load();
+    document.querySelectorAll('.morning-episode').forEach(item => item.classList.toggle('is-active', item === button));
+    const date = document.getElementById('morningDate');
+    const summary = document.getElementById('morningSummary');
+    const download = document.getElementById('morningDownload');
+    if (date) date.textContent = button.dataset.date || '';
+    if (summary) summary.textContent = button.dataset.summary || '';
+    if (download) download.href = button.dataset.audio;
+    if (morningProgress) morningProgress.setAttribute('aria-valuemax', button.dataset.duration || '0');
+    updateMorningPlayer();
+    morningAudio.play().then(() => setMorningPlayState(true)).catch(error => console.warn('Play failed:', error));
+  }}
+
+  if (morningAudio) {{
+    morningAudio.addEventListener('timeupdate', updateMorningPlayer);
+    morningAudio.addEventListener('loadedmetadata', updateMorningPlayer);
+    morningAudio.addEventListener('play', () => setMorningPlayState(true));
+    morningAudio.addEventListener('pause', () => setMorningPlayState(false));
+    morningAudio.addEventListener('ended', () => {{ setMorningPlayState(false); updateMorningPlayer(); }});
+  }}
+  if (morningProgress) {{
+    morningProgress.addEventListener('click', event => {{
+      if (!morningAudio?.duration) return;
+      const rect = morningProgress.getBoundingClientRect();
+      morningAudio.currentTime = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width)) * morningAudio.duration;
+    }});
+    morningProgress.addEventListener('keydown', event => {{
+      if (!morningAudio?.duration || !['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+      event.preventDefault();
+      if (event.key === 'Home') morningAudio.currentTime = 0;
+      else if (event.key === 'End') morningAudio.currentTime = morningAudio.duration;
+      else morningAudio.currentTime = Math.max(0, Math.min(morningAudio.duration, morningAudio.currentTime + (event.key === 'ArrowRight' ? 5 : -5)));
     }});
   }}
 
@@ -1492,8 +1732,13 @@ def main():
     parser = argparse.ArgumentParser(description='Gera site D5N premium')
     parser.add_argument('--data', default=DATE)
     parser.add_argument('--no-podcast', action='store_true')
+    parser.add_argument('--site-only', action='store_true', help='Atualiza somente index.html usando a última edição D5N disponível')
     args = parser.parse_args()
     date = args.data
+    if args.site_only:
+        latest_podcast = find_latest_podcast()
+        if latest_podcast:
+            date = latest_podcast['date']
     data_br = format_data_br(date)
     data_curta = format_data_curta(date)
     noticias = load_today_news(date)
@@ -1569,6 +1814,10 @@ def main():
     html = gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage_data=coverage_data, voice=voice)
     with open(f"{BASE}/index.html",'w') as f: f.write(html)
     print(f"✅ index.html — {len(html)} bytes, {len(noticias)} notícias")
+
+    if args.site_only:
+        print("✅ site-only — fontes, feeds e arquivo D5N preservados")
+        return
 
     md = gerar_source_md(date, data_br, noticias, voice=voice)
     if md:

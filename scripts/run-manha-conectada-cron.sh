@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -uo pipefail
+set -euo pipefail
 
 REPO="/root/repositorio/d5n-videocast-source"
 LOG_DIR="/root/.hermes/profiles/d5n/cron/output/manha-conectada"
@@ -24,7 +24,14 @@ if [ "$STATUS" != "ok" ]; then
 fi
 
 FILE=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["file"])' "$TMP_RESULT")
+SOURCE=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["source"])' "$TMP_RESULT")
+MANIFEST=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["manifest"])' "$TMP_RESULT")
 DURATION=$(python3 -c 'import json,sys; print(round(json.load(open(sys.argv[1]))["audio"]["duration"]))' "$TMP_RESULT")
+
+if ! bash "$REPO/scripts/publish-manha-conectada-site.sh" "$FILE" "$SOURCE" "$MANIFEST" >>"$LOG_FILE" 2>&1; then
+  printf 'ERRO: MANHÃ CONECTADA foi gerada, mas a publicação do site falhou. Consulte o log operacional.\n'
+  exit 1
+fi
 
 # O scheduler do host está uma hora atrás de Brasília. A produção começa antes,
 # mas a saída só é liberada às 11:00 em America/Sao_Paulo.

@@ -1,0 +1,202 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-07-21",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/audio/manha-conectada-2026-07-21.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/source-manha-2026-07-21.md",
+  "sha256": "87a9a19748cf5327c453257f6b66056b89a92d566b28ac58554a0b411241e343",
+  "text_gate": {
+    "words": 703,
+    "forbidden_hits": [],
+    "ending_ok": true
+  },
+  "audio": {
+    "duration": 298.213878,
+    "size": 7157803,
+    "bit_rate": 192017,
+    "lufs": -16.63,
+    "true_peak_dbtp": -1.71,
+    "lra": 2.8
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "EUA podem perder para o Brasil o papel de maior exportador agrícola do mundo, diz Financial Times - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFB0cjFCbUEwd2xPWnROVWJ2T1lUWjhSa0dkbXlDaWVvSUtIUWFmbHZObXlUekl4TUVqMzJ3aXpuYW84b0dUU3ZjT3k2MTJSSlJvWU1PWmJFWFNlMWNZVlVSQVZn0gFnQVVfeXFMTlRqSElkcXg0ckpqWkpXYk1MNXJHUzc3MjFwMm9rM2VTYUM5bEs1aFozSjQ2WnFsMjVZUnlKRHhJdVN1U3BibFFXTmN0azRaU1BsT18xT3ZLVHhCSmhuVEhOR1hYTjJXQQ?oc=5",
+      "source": "BBC",
+      "published": "Tue, 21 Jul 2026 11:28:36 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Governo se reúne com setores afetados pelo tarifaço dos EUA - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNelBYUGl4ejhDYlFJb291ZHdzTk5tTmYzcE1GOVVaa2JRTXJSOEUwRWN0bGZScnhuRF9HTHctRDFzb2k2TjhDbjJpOXdtWkJxZW9xWUtoZFQ1V0tPakhtSk9sTlAwekFlRjRyQTY1X0xLOUV1ckJTNG5ra05UX0NwNWkxelg3SnBtLURZTkVla29OdE91a0kydFg5bTZUS2t5N0d4MzFB?oc=5",
+      "source": "SBT News",
+      "published": "Tue, 21 Jul 2026 08:26:32 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA1cTN1MUFFQ1RuWmtsRUVoUWZlb0ZNWEZYYmpqcEhYa28tQXJBeGtwcUtTSmJxSzYzclNEQXgzUWRkcWZDS3RPN2stTE5qMjBxV0FnbkN1dUI2QXR0cENsbzlIcmFoNVhodkNlYjktY9IBdEFVX3lxTFBjelh4eG12QWI4NElTV3JINk13bDRzby02MFQ5RndaM0RLcTNhRnJxUXhOOWd3T2dVamRLckFIWGZjOC0yVGRRVmdmS083ZWdZWkJrUUFVSzJWbHdZZ3J5bWZwdWxPYTA0RzdBa3AwVzJYbzNE?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Tue, 21 Jul 2026 09:40:23 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Esquema de roubo de remédios para câncer movimentou mais de R$ 33 milhões para o TCP - Midiamax",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOVkRlODUzOHB2WmdJUDhUSndxV2JGekpYTnZ0U2pnY2ROSjRxQWYzMVZfa1czQUJBa1FocUlJQzBCYWQ0TUlMNk5uYTk4N014Q3VldjY5U2ZZNkFIdWxlSVJLNWZIdDNUYXFHTGFQRHpsZEtTTFhGZ3kyTEN5U2pLeWxvVXZnOWx4ajZoUHlyaGRNNS0xdkxKR253NjhwZUFl?oc=5",
+      "source": "Midiamax",
+      "published": "Tue, 21 Jul 2026 11:19:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "EUA concedem green card a Eduardo Bolsonaro após condenação no Brasil - band.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNWC02ZXBCb0gyb1dvTFRHcEQ3V0t1R0MwdG85cElaMkdWT0VSd0V0VTVHZjBTYl9pSW5aTG52Smh3R3NPVjJMZDFmbGsxU1RlRzFvZnpmWWZ5cFdvQnFRSFpIS0Z3c21RSnhhWEtGUUFyOEdPdFZMU3YzazZSZHlBOE0ybjNvQmlmaU83ODg1QU1hVTViaEpWMTduNWd2c3lnMkkzcmpycFU1S1NvenA3b3dhNjJ1OTRlTEYyNko2eXRndw?oc=5",
+      "source": "band.com.br",
+      "published": "Mon, 20 Jul 2026 22:21:14 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "EUA podem perder para o Brasil o papel de maior exportador agrícola do mundo, diz Financial Times - G1",
+      "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxONTRDOFJLSGJiZ2REOTZPMzJlZktsV0dJYmpCSExGWnFqZnFqS0JjYUdQcG5pRjl1bFQxaWJpdExPdVNRd2l1Mm1OWkpuQVhBZ2xIZnRHZVJJUEtPSlkzeHJJTkFXbDA0V2NRdzIwTEh6bkN5N3lVVExzYndKMHRlM0JhZTFTYXVVcWg4cnczXzI0Vk9oeXE0aWdrdUU5QTJZdnVzSElSZnE3cHczbGtLWTFfbF9wZXZDSlNLSy1oSnV6b1F2d2pmWC1jVDMyRHBCREVWVUh6UmZXUEtMTFoteGVXeWkyNlBhdFN5OUdsMkFFM3FJUFpF0gGGAkFVX3lxTE1aWmpVaFVRQkZ3QnUzY0c4Ync4TzRuN0xnNTdEYy1JcjZFWnBtQ3pLQ0lTSVROVmQyU1hNNTJMdjBfVThLSm9MLXpZeVlELWw0bHE4Z0JfQ0c3M04xRkpwN09ob2FHUVhwbF9xSlFDelpXSUNoaFU2OVJzYnVHcmRpRkFrVWJISU8xd0NPa0tPVHQ4SmR0UGJUeHJyeG9MV3hzeWZhRXYxejdIVzloVUxaSDZBU01SN3BaeHdMRG4zTlAxck41S1Y0Q2FBVFB5azZDWXl2bmtYS3VUTGswaDVfemlQQXgxd0I0aHRfeUgxa3BYVURYYWhyZnlyQ0JjRXRDSml2NXc?oc=5",
+      "source": "G1",
+      "published": "Tue, 21 Jul 2026 11:27:49 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Jornal Midiamax. . 🔵 Midiamax No Ponto: avião sai de Campo Grande para dar volta ao mundo ↗️Avião sai de Campo Grande para dar volta ao mundo ↗️Prefeitura inicia obra de remoção de rotatória na avenida Rachid Neder ↗️Atravessadores de MS s - facebook.com",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPZ1BDNEQ3akFlM2djS21fS2N4VXJHR3JQSXdXZnBFcGlfamVJdmxaSUFKdzZzUldjaTFFb2VWRkJTMkJEeEI2Tzhlb1RBMnBjVzNGY3ZKa0FaOEhFbXVibDh4ZW1ac3VvaWhyejhqZ0dTbW5pQ1BmdWhCN19xbENmdzF0c2Z0bzRwcDRubURJLWk2NTBibDdCNUlGZ1dXeU1fOUtRWnRUaVhGSGlxYkpUOW9lNnpBVklueVZRdElBVk5ncUFVc3A3Q2dEZTk?oc=5",
+      "source": "facebook.com",
+      "published": "Tue, 21 Jul 2026 11:41:16 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Vozinha recusou 'publis' durante a Copa do Mundo por foco em Cabo Verde - UOL",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNZmFVRFJYanpKNGN6bUhvWGZDQVktU0I1SGxUT2ptRnJKMHJiYUllQ21TeExDX2ozN2F4SnRwcE5sWEt4c1BNWnBMMW1jOWtiSHNUUV9vVnNyUFE0dVVySVRGNmU2aVRlR1BZWWJjVTNBVVIzOVVORElncEFOMlNzTkFmUm9JNUg0Sng1TUVpSm9ya3BRbkpXM05fcnkwWWt5eVBmMzBxRFFyREp5REpBMDdlNnZyeGhra01pOThxMzV6YjRKR2lQRVN2elFOOUh5YzM4TXlkSzU?oc=5",
+      "source": "UOL",
+      "published": "Tue, 21 Jul 2026 12:30:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Enchentes deixam 20 mortos no Afeganistão - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPcHJfQjR0ME9hTWtmNjBfMWJDcldMWEdZcUJwQXdZaV9yNk9jRW5DZTQtMkNKRm1Nb0U3MXJkemRCTnBqOHQ2UjFCaW9BVm4yT2dBRnVJamd3elF6bmRHWEh2UXFZZmR6N0lmbncwazc4UkNRbm5xTW43b2ExVEJzbi0wQWt3dw?oc=5",
+      "source": "SBT News",
+      "published": "Tue, 21 Jul 2026 10:17:45 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Jornal europeu detona Messi após confusão na final da Copa do Mundo - band.com.br",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNbjFqUDR5VG9vRDYwODF5SW9TNl9fQ2ZtZTczR3Q0aDhpb1VkQldwd3FKdUFKNUxzWW1hOEZSYTdBYnl2ZlphSWJ4Uks3SFNISlZZX0M2RTFnZFhnREdhRnhKb3RvclFZY3V3WWpVRm1MOXRfMjhCenVaeHpoNU1xOGNvWUhIN3hqYWxNSWJzaTJoMWFELVZfLUVMRlVFX3JqRHprUXdpUmZIcUpkUUZyTUMyUnhSQVE3LUJSaU56ZEtjc2cyc2tXS2tjZTJFTzV2ZXdCb1JzTFJ4VTNq?oc=5",
+      "source": "band.com.br",
+      "published": "Tue, 21 Jul 2026 11:31:44 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Potencial da IA depende de operações confiáveis - Futuro da Saúde",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQSEdVV29WZWJGcWZ0VTBwRnRtdHVJNXFfYl9NRkpsRW0wenFHUEVDWVl6TjFleEJ6aWkyUEtpc2d3a3JveFVpellGUXF5RGt4S2RmUnhTMFpuajBKemIteEZzbUdxSjlqMGNpby1NTWl0aExvZnZnM20xWmVVUFJsUk11b1dwaUxUTTRfZkV5dTk?oc=5",
+      "source": "Futuro da Saúde",
+      "published": "Tue, 21 Jul 2026 12:50:56 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Padre sobre IA: tecnologia deve servir à pessoa; ninguém é descartável - Notícias - Canção Nova",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQMVYzXzRET1NWQlhySmZqcXE0SjA2a1otelpITWpVeE9UbUJXM2hURHl6VzNwQkpxZzZheVJuQTYwRXk3ZlhQQ1FlSUc1UXRDV0tpcFE4VEpNSF9xS0NDc2pRV3J4Q2VjclUxLUlnQXVCZnZZMFZDQ0VNX2JFbXRZMlBNczJyODRTMnVva1dzOGVyalVseVlRQnltYmEwbENZb0JFVHNzWGVTTUhx?oc=5",
+      "source": "Notícias - Canção Nova",
+      "published": "Tue, 21 Jul 2026 11:40:03 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Inteligência artificial não substituirá profissionais, mas transformará a forma de trabalhar, avalia especialista - cryptoid.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPeC05M3BYTjNNZVVCX3lUV0U3TUpldzNhV1U5RC0yTXlWMUE0bTdZN1JvMFhJQXBieXdJTld4b3BvOGQyNnJxRkpsd05LXzE4LTN2QW93eGR2ZjFYbnhkTm5MZEw1QksyOHJDT3NHZlU5cXJGUU9CVW04V1ZDNjk2alJFbHhhazBuMEtfT0VKRjY2WjRNd25vR3RkeUktWVotY0MxbmZWQS0xQnl6VHV5WnJoallaQVFFcjBlUjVOa2g3c3pnZ0w1M2Vn?oc=5",
+      "source": "cryptoid.com.br",
+      "published": "Tue, 21 Jul 2026 12:19:10 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Excesso de inteligência artificial pode reduzir criatividade da Geração Z, aponta estudo - ES Hoje",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPUVNVMV9aemRVZGMtRXhJWWFlcXp0UzlNZEJqcUlIM0FiZDlOSlBOVWtvX21IQVctaEVBOFR2dXRBSkNRUkNVczlwUm1XZlppNW1aVXNLRm1iakVMbTV6cF9tVXUyYW5mdDFIMXVEYkpIdjZpMzBQTXFSLWVSNnlQX21EaUIxNGxNTEpJcGh4RnljaG1YQnhDRG1abGF1VXBTUEtSWVRaelJPNS1SN2tYNFR6U29QQVpmU0EtaVhUYUt0X2ZOcGZTd2VCazQ0dnJB?oc=5",
+      "source": "ES Hoje",
+      "published": "Tue, 21 Jul 2026 13:28:19 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Dispositivo com IA reconhece espécies de mosquitos sem internet - SITEPD",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZDI2VnMxZkh1ZWluZEFScTV2SjZyS3ZFUWJKQXExS0kwTndhcGk5QzBvM0hOWWFDVFMxQVJkbk1ESjdNaVNzVTJNT0ZMbFZMWHYtNjBXeUdud2UyR1JSd0ljSEQyVFEwM2RFYk9IM3d5dFpzMnpQSVNQRmZPUzRfOVVfOGpEWHMzWHB3?oc=5",
+      "source": "SITEPD",
+      "published": "Tue, 21 Jul 2026 13:41:08 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Modelo do Pix desafia controle financeiro dos EUA sobre o Brasil - CartaCapital",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNOFJyakRpQ3ZOUWRpOVRnR3pXdldqeVdBOWhBTGxNSEZkNVlxdEt2RXVEVHk4bUYyOVk0d3hlV09TY3ZqczNsZzZvc2JPX3Z4eVpadFAteUJfQjdUNUdtSDlpd2piN2E2RExEWGhFV0RrWVVZTTNuU0pHOGhNYlpYU0NvemVlNkR6aFNMaTJMaG9qSHF5ejlSWTBWWElkWW5LYkJSNmthSlRWQQ?oc=5",
+      "source": "CartaCapital",
+      "published": "Tue, 21 Jul 2026 13:33:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Brasil ganha três ouros na Olimpíada de Economia – e tem maior nota da história - Brazil Journal",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOZnlIdDdMX3pFSzN2N1U5RVhEOHQ2RmtjUjV3VWpSLTBVcnlhVkZGR0x6eVRTR0dUNV9vMkdBbFZFSG56ZnV3eU54VG5sbkNOZWZXUXNCcWQtNXlDSzdBam1HRDB4M1NnSzFEZngycnVJeUJualEwUWduWVJKTGE1dXFOdFBKQXpZUmMzX2JFcW5GaDVEMDdBMnNDZHVLNFZPR3dNcGttUQ?oc=5",
+      "source": "Brazil Journal",
+      "published": "Mon, 20 Jul 2026 22:20:35 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Monitor do PIB mostra alta de 0,7% na atividade em abril - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNM3ludHVzRzlrT2hFQXBGTkllNmE0X3JTNm5mczA2ZjNIUmROenh0NTNPbWU2YngySFd2LVlUcVhzMGM0NEhuQk9LQWlsTFVlOVB2UEk0RFVONE1NcUlkN3V6UHFwYzVQdVhPbDdGNTlKZGtEajdZNXN2Unp4MXZPY1JoRmlwR2JGWGVJZHNobWFVZGxISGNWTE55dXpCNnJvV1FJYkhlUkNSSS1YUU1Xc2p1Vm13NENMRUJYRzFB0gG-AUFVX3lxTE0zeW50dXNHOWtPaEVBcEZOSWU2YTRfclM2bmZzMDZmM0hSZE56eHQ1M09tZTZieDJIV3YtWVRxWHMwYzQ0SG5CT0tBaWxMVWU5UHZQSTREVU40TU1xSWQ3dXpQcXBjNVB1WE9sN0Y1OUpka0RqN1k1c3ZSengxdk9jUmhGaXBHYkZYZUlkc2htYVVkbEhIY1ZMTnl1ekI2cm9XUUliSGVSQ1JJLVhRTVdzanVWbXc0Q0xFQlhHMUE?oc=5",
+      "source": "Valor Econômico",
+      "published": "Tue, 21 Jul 2026 08:00:46 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "A energia do futuro: o Brasil pode liderar a nova economia da energia - Canal Solar",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5uUVB1ZVVaUGQwVVhwYU1zTHdmQV9IaXhLbVJ6M3Y5bFAyWWtacGg3VnFzbUFsNkFKY25ia1h5TEo0dE9kMjBYbjhqWUc4VWx4Ql91V01ZX0hjUURZaFc0cHl3ZkFVUkhGWDZMdDlCSVliNDZCM0J3?oc=5",
+      "source": "Canal Solar",
+      "published": "Mon, 20 Jul 2026 18:17:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Fusões e aquisições caem 6% em valor no 1º semestre no Brasil, com menor número de transações desde 2018 - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPa0V5VGFpblBTbXRwLVdQNW9ULTNlRk9iWUdDUU1rejZ6VVUyNXZuN2xXUDZta3EwWVNUX0hMZVpHZ0dFTzNLTXJiVzk5SWFYc3c2WjdDbDc1V2w3VF9KVmJQZ2FPcFFmWVBST1AwdWJuaU9OVEJrWkxTcWx1a29TNFlIWXd3eGJjSmpva1JNcGQzTHcwcGpoYU1JbERZTVFZUVhjd2tIZzFJaWx1WFRveUVsVlFuSU1GUmRjRTRDbngyTzhnU0FUZWlaM3pRaWV2eTlZS0p1bjk5aXNtdXZ6ek5iUHJTNzNSaUE?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Tue, 21 Jul 2026 07:00:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Harry Styles interrompe agenda no Brasil e cancela show em São Paulo - Alô Alô Bahia",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNOWZPb3NvNkhxMjZUNUJUd2NaQ25YOC0wT1B0TGJTRlpyRUIyS1FjTjZJaWx4ZmJFOWRQX2k0QzRGNUdocGVLQnRkd3ZzdUFhTm9GX2ZiWG1MNHlrTHhnVXBYQ2Y1WUVnX2pmNTRZTEExM0ZsTTZDTkNMb1NvWG10OTlVZEZSaHJvbHpGNWpiejh6cDh4M254MXM5Wl8yaE53eS1uQjN4WGItQTRkeWtvclNEOA?oc=5",
+      "source": "Alô Alô Bahia",
+      "published": "Tue, 21 Jul 2026 12:54:10 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Futebol na TV: a programação completa dos jogos de hoje, terça-feira, 21 de julho - Goal.com",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOejhoaWx4NWkzSzA1QW5uNWY0Y2lOQ0pRYUJJYnFhTHJtb1dfNFJUMlM5aGJ2TXVXVXJEQXZVUFNOUXNVMUVnY25VUVc4a1JyZS1MaEdxRlpzaVFqLUtlSF96WVZMSFloZGFHdE4xcUVvZXFzWnR6WHdhTFIwQ1djVmJKT3dfVUpPOVluczZTS181Um42N3BydHhVb2c3czBGeG9oMWZHT2VYaVl3Zmh3WG5xMWJsSGFHa3VN?oc=5",
+      "source": "Goal.com",
+      "published": "Tue, 21 Jul 2026 04:00:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda Cultural de 20 a 26 de julho - Culturadoria",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9yalhveW5la2pQR0xzSTdWRnNTbTdOYWtoMC1uU1BURFFKaGZpQi1HaG04WUlwa0R1bEVPWjF3aVY0OTdLQVl5WjgwM0JTRVNlSXNMSFhSS19hbW91U2ZxbWNBSDBaUkQ0Z0tQeDlTUDEzdw?oc=5",
+      "source": "Culturadoria",
+      "published": "Mon, 20 Jul 2026 22:42:17 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Tim acelera agenda de aquisições no Brasil em meio à mudança de controle na Itália - Exame",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNUDRaSmxVX2lSSWVBaDJ2SUNvOElwN2JQblh5ZzM2NXZmSTdTZnYxcXZpR2owQ1RoUmNqQnY1WnVDUEdqNXdPRXdwOE1pZVdtSzNib2cydW02ekRjZldhS3hwcVN1SWxWa1hWV0hRMGFuZjR0STN3TWZ2dU1vZTB6N2VCSEdnTTNGdW9XRjh4ME5EN3NQeE1UWnVqSFJKQnFVWXkxZ25NVk1sR3ZMaDBv?oc=5",
+      "source": "Exame",
+      "published": "Tue, 21 Jul 2026 11:07:23 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Dólar hoje recua após notícias sobre proposta de cessar-fogo no Oriente Médio - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNUmdVTWVkOWdYNENPTHNPaUdmU3hpY1E3TUdVbHlZOXpRWU9oRVh2RHl3T25fSzlManRKbVZ5THhmRlVvaW4zY281NkxXMGozb3lCaV9SR3RjQVZTRUpkT1lEZVpnakFBZDgxTFhtaGtubm1zcDdSY05HdTBzZjVDTW1rOTVQWlV6el9YWGF4eVpxa0tsX25DbW9XdzfSAaIBQVVfeXFMTUt0Q1p0dGdvcWdNTlpIZGJkT1dFb0JuX2E1N3dQVUdiMEFkQnBVMXRCMTVQSThzYl9GYkVjVmd2VHhrVDFkZF9Bb2R4emdVb0Y3Q3ZHREV5a1RsTEQyNGlIclBIX19ocklIbHFLY01lUUM4cFMyZTFHMm5tazVQX0tlZnJQT0FITWZBcU81cDFidmdVX2tjNVMwN2pQOEhnYnNR?oc=5",
+      "source": "InfoMoney",
+      "published": "Tue, 21 Jul 2026 12:27:01 GMT"
+    }
+  ],
+  "generated_at": "2026-07-21T10:47:11.340221-03:00"
+}

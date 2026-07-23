@@ -1,5 +1,7 @@
 import importlib.util
+import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -24,6 +26,81 @@ def load_module(path, name):
 
 
 class PipelineContractTests(unittest.TestCase):
+    def test_manha_conectada_site_loads_only_canonical_published_episodes(self):
+        generator = load_module(REPO / "gerar_pagina_d5n.py", "d5n_generator_manha_conectada")
+
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp)
+            audio_dir = base / "audio"
+            manifest_dir = base / "manifests" / "manha-conectada"
+            audio_dir.mkdir(parents=True)
+            manifest_dir.mkdir(parents=True)
+
+            canonical_audio = audio_dir / "manha-conectada-2026-07-21.mp3"
+            prototype_audio = audio_dir / "manha-conectada-2026-07-22-prototipo.mp3"
+            canonical_audio.write_bytes(b"canonical-audio")
+            prototype_audio.write_bytes(b"prototype-audio")
+            (base / "source-manha-2026-07-21.md").write_text(
+                "# MANHÃ CONECTADA — 21/07/2026\n\n"
+                "## Roteiro aprovado\n\n"
+                "O Brasil reage às tarifas; a tecnologia avança na saúde; e os mercados acompanham novos indicadores. "
+                "Eu sou Antonio e esta é a Manhã Conectada, do Drop Five News.\n\n"
+                "## Fontes coletadas\n",
+                encoding="utf-8",
+            )
+            (manifest_dir / "2026-07-21.json").write_text(json.dumps({
+                "program": "MANHÃ CONECTADA",
+                "date": "2026-07-21",
+                "prototype": False,
+                "voice": "pt-BR-AntonioNeural",
+                "output": str(canonical_audio),
+                "source_file": str(base / "source-manha-2026-07-21.md"),
+                "audio": {"duration": 298.2},
+                "text_gate": {"words": 703},
+            }), encoding="utf-8")
+            (manifest_dir / "2026-07-22-prototipo.json").write_text(json.dumps({
+                "program": "MANHÃ CONECTADA",
+                "date": "2026-07-22",
+                "prototype": True,
+                "output": str(prototype_audio),
+                "audio": {"duration": 280},
+            }), encoding="utf-8")
+
+            original_base, original_audio = getattr(generator, "BASE"), getattr(generator, "AUDIO_DIR")
+            setattr(generator, "BASE", str(base))
+            setattr(generator, "AUDIO_DIR", str(audio_dir))
+            try:
+                episodes = generator.load_manha_conectada_episodes()
+                rendered = generator.render_manha_conectada_program(episodes)
+            finally:
+                setattr(generator, "BASE", original_base)
+                setattr(generator, "AUDIO_DIR", original_audio)
+
+        self.assertEqual(len(episodes), 1)
+        self.assertEqual(episodes[0]["date"], "2026-07-21")
+        self.assertEqual(episodes[0]["path"], "/audio/manha-conectada-2026-07-21.mp3")
+        self.assertEqual(episodes[0]["presenter"], "Antonio")
+        self.assertIn('id="manha-conectada"', rendered)
+        self.assertIn('id="morningAudio"', rendered)
+        self.assertIn('class="morning-episode is-active"', rendered)
+        self.assertEqual(rendered.count('class="morning-episode'), 1)
+        self.assertIn("O Brasil reage às tarifas", rendered)
+        self.assertNotIn("prototipo", rendered)
+
+    def test_manha_conectada_cron_publishes_site_fail_closed(self):
+        cron = (REPO / "scripts" / "run-manha-conectada-cron.sh").read_text(encoding="utf-8")
+        publisher_path = REPO / "scripts" / "publish-manha-conectada-site.sh"
+
+        self.assertTrue(publisher_path.exists())
+        publisher = publisher_path.read_text(encoding="utf-8")
+        self.assertIn("publish-manha-conectada-site.sh", cron)
+        self.assertNotIn("|| true", cron)
+        self.assertIn("gerar_pagina_d5n.py", publisher)
+        self.assertIn("--site-only", publisher)
+        self.assertIn("d5n-verify-site.py", publisher)
+        self.assertNotIn("git add .", publisher)
+        self.assertIn('git add -- "$AUDIO" "$SOURCE" "$MANIFEST" index.html', publisher)
+
     def test_cta_is_after_news_and_before_outro(self):
         mixer = load_module(PROFILE_MIXER, "d5n_profile_mixer")
         sections = [name for name, _, _ in mixer.SECOES]
