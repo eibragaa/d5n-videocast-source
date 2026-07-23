@@ -39,7 +39,7 @@ MAX_ATTEMPTS=4
    - Garanta 9 blocos essenciais, CTA na posição correta, abertura/fechamento não repetitivos e volume de fala compatível com 5–12 minutos.
    - Execute:
      python3 /root/.hermes/scripts/d5n-pre-gen-gate.py
-     python3 /root/.hermes/profiles/d5n/skills/media/trends-podcast/scripts/validate-cta-mensagem.py
+     python3 /root/.hermes/scripts/d5n-mensagem-validate.py
    - Se um gate falhar, volte ao diagnóstico e reescreva somente os blocos indicados antes de gerar áudio.
 
    D. TTS E MIX

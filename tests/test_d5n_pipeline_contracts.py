@@ -123,6 +123,8 @@ class PipelineContractTests(unittest.TestCase):
         self.assertIn("PARA CADA tentativa de 1 até MAX_ATTEMPTS", prompt)
         self.assertIn("d5n_release_status.py", prompt)
         self.assertIn("bash deploy_d5n_site.sh", prompt)
+        self.assertIn("python3 /root/.hermes/scripts/d5n-mensagem-validate.py", prompt)
+        self.assertNotIn("validate-cta-mensagem.py", prompt)
         self.assertIn("nunca altere, desative ou contorne um gate", prompt.lower())
         self.assertIn("somente o artefato que causou a falha", prompt.lower())
 
