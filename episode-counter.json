@@ -103,7 +103,7 @@
       "num": "017",
       "date": "2026-06-11",
       "file": "d5n-ep017-2026-06-11.mp3",
-      "exists": true
+      "exists": false
     },
     {
       "num": "018",
@@ -205,7 +205,7 @@
       "num": "034",
       "date": "2026-07-12",
       "file": "d5n-ep034-2026-07-12.mp3",
-      "exists": true
+      "exists": false
     },
     {
       "num": "035",

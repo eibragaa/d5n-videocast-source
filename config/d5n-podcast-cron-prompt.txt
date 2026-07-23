@@ -1,0 +1,71 @@
+DROP FIVE NEWS — GERAÇÃO, AUTOCORREÇÃO E PUBLICAÇÃO DIÁRIA
+
+Objetivo: publicar um episódio D5N novo TODOS OS DIAS, inclusive domingo. Execute o fluxo completo; não entregue apenas um plano. Data editorial obrigatória: America/Sao_Paulo.
+
+CONTRATO IMUTÁVEL
+- Dados reais e atuais; nunca placeholders e nunca reutilize trends, roteiro ou áudio de outra data.
+- Fonte diária com GLOBAL, BRASIL, TECH e ECONOMIA, URLs verificáveis e conteúdo substantivo.
+- Formato v2 com 9 seções obrigatórias: intro, mundo, brasil, tecnologia, economia, ofertas, frase, cta e outro. CTA depois das notícias e antes do outro.
+- Duração final entre 5 e 12 minutos; alvo de 8–10 minutos.
+- Estilo Amanda Flaury: conversa inteligente, segura, natural e contextualizada. Varie a abertura, o ritmo, as transições e o fechamento diariamente. Evite bordões fixos, enumeração mecânica e clichês de IA.
+- Use as vozes, trilhas, manifesto e especificações técnicas definidas pelos gates existentes.
+- Nunca altere, desative ou contorne um gate para fazer uma tentativa passar.
+- Nunca publique parcialmente. Cópia para o site, contador, commit e push só podem ocorrer via deploy_d5n_site.sh depois de todos os gates verdes.
+
+ESTADO E LIMITE
+REPO=/root/repositorio/d5n-videocast-source
+DATE=$(TZ=America/Sao_Paulo date +%Y-%m-%d)
+MAX_ATTEMPTS=4
+
+1. Antes de gerar, execute:
+   python3 "$REPO/scripts/d5n_release_status.py" --date "$DATE"
+   Se retornar published=true, encerre imediatamente como D5N_ALREADY_PUBLISHED. Não regenere, não altere contador e não faça novo push.
+
+2. PARA CADA tentativa de 1 até MAX_ATTEMPTS:
+
+   A. DIAGNÓSTICO
+   - Leia o erro exato da tentativa anterior, se houver.
+   - Corrija somente o artefato que causou a falha. Exemplos: trends inválidos → recolher trends; roteiro curto/repetitivo → reescrever apenas os blocos afetados; seção de TTS ausente → regenerar essa seção; mix inválido → refazer o mix.
+   - Não reduza thresholds, não remova seções e não aceite dados antigos.
+
+   B. TRENDS DO DIA
+   - Arquivo canônico: /root/.hermes/cron/output/drop5news-trends-${DATE}.txt
+   - Se ausente ou inválido, pesquise novamente com AnySearch e fontes primárias/confiáveis. Grave GLOBAL, BRASIL, TECH e ECONOMIA com URLs e contexto suficiente.
+   - Arquivo vazio, curto, sem os quatro pilares ou com data errada reprova e deve ser recolhido nesta mesma tentativa.
+
+   C. ROTEIRO
+   - Gere/atualize os arquivos falados em /tmp/d5n_audio usando somente os trends validados do dia.
+   - Preserve fatos e atribuições; diferencie fato de análise.
+   - Garanta 9 blocos essenciais, CTA na posição correta, abertura/fechamento não repetitivos e volume de fala compatível com 5–12 minutos.
+   - Execute:
+     python3 /root/.hermes/scripts/d5n-pre-gen-gate.py
+     python3 /root/.hermes/profiles/d5n/skills/media/trends-podcast/scripts/validate-cta-mensagem.py
+   - Se um gate falhar, volte ao diagnóstico e reescreva somente os blocos indicados antes de gerar áudio.
+
+   D. TTS E MIX
+   - Gere todos os áudios de seção exigidos pelo mixer, sem pular entrada ausente.
+   - Execute o mixer efetivo:
+     python3 /root/.hermes/profiles/d5n/skills/media/trends-podcast/scripts/drop5news-mixer-v9.py
+   - Confirme a criação de /tmp/d5n_mix_manifest.json e do MP3 final da data.
+
+   E. GATES FINAIS
+   - Execute o gate técnico:
+     python3 "$REPO/scripts/d5n-podcast-quality-gate.py"
+   - Execute o gate editorial diário com o MP3 atual:
+     python3 "$REPO/scripts/d5n_daily_release_gate.py" --date "$DATE" --audio "CAMINHO_MP3_ATUAL" --audio-dir /tmp/d5n_audio --history-dir "$REPO/podcast-scripts" --write-snapshot
+   - Se qualquer gate falhar, não publique. Volte ao diagnóstico e corrija somente o artefato apontado.
+
+   F. PUBLICAÇÃO ATÔMICA
+   - Somente após todos os gates verdes, copie o MP3 aprovado para /root/.hermes/profiles/d5n/cron/output/d5n-podcast-${DATE}.mp3.
+   - Execute:
+     cd "$REPO" && bash deploy_d5n_site.sh
+   - O deploy deve fazer staging seletivo, commit, push e criar o recibo somente após push bem-sucedido.
+   - Confirme:
+     python3 "$REPO/scripts/d5n_release_status.py" --date "$DATE"
+   - Se published=true, encerre como D5N_RELEASED, informando data, episódio, duração e URL.
+   - Se o deploy falhar, use o log /root/.hermes/logs/d5n-deploy/deploy-${DATE}.log no diagnóstico da próxima tentativa.
+
+3. EXAUSTÃO SEGURA
+- Depois de MAX_ATTEMPTS=4 sem published=true, pare a execução para evitar loop infinito e gasto descontrolado.
+- Preserve o marcador de falha e retorne D5N_BLOCKED com estágio, erro exato e artefato que precisa ser corrigido.
+- O job de recuperação retomará o mesmo ciclo mais tarde no dia. Nunca declare sucesso sem recibo válido.

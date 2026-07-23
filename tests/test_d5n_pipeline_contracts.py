@@ -1,0 +1,131 @@
+import importlib.util
+import sys
+import unittest
+from pathlib import Path
+
+import yaml
+
+
+REPO = Path(__file__).parents[1]
+PROFILE_MIXER = Path("/root/.hermes/profiles/d5n/skills/media/trends-podcast/scripts/drop5news-mixer-v9.py")
+WRAPPER = Path("/root/.hermes/scripts/drop5news-mixer-exec.sh")
+PRE_GEN_GATE = Path("/root/.hermes/scripts/d5n-pre-gen-gate.py")
+ENGINE = Path("/root/.hermes/scripts/babysitter-engine/babysitter.py")
+
+
+def load_module(path, name):
+    spec = importlib.util.spec_from_file_location(name, path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"Não foi possível carregar {path}")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+class PipelineContractTests(unittest.TestCase):
+    def test_cta_is_after_news_and_before_outro(self):
+        mixer = load_module(PROFILE_MIXER, "d5n_profile_mixer")
+        sections = [name for name, _, _ in mixer.SECOES]
+
+        self.assertGreater(sections.index("cta"), sections.index("economia"))
+        self.assertLess(sections.index("cta"), sections.index("outro"))
+
+    def test_mixer_aborts_on_missing_required_inputs(self):
+        source = PROFILE_MIXER.read_text(encoding="utf-8")
+        self.assertIn("Seções obrigatórias sem roteiro", source)
+        self.assertIn("Seção obrigatória sem áudio", source)
+        self.assertIn("Trilha obrigatória ausente", source)
+
+    def test_legacy_wrapper_is_fail_closed_and_uses_effective_profile(self):
+        source = WRAPPER.read_text(encoding="utf-8")
+        self.assertNotIn("|| true", source)
+        self.assertIn("/root/.hermes/profiles/d5n/skills/media/trends-podcast/scripts/drop5news-mixer-v9.py", source)
+        self.assertIn("/root/repositorio/d5n-videocast-source/deploy_d5n_site.sh", source)
+
+    def test_pre_generation_gate_rejects_missing_input(self):
+        source = PRE_GEN_GATE.read_text(encoding="utf-8")
+        self.assertIn("diretório de roteiro ausente", source)
+        self.assertIn("seções ausentes ou vazias", source)
+
+    def test_periodic_babysitter_skips_generation_gates_without_active_build(self):
+        config = yaml.safe_load((REPO / "babysitter.yaml").read_text(encoding="utf-8"))
+        ids = {"pre-gen-date-gate", "cta-mensagem-quality", "podcast-final-quality", "daily-release-quality"}
+        checks = [check for check in config["checks"] if check["id"] in ids]
+        self.assertEqual(len(checks), 4)
+        for check in checks:
+            self.assertIn("SKIP_NO_ACTIVE_BUILD", check["command"])
+            self.assertNotIn("|| true", check["command"])
+
+    def test_critical_checks_cannot_be_suppressed(self):
+        source = ENGINE.read_text(encoding="utf-8")
+        self.assertIn('if check.get("suppressed") and not critical:', source)
+        self.assertIn('r.get("ok") and not r.get("skipped")', source)
+
+    def test_deploy_executes_both_quality_gates_before_copying_audio(self):
+        deploy = (REPO / "deploy_d5n_site.sh").read_text(encoding="utf-8")
+
+        technical_gate = deploy.find("d5n-podcast-quality-gate.py")
+        daily_gate = deploy.find("d5n_daily_release_gate.py")
+        copy_position = deploy.find('cp "$LATEST_MP3" "$DEST"')
+        self.assertGreaterEqual(technical_gate, 0)
+        self.assertGreaterEqual(daily_gate, 0)
+        self.assertGreater(copy_position, technical_gate)
+        self.assertGreater(copy_position, daily_gate)
+        self.assertIn('/root/.hermes/logs/d5n-deploy', deploy)
+        self.assertNotIn('LOG="/tmp/deploy-d5n-', deploy)
+
+    def test_critical_counter_check_does_not_force_success(self):
+        config = yaml.safe_load((REPO / "babysitter.yaml").read_text(encoding="utf-8"))
+        check = next(item for item in config["checks"] if item["id"] == "counter-integrity")
+        self.assertNotIn("|| true", check["command"])
+        self.assertNotIn("exit 0", check["command"])
+
+    def test_audio_validator_ignores_other_programs_and_known_missing_history(self):
+        source = Path("/root/.hermes/scripts/babysitter-engine/validators/d5n-audio-check.py").read_text(encoding="utf-8")
+        self.assertIn('f.startswith("d5n-ep")', source)
+        self.assertIn('if h.get("exists", False)', source)
+
+    def test_babysitter_metrics_use_only_d5n_audio_and_four_pillars(self):
+        source = (REPO / "scripts/d5n-babysitter.py").read_text(encoding="utf-8")
+        self.assertIn('re.fullmatch(r"d5n-ep\\d{3}-\\d{4}-\\d{2}-\\d{2}\\.mp3", f)', source)
+        self.assertIn("pilares_esperados = 4", source)
+        self.assertIn('["Global", "Brasil", "Tech", "Economia"]', source)
+        self.assertIn("if not report_only:\n        save_daily_score", source)
+
+    def test_babysitter_daily_release_check_is_critical(self):
+        config = (REPO / "babysitter.yaml").read_text(encoding="utf-8")
+        marker = "id: daily-release-quality"
+        marker_position = config.find(marker)
+
+        self.assertGreaterEqual(marker_position, 0)
+        block = config[max(0, marker_position - 250):marker_position + 250]
+        self.assertIn("critical: true", block)
+        self.assertIn("d5n_daily_release_gate.py", block)
+
+    def test_deploy_requires_a_daily_episode_including_sunday(self):
+        deploy = (REPO / "deploy_d5n_site.sh").read_text(encoding="utf-8")
+        self.assertNotIn("IS_SUNDAY", deploy)
+        self.assertNotIn("Domingo: manutenção", deploy)
+        self.assertIn('block "Nenhum MP3 válido para hoje', deploy)
+        self.assertNotIn("usando fallback de source.md", deploy)
+
+    def test_deploy_stages_only_release_files_and_writes_receipt(self):
+        deploy = (REPO / "deploy_d5n_site.sh").read_text(encoding="utf-8")
+        self.assertNotIn("git add .", deploy)
+        self.assertIn('git add -- "$DEST"', deploy)
+        self.assertIn("published-${DATE}.json", deploy)
+        self.assertIn("d5n_release_status.py", deploy)
+
+    def test_cron_prompt_has_bounded_correction_loop_and_deploy(self):
+        prompt = (REPO / "config" / "d5n-podcast-cron-prompt.txt").read_text(encoding="utf-8")
+        self.assertIn("MAX_ATTEMPTS=4", prompt)
+        self.assertIn("PARA CADA tentativa de 1 até MAX_ATTEMPTS", prompt)
+        self.assertIn("d5n_release_status.py", prompt)
+        self.assertIn("bash deploy_d5n_site.sh", prompt)
+        self.assertIn("nunca altere, desative ou contorne um gate", prompt.lower())
+        self.assertIn("somente o artefato que causou a falha", prompt.lower())
+
+
+if __name__ == "__main__":
+    unittest.main()

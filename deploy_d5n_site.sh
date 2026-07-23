@@ -1,222 +1,183 @@
 #!/usr/bin/env bash
-# deploy_d5n_site.sh — Gera site D5N e faz deploy no Netlify com validação
-# Totalmente no_agent (zero tokens por execução)
-# Só faz push se passar em todas as validações.
-# Em caso de falha, marca /tmp/.deploy-d5n-failed para recuperação
-# 
-# Comportamento:
-#   - Segunda a sábado: copia MP3 como d5n-ep{NNN}-{DATE}.mp3 e atualiza contador
-#   - Domingo: manutenção, sem geração ou publicação de episódio
+# Publicação diária D5N — fail-closed, idempotente e segura para retries.
+# Todos os dias, inclusive domingo. Só cria recibo depois de push bem-sucedido.
 
 set -euo pipefail
 
-DATE=$(date +%Y-%m-%d)
-REPO="/root/repositorio/d5n-videocast-source"
-LOG="/tmp/deploy-d5n-${DATE}.log"
-FAILED=0
-
-# Domingo é reservado para manutenção; sábado segue o fluxo normal de publicação.
-WDAY=$(date +%u)  # 1=seg, 6=sáb, 7=dom
-IS_SUNDAY=0
-if [ "$WDAY" -eq 7 ]; then
-    IS_SUNDAY=1
-    echo "[$(date '+%H:%M:%S')] 📅 Domingo — manutenção, sem novo episódio" | tee "$LOG"
-else
-    echo "[$(date '+%H:%M:%S')] 🚀 Deploy Drop Five News - ${DATE}" | tee "$LOG"
-fi
-
-cd "$REPO"
-
-# Salvar hash do último commit bom ANTES de qualquer alteração
-LAST_GOOD=$(git rev-parse HEAD)
-echo "$LAST_GOOD" > /tmp/.deploy-d5n-last-good
-echo "✅ Último commit bom salvo: ${LAST_GOOD:0:8}" | tee -a "$LOG"
-
-# ── Validação 1: Pipeline rodou? ──
-TRENDS_FILE="/root/.hermes/cron/output/drop5news-trends-${DATE}.txt"
-FALLBACK_FILE="${REPO}/source.md"
-
-if [ -f "$TRENDS_FILE" ]; then
-    echo "✅ Pipeline: trends encontrados ($(wc -l < "$TRENDS_FILE") linhas)" | tee -a "$LOG"
-elif [ -f "$FALLBACK_FILE" ] && [ -s "$FALLBACK_FILE" ]; then
-    echo "⚠️  Pipeline sem trends — usando fallback de source.md" | tee -a "$LOG"
-else
-    echo "❌ BLOQUEADO: Sem trends e sem source.md de fallback" | tee -a "$LOG"
-    FAILED=1
-fi
-
-# ── Validação 2: Áudio do pipeline ──
-CRON_AUDIO="/root/.hermes/cron/output"
-CRON_AUDIO_D5N="/root/.hermes/profiles/d5n/cron/output"
-mkdir -p audio
+DATE="${D5N_DATE:-$(TZ=America/Sao_Paulo date +%Y-%m-%d)}"
+REPO="${D5N_REPO:-/root/repositorio/d5n-videocast-source}"
+STATE_DIR="${D5N_STATE_DIR:-/root/.hermes/logs/d5n-deploy}"
+CRON_AUDIO="${D5N_CRON_AUDIO:-/root/.hermes/cron/output}"
+CRON_AUDIO_D5N="${D5N_CRON_AUDIO_D5N:-/root/.hermes/profiles/d5n/cron/output}"
+TRENDS_FILE="${D5N_TRENDS_FILE:-/root/.hermes/cron/output/drop5news-trends-${DATE}.txt}"
+LOG="${STATE_DIR}/deploy-${DATE}.log"
+FAILED_MARKER="${STATE_DIR}/failed"
+LAST_GOOD_FILE="${STATE_DIR}/last-good"
+RECEIPT="${STATE_DIR}/published-${DATE}.json"
+STATUS_SCRIPT="${REPO}/scripts/d5n_release_status.py"
 COUNTER_FILE="episode-counter.json"
 VALIDATOR="${REPO}/scripts/validate_mp3.py"
-# Busca MP3 do D5N: prioriza d5n-ep*-{DATE}.mp3 (novo padrão) ou d5n-podcast-*.mp3 (legado)
-# Procura em ambos os diretórios de cron output (default e profile d5n)
-# 🔒 FIX 2026-06-16: PROTEGER contra copiar MP3 de dia errado.
-# O bug anterior: quando o podcast pipeline falha (dias 14-15/06), o deploy_d5n_site.sh
-# achava o último MP3 disponível (de sábado 13) e copiava com novo número de episódio.
-# Resultado: site mostrava sábado 13/06 com nomes de domingo/segunda.
-# FIX: filtrar por data ATUAL ({DATE}) E exigir que o MP3 foi modificado HOJE.
-LATEST_MP3=$(ls -t "$CRON_AUDIO"/d5n-ep*-${DATE}.mp3 "$CRON_AUDIO_D5N"/d5n-ep*-${DATE}.mp3 "$CRON_AUDIO"/d5n-podcast-${DATE}.mp3 "$CRON_AUDIO_D5N"/d5n-podcast-${DATE}.mp3 2>/dev/null | head -1) || true
-# Validação extra: MP3 deve ter sido modificado HOJE (mtime)
-if [ -n "$LATEST_MP3" ]; then
-    MP3_MTIME=$(stat -c %Y "$LATEST_MP3" 2>/dev/null || echo 0)
-    TODAY_START=$(date -d "$DATE 00:00:00" +%s 2>/dev/null || echo 0)
-    if [ "$MP3_MTIME" -lt "$TODAY_START" ]; then
-        echo "⚠️  FIX: MP3 '$LATEST_MP3' tem data antiga (mtime < hoje). Pulando para evitar deploy de arquivo errado." | tee -a "$LOG"
-        LATEST_MP3=""
-    fi
+
+mkdir -p "$STATE_DIR"
+cd "$REPO"
+: > "$LOG"
+
+log() {
+    printf '[%s] %s\n' "$(TZ=America/Sao_Paulo date '+%H:%M:%S')" "$*" | tee -a "$LOG"
+}
+
+block() {
+    local reason="$1"
+    log "❌ BLOQUEADO: ${reason}"
+    {
+        printf '%s\n' "$DATE"
+        printf 'Motivo: %s\n' "$reason"
+        printf 'Log: %s\n' "$LOG"
+    } > "$FAILED_MARKER"
+    log "❌ DEPLOY BLOQUEADO — nenhuma publicação foi confirmada"
+    exit 1
+}
+
+log "🚀 Release diária Drop Five News — ${DATE}"
+
+# Retry idempotente: um recibo válido prova que áudio, contador e push já fecharam.
+if python3 "$STATUS_SCRIPT" --repo "$REPO" --state-dir "$STATE_DIR" --date "$DATE" >> "$LOG" 2>&1; then
+    log "✅ D5N_ALREADY_PUBLISHED — recibo íntegro; nenhuma mutação necessária"
+    exit 0
 fi
-if [ -n "$LATEST_MP3" ]; then
-    # 🔒 VALIDAÇÃO MULTI-CAMADA: só copia se o MP3 for realmente do D5N
-    # Camada 1: Nome (d5n-podcast-*.mp3), Camada 2: Tamanho >5MB,
-    # Camada 3: Header MP3, Camada 4: Duração >3min
-    if python3 "$VALIDATOR" "$LATEST_MP3" 2>/dev/null; then
-        echo "✅ Validação MP3: aprovado ($(du -h "$LATEST_MP3" | cut -f1))" | tee -a "$LOG"
-    else
-        echo "❌ BLOQUEADO: MP3 inválido — $(python3 "$VALIDATOR" "$LATEST_MP3" 2>&1 | head -1)" | tee -a "$LOG"
-        FAILED=1
-        # Pula copia/contador, vai direto pro bloco de validação final
-    fi
 
-    if [ "$FAILED" -eq 0 ]; then
-        if [ "$IS_SUNDAY" -eq 1 ]; then
-            echo "ℹ️  MP3 ignorado: domingo é reservado para manutenção" | tee -a "$LOG"
-        else
-            # 🔥 CORREÇÃO: verificar se já existe episódio para a DATA DE HOJE
-            # Se sim, reutilizar o número (sobrescrever) em vez de criar novo
-            TODAY_EP=""
-            if [ -f "$COUNTER_FILE" ]; then
-                TODAY_EP=$(python3 -c "
+LAST_GOOD=$(git rev-parse HEAD) || block "repositório Git indisponível"
+printf '%s\n' "$LAST_GOOD" > "$LAST_GOOD_FILE"
+log "✅ Último commit local salvo: ${LAST_GOOD:0:8}"
+
+# A fonte da data é obrigatória. Nunca usar source.md ou dados antigos como fallback.
+[ -s "$TRENDS_FILE" ] || block "trends do dia ausentes ou vazios: $TRENDS_FILE"
+TRENDS_BYTES=$(wc -c < "$TRENDS_FILE")
+[ "$TRENDS_BYTES" -ge 200 ] || block "trends do dia insuficientes (${TRENDS_BYTES} bytes)"
+for pillar in GLOBAL BRASIL TECH ECONOMIA; do
+    grep -qi "$pillar" "$TRENDS_FILE" || block "trends sem pilar obrigatório: $pillar"
+done
+log "✅ Trends atuais: ${TRENDS_BYTES} bytes, quatro pilares presentes"
+
+mkdir -p audio "$CRON_AUDIO" "$CRON_AUDIO_D5N"
+
+# Somente áudio explicitamente datado de hoje pode entrar na release.
+LATEST_MP3=$(ls -t \
+    "$CRON_AUDIO"/d5n-ep*-${DATE}.mp3 \
+    "$CRON_AUDIO_D5N"/d5n-ep*-${DATE}.mp3 \
+    "$CRON_AUDIO"/d5n-podcast-${DATE}.mp3 \
+    "$CRON_AUDIO_D5N"/d5n-podcast-${DATE}.mp3 2>/dev/null | head -1) || true
+[ -n "$LATEST_MP3" ] || block "Nenhum MP3 válido para hoje (${DATE})"
+
+MP3_MTIME=$(stat -c %Y "$LATEST_MP3" 2>/dev/null || printf '0')
+TODAY_START=$(TZ=America/Sao_Paulo date -d "$DATE 00:00:00" +%s)
+[ "$MP3_MTIME" -ge "$TODAY_START" ] || block "MP3 de hoje tem mtime anterior à data editorial"
+
+if ! python3 "$VALIDATOR" "$LATEST_MP3" >> "$LOG" 2>&1; then
+    block "validador básico rejeitou o MP3: $LATEST_MP3"
+fi
+log "✅ MP3 básico aprovado: $LATEST_MP3"
+
+# Gates obrigatórios antes de cp, contador, página, commit ou push.
+if ! python3 "$REPO/scripts/d5n-podcast-quality-gate.py" >> "$LOG" 2>&1; then
+    block "gate técnico reprovou o episódio"
+fi
+if ! python3 "$REPO/scripts/d5n_daily_release_gate.py" \
+    --date "$DATE" \
+    --audio "$LATEST_MP3" \
+    --audio-dir /tmp/d5n_audio \
+    --history-dir "$REPO/podcast-scripts" \
+    --write-snapshot >> "$LOG" 2>&1; then
+    block "gate editorial diário reprovou o episódio"
+fi
+log "✅ Gates técnico e editorial aprovados"
+
+# Reutiliza o número da mesma data em retries; nunca incrementa duas vezes.
+TODAY_EP=$(python3 -c "import json; d=json.load(open('$COUNTER_FILE')); print(next((e['num'] for e in d.get('history', []) if e.get('date') == '$DATE'), ''))")
+if [ -n "$TODAY_EP" ]; then
+    EP_NUM="$TODAY_EP"
+    log "♻️ Episódio #${EP_NUM} reutilizado para retry da mesma data"
+else
+    LAST_NUM=$(python3 -c "import json; d=json.load(open('$COUNTER_FILE')); print(d.get('last_episode', 0))")
+    NEXT_NUM=$((10#$LAST_NUM + 1))
+    EP_NUM=$(printf '%03d' "$NEXT_NUM")
+fi
+
+DEST="audio/d5n-ep${EP_NUM}-${DATE}.mp3"
+cp "$LATEST_MP3" "$DEST"
+cp "$LATEST_MP3" "$CRON_AUDIO/d5n-podcast-${DATE}.mp3"
+
+python3 -c "
 import json
-d=json.load(open('$COUNTER_FILE'))
-history=d.get('history',[])
-# Procura episódio com a data de hoje
-for e in history:
-    if e.get('date')=='$DATE':
-        print(e['num'])
-        break
-" 2>/dev/null)
-            fi
-
-            if [ -n "$TODAY_EP" ]; then
-                # Já existe episódio para hoje — REUTILIZAR número e sobrescrever
-                EP_NUM="$TODAY_EP"
-                echo "♻️  Episódio #$EP_NUM já existe para hoje — sobrescrevendo" | tee -a "$LOG"
-            else
-                # Lê o contador persistente e calcula próximo
-                if [ -f "$COUNTER_FILE" ]; then
-                    LAST_NUM=$(python3 -c "import json; d=json.load(open('$COUNTER_FILE')); print(d.get('last_episode',0))" 2>/dev/null)
-                else
-                    LAST_NUM=0
-                fi
-                if [ -z "$LAST_NUM" ] || [ "$LAST_NUM" = "0" ]; then
-                    LAST_NUM=$(ls audio/d5n-ep*.mp3 2>/dev/null | grep -oP 'ep\K\d+' | sort -n | tail -1)
-                    LAST_NUM=${LAST_NUM:-0}
-                fi
-                NEXT_NUM=$((10#$LAST_NUM + 1))
-                EP_NUM=$(printf "%03d" "$NEXT_NUM")
-            fi
-
-            DEST="audio/d5n-ep${EP_NUM}-${DATE}.mp3"
-            cp "$LATEST_MP3" "$DEST"
-            # Também copia para cron output padrão (formato legado) para compatibilidade
-            cp "$LATEST_MP3" "/root/.hermes/cron/output/d5n-podcast-${DATE}.mp3"
-            echo "✅ Áudio copiado: $DEST (ep #$EP_NUM, $(du -h "$DEST" | cut -f1))" | tee -a "$LOG"
-
-            # Atualiza contador persistente (sempre, mesmo se sobrescrevendo)
-            python3 -c "
-import json
-with open('$COUNTER_FILE') as f: d=json.load(f)
-if 'history' not in d: d['history']=[]
-today_idx = next((i for i,e in enumerate(d['history']) if e.get('date')=='$DATE'), -1)
-if today_idx >= 0:
-    d['history'][today_idx]['exists']=True
-    d['history'][today_idx]['file']='d5n-ep$EP_NUM-$DATE.mp3'
+from pathlib import Path
+p=Path('$COUNTER_FILE')
+d=json.loads(p.read_text())
+d.setdefault('history', [])
+entry={'num':'$EP_NUM','date':'$DATE','file':'d5n-ep$EP_NUM-$DATE.mp3','exists':True}
+idx=next((i for i,e in enumerate(d['history']) if e.get('date')=='$DATE'), None)
+if idx is None:
+    d['history'].append(entry)
 else:
-    d['history'].append({'num':'$EP_NUM','date':'$DATE','file':'d5n-ep$EP_NUM-$DATE.mp3','exists':True})
-# last_episode só avança se EP_NUM > actual
-ep_int = int('$EP_NUM')
-if ep_int > d.get('last_episode',0):
-    d['last_episode']=ep_int
-else:
-    d['last_episode']=d.get('last_episode',ep_int)
+    d['history'][idx]=entry
+d['last_episode']=max(int(d.get('last_episode', 0)), int('$EP_NUM'))
 d['updated']='$DATE'
-json.dump(d,open('$COUNTER_FILE','w'),indent=2)
+p.write_text(json.dumps(d, ensure_ascii=False, indent=2) + '\\n')
 "
-            echo "✅ Contador atualizado: episode-counter.json → #$EP_NUM" | tee -a "$LOG"
-        fi
+log "✅ Áudio e contador preparados: episódio #${EP_NUM}"
+
+if ! python3 gerar_pagina_d5n.py >> "$LOG" 2>&1; then
+    block "gerar_pagina_d5n.py falhou"
+fi
+NEWS_COUNT=$(grep -oP '<strong>\K\d+(?=</strong><span>notícias)' index.html || printf '0')
+[ "${NEWS_COUNT:-0}" -gt 0 ] || block "index.html gerado sem notícias"
+[ -s source.md ] && [ "$(wc -c < source.md)" -gt 100 ] || block "source.md ausente ou vazio após geração"
+log "✅ Site gerado: ${NEWS_COUNT} notícias"
+
+# Staging/commit seletivo: jamais absorver arquivos de outros pipelines.
+git add -- "$DEST"
+git add -- episode-counter.json index.html source.md
+RELEASE_PATHS=("$DEST" episode-counter.json index.html source.md)
+for optional in feed.json d5n-feed.xml; do
+    if [ -e "$optional" ]; then
+        git add -- "$optional"
+        RELEASE_PATHS+=("$optional")
+    fi
+done
+
+if ! git diff --cached --quiet -- "${RELEASE_PATHS[@]}"; then
+    if ! git commit --only -m "📰 D5N - ${DATE}" -- "${RELEASE_PATHS[@]}" >> "$LOG" 2>&1; then
+        block "commit seletivo da release falhou"
     fi
 else
-    echo "ℹ️  Nenhum MP3 novo no pipeline" | tee -a "$LOG"
+    log "ℹ️ Release já estava commitada; confirmando push"
 fi
 
-# ── Gerar site (se falhar, script aborta com exit 1) ──
-if [ "$FAILED" -eq 0 ]; then
-    echo "📄 Gerando site..." | tee -a "$LOG"
-    if python3 gerar_pagina_d5n.py 2>&1 | tee -a "$LOG"; then
-        echo "✅ Site gerado com sucesso" | tee -a "$LOG"
-    else
-        echo "❌ BLOQUEADO: gerar_pagina_d5n.py falhou" | tee -a "$LOG"
-        FAILED=1
-    fi
+COMMIT=$(git rev-parse HEAD)
+if ! git push origin HEAD:master >> "$LOG" 2>&1; then
+    block "push para origin/master falhou; remoto não confirmado"
+fi
+log "✅ Push confirmado: ${COMMIT:0:8}"
+
+AUDIO_SHA=$(sha256sum "$DEST" | cut -d' ' -f1)
+python3 -c "
+import json
+from pathlib import Path
+receipt={
+  'editorial_date':'$DATE',
+  'episode':'$EP_NUM',
+  'audio':'$DEST',
+  'sha256':'$AUDIO_SHA',
+  'commit':'$COMMIT'
+}
+Path('$RECEIPT').write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + '\\n')
+"
+
+if ! python3 "$STATUS_SCRIPT" --repo "$REPO" --state-dir "$STATE_DIR" --date "$DATE" >> "$LOG" 2>&1; then
+    rm -f "$RECEIPT"
+    block "recibo pós-push não passou na verificação de integridade"
 fi
 
-# ── Validação 3: Site tem notícias? ──
-if [ "$FAILED" -eq 0 ]; then
-    NEWS_COUNT=$(grep -oP '<strong>\K\d+(?=</strong><span>notícias)' index.html || echo "0")
-    if [ "$NEWS_COUNT" -eq 0 ]; then
-        echo "❌ BLOQUEADO: index.html gerado com 0 notícias" | tee -a "$LOG"
-        FAILED=1
-    else
-        echo "✅ Validação: $NEWS_COUNT notícias no index.html" | tee -a "$LOG"
-    fi
-fi
-
-# ── Validação 4: source.md tem conteúdo? ──
-if [ "$FAILED" -eq 0 ]; then
-    if [ -f "source.md" ] && [ "$(wc -c < source.md)" -gt 100 ]; then
-        echo "✅ Validação: source.md com $(wc -c < source.md) bytes" | tee -a "$LOG"
-    else
-        echo "⚠️  source.md vazio ou inexistente — deploy continua" | tee -a "$LOG"
-    fi
-fi
-
-# ── Git push (só se passou em tudo) ──
-if [ "$FAILED" -eq 0 ]; then
-    echo "⬆️  Push para GitHub..." | tee -a "$LOG"
-    git add .
-    if git diff --quiet && git diff --staged --quiet; then
-        echo "📭 Nada novo para commitar" | tee -a "$LOG"
-    else
-        git commit -m "📰 D5N - ${DATE}" 2>&1 | tee -a "$LOG"
-        if ! git push origin master 2>&1 | tee -a "$LOG"; then
-            echo "⚠️  Remoto avançou; integrando com rebase seguro..." | tee -a "$LOG"
-            git pull --rebase origin master 2>&1 | tee -a "$LOG"
-            git push origin master 2>&1 | tee -a "$LOG"
-        fi
-        echo "✅ Push feito! Netlify fará deploy automático." | tee -a "$LOG"
-    fi
-    # Limpar marcador de falha se existir
-    rm -f /tmp/.deploy-d5n-failed
-else
-    echo "❌ DEPLOY BLOQUEADO — Validações falharam. Site não foi atualizado." | tee -a "$LOG"
-    echo "   Log: $LOG" | tee -a "$LOG"
-    # Marcar para recuperação por outro agente
-    echo "$DATE" > /tmp/.deploy-d5n-failed
-    echo "Motivo:" >> /tmp/.deploy-d5n-failed
-    grep 'BLOQUEADO\|ERRO\|❌' "$LOG" | head -3 >> /tmp/.deploy-d5n-failed
-    echo "Log: $LOG" >> /tmp/.deploy-d5n-failed
-fi
-
-echo ""
-echo "═══════════════════════════════════" | tee -a "$LOG"
-if [ "$FAILED" -eq 0 ]; then
-    echo "✅ Deploy D5N concluído $(date '+%H:%M:%S')" | tee -a "$LOG"
-else
-    echo "❌ Deploy D5N FALHOU $(date '+%H:%M:%S')" | tee -a "$LOG"
-fi
-echo "🌐 https://d5n-daily.netlify.app/" | tee -a "$LOG"
-echo "═══════════════════════════════════" | tee -a "$LOG"
-exit "$FAILED"
+rm -f "$FAILED_MARKER"
+log "✅ D5N_RELEASED — episódio #${EP_NUM} publicado"
+log "🌐 https://d5n-daily.netlify.app/"
+exit 0

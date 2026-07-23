@@ -343,17 +343,22 @@ def main():
         for w in warnings:
             report.append(f"  {w}")
         
-        # ── Validação 5: Conteúdo antes do TTS ──
-        errors = validate_pre_generation_content()
-        for e in errors:
-            report.append(f"  {e}")
-            needs_manual = True
+        # ── Validações 5 e 6: somente durante uma geração ativa ──
+        # Os gates continuam fail-closed quando chamados pelo pipeline. O scanner
+        # periódico não deve reprovar apenas porque /tmp foi limpo após o deploy.
+        active_build = os.path.isdir("/tmp/d5n_audio")
+        if active_build:
+            errors = validate_pre_generation_content()
+            for e in errors:
+                report.append(f"  {e}")
+                needs_manual = True
 
-        # ── Validação 6: Podcast final (editorial, vozes e mixagem) ──
-        errors = validate_final_podcast()
-        for e in errors:
-            report.append(f"  {e}")
-            needs_manual = True
+            errors = validate_final_podcast()
+            for e in errors:
+                report.append(f"  {e}")
+                needs_manual = True
+        else:
+            report.append("  ⏭️ Sem build ativo em /tmp/d5n_audio; gates de geração não aplicáveis")
 
         # ── Validação 7: Player do site ──
         warnings = validate_site_has_player(counter)
@@ -415,7 +420,10 @@ def main():
     grade, desc = calculate_grade(exit_code, metrics, needs_fix, needs_manual)
     
     # Rastreamento de issues persistentes com escalação
-    persistent_issues, escalations = track_persistent_issues(exit_code, metrics, needs_manual)
+    if report_only:
+        persistent_issues, escalations = [], []
+    else:
+        persistent_issues, escalations = track_persistent_issues(exit_code, metrics, needs_manual)
     
     # Linha de métricas compacta
     report.append(f"📊 {metrics['total_episodes']}eps · {metrics['mp3s_on_disk']}mp3 · {metrics['coverage_pct']}% · {metrics['pilares_present']}/{metrics['pilares_esperados']} · gaps={metrics['num_gaps']} · {'🔒' if metrics['corujao_blocked'] else '🚨'} · {'✅' if metrics['counter_integrity'] else '⚠️'}")
@@ -431,7 +439,8 @@ def main():
         report.append(f"  🔔 {esc}")
     
     # Salvar histórico com métricas detalhadas
-    save_daily_score(grade, exit_code, needs_manual, metrics)
+    if not report_only:
+        save_daily_score(grade, exit_code, needs_manual, metrics)
     
     # ── Decisão de notificação (Master OS style: silencioso se OK) ──
     should_notify = (exit_code != 0) or (needs_manual) or bool(escalations)
@@ -519,20 +528,23 @@ PERSISTENT_ISSUES_FILE = os.path.join(BASE, "autoavaliacao-issues.json")
 def calculate_metrics(counter):
     """Calcula métricas do ecossistema para autoavaliação (Master OS style)."""
     audio_dir = os.path.join(BASE, "audio")
-    mp3_files = [f for f in os.listdir(audio_dir) if f.endswith(".mp3")] if os.path.isdir(audio_dir) else []
+    mp3_files = [
+        f for f in os.listdir(audio_dir)
+        if re.fullmatch(r"d5n-ep\d{3}-\d{4}-\d{2}-\d{2}\.mp3", f)
+    ] if os.path.isdir(audio_dir) else []
     
     history = counter.get("history", [])
     total_eps = len(history)
     mp3_on_disk = len(mp3_files)
     
     # Pilares esperados vs presentes
-    pilares_esperados = 3  # Global, Brasil, Tech
+    pilares_esperados = 4  # Global, Brasil, Tech, Economia
     site_file = os.path.join(BASE, "index.html")
     content = ""
     if os.path.exists(site_file):
         with open(site_file, "r", encoding="utf-8") as f:
             content = f.read()
-    pilares_present = sum(1 for p in ["Global", "Brasil", "Tech"] if p in content)
+    pilares_present = sum(1 for p in ["Global", "Brasil", "Tech", "Economia"] if p in content)
     
     # Corujão bloqueado?
     corujao_blocked = True
@@ -553,10 +565,10 @@ def calculate_metrics(counter):
     counter_integrity = has_latest and bool(history_nums)
     
     # MP3s em disco vs history — quantos % do history estão em disco?
-    history_files = set(h.get("file", "") for h in history)
+    history_files = set(h.get("file", "") for h in history if h.get("exists", False))
     disk_files = set(f for f in mp3_files)
     files_on_disk = len(history_files & disk_files)
-    coverage_pct = round((files_on_disk / total_eps * 100), 1) if total_eps > 0 else 0
+    coverage_pct = round((files_on_disk / len(history_files) * 100), 1) if history_files else 0
     
     # Player mais recente OK?
     player_ok = False
@@ -573,6 +585,7 @@ def calculate_metrics(counter):
     
     return {
         "total_episodes": total_eps,
+        "expected_audio_files": len(history_files),
         "mp3s_on_disk": mp3_on_disk,
         "files_on_disk": files_on_disk,
         "coverage_pct": coverage_pct,
@@ -606,8 +619,8 @@ def calculate_grade(exit_code, metrics, needs_fix, needs_manual):
         grade -= diff * 0.5
     
     # Dimensão DISCO / INTEGRIDADE (até -2.0)
-    if metrics["mp3s_on_disk"] < metrics["total_episodes"]:
-        missing = metrics["total_episodes"] - metrics["mp3s_on_disk"]
+    if metrics["mp3s_on_disk"] < metrics["expected_audio_files"]:
+        missing = metrics["expected_audio_files"] - metrics["mp3s_on_disk"]
         grade -= min(1.5, missing * 0.3)
     if not metrics["counter_integrity"]:
         grade -= 1.0

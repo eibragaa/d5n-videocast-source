@@ -55,8 +55,8 @@ def probe_audio(errors: list[str]) -> dict:
     stream = (data.get("streams") or [{}])[0]
     duration = float(fmt.get("duration", 0))
     bitrate = int(fmt.get("bit_rate", 0))
-    if not 120 <= duration <= 1200:
-        fail(errors, f"duração fora de 2–20 min: {duration:.2f}s")
+    if not 300 <= duration <= 720:
+        fail(errors, f"duração fora de 5–12 min: {duration:.2f}s")
     if bitrate < 128_000:
         fail(errors, f"bitrate abaixo de 128 kbps: {bitrate}")
     if stream.get("codec_name") != "mp3":
@@ -167,7 +167,7 @@ def validate_spoken_text(errors: list[str]) -> None:
         is_header = path.stem.endswith("_header")
         if path.stem not in {"intro", "outro"} and not is_header and GOODBYE.search(text):
             fail(errors, f"{path.name}: despedida intermediária")
-        if path.stem != "outro" and re.search(r"instagram|siga|segue a gente|me segue", text, re.I):
+        if path.stem not in {"cta", "outro"} and re.search(r"instagram|siga|segue a gente|me segue", text, re.I):
             fail(errors, f"{path.name}: CTA fora do encerramento")
     if not official_name_seen:
         fail(errors, "nome oficial 'Drop Five News' ausente dos segmentos")

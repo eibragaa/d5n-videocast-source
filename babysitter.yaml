@@ -1,5 +1,5 @@
 checks:
-- command: python3 scripts/d5n-babysitter.py --report-only --quiet 2>&1; exit 0
+- command: python3 scripts/d5n-babysitter.py --report-only --quiet 2>&1
   critical: true
   detail: Counter corrompido ou inconsistente
   id: counter-integrity
@@ -7,7 +7,7 @@ checks:
   timeout: 30
   type: command
 - command: python3 /root/.hermes/scripts/babysitter-engine/validators/d5n-audio-check.py
-  critical: false
+  critical: true
   detail: Discrepância entre MP3s e histórico
   id: audio-vs-counter
   name: MP3s em disco vs histórico
@@ -33,7 +33,7 @@ checks:
   name: Player com episódio mais recente
   type: file
 - command: python3 /root/.hermes/scripts/babysitter-engine/validators/d5n-pilares-check.py
-  critical: false
+  critical: true
   detail: Pilares ausentes no site de hoje (normal domingo/feriado)
   id: site-pilares
   name: 4 pilares de conteúdo no site
@@ -55,26 +55,55 @@ checks:
   name: Repositório sem sujeira
   timeout: 5
   type: command
-- command: python3 /root/.hermes/scripts/d5n-pre-gen-gate.py
+- command: >-
+    if [ -d /tmp/d5n_audio ]; then
+      python3 /root/.hermes/scripts/d5n-pre-gen-gate.py;
+    else
+      echo SKIP_NO_ACTIVE_BUILD;
+    fi
   critical: true
   detail: Weekday ou data incorretos no roteiro (preventivo)
   id: pre-gen-date-gate
   name: 'Gate pré-geração: data e weekday'
   timeout: 10
   type: command
-- command: python3 /root/.hermes/scripts/d5n-mensagem-validate.py
+- command: >-
+    if [ -d /tmp/d5n_audio ]; then
+      python3 /root/.hermes/scripts/d5n-mensagem-validate.py;
+    else
+      echo SKIP_NO_ACTIVE_BUILD;
+    fi
   critical: true
   detail: CTA ou Mensagem contêm clichês proibidos (blocklist)
   id: cta-mensagem-quality
   name: CTA e Mensagem do Dia sem clichês
   timeout: 10
   type: command
-- command: python3 scripts/d5n-podcast-quality-gate.py
+- command: >-
+    if [ -d /tmp/d5n_audio ]; then
+      python3 scripts/d5n-podcast-quality-gate.py;
+    else
+      echo SKIP_NO_ACTIVE_BUILD;
+    fi
   critical: true
   detail: MP3, vozes, loudness ou roteiro falham no novo padrão editorial
   id: podcast-final-quality
   name: Gate final do podcast (roteiro, vozes e mixagem)
   timeout: 180
+  type: command
+- command: >-
+    if [ -d /tmp/d5n_audio ]; then
+      cd /root/repositorio/d5n-videocast-source &&
+      python3 scripts/d5n_daily_release_gate.py
+      --history-dir /root/repositorio/d5n-videocast-source/podcast-scripts;
+    else
+      echo SKIP_NO_ACTIVE_BUILD;
+    fi
+  critical: true
+  detail: Roteiro, pilares, manifesto ou áudio diário estão fora do padrão
+  id: daily-release-quality
+  name: Gate diário de qualidade antes da publicação
+  timeout: 120
   type: command
 path: /root/repositorio/d5n-videocast-source
 project: Drop Five News
