@@ -31,6 +31,22 @@ class PipelineContractTests(unittest.TestCase):
         self.assertGreater(sections.index("cta"), sections.index("economia"))
         self.assertLess(sections.index("cta"), sections.index("outro"))
 
+    def test_site_credits_follow_the_restored_weekly_voice_schedule(self):
+        generator = load_module(REPO / "gerar_pagina_d5n.py", "d5n_generator_voice_schedule")
+        expected = {
+            "2026-07-20": "Thalita",              # segunda
+            "2026-07-21": "Francisca",            # terça
+            "2026-07-22": "Thalita",              # quarta
+            "2026-07-23": "Francisca",            # quinta
+            "2026-07-24": "Thalita + Francisca",  # sexta
+            "2026-07-25": "Thalita",              # sábado
+        }
+
+        for editorial_date, presenter in expected.items():
+            self.assertEqual(generator.historical_voice_name(editorial_date), presenter)
+            self.assertEqual(generator.get_voice_of_day(editorial_date)["name"], presenter)
+        self.assertIsNone(generator.get_voice_of_day("2026-07-26"))
+
     def test_mixer_aborts_on_missing_required_inputs(self):
         source = PROFILE_MIXER.read_text(encoding="utf-8")
         self.assertIn("Seções obrigatórias sem roteiro", source)
@@ -127,6 +143,8 @@ class PipelineContractTests(unittest.TestCase):
         self.assertNotIn("validate-cta-mensagem.py", prompt)
         self.assertIn("nunca altere, desative ou contorne um gate", prompt.lower())
         self.assertIn("somente o artefato que causou a falha", prompt.lower())
+        self.assertIn("não repita a arquitetura", prompt.lower())
+        self.assertIn("gancho", prompt.lower())
 
 
 if __name__ == "__main__":

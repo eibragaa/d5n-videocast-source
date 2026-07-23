@@ -58,6 +58,14 @@ def _without_date(text: str) -> str:
     return " ".join(folded.split())
 
 
+def _opening_formula(text: str) -> str:
+    """Resume a arquitetura inicial, ignorando data e nome da apresentadora."""
+    normalized = _without_date(text)
+    normalized = re.sub(r"\b(?:thalita|francisca)\b", "", normalized)
+    words = re.findall(r"[a-z0-9]+", normalized)
+    return " ".join(words[:10])
+
+
 def _spoken_body(text: str) -> str:
     """Remove o cabeçalho técnico Programa/Data/Voz antes de validar a fala."""
     lines = text.strip().splitlines()
@@ -191,11 +199,13 @@ def validate_script(audio_dir: Path, editorial_date: date, history_dir: Path) ->
             errors.append(f"clichê proibido no roteiro: {phrase!r}")
 
     current_opening = _without_date(intro)
+    current_opening_formula = _opening_formula(intro)
     current_outro = _without_date(outro)
     for previous in _recent_snapshots(history_dir, editorial_date):
         old_segments = previous.get("segments") or {}
+        old_intro = str(old_segments.get("intro", ""))
         for label, current, old in (
-            ("abertura", current_opening, _without_date(str(old_segments.get("intro", "")))),
+            ("abertura", current_opening, _without_date(old_intro)),
             ("encerramento", current_outro, _without_date(str(old_segments.get("outro", "")))),
         ):
             if len(current) >= 40 and len(old) >= 40:
@@ -204,6 +214,14 @@ def validate_script(audio_dir: Path, editorial_date: date, history_dir: Path) ->
                     errors.append(
                         f"{label} repete roteiro de {previous.get('date')} ({similarity:.0%} de similaridade)"
                     )
+        previous_formula = _opening_formula(old_intro)
+        if (
+            len(current_opening_formula.split()) >= 8
+            and current_opening_formula == previous_formula
+        ):
+            errors.append(
+                f"fórmula de abertura repete {previous.get('date')}: {current_opening_formula!r}"
+            )
 
     snapshot = {
         "date": editorial_date.isoformat(),

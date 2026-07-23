@@ -8,6 +8,7 @@ CONTRATO IMUTÁVEL
 - Formato v2 com 9 seções obrigatórias: intro, mundo, brasil, tecnologia, economia, ofertas, frase, cta e outro. CTA depois das notícias e antes do outro.
 - Duração final entre 5 e 12 minutos; alvo de 8–10 minutos.
 - Estilo Amanda Flaury: conversa inteligente, segura, natural e contextualizada. Varie a abertura, o ritmo, as transições e o fechamento diariamente. Evite bordões fixos, enumeração mecânica e clichês de IA.
+- A abertura deve começar com “Bom dia!”, mas não repita a arquitetura “Hoje é [data]. Aqui é [apresentadora]...”. Alterne diariamente entre gancho factual, pergunta concreta, consequência prática, contraste ou cena curta; encaixe a data completa e a identificação da apresentadora em posições naturais diferentes. Compare com os 7 snapshots anteriores antes do TTS.
 - Use as vozes, trilhas, manifesto e especificações técnicas definidas pelos gates existentes.
 - Nunca altere, desative ou contorne um gate para fazer uma tentativa passar.
 - Nunca publique parcialmente. Cópia para o site, contador, commit e push só podem ocorrer via deploy_d5n_site.sh depois de todos os gates verdes.

@@ -182,28 +182,41 @@ def get_pillar_avg_scores(coverage_data):
         result[p] = {"avg": round(avg), "count": len(data["scores"]), "sources": ", ".join(sorted(data["sources"])[:3])}
     return result
 
-def get_voice_of_day(date_str):
-    """Política atual: Francisca no conteúdo; Antonio permanece nos headers."""
+def voice_schedule_name(date_str):
+    """Escala editorial: Seg/Qua/Sáb Thalita; Ter/Qui Francisca; Sex dupla."""
     try:
-        d = datetime.strptime(date_str, '%Y-%m-%d')
-        weekday = d.weekday()  # 0=Seg, 6=Dom
-        if weekday < 6:
-            return {"name": "Francisca", "bio": "Comunicadora casual, envolvente e direta", "avatar": "🎧",
-                    "tone": "casual", "tagline": "Drop Five News, com Francisca"}
-        return None
-    except:
-        return {"name": "Francisca", "bio": "Comunicadora casual, envolvente e direta", "avatar": "🎧",
-                "tone": "casual", "tagline": "Drop Five News, com Francisca"}
-
-def historical_voice_name(date_str):
-    """Preserva créditos antigos e aplica a voz pt-BR segura a partir de 18/07/2026."""
-    try:
-        d = datetime.strptime(date_str, '%Y-%m-%d')
-        if date_str >= "2026-07-18" and d.weekday() < 6:
-            return "Francisca"
-        return {0:"Thalita",1:"Francisca",2:"Thalita",3:"Francisca",4:"Thalita + Francisca",5:"Thalita",6:""}.get(d.weekday(), "")
+        weekday = datetime.strptime(date_str, '%Y-%m-%d').weekday()
     except (TypeError, ValueError):
         return ""
+    return {
+        0: "Thalita",
+        1: "Francisca",
+        2: "Thalita",
+        3: "Francisca",
+        4: "Thalita + Francisca",
+        5: "Thalita",
+        6: "",
+    }[weekday]
+
+
+def get_voice_of_day(date_str):
+    """Retorna a apresentação do dia conforme a escala usada pelo mixer e pelos gates."""
+    name = voice_schedule_name(date_str)
+    if not name:
+        return None
+    if name == "Thalita":
+        return {"name": name, "bio": "Jornalista formal, precisa e analítica", "avatar": "🎙️",
+                "tone": "formal", "tagline": "Drop Five News, com Thalita"}
+    if name == "Francisca":
+        return {"name": name, "bio": "Comunicadora casual, envolvente e direta", "avatar": "🎧",
+                "tone": "casual", "tagline": "Drop Five News, com Francisca"}
+    return {"name": name, "bio": "Edição especial com apresentação alternada", "avatar": "🎙️",
+            "tone": "dual", "tagline": "Drop Five News, com Thalita e Francisca"}
+
+
+def historical_voice_name(date_str):
+    """Aplica aos créditos a mesma escala editorial efetivamente exigida no áudio."""
+    return voice_schedule_name(date_str)
 
 def format_data_br(date_str):
     d = datetime.strptime(date_str, '%Y-%m-%d')

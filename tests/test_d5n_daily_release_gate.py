@@ -126,6 +126,30 @@ class ReleaseGateTests(unittest.TestCase):
 
         self.assertTrue(any("abertura repete" in error for error in errors))
 
+    def test_script_rejects_same_opening_formula_despite_different_headlines(self):
+        audio_dir = self.base / "audio-formula"
+        history_dir = self.base / "history-formula"
+        audio_dir.mkdir()
+        history_dir.mkdir()
+        current = (
+            "Bom dia! Hoje é quarta-feira, 22 de julho de 2026. Aqui é Thalita, do Drop Five News. "
+            "Uma tarifa americana ameaça exportadores, enquanto agentes autônomos expõem uma falha de segurança."
+        )
+        previous = (
+            "Bom dia! Hoje é terça-feira, 21 de julho de 2026. Aqui é Francisca, do Drop Five News. "
+            "O Congresso discute novas regras fiscais, e uma descoberta médica muda o tratamento de doenças raras."
+        )
+        for name, text in self._valid_sections(opening=current).items():
+            (audio_dir / f"{name}.txt").write_text(text, encoding="utf-8")
+        (history_dir / "2026-07-21.json").write_text(
+            json.dumps({"date": "2026-07-21", "segments": {"intro": previous, "outro": "Outro fechamento. Bom dia!"}}),
+            encoding="utf-8",
+        )
+
+        errors, _ = gate.validate_script(audio_dir, date(2026, 7, 22), history_dir=history_dir)
+
+        self.assertTrue(any("fórmula de abertura" in error for error in errors))
+
     def test_valid_script_and_audio_metadata_pass(self):
         audio_dir = self.base / "audio"
         audio_dir.mkdir()
