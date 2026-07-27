@@ -1,0 +1,195 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-07-24",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/audio/manha-conectada-2026-07-24.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/source-manha-2026-07-24.md",
+  "sha256": "254c8fe0407a4a16fc7032d6a5799f4453c39080cb18dd06374109cd28007b75",
+  "text_gate": {
+    "words": 647,
+    "forbidden_hits": [],
+    "ending_ok": true
+  },
+  "audio": {
+    "duration": 285.33551,
+    "size": 6848722,
+    "bit_rate": 192018,
+    "lufs": -16.66,
+    "true_peak_dbtp": -1.69,
+    "lra": 2.9
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Tarifaço de Trump: veja a cronologia e como ficam as novas tarifas para o Brasil - G1",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQcnFRUWY2MTlmMDhBeUc4MnFwX3RvQnBmcUVBbllPU1NtbEpITk5zeXQ1X0kyN3M3Wl8yYUdMUUo2YTd2OS1Rc2Y5Zlpaei13NDc2cEJRNnJnSEY0ZDlOQVVuZlFsczBfY2IwYndJSVlhVG1RTDFJNTA3NFFzNW5VLXJQc3JQeGpzZkVicjhIS01lYl9HOVQ3bnhNS2RjVVN4UVY4YkkyRnhLWjloSlRCVUxPZm56NlZFa1g1bEs3YlVXRWRJalptQkk1STh1VUXSAd4BQVVfeXFMT1lIblNfYzhvQlgwU0JJMDNyV3hCVjZkanl6dVM0QmRWaTFrV0lBc0owZjhSWG1lM2hPZ3hwVjFqUWFLT2hoX2xpaVhXd1kxQWlseDF4Y2NpU2R5bzlvMUFJczdtV0RPdWg5SGZWVGVlQTVWUXN2ZmtvaWE0V1QzbkZONndGbzVNdlh6cjA2WkRoaFNfSE5TdDNtWU9FYjd4ekxYbnRSZVdSLTZSckdTNTlWeVowblBKWDFsMlVyMXo3T19vcU5Xa3JDWTAtcnpwVmo0VnhJTjI0RVhpalpR?oc=5",
+      "source": "G1",
+      "published": "Fri, 24 Jul 2026 03:00:29 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Brasil Urgente ao vivo: assista ao programa agora - band.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBSdVRkRkNoMjgwWHlxR1Z5VkNhQWdtdXRxSllRV3FnV2Z5OVZ3SG5TdmZVZzRuckxiMnNON3daRUNIWGs5YUp5OXhNUThaZmg0MEtkZFFTNGZmUUF4Q1p5LXZ0OE5oODExeFBqRmZNNzRaOEZKRmxNczBR?oc=5",
+      "source": "band.com.br",
+      "published": "Fri, 24 Jul 2026 05:37:09 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Brasil reage a novas tarifas dos EUA e anuncia acionamento da Lei da Reciprocidade - Francês News",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNN1NXUFhoN0N6QVM3UWl2NnlxMURSaXhwakN1V3ZIVnlRMDZ2R05qVHlwcE5lcWZSVUR0eksyNkRyU2RvWEtXdlhkbEJBM3BZcUpsWjdxVEFwTUtrM2NEbW5wUHlBNk1xYmdIWnhmSnlIX2g2OHliYkE0WTBoU2dwR0NKcUtZX085ZFU4OGFSLTlqMjJLWWJIbmt1VUZnWFlJdVBCNWVGYmU3U1czX1dhQ3NsbzItVDhGeWtHU3BnY1hJVkFHYWxhUmlFMA?oc=5",
+      "source": "Francês News",
+      "published": "Fri, 24 Jul 2026 11:22:20 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA1cTN1MUFFQ1RuWmtsRUVoUWZlb0ZNWEZYYmpqcEhYa28tQXJBeGtwcUtTSmJxSzYzclNEQXgzUWRkcWZDS3RPN2stTE5qMjBxV0FnbkN1dUI2QXR0cENsbzlIcmFoNVhodkNlYjktY9IBdEFVX3lxTFBjelh4eG12QWI4NElTV3JINk13bDRzby02MFQ5RndaM0RLcTNhRnJxUXhOOWd3T2dVamRLckFIWGZjOC0yVGRRVmdmS083ZWdZWkJrUUFVSzJWbHdZZ3J5bWZwdWxPYTA0RzdBa3AwVzJYbzNE?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Fri, 24 Jul 2026 10:14:23 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "IA está presente em 6 de cada 10 órgãos públicos federais e estaduais - agenciabrasil.ebc.com.br",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQM29Va1M1VzR4R0c3VTBsNl9OMktsM2JFemR2eDJFbzNHYWkxUzlUMDR1Y2plMURZV29WZHhPRFhoZHJpejV3NWdqLUFpaFhpdGY5d3dzaTJSa0RoQ0x0NG54QXZrNzE0SWdEd3ZJeTRoWUdmM2k5NXpBeEhCVjE0eE5YRVZnVmhTQU50c3pJN0RQdmlOU2dDV2IweEdSbFpKa2FwOWF2N2J2eFI2MGFwTl9GLWNLYTg2Q0I0SVVJTTdaMUh2?oc=5",
+      "source": "agenciabrasil.ebc.com.br",
+      "published": "Thu, 23 Jul 2026 14:21:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "General do Irã diz que EUA usam arsenal 'estocado para Terceira Guerra Mundial' contra o país - G1",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxONlVfV2pteVlGNGpBVTFZRE1NTE8xRGlMVTBjd09UaTlnWV9BVlllVW9SQ0xIMk9zX0RGaEtKeWVMRjlCajZOUTFhbzluTW9GLXEwLXV1Tkk0c3MyYnRPcXJxbWcxYk9ISHBjUzhXSXlSV0hTX196NnBrSWo2UG1xUW5nNks2azZFNVdzd1lkNHo3aW4wa2JRZE9Fb1M0ei1VRDNnVEFMSDFyVXRmSmdEN0sxbWR0SDJhVEtpNVA1Q3BzMHNkcFpmcGFwVGdmTWJudUxPTnVUNUo3SkHSAeoBQVVfeXFMTmxVaVp3SF9mR0Z2OGdPYkNKWGlZdzAzUVotWElMUjJsa3I2cmtQeUd4X3pwNWkzZC1BVTdxNTJXd2V5ZV9EZi1ld0F1OW5USi10aklyeEsxLVR0NVA1em9WNHp2aXpUVlkyRWpBMTdER1IzbVdCVlQ4VEluYjFuYXZHR2VQdXBUV0JJOW1landjenA4Tm1lZnpmVTJUZXVaNFBkTHdybnlSQWVXMDU5aWplbTF4UVp3c2dZWVVQa3h6RmdwQ01FR3d4SFdnZDZMOEgwRXNjMThSLXVHVFdaLUZrbGtFN1lqenhB?oc=5",
+      "source": "G1",
+      "published": "Fri, 24 Jul 2026 10:03:33 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "UE e China reagem às novas tarifas impostas por Trump - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPa0RiczlrNFYxTUlFWG0wTkl3bnUyRWt4RzBHdHZLNHNCaFIwNDNEOHlma2oxMmd0NVdnaHBMS2ZmaFhkVEpCQlJjeEpncktlTHg3bk9yRURUZkFHVTNqZEdXdE1pajZIOE5BbjliM1NzSlJwVUxKekdiS0dDYmpkOUxvN1ZidXhvSW1GSVF4QVRxcl9mbXFZQWF3?oc=5",
+      "source": "SBT News",
+      "published": "Fri, 24 Jul 2026 11:42:15 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Card. Tolentino: \"O espanto é o umbigo do mundo\" - Vatican News",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOb2ttbHhOSWR0SVpXVmRyVkl5azlzTmt5TVozd2RGU0ZlNlVHLTFXM3Ffbkg5dkFKN0p6YmtFYUR6aUt0TEVmYmE3TWhoNThsN1NRSnN4ZmJfYzM4Q2FHRXdVUUkzMFZKaW10YTFUckNaaWJFTTFTbjNjMGRVU1gySHRvam1laDhudU9XRG92ODVzbjZTTTZMdnFMM09pdktXTlVXRE9YamtzMXpfLWRpTlpoYlM?oc=5",
+      "source": "Vatican News",
+      "published": "Fri, 24 Jul 2026 08:45:28 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Principais notícias do mundo na noite de hoje (23) - Tribuna do Sertão",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNTUVTUGhzNUNzTEJpVDdGMlM3VUlsSU53RW83YXZpdTF5NDJzTUVvWmU0OHZTSHYyeGhsYzRBdjJOVjd6Tk03QXN6Rld5Zy0xNEZnc21qUFh2bVJXWFlWQ1RGYU5KTlM5cFFSRFY0VkRnWDE0UFJwMHROR0lObWZPTjJDRWZaTlBlMjdzalFZNkM0NFhGLVJJZTVRSmhudTEycENSdDVrVzlEOUU?oc=5",
+      "source": "Tribuna do Sertão",
+      "published": "Thu, 23 Jul 2026 23:31:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "A inteligência artificial pode escolher seu futuro profissional sem você perceber? - O GLOBO",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQeDVUcERvV0NzV0dPLVRkS0k4RjZPMHBVNEJmNXJEOFhiTVJTZ0d5V1gxMjRiRVJaR2UtaTJzU0MwSEZLblhTZ0lwaW5sNlFLbWZVX1ktNG8tLVdWQnlDQnBVU2JPVmdEeWdQclpIQlNsZW1EMXVJdWJyUW42WTI2N0poNGJWRGhucW1FZmhFbE5xd1JrWlFoX01HdzZsUXFQX2lBUk9oajJiSnF2STZNeU42b0RjdkloakIzcXRBVzRuUEdEd0NYenZLLUdmTXNk0gHfAUFVX3lxTE5aMHAzZk54Tld0c0QtX3FQSHFUUFhFUnBqOC1jOXROUlF1MmNQUllhTXVkN3FQS2RFWUtNSm4xSjRNTGRVZ1FQT0IxM2VjY0c5SXFnWmFLRGJMSjhmemh6cGNYTFhDX21HY0RsX2ZVZGMxZzFGWEJVdWQwWHlCVjRjckg4YXJZRUdMTmFKV2ZsSEtfcXpoUEw5U1Y3OF96OVJQMTJ1YThVUE8teWJVMTZVRFdkcXFvaTNMNzdETENMc0FfNTAySTJpY0FZV1kxU25LNFNNRlFabk1MbVRvblE?oc=5",
+      "source": "O GLOBO",
+      "published": "Fri, 24 Jul 2026 11:40:14 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Muito além de inteligência artificial. A FRN³ quer falar de resultado - E-Commerce Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQSlE2ekdjZTFCU3hBRE14WVRQNVNqbmNaV0xLZXVrWF96OFdqOXptM040YnRscEtRcldha3hVSjZGeUxDOVZXakhTUVlUQUxsLXExLU4wcGtEM2xULXpmX1ZuZWtpT0lvZDF5NjRfdlZQd01QejcxZVU3U3haUE10aGtCVDYxTUx5WnZ4ZGQtRDFWQTNGQkk3UFNsWUtLZVVySzNHby1TSkZqNXVkOFMwQVFycXlVY0FP?oc=5",
+      "source": "E-Commerce Brasil",
+      "published": "Fri, 24 Jul 2026 08:05:15 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Uso de inteligência artificial avança em órgãos públicos brasileiros - SINDPD",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNbWNyWmNyN1NKZzljZnZRRDltOXVGQXZ1Q0dOd0s3eVczaEJUMEN3emE1M0Q2Zjg1ZUR1NmZpaTJoZm9lMEJlOTJ5NHVxcGFMQzJoVGxuaVpZSHpsVzBtRXZUWFR0bDVpclRmVVVoa2o2WHFOZVloVG00SC1BQnB0TTd5VmZ5MkRMS2Rld1pzOVE?oc=5",
+      "source": "SINDPD",
+      "published": "Fri, 24 Jul 2026 12:52:50 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "O papel da inteligência artificial e o impacto da tecnologia no SUS - Saúde Digital News",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxONDhxTnpXNnQxT0pFeE9RdklfdkszUHlZc3JzRUJfMmVtcU9GRlJMLWl2bHo5YUMza3dsU3B3VG5PRWgyMDNtejRSWmlIaV8zTDVZN2FMSWxsUFAtX1d5YXVWbVBlLUFtNDBVREdFQl9BTDRHV1Z2Smk3VkdjTHlhaWduNFo0bDBJTE9TYlFxODBYR2NlS2g2LWNvRDJiSjF3aGRtbEc4RlhzNERCWkJGNQ?oc=5",
+      "source": "Saúde Digital News",
+      "published": "Fri, 24 Jul 2026 11:57:49 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Judiciário lidera adoção de inteligência artificial no setor público brasileiro, aponta pesquisa - Gazeta do Paraná",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOQmk1b2wzVDJkai1TbHJHTjRMY1hQSE55anN0cFNlMGs3OFJtcHRjVVZEVXlWRjVzdXBjYTJUNUZFdlA1RmxaVXJZVlpXcDFLT0FldkQ3cW5hTGxUVEpOT3N6QkdyLWpsb0ZHVmljcG1KU2taRC1MckZaeXBMT0tQLUk3LTFEUTVwdEJEZTRLcDRjck9ISEIxRUhPMk0zTEJTcWlJZk9SRXdkbEhwXzcyalk4d2t3Q2RJbXJISEFJdWNwOGRaUnVsZUlCQkM?oc=5",
+      "source": "Gazeta do Paraná",
+      "published": "Fri, 24 Jul 2026 08:21:14 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Consumo sustentou economia do Brasil, diz FMI - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQQWxyUTNwZHJzRU9IT09oc2xDUk9BUWxaNE02MU9fdmVNRXAxN2NCYzBWbkx0RDQtUzloRDAwanZMOHVRRm9sRDQzWTM3T2VEcklSTEpwckJuWjlRVEp6T1JlNGhEQUIyMVJ5WUMycEVIT0xKakdtSTdjNHhqLVlaQWpqVFo4X2ttb1JnTlJ3bHVaVDg3bXBhVVhRRm9OQWN1REHSAbABQVVfeXFMUE5uZTZndVhsajd5aFIyYWFiX3hHeHRuUGN1Z1lpYnNQc2J2WU4zZkxRV2RMRG51WXhjSTFXQlZDQjZWRHRpaGkwZXVOLXNOaHhocFNiTF95aDl0Y3NsSV9LdnkzZzVUUE5tYXh6RjM4VFZtX3IyaFJ0YnZSbmRMMmlXeldCdjBXOTJIbDVQVGpoREtYTzItaFF4aHlYX1V6ZXpNRjI1M3VaQS00UVVUN0c?oc=5",
+      "source": "Valor Econômico",
+      "published": "Fri, 24 Jul 2026 08:00:47 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Governo Lula sanciona lei que proíbe produção e venda de foie gras no Brasil - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNcTJncWJseEFwNGduclFzWEVfeGllZTZSSGdXUGp2Ri1XbVFCUTZtUkRMWTlTcEM1cmQtZUFXamJkLV9NVUdTNHZ5OUZZb1U5NUxzX1IwckRGRk9qUUVFQW0zVEtPVDAzbXlDNEU0dGd5eDJHdGlzSkdISTk4TEMxNEFxYTBOdzJDQzV3RlVPQWQwa18tdDVvc2VtLWt4MVFqZUVyYjk1b19teHZzMC1SamFGRDFjb3BCSUViZ1o1N1hWMmd0ZUo0?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Fri, 24 Jul 2026 12:37:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Brasil classifica de arbitrária e injustificada nova tarifa dos EUA - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVGo3clZkSHdvZXQ3cll5enJwT2NzY1JTRjNha1NkQ2xtazhkQnphaHVpV2FHNVNwT0VlZWtSMEM5a2U0ZVdWY0hlak4tS0ZSTHJ4RDdVd1hqNW9JRkZablZBbEJpZ0p0OFFoVm41c0c4d2M4UHJNZ2RpZ1Q3X1JOUi1MdHlZWlhtSWRfZVBXOW9COTlnVlNuRU9maUFtMWtVeDFjMTlEX0VnUQ?oc=5",
+      "source": "CNN Brasil",
+      "published": "Fri, 24 Jul 2026 13:05:29 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "O efeito do tarifaço na economia brasileira, segundo o FMI - VEJA",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOeERraGhIUDRWdWt2WWZNUE9ZblplalpuUzVnZldXLVk5d0lvWkpPQl9vTm9RYTduMV83OUpNQTg4REh3YTgtVnJ1amNpTTNRTDZaVGxPUTFMbktJLUdlRGtoODNaUDBaZnpkOEVaYlUwTnB5VGZ1a0wyMTl0ZF9vejk4NGhGb2FkZklEdENwWVNTTG42WGNzMEhYVUxCdW5xaDFEMEpuR1ZZVTljbnJUSVp0bw?oc=5",
+      "source": "VEJA",
+      "published": "Fri, 24 Jul 2026 12:29:14 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Brasil enfrenta risco concreto de recessão, diz Armínio Fraga - Poder360",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQYVpPY054Qk5kNEZXQVNQQng2X1R4WHlfS0FBSUs5NDA1WW5nLUpFaWNRbEZpTjZ3a1g4M2cxWV9hZ2lSaWtkcnZackgtRXZ6TS1obHEyeDBvTlJVUTMyQTI3eGVhaTY4U3NWdHA2MktvX0pYZDhuTmJ1LVFaWnkxZlcwdWY1NG1CR3F2R0JWNHY0Mkh0TVVRNElaYXFuQVZWWlpJdHhHdw?oc=5",
+      "source": "Poder360",
+      "published": "Fri, 24 Jul 2026 13:34:34 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda do dia : PMI nos EUA e Galípolo no Brasil são destaques - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMGJ4Mlh2UElxX1hhUm56ZnNZcU43VEkxWWZqZ0M3TmRmay1vMS0tbm5BNU12WXhYTzhEQlV0UTJ1YVowUnBVOEkwcFpWdklPMWZtdnVsYnVGUlNRbkNjdGtfYUpxQ2w0N2JQU09Mc09BV09sMDN1RlhQWjItdEhqSlpraFJQOVdGTDBRb19pOEFNcEFHcnRSUEZmdXJUMEpWSXltYWFlOVBGcGpYY3JoOHlMSG9jRlJ3Z1HSAcgBQVVfeXFMTlVMMGFoeW5NQVBWVTcyQU1MSmpXUHVJWGg0Y0w5MGt3Ny14R05RWHMtQWFuai1CNXZHdE1ROE5GYm5TUjV0SjRLS2VBNmJtenJ4ekVzVHhUc0ktR0MyZmducjJDWlpncm93eDIyWjNvb1VsM3NrckhQVmIzZ05LcmNfTlJIYTB3WXBKWEVEZXVKOUI3TF9ZQnhQTU9JdHI4S1MtaTV3WFJRVVA0WlpUSEo0QmswMWhmT0t1S0pjZEZiQzV2TFhMOVo?oc=5",
+      "source": "Valor Econômico",
+      "published": "Fri, 24 Jul 2026 11:08:40 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "O dia do Brasil no esporte: confira a agenda desta sexta-feira, 24 de julho - Olimpíada Todo Dia",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNaVdidDhoY0JiZTNZNUM1aENrOFFmZ2FBUDRocHhFYm52OVBDYVR1bmkxOHJ5SzlnUmJDZTFZcno5UHM2YVR5ZVNuSkd4RWFIR2hURVdoLVM0dXhWYnRCYjdwQ0dQclZsc3VSQzJEMi1uWVUyNU1kd094bVNFSGlvZ3RhVjlBT1IzSHBDMlpHSkZncmt2aEQxeG96dE9zUFk2cHlzMER0c1ItV205WFpKdU5TS3g0M0k?oc=5",
+      "source": "Olimpíada Todo Dia",
+      "published": "Fri, 24 Jul 2026 06:04:18 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Expert XP: 2º dia tem Will Smith, Galípolo e Pompeo; veja agenda desta sexta-feira - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOdW5hZE5VX2FwU3c5Wk1jbHM4S1FRRG1zLWtBek55OHZaSGQ4alVKZ2hiQWtmdC03emNGcUtFaDhmMlU4RVU2dF8zbERuRXBXYzdqY3RXU2ZDejJLeHM3OUlqdlZ5cjVnckhPRENOdDJCUUc2RHJvRUhxblhxcU1hRVZxTUVVb0pMdHB6SzhTTThwbFhZbXQ1bXUwak9sZ1huTkU3bjhyMXFUZUw5Sm0yQjB2TDc3Q29vZWfSAb8BQVVfeXFMTXFCTzE4cXhZeDc1TEljRkllQ1ZaSlItRzFyX1huZV9HYjJ1dmp6OS1XZUVvaFhLMERYR0hIZFVZak1OczFTeWZKaFdoQl9obHltcEt0TkJObjJSQUs4RGlNRE13QkZ6bi02VFZZcUkzbmdOTG02QnpHeVdBeHNSVzl2MWhxNDZwNHlsUDVMdkx1V2pZcVFYM0hYNmJNdGNSQjRkYWJMdFQ0RGZXR255N0w2cnNERUtTQ1piRFBaVUU?oc=5",
+      "source": "InfoMoney",
+      "published": "Fri, 24 Jul 2026 10:00:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Concurso Público: confira a programação das aulas de hoje! - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9RZzhuWTNNQjhfRUVRTXZSdHE3RGVseGI4VWNvMlJ3aHdqajY4QVVQV09pUHVfZkZYdXk3WnFiTjlMbS1YbXVEXzQ0d1BfTHhzcVpUQnUyazhOcXVObDdyWmlGdVZ6UkZXWmfSAW9BVV95cUxNb1U4ekpYaVQwOENfMXZ6X3pzUjhyMGNMS09DNFpYZkx2aUdsVFd6X2k4OTNZcW1HZi1mMlFlSndoS3pHLXdqZGV1NXJFbzAtYTZTWDBzZWVKb1JYLWkwRWxjWE1GNnh1QTlEd1EzV1E?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Fri, 24 Jul 2026 09:52:46 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Futebol na TV: a programação completa dos jogos de hoje, sexta-feira, 24 de julho - Goal.com",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOejhoaWx4NWkzSzA1QW5uNWY0Y2lOQ0pRYUJJYnFhTHJtb1dfNFJUMlM5aGJ2TXVXVXJEQXZVUFNOUXNVMUVnY25VUVc4a1JyZS1MaEdxRlpzaVFqLUtlSF96WVZMSFloZGFHdE4xcUVvZXFzWnR6WHdhTFIwQ1djVmJKT3dfVUpPOVluczZTS181Um42N3BydHhVb2c3czBGeG9oMWZHT2VYaVl3Zmh3WG5xMWJsSGFHa3VN?oc=5",
+      "source": "Goal.com",
+      "published": "Fri, 24 Jul 2026 03:00:00 GMT"
+    }
+  ],
+  "generated_at": "2026-07-24T10:48:54.402231-03:00"
+}
