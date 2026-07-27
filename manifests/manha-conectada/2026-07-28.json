@@ -1,0 +1,202 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-07-28",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/audio/manha-conectada-2026-07-28.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/source-manha-2026-07-28.md",
+  "sha256": "600a8523e1d3e3a6635d3e6f6f410e58646352f3cd80af934552a7fe67e72287",
+  "text_gate": {
+    "words": 731,
+    "forbidden_hits": [],
+    "ending_ok": true
+  },
+  "audio": {
+    "duration": 315.010612,
+    "size": 7560924,
+    "bit_rate": 192016,
+    "lufs": -16.58,
+    "true_peak_dbtp": -1.7,
+    "lra": 2.7
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Milei não vai pedir desculpas ao Brasil após reclamação de Lula, diz imprensa argentina - G1",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOMFZoOHdoc2t4bExENFVxZHZIS3JtNERtN1NqTjBMdWhCbGRNaEpDTUF4N29JTEtDSGc3VXAyOURhcExEejNPY3JrcTZ2WlEwdXZieF9WeVRreDA5VVd2RzYxRnlPa0hnYTVqOFhDMHNXMHQ2MXhYVEZ5N0lJaXl1U05SQ0NmMVB0a1ZRdWRHaTdkOUxjTVEzM3RYeFNJLXMxSEF1QTctdzQwbTRjbmxiY1ZoTUVRLVphVnFhTFRFQWptcXFJN1M0S3NMY3dsS3gzNVNlddIB4wFBVV95cUxPdjZveUl3QldBbnRhY2ZiakZ0eFBOMHdEdEEyamtJNENNSFlOb2h6NWdJT0hMUDg1dWVVTkZZOGV5ZUZZNGt4UHZHcVZjRDNMUlNONjA2VUE3QWVYWVBwd0JIVFlJNUp6UHFWSEc2RTduQ2NnNGl1YzBMaUxOXzg2UWNHMTdXSTlVVDhvT01jVTA3YkJPdUg5UnU3YlVPZXlmNS15aWZEd2lMRmhlSC1wUjZBSUJfbUhaVzIwNGh6Z0hsYjE5cEwzem1RRWZMWkJnRll6YUtmUUh4QVB2Nlo3eUVYVQ?oc=5",
+      "source": "G1",
+      "published": "Mon, 27 Jul 2026 11:47:53 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Argentina não pedirá desculpas ao Brasil pelas falas de Milei, diz jornal - UOL Notícias",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPRjRNd0ZVT2Mta1pRdGpreEZOR29NbWY5dFJJdE54bmR2cDVtbEZwUTRvVGtDLWw4eFM5OF9GUENEQnktdHFTS2dvbjZOdjB1cVhLc0plSk94VXAyZVdFTWtTa3MxZXU2QWJ5ajdmRjRqaGo2TC1tRkRpOERkMEViaFJ5TGRLZmo0bE82NVpBWnpoYy1qdTZrdnZyTndoNzluTXBLX2tKZEJJdGlobzZ6UHhrbTlONGs?oc=5",
+      "source": "UOL Notícias",
+      "published": "Mon, 27 Jul 2026 12:32:52 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Concursos Sul: as principais OPORTUNIDADES de 2026! - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE01bkxsN2dzQV9WWUtTNzBXQ1V1RlFNc05rQUxxNVUxWVJZeURIN2I0RExkUXpISEY3SW1Db2xpTmJVTm1NZGt0aXduOWFJRnE4NS1VMzVOdXM5YWlwemRPZi01b1VCaWltbmfSAW9BVV95cUxQZzBUeEFXS2NsVklWWDY1WFU2U2pjUzl3Q1BzZFpxQXZRZ19WMmZ3SVYwY2ZoeGNXSEp2SjBhTmlvZXRRM195Vl9sWFNHaUpSSXJ2bjVaaWU4OGJlMEg4M2E1eFFHNFZSS2syUUk4YUU?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Mon, 27 Jul 2026 18:53:55 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Em meio à tensão com Trump, Xi Jinping manifesta apoio ao Brasil e rejeita interferência externa - Jornal Opção",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxONHg4ZWw2WGl0Unk3RzAySUdNSDZYNHktXzRSWkZDek5CZ1JOeGFsWmtOdDN2TzVVOGRyNDJCeVduMU50Y1dCTnBkYnJkbG9PZ1FLQmZPOHduZ2kyZnN4RnFuQUtBU2d3Z0ExVGdJaE5YdTF0ZWhidUtpampsU19SSmo3V2h1RFp0bmlyM0pDc2w2TUJ1QmJ3REd3VnYyNVpjblNmcDI5MHJpT2NWYS1ibHBGeG5TZUhHdmJBbzI5VnAyVnRRTTl4OWxwdlh6dDVvX2JjLUotRGw2QkZYV0VoUlVWYXRrdw?oc=5",
+      "source": "Jornal Opção",
+      "published": "Mon, 27 Jul 2026 15:07:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Lula cita k-pop e doramas e fala em expandir cooperação com a Coreia do Sul - band.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOTGVGVU5NdzRWTldQelZoR1k3RGJnNzR6ZXRINXF6R2JTYUpMMWlNSmQyc0FyMTRRRkVoSmtIMjVkclE3OTlvWWgzSGtOaUg4VmRGMEpHdW5iSHpUT3Zuc3kxOXV2ZVNjV1R4MzNkQW8xc0NweWM1aGx5eENieXh5QmJqcFlPYUVBa1pJYTI2OGVqLUdTZ3d6X0RDaDBfUFczQUJaZXpVM1IwbFlDUFBlY2ZCY25TY1JsVVdmOWJiVVpDRHhmSEs0eFJn?oc=5",
+      "source": "band.com.br",
+      "published": "Mon, 27 Jul 2026 17:52:54 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Sakamoto: Mundo se redesenha e reduz importância dos EUA - UOL Notícias",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNZ18waDRYR2VWYTF6d0ZvSklfcHB5U1lwdGtjSzIyYUM3czA1Uy0xZEJ2SGgtSXhYQW9qZ0d6Znd6SUljekRKY3UwZC1oanpRUldlX01vdFR6R1FqSF9GdmtPaVVBdGVkZDhoMWswY3dzM0ExOFUyUjk3a3VES1huWDB4UTlCRW5ncXJ0bm5haGdKZjdscnFFQXFSTEU1a1plUzZEakx3c21xOVVCcWw1M3MtS1J3U3h6QmRlb3lwbURNN00?oc=5",
+      "source": "UOL Notícias",
+      "published": "Mon, 27 Jul 2026 19:23:26 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Veja as notícias do mundo dos esportes no Jornal Hoje, 27/07/2026 - G1",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOQmhqZ0V0Vm1XbTNuYUFpVDJjendSWmZPMFJTbFRnZEt3M2Vnc0tEUnNoOW8wMW50OFJUV2cyMTlNLWl4VGpNR25sWVpJQzZUbTlCZllUTV80S1p1QldpdXVySWU0OXV0R0hFLUlZS3BLOHRSMm1RNWwyTjhGTzN6REpMaURJUHpURWYtMXdxLWk0elJ6YVUzeWZycXAtLUFDUk9zcHRWSGswZDJMR2FQUmZtSGZTcWvSAcYBQVVfeXFMTW5sbFE1d0l6b3k3cXMteVFRSzBmR21aRnU5dHM2M3RXQjFjQVhyRWhvcHF5aHVJWUFrdHo5QUY3RFJyakR3TERLTkNOd2xHT1FKOWp1TDQ3RzMycllZR1N6RlJyeXFQYjNqekg0bm9SNjUyQnY4MHhuRjVjRzFOWTZGMjRBMGhRZk1pSFZGSjZpbXRKY3JfT01rVUdiUFRIRlBRd3J4US1pcGx6Rk1yNlVTVUx5SW1kbzBxQzZYMWFhbDZUUjNR?oc=5",
+      "source": "G1",
+      "published": "Mon, 27 Jul 2026 18:02:11 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Trump diz que EUA e Irã estão conversando neste momento - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOU2lDOEZQNWNoTWNUUTBIQ3FFbm1hTEtBZjZidHBscXBoczFacTdrVmhtR09LQVNpTUFXQnhaN09IUXAxc3Jna203Mmh3LWI3SllzOGdIR3k0MlduS3BPNWVnd2hhblUxRTQ0S2N6b05KOXNoSGp6eW5OclpsMzBGYWRxMmpObFZwQ0dFMDdITUZ5SFRXcTZIRlN0bnk?oc=5",
+      "source": "SBT News",
+      "published": "Mon, 27 Jul 2026 17:34:27 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Copa do Mundo de 2026 reúne 6,8 milhões de torcedores e quebra recordes - band.com.br",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPZDZLWWFZS2h2WDFEZFRPN0hqd0RabGJFcGQ2VUlDcDg4VXR6aU5xcU0wTWRjWEl5aGd4bTNFanQ0bVdzWnFrZnBIQV9QbHJGMUlIbjhyaHFTOVBTa2lyU3VJdlVJVVFzaEE4ZmJLUm9SSlNYRFY2RHdibmM2NFN2czctNHVsV01XTHBmSTY5ZWpCY20zV2o5WkRJdGMzM2JXMU5jX1VBZ2RaVmJDWjBPUFpCRTZfZFd4czFvUHE4dF9id2J0ZFNVeXMtbXhTNndwV01IMmVudmx4T1JxRVFOUw?oc=5",
+      "source": "band.com.br",
+      "published": "Mon, 27 Jul 2026 18:59:52 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Papa Leão XIV defende paz que passa pela dor e contradições do mundo - Gazeta do Povo",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPOU1udU1LS1EwQUFDTUxMTUhDdnpmMnlhV0RxUGNaWThEM0d5WG5sUDZ4dkduVVBJWlBtQmphYkUyUUwtV2lWU1dlQ25GdUx1c1NiWDFSc1hkQ202LU4xc2R3RHA5NENZY3RKcFBqZEhQV1hqVGtQSko0RTNRcU90bnVvNkpBLUphRC1Wb1RKUjNpelMyMVNVdHVkV3NqMGZIOUNOWUxUb3h2QjA?oc=5",
+      "source": "Gazeta do Povo",
+      "published": "Mon, 27 Jul 2026 17:07:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Inteligência artificial pode antecipar o crime? Especialistas analisam os limites da tecnologia | SEGS... - SEGS Portal Nacional",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNcmRoakRaTjlTdHB3ZktqYjhHZGJxZVh2Y1RPZFVyazFSYjg1dnBnb3VIVjR3MU1jRHRwX0tONXRVbVprcjk0akNicFdTMy03VmpHQ0ZfM2xhV01wRU5kTkVHWnpfYzJ3dzhWNlNyR0dtQ3pTNFlJTVRoVVJNdEljbDZnbnJ2YnJsWlY1RGpiSWlPanlSUkVHdEViM2s2RDN3cW5wV1BKWHFZU0JGZExzclpQbjdFWHd3SzNBWGR1WWhpekVsQ0xGVl9BbmxFZ9IB0wFBVV95cUxNM3dqamg4LXowSTlUbWhkck9SbExna042cXpEXzZxTGJKekJhR3I4ZWxvY09nYS1BRDVFbG00ak84dGRObHNfX2JVTHFWMGJCSWU1eVZjNEV0QlRBV2FGVnYwaVlfTTJrQlRUMHNoRlRrYzhkZnc0c1VPNklhRFVqN0JEN3MydlFHNDVIa3RHbGdaNWNkRFhNVlJGQnY4ekpFTWpBcDIyb3JEY3daYUE3MW5yY0lpWEFvN0V2Q1R1NXAxNWRMMVZ1WDJaaEdKUTRhaWo4?oc=5",
+      "source": "SEGS Portal Nacional",
+      "published": "Mon, 27 Jul 2026 18:22:57 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "IA: EUA, China e a escolha do Brasil - Outras Palavras",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNYkNCSi1JZ3g1NERIczZyUEJYT2NhdkNLUG5xaDhmaTQ1SUFrdkJSSVNndUtxVVVqMkNjVl9hcU1zQ3NfMnBHVlNKWmlLTEF2cGtOdDIwd1pyMFBsbXhSZ3lDdnE3UVlmb3Z0aV9aenVMV2Q1UWw2ckU1LUo3b1JMYkJDdEpFOW04MkE?oc=5",
+      "source": "Outras Palavras",
+      "published": "Mon, 27 Jul 2026 19:53:36 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Modelo chinês fica abaixo de ChatGPT e Claude, mas pode ajudar tecnologia brasileira - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNWGZYY3dOT1lIeVh6TngyOXBJNGU0OWxHb1dIZmdiME1xQ0pvUlNaMzJvVzJRTkhoUWtJYlFlQ1I5dTNTclAyUC00NjdJMHVhTTVXNjYzazk5OV93NFM4RHV6eWpkanpNUmdrS0g2SVJ4LXZ2Y01LMHZ2eFo1SVl2aE9INjRXeEpGWmhfY0tTUlJGVnRheC1oNEktU1BabkI1bVBJTS1DMWxkanFJekUzS3pqMGRCakdFV3d2ZHBnZmpmVXVFTmF3YU1vQQ?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Mon, 27 Jul 2026 19:45:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Tecnologia pode criar novas receitas para empresas com ajuda da inteligência artificial, aponta especialista - CBN",
+      "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPS3E1RHUzanNobTVad1FpamR2WDFZaHozcmNHd2hYNFF4X001Mnoxb0NvRzl3WTVZWUZPdV81OENlbFJlalp6Uml6NTQtaTM5bGdkdzF4a240MFlVMUN3QzJ1VjM5SUhmaU9lVUd5TEstTHpaTGlMZmpLT0k0ODYxdDRKTXcxTS1IWGpHN1RaMExBeFJsZVRPMjFhMEJ5TE55VGFZTEQwNjdhME1oZHI5RE9RcVE4ZU9VUzJSUWJwdVlwWjlMUEtWS1hoemhObUI4eFNPSUZaQmRLRHFCdXdyNGJxN0ZjRWVwNUp4elFxYklJM3VqRWJmRW00SHBLVlJxQXQ2TjdzSHdsX18xYmFyelZKbVIzZ9IBlgJBVV95cUxPS3E1RHUzanNobTVad1FpamR2WDFZaHozcmNHd2hYNFF4X001Mnoxb0NvRzl3WTVZWUZPdV81OENlbFJlalp6Uml6NTQtaTM5bGdkdzF4a240MFlVMUN3QzJ1VjM5SUhmaU9lVUd5TEstTHpaTGlMZmpLT0k0ODYxdDRKTXcxTS1IWGpHN1RaMExBeFJsZVRPMjFhMEJ5TE55VGFZTEQwNjdhME1oZHI5RE9RcVE4ZU9VUzJSUWJwdVlwWjlMUEtWS1hoemhObUI4eFNPSUZaQmRLRHFCdXdyNGJxN0ZjRWVwNUp4elFxYklJM3VqRWJmRW00SHBLVlJxQXQ2TjdzSHdsX18xYmFyelZKbVIzZw?oc=5",
+      "source": "CBN",
+      "published": "Mon, 27 Jul 2026 14:25:38 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Governança de dados trava avanço da IA em 95% das empresas - SITEPD",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPUF9CRFp3LVk2TTdBbmxlajNSeV9ybkVGQUtZYmJHSlNCOHpCYVhmdHBKN1lWdTNRNmR5N09BSW5XT2lILXEwbWNGSmpncDhtbmVGN1ViOXdUTDluTkwzTmZ1N0tDZWZxeksxUUZreGxFZV9QU1ZyQmRkVHVZd1hUYVNMOXZpcU4tVU03OXB0ak1uaVpqOEE?oc=5",
+      "source": "SITEPD",
+      "published": "Mon, 27 Jul 2026 18:39:46 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Ministro da Fazenda diz que Brasil está melhor que a Argentina e chama Milei de 'palhaço' - G1",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNNndDZGJOa2wwUVBLbks5NjdzMVZ0U1h5REE0SDNtNDFiZ0NLa2lCQW03N0xzZk1uNUR6NnZZbGlld0R2NlN6WUlhSG45WGp0VXQyU19xNGl4SVBXTktSa3dGcTNxLVhpSlprOFBwOW5adEJRUVoxWUZoaUU4cHpnN0QyMFVVazJXQU9xdHh0OFVFdV9KVHhzN0tKd2ZReE93LTRYb242cGkzNU5VZHFIUWJ4RmlDOUNOR1diQWhGc0pjVktxbjE3VUNUN3pFaTZGVWN4ZjlkdDVKZ9IB6AFBVV95cUxObE9MMEgwRVpqM3I3aUVCSkNXUS14cW5tRmV1Y2NjWjdoaDJTajUzNWp4NFBzcVgxbUx5Nl92R0x4Y1JmblF2T2k5QjFxMlJkQU1mXzBGd3RHVFNPek5MbWI2N20xeGN6RV9jTE91bnVvaGVNTDRieHMtZFFoVGtzaFd2YU5LXzhlcFFSTU85VVhMUW9DT2p0U0NFa0dlQXJKLTBiWHpoRWttN3c3VkJjaGFBa2xpU05ZYVhQbW1Tb0RNRXl5Rks1ak5FNHpEWkFkTnU4bW9qbnZWZVltVGtCbFdONHFxTS1w?oc=5",
+      "source": "G1",
+      "published": "Mon, 27 Jul 2026 11:24:35 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Durigan diz que Brasil está melhor que Argentina e chama Milei de \"palhaço\" - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNUDRrTTFxbXRGUnlNa2dpZExMY18yam5qTTFVV2IyOW5kLThNTEI3QWFsM2VmUks4T01OQTlpNUJjLXR3bDRjOHN1bUhTZ19YNUwxS1ZRa0gzYk5mM2Fqb1hCY0JvNVlDLTNfSlNSenNBZFJmcGdBVEpQZTBkQWJ5MWtXUnRsU2RqZVFzWGNWNGw4TGY2aWZSV19YSkpMcURmTHlNamlzTmNCbGtmYk9PTHFHTTJzdXh6S1pVdnFEME0xdy1M?oc=5",
+      "source": "CNN Brasil",
+      "published": "Mon, 27 Jul 2026 13:22:12 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Dívida do Brasil é menor do que a de grandes economias, diz ministro da Fazenda - Sindifiscalms",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNSUFMbUJkcGF3UWZYRUdxYlg0RHRnYjRDMGpQbWhlM3gtMzlPb1BRUkJGZGhnaC13SDY2LUtXY3NPSi04VVpteE0tMEs3Z3A2LVRZTUJxd1l5aEdUTGZ2ZHZWZTdfZldSZXNpN296V0JMSDkxU0FaeFdWelFDWXJxUG1RcElTbVluZEFjUzhlVU9CY1k0aDBqRjdOMlpVcVhKU19aVnBXZ0NRSTZrcFpmWXBZYlN5R3lQLVRmS0I3R01RQ0Rj?oc=5",
+      "source": "Sindifiscalms",
+      "published": "Mon, 27 Jul 2026 17:35:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Durigan chama Milei de \"palhaço\" ao defender economia brasileira - Congresso em Foco",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOQmZMSkFSUk01QkUxdVkxX1p0VUh5SUFQSGx0WjdnYlF0bFp1ZzIzQmJRWF8xQkl5a0pJX1BUcXcyckxSUU5JY3BYRzV1dVRweGh4VEVVR2tjaVpOVjJQRUlQOVhHd01nblFCOEluX2RXVm5FZW5wVlpCMDQ2eUZWbW9udElHS1VyRXFyYzl3ak91eVVvVzBBYjk1RGpzako2X092OTdGSFdpLTFWMkZfcUJB?oc=5",
+      "source": "Congresso em Foco",
+      "published": "Mon, 27 Jul 2026 15:23:32 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Durigan: em comparação com outras economias, Brasil está em situação proporcionalmente melhor do que pa... - Jornal do Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOTnk5ZjUzTWZMUk1JRnJGMUF4a250MTdHalpkbVJvX1BhSHhGb2g2NGgyNTM4VVlBWGpkNElWTVhfeU4yQVhjbVpOeVJZVDBBcExYaUh5WENMVmhqTTVyWXdSMTNYb3B0eHRydDdsY3lqalBIa1N6ODV6amU3QzhfQ0xFMlF5Wk1tb1E4aWw2LWY3N00xVG9nOUN3eVprWHNVNzg5bndINUdGN1JWTHk2OEFGdUZNRGpGWlHSAb8BQVVfeXFMUHNOdW1QV2tENUM3SEJWTVVjWm5OOGZ3Vkt1Sk03RUhfN21USG1NQUZzdnNwM1JNVUdZUk9iUld5RlhnWWRSTXhzUUNaeTItSkNNN29RZnRNUmNUb2tRLXQ3UC1CbHZDdmJES1Y3dEVubHhSVTA4RURNNmZrSXR3SjFTOFdaRHY0eGFQeW9hZzBpd1VBNU01UTloS2RnazlyQzBIZ0ZEQjFCb0Y5c0dOeVVGV3RZMFJ5Z1VQVnJMd3M?oc=5",
+      "source": "Jornal do Brasil",
+      "published": "Mon, 27 Jul 2026 15:35:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "[Agenda Funarte MG] Ocupação “Love/Paranoia” realiza edição especial em agosto - www.gov.br",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPQ2dQY3JTNHVmb1oyWHQ0dE8wLW5zeGI2RmtPUEJCdGc3NXZvQkE0Y1VyZF9lbnJhNmZGQjVvaTdMTEhpM3hFcEhOOFF0b18xdE9aMkgxcWhBdTNVZkNMbl9iT0NEUHo3SHF1OXpRdnNfT0VNenljTDdZXzdHdEU4ZFJuaFgxMDVuejNqV2l4cllmRkJxaHlzSkFJdGtNSGlQdks0ZC1QOG91MjRXbDlzU2tIbV80MDMyenpkRHVUMTBsaGlpSHktY0xOOTdpcFEwbXBaOEFnaWI1LXNpeWVCQU53?oc=5",
+      "source": "www.gov.br",
+      "published": "Mon, 27 Jul 2026 18:06:03 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Data centers: uma agenda estratégica para o desenvolvimento do Brasil - TeleSíntese",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNOHdSMlcyM1M2UFFVUmVPa29vakdZcXYyUVZvMDl6UG85ZVpmdHBONm5EdmNvY3FzZXNiNFVmYUtsRjhwb2I3OTZIMmNmenBuUEZ1MTJ1b1BGbkRuZmx0V3RwYWJyeHlNeWNvMi0wNFFYZUw5c3VoQmFYUm4tTExCa1MxYS1IREFoQTNkTTFQeWdkcloxYTI3OHBpX2o?oc=5",
+      "source": "TeleSíntese",
+      "published": "Mon, 27 Jul 2026 15:19:11 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "IBGE disponibiliza Agenda semanal com programações para os dias 27 a 31 de julho - Agência de Notícias - IBGE",
+      "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPRHh5d2I3TTBrN3V2WmlySm1JZ1poZEtfYjFtNk1BRUdsdkZLZFFoQlJEMllSbm9mWjUyNkc3VFlJby1lS0tudTJkN05ySXYtc2VNWXZWa3ZybFlxN0c0UFdtVC0tSkN3dHpGVTY4N0xMU0wyNzdPakhERThYYUpJV0l2OUtLVDhwd1BtaFhKV0ZoQlRuMEFmTmt3NXNrZzBVSGhZbVRFTnZSSFhsb2FJUVBDQTEyWVNDTUlhaE45WlNxZm5EZ1EySHJfU0lBTzZVODFoR1cwd2VSbnozODRpVUUtcHhlS1VfbFZYSFdXVUdjcHgtV05tV2JHb1hRVFJ2SUtub1d3?oc=5",
+      "source": "Agência de Notícias - IBGE",
+      "published": "Mon, 27 Jul 2026 12:00:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Mercados hoje: decisão de juros nos EUA e dados de inflação no Brasil dividem atenções em semana de agenda cheia - Bora Investir",
+      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQX3NRWjkzRU1mNk9fWVdtNFg2SUtzY1hGaG5Db1pVWUgxb01YM2lEZ0pWRTFFU2Q1S3g4Q0x3X1hBMlVMS0xSTjctM2VVd2lxaUFPMEF5TlRTRGpZakI5X0ZyZ3ppSURueTE4LXZVRnVzZ3lpX0hGTERFTFRhVWxSZlBPU2lUblFwdjl2MTJuUU1CajB4aDgtbDFqbWx6Q2c0eHpnSExoMUM5QTVsOVhUY19PeWo2dmdzdjdPckpvQkk2QXRUU0lUcjdVY1hsdHByYTRMY1R1OUlIQTlwRUkzU2pwOWpaMmlUTFRpRmdrWjhFZw?oc=5",
+      "source": "Bora Investir",
+      "published": "Mon, 27 Jul 2026 12:19:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda do dia: Focus e leilões de Treasuries são destaque - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNTmxsYzFKdmdyclJ6WjdXZU1fMnFvaE5MMVI2c3RRc29uVG1ld2xLX0x0aDJPZHBaVDBKM2ExbnZ5akVja1FBdm1vTURPZlJqOS11c1NyUlVVMlg1UHZxcHB4SXNwT3czd2VnWUxjY3dmOHJJV1pZdG5rdkc1OXozblRCWTB4dTNsbkRtRG91WjdPUHBPNVlzcC1QU21wbTh4ODFaZjV1eWxrdFNzTDZoSzRBcUrSAcMBQVVfeXFMTVdMZ1c1Q0VYSXVjTzZjVHM5b3pTUGZUQjBJQ0JIbDRuZDk3aHdfM3otaDNXREVFQklaUlBNWWQ4QUg4TnBlelIydFZGa0gzYUxVQ0Q1ejRrS1ZQM1BQUkJFb1RMWXFRdGwyR19sUkgySzd5SXlPVHJ4dmY0X2RJT2JDX1VLOEV5aUF1a19qSWVZdk4ycmlWdDYtWEtUMklhejhHYU5HVThyRXhNbzJ1djFMQ19EakFPZE9pa1N5c21tYmVB?oc=5",
+      "source": "Valor Econômico",
+      "published": "Mon, 27 Jul 2026 11:08:02 GMT"
+    }
+  ],
+  "generated_at": "2026-07-27T17:33:56.532750-03:00"
+}
