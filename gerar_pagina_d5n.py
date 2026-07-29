@@ -4,7 +4,7 @@ gerar_pagina_d5n.py — Gera o site do Drop Five News conforme o BrandBook v1.0.
 Inter · Midnight Navy · Electric Blue · Violet · Player custom
 """
 
-import os, sys, re, json, argparse
+import os, sys, re, json, argparse, subprocess
 import html as html_lib
 from datetime import datetime, timedelta
 
@@ -1835,6 +1835,12 @@ def main():
     feed_r = gerar_feed_rss(date, data_br, noticias)
     with open(f"{BASE}/d5n-feed.xml",'w') as f: f.write(feed_r)
     print(f"✅ d5n-feed.xml — {len(feed_r)} bytes")
+
+    # Gera feed RSS de podcast para players externos (Apple Podcasts, Spotify)
+    subprocess.run(
+        [sys.executable, f"{BASE}/scripts/gerar_podcast_feed.py"],
+        timeout=60, cwd=BASE, env={**os.environ, "D5N_BASE": BASE}
+    )
 
     print(f"\n📊 {len(noticias)} notícias, {len(episodios)} episódios")
     print(f"🌐 https://d5n-daily.netlify.app/")

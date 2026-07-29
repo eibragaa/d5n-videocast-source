@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" 
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0">
+  <channel>
+    <title>Drop Five News</title>
+    <link>https://d5n-daily.netlify.app/</link>
+    <language>pt-br</language>
+    <description>Curadoria diária de notícias em áudio. O D5N entrega todos os dias um resumo sonoro com as notícias mais relevantes do Brasil e do mundo — direto, sem enrolação.</description>
+    <itunes:subtitle>Curadoria diária de notícias em áudio</itunes:subtitle>
+    <itunes:summary>Curadoria diária de notícias em áudio. O D5N entrega todos os dias um resumo sonoro com as notícias mais relevantes do Brasil e do mundo — direto, sem enrolação.</itunes:summary>
+    <itunes:author>Drop Five News</itunes:author>
+    <itunes:owner>
+      <itunes:name>Jean Braga</itunes:name>
+      <itunes:email>eibragaa@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:keywords>notícias,brasil,mundo,política,economia,tecnologia,podcast,diário</itunes:keywords>
+    <itunes:type>episodic</itunes:type>
+    <itunes:complete>No</itunes:complete>
+    <itunes:new-feed-url>https://d5n-daily.netlify.app/podcast.xml</itunes:new-feed-url>
+    <itunes:category text="News">
+  <itunes:category text="Daily News"/>
+</itunes:category>
+<itunes:category text="Technology"/>
+    <atom:link href="https://d5n-daily.netlify.app/podcast.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Wed, 29 Jul 2026 05:47:38 -0400</lastBuildDate>
+    <image>
+      <url>https://d5n-daily.netlify.app/og-image.png</url>
+      <title>Drop Five News</title>
+      <link>https://d5n-daily.netlify.app/</link>
+      <width>1200</width>
+      <height>1200</height>
+    </image>
+    <copyright>© 2026 Drop Five News</copyright>
+    <webMaster>eibragaa@gmail.com (Jean Braga)</webMaster>
+    <generator>D5N Pipeline v1</generator>
+    <item>
+      <title>D5N • Episódio #047 — 2026-07-29</title>
+      <itunes:title>D5N • Episódio #047</itunes:title>
+      <itunes:episode>47</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>11:03</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=047</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep047-2026-07-29.mp3" length="15917391" type="audio/mpeg"/>
+      <pubDate>Wed, 29 Jul 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-07-29. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-07-29. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #046 — 2026-07-28</title>
+      <itunes:title>D5N • Episódio #046</itunes:title>
+      <itunes:episode>46</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>08:55</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=046</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep046-2026-07-28.mp3" length="12853541" type="audio/mpeg"/>
+      <pubDate>Tue, 28 Jul 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-07-28. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-07-28. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #045 — 2026-07-27</title>
+      <itunes:title>D5N • Episódio #045</itunes:title>
+      <itunes:episode>45</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>08:09</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=045</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep045-2026-07-27.mp3" length="11740725" type="audio/mpeg"/>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-07-27. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-07-27. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #044 — 2026-07-25</title>
+      <itunes:title>D5N • Episódio #044</itunes:title>
+      <itunes:episode>44</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>08:27</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=044</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep044-2026-07-25.mp3" length="12172686" type="audio/mpeg"/>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-07-25. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-07-25. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #043 — 2026-07-23</title>
+      <itunes:title>D5N • Episódio #043</itunes:title>
+      <itunes:episode>43</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>09:00</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=043</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep043-2026-07-23.mp3" length="12975168" type="audio/mpeg"/>
+      <pubDate>Thu, 23 Jul 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-07-23. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-07-23. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #042 — 2026-07-22</title>
+      <itunes:title>D5N • Episódio #042</itunes:title>
+      <itunes:episode>42</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>06:00</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=042</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep042-2026-07-22.mp3" length="8644901" type="audio/mpeg"/>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-07-22. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-07-22. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #041 — 2026-07-21</title>
+      <itunes:title>D5N • Episódio #041</itunes:title>
+      <itunes:episode>41</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>04:20</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=041</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep041-2026-07-21.mp3" length="6251876" type="audio/mpeg"/>
+      <pubDate>Tue, 21 Jul 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-07-21. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-07-21. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #040 — 2026-07-20</title>
+      <itunes:title>D5N • Episódio #040</itunes:title>
+      <itunes:episode>40</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>04:10</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=040</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep040-2026-07-20.mp3" length="6009878" type="audio/mpeg"/>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-07-20. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-07-20. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #039 — 2026-07-18</title>
+      <itunes:title>D5N • Episódio #039</itunes:title>
+      <itunes:episode>39</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>07:33</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=039</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep039-2026-07-18.mp3" length="10876803" type="audio/mpeg"/>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-07-18. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-07-18. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #038 — 2026-07-17</title>
+      <itunes:title>D5N • Episódio #038</itunes:title>
+      <itunes:episode>38</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>06:17</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=038</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep038-2026-07-17.mp3" length="9053665" type="audio/mpeg"/>
+      <pubDate>Fri, 17 Jul 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-07-17. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-07-17. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #037 — 2026-07-16</title>
+      <itunes:title>D5N • Episódio #037</itunes:title>
+      <itunes:episode>37</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>06:17</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=037</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep037-2026-07-16.mp3" length="9053665" type="audio/mpeg"/>
+      <pubDate>Thu, 16 Jul 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-07-16. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-07-16. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #036 — 2026-07-15</title>
+      <itunes:title>D5N • Episódio #036</itunes:title>
+      <itunes:episode>36</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>03:37</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=036</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep036-2026-07-15.mp3" length="5211785" type="audio/mpeg"/>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-07-15. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-07-15. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #035 — 2026-07-13</title>
+      <itunes:title>D5N • Episódio #035</itunes:title>
+      <itunes:episode>35</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>05:10</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=035</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep035-2026-07-13.mp3" length="7460614" type="audio/mpeg"/>
+      <pubDate>Mon, 13 Jul 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-07-13. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-07-13. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #033 — 2026-07-09</title>
+      <itunes:title>D5N • Episódio #033</itunes:title>
+      <itunes:episode>33</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>06:10</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=033</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep033-2026-07-09.mp3" length="8901946" type="audio/mpeg"/>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-07-09. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-07-09. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #032 — 2026-06-29</title>
+      <itunes:title>D5N • Episódio #032</itunes:title>
+      <itunes:episode>32</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>06:36</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=032</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep032-2026-06-29.mp3" length="9508823" type="audio/mpeg"/>
+      <pubDate>Mon, 29 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-29. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-29. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #031 — 2026-06-28</title>
+      <itunes:title>D5N • Episódio #031</itunes:title>
+      <itunes:episode>31</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>06:35</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=031</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep031-2026-06-28.mp3" length="9493776" type="audio/mpeg"/>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-28. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-28. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #030 — 2026-06-27</title>
+      <itunes:title>D5N • Episódio #030</itunes:title>
+      <itunes:episode>30</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>03:47</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=030</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep030-2026-06-27.mp3" length="5457545" type="audio/mpeg"/>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-27. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-27. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #029 — 2026-06-26</title>
+      <itunes:title>D5N • Episódio #029</itunes:title>
+      <itunes:episode>29</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>07:48</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=029</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep029-2026-06-26.mp3" length="5618982" type="audio/mpeg"/>
+      <pubDate>Fri, 26 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-26. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-26. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #028 — 2026-06-24</title>
+      <itunes:title>D5N • Episódio #028</itunes:title>
+      <itunes:episode>28</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>08:03</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=028</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep028-2026-06-24.mp3" length="11598410" type="audio/mpeg"/>
+      <pubDate>Wed, 24 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-24. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-24. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #027 — 2026-06-22</title>
+      <itunes:title>D5N • Episódio #027</itunes:title>
+      <itunes:episode>27</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>05:43</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=027</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep027-2026-06-22.mp3" length="8234883" type="audio/mpeg"/>
+      <pubDate>Mon, 22 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-22. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-22. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #026 — 2026-06-21</title>
+      <itunes:title>D5N • Episódio #026</itunes:title>
+      <itunes:episode>26</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>06:48</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=026</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep026-2026-06-21.mp3" length="9799723" type="audio/mpeg"/>
+      <pubDate>Sun, 21 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-21. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-21. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #025 — 2026-06-20</title>
+      <itunes:title>D5N • Episódio #025</itunes:title>
+      <itunes:episode>25</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>07:34</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=025</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep025-2026-06-20.mp3" length="10917554" type="audio/mpeg"/>
+      <pubDate>Sat, 20 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-20. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-20. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #024 — 2026-06-19</title>
+      <itunes:title>D5N • Episódio #024</itunes:title>
+      <itunes:episode>24</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>06:45</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=024</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep024-2026-06-19.mp3" length="9721982" type="audio/mpeg"/>
+      <pubDate>Fri, 19 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-19. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-19. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #023 — 2026-06-16</title>
+      <itunes:title>D5N • Episódio #023</itunes:title>
+      <itunes:episode>23</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>08:01</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=023</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep023-2026-06-16.mp3" length="11556405" type="audio/mpeg"/>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-16. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-16. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #020 — 2026-06-13</title>
+      <itunes:title>D5N • Episódio #020</itunes:title>
+      <itunes:episode>20</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>08:14</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=020</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep020-2026-06-13.mp3" length="11872382" type="audio/mpeg"/>
+      <pubDate>Sat, 13 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-13. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-13. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #019 — 2026-06-12</title>
+      <itunes:title>D5N • Episódio #019</itunes:title>
+      <itunes:episode>19</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>05:21</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=019</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep019-2026-06-12.mp3" length="7708255" type="audio/mpeg"/>
+      <pubDate>Fri, 12 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-12. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-12. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #018 — 2026-06-11</title>
+      <itunes:title>D5N • Episódio #018</itunes:title>
+      <itunes:episode>18</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>04:57</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=018</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep018-2026-06-11.mp3" length="7142756" type="audio/mpeg"/>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-11. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-11. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #016 — 2026-06-10</title>
+      <itunes:title>D5N • Episódio #016</itunes:title>
+      <itunes:episode>16</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>06:07</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=016</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep016-2026-06-10.mp3" length="8831102" type="audio/mpeg"/>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-10. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-10. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #015 — 2026-06-09</title>
+      <itunes:title>D5N • Episódio #015</itunes:title>
+      <itunes:episode>15</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>05:30</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=015</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep015-2026-06-09.mp3" length="7940222" type="audio/mpeg"/>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-09. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-09. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #014 — 2026-06-08</title>
+      <itunes:title>D5N • Episódio #014</itunes:title>
+      <itunes:episode>14</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>08:07</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=014</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep014-2026-06-08.mp3" length="5852517" type="audio/mpeg"/>
+      <pubDate>Mon, 08 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-08. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-08. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #013 — 2026-06-07</title>
+      <itunes:title>D5N • Episódio #013</itunes:title>
+      <itunes:episode>13</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>08:07</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=013</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep013-2026-06-07.mp3" length="5852517" type="audio/mpeg"/>
+      <pubDate>Sun, 07 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-07. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-07. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #012 — 2026-06-06</title>
+      <itunes:title>D5N • Episódio #012</itunes:title>
+      <itunes:episode>12</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>07:30</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=012</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep012-2026-06-06.mp3" length="5409271" type="audio/mpeg"/>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-06. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-06. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #011 — 2026-06-05</title>
+      <itunes:title>D5N • Episódio #011</itunes:title>
+      <itunes:episode>11</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>06:12</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=011</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep011-2026-06-05.mp3" length="8936428" type="audio/mpeg"/>
+      <pubDate>Fri, 05 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-05. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-05. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #010 — 2026-06-05</title>
+      <itunes:title>D5N • Episódio #010</itunes:title>
+      <itunes:episode>10</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>06:12</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=010</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep010-2026-06-05.mp3" length="8936428" type="audio/mpeg"/>
+      <pubDate>Fri, 05 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-05. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-05. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #009 — 2026-06-04</title>
+      <itunes:title>D5N • Episódio #009</itunes:title>
+      <itunes:episode>9</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>08:49</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=009</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep009-2026-06-04.mp3" length="12698061" type="audio/mpeg"/>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-04. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-04. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #008 — 2026-06-03</title>
+      <itunes:title>D5N • Episódio #008</itunes:title>
+      <itunes:episode>8</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>08:12</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=008</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep008-2026-06-03.mp3" length="11825989" type="audio/mpeg"/>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-03. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-03. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #006 — 2026-06-01</title>
+      <itunes:title>D5N • Episódio #006</itunes:title>
+      <itunes:episode>6</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>05:34</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=006</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep006-2026-06-01.mp3" length="8039905" type="audio/mpeg"/>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-06-01. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-06-01. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #005 — 2026-05-29</title>
+      <itunes:title>D5N • Episódio #005</itunes:title>
+      <itunes:episode>5</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>07:51</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=005</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep005-2026-05-29.mp3" length="11315661" type="audio/mpeg"/>
+      <pubDate>Fri, 29 May 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-05-29. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-05-29. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+    <item>
+      <title>D5N • Episódio #004 — 2026-05-28</title>
+      <itunes:title>D5N • Episódio #004</itunes:title>
+      <itunes:episode>4</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>02:46</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/og-image.png"/>
+      <guid isPermaLink="false">https://d5n-daily.netlify.app/?ep=004</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep004-2026-05-28.mp3" length="2866578" type="audio/mpeg"/>
+      <pubDate>Thu, 28 May 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — edição de 2026-05-28. Curadoria diária de notícias em áudio.</description>
+      <itunes:summary>Drop Five News — edição de 2026-05-28. Curadoria diária de notícias em áudio.</itunes:summary>
+    </item>
+  </channel>
+</rss>
