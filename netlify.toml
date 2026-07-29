@@ -59,6 +59,12 @@
     Cache-Control = "public, max-age=86400"
 
 [[headers]]
+  for = "/podcast-cover.png"
+  [headers.values]
+    Content-Type = "image/png"
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
   for = "/audio/*.mp3"
   [headers.values]
     Content-Type = "audio/mpeg"

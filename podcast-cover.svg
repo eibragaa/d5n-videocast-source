@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3000" height="3000" viewBox="0 0 3000 3000">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0B1020"/>
+      <stop offset="100%" style="stop-color:#151A2E"/>
+    </linearGradient>
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00D4FF"/>
+      <stop offset="50%" style="stop-color:#4167F2"/>
+      <stop offset="100%" style="stop-color:#7C3AED"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="3000" height="3000" fill="url(#bgGrad)"/>
+
+  <!-- Sound wave logo -->
+  <g transform="translate(1040 420)" fill="none" stroke-linecap="round">
+    <!-- Center dot -->
+    <circle r="60" fill="#00D4FF" stroke="none"/>
+    <!-- First ring -->
+    <path d="M100-144 A176 176 0 0 1 100 144" stroke="#00D4FF" stroke-width="72"/>
+    <!-- Second ring -->
+    <path d="M176-252 A308 308 0 0 1 176 252" stroke="#4167F2" stroke-width="72"/>
+    <!-- Third ring -->
+    <path d="M260-372 A456 456 0 0 1 260 372" stroke="#7C3AED" stroke-width="72"/>
+  </g>
+
+  <!-- "Drop" text -->
+  <text x="1500" y="1450" font-family="Inter, Arial, Helvetica, sans-serif" font-size="280" font-weight="700" fill="#F8FAFC" text-anchor="middle" letter-spacing="8">Drop</text>
+
+  <!-- "Five" text in cyan -->
+  <text x="1500" y="1800" font-family="Inter, Arial, Helvetica, sans-serif" font-size="280" font-weight="700" fill="#00D4FF" text-anchor="middle" letter-spacing="8">Five</text>
+
+  <!-- "News" text -->
+  <text x="1500" y="2150" font-family="Inter, Arial, Helvetica, sans-serif" font-size="280" font-weight="700" fill="#F8FAFC" text-anchor="middle" letter-spacing="8">News</text>
+
+  <!-- Subtitle -->
+  <text x="1500" y="2400" font-family="Inter, Arial, Helvetica, sans-serif" font-size="100" font-weight="600" letter-spacing="20" fill="#93A1B8" text-anchor="middle">O RESUMO DO DIA</text>
+
+  <!-- Divider line -->
+  <line x1="300" y1="2540" x2="2700" y2="2540" stroke="#253252" stroke-width="6"/>
+
+  <!-- Bottom tagline -->
+  <text x="1500" y="2720" font-family="Inter, Arial, Helvetica, sans-serif" font-size="72" font-weight="500" letter-spacing="12" fill="#93A1B8" text-anchor="middle">PODCAST DIÁRIO · CURADORIA · CLAREZA</text>
+
+  <!-- Corner accent lines -->
+  <line x1="120" y1="120" x2="180" y2="120" stroke="#00D4FF" stroke-width="12"/>
+  <line x1="120" y1="120" x2="120" y2="180" stroke="#00D4FF" stroke-width="12"/>
+  <line x1="2880" y1="120" x2="2820" y2="120" stroke="#00D4FF" stroke-width="12"/>
+  <line x1="2880" y1="120" x2="2880" y2="180" stroke="#00D4FF" stroke-width="12"/>
+  <line x1="120" y1="2880" x2="180" y2="2880" stroke="#00D4FF" stroke-width="12"/>
+  <line x1="120" y1="2880" x2="120" y2="2820" stroke="#00D4FF" stroke-width="12"/>
+  <line x1="2880" y1="2880" x2="2820" y2="2880" stroke="#00D4FF" stroke-width="12"/>
+  <line x1="2880" y1="2880" x2="2880" y2="2820" stroke="#00D4FF" stroke-width="12"/>
+</svg>
