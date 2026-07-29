@@ -103,18 +103,22 @@ def collect_news(day: date) -> list[dict[str, str]]:
     return items[:25]
 
 
-def auth_token() -> str:
+def auth_token() -> str | None:
+    """Tenta obter token opencode-go do ambiente, depois do auth.json."""
+    env_key = os.environ.get("OPENCODE_GO_API_KEY")
+    if env_key:
+        return env_key
     for path in (Path("/root/.hermes/profiles/d5n/auth.json"), Path("/root/.hermes/auth.json")):
         try:
             data = json.loads(path.read_text())
-            creds = data["credential_pool"]["opencode-go"]
+            creds = data.get("credential_pool", {}).get("opencode-go", [])
             for cred in creds:
-                token = cred.get("access_token") or cred.get("api_key")
+                token = cred.get("access_token") or cred.get("api_key") or os.environ.get(cred.get("label", "").removeprefix("OPENCODE_GO_API_KEY"))
                 if token:
                     return token
         except Exception:
             continue
-    raise RuntimeError("credencial opencode-go indisponível")
+    return None
 
 
 def generate_script(day: date, news: list[dict[str, str]]) -> str:
@@ -150,24 +154,29 @@ Regras editoriais:
 FONTES CANDIDATAS:
 {source_text}
 """
-    # Caminho primário leve; se a credencial expirar, o CLI Hermes assume com
-    # o provedor autenticado do perfil, sem interromper a edição matinal.
-    try:
-        payload = json.dumps({
-            "model": "deepseek-v4-flash",
-            "messages": [{"role": "user", "content": prompt}],
-            "max_tokens": 12000,
-            "temperature": 0.35,
-        }).encode()
-        req = urllib.request.Request(
-            "https://opencode.ai/zen/go/v1/chat/completions",
-            data=payload,
-            headers={"Authorization": f"Bearer {auth_token()}", "Content-Type": "application/json", "User-Agent": "DropFiveNews/1.0"},
-        )
-        response = json.loads(urllib.request.urlopen(req, timeout=240).read())
-        content = response.get("choices", [{}])[0].get("message", {}).get("content", "").strip()
-    except Exception as primary_exc:
-        print(f"AVISO modelo primário indisponível: {primary_exc}; usando Hermes CLI", file=sys.stderr)
+    # Tenta chamada direta à API opencode-go (mais rápida, 0 tokens de overhead).
+    token = auth_token()
+    if token:
+        try:
+            payload = json.dumps({
+                "model": "deepseek-v4-flash",
+                "messages": [{"role": "user", "content": prompt}],
+                "max_tokens": 12000,
+                "temperature": 0.35,
+            }).encode()
+            req = urllib.request.Request(
+                "https://opencode.ai/zen/go/v1/chat/completions",
+                data=payload,
+                headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json", "User-Agent": "DropFiveNews/1.0"},
+            )
+            response = json.loads(urllib.request.urlopen(req, timeout=240).read())
+            content = response.get("choices", [{}])[0].get("message", {}).get("content", "").strip()
+        except Exception as primary_exc:
+            print(f"AVISO API direta indisponível: {primary_exc}; usando Hermes CLI", file=sys.stderr)
+            content = None
+    else:
+        content = None
+    if content is None:
         proc = run([
             "hermes", "-z", prompt, "--provider", "openai-codex", "-m", "gpt-5.6-sol",
             "--cli", "--ignore-rules", "--safe-mode",

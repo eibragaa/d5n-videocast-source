@@ -30,6 +30,16 @@ RELEASE_DATE="${BASH_REMATCH[1]}"
 [ "$(basename "$MANIFEST")" = "$RELEASE_DATE.json" ] || { printf 'ERRO: manifesto não corresponde à data do áudio.\n' >&2; exit 2; }
 
 cd "$REPO"
+
+# Verifica estado Git antes de prosseguir
+if ! git diff --cached --quiet --exit-code 2>/dev/null || [ -n "$(git ls-files --unmerged 2>/dev/null)" ]; then
+    printf '⚠️ Git com conflitos — ignorando push, site pode estar desatualizado.\n'
+    python3 gerar_pagina_d5n.py --site-only
+    python3 "$VERIFY_SCRIPT"
+    printf 'Site gerado localmente. Push não realizado (conflitos Git).\n'
+    exit 0
+fi
+
 python3 gerar_pagina_d5n.py --site-only
 python3 "$VERIFY_SCRIPT"
 
