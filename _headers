@@ -15,3 +15,16 @@
 
 /d5n-feed.xml
   Content-Type: application/rss+xml; charset=utf-8
+
+/podcast.xml
+  Content-Type: application/rss+xml; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/og-image.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=86400
+
+/audio/*.mp3
+  Content-Type: audio/mpeg
+  Cache-Control: public, max-age=86400
+  Accept-Ranges: bytes

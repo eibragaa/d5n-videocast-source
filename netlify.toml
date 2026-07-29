@@ -47,6 +47,25 @@
     Content-Type = "application/rss+xml; charset=utf-8"
 
 [[headers]]
+  for = "/podcast.xml"
+  [headers.values]
+    Content-Type = "application/rss+xml; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/og-image.png"
+  [headers.values]
+    Content-Type = "image/png"
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/audio/*.mp3"
+  [headers.values]
+    Content-Type = "audio/mpeg"
+    Cache-Control = "public, max-age=86400"
+    Accept-Ranges = "bytes"
+
+[[headers]]
   for = "/*.md"
   [headers.values]
     Content-Type = "text/markdown; charset=utf-8"
