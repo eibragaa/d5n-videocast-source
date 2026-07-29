@@ -1,0 +1,202 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-07-29",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/audio/manha-conectada-2026-07-29.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/source-manha-2026-07-29.md",
+  "sha256": "478f9356054d8610d259a8a9eb910a8914ff4c4942d8e0586f1ec498a260133c",
+  "text_gate": {
+    "words": 664,
+    "forbidden_hits": [],
+    "ending_ok": true
+  },
+  "audio": {
+    "duration": 286.223673,
+    "size": 6870038,
+    "bit_rate": 192018,
+    "lufs": -16.66,
+    "true_peak_dbtp": -1.71,
+    "lra": 2.5
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Move Brasil: crédito para motoristas de app e táxi patina, e governo já prevê emprestar menos de um terço do previsto - O GLOBO",
+      "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxQd1hIZVVmUW1NRnRoZXhWLXR2bVhTQVlFeEFqWDlKN0VSVnJ3NU9ZdzJYdHppMXFoemRJbTZSMWpwcDhOangxT1JlbWZtMW0yQkJkci1jSXF2bUJoMGlkYUNDcE95OGpDWlNzTDRQQUNBMDh0bDAwcGtMS3ZSa0U4dXZndDhuYzc2U3VJMVd6bHVBUUdXM295MXFJZDhTZGlJT203RjR0b3paUHd4bW81MVY2OTl4SXVnb2labFBtN3NIVVZVUm5fUm9jQUVQSVZ1TEMtc3lQbkQ0MTU2UDdIaXNwVXRRLTJUeE1WYzduT3NwQ2UtcGxJVExEeU9odC1La1lfTtIBkwJBVV95cUxOcnBVZUJWNU9hbW5aRzVKa2tYMERJN09obEVGbWJFNWNxdTJxZzY1R3FPZGVnaTBtVGY5VWRWV3daZjU5czRXLXI0S05RMXdQMDg5T2dOVEVQVzBMaFMtVFgzcHQ4RG1BNHZCblJiRVVBWFJsME8xSlBjY01QWEVEc0dBV0RIOE9Ea3ZlLVEzLTlRUXFPVmdvMzRvNXJkLWptQ2xzbjZpdzkxRWZaN3NZRWhfeGpRcENvRzJxamFJWTFMSlZVMWtuaXJ0SjcyWGMwRHVtWHpHTU9RY2QtRjRsT3diM2FpWnBBVTA0UHY0a1F3ZU1salE3Y0VIR0J4TE1WOTZBY0RnZVpXNjkxLW9zTlMzUQ?oc=5",
+      "source": "O GLOBO",
+      "published": "Wed, 29 Jul 2026 11:19:21 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA1cTN1MUFFQ1RuWmtsRUVoUWZlb0ZNWEZYYmpqcEhYa28tQXJBeGtwcUtTSmJxSzYzclNEQXgzUWRkcWZDS3RPN2stTE5qMjBxV0FnbkN1dUI2QXR0cENsbzlIcmFoNVhodkNlYjktY9IBdEFVX3lxTFBjelh4eG12QWI4NElTV3JINk13bDRzby02MFQ5RndaM0RLcTNhRnJxUXhOOWd3T2dVamRLckFIWGZjOC0yVGRRVmdmS083ZWdZWkJrUUFVSzJWbHdZZ3J5bWZwdWxPYTA0RzdBa3AwVzJYbzNE?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Wed, 29 Jul 2026 10:04:30 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Com governo Milei, exportações à Argentina seguem em queda - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPa3NCdW45bnBJZm8xWHlaWk5WYzVZSWp3NTZjdThlM0V3dUQ1ZzB3STY1UnlLTFNWRFpCOW1zSDBHRzR2OFg3Sld6Y2Nwc3RkRXBZRzJxZjFfRWgzY1o2SzZmam5aWGlZQXN0UVdBV1NLSHZjeUFnSUFpSnQ1d1JWaF94V2dMc293QUxhVXAtOWFMYmh4MThwZ0J4WmNiYmtQbGUxM0dn?oc=5",
+      "source": "SBT News",
+      "published": "Wed, 29 Jul 2026 11:46:44 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Terceira Guerra Mundial? Por que a ideia de que o mundo já enfrenta um conflito global ganha força - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1WQVNHZDBfY3RvRE1kd1ZydW1zY3hudkR1cGlST19RS3hHUHFhaDFFNldwYWlFRWdaQkxlQnBXOEc4cW1udXhKMDd4S0ZxcFNOTTN1bFhhbmwzZWxUTWVyU1VR0gFnQVVfeXFMUHQ5RGs2c0hiNS11eVZjZ3hvTnJLUk1yZVdRSjZyYVZwWW52RUxNN3Y3ODlEZS12aE9lSUc0aEpMcE1JTEstajd0bzFTZTgzRTFXR3BiaklnVWlndS1xSUJfRENWRFl1VQ?oc=5",
+      "source": "BBC",
+      "published": "Tue, 28 Jul 2026 17:01:41 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Ancelotti volta ao Brasil e tem reunião na CBF: 'Montagem de um novo time' - UOL",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNR3BSdEZLWTFFQ1FSbjBGVXhQNnhWTjd4RkU1WVNWbVQ0MUNIakxXN1QwZUJXaXFoRmd6SkVJeVZpdnZZaExFUy1mdHA1TWx4X1lEdndzbVk0SFZEUnQ5cmZqZXBmZjlwOW04MzFtY3hPZzJ5S2d2WkJxNmQwMVhKRHlHMTdSME5DRTltUmUzVkpIYUlBdFFPSTRCMGVHSlVWUWF3d09MRl9mQzlkQmNIVXBnREU3YXEwNWxTRi1xWkQ2ZVgwUUloUEpJblg3aGtuT1pRelhQUjdiNWM?oc=5",
+      "source": "UOL",
+      "published": "Tue, 28 Jul 2026 21:14:31 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Terceira guerra mundial: sensação de que o mundo já está nela ganha força - G1",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPc0tDcmtVa29xNTVvdkFjSEV3ZkdXcU04V3pQZDE2YXpudlBCd25xTlVneWM1VFo0ODhtM2VFbjlZRDc1WmRVZ1VhUndxOTk2cHY1SVNfeDEtcGJiTDBMVFdpd1dHMjRjeFZ2RHZ4ZldFaVpid3ZtRHhzVENMSFBHUFJKTnZibHM0SGRybHJBYjJNY1hENUh2b3BhaFJrcVRJODVHTXhkbU9BODdXVXNZVjkzYldNTTVTWDI1VnZSTVFfZ9IB0AFBVV95cUxQMEZWalRvVW15eW5OVWhrNTMyVWhsVnlBUG9OMWZUN1Azd3FiVlJybXgySnhTNVFwODVlSE1BTGJ6WDYzTFVNN0JPQ3dhTXNCNnM2ejUwQ1AtbUI0LWxGOThpSl9xcWdHLWV0RW1hZ2ZUSEdmdVo1U1k2Y1FINW9wSTBfaUV1cThxUlBkVG5ILUx3bi1sVVlTOWxKb0Y3c1lmVmpYOXBhNXpua0EwTGdfQ0RuRVNUR0s4SmlVR1JZS3pnZWxFWngwN0pKZkgwcnVl?oc=5",
+      "source": "G1",
+      "published": "Wed, 29 Jul 2026 03:00:14 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "EUA e Arábia Saudita atacam grupos apoiados pelo Irã no Iraque - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQYmtWR1RRckdQWUhXeWdaeWNrVHFya3BGVzJSNW1QWVY2ekNmYUY4eEhsVVJ0ZFdCckloQW1sektVaDA1S1F3M2Y0WWlqWVotRUZmLXI4eFFkQmZJTHlKQjZxV2lUem9RNERmMVp2ZW9Hemd2c1Q2ZGF3Ym9HNjJWSkFpS0lLV3lPWko1REc0NVh3ZVZJYmJ6d01WeVhfMWVVSHhhYTljdHNianhlUGtqRW1n?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Wed, 29 Jul 2026 05:50:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Projeto da Fifa com família do genro de Trump para administrar Copa do Mundo é criticado pela Uefa - Gazeta do Povo",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNdnFZdkJoMjRPZWZTaDRrUmlmOGw0b1lLSm9PdEJ5UjBJZVpuMDNBMXJTUUhuNUczNVdvcGR0U3NHT2ktR3BFM2xCd1dYV0pFUk9HdmtadGh0R1lQMVluYkJMM29uQ0JMbTNSRzJUZTRNdGt3VVh3ZWpLNWc4eTl4M1pic2p4R2NoR2FQSkJRTmNFcU16MUJBNmpNd1pLX0RVbDhwU1FtX1lOanJ4Z2c?oc=5",
+      "source": "Gazeta do Povo",
+      "published": "Wed, 29 Jul 2026 11:54:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Trump e Zelensky discutem defesa antimísseis e paz - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPLVhMa0g2UmpURHpBclJGNlh2ZTBIYzNCanc4OXpqazBsZzdiVjdhXzU1MVdTQUs2VkE0N0p0RlUzeWFHRGhUcnlWS3ZkYkZ2Mjl5NXVXM2dEUklEbkgxQWkxQVdWWDl5Y25hcmhSRDBTenJZN0FROVh3VndWZ3dYaWhoYXZpUXE2aXFqNVhWWjJoNzk5MHc?oc=5",
+      "source": "SBT News",
+      "published": "Wed, 29 Jul 2026 04:55:37 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Marlon e Villasanti podem ser as boas notícias do segundo semestre do Grêmio - GZH",
+      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPZzBueDIxNWtrRC1wQ3Bfd2JxcjBMSVV1dmdDRDA5MGRvN1FHUDU4NGZqT3IyNGQ4MV9LVUhkTDNlaDV4bHBIM3psYWdOakxYdEZDTkVMYmZWbk9aVjRUS2lRbmpaNVJLYmtIdFZwNjRmWnRxOGIzSC1VNlhTU3hua2pIRTZmRlRyRHA5ZllDQkZsZFlwVkxVN0pldy1welZldDJCUTR3c3FaZjI2SjhLREFIQndfc0gxZVhoN19nbHN0aFFvT1AyeEFQUTlBZUxEOURXQzdYdWZJcnZVRHdoWW1ta3doS2QzVnpWLU9XR0ZyLXI1M2V2ZjVMNEc0MHFWQ3c?oc=5",
+      "source": "GZH",
+      "published": "Wed, 29 Jul 2026 07:08:51 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Webinar debate o uso da inteligência artificial no crédito e no seguro rural - Fundação Getulio Vargas",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQTkptd21BR3JZRl91ZF9zbG1UNHUyTC1nUlNkbDBYWXA5TzZMek5tUlk5bHdXSjkxaFVGQzBfMGI1Y2xISGxaT3BZMGxjYkdGNkRPYW1rMVhUUnBkWjkzZWtqVklFLXI5X2VlZjB5WHJmb1UydDVYUG9MUXlkUDJteEVuYUJ5YnRtbGhZMVc2STZsSUotMnJWaDlSM1pJOTQ3NnFCNVNJSlBmbGM?oc=5",
+      "source": "Fundação Getulio Vargas",
+      "published": "Wed, 29 Jul 2026 13:12:05 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "IA física dá percepção e raciocínio a equipamentos - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQdnBtOURybXhGR2RLU3pGUjVWM3E0MEJBT3JMNEYwQlVCb3BFby1VdlllWHR4aEtwU0hyQ0dFVDkwVEg4ejdtRzI1M05kU3VVdklmTC1iQXd0YmhlamhxbmZZYkJOX2NnU0NubDNsTk41aDlQaENHalNGN09nLTYxemlqSWxKN2FYZDhPcWRuUkMtdFI0Ty1kOHpSYVVwRV9JZ2ZhWFlBZkIzRmhWa0MwSFAyTUxaZ0lqcEtsdi1EMGZLYkQyMWR5WFJtaUVSb2lMRVJPWFlJR21WcWpoN3AxX05CNDNOeFRvVGVN0gHrAUFVX3lxTFB2cG05RHJteEZHZEtTekZSNVYzcTQwQkFPckw0RjBCVUJvcEVvLVV2WWVYdHhoS3BTSHJDR0VUOTBUSDh6N21HMjUzTmRTdVV2SWZMLWJBd3RiaGVqaHFuZlliQk5fY2dTQ25sM2xOTjVoOVBoQ0dqU0Y3T2ctNjF6aWpJbEo3YVhkOE9xZG5SQy10UjRPLWQ4elJhVXBFX0lnZmFYWUFmQjNGaFZrQzBIUDJNTFpnSWpwS2x2LUQwZktiRDIxZHlYUm1pRVJvaUxFUk9YWUlHbVZxamg3cDFfTkI0M054VG9UZU0?oc=5",
+      "source": "Valor Econômico",
+      "published": "Wed, 29 Jul 2026 08:04:53 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Impulsionados pela IA, gastos globais com TI devem crescer 14,2% em 2026 - SITEPD",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNSFhWN3hldGtweldzZVdlVG1ZUDM5VS1BWWxTc1FNR0RpbFVHZW00X0J4WDVmWS1vRE9oSF9jVzh4Nkh6Mkp2YmRFd1dnV09oT0xBLUxZcHJlN19XMFFJREE0aW80R1RTSXhMeEU2OXFQZTVxVXQxTEVjQi1CWDdpV3BpNEpnci1UNjI3YmwxeEs1RnJqS3hLNWhxclJMX2VZaGg3TkZB?oc=5",
+      "source": "SITEPD",
+      "published": "Wed, 29 Jul 2026 13:25:55 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Gigantes da tecnologia defendem modelos abertos de IA e pedem que EUA evitem concentração do mercado - Cyber Security Brazil",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOaUtYVXJOMlkzbW03Y3pCdlVQbVVvVFdERTZjbGMweFJtdjhfenZmOHRfcU1vLURmQXlvNUV6ZF9ZVXo3OEZnQ3JFemNXc2gxZU9lbHFVQzhEUTZfYWtybXJwREZ3NE1QWWN3TTJDbndqQnJvZFpWTXNMNWg4WEpWdWNUaEpnX2JQWTFjTkdTaThGMWdzMFZub09ObjNoc3RzOG9NenA1T24wT1hVOXFzN0lSdmhPM3dGbXA5UnpvME9JUFZHT3ROMTF3M0p4cFdHMDB5SXcyRzZUYjdFbTVSdEZjaw?oc=5",
+      "source": "Cyber Security Brazil",
+      "published": "Wed, 29 Jul 2026 09:59:23 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "IA acelera produção de estudos que embasam decisões sobre medicamentos e tecnologias - Medicina S/A",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE8xV3NMdXc3bWNETHdNMGFwUUViMEhYemIxdk1kdUZjekh2ME16YTJEOFJRNENwc1gwRElWRUtxNTdVSllWWGE0cDBNemlad2dFWURodFNyLUtrVG9HYU1kVlJvaG8?oc=5",
+      "source": "Medicina S/A",
+      "published": "Wed, 29 Jul 2026 09:36:51 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Benefícios do Pix superam custos impostos ao Brasil pelas tarifas de Trump, diz Nobel de Economia - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9rbnFfb0FsMkpzcTg2T3BZbzgwNkE1XzJtRXAwVVBoQXNCZWNXTEZsT2xVUW1VckZfbWt4U3dyWk5hRDh4N3E0d1dlMXctTHhBMHY3Mmp3dG9kTUlLUlVDTE1R0gFnQVVfeXFMT3hXb0tMTmJrZzVRRVBLU0xNU1RMLXJuUnNyWWtXMzA0VlpKLWZFcEU3SGpZLXpwck11WHB5OHVnVzlJSnVHa002ZW9wbVRtZS1jYkpMRzJmWTVVVk5BeXRvVk5DcWQzaw?oc=5",
+      "source": "BBC",
+      "published": "Wed, 29 Jul 2026 08:42:21 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Após críticas de Milei a Lula, compare PIB, inflação e desemprego de Brasil e Argentina - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPbi1ybGpycmxobFRvZFZVZkFOWXlWbFJwUTkyWXFHZUFlZEVoUjREV1NXNmRzdWZNOUw0RnNrSkw2QUxMWGgwdVBmWFhTWWNsQ0hwUHVWLWkzOVNBWV9zTjN3VFprbmxCVWVkeFpQa2psSmt4OFprM3hCZDhvTVc0UEQtUmdOd3JjWUtrWXVROThzaU5NZDhMZU5NamJzWjB4WVdrNGRjRzFRLUZKWlFNMEVfOFpUUV92OTVMcTdsNW9fTXFpU1RnN2ZZWG9lY1JZSXo4?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Wed, 29 Jul 2026 07:00:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Vacas monitoradas por IA viram garantia de empréstimo pela 1ª vez no Brasil - G1",
+      "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQSmtvanM5MnNyNGljRHliUXR3VlVtRTZRcm1ocjNCclN3dmdkOTFBeFNhdUdFWUtpa1dLQlBLbnZVWEpxU1l2eFA1YmJ2Nk5zQmk1VU0wRUx0anFVSmZzcUNqZjFabDB6WkN6SXB4UnE4RzNITFlrcXppMGhxTVVjaVpnZ21iUU1ValdRaWR2LUdCOFhfX1FVeFhZa2lZMlZJZU9RWWRkaFdRb25TUG9mWHhNMzl1WTBtbXp0b001TTY2UzF2TXBweVVEREFjbkF5ZDFXbDEtQVlWSWJ3T010ZzhFLWJHaFNWNDVXX1A0VGXSAf8BQVVfeXFMTW5nbTdWaFl4UHQ0bHdCQ1h0a010alNuV2d1cmwzMjY1Qld3aHRvb015RDZlc3VSX1NybWoxN3lBV3pYaWF6T2Y0U3JDcmFnZlhpdmdPam1POUtzQnRya0pZUkdPSmpMNkZVVkRyT0xib0RtOHRoZXNzYWw2VWtDcjlZa2JwNkhNNmpULTdxTVh4Q0pIaU1Jak0teUFvaEZORFhZVWgxcEdRa0VaellkRkgzVFFvXy1yM2hGcGswbnJaRjIyLXlDUHZZOEN3WVd1RUwzX25xVGJVWnNQNEMtMVRKWUhMcjR0UDNfQUdGSHFIbmZtVERmbHlWMThRZV9Z?oc=5",
+      "source": "G1",
+      "published": "Wed, 29 Jul 2026 08:03:21 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Trump diz que Brasil interfere na economia dos EUA e prorroga tarifa de 50% por 1 ano - VEJA",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQWUNxZ0d3Mko0TWgwYXpOeGlUXzNSd2xxWXpudVNXOV9ZbDlhQjZSYngzaC1lRnhqdHdiSHBjOWgydm9Gc3hGZHprVGcwQmZrWUwyNlluMVQ1d3pYNEpIWE02YXdGb2RXek9XN1Y3bUgtT21LMWs1Z21ncnpibENvWlA3THM2TmVqRGhENXgwaENOMm1BUURjRUd1UlN3MkhsR19LV2ZDQVRTTEhMQ25HR2hrWWIwSkVO?oc=5",
+      "source": "VEJA",
+      "published": "Tue, 28 Jul 2026 23:05:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Governo Lula ataca Milei, mas analistas veem Argentina como exemplo para o Brasil - Gazeta do Povo",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNZzVBQkVJLW9sQmRGQ0d5cTlMNW12VU52dTZqcUJ3TzZfY3ZXZkpBZG9VSEdhd2Zhc005bDc4a3hoNi1DRVNfMG1xSUdXcnVHNlRYVmFPdGQzWTNiR0xOOHQwOE1Rc0ZWLWF6SUFNR0VQUHpQTGNjTmt4cG5Rb1p4WkRiUUI0T2c?oc=5",
+      "source": "Gazeta do Povo",
+      "published": "Tue, 28 Jul 2026 20:15:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda do dia: Fed e Relatório Mensal da Dívida no Brasil são destaque - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQNHhraGRwNk15QVdBckdRUThvSVdseUdrRjRjdUlmOEI2ZWNoeXNNbm42eUdQdUUyODBvbXltVTlLaHBfZnZtX29MX092SkVPZUZmNk9TZHhra084LV80NFlQVkp5RWhIX3V3UGt2YUI5aERXb2I4SUl3OTM0bk1USkRWTll6Umt3Y0NOMlJWTm5NUk5nWDBJMDZ0NHVlTkZmTDc2cjA5ZnVIcFJPd2VHaE5BRlJzc3VORDIxWThaNEVMajVRQzVBTE1Va0Z2Ny1VajRRUNIB1AFBVV95cUxQNHhraGRwNk15QVdBckdRUThvSVdseUdrRjRjdUlmOEI2ZWNoeXNNbm42eUdQdUUyODBvbXltVTlLaHBfZnZtX29MX092SkVPZUZmNk9TZHhra084LV80NFlQVkp5RWhIX3V3UGt2YUI5aERXb2I4SUl3OTM0bk1USkRWTll6Umt3Y0NOMlJWTm5NUk5nWDBJMDZ0NHVlTkZmTDc2cjA5ZnVIcFJPd2VHaE5BRlJzc3VORDIxWThaNEVMajVRQzVBTE1Va0Z2Ny1VajRRUA?oc=5",
+      "source": "Valor Econômico",
+      "published": "Wed, 29 Jul 2026 11:15:57 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda Brasil Mais Saudável evidencia impacto do clima na saúde e alimentação - #Colabora - Jornalismo Sustentável",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQU1VUS3BDNFprQlJMaEdpcWhJQzdIWGVxdTlSTGpZNmFmTHVXRjZZcHg2bjhXNXk4NlNoTzVTUURQS2N2T0JDRjFqMm5icGJsWmpFd2E4SFFzeS1sbzF0TktQSDJMRmNqNTl6aVkwR0xMSkZONEstQzRURFRlek5leW9iUHdXbmg0eWFRZi1uX0JVTmRGdm00Yy1vZGFoS1gwQWpQMldXMlIzSktCNnc?oc=5",
+      "source": "#Colabora - Jornalismo Sustentável",
+      "published": "Wed, 29 Jul 2026 12:35:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda de Lula: leia os compromissos do presidente nesta 4ª feira - Poder360",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdWo5aEhUOFZRcEQ4Y3lNZTRaZFZVUENrMndjMS1wZFRFdUhvaG9CeFJ1YkFRSHR5N2hDd2h0cW9NUHlvMWlIaXZKVG9tRHByd3lwdFlzeTRhTU5zN3pUOFowZ2J0SzdHUDFuam1LR3ZpbDYySlJhOUlLYTBWbnVpTlpHbjRvaGpyQXFQbTZKRVFvYTBnczhvSEZucGlEMXlPVXBKX01RT2JsU2tlcmc?oc=5",
+      "source": "Poder360",
+      "published": "Wed, 29 Jul 2026 10:02:20 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "O dia do Brasil no esporte: a agenda desta quarta-feira, 29 de julho - Olimpíada Todo Dia",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOUVRUS0RxZG9JbElMV2pzRXRLeUc5MHRxUVlxelF2NXBreXM5bUszTC1faDh0dWw1T25TZTI3d3I1SEJscHEyQkpHdkpwVmVxNlNJYWJkTE5HbFpRMy00TGVHbzJ2bWY2bWlMZjdlamUwaFhURmRJVVZOYzlNdW42MXhvc2dEY1dJV1BjNFlJcExlWTdxVlE?oc=5",
+      "source": "Olimpíada Todo Dia",
+      "published": "Wed, 29 Jul 2026 11:53:58 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Uefa agenda reunião de emergência sobre proposta de venda da Fifa - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQTW0taUlkSFJZbS1Bb2pwdGhpSm1pbW5QTjdlenJnZ0VRRVhybWdpQ01mU3pVM2RaTFdfRnYwUUgxcEhvZlpaaklCX0FOdWdRQ0ZaTlByMmRzcENlSWZsOWhDWFVFNE81ZXpVR0dPSHY3bUxDTS1Id3NzNUpBSlhwcUtMN296SkI4TmVSc2x0V1lRaHJ5VGF1MzZ1VEJCRG0yZHlaU2h1SjVzS1NfNXBpelUwdXF3dTQ2R2NwVEcyVUxHSVpDeWdzSGJadURTRlE?oc=5",
+      "source": "CNN Brasil",
+      "published": "Wed, 29 Jul 2026 10:52:02 GMT"
+    }
+  ],
+  "generated_at": "2026-07-29T10:48:19.143829-03:00"
+}
