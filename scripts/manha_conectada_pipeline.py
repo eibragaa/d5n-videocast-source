@@ -43,6 +43,133 @@ RSS_QUERIES = (
 )
 
 
+ACENTO_EN = {
+    # Tech / Business → pronúncia amigável pt-BR
+    "CEO": "chief executive officer",
+    "startup": "startap",
+    "marketing": "márquétin",
+    "branding": "bréndin",
+    "influencer": "influensér",
+    "crypto": "cripto",
+    "blockchain": "bloquecain",
+    "bitcoin": "bitcain",
+    "token": "tôquen",
+    "NFT": "n-éfe-tê",
+    "cloud": "nuvem",
+    "cyber": "cibér",
+    "machine learning": "aprendizado de máquina",
+    "deep learning": "aprendizado profundo",
+    "big data": "bigadáta",
+    "software": "softuér",
+    "hardware": "rardiúér",
+    "firmware": "firmuér",
+    "data center": "dátacenter",
+    "hacker": "ráquer",
+    "malware": "máuér",
+    "ransomware": "ransomuér",
+    "phishing": "fíchin",
+    "growth": "grôt",
+    "scale": "escala",
+    "framework": "frameduérqui",
+    "deadline": "dédlaine",
+    "performance": "performánce",
+    "delivery": "delivérí",
+    "e-commerce": "e-comércio",
+    "online": "ônlaine",
+    "login": "lóguin",
+    "logout": "lógaute",
+    "feedback": "fídebaque",
+    "workshop": "uórquichope",
+    "mindset": "máindset",
+    "venture capital": "vênture capital",
+    "compliance": "compláiência",
+    "accountability": "acontabílidade",
+    "stakeholder": "stáquehólder",
+    "disruptivo": "disruptivo",
+    "resiliente": "re-zili-ente",
+    "briefing": "brífin",
+    "stand by": "stándbai",
+    "benchmark": "bentchimarc",
+    "margin call": "márjin cáll",
+    "trading": "tréidin",
+    "stock": "estóque",
+    "funding": "fándin",
+    "budget": "bádjet",
+    "pipeline": "páipélaine",
+    "roadmap": "ródimape",
+    "CEO": "chief executive officer",
+}
+
+
+def normalizar_pt_br(texto: str) -> str:
+    """Normaliza texto para TTS em português brasileiro.
+    Substitui anglicismos, hispanismos e estrangeirismos por
+    pronúncias amigáveis ao sintetizador pt-BR."""
+    # 1. Substitui expressões multi-word antes das single-word
+    # (mais específicas primeiro para evitar substituições parciais)
+    for en, pt in sorted(ACENTO_EN.items(), key=lambda x: -len(x[0].split())):
+        texto = re.sub(
+            rf'(?<![a-zÀ-ÿ]){re.escape(en)}(?![a-zÀ-ÿ])',
+            pt, texto, flags=re.I
+        )
+
+    # 2. Padrões de data em inglês → português
+    texto = re.sub(r'\bMonday\b', 'segunda-feira', texto, flags=re.I)
+    texto = re.sub(r'\bTuesday\b', 'terça-feira', texto, flags=re.I)
+    texto = re.sub(r'\bWednesday\b', 'quarta-feira', texto, flags=re.I)
+    texto = re.sub(r'\bThursday\b', 'quinta-feira', texto, flags=re.I)
+    texto = re.sub(r'\bFriday\b', 'sexta-feira', texto, flags=re.I)
+    texto = re.sub(r'\bSaturday\b', 'sábado', texto, flags=re.I)
+    texto = re.sub(r'\bSunday\b', 'domingo', texto, flags=re.I)
+    texto = re.sub(r'\bJanuary\b', 'janeiro', texto, flags=re.I)
+    texto = re.sub(r'\bFebruary\b', 'fevereiro', texto, flags=re.I)
+    texto = re.sub(r'\bMarch\b', 'março', texto, flags=re.I)
+    texto = re.sub(r'\bApril\b', 'abril', texto, flags=re.I)
+    texto = re.sub(r'\bMay\b', 'maio', texto, flags=re.I)
+    texto = re.sub(r'\bJune\b', 'junho', texto, flags=re.I)
+    texto = re.sub(r'\bJuly\b', 'julho', texto, flags=re.I)
+    texto = re.sub(r'\bAugust\b', 'agosto', texto, flags=re.I)
+    texto = re.sub(r'\bSeptember\b', 'setembro', texto, flags=re.I)
+    texto = re.sub(r'\bOctober\b', 'outubro', texto, flags=re.I)
+    texto = re.sub(r'\bNovember\b', 'novembro', texto, flags=re.I)
+    texto = re.sub(r'\bDecember\b', 'dezembro', texto, flags=re.I)
+
+    # 3. Meses em espanhol → português
+    texto = re.sub(r'\benero\b', 'janeiro', texto, flags=re.I)
+    texto = re.sub(r'\bfebrero\b', 'fevereiro', texto, flags=re.I)
+    texto = re.sub(r'\bmarzo\b', 'março', texto, flags=re.I)
+    texto = re.sub(r'\babril\b', 'abril', texto, flags=re.I)
+    texto = re.sub(r'\bmayo\b', 'maio', texto, flags=re.I)
+    texto = re.sub(r'\bjunio\b', 'junho', texto, flags=re.I)
+    texto = re.sub(r'\bjulio\b', 'julho', texto, flags=re.I)
+    texto = re.sub(r'\bagosto\b', 'agosto', texto, flags=re.I)
+    texto = re.sub(r'\bseptiembre\b', 'setembro', texto, flags=re.I)
+    texto = re.sub(r'\boctubre\b', 'outubro', texto, flags=re.I)
+    texto = re.sub(r'\bnoviembre\b', 'novembro', texto, flags=re.I)
+    texto = re.sub(r'\bdiciembre\b', 'dezembro', texto, flags=re.I)
+
+    # 4. Palavras espanholas comuns → português
+    texto = re.sub(r'\blunes\b', 'segunda-feira', texto, flags=re.I)
+    texto = re.sub(r'\bmartes\b', 'terça-feira', texto, flags=re.I)
+    texto = re.sub(r'\bmiércoles\b', 'quarta-feira', texto, flags=re.I)
+    texto = re.sub(r'\bjueves\b', 'quinta-feira', texto, flags=re.I)
+    texto = re.sub(r'\bviernes\b', 'sexta-feira', texto, flags=re.I)
+    texto = re.sub(r'\bsábado\b', 'sábado', texto, flags=re.I)
+    texto = re.sub(r'\bdomingo\b', 'domingo', texto, flags=re.I)
+
+    # 5. Símbolos de moeda
+    texto = texto.replace('$', ' dólares ')
+    texto = texto.replace('€', ' euros ')
+    texto = texto.replace('£', ' libras ')
+
+    # 6. Siglas comuns que o TTS pronuncia errado
+    texto = re.sub(r'\b(?:IA|ia)\b', 'inteligência artificial', texto)
+
+    # 7. Limpa espaços duplicados
+    texto = re.sub(r'\s+', ' ', texto).strip()
+    return texto
+
+
 def run(cmd: list[str], *, timeout: int = 300, capture: bool = True) -> subprocess.CompletedProcess:
     return subprocess.run(cmd, cwd=REPO, text=True, capture_output=capture, timeout=timeout, check=False)
 
@@ -150,6 +277,9 @@ Regras editoriais:
 - Não fale URLs, nomes de arquivos, emojis ou instruções de produção.
 - O texto precisa soar escrito por uma redação brasileira, não traduzido.
 - Não mencione The Brief, TecMundo ou Amanda Flaury no roteiro.
+- NÃO use palavras em inglês: substitua "CEO" por "presidente", "startup" por "empresa de tecnologia", "crypto" por "criptomoedas", "AI/IA" por "inteligência artificial", "cloud" por "nuvem", "online" por "digital", "software" por "programa", "deadline" por "prazo", "feedback" por "retorno/avaliação", "marketing" por "propaganda/promoção", "branding" por "marca".
+- NÃO use palavras em espanhol: datas, dias da semana, meses, saudações — tudo em português brasileiro.
+- Se uma notícia tiver nome estrangeiro, escreva-o com pronúncia brasileira.
 
 FONTES CANDIDATAS:
 {source_text}
@@ -213,6 +343,7 @@ def validate_text(text: str, day: date) -> dict[str, object]:
 
 def synthesize(text: str, output: Path) -> None:
     clean = re.sub(r"\s+", " ", text).strip()
+    clean = normalizar_pt_br(clean)
     proc = run(["edge-tts", "--voice", VOICE, "--rate=-2%", "--pitch=-2Hz", "--text", clean, "--write-media", str(output)], timeout=600)
     if proc.returncode != 0 or not output.exists() or output.stat().st_size < 50_000:
         raise RuntimeError("falha no TTS: " + (proc.stderr or proc.stdout)[-300:])
