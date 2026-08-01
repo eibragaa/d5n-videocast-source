@@ -56,6 +56,24 @@ class ReleaseStatusTests(unittest.TestCase):
             ),
             encoding="utf-8",
         )
+        (self.repo / "podcast.xml").write_text(
+            """<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel><item>
+<guid isPermaLink="false">d5n-2026-07-23-ep042</guid>
+<enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep042-2026-07-23.mp3" length="19" type="audio/mpeg"/>
+</item></channel></rss>
+""",
+            encoding="utf-8",
+        )
+        subprocess.run(["git", "init", "-q", "-b", "master"], cwd=self.repo, check=True)
+        subprocess.run(["git", "config", "user.name", "D5N Test"], cwd=self.repo, check=True)
+        subprocess.run(["git", "config", "user.email", "d5n@example.invalid"], cwd=self.repo, check=True)
+        subprocess.run(["git", "add", "."], cwd=self.repo, check=True)
+        subprocess.run(["git", "commit", "-qm", "valid release"], cwd=self.repo, check=True)
+        commit = subprocess.run(
+            ["git", "rev-parse", "HEAD"], cwd=self.repo, check=True,
+            capture_output=True, text=True,
+        ).stdout.strip()
         (self.state / f"published-{self.date}.json").write_text(
             json.dumps(
                 {
@@ -63,7 +81,7 @@ class ReleaseStatusTests(unittest.TestCase):
                     "episode": "042",
                     "audio": f"audio/{audio.name}",
                     "sha256": digest,
-                    "commit": "a" * 40,
+                    "commit": commit,
                 }
             ),
             encoding="utf-8",
@@ -96,6 +114,38 @@ class ReleaseStatusTests(unittest.TestCase):
         result = self.release_status(self.repo, self.state, self.date)
         self.assertFalse(result["published"])
         self.assertEqual(result["reason"], "counter_missing_episode")
+
+    def test_worktree_feed_must_contain_the_episode(self):
+        self.write_valid_release()
+        (self.repo / "podcast.xml").write_text(
+            "<rss version='2.0'><channel/></rss>", encoding="utf-8"
+        )
+        result = self.release_status(self.repo, self.state, self.date)
+        self.assertFalse(result["published"])
+        self.assertEqual(result["reason"], "feed_missing_episode")
+
+    def test_receipt_commit_must_contain_the_episode_in_feed(self):
+        self.write_valid_release()
+        valid_feed = (self.repo / "podcast.xml").read_bytes()
+        (self.repo / "podcast.xml").write_text(
+            "<rss version='2.0'><channel/></rss>", encoding="utf-8"
+        )
+        subprocess.run(["git", "add", "podcast.xml"], cwd=self.repo, check=True)
+        subprocess.run(["git", "commit", "-qm", "stale feed"], cwd=self.repo, check=True)
+        stale_commit = subprocess.run(
+            ["git", "rev-parse", "HEAD"], cwd=self.repo, check=True,
+            capture_output=True, text=True,
+        ).stdout.strip()
+        receipt_path = self.state / f"published-{self.date}.json"
+        receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+        receipt["commit"] = stale_commit
+        receipt_path.write_text(json.dumps(receipt), encoding="utf-8")
+        # Mantém o arquivo local correto para isolar a checagem do commit.
+        (self.repo / "podcast.xml").write_bytes(valid_feed)
+
+        result = self.release_status(self.repo, self.state, self.date)
+        self.assertFalse(result["published"])
+        self.assertEqual(result["reason"], "commit_feed_missing_episode")
 
 
 class DeployFailClosedIntegrationTests(unittest.TestCase):

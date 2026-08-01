@@ -12,15 +12,38 @@ import argparse
 import hashlib
 import json
 import re
+import subprocess
+import xml.etree.ElementTree as ET
 from datetime import datetime
 from pathlib import Path
 from typing import Any
+from urllib.parse import unquote, urlparse
 from zoneinfo import ZoneInfo
 
 DEFAULT_REPO = Path("/root/repositorio/d5n-videocast-source")
 DEFAULT_STATE_DIR = Path("/root/.hermes/logs/d5n-deploy")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 COMMIT_RE = re.compile(r"^[0-9a-f]{40}$")
+
+
+def _feed_has_episode(
+    feed_data: bytes | str,
+    editorial_date: str,
+    episode: str,
+    expected_file: str,
+) -> bool:
+    """Confirma GUID e enclosure canônicos no RSS sem depender da ordem dos itens."""
+    root = ET.fromstring(feed_data)
+    expected_guid = f"d5n-{editorial_date}-ep{episode}"
+    for item in root.findall("./channel/item"):
+        guid = (item.findtext("guid") or "").strip()
+        enclosure = item.find("enclosure")
+        if guid != expected_guid or enclosure is None:
+            continue
+        audio_name = Path(unquote(urlparse(enclosure.get("url", "")).path)).name
+        if audio_name == expected_file and enclosure.get("type") == "audio/mpeg":
+            return True
+    return False
 
 
 def _result(editorial_date: str, published: bool, reason: str, **extra: Any) -> dict[str, Any]:
@@ -96,6 +119,41 @@ def release_status(repo: Path, state_dir: Path, editorial_date: str) -> dict[str
     ]
     if not matching:
         return _result(editorial_date, False, "counter_missing_episode")
+
+    podcast_path = repo / "podcast.xml"
+    try:
+        local_feed = podcast_path.read_bytes()
+        local_feed_has_episode = _feed_has_episode(
+            local_feed, editorial_date, episode, expected_file
+        )
+    except (OSError, ET.ParseError):
+        return _result(editorial_date, False, "invalid_podcast_feed")
+    if not local_feed_has_episode:
+        return _result(editorial_date, False, "feed_missing_episode")
+
+    # O recibo só é confiável se o feed estiver no próprio commit enviado ao
+    # remoto. Conferir apenas o arquivo de trabalho permitia um podcast.xml
+    # atualizado localmente, mas ausente do deploy (a falha de 30-31/07/2026).
+    try:
+        committed_feed = subprocess.run(
+            ["git", "show", f"{commit}:podcast.xml"],
+            cwd=repo,
+            capture_output=True,
+            check=False,
+            timeout=10,
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return _result(editorial_date, False, "commit_feed_unavailable")
+    if committed_feed.returncode != 0:
+        return _result(editorial_date, False, "commit_missing_podcast_feed")
+    try:
+        commit_feed_has_episode = _feed_has_episode(
+            committed_feed.stdout, editorial_date, episode, expected_file
+        )
+    except ET.ParseError:
+        return _result(editorial_date, False, "commit_invalid_podcast_feed")
+    if not commit_feed_has_episode:
+        return _result(editorial_date, False, "commit_feed_missing_episode")
 
     return _result(
         editorial_date,

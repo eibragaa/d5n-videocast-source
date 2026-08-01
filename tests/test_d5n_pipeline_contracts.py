@@ -207,6 +207,8 @@ class PipelineContractTests(unittest.TestCase):
         deploy = (REPO / "deploy_d5n_site.sh").read_text(encoding="utf-8")
         self.assertNotIn("git add .", deploy)
         self.assertIn('git add -- "$DEST"', deploy)
+        self.assertIn("episode-counter.json index.html source.md podcast.xml", deploy)
+        self.assertIn('PODCAST_GUID="d5n-${DATE}-ep${EP_NUM}"', deploy)
         self.assertIn("published-${DATE}.json", deploy)
         self.assertIn("d5n_release_status.py", deploy)
 

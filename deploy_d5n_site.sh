@@ -141,13 +141,19 @@ fi
 NEWS_COUNT=$(grep -oP '<strong>\K\d+(?=</strong><span>notícias)' index.html || printf '0')
 [ "${NEWS_COUNT:-0}" -gt 0 ] || block "index.html gerado sem notícias"
 [ -s source.md ] && [ "$(wc -c < source.md)" -gt 100 ] || block "source.md ausente ou vazio após geração"
+# O áudio existir no site não informa os agregadores. A release só pode seguir
+# quando o feed de podcast também anuncia exatamente este episódio.
+[ -s podcast.xml ] || block "podcast.xml ausente ou vazio após geração"
+PODCAST_GUID="d5n-${DATE}-ep${EP_NUM}"
+grep -Fq "<guid isPermaLink=\"false\">${PODCAST_GUID}</guid>" podcast.xml \
+    || block "podcast.xml não contém o episódio #${EP_NUM} de ${DATE}"
 log "✅ Site gerado: ${NEWS_COUNT} notícias"
 
 # Staging/commit seletivo: jamais absorver arquivos de outros pipelines.
 git add -- "$DEST"
 git add -- "$CHAPTER_DEST"
-git add -- episode-counter.json index.html source.md scripts/d5n_chapter_manifest.py
-RELEASE_PATHS=("$DEST" "$CHAPTER_DEST" episode-counter.json index.html source.md scripts/d5n_chapter_manifest.py)
+git add -- episode-counter.json index.html source.md podcast.xml scripts/d5n_chapter_manifest.py
+RELEASE_PATHS=("$DEST" "$CHAPTER_DEST" episode-counter.json index.html source.md podcast.xml scripts/d5n_chapter_manifest.py)
 for optional in feed.json d5n-feed.xml; do
     if [ -e "$optional" ]; then
         git add -- "$optional"
