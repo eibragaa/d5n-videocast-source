@@ -1,0 +1,202 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-07-30",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/audio/manha-conectada-2026-07-30.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/source-manha-2026-07-30.md",
+  "sha256": "2762292e88d515ebf3cda90c580cd0af1287b29872476a8c00e670266d3ea385",
+  "text_gate": {
+    "words": 761,
+    "forbidden_hits": [],
+    "ending_ok": true
+  },
+  "audio": {
+    "duration": 333.505306,
+    "size": 8004797,
+    "bit_rate": 192016,
+    "lufs": -16.63,
+    "true_peak_dbtp": -1.7,
+    "lra": 2.6
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Crise diplomática causada por Milei: Brasil e Argentina podem romper relação? - g1.globo.com",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPeXFoOTdEa1VaVE5Gb0dXTEVmVEYzVlo4Q0JJTmtpSWhERXlBcjdFdjVqRzZ2RHlZb3pQeDE1aEFpRkNZbnBFMzQ3S3ZEblZnVnhXbEFDY0JzNTkzYlJJX0s0TWpiandyZ2x1NWVSV3hwTXRmTEpVcjRLSGhHYkRQdWdydlZMa29RSzQxOW10d25Ec001eTRWcW8tMUVmelNzREVGdnQ5SUx4Y2NGWm5ucHA5T3lwdWJvcDRaZGVacThtbzRiWkk1MEROV1JnRmlxY3RV0gHiAUFVX3lxTFBMd3RDQnNGRGJlU0NJWnlyUFc5MFBtWWxGMS1RbUpka1RvSVplOFVVMU5vQS1EMC11Z2RLRDdMNm13SnhzaDMwcUl1MlEyT1RRakxjV2hDV0xFbFJyOUdaRUtmOVFiN18wdTlGbFF1X19RRUlwRElLR295V3NwZmlMUVJKTjMwTjJBMHNsMVV0V3E0RkJXSTFZUm16alpPcFBWaGFwVDhpamhZV2k1cllmeS10S0dmOUdVWWZSckp4UjVrUHc3SjdHaWRWY29ScUxsUEphSnIxYW1Ia1BHM1FNdkE?oc=5",
+      "source": "g1.globo.com",
+      "published": "Wed, 29 Jul 2026 23:38:57 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA1cTN1MUFFQ1RuWmtsRUVoUWZlb0ZNWEZYYmpqcEhYa28tQXJBeGtwcUtTSmJxSzYzclNEQXgzUWRkcWZDS3RPN2stTE5qMjBxV0FnbkN1dUI2QXR0cENsbzlIcmFoNVhodkNlYjktY9IBdEFVX3lxTFBjelh4eG12QWI4NElTV3JINk13bDRzby02MFQ5RndaM0RLcTNhRnJxUXhOOWd3T2dVamRLckFIWGZjOC0yVGRRVmdmS083ZWdZWkJrUUFVSzJWbHdZZ3J5bWZwdWxPYTA0RzdBa3AwVzJYbzNE?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Thu, 30 Jul 2026 10:33:20 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Após deixar 5 mortes, ventania deve perder força no Sudeste - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQZzJVbzZCY0NWNXdJVm9xaGpxcGdnREZocURkN093MDh2a3pIT3Eta0VCVTl2cVlKZWhZY0ZLb1FVU0FTTEEybm9oR2J0cUl5Y3ZJWThNcDNBY1VCQnZkVzZMQUhXOWFMNmNvQUFMUlpnZkw1QUl0U1FTa0dsMmRrYVkzdWJWRHdaTnFCQmJOaUt6WWE1Ukx2eWhNTWRZTTVfY0E?oc=5",
+      "source": "SBT News",
+      "published": "Thu, 30 Jul 2026 09:40:58 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Tarifaço de 25% dos EUA sobre o Brasil começa a valer hoje - monitormercantil.com.br",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPdmhMajRzT1pISVNWZzVXN1dsQ0xnNHFnTkZxQkl2T05GT1c5NkcwWVVjTTAtN3VzRXAyNE1RdDdTSlY2aFpQcGh4cGtfV1lwandEaUJ6WnFTbjlDQ0tzNDFNTS1xc2FFdGNLZnN6dVJyUFNTRFJhaU5GNXBZUG1HYmxia2xSUUpvQXh2RWdzXzJ2WWpC?oc=5",
+      "source": "monitormercantil.com.br",
+      "published": "Wed, 29 Jul 2026 19:40:13 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Resumo de Avenida Brasil: Capítulos do Vale a Pena Ver de Novo - 30/7 a 7/8 - Notícias da TV",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQVN3cGpXUXRXZUFqZVotdDhjcWpTelBVSjQ0OFl5RUpwQWZzYjhlbFd0ZWY5VWpMU1V6ZEpZbWVuUXFhVUYzS25YU3pta0I3T0tJdXU1Sl83bXM2NWdNS3lzeTNDTnRfYzZrM21MV1lhbVNDa0EzSVBXZUtQQUJKbEVOOWhvRkk2UmNEc0ZxNXhoU1RQSHc4NERfTWxtMlBMTjFrcXNqTG45eEgzR2hyRWViTmJ4OUstWHdNLWw4aU5JZFXSAdIBQVVfeXFMTmx4QTU4YTdSeGRBTGEtckhEZ1ZqMUdWdTZ4eDVydHU1QWhuMjJpRmpLVGVZZV9yTG1ldk9ISlhqWkViSVNlX2hyR19FSF91YzlmUHlQR3ZEQXRUMXBkbWNvVm5KOVUtQUpCT05iU1BHbWtpQWc5aGF5bTB0a1NqUU03V3YweDJlUkdxWHlDUnlWekJsUzRzenVGSUhnak9wX0lnaVpxODVDVGpsYy1hLXhCb2tMSjlQYjR4QmxuWXp5Z2EwRGVnLXZmOEVZa3hjb2JB?oc=5",
+      "source": "Notícias da TV",
+      "published": "Thu, 30 Jul 2026 06:02:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "MAPA: nova escalada da guerra faz conflito entre EUA e Irã se alastrar para além do Estreito de Ormuz - g1.globo.com",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPSHp3NkRUSUw4WU1PMzc2c2NSRy1NRFFIMlhHUVQ5XzluSmJCcWxLd2VwT1lyU2FyNXVMYkF6U1p0c3c4ZzV3ZEthR2syclRKZW5zdDNwcWNFQ3RnNXdxLVZLY210OUNaaTZOX2U4WEhBdGxQNlIya1hmNlZqeFIzX0pxZVNndUVWV0xGTkJUdWozLWRYS2tWbk5IUlRFSGphVzEwZ2hGQTc4LXJ2Sy00TEVKTlVYY2VzWHU2ZUhUaGZKTFBObjZnUk1UQ2FLdWxlZXRpRVBLRENKd2FIQU5xVC1rZHlZalnSAfYBQVVfeXFMUFNTdnp2WXIzSkU5YVFRaUF2Uk1qTzFhdXczWXFMaHNMU2p1M1piZGpmNVhTV0cwa01jRVpjTktUYUNxUXNiWHBWMnN0Vkc0R3lIVnQ3VjBTU01XSlhQN0JuX0NVMDF5SUI3VFdHdFQwUTZoRTN1SUp1U0pHYV9sNUY1MldteG5xbFpNaWtodlNnaFZZMEpyNkdzOThCSWZGbmJzRFMyVFpVOS1UaWYzNW1FbXRhRGFWSzVtT3BKV1BLeWV0WFNKVXVUUm5adXdQcFhpOTRZRjNRUEI3TGZXN2wydmt1ekxFdUVKdFE4eGR4aHRhXzJR?oc=5",
+      "source": "g1.globo.com",
+      "published": "Thu, 30 Jul 2026 03:00:18 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "EUA retomam ataques ao Irã após pausa de Trump - 30/07/2026 - Mundo - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNUFlRMDl5cW54Y2ltZG81cno3Mi1sekFXVjhhRXFLOU9neU80dVUzdXYtSVpzMVE0RDNPUkF2VDhta3lsUk1wMWo1ZldXbXhIbUd1MmhLczlqMUxwMGd3V19nOWg1clZHX3dWeXFRVk0wLWc1VFNQNDNYMkFUOURla1RycWJIZG9TNDZaNExHWXJhUnA2SzluWnlVcnU?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Thu, 30 Jul 2026 11:37:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Guerra na Ucrânia: objeto não identificado atinge a Polônia - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQYlkyWE1wNHlYbGNGOHFENFZBaXpCVGhaczE4NkkxcUFoWHpJVER5S3YyUkpOX2hib1dreDhwcG1EaUx4OGZvcHNrd0ZHMjRBVGxaRFFncWZ6YTBQbzlSQWFpTmEzZk1PaEs4M0p1TkwtZXdjUm1STXpIZW84VHBhZGY3RDZNaVFzZEt6ZFU5d2phX2hWWThSck10cVZrZ1Jv?oc=5",
+      "source": "SBT News",
+      "published": "Thu, 30 Jul 2026 07:32:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Fifa monta teatro para aliviar a Argentina após polêmicas - GZH",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPNmQ4ckMzR29SbWg4LVZnLVY5aEo4V2VMUXZNOGNldzFyUTlwTmVxYmp2aXhkOXo1MVB5cGF5MjN1RGhPcUtROEtUV2k3d21Falo3THNQbWNOYmRVWkpUcElmdHBhOU81N1VKWE5id25YSHVvd0pid1h1X0ZOejNHV2RfR3NUQ2UtZTRaUjFkRGJDU3lMYjZzdkt4MkExWWhpVGhhSDJjUGJLVXZTXzFES2djM0hEcFgzMndpaW1fSkRKR2ZvbUlVdEVRWThGblhFZmNoelNkbFZPU1Y3Wm13cnpoM2xvWGlmZkd5WWZWQ0c1NHc?oc=5",
+      "source": "GZH",
+      "published": "Thu, 30 Jul 2026 09:19:36 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Principais notícias do mundo na tarde de hoje (29) - Tribuna do Sertão",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQYVlVeDVQTlk5cS15RUZpdFZRZmg0djlkRUFVZjVJU1gxcGtaVHlqbzVsZEU3MW5QdGcxTVAtcjhzQ21aUnFGcmVhZ050a2FwajZWZzdxck0zd2RBamRuaUdOVnoxbjFldk9OSXFVQ2Z5MG5Bd0JPeXhKZGJVUUFqMXZPdzJxNVZZOUxpSE9uY2VaaDY2aVZremNLVGR1SXQwMXVUMmVwQzcwaVU?oc=5",
+      "source": "Tribuna do Sertão",
+      "published": "Wed, 29 Jul 2026 18:03:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "IA impulsiona gastos globais com tecnologia em 2026 - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQRjJGbDl0TEk2R0trYTVwbV9mNlhicG55bzhsdENEc2VtQU9hV1phR2NTWms0UVN2bmtEak93SC1SeHEzMTN4T2h2dEtGLUNTYlhndUpsS0VTdUtPWWlNYTRRLWpyLVJrRWhxWVZvMzREbVQ1NjY0MXBMTUhVcktrRDBBWWVGeUM2LTBCVVRsTWh5QTZPNmlCSVhpdk9pRlBsS1hVOTZfdEVFOGVyeXdYLWVDOFpIeUYzLUNaUndTVWhQdWIybk9JYU1iSktCZ9IB3AFBVV95cUxQdV9RQjJFU1l3THRmd2UtaV9SRnc1TkRUNmx2aUx0R0pCOEU5eExrU3JkV3VrTXJHb0lSN2xOQ0Q0SzBNeHRkZU5ONl9rbDNGRFhZOEdmOVQwajNNNVBiWnBfLXNzZ0J1REJ3MG5NTFFlTEFKU3owNHJrVks0VTlaRW1ETXFJZnNnTUc4dGxLMnZQNk5wbU1Jd2dWZHdZSlF5ajB6T3REYW54eFlmQVFTX0ZUM2hwa1VLQ2lNQzRNLTBQNjd1WkEyeXNnbjBUeVhVVFNZeWFJdHJrN2pP?oc=5",
+      "source": "Valor Econômico",
+      "published": "Thu, 30 Jul 2026 13:00:13 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "TECNOLOGIA E INTELIGÊNCIA ARTIFICIAL IMPULSIONAM O SEGUNDO DIA DA SUPERBAHIA - - Bahia Economica",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQY0NuOTI2Z2NSWVFES0tWUFRrNlFvampaZ3BYcG0zN1dOcFR3T2FHR0thcmVLVHR3WFQtd0RJdWcxRkhoYkdvRHptMnhWMFhsaEtGTHNtTXFRUlh6ZVUxQnZxbFQxLW5nU0U5ZFhiWjgwal9SR0U4Tld6cmd3cUNCRzhINDl2M0VaYTR4eGZPbnM2Z21EdUgxVUFIclA4WXZ3TEpSRHktWDFZVlJYc1l4QlBiQzZ5a1VBVG1TQl9R?oc=5",
+      "source": "- Bahia Economica",
+      "published": "Thu, 30 Jul 2026 10:10:20 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Mercado asiático fechou em baixa, com queda do setor de tecnologia ligado à inteligência artificial - ADVFN",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxORG5wb3lXa3NkQUxYUm84dm8zSGNyZzFPN1hJemxWLV9udzFqNElFeDU4VzlJUElNaUJyenNCemZMdFl6OUwybFAzRVVqcUJGUHBYRDc3Z284d1JNX195YXBqWUoyNDFHa1RqbmdrNjQyVUdSbEdMTGRiWDZkZGVNYlJibzhvVUFvTHZQaEpmOWdEeEV1U1FhQXRJMFpWRFpiR1QzZi1FOGJRdWJZYmhJV01rQWhkR01HR3F2YXI5STd6S1hEZVM5bnowVVJYTzg?oc=5",
+      "source": "ADVFN",
+      "published": "Thu, 30 Jul 2026 09:42:12 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Depois dos aplicativos, quem controlará nossa inteligência? (por Paulo Cezar da Rosa) - Sul 21",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQaHpGNkRKUWZiN1VGV2JralRXNFJTTndmWDBBVVNyUkF5WWdEWVY1Q3RYMmllN3drYWg3TXVrei1xNVNKVDR1YWxNemVjZl8yMnFiZzluVVVWY3RkTFZMMHhZRUtnQzlfTlltYUxtaXR6Q1ZfQmZ4SnFFYnFOR08wUTNaNHV5Mk1OdHFEcURxa1ViRllwT3BlWExQUFR0dFZxZWhyTUVtQUFZMWpBY1gxbUIxZ2V3dFdTM1N3?oc=5",
+      "source": "Sul 21",
+      "published": "Thu, 30 Jul 2026 11:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Os Melhores Líderes Não São contra a IA. Eles São Melhores em Questioná-la - Forbes Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQTU9yaThON3p1ZlVSQUU3N0pXTnprU2JxOERabTc1emlQNXloTEhuRzhOaWtuWVF3UGNGejZBRXdZcnVTRExyNzFmc1QxYzg1SHAtQ0NFU0tEdlktS0l2RlZZV0lDSlc1SWpLdWRibEtQdjl1SzA2dXU0MFgtSnBURzRNU1JjZENBbElHSlBZMm9aekN2QTYwb1F4bTQwYmp5Q0dlUGNlQ0JKZ0RiMzEtbkhpWQ?oc=5",
+      "source": "Forbes Brasil",
+      "published": "Thu, 30 Jul 2026 08:00:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "'Mais simbólico do que efetivo': por que o Brasil foi à OMC contra o tarifaço, mesmo com o órgão enfraquecido - g1.globo.com",
+      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNMGlMMlc3bjVPNm1TeHFyakpKRUJpMjd2SmlQamhnOThtSlBWT3gwU2VsU3g0Z3hLeW5pM3pxcnhtSmxxZUhJYnVuaWNwd1NSOHBjQkJoaFpCVTd0dTNXNWRwX095THdVWE52U2wtM3JPaV95LVhqZDVOUmFmNlJCX2FRU3h1MWI2djVIdk96SDBDVXVyMnUyRG5NTTVpaU85dHdLelctSDlUbGl1dDRhM1JyM2xsUk5PZ1hBR25mdldMWEJJOHhWRXNEODZYTGwtOU90NG94Vk5rYVRHemR6M1ZFckJTZnY0LUJaTkpzNTU1d9IBgAJBVV95cUxPTDctc1V4d0VvZ2JGMldhNF84XzNaSjJBVnFaOUdaRXFJX2Nia0J2aU5yVjlXc3VMQ1paS3NIS2dXblVja2ZGenJLUDkwV3MzRTFIcW5hM0RYWFVrQVhWYXZTeF9FX1o3QnhrVENJa1k5TEswOFFZLXNPSENjdkd4ekJhajcwTjRYWnJPSEJXOHRMMm15cHZJV011Y2dIOTZKQVFnQTF1UFFNNnJqRktWTlhvaG5URE02NjBsdEJFeVl5Y18xYjJOZHlEbXpnTmZWSUdaLW01eHA0WkM4blJwMlYzMEduZC1tajRMX3lhdDF2NzlZTHVRM19uS2J0RVhf?oc=5",
+      "source": "g1.globo.com",
+      "published": "Thu, 30 Jul 2026 08:03:42 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Brasil ou Argentina: Quem Está Melhor na Economia, Segundo os Indicadores - Forbes Brasil",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQRFZ5QWRxODJCbW82QjBGa09xSFl5X0N3UVBDUnNOZjhla092ZGFjeTRZYUxTMjJBRDhLWkxQOGpBV3NyaDlzQzNlMWNPdXYtYWF4Wm9KWWEtWW5OcVFVM1diczF2NzZGUGQ4MVk4aEdiQW5BclM4UnhNemJZelhDWkZhNE1nQjdnY2oyakdXdzBSTU9BdTVHYzljSEExaXZsR3FUbVpneUg2aXJk?oc=5",
+      "source": "Forbes Brasil",
+      "published": "Wed, 29 Jul 2026 17:04:08 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Economia da zona do euro surpreende no 2º tri com IA e gastos públicos - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOYnNaN2swT2FlT25SR2ZIcXMzZ2dERjRTWWxqSmtwd3hoSU1fWEhlZUpCbXhpVEE0OGltZGZjdTAxYWVmQ3VVeFpNRjlnYUpTYzlmUmlnNTNIdlpRcElTamlKQ0hDNVVjSkI0eElDd1ROREZqdF9nY3hndXpaWnJOTk5mMTNqemdoYW50b2FLSFpYbkpYd05YTUV0YVlzS2RtbGRSVUxJWkRYUngtQWNLLUdDVkZvYklZQnhtVzlZdEs?oc=5",
+      "source": "CNN Brasil",
+      "published": "Thu, 30 Jul 2026 10:03:19 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Gasto de turistas internacionais no Brasil cresce 12% e injeta US$ 5,6 bilhões na economia no 1º semestre de 2026 - Embratur",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNby1zQWppN3lqTnFaeDc1dDFnNklWMWh0TVIyRl83cHRPR0ljN3RONlpJRDF5elNxTW9vVFA3UVIzZXpONnJaNnIzNDJEVDhRU3dwRHVXa0RBamJ6NGQ1cU1hcGN0SzBqRDQ0WEotaUhBZTgxWTNNSVd2VjRrU0lfZkNnZmR1NGI5OFdZTVRSY2ZkSUpEYnctM3llWU5qUmFHaWNMeHpkbnpjdDVGSU9qQ2hpTXYtcXN1WThIUTc2aW5QZ3pBcmlXQTB1dkZyZHpYclRIakUtaGpmcEJxeUNZ?oc=5",
+      "source": "Embratur",
+      "published": "Thu, 30 Jul 2026 02:30:55 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Desemprego recua a 5,4% e tem menor taxa até junho na série histórica; renda estaciona - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxONnJwSENkZFpOZExIc0U4WEpGcVdBa0xhR3pobzJFRF9IbVBQT2g2cEdLUHh5N2ZkRFBTa2x0cEpGOEVlS21BNkFUYUxDb1lIQktURFFiVzh2S24yZHZBUWR0cm5lZ3QwQ2JuS0tOQm5XTGhfSlRqVkMzcmRuLXFIdnh5OUlyTFAxZ29TcU9zY2ZWczQ4SW40Qk9RdEhmV3NTTXRMZFFNOEtDb0NLUXJEYW9sbS1wVW5Xc0RR?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Thu, 30 Jul 2026 12:01:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda do dia: Desemprego no Brasil e PIB nos EUA são destaques - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxORzFQZmFTS3Zja1BINk1XSnh3WUJWUUFnQnUxZTZZU0F3T2FObXVuTTZOazVhWFNfdlpPUGs3cWd5VVFOc1c3a2pJbVVaU3dxX0FwNm00QmNVVmVYamRzQnU2NWRnVWk4TUhPc0VCbzR0MXZ4VHhyNGgwcThRZ1J1aXVLVjM3XzAxcmN1SHRiMExJMlNHZnU3Sjc2VWV2QnBBZ1FJek9hR25xUlRRNW1RcDJUSFBQc1liV09LOUtRX0Vmczd3bTlrVTVTa9IBywFBVV95cUxORzFQZmFTS3Zja1BINk1XSnh3WUJWUUFnQnUxZTZZU0F3T2FObXVuTTZOazVhWFNfdlpPUGs3cWd5VVFOc1c3a2pJbVVaU3dxX0FwNm00QmNVVmVYamRzQnU2NWRnVWk4TUhPc0VCbzR0MXZ4VHhyNGgwcThRZ1J1aXVLVjM3XzAxcmN1SHRiMExJMlNHZnU3Sjc2VWV2QnBBZ1FJek9hR25xUlRRNW1RcDJUSFBQc1liV09LOUtRX0Vmczd3bTlrVTVTaw?oc=5",
+      "source": "Valor Econômico",
+      "published": "Thu, 30 Jul 2026 10:46:29 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Brasil lança agenda com 40 propostas para fortalecer a transparência e o combate à corrupção nos estados | Transparência Internacional - Brasil - Transparência Internacional - Brasil",
+      "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxORVVJcURCRTIySTdIM1o1U0tNeUpFeDFvcWVEWHg3YzVnSmQ2ZVNZYl9zNks2S0c0N3BVMm90QnlaRUZMUG80UW9zREp4aEZ4RE9neUJIeVFMRGdaRDhadVI3STBHZHBHQmZ2em4wdDhuTi1VNERxXzNjazZWckkwbjBhVHVrcm9mODVrSjUtLXcxOWVxdTdNRlc4d0hveHA4bXFqMVVtQngydkotVl9Pd19xVXByaFFSdUJQNzZlQ2lKZW5Td2hZVEVBWEdiSEh3OExZQ19URjE2TUNISGhEYmRBaTFJc25GaXkxeWlGLU42VjVBOWJDV2pVOVVJMU5aRTU5ZzlDU3ppdUFtc0E?oc=5",
+      "source": "Transparência Internacional - Brasil",
+      "published": "Thu, 30 Jul 2026 10:00:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "[Agenda Funarte RJ] Espetáculo premiado “Lia” entra em cartaz no Teatro Dulcina - www.gov.br",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNWmxrc0VCR0llcG44WEw1RF9kQUVRcXVfNGZiR1lUWFd3dlB1Z1Z1Y0JubU04anVBeUxXYWk2Y014LVJ4T2RyXzRyTC1uZklsd2tvcE1iRXFmbFhFMDJQNWlEa1BzYUlLNk94dUl4cXBIcXFOanQ5R3BHS2lGaElLck9pWkVEc196S1p5eVdKNDg5aDBZVURTXzQwdnNFU1lZRTFaUlFKZm1vOE0xalVzMnRUdFBIQy1SOWI2amJDTFRsRzkzMkxxYUNmRjBPMEVmdnU3NFFvN1JGa1dfVVVlQTJmTQ?oc=5",
+      "source": "www.gov.br",
+      "published": "Thu, 30 Jul 2026 12:37:30 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "O dia do Brasil no esporte: a agenda desta quinta-feira, 30 de julho - Olimpíada Todo Dia",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbnl6QmxfazZBdDVVdlc4YUZZcXBSLUFiSUVyUnFWQ21DcUs1cVRBS1c1R0hwbHVWODB5b1E2dXp1QmkyekFaT0F2OHo2amE5T2xHckhKbzRPYXZTOVdMNHM5LVl3aTFkSUk0MUdGTnZsdDBGRUtudFdvcmtLOE4tNjdLX0pFSDhSdmRyZnhRRnVrd3JpTzJnUU5SNDdRY3dRZ19DVEdETmY?oc=5",
+      "source": "Olimpíada Todo Dia",
+      "published": "Thu, 30 Jul 2026 04:01:34 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "PIB e PCE nos EUA, desemprego no Brasil e balanço da Vale agitam os mercados nesta 5ª - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOQ24xbmFUY0lTeEp4RG5DVXJFbzNwYVB5Xy1lVldzamJIU2VTeC1aQy1teWFpc05hLUpTQV9GZkRmUEU3Q2dFQkxUWERGam44N1hzaVRPOGI1VW1rTUk1Vm1PS0dFU0h3c0szLTA5QVBrX0hQWnpvMWhWRURfdVpkaHRiYUhpNllpT1hrVEYxbTNYejFN0gGaAUFVX3lxTFBJb0ZfbGlKRUZzQXFNUE9PdGszQjE4SjRtWTZyMnFxTHFUbmkyWWZEWHl6WnhHb0prWmJBdG1FZ0ZsU2QwS2w2Zy02VEIwVUMydEZfY0VfbWt3TDJDM25ObHRTUHJJVEZhT2V6T0NvUXlzU1ZzVExsUC1TRG9GWTA5MTkyUDVyVC1HMlNMZzBhSERtamVpSERXX3c?oc=5",
+      "source": "InfoMoney",
+      "published": "Thu, 30 Jul 2026 09:08:47 GMT"
+    }
+  ],
+  "generated_at": "2026-07-30T10:48:29.684245-03:00"
+}

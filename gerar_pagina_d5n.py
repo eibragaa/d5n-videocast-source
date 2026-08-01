@@ -438,7 +438,7 @@ def _manha_summary(date_str):
         return "As notícias que já definiram a manhã e o que ainda pode mudar até o começo da tarde."
 
 
-def load_manha_conectada_episodes(limit=6):
+def load_manha_conectada_episodes(limit=None):
     """Carrega apenas edições canônicas, publicáveis e com áudio presente."""
     manifest_dir = os.path.join(BASE, "manifests", "manha-conectada")
     if not os.path.isdir(manifest_dir):
@@ -480,7 +480,7 @@ def load_manha_conectada_episodes(limit=6):
             })
         except (OSError, TypeError, ValueError, json.JSONDecodeError):
             continue
-        if len(episodes) >= limit:
+        if limit is not None and len(episodes) >= limit:
             break
     return episodes
 
@@ -758,6 +758,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
 <link rel="canonical" href="https://d5n-daily.netlify.app/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Manhã Conectada" href="/manha-conectada.xml">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Drop Five News">
@@ -1193,6 +1194,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
         <a href="/privacidade">Privacidade</a>
         <a href="/feed.json">JSON Feed</a>
         <a href="/d5n-feed.xml">RSS</a>
+        <a href="/manha-conectada.xml">RSS Manhã Conectada</a>
         <a href="https://github.com/eibragaa/d5n-videocast-source">GitHub</a>
       </div>
     </div>

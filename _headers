@@ -20,6 +20,10 @@
   Content-Type: application/rss+xml; charset=utf-8
   Cache-Control: public, max-age=3600
 
+/manha-conectada.xml
+  Content-Type: application/rss+xml; charset=utf-8
+  Cache-Control: public, max-age=300, must-revalidate
+
 /og-image.png
   Content-Type: image/png
   Cache-Control: public, max-age=86400

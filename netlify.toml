@@ -53,6 +53,12 @@
     Cache-Control = "public, max-age=3600"
 
 [[headers]]
+  for = "/manha-conectada.xml"
+  [headers.values]
+    Content-Type = "application/rss+xml; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+[[headers]]
   for = "/og-image.png"
   [headers.values]
     Content-Type = "image/png"

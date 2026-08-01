@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:podcast="https://podcastindex.org/namespace/1.0">
+  <channel>
+    <title>Manhã Conectada</title>
+    <link>https://d5n-daily.netlify.app/#manha-conectada</link>
+    <language>pt-br</language>
+    <description>Briefing de fim de manhã do Drop Five News. De segunda a sexta, Antonio resume as notícias que já definiram o dia e apresenta o Sinal 11: o que ainda pode mudar o cenário até o começo da tarde.</description>
+    <itunes:subtitle>As notícias que definiram a manhã e o Sinal 11</itunes:subtitle>
+    <itunes:summary>Briefing de fim de manhã do Drop Five News. De segunda a sexta, Antonio resume as notícias que já definiram o dia e apresenta o Sinal 11: o que ainda pode mudar o cenário até o começo da tarde.</itunes:summary>
+    <itunes:author>Drop Five News</itunes:author>
+    <itunes:owner>
+      <itunes:name>Jean Braga</itunes:name>
+      <itunes:email>eibragaa@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <itunes:complete>no</itunes:complete>
+    <itunes:category text="News">
+      <itunes:category text="Daily News"/>
+    </itunes:category>
+    <itunes:category text="Business"/>
+    <podcast:locked owner="eibragaa@gmail.com">no</podcast:locked>
+    <podcast:guid>manha-conectada.d5n-daily.netlify.app</podcast:guid>
+    <atom:link href="https://d5n-daily.netlify.app/manha-conectada.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Fri, 31 Jul 2026 11:00:00 -0300</lastBuildDate>
+    <image>
+      <url>https://d5n-daily.netlify.app/podcast-cover.png</url>
+      <title>Manhã Conectada</title>
+      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
+      <width>3000</width>
+      <height>3000</height>
+    </image>
+    <copyright>© 2026 Drop Five News</copyright>
+    <generator>D5N Pipeline — Manhã Conectada</generator>
+    <item>
+      <title>Manhã Conectada — 31/07/2026</title>
+      <itunes:title>Manhã Conectada — 31/07/2026</itunes:title>
+      <itunes:episode>9</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>04:57</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <guid isPermaLink="false">manha-conectada-2026-07-31</guid>
+      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-31.mp3" length="7123948" type="audio/mpeg"/>
+      <pubDate>Fri, 31 Jul 2026 11:00:00 -0300</pubDate>
+      <description>Manhã Conectada de 31/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:57.</description>
+      <itunes:summary>Manhã Conectada de 31/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:57.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 31/07/2026</strong></p><p>Manhã Conectada de 31/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:57.</p><ul><li>Terremoto de magnitude 5,6 é registrado perto da fronteira entre Peru e Brasil - G1</li><li>Notícias sobre edital de 29 de julho de 2026 - Estratégia Concursos</li><li>Espanha mobiliza Exército em Ceuta após entrada de 49 mil migrantes em 24 horas; ao menos 18 morreram - BBC</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Manhã Conectada — 30/07/2026</title>
+      <itunes:title>Manhã Conectada — 30/07/2026</itunes:title>
+      <itunes:episode>8</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>05:34</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <guid isPermaLink="false">manha-conectada-2026-07-30</guid>
+      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-30.mp3" length="8004797" type="audio/mpeg"/>
+      <pubDate>Thu, 30 Jul 2026 11:00:00 -0300</pubDate>
+      <description>Manhã Conectada de 30/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:34.</description>
+      <itunes:summary>Manhã Conectada de 30/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:34.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 30/07/2026</strong></p><p>Manhã Conectada de 30/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:34.</p><ul><li>Crise diplomática causada por Milei: Brasil e Argentina podem romper relação? - g1.globo.com</li><li>Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos</li><li>Após deixar 5 mortes, ventania deve perder força no Sudeste - SBT News</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Manhã Conectada — 29/07/2026</title>
+      <itunes:title>Manhã Conectada — 29/07/2026</itunes:title>
+      <itunes:episode>7</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>04:46</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <guid isPermaLink="false">manha-conectada-2026-07-29</guid>
+      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-29.mp3" length="6870038" type="audio/mpeg"/>
+      <pubDate>Wed, 29 Jul 2026 11:00:00 -0300</pubDate>
+      <description>Manhã Conectada de 29/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:46.</description>
+      <itunes:summary>Manhã Conectada de 29/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:46.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 29/07/2026</strong></p><p>Manhã Conectada de 29/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:46.</p><ul><li>Move Brasil: crédito para motoristas de app e táxi patina, e governo já prevê emprestar menos de um terço do previsto - O GLOBO</li><li>Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos</li><li>Com governo Milei, exportações à Argentina seguem em queda - SBT News</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Manhã Conectada — 28/07/2026</title>
+      <itunes:title>Manhã Conectada — 28/07/2026</itunes:title>
+      <itunes:episode>6</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>05:00</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <guid isPermaLink="false">manha-conectada-2026-07-28</guid>
+      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-28.mp3" length="7194165" type="audio/mpeg"/>
+      <pubDate>Tue, 28 Jul 2026 11:00:00 -0300</pubDate>
+      <description>Manhã Conectada de 28/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:00.</description>
+      <itunes:summary>Manhã Conectada de 28/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:00.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 28/07/2026</strong></p><p>Manhã Conectada de 28/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:00.</p><ul><li>Notícias sobre edital de 24 de julho de 2026 - Estratégia Concursos</li><li>Mercados hoje: investidores repercutem dados de inflação no Brasil - Bora Investir</li><li>Brasil registra alta nos casos de HIV - Sociedade ON</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Manhã Conectada — 27/07/2026</title>
+      <itunes:title>Manhã Conectada — 27/07/2026</itunes:title>
+      <itunes:episode>5</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>04:49</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <guid isPermaLink="false">manha-conectada-2026-07-27</guid>
+      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-27.mp3" length="6940255" type="audio/mpeg"/>
+      <pubDate>Mon, 27 Jul 2026 11:00:00 -0300</pubDate>
+      <description>Manhã Conectada de 27/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:49.</description>
+      <itunes:summary>Manhã Conectada de 27/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:49.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 27/07/2026</strong></p><p>Manhã Conectada de 27/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:49.</p><ul><li>Argentina não pedirá desculpas ao Brasil pelas falas de Milei, diz jornal - UOL Notícias</li><li>Incêndio atinge prédio às margens da Avenida Brasil, em Irajá; bombeiros retiram moradores - O GLOBO</li><li>Após Trump pausar bombardeios, Irã sinaliza que suspenderá ataques - CNN Brasil</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Manhã Conectada — 24/07/2026</title>
+      <itunes:title>Manhã Conectada — 24/07/2026</itunes:title>
+      <itunes:episode>4</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>04:45</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <guid isPermaLink="false">manha-conectada-2026-07-24</guid>
+      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-24.mp3" length="6848722" type="audio/mpeg"/>
+      <pubDate>Fri, 24 Jul 2026 11:00:00 -0300</pubDate>
+      <description>Manhã Conectada de 24/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:45.</description>
+      <itunes:summary>Manhã Conectada de 24/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:45.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 24/07/2026</strong></p><p>Manhã Conectada de 24/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:45.</p><ul><li>Tarifaço de Trump: veja a cronologia e como ficam as novas tarifas para o Brasil - G1</li><li>Brasil Urgente ao vivo: assista ao programa agora - band.com.br</li><li>Brasil reage a novas tarifas dos EUA e anuncia acionamento da Lei da Reciprocidade - Francês News</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Manhã Conectada — 23/07/2026</title>
+      <itunes:title>Manhã Conectada — 23/07/2026</itunes:title>
+      <itunes:episode>3</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>05:24</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <guid isPermaLink="false">manha-conectada-2026-07-23</guid>
+      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-23.mp3" length="7783488" type="audio/mpeg"/>
+      <pubDate>Thu, 23 Jul 2026 11:00:00 -0300</pubDate>
+      <description>Manhã Conectada de 23/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:24.</description>
+      <itunes:summary>Manhã Conectada de 23/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:24.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 23/07/2026</strong></p><p>Manhã Conectada de 23/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:24.</p><ul><li>Como nova tarifa contra o Brasil faz parte de estratégia maior de Trump para inimigos (e aliados) - G1</li><li>China quer depender menos do agro brasileiro: o plano chinês — e por que isso assusta o Brasil - BBC</li><li>Brasil Urgente ao vivo: assista ao programa agora - band.com.br</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Manhã Conectada — 21/07/2026</title>
+      <itunes:title>Manhã Conectada — 21/07/2026</itunes:title>
+      <itunes:episode>2</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>04:58</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <guid isPermaLink="false">manha-conectada-2026-07-21</guid>
+      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-21.mp3" length="7157803" type="audio/mpeg"/>
+      <pubDate>Tue, 21 Jul 2026 11:00:00 -0300</pubDate>
+      <description>Manhã Conectada de 21/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:58.</description>
+      <itunes:summary>Manhã Conectada de 21/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:58.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 21/07/2026</strong></p><p>Manhã Conectada de 21/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:58.</p><ul><li>EUA podem perder para o Brasil o papel de maior exportador agrícola do mundo, diz Financial Times - BBC</li><li>Governo se reúne com setores afetados pelo tarifaço dos EUA - SBT News</li><li>Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Manhã Conectada — 20/07/2026</title>
+      <itunes:title>Manhã Conectada — 20/07/2026</itunes:title>
+      <itunes:episode>1</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>04:54</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <guid isPermaLink="false">manha-conectada-2026-07-20</guid>
+      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-20.mp3" length="7056865" type="audio/mpeg"/>
+      <pubDate>Mon, 20 Jul 2026 11:00:00 -0300</pubDate>
+      <description>Manhã Conectada de 20/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:54.</description>
+      <itunes:summary>Manhã Conectada de 20/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:54.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 20/07/2026</strong></p><p>Manhã Conectada de 20/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:54.</p><ul><li>Trump quer punir o Brasil por sucesso do Pix, diz vencedor do Nobel - band.com.br</li><li>Queda da Argentina mantém Brasil da era Pelé como último bi consecutivo - UOL</li><li>Análise: tarifaço ao Brasil é medida política? - G1</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

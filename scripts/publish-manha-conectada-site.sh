@@ -3,6 +3,7 @@ set -euo pipefail
 
 REPO="${D5N_BASE:-/root/repositorio/d5n-videocast-source}"
 VERIFY_SCRIPT="${D5N_VERIFY_SCRIPT:-/root/.hermes/scripts/d5n-verify-site.py}"
+FEED="manha-conectada.xml"
 
 if [ "$#" -ne 3 ]; then
   printf 'Uso: %s AUDIO SOURCE MANIFEST\n' "$0" >&2
@@ -31,25 +32,26 @@ RELEASE_DATE="${BASH_REMATCH[1]}"
 
 cd "$REPO"
 
-# Verifica estado Git antes de prosseguir
-if ! git diff --cached --quiet --exit-code 2>/dev/null || [ -n "$(git ls-files --unmerged 2>/dev/null)" ]; then
-    printf '⚠️ Git com conflitos — ignorando push, site pode estar desatualizado.\n'
-    python3 gerar_pagina_d5n.py --site-only
-    python3 "$VERIFY_SCRIPT"
-    printf 'Site gerado localmente. Push não realizado (conflitos Git).\n'
-    exit 0
+# Alterações staged de outros pipelines não impedem commit --only. Apenas um
+# conflito real pode bloquear a publicação; nesse caso o cron deve falhar.
+if [ -n "$(git ls-files --unmerged 2>/dev/null)" ]; then
+    printf 'ERRO: Git possui conflitos não resolvidos.\n' >&2
+    exit 1
 fi
 
 python3 gerar_pagina_d5n.py --site-only
+python3 scripts/gerar_manha_conectada_feed.py --repo "$REPO"
+python3 scripts/gerar_manha_conectada_feed.py --repo "$REPO" --check-date "$RELEASE_DATE"
 python3 "$VERIFY_SCRIPT"
 
 # Publicação seletiva: nunca incorpora arquivos estranhos que estejam no checkout.
-git add -- "$AUDIO" "$SOURCE" "$MANIFEST" index.html
-if git diff --cached --quiet -- "$AUDIO" "$SOURCE" "$MANIFEST" index.html; then
+git add -- "$AUDIO" "$SOURCE" "$MANIFEST" index.html "$FEED"
+if git diff --cached --quiet -- "$AUDIO" "$SOURCE" "$MANIFEST" index.html "$FEED"; then
   printf 'Site da Manhã Conectada já está publicado para %s.\n' "$RELEASE_DATE"
   exit 0
 fi
 
-git commit --only -m "feat: publicar Manhã Conectada de $RELEASE_DATE" -- "$AUDIO" "$SOURCE" "$MANIFEST" index.html
+git commit --only -m "feat: publicar Manhã Conectada de $RELEASE_DATE" -- \
+  "$AUDIO" "$SOURCE" "$MANIFEST" index.html "$FEED"
 git push origin HEAD:master
 printf 'Manhã Conectada publicada no site: %s\n' "$RELEASE_DATE"

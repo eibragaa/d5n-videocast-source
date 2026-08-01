@@ -6,11 +6,15 @@ import json
 import subprocess
 import sys
 import urllib.request
+import xml.etree.ElementTree as ET
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import unquote, urlparse
 from zoneinfo import ZoneInfo
 
 REPO = Path("/root/repositorio/d5n-videocast-source")
+FEED = REPO / "manha-conectada.xml"
+PUBLIC_FEED = "https://d5n-daily.netlify.app/manha-conectada.xml"
 TZ = ZoneInfo("America/Sao_Paulo")
 now = datetime.now(TZ)
 day = now.date()
@@ -53,6 +57,32 @@ try:
             issues.append("MP3 ilegível")
 except Exception:
     issues.append("manifesto ausente ou inválido")
+
+def feed_contains(feed_data: bytes) -> bool:
+    root = ET.fromstring(feed_data)
+    expected_guid = f"manha-conectada-{day.isoformat()}"
+    expected_audio = f"manha-conectada-{day.isoformat()}.mp3"
+    for item in root.findall("./channel/item"):
+        enclosure = item.find("enclosure")
+        if (item.findtext("guid") or "").strip() != expected_guid or enclosure is None:
+            continue
+        audio_name = Path(unquote(urlparse(enclosure.get("url", "")).path)).name
+        return audio_name == expected_audio and enclosure.get("type") == "audio/mpeg"
+    return False
+
+try:
+    if not feed_contains(FEED.read_bytes()):
+        issues.append("RSS local sem a edição do dia")
+except (OSError, ET.ParseError):
+    issues.append("RSS local ausente ou inválido")
+
+try:
+    request = urllib.request.Request(PUBLIC_FEED, headers={"User-Agent": "D5N-Manha-Babysitter/1.0"})
+    with urllib.request.urlopen(request, timeout=15) as response:
+        if response.status != 200 or not feed_contains(response.read()):
+            issues.append("RSS público sem a edição do dia")
+except (OSError, ET.ParseError):
+    issues.append("RSS público indisponível ou inválido")
 
 if issues:
     print("⚠️ MANHÃ CONECTADA — " + "; ".join(issues))

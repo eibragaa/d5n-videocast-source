@@ -1,0 +1,188 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-07-31",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/audio/manha-conectada-2026-07-31.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/source-manha-2026-07-31.md",
+  "sha256": "869b862eca73e5288c6da60457f77b27de87eec7770d96a0c301ec913b2bb40b",
+  "text_gate": {
+    "words": 698,
+    "forbidden_hits": [],
+    "ending_ok": true
+  },
+  "audio": {
+    "duration": 296.803265,
+    "size": 7123948,
+    "bit_rate": 192018,
+    "lufs": -16.55,
+    "true_peak_dbtp": -1.69,
+    "lra": 2.8
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Terremoto de magnitude 5,6 é registrado perto da fronteira entre Peru e Brasil - G1",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQNzFTLVVoY2dPSTVua2tLYVY0OER3M0dqcWJGVG52bnFhN2cxeERic2dZUTNPWExrdjNoOWZJZ3dDTXcyeFZ4b2phbXB5eld4ek5HM0hLQlV3dFpob2gySWU3cklHTFY2WDNmdy1aRnhDeEpWZHdpY1Z6YmlwNWZKRUY0eGFNMzFpeEdLTWNSdUFmSEl2TTJSbEQ5aGoyWE1sVWdtMVhLbXdudVN2anRId0s0ZUszbk9XNFHSAcgBQVVfeXFMTWdvV2VtS0xpQ0lxalFYdm9lbHBRVF9CZEFqa19OMGFIZTYweFktc0hTWlB2U0psSXhsTnp5ZmVDR1d2V05ON0tfNVFWbEFJeFlVVGRpRnktdHBsYXE4SE85bkdYdklWOHAzT1B3VFRqS3RNRlZNY3U1SUVoS1otenVuOS0ybU5rdllmUWV4V1d5MThJSVVZNmVtSFpBamoxUFdBTzNYVl85cGVZcmVoMnUyeW9CVWZsa3NPV0Z2MURrZHRnaDRjRko?oc=5",
+      "source": "G1",
+      "published": "Fri, 31 Jul 2026 01:12:12 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Notícias sobre edital de 29 de julho de 2026 - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMnJBV3gyakFCZTFwd1hhLWttdVJkakRtem1ocEpVMFdySE1QaHlSdS1BOHM3cWJoNDhyTjVjX0hDakFjeE5TSkNGSktEUHpRb2ZyZE5RdzJQZGsyTmtQWGxjN2lKeUFReTBVNWpmbXJkV25yRGxtNzBqVE5mTmJFc0IyTWttRVN50gGOAUFVX3lxTE9oRmp0b1FuVTFxWllLaGIzcW02T1FSbHBEMmJ4V0cybGVCY01Hck1BbjhsNDRHQkVqUENBYWlhLUtXbDBiRzNiUTVILUJMeUFTUF9YMXdMSEpSczlQNTBRNnZuYngwRHJxeU5HZEVmWnhWdklhR0hNWEViMktCTkt3dzFkZUJPLUlkaGJDamc?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Fri, 31 Jul 2026 07:26:10 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Espanha mobiliza Exército em Ceuta após entrada de 49 mil migrantes em 24 horas; ao menos 18 morreram - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBjSlU0TXlDazQtNmM3M2pXZlNJQ0pXMDM0b1FiZDhmMUstUWQwTmtjbC1rZVRDeS1ZaElmMkwtMlBCTlRRSHZTeTY1akZsejhWWnhHMGxJQkI4aU8ybGVGNGlR0gFnQVVfeXFMTjFHX3FydUFPTVA0S2F2N1BGc2VWSFd5VmFDX2RaZEZFZWFKemI5WkJ2ZGlRSDZqQzhDOG1GaEtIcl9lb1BuMktfbnJONFlpVVp5M1p2N2txS1hZUGN2TmFQMko0V21UOA?oc=5",
+      "source": "BBC",
+      "published": "Fri, 31 Jul 2026 10:09:20 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Brasil pedirá aos EUA redução de alíquotas e mais exceções ao tarifaço, diz ministro - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPakwtWW11Wlp6YzBRbDRERzdDUml5YXNKOWxGYUJ4UjA3OFhuc2hBTVJ4WkZ5M0hXd0tYZUgwOE1BV291bjA4US1HQ3VvQzRYSGNMVnFCUEpzV1lKdm1vcURLUzBnTERXbGNzTkk1b0tEemFzYVlVUXA4S1lrNi1ZT0pyeUlRaFZ5a3FiTWpLX0NsTURRNE5NZmh4Y21xc1VKYk1LX18wejJuZ0J1VC1kUEJSVGY4bk1tYmFtMjlYNDBvZ0lSd1RwQWl4a2E3RW9B?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Thu, 30 Jul 2026 15:39:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Câmara tem semana decisiva para votar 6x1 e destravar pauta do plenário - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNLUdzNzFhdWhjQWhzaUtjWTg0WnpjVjgzN1dUcDdJaEpITEZZLVROaWV0Uk02VkUybkpOUWd4cUdGUF9fLVF6UGRWM0NybHV4S2s3cXp4X0FxamZiakxIYW4wb1hWbFBkc2ZkY0poM2JFREd3WGxYSGtLZ252NVZjS192UHdkYjlzMUpJTTBHTW5xMmJzZHU4STd2eU1LY1FpbXZ3a1IyOTB3ZE1hdVdB?oc=5",
+      "source": "CNN Brasil",
+      "published": "Fri, 31 Jul 2026 02:15:52 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Arqueólogos apresentam os menores pássaros da Era do Gelo - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNWVRTcmRJVTVPbUNKc3VHRFRqQ2llMlhGZGZVSjRPbElndjZFRGRtbjNwZDUwQXM3ZnJ1YTNySXgtUGhKUzN3NEFfTTlVQ0xXR2g5UmhrU0FBNzVhLUNBYlVzRHdmY0p5blRreDRaRTRhdkVRSS1VSFFsVjgxTkc0UmRLT0VOU05DYXNMQjhVRVJnSHRUSFBtMFlKcWhIcUk?oc=5",
+      "source": "SBT News",
+      "published": "Fri, 31 Jul 2026 09:00:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Paciente é 1º no mundo a receber terapia contra câncer de ovário avançado - UOL Notícias",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQVlJtVFdUMVJHQ042bXlWRkRIRjczQklZcVVMTFJWc1JIN0dMbEZqU3dWMUMwd3lJdFpJQ296T1ZDSmo5Yjdjcjh1dDRiQ3p0Sk5Bd1VWelJ6Q19VRC0yeFBHb3c0aXNyaENlZlpRbWpMd3J3d3hDbmtOWHlWVFNhaDJERE93cHg0VHE4YTVKN0dwQ3lsS0szTTVvNHNfNmtiX1J4QkpRc0RXbkFBcnVKeTg1OGV0OU9yRmFXcFY1Rm9VTFlRZnVSUTRR?oc=5",
+      "source": "UOL Notícias",
+      "published": "Fri, 31 Jul 2026 11:45:30 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Principais notícias do mundo na noite de hoje (30) - Tribuna do Sertão",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQnJOSkZUdWRHRXFwV0VTaWdJUGZtLVZaU3MxZXVuNF9NcjJUeEJKVkFvNmpzT1N5WTQtR1ljY2lsTGFEWGlqMmtTd0lUZGltWDE4UlRtUW05SFNWQ0hVVng0cFExTU1tNGQyXzZ6dDQ0RzlSYWdUbDhOYWMtWEtHMm16ZWs5ZGgzRnVsUklSSEVBRWRpYmRVVm1Dd0Ztalh2Ry1DWnVsc2JFTDA?oc=5",
+      "source": "Tribuna do Sertão",
+      "published": "Thu, 30 Jul 2026 23:33:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Como tecnologia, IA e formação docente fortalecem a recomposição da aprendizagem - Fundação Telefônica Vivo",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOTFRNa1dvMGRBWndZTFAwbl9CQkNYU0hNSFlIQ2JYLW1vaWYtSzl1ei1vZEJFU0VDRHpqSUhhWGNSRlBYNWFKbFNIbDF6YS0zX281dzBMQjhmQkFWTlU1RTV1bG9qZUpBa3NQczdraFR0QTE4S2UwZF9nbDZWLXNSNnB3djMteDhPQVhRdmZ3Q0dXYmpua2w5bjJR?oc=5",
+      "source": "Fundação Telefônica Vivo",
+      "published": "Fri, 31 Jul 2026 13:27:14 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Você sabe conversar com uma inteligência artificial? A maioria dos profissionais ainda não sabe - exame.com",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNaGQ5Wk1leUxxY01TZUFvVkJ4S2l5RW5qaEstLUFoejNhdmdtNVhncDU2cGpFSmp4MDVYeWtHeTUwV0oyT1BXNi1wQUVVVXRYbkpIVjZGdUJhUmFNb0kzTzRjMGkxRFdyZUlYcEJnRFp4NGRZcWxMVjFrZllNdFdzQTZIVHFucnpCaWlCM1NRV3ROY2VNOVlERUdkM2lyZzdld3hwSzFLc3VPdFFTZ0xRUklGaGNadGZLWEhaQ0ExOXJKZ3MtZ0k2dHhOclJPV3IwYlIw?oc=5",
+      "source": "exame.com",
+      "published": "Fri, 31 Jul 2026 13:20:19 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Inteligência artificial e eleições: a tecnologia não pode substituir a verdade - por Fernando Silveira de Oliveira - Claudemir Pereira",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQTTZCWVdYbEVCQW4zTW1KTGg3QzdBVVcyN0gxNXRHMEN6QzBDNTh2YmRuRHNYVnpILThocWwtcWtGRkdpcjA2ekdQd1hKLXhJTXBrVDh0Qlk2NHpPMXpvZ1VJRnlWZ25jb3JUYXRiQjJxaDdPcHRFOUwzNkdHMGd6dUtGeWJCa1Z2a2NRNzU2dDFYeGxjMkExTEgtU1FPUXByMC1Rcm1GN25NM2JRaGVob2hZQWlDUE1BN1VvdnJ0eV9kek5vd0pLSEM3anlmZThDbHRYVDJqelVGN3ZqUldUbDlwc1dsNVE?oc=5",
+      "source": "Claudemir Pereira",
+      "published": "Fri, 31 Jul 2026 03:04:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "‘Queremos compartilhar conhecimento’, diz ministro de Ciência e Tecnologia de Taiwan - veja.abril.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOM0tELUNoampxUjQ2bGlKNE51Ykw1a0ZSZ3lZMG94SGNrOUdrUmJ0Y2tUQW9XSTUyUjJGTkVwRWg5X1hobUtqTWF3UGJBa0ViM1N5eEtqYVJqWmFDTk8wQ2xzMld2Ym9zYWJUOHphZU55N0E5TXItQ2o0LUo4MXNpanRnWE1VRVRxNlVQUl9oel9raHlFNHk0UHBYa1hQS2ExMzdPSGFNQnB2ZmxqbDdHT2dld1FEZjF1?oc=5",
+      "source": "veja.abril.com.br",
+      "published": "Fri, 31 Jul 2026 08:30:45 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Conheça as 8 Áreas de TI mais promissoras - rj.senac.br",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9ITzdjeEVZLS1tZ1NiVEtJMVVhZnJpZlg1ekdhRThpQmloVjZHVzBUbTZkS1VRZUlLMzB0Y3pBVDhNSGpRXzk1V1dKVTRBVjV4VS1pdk5rcVBxS1l6QzVhVWR3OEJybkhvNHBlOU9ZNjZfclEwR256aA?oc=5",
+      "source": "rj.senac.br",
+      "published": "Fri, 31 Jul 2026 08:41:35 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Cooperativismo: o que é e qual o seu papel na economia brasileira - Nexo Jornal",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPbjJzMVB4UFI5NVJGdHIwYVdIOUNCM2ZmSjZkbVVVbWZDLWcxdkFPdUtzbkVHdHlnSnAxNTNkQWFvS2FCUDdzc09fR3N4X1Y2NWdhOTFldXVLb1lOLUFmRGY0eGxqSHl2RmlQZkk4Mk1BamYzWWhvR3dpSnhoUGJHZkljSG1hN1RtSVp5YjIxanpqSFhJVHBBdE8yLVgzSTdqaWViUDBabmVLdw?oc=5",
+      "source": "Nexo Jornal",
+      "published": "Fri, 31 Jul 2026 11:07:50 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Agenda do dia: Expectativas de inflação nos EUA são destaque - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOR0hLYVlzYnd5bzlBaDlLOG1DdGJTdnk0eVJRNVZySG9JWFhtUGxMNnNIYmZMWU9KMzFRQTRTeVFJbWNzUm9Eb2ZMVTVORlJ3aG9SQzFEWTRmYVY3a0xnRjFKd2xrTTAyQk5jd21odnhWRndWWVNfWUlqMno4R3pxZ00xa1hmTTVYRnZucmdzYXF5OGV0d1FIZHpONG9TWkJIVF9BN0dtY05fVWQ0LWhwWjhKdUtiTjRR0gHHAUFVX3lxTFBZWExiTEZDZzE1eWFnaDZkbWNGdkt4MWdFR2FLVG14NE9tTnphVGFPRk5LVGpoZWtZd3VQZy1NTkVVUDZKV0Z6Q0hHUnJ2Yk5IZlc3aV90ODEzWWpXYU1XaG16LWtNbEtxU01TYkdNM3NWWEJ1dzZKOExDajUwT2xaeU0yMVJ6cnhzUmZxakVfZE9WbWlNa0R4cHBuTEpITC1jSk1FM1lMWmhUb1VNXzN2V3BoRGJJaXY3SFlKSHF3NndnQlJzZTA?oc=5",
+      "source": "Valor Econômico",
+      "published": "Fri, 31 Jul 2026 11:23:44 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Dívida pública bruta do Brasil sobe mais do que o esperado em junho, mostra BC - 31/07/2026 - Economia - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOSXlsc2pEbFpOeWhweWVyM0haOUppeWY1WXlBc1pvbGF1Xzk5eWpzWmtuRzFCbHJQak1OUXkwWUtVejdMbkxpZlNIZmo3WlBoWktWcEFfaEVQMWdJWmJuMXRSb1NqYUVXXzg2SWVGODNtSTRUQkgtajJLTXd3U1hvYU41RHRLdzFiaWhNV21aWWI1UVVaN1pVMEM5dWZrUXhyUVhKLU9XUTZHWHhLSzVOS0hINnZoYktfRFNfcjh2S3lLUWowUWwxbQ?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Fri, 31 Jul 2026 12:25:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Economia brasileira mostra menor incerteza em julho, diz FGV - ADVFN",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNRDVrRnNDSTFsMlRqdjJsdngtM0ZpcnBUQncwWUdkS0p3NkxyWjBlb0Roa2lmT0xac1NZVkY0ZjF3MXFMMW12Z0J3RTMtRTJtb3U0aUgzcmFIV2FhNmhmekNPVmhnOVotNkQ5cUVvTHJLd3QwLTRnZ1FZNFRpbjIxM3dpR2stX1BUcHJfc20xRjQ4eDdGbVdxYklUcw?oc=5",
+      "source": "ADVFN",
+      "published": "Fri, 31 Jul 2026 11:42:44 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "O dinheiro português pede projetos brasileiros - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNTG1vSnZxODdpdVNGQnFXX2ZrZWQ4NGJUOG45eFh3OUY3UjA0TmcyUzZ2MXlqYkwwLS1QYmxpVXpRQTE1UTlSc0F3Q1o0eGt2LTVGbFRYX1VCRmlRSDdWNmJLMTQxcGRNNE1VOFVxS2w5c2xHZUNISHUwX2djdXVuMm1peUl2Y09XMlNBMTF4Y3A4MnNaQ0F5b2h1VXZUWlhfMUNoWUNQLXgwN2U3UlN2Rk9IazRFUFJLeERnbQ?oc=5",
+      "source": "CNN Brasil",
+      "published": "Fri, 31 Jul 2026 08:16:33 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Amistoso do Brasil com Índia em Calcutá é confirmado; confira agenda da seleção - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPV2VrcXpvSURNVXJQenZFSUFlYXpFSFhVR0Z1RHhfZlJRYVg5dWZKamxHUzUyUDNlbDVGWHdGUkEtU21kMkEtOF9td2owWG8xX3hxUzBrM05ZNUYxWE5BNUpVbXh6U05wa2ZHQzRSX1c3RVFMdFZCMG40MW5SbzhEczk2Q01HSUx4UE1BQUtxbmx4T0dPNTdMeHIxZVVhbFJWa2VMUzkwNDNDc3NNV25LYkJQSEFfUnd10gG-AUFVX3lxTE9BaVJtRFgyNUJ5cXlWaDJSUUdHTi1LWnJ1M0xBWDAxcVpTdldNdzRoamM5Qmg5MXJMWnlaSHc0Zk5qZlFCb2FJLWxXM01YdVlxdmRlT0x0RVQ0ZjN5M1YySzBXanRjUVA0R05SZndTZEl6QlZneldoczFNY3NMeHdCQUxoR0NQRTRnTnNLc2lObmY3OXVHREFHZzdNMS0yUUYtNnhQRF90akZJSmRQcVZjRlRmc0taLXI0ZF9lOFE?oc=5",
+      "source": "InfoMoney",
+      "published": "Thu, 30 Jul 2026 16:43:30 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Diretor da FIERN participa de reunião na CNI sobre agenda de mitigação do Custo Brasil - FIERN",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPMGhaUU1Zb182cUljWVFzblpoTFUycVJ2TDEtcThoVUNmaElQTmdaV0l0T3JGZ0tCWjh6a25DdkM4c09LWm9wY3dhWHBlNHZPZ2FVMGlMTVp0MVVsQnRmdk9kLXZnemhsVXZCM09GbjFsOEFFLVlXUjZQdGhGOGhJcU9iVEtSenIxc01mVWhsRDBYZUVsXy0zSW5FR2RLYlY5bTRSb1Jnd01qQ05HNGZkOW9BTQ?oc=5",
+      "source": "FIERN",
+      "published": "Thu, 30 Jul 2026 22:26:04 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "O que fazer em Natal: #MeGuia mostra eventos culturais de 30/07 a 03/08 - Saiba Mais",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNMmV6OTV6Qklja3lzRzNQQ1FNcmVtekgzaUJUc0ZZaW9reU5EVm95RlE3UkFBLXRhTUhZWF9Ec1NuX05uUThHLTJIeUNZUDRZSlZVOXByWU5fcHI5VENqODZBS24zdk1uTGYzNkpsWnV6dGRlSWRkTm5oUXZrS3Jyejhn?oc=5",
+      "source": "Saiba Mais",
+      "published": "Thu, 30 Jul 2026 20:33:49 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Primavera do Leste recebe ministro da Bolívia em agenda voltada a parcerias e ao potencial do agronegócio - Prefeitura de Primavera do Leste",
+      "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOMF9obk1ldjl3N19ldnJlNDdJNEtJV3hUb3lJU0VPby1EbFItdUhNYzZIUzQ5VXRoSi1MZDB0NXV0QWo5Tk1xNWc2NDBqRUhEWFJkVEI2X3NqVU9Ka2RiY3NVOGtfbTRnMlFlS2JSU18zbjIxQ1hsN3RxQ3ZRUGFKaUVGbl9zamR1c2haQkZ6ZkExSGdNLWdhWW1hYUthUzRRcEpDNElkcVZRV29lVmlSRmdQa0FpbDZxVXltSW9uQWFGUXV5eG52NUtwUWlBYzFPOTJvd3Zqb2JJRHI4c3psNnJCVk44N202bHZPb1RzOVNldElmYlVxS1BHOFc?oc=5",
+      "source": "Prefeitura de Primavera do Leste",
+      "published": "Thu, 30 Jul 2026 18:47:10 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Soberania energética: a nova agenda de desenvolvimento do Brasil - Agência eixos",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOMjc1LXktV0FJZHNTTjRMZ3J1TmRacy1mMHZWcDFsSlpIUGp3UGlVYmdFS2Y2cU1EOHJ5WGJfQ2dWUTlrdHh3anROOEJvUWsyYUJSbmpLUWVaN084Y1VVVmh5YzhCWUhyYzl6aXlUMmg2TEduYnRFUVR4Uk9uNHZ4WmpXTjgtWExudXZNWlBhVWY2X2xfQUwxMzI5NGhtbzVxb0xhb3Z0OA?oc=5",
+      "source": "Agência eixos",
+      "published": "Thu, 30 Jul 2026 14:34:42 GMT"
+    }
+  ],
+  "generated_at": "2026-07-31T10:48:44.947000-03:00"
+}
