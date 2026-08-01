@@ -3,6 +3,7 @@ import json
 import sys
 import tempfile
 import unittest
+from datetime import date
 from pathlib import Path
 
 import yaml
@@ -86,6 +87,41 @@ class PipelineContractTests(unittest.TestCase):
         self.assertEqual(rendered.count('class="morning-episode'), 1)
         self.assertIn("O Brasil reage às tarifas", rendered)
         self.assertNotIn("prototipo", rendered)
+
+    def test_manha_conectada_requires_spoken_rss_cta(self):
+        pipeline = load_module(REPO / "scripts" / "manha_conectada_pipeline.py", "manha_pipeline_cta")
+        body = "Notícia confirmada com contexto e efeito prático para o dia. " * 65
+        missing_cta = "Manhã Conectada, do Drop Five News. " + body + "Bom dia!"
+
+        with self.assertRaisesRegex(RuntimeError, "CTA do RSS próprio ausente"):
+            pipeline.validate_text(missing_cta, date(2026, 8, 3))
+
+        valid = "Manhã Conectada, do Drop Five News. " + body + pipeline.RSS_CTA + " Bom dia!"
+        result = pipeline.validate_text(valid, date(2026, 8, 3))
+
+        self.assertTrue(result["rss_cta_ok"])
+
+    def test_main_podcast_gate_requires_rss_cta_in_cta_segment(self):
+        gate = load_module(REPO / "scripts" / "d5n-podcast-quality-gate.py", "d5n_gate_rss_cta")
+
+        with tempfile.TemporaryDirectory() as tmp:
+            audio_dir = Path(tmp)
+            (audio_dir / "intro.txt").write_text("Drop Five News.", encoding="utf-8")
+            cta_path = audio_dir / "cta.txt"
+            cta_path.write_text("Acompanhe o nosso podcast.", encoding="utf-8")
+            original_audio_dir = gate.AUDIO_DIR
+            gate.AUDIO_DIR = audio_dir
+            try:
+                errors = []
+                gate.validate_spoken_text(errors)
+                self.assertTrue(any("RSS próprio" in error for error in errors))
+
+                cta_path.write_text(" ".join(gate.RSS_CTA_TERMS), encoding="utf-8")
+                errors = []
+                gate.validate_spoken_text(errors)
+                self.assertFalse(any("RSS próprio" in error for error in errors))
+            finally:
+                gate.AUDIO_DIR = original_audio_dir
 
     def test_manha_conectada_cron_publishes_site_fail_closed(self):
         cron = (REPO / "scripts" / "run-manha-conectada-cron.sh").read_text(encoding="utf-8")
@@ -224,6 +260,7 @@ class PipelineContractTests(unittest.TestCase):
         self.assertIn("somente o artefato que causou a falha", prompt.lower())
         self.assertIn("não repita a arquitetura", prompt.lower())
         self.assertIn("gancho", prompt.lower())
+        self.assertIn("O RSS próprio está no site do Drop Five News.", prompt)
 
 
 if __name__ == "__main__":

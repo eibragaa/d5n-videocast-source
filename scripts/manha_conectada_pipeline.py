@@ -26,6 +26,10 @@ AUDIO_DIR = REPO / "audio"
 REPORTS_DIR = REPO / "reports" / "manha-conectada"
 MANIFEST_DIR = REPO / "manifests" / "manha-conectada"
 VOICE = "pt-BR-AntonioNeural"
+RSS_CTA = (
+    "Agora você também pode assinar o Manhã Conectada no seu aplicativo de podcast. "
+    "O RSS próprio está no site do Drop Five News."
+)
 TZ = ZoneInfo("America/Sao_Paulo")
 MIN_WORDS, MAX_WORDS = 540, 820
 MIN_SECONDS, MAX_SECONDS = 225, 390
@@ -265,7 +269,7 @@ Arquitetura obrigatória, inspirada na eficiência de briefings modernos sem imi
 3. Cada notícia segue fato → contexto → efeito prático → próximo movimento. Mantenha ritmo alto, mas dê contexto suficiente para o ouvinte não depender de outro conteúdo.
 4. Faça uma notícia puxar a seguinte por continuidade, contraste ou consequência. Evite anunciar “agora vamos falar de”.
 5. Antes do encerramento, inclua o “Sinal 11”: escolha um único acontecimento verificável que ainda pode mudar o dia até o começo da tarde e diga objetivamente o que acompanhar. Não dê conselho financeiro.
-6. Feche com uma síntese útil, convide a acompanhar o Drop Five News e termine exatamente com “Bom dia!”. Não faça despedidas antes do final.
+6. Feche com uma síntese útil, diga exatamente “{RSS_CTA}” e termine com “Bom dia!”. Não faça despedidas antes do final.
 
 Regras editoriais:
 - Não invente números, declarações, causas ou consequências.
@@ -323,6 +327,8 @@ def validate_text(text: str, day: date) -> dict[str, object]:
     errors: list[str] = []
     words = re.findall(r"\b[\wÀ-ÿ'-]+\b", text)
     lower = text.casefold()
+    if RSS_CTA.casefold() not in lower:
+        errors.append("CTA do RSS próprio ausente")
     if not MIN_WORDS <= len(words) <= MAX_WORDS:
         errors.append(f"palavras fora da faixa: {len(words)}")
     if "manhã conectada" not in lower or "drop five news" not in lower:
@@ -338,7 +344,12 @@ def validate_text(text: str, day: date) -> dict[str, object]:
         errors.append("emoji no texto falado")
     if errors:
         raise RuntimeError("; ".join(errors))
-    return {"words": len(words), "forbidden_hits": found, "ending_ok": True}
+    return {
+        "words": len(words),
+        "forbidden_hits": found,
+        "ending_ok": True,
+        "rss_cta_ok": True,
+    }
 
 
 def synthesize(text: str, output: Path) -> None:

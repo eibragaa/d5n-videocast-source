@@ -15,7 +15,7 @@ O ritmo parte de princípios observados em briefings modernos apresentados por A
 3. **Cinco notícias:** agenda, Brasil, mundo, tecnologia e economia — apenas quando houver pauta forte.
 4. **Encadeamento:** cada assunto puxa o próximo por continuidade, contraste ou consequência.
 5. **Sinal 11:** um acontecimento verificável que ainda pode mudar o dia até o começo da tarde.
-6. **Encerramento único:** síntese, chamada para acompanhar o Drop Five News e “Bom dia!”.
+6. **Encerramento único:** síntese, CTA falada do RSS próprio no site do Drop Five News e “Bom dia!”.
 
 ## Fórmula de cada notícia
 

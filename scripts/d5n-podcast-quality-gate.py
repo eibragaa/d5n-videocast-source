@@ -31,6 +31,12 @@ ENGLISH_DATE = re.compile(
 EMOJI = re.compile("[\U0001F300-\U0001FAFF\u2600-\u27BF]")
 GOODBYE = re.compile(r"\b(?:tchau|até amanhã|até mais|valeu|falou)\b", re.I)
 URL_OR_MARKDOWN = re.compile(r"https?://|\[[^]]+\]\([^)]+\)|[*_`#]{2,}")
+RSS_CTA_TERMS = (
+    "manhã conectada",
+    "rss próprio",
+    "aplicativo de podcast",
+    "site do drop five news",
+)
 
 
 def fail(errors: list[str], message: str) -> None:
@@ -150,6 +156,7 @@ def validate_spoken_text(errors: list[str]) -> None:
         fail(errors, "nenhum segmento .txt encontrado")
         return
     official_name_seen = False
+    rss_cta_seen = False
     for path in txts:
         text = path.read_text(encoding="utf-8", errors="replace")
         folded = text.casefold()
@@ -169,8 +176,12 @@ def validate_spoken_text(errors: list[str]) -> None:
             fail(errors, f"{path.name}: despedida intermediária")
         if path.stem not in {"cta", "outro"} and re.search(r"instagram|siga|segue a gente|me segue", text, re.I):
             fail(errors, f"{path.name}: CTA fora do encerramento")
+        if path.stem == "cta" and all(term in folded for term in RSS_CTA_TERMS):
+            rss_cta_seen = True
     if not official_name_seen:
         fail(errors, "nome oficial 'Drop Five News' ausente dos segmentos")
+    if not rss_cta_seen:
+        fail(errors, "CTA do RSS próprio do Manhã Conectada ausente de cta.txt")
 
 
 def main() -> int:

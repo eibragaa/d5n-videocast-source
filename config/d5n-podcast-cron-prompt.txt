@@ -6,6 +6,7 @@ CONTRATO IMUTÁVEL
 - Dados reais e atuais; nunca placeholders e nunca reutilize trends, roteiro ou áudio de outra data.
 - Fonte diária com GLOBAL, BRASIL, TECH e ECONOMIA, URLs verificáveis e conteúdo substantivo.
 - Formato v2 com 9 seções obrigatórias: intro, mundo, brasil, tecnologia, economia, ofertas, frase, cta e outro. CTA depois das notícias e antes do outro.
+- A seção cta deve dizer exatamente: “Agora você também pode assinar o Manhã Conectada no seu aplicativo de podcast. O RSS próprio está no site do Drop Five News.”
 - Duração final entre 5 e 12 minutos; alvo de 8–10 minutos.
 - Estilo Amanda Flaury: conversa inteligente, segura, natural e contextualizada. Varie a abertura, o ritmo, as transições e o fechamento diariamente. Evite bordões fixos, enumeração mecânica e clichês de IA.
 - A abertura deve começar com “Bom dia!”, mas não repita a arquitetura “Hoje é [data]. Aqui é [apresentadora]...”. Alterne diariamente entre gancho factual, pergunta concreta, consequência prática, contraste ou cena curta; encaixe a data completa e a identificação da apresentadora em posições naturais diferentes. Compare com os 7 snapshots anteriores antes do TTS.
@@ -37,6 +38,7 @@ MAX_ATTEMPTS=4
    C. ROTEIRO
    - Gere/atualize os arquivos falados em /tmp/d5n_audio usando somente os trends validados do dia.
    - Preserve fatos e atribuições; diferencie fato de análise.
+   - No arquivo cta.txt, preserve literalmente a chamada obrigatória do RSS próprio do Manhã Conectada.
    - Garanta 9 blocos essenciais, CTA na posição correta, abertura/fechamento não repetitivos e volume de fala compatível com 5–12 minutos.
    - Execute:
      python3 /root/.hermes/scripts/d5n-pre-gen-gate.py
