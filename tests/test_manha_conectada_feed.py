@@ -65,6 +65,10 @@ class ManhaConectadaFeedTests(unittest.TestCase):
 
         self.assertEqual(len(episodes), 1)
         self.assertEqual(root.findtext("./channel/title"), "Manhã Conectada")
+        self.assertEqual(
+            self.module.IMAGE_URL,
+            "https://d5n-daily.netlify.app/manha-conectada-cover.png",
+        )
         self.assertEqual(item.findtext("guid"), "manha-conectada-2026-07-31")
         self.assertEqual(
             enclosure.get("url"),

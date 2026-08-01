@@ -32,6 +32,10 @@
   Content-Type: image/png
   Cache-Control: public, max-age=86400
 
+/manha-conectada-cover.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=86400
+
 /audio/*.mp3
   Content-Type: audio/mpeg
   Cache-Control: public, max-age=86400
