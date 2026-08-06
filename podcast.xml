@@ -30,7 +30,7 @@
 <podcast:guid>d5n-daily.netlify.app</podcast:guid>
 <podcast:funding url="https://github.com/sponsors/eibragaa">Support D5N</podcast:funding>
     <atom:link href="https://d5n-daily.netlify.app/podcast.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 03 Aug 2026 04:17:16 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 06 Aug 2026 07:51:12 -0400</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/podcast-cover.png</url>
       <title>Drop Five News</title>
@@ -41,6 +41,22 @@
     <copyright>© 2026 Drop Five News</copyright>
     <webMaster>eibragaa@gmail.com (Jean Braga)</webMaster>
     <generator>D5N Pipeline v2</generator>
+    <item>
+      <title>D5N • Episódio #052 — 2026-08-06</title>
+      <itunes:title>D5N • Episódio #052 — 2026-08-06</itunes:title>
+      <itunes:episode>52</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>06:30</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <guid isPermaLink="false">d5n-2026-08-06-ep052</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep052-2026-08-06.mp3" length="9374031" type="audio/mpeg"/>
+      <pubDate>Thu, 06 Aug 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News — Episódio #052 • 2026-08-06. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:30 min.</description>
+      <itunes:summary>Drop Five News — Episódio #052 • 2026-08-06. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:30 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N • Episódio #052</strong></p><p>📅 2026-08-06</p><p>🎧 6:30 minutos de curadoria diária</p><p>Drop Five News — Episódio #052 • 2026-08-06. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:30 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>D5N • Episódio #051 — 2026-08-03</title>
       <itunes:title>D5N • Episódio #051 — 2026-08-03</itunes:title>
