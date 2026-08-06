@@ -79,8 +79,26 @@ Todos vivem em `/root/repositorio/d5n-videocast-source/scripts/`.
 - **Quando**: para levar o roteiro ao estado aprovado antes do TTS.
 - **Comando**: `bash .../scripts/d5n-gatedurance-loop.sh [--date ...] [--audio-dir ...]`
 - **Exit** `0` = aprovado (pronto para TTS). `2` = exaustão (restam erros LLM).
-- **Lógica**: valida → se bloqueado, autocorrect+re-valida até 3x → se ainda
-  bloqueado, mostra os erros restantes (que exigem regeneração LLM) e sai com `2`.
+- **Lógica**: (0) se existe snapshot aprovado (`podcast-scripts/<data>.json`),
+  **restaura os txts a partir dele** — o texto aprovado é a fonte da verdade, não
+  `/tmp/d5n_audio` (que jobs concorrentes podem corromper). Depois: valida → se
+  bloqueado, autocorrect+re-valida até 3x → se ainda bloqueado, mostra os erros
+  restantes (que exigem regeneração LLM) e sai com `2`.
+
+### 3.5 `d5n-gatedurance-snapshot-restore.py` — restaura o aprovado antes do TTS
+- **Quando**: **sempre** antes de sintetizar, para garantir que o texto que vai ao
+  TTS é o aprovado.
+- **Comando**:
+  ```
+  python3 .../scripts/d5n-gatedurance-snapshot-restore.py --date YYYY-MM-DD \
+      --snapshot-dir podcast-scripts --audio-dir /tmp/d5n_audio
+  ```
+- **Exit** `0` = txts restaurados do snapshot aprovado e GateDurance verde (pronto
+  para TTS). `1` = restaurado mas reprovado. `2` = sem snapshot aprovado.
+- **Regra**: o snapshot `podcast-scripts/<data>.json` é a FONTE DA VERDADE do que
+  foi aprovado/publicado. Jobs concorrentes podem reescrever os `.txt` em
+  `/tmp/d5n_audio` com versões ruins (inglês, markdown) — este script reconstrói os
+  9 txts a partir do snapshot antes do TTS.
 
 ### 3.4 `d5n-gatedurance-watchdog.sh` — o observador contínuo
 - **Quando**: cron `no_agent` a cada 2h (job `[D5N] GateDurance Watchdog`).
@@ -102,9 +120,12 @@ Todos vivem em `/root/repositorio/d5n-videocast-source/scripts/`.
    (markdown, `(hum...)`, emoji, reticências, `1 (um)`), use o autocorrect antes de
    gastar LLM. Só chame o LLM para o que o autocorrect não resolve (inglês, conteúdo
    abaixo de 850 palavras, data/estrutura).
-4. **O texto aprovado é o que vai ao ar.** Se o GateDurance/Loop aprovar um roteiro,
-   é esse roteiro que deve seguir para TTS → gates finais → deploy. Não troque por
-   outro após a aprovação.
+4. **O texto aprovado é o que vai ao ar — SEMPRE.** Antes de qualquer TTS, rode o
+   `d5n-gatedurance-snapshot-restore.py` (ou use o Loop) para reconstruir os `.txt`
+   a partir do snapshot aprovado `podcast-scripts/<data>.json`. É esse roteiro
+   restaurado que segue para TTS → gates finais → deploy. Nunca sintetize a partir
+   de `.txt` soltos em `/tmp/d5n_audio` sem garantir que são os aprovados, e nunca
+   troque o texto após a aprovação.
 5. **Limite de tentativas.** Respeite `MAX_ATTEMPTS=4` no job principal. Esgotado
    sem `published=true`, pare (exaustão segura) e deixe o watchdog/job de recuperação
    retomar. Nunca loop infinito.
@@ -142,6 +163,7 @@ Todos vivem em `/root/repositorio/d5n-videocast-source/scripts/`.
 - `scripts/d5n-gatedurance-script-gate.py` — validador
 - `scripts/d5n-gatedurance-autocorrect.py` — auto-correção determinística
 - `scripts/d5n-gatedurance-loop.sh` — orquestrador
+- `scripts/d5n-gatedurance-snapshot-restore.py` — restaura txts do snapshot aprovado antes do TTS
 - `scripts/d5n-gatedurance-watchdog.sh` — observador
 - `/root/.hermes/scripts/d5n-gatedurance-watchdog.sh` — wrapper no_agent (cron)
 - `/root/.hermes/profiles/d5n/cron/jobs.json` — regras no CONTRATO dos jobs D5N
