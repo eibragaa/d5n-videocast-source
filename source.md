@@ -22,41 +22,61 @@ E ai galera, Drop Five News, com Francisca. Bem-vindos ao D5N de Quinta-feira, 6
 
 ---
 
-1. Congresso dos EUA aprova medida de poderes de guerra e repreende Trump por conflito com o Irã (BBC)
 
-2. Trump compartilha texto que aponta eleição no Brasil como seu próximo 'teste' na América Latina (CartaCapital)
+### GLOBAL
+[TRANSICAO] Primeiro, o que ta bombando no mundo.
 
-3. Flórida: primárias democratas têm vitória de candidato apoiado por grupos de IA (NBC News)
+1. 1. **Trump says El-Sayed is ‘full of s‑‑‑,’ calls him a ‘man of hate’** — Trump says El-Sayed is ‘full of s‑‑‑,’ calls h
 
-4. Espanha: oito condenados a 450 anos por motim anti-ICE onde policial foi baleado (BBC)
+2. 2. **Live Updates: Trump says Strait of Hormuz deal could happen soon amid Iran-Oman talks** — Live Updates: Trump says 
 
-5. Primárias em Nova York 2026: resultados ao vivo (The New York Times)
+3. 3. **Three state attorneys general subpoena Anthony Fauci over Covid guidance** — Three state attorneys general subpoena
 
-6. Justiça dos EUA permite entrada da AGU em processo contra Moraes (Poder360)
+4. 4. **Trump, Hegseth clashed at Camp David over Iran missile depletion concerns** — Trump, Hegseth clashed at Camp David 
 
-7. Planalto se prepara para receber mais denúncias contra 'República da Bahia' e blindar Lula (Estadão)
+5. 5. **Fauci's HHS iPhone turned over to Senate investigators as contempt vote looms** — Fauci's HHS iPhone turned over to
 
-8. MEC publica desempenho de escolas no Enem de 2025; saiba como consultar (CNN Brasil)
 
-9. Banco Digimais, de Edir Macedo, replicou 'modus operandi' do Master, diz PF (Valor Econômico)
+### BRASIL
+[TRANSICAO] Agora, o que ta rolando aqui no Brasil.
 
-10. Flávio Bolsonaro pede espaço em audiência nos EUA para falar de tarifas (Correio Braziliense)
+6. 1. **Justiça do RS decide que ex-cônjuge não pode ser obrigado a ser pai após divórcio em caso de embriões congelados** 
 
-11. Casa da família de Vorcaro é roubada em MG; ladrão leva relógio de R$ 1 mi (CNN Brasil)
+7. 2. **Ataques russos matam ao menos sete pessoas e deixam dezenas de feridos na Ucrânia** — Bombeiro trabalha para exting
 
-12. Mamdani aposta política paga conforme candidatos endossados varrem primárias (NPR)
+8. 3. **Sexo 60+: um guia para o prazer sem data de validade** — Brasileira fala sobre sexo na terceira idade: ‘Eu transo s
 
-13. Congresso aprova grande projeto de habitação com apoio bipartisan (Axios)
+9. 4. **Maurício Mattar volta às novelas em 'Por Você' e relembra receio: ‘Será que ainda sei fazer essa televisão?’** — Ma
 
-14. Brad Lander derruba Rep. Dan Goldman após desafio de esquerda (Politico)
+10. 5. **Café, banheiro e até videogame: a base criada por entregadores que oferece apoio e descanso entre as corridas** — '
 
-15. Candidato democrata Micah Lasher vence primária na Câmara com gasto grande de grupos de IA (NBC News)
 
-16. Petróleo: guerra de poderes no Congresso dos EUA pressiona mercado (BBC)
+### TECH & IA
+[TRANSICAO] Bora falar de tech e IA, que ta uma loucura.
 
-17. Bancos brasileiros: caso Digimais amplia pressão regulatória sobre instituições menores (Valor Econômico)
+11. 1. **Fusão entre Boerse Stuttgart Digital e Tradias cria nova potência do mercado cripto europeu** — A operação reúne os
 
-18. Eleições nos EUA: gastos com IA em primárias levantam debate sobre financiamento político (NBC News)
+12. 2. **Baleias voltam às compras e indicam que o mercado cripto pode estar perto do fundo** — Dados da CryptoQuant indicam
+
+13. 3. **Galaxy registra prejuízo de US$ 85 milhões após queda do mercado cripto** — A companhia registrou um prejuízo líqui
+
+14. 4. **Mastercard testa sistema de verificação para transferências com stablecoins** — A Mastercard e a Borderless estão a
+
+15. 5. **Binance processa a RedotPay e cobra US$ 473 milhões por suposto desvio de usuários** — Segundo a ação, empresas lig
+
+
+### ECONOMIA & CRYPTO
+[TRANSICAO] Pra fechar, mercado e crypto. Presta atencao nessa.
+
+16. 1. **Por que as ações da WPP estão disparando hoje?** —
+
+17. 2. **Evercore ISI rebaixa Zillow citando mudança de monetização** —
+
+18. 3. **Rendimentos alemães se estabilizam em mínimas de 3 semanas com recuo do petróleo** —
+
+19. 4. **Roth/MKM rebaixa Barrett Business Services por pressão nas margens** —
+
+20. 5. **Negociações com o Irã em foco; resultados de Sandisk e Block** —
 
 ---
 
