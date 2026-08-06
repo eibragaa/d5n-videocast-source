@@ -94,6 +94,19 @@ if ! python3 "$REPO/scripts/d5n_daily_release_gate.py" \
 fi
 log "✅ Gates técnico e editorial aprovados"
 
+# Retenção diária do manifesto e do roteiro (permite recovery retroativo).
+# /tmp/d5n_audio/ é sobrescrito a cada dia; sem retenção o manifesto/roteiro de
+# ontem se perde. Cópia idempotente e não bloqueante (nunca aborta o deploy).
+RETENTION_DIR="manifests/d5n/${DATE}"
+mkdir -p "$RETENTION_DIR"
+if [ -f "$CHAPTER_MANIFEST" ]; then
+    cp "$CHAPTER_MANIFEST" "$RETENTION_DIR/manifest.json" 2>/dev/null || true
+fi
+for _t in /tmp/d5n_audio/*.txt; do
+    [ -e "$_t" ] && cp "$_t" "$RETENTION_DIR/" 2>/dev/null || true
+done
+log "✅ Retenção diária: $RETENTION_DIR"
+
 # Reutiliza o número da mesma data em retries; nunca incrementa duas vezes.
 TODAY_EP=$(python3 -c "import json; d=json.load(open('$COUNTER_FILE')); print(next((e['num'] for e in d.get('history', []) if e.get('date') == '$DATE'), ''))")
 if [ -n "$TODAY_EP" ]; then
@@ -107,7 +120,9 @@ fi
 
 DEST="audio/d5n-ep${EP_NUM}-${DATE}.mp3"
 cp "$LATEST_MP3" "$DEST"
-cp "$LATEST_MP3" "$CRON_AUDIO/d5n-podcast-${DATE}.mp3"
+if [ "$LATEST_MP3" != "$CRON_AUDIO/d5n-podcast-${DATE}.mp3" ]; then
+    cp "$LATEST_MP3" "$CRON_AUDIO/d5n-podcast-${DATE}.mp3"
+fi
 if ! python3 "$REPO/scripts/d5n_chapter_manifest.py" \
     --manifest "$CHAPTER_MANIFEST" \
     --date "$DATE" \
@@ -131,7 +146,7 @@ else:
     d['history'][idx]=entry
 d['last_episode']=max(int(d.get('last_episode', 0)), int('$EP_NUM'))
 d['updated']='$DATE'
-p.write_text(json.dumps(d, ensure_ascii=False, indent=2) + '\\n')
+p.write_text(json.dumps(d, ensure_ascii=False, indent=2) + '\n')
 "
 log "✅ Áudio e contador preparados: episódio #${EP_NUM}"
 

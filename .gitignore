@@ -96,3 +96,6 @@ gerar_pagina_d5n.py.bak.*
 # Deploy scripts with credentials
 deploy_netlify_direct.sh
 deploy_netlify_direct.py
+
+# Daily retention of manifest + script (local recovery only, never committed)
+manifests/d5n/
