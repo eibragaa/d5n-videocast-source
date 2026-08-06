@@ -960,6 +960,16 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .premium-fineprint {{ font-size:0.65rem; color:var(--faint); margin-top:0.75rem; line-height:1.5; }}
   @media (max-width:600px) {{ .premium-programs {{ grid-template-columns:1fr; }} }}
 
+  .igclip-banner {{ margin:2.5rem 0 0; padding:0 2rem; }}
+  .igclip-banner-inner {{ display:flex; align-items:center; gap:1rem; max-width:900px; margin:0 auto; padding:0.9rem 1.25rem; background:var(--surface); border:1px solid var(--border); border-radius:4px; }}
+  .igclip-banner-icon {{ flex-shrink:0; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.85rem; background:linear-gradient(135deg,#f58529,#dd2a7b,#8133c4); color:#fff; }}
+  .igclip-banner-text {{ flex:1; min-width:0; display:flex; flex-direction:column; gap:2px; }}
+  .igclip-banner-text strong {{ font-size:0.8rem; color:var(--text); letter-spacing:0.02em; }}
+  .igclip-banner-text span {{ font-size:0.7rem; color:var(--muted); line-height:1.4; }}
+  .igclip-banner-link {{ flex-shrink:0; font-size:0.72rem; font-weight:600; letter-spacing:0.05em; color:#fff; background:linear-gradient(135deg,#f58529,#dd2a7b,#8133c4); text-decoration:none; padding:0.5rem 1rem; border-radius:3px; transition:opacity 0.2s; }}
+  .igclip-banner-link:hover {{ opacity:0.85; }}
+  @media (max-width:560px) {{ .igclip-banner-inner {{ flex-wrap:wrap; }} .igclip-banner-link {{ width:100%; text-align:center; }} }}
+
   footer {{ border-top:1px solid var(--border); padding:2rem 0; margin-top:1rem; }}
   .footer-inner {{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }}
   .footer-brand {{ font-family:'Inter',sans-serif; font-size:0.8rem; color:var(--muted); }}
@@ -1181,6 +1191,18 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
     {archive_html if archive_html else '<p style="font-size:0.82rem;color:var(--muted);padding:1rem 0">Nenhum episódio anterior.</p>'}
   </section>
 
+  <!-- Banner discreto IG Clip -->
+  <div class="igclip-banner" data-animate>
+    <div class="igclip-banner-inner">
+      <div class="igclip-banner-icon">⬇</div>
+      <div class="igclip-banner-text">
+        <strong>IG Clip</strong>
+        <span>Baixe reels, fotos e vídeos do Instagram em qualidade original — sem anúncios, sem limites.</span>
+      </div>
+      <a class="igclip-banner-link" href="https://igclip.netlify.app" target="_blank" rel="noopener">Experimentar →</a>
+    </div>
+  </div>
+
 </main>
 
 <footer>
@@ -1196,6 +1218,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
         <a href="/d5n-feed.xml">RSS</a>
         <a href="/manha-conectada.xml">RSS Manhã Conectada</a>
         <a href="https://github.com/eibragaa/d5n-videocast-source">GitHub</a>
+        <a href="https://pilastack.dev" style="color:var(--accent)">PilaStack 🔥</a>
       </div>
     </div>
   </div>
