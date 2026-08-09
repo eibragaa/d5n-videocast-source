@@ -33,6 +33,13 @@ GATE="$SCRIPTS/d5n-gatedurance-script-gate.py"
 AUTOCORRECT="$SCRIPTS/d5n-gatedurance-autocorrect.py"
 STATUS="$SCRIPTS/d5n_release_status.py"
 
+# Domingo = dia sem publicação do D5N (o gate de qualidade bloqueia weekday==6).
+# A geração diária e o job de recuperação tentam roteiro de domingo que nunca
+# passa no gate → contradição estrutural, não corrigível por repetição. Silêncio.
+if [ "$(python3 -c "import datetime,sys;print(datetime.date.fromisoformat(sys.argv[1]).weekday())" "$DATE")" = "6" ]; then
+  exit 0
+fi
+
 # A. Já publicado?
 if python3 "$STATUS" --date "$DATE" >/dev/null 2>&1; then
   exit 0   # publicado — silêncio (watchdog pattern)
