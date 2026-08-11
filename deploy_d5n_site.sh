@@ -42,9 +42,26 @@ block() {
 
 log "🚀 Release diária Drop Five News — ${DATE}"
 
+# Auto-clean pós-publicação: após uma release confirmada, /tmp/d5n_audio é
+# apagado para não deixar leftover do dia anterior (causa de falsos alarmes no
+# watchdog/gateDurance). Os arquivos já foram retidos em manifests/d5n/<DATE>/.
+clean_audio_dir() {
+    [ -d /tmp/d5n_audio ] || return 0
+    local n
+    n=$(find /tmp/d5n_audio -maxdepth 1 -type f \
+        \( -name '*.txt' -o -name '*.mp3' -o -name '*.json' -o -name '*.raw' \) \
+        2>/dev/null | wc -l)
+    [ "$n" -gt 0 ] || return 0
+    find /tmp/d5n_audio -maxdepth 1 -type f \
+        \( -name '*.txt' -o -name '*.mp3' -o -name '*.json' -o -name '*.raw' \) \
+        -delete 2>/dev/null || true
+    log "🧹 Auto-clean: /tmp/d5n_audio limpo após publicação (${n} arquivos removidos)"
+}
+
 # Retry idempotente: um recibo válido prova que áudio, contador e push já fecharam.
 if python3 "$STATUS_SCRIPT" --repo "$REPO" --state-dir "$STATE_DIR" --date "$DATE" >> "$LOG" 2>&1; then
     log "✅ D5N_ALREADY_PUBLISHED — recibo íntegro; nenhuma mutação necessária"
+    clean_audio_dir
     exit 0
 fi
 
@@ -212,4 +229,5 @@ fi
 rm -f "$FAILED_MARKER"
 log "✅ D5N_RELEASED — episódio #${EP_NUM} publicado"
 log "🌐 https://d5n-daily.netlify.app/"
+clean_audio_dir
 exit 0
