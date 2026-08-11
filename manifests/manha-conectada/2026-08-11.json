@@ -1,0 +1,203 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-08-11",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/audio/manha-conectada-2026-08-11.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/source-manha-2026-08-11.md",
+  "sha256": "ffe86f1e874d8c7f5ce092adb7f0d3cb931a0f816e6f2b3a86ad17f43350bfa2",
+  "text_gate": {
+    "words": 743,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 317.936327,
+    "size": 7631141,
+    "bit_rate": 192016,
+    "lufs": -16.62,
+    "true_peak_dbtp": -1.68,
+    "lra": 2.7
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Notícias sobre edital de 10 de agosto de 2026 - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMnJBV3gyakFCZTFwd1hhLWttdVJkakRtem1ocEpVMFdySE1QaHlSdS1BOHM3cWJoNDhyTjVjX0hDakFjeE5TSkNGSktEUHpRb2ZyZE5RdzJQZGsyTmtQWGxjN2lKeUFReTBVNWpmbXJkV25yRGxtNzBqVE5mTmJFc0IyTWttRVN50gGOAUFVX3lxTE9oRmp0b1FuVTFxWllLaGIzcW02T1FSbHBEMmJ4V0cybGVCY01Hck1BbjhsNDRHQkVqUENBYWlhLUtXbDBiRzNiUTVILUJMeUFTUF9YMXdMSEpSczlQNTBRNnZuYngwRHJxeU5HZEVmWnhWdklhR0hNWEViMktCTkt3dzFkZUJPLUlkaGJDamc?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Tue, 11 Aug 2026 08:00:08 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Lula busca se reaproximar de Trump - Assine o Meio",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQT1dYb0I3d1pjSVJXLTVxSWQ1U3pEZG80ZzJ4U2RqUlVDYjE0T3VaME80bDZQcXNHT1BKbzNLTFpKOVFjT01YbUpIYXJHX0RnS2tmRVdRaEZFaURVcElPNW5udjVQTkozbFFkWUZVNFdJYm1CQjBrN1JPMjdaMktodnlReEowbmd3NWU0?oc=5",
+      "source": "Assine o Meio",
+      "published": "Mon, 10 Aug 2026 22:05:15 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Chuva forte atinge parte do Brasil nesta terça; veja onde - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPZ3JWN2lpbUhReGc5YTl6VDgxSGNlbjFtM2NlZHozSjZ3M3l2TVMxUXpZV0gzOF9WcmNBMW84c0Q0dnhJd3N3QWRDQUpKcktsUjUzUVJpZWRuczJuWnlEcTBCZl9qWENyRmtNb2JJQ2k1QVlrOWd4bnB6OU5MTklXTmJJaGlYOFhIOU9rc0o0U0RkcjFBNm4wMldUa1NDUnc?oc=5",
+      "source": "SBT News",
+      "published": "Tue, 11 Aug 2026 09:37:33 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Copa do Brasil pode ter 3 clássicos nas quartas; veja detalhes do sorteio - UOL",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPR2FSd3pzeVlQVEhMcmxWMTZzTkVMUjFNcEtyU21BRnkwOENtVTZBaEU3emZxc2pPdXhnenU4cnNieFhnM203Uklldm5BbmY1dzljUF9Yblphc056SnZ6bEJqTWVxanFfTmU2dUFfY2E2Y0ZIYWlDUmFrUEx6LXRyVTlXY183ekFiTWpQSlNKR2h4RTY4WlJuSFJEM1RpanRrSUU0bWN6dVl5OGxGSUdvNU52RUFTZw?oc=5",
+      "source": "UOL",
+      "published": "Tue, 11 Aug 2026 08:30:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "O número de terremotos registrados no mundo está aumentando? - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1rT09ZVlNyVE9PZjdxRm5iOHlLd1IwaHdMZURQWWxCWUYteG5FRzA5ZUE3aEg3NkNfOGUzNl83eXE5SzhvbXhnM0s1XzF5N2d1WUFtNmVJQ0o3TjdkSVo3SzdONHRxNjTSAWdBVV95cUxNa09PWVZTclRPT2Y3cUZuYjh5S3dSMGh3TGVEUFlsQllGLXhuRUcwOWVBN2hINzZDXzhlMzZfN3lxOUs4b214ZzNLNV8xeTdndVlBbTZlSUNKN043ZElaN0s3TjR0cTY0?oc=5",
+      "source": "BBC",
+      "published": "Mon, 10 Aug 2026 16:51:08 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "'Se tivesse durado mais 5 segundos, não teria sobrado nada': colombiano relata terremoto que matou mais de 100 - G1",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOdkxmMzZxcGVFZF8yRE1rZWVBT0pJSzlfWVBKdW9idXFRLUU5WlBhbHVYaUpObDZsbnhocjhlblBvTHEyd3E0cTdGQkZSX1RrZ19Gem9pcU9FbzEteE9LV0xEcEdCc25SVDVwVDFFTHJoZ0NqaVlOQktpZjh1SjBDR3ZsMWMxLU9ONzY4MDZValhvM0JVbXQxOGMweG9kQ0ZGRmxHUEJ4bW42X0Z2eFpGcGQ2Q0VxVEtpZkVGSUh0MVRuNkFCeWc5d09mRHV3Tm5MM3ZTVktUTXVIVHRfNGhEaDU2RmtuTmNrdnlHY2dtY9IB_gFBVV95cUxPVHJKeUMzWVYySk1NbkRSQkxSb0J0YkJXYndJNmpJbUExa2pZdGl5MC1WU0R3eTdmSzBZZ3hIQWxvOFBFVnpKaEhZczNibk41QzNGY1lEZGUxVzBOakUteHphZTlMaFg2cUFzY2ZfZmpsTjVTX1BtMkpfVXFKZGlEcURsY19Id1QtZ0trNmM1aU1UbjI1QW9jTTFJYVRzS3ZkMkt0Vjd3SVdDekdGcVhfRmNMNXRsMlA0UVVwaThsRlNOa3JFZTlLMzc5ODBZTzlRQlhiVEdia0hEUFhReXZJN2pLLXhIWjBwajBlbTdEa29aN25OMm9IRkk2ZC1jUQ?oc=5",
+      "source": "G1",
+      "published": "Tue, 11 Aug 2026 05:00:19 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "OMS defende vacinação infantil após ordem de Trump - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPQkNrUUg0dl81TWdxenMyUjVZZjJmenExZHFMODRkdngtTGJCNkwtamsydDdMRWRYdlBKYVJWR3NYUWoyQ1lfOE5RVm1UdWdCcXAybGd0SUpaTTUyM3RjeXV2VnpBUTdnaExLX29oLTRSa2FPNE9YVnJsV2xDQjNSZlliU1R4d1ZXWl9STFA4ZnY0eGlyOEE?oc=5",
+      "source": "SBT News",
+      "published": "Tue, 11 Aug 2026 12:09:49 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Marcos Jank: Brasil no novo mapa estratégico do mundo contemporâneo - Sociedade Nacional de Agricultura",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNWUZIZDFTa0VkQjZNX0t3ZFQycHZpdGJCN3c5M1dxbl9nUnhVR1phTzI0V1BVYTByZFgtR1lzNDQtVHU3ekF6RzNXUnVrTS0wa2ZhM0tldGtCQTNOanh4OE1HMmpfY09ZNG1rUG40R2NJM0JDTGJxb1JQLUt5WmhtOW45ei1QVUhwWFdId2Fyaw?oc=5",
+      "source": "Sociedade Nacional de Agricultura",
+      "published": "Tue, 11 Aug 2026 13:14:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Bashar al-Assad é condenado à morte por crimes de guerra na Síria - Jornal Opção",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNaXA2bjlWRldZaXZUQ3lDRFJOWWtXMnJjYlItV2EyLWN6OGN5SU9wdUhla1Q3U3VDbmZqMWJsUnpFc0N5ZTZXN05lQUVxbkQ4blVORjJ1dnZKOFluRjZvTmNrbTBXNlI2SzJVM1pvX2wtR1RXY0d0RDNKX2FzVE5TaVgwSGItby1ScVdiYmRWdHFDbGtvMzJ3emQ4emhZZ3RON2Zj?oc=5",
+      "source": "Jornal Opção",
+      "published": "Tue, 11 Aug 2026 11:13:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "De Assis para o mundo: como a mensagem de Santa Clara atravessou os séculos - Vatican News",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNV0pPamtBQXBKT3RwMG9mZWktTUlJOE52S1E0ZFhvVG5JaHRJbnJyZ1c4MVdweXlxeWJMMDJ1Qy1XSF9yVTcteF81NkN3TUQyajlwWW8wZVRqTWc5aVFFbUpEVklJbzBURnNWX0xyUnhKbjhHdmpNNlRxbl9MVUU5VWZKaGJFODFrdVdmNlBreHB0REowZUhUMjQxeGJJZkd5Y29r?oc=5",
+      "source": "Vatican News",
+      "published": "Tue, 11 Aug 2026 08:07:17 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "O Papa: para construir a paz, desarmar a tecnologia e a Inteligência Artificial - Vatican News",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPM2FQenE5OWpRVU50VGxaYlFvMmhPZlNTWXRsSUNVQzBka0xtSTJTbE5qVG9aMEVVT0pnaVh6WE1QbVlnNEo5bVVFMV9JcG1CVW5sZDJ6NHZjQUxZNTVBaE4wdnZXZ3JFZ0JvMDljakZ6dGNzYUsweTdFMnpUUWhVbGJVWjFxelJETlFsNlVNRlVTdmZjNWoxbjhPRi1fOGk5YURMeldGRTBERnczZWpucVVJYW0?oc=5",
+      "source": "Vatican News",
+      "published": "Tue, 11 Aug 2026 10:40:56 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Quase metade dos brasileiros prefere conversar com IA do que com uma pessoa - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPNVhiMldPVVBLbEc2RElOR3lwSTRuSnJIYmlnZDhCc3J1TGV4TlAxbHZrVjcwRXoxamZnb2JwNXE1bUlfWDRlbUpIZkswd0labklpb1R3Z3p5ZTRPY2FhclZWWHBvZ3ZZbXBJS0NfeFktdUJPQVhPOWZqTWF1X2twM0lLb3YwbVN2QXQ2c0FkWENxUmw1VTQ2SlM1enNwRzhDYkxJTTRfUFBTa1NHOUdWWndqQ0c3anRGU05yRzNFLUozd3JObV9hVA?oc=5",
+      "source": "CNN Brasil",
+      "published": "Tue, 11 Aug 2026 10:44:13 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "ConectAI: inteligência artificial e cibersegurança em pauta - Economia SC",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPelBINDB1YW51OTJHV21Bb2ZOUm9qMEk1OEIzRmZJaVBpT3JLVVZqNGE0MW1EQ2V0R29ZMXZjbGRWa0hZNlNVTkVOYk5NVGpGbFZrTzZfOHp4OW1ucmZ0cVRzX01xVFYtOVVEdEtJenR2YWdyWF9FaC1pQmhEV3BDQ3JHQ1NSbk0tVnVnWTUxMXk3UVItNG1Xeg?oc=5",
+      "source": "Economia SC",
+      "published": "Tue, 11 Aug 2026 12:01:13 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Inteligência artificial e acessibilidade: como a tecnologia pode fortalecer a inclusão - APAE Curitiba",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9GMmxielhJYVRVTGhGWW40eTBwNm16Uk5OSmd3a1psTFY1V3BiUFdXVmV5SWZkaEVyN3B1Y1RsNmpKWUxrY0xNRmliVWplQzEzTmlqckVrNDdQYnlLem9WaG1ydnBHeWl1MXpjYUlWS2IySHcz?oc=5",
+      "source": "APAE Curitiba",
+      "published": "Mon, 10 Aug 2026 19:01:23 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Estudantes querem usar IA para aprender melhor, mas falta orientação, aponta levantamento - folha.uol.com.br",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQbjVZRXFpcWJ5VmNZMmtpRm9CMTRkV041SXNYcWU1c0VvTnFKTnhfSmZCaUhNQlgtU2VveDdRMFhpUFdVcnFoLTBpWEM1UWswWVN0X25JYnR0SlVjNEg2QmFmWk5lLWFWbTZiOUxJT3VZanl4LVppMXpKcjFKOWM1QjR5QVkzOWU5el9XZmJSbERsNWFyTEhPUDVELVBYUmM1N29UUWJyc0hmSUtCb1BubkVGOWI0Z2tETmtnN3RSak9vQjUyNHI4MDdoUWdGbXVNOVkxU2FMcw?oc=5",
+      "source": "folha.uol.com.br",
+      "published": "Tue, 11 Aug 2026 11:00:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "O papel do cooperativismo no Brasil - Nexo Jornal",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNRURlNDU4eG42RDYwS25xQzJ1TVNXUEVTYjk4THViWGRTTzdtZTNJNzVySFZXSVZuVm9QM1RFUDAtX2pDWGxSNF9UU0I4RGNRdk9HTlRjZDRTVXdUbkFEOGNXamQ5NHY4SDVuWGU5Y3FhTmF5d0dYWGVaRjVkVzZFdlpyMGRuQmhUQWNN?oc=5",
+      "source": "Nexo Jornal",
+      "published": "Tue, 11 Aug 2026 13:21:24 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "China pede para entrar em ação do Brasil contra tarifaço dos EUA na OMC - O GLOBO",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQaFo3aHlQR0d5dFNxdkNsajgxOTlKaTZ4Uzd2XzEwUEtyUkgtVkp2VnZYWWpfTG9GTjN5WTM5ZjBlTTdNQ0N3LTI3eXVscXFPYmJuQ3JxQ01rV1lHYldEdmR4dFFHb1R1eWl4VkRQZWRCal9rcnhjR0xMeWFDY3hiQ0FrUDFpTmlITHZ1ektRelE4eFdfRUhNQ0NaOWJPOU1TNnlSVmtnS0E1R2lFVDExdzcyRDVnajZVMXBrSi1ES0tBd0NzM0JIYWw4Qm9aVVdNWW81dlFZYVnSAdgBQVVfeXFMUGhaN2h5UEdHeXRTcXZDbGo4MTk5Smk2eFM3dl8xMFBLclJILVZKdlZ2WFlqX0xvRk4zeVkzOWYwZU03TUNDdy0yN3l1bHFxT2JibkNycUNNa1dZR2JXRHZkeHRRR29UdXlpeFZEUGVkQmpfa3J4Y0dMTHlhQ2N4YkNBa1AxaU5pSEx2dXpLUXpROHhXX0VITUNDWjliTzlNUzZ5UlZrZ0tBNUdpRVQxMXc3MkQ1Z2o2VTFwa0otREtLQXdDczNCSGFsOEJvWlVXTVlvNXZRWWFZ?oc=5",
+      "source": "O GLOBO",
+      "published": "Tue, 11 Aug 2026 11:13:55 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Brasil e Bolívia entram em lista global de economias com maior dívida pública - Bloomberg Línea Brasil",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQY0Exa0dxWEZ3SE9rck9WZHJjTDd3aFg2YXNJM05YenZxOGFpQTBaSUpQSWxFMDNJS1dYMFg0cmJBdlRTWnFJYjNwQ1NaWW94UkkzVWV1SXc3a0hRUlpsbEZ6UmNObXp0bVl4RG5rcS01LXd3aTVSMFJjZ3ptaTFOc0hWc1c3UGNnVGgxcVQ4LU9UT2xvMkNyRGdlRkZfMEhrZzRtMUQ0WHlxOU83MmdTRUU0c3lmXy1JdFpCOGdDNy11bjVZ?oc=5",
+      "source": "Bloomberg Línea Brasil",
+      "published": "Tue, 11 Aug 2026 12:13:13 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Endividamento recorde e juro elevado preocupam setores da economia - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQNXRPSHRxellTTjM1RnZnM2pLTnFoUlFORlllaDBSUHhlajBja1ZPbjV0aUYtRk5pV0dIUGw4Y29pMmE1LUtDQzg0UGF0VnFaX2owWlZQYUpETU14MlA0SDE4MG1YLS0wenk3NDUwT1lDQUQ1R1dYYTN2RHdqLTZ4VHlrQ2FpVmVUaTIyN052alVlRmJtNkJPUFc5Z1p1N2Z5VThnb0xDWWpoY3UzaTRVZktfeXVoUS1iamhn?oc=5",
+      "source": "CNN Brasil",
+      "published": "Tue, 11 Aug 2026 01:54:18 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Eleições 2026: O Brasil precisa escolher-se - Migalhas",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPdzZOYV81YjlqMVRCSFYwZG5Hb2dpZDh4WjNQaV9fYXFiMGFKQVR3SWhmNEtrWERSWnp5R09WZzBzWHg1Q0N5RkZYT1htN09fVVg3YjE1Mmg0dmxGbF9xM2FTNDZiY1pSWDgwSjZydGN1TzJwamJfN1BCTzdFaTlnay13QU91ZGFHTmZqZ2twYTBHMnE2M0JCZFRHamxwXzBQVzAxZ1p1VFBZVGxHUUU1OXd3dkJ4dGoyYVQzWQ?oc=5",
+      "source": "Migalhas",
+      "published": "Tue, 11 Aug 2026 10:05:31 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Copa do Mundo de Futebol Feminino vira vitrine para agenda de diversidade de empresas patrocinadoras - estadao.com.br",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQa1lzX2Z5QlJseHBEYmVOenZJTzFzZV9EM0pmMjAwVnFCWDJ0c05ldE9MczBqUDVLa2JxUHNoSERnS3Bzdi0ySVQ3VENoLU1mdDZyeWNGTjcxOVZzYjRyOVVJQUtvUlRpRmZfb2hEamhDUjNNWTdEZUtSWXZsUTRXQUphX25tOUlxRGpvZFRtVG9DaHdWM0p0QlFIZmkzU09uenRkUUdFQjFtMWJlQmV3T25oUDExU1I5VWQzUVhOX2ZZdlVDSXNCd3E4Z1dUblZUZFBpdUtNX2hNaHkxN1NUUmJn0gHnAUFVX3lxTE84U2l4Zk4xVERPQjdxWmROdmhLOXlvcFVPTFMwamdVTmN0cURidXhWUHY4Ni1JX3cxVGFlOE9VeEphNjFkNW1TLUphV2EwTkNHRnhrU29IR2JpMTFGb0tRYXhJZUtmMVJHSHhJaHpzZkpMdlJ1R1BFalVKMDhRU3JEbndFbk9acVV5em16ekJMQ3BsZmdzY1E1Z25RUmd0VHZoMl9NNndNcjJ2UGJNZzBveVhPNENfOGRrVjY2aFZDaGVtVmZnMEIySzFkeFR2Z294Q2Z3SzV3VTk5cGtzandockkxU05iYw?oc=5",
+      "source": "estadao.com.br",
+      "published": "Tue, 11 Aug 2026 13:00:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda Brasil debate caminhos para ampliar a produtividade e a sustentabilidade das contas públicas - Portal CNA Brasil",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPNWdaYVJGakVQSVplOThXcDNUZFN6S0dkclRGMUxENUo1dF9MNm03QWtTb1JqZlo0RUVWRU1hZmZjcXBsVGdYSmRhcHlCaWpPMUtkVGxJY2NmMWxZQlRXdERtWElIa0xhMG5ucXEtVHFTcjhNcFhuYXU0NUwwQ1VpdUt5MFJRZHU4WVVhOUw0YklXN2h0THRjYk10cEpsT0lYRkZpUXduZkZnd0duMW1CVVYwQUhRbW5TdXQyWTRlQm1GR3dxWlZ1Qm9oQjFSZw?oc=5",
+      "source": "Portal CNA Brasil",
+      "published": "Mon, 10 Aug 2026 18:57:18 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "O dia do Brasil no esporte: confira a agenda desta terça-feira, 11 de agosto - Olimpíada Todo Dia",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNQVRlSGdXT2cweEZ0YlQxekYzemE2YTQ3b0EtSndDRlVPR21yamtrMEpkakM1OVhzeDZTdTNaaVRhbE44bkhUbC0weUw0X3I0SV9fdUhDbjZlTnBPdnRIYzh1dDc4bHAya29GWklVS1JQS1hDYUtySU01TzFmOXZFT1h4Y0k1dzJjR2ZNX1JHRTNJSkVfVVZnc25pcUZHWnpuVHRTaV9XaHN4VkFULXlZVU51NjN3MWxhWEgtdUpB?oc=5",
+      "source": "Olimpíada Todo Dia",
+      "published": "Tue, 11 Aug 2026 03:09:34 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Concurso Público: confira a programação das aulas de hoje! - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9RZzhuWTNNQjhfRUVRTXZSdHE3RGVseGI4VWNvMlJ3aHdqajY4QVVQV09pUHVfZkZYdXk3WnFiTjlMbS1YbXVEXzQ0d1BfTHhzcVpUQnUyazhOcXVObDdyWmlGdVZ6UkZXWmfSAW9BVV95cUxNb1U4ekpYaVQwOENfMXZ6X3pzUjhyMGNMS09DNFpYZkx2aUdsVFd6X2k4OTNZcW1HZi1mMlFlSndoS3pHLXdqZGV1NXJFbzAtYTZTWDBzZWVKb1JYLWkwRWxjWE1GNnh1QTlEd1EzV1E?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Tue, 11 Aug 2026 09:06:54 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Futebol na TV: a programação completa dos jogos de hoje, terça-feira, 11 de agosto - Goal.com",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOejhoaWx4NWkzSzA1QW5uNWY0Y2lOQ0pRYUJJYnFhTHJtb1dfNFJUMlM5aGJ2TXVXVXJEQXZVUFNOUXNVMUVnY25VUVc4a1JyZS1MaEdxRlpzaVFqLUtlSF96WVZMSFloZGFHdE4xcUVvZXFzWnR6WHdhTFIwQ1djVmJKT3dfVUpPOVluczZTS181Um42N3BydHhVb2c3czBGeG9oMWZHT2VYaVl3Zmh3WG5xMWJsSGFHa3VN?oc=5",
+      "source": "Goal.com",
+      "published": "Tue, 11 Aug 2026 03:00:00 GMT"
+    }
+  ],
+  "generated_at": "2026-08-11T10:51:21.979652-03:00"
+}
