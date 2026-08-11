@@ -29,7 +29,7 @@ def log(msg):
     print(msg)
 
 def main():
-    log(f"Deploy DIRETO Netlify {"-"} {time.strftime('%Y-%m-%d')} (Plan B)")
+    log(f"Deploy DIRETO Netlify - {time.strftime('%Y-%m-%d')} (Plan B)")
 
     token = TOKEN_FILE.read_text().strip()
     log(f"Token: {len(token)} chars")
