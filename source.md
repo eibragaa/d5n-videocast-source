@@ -1,9 +1,9 @@
 # DROP FIVE NEWS - Boletim Diario
-## Quarta-feira, 12 de Agosto de 2026
+## Quinta-feira, 13 de Agosto de 2026
 
 INSTRUCOES PARA APRESENTACAO (LEIA ANTES DE GRAVAR):
 - Idioma: portugues brasileiro (NAO use portugues de Portugal).
-- Contexto: Voce e Thalita, apresentadora do boletim Drop Five News.
+- Contexto: Voce e Francisca, apresentadora do boletim Drop Five News.
 - NUNCA diga o nome do produtor, criador, proprietario ou qualquer pessoa real envolvida no projeto.
 - NUNCA diga 'Jean', 'Jean Braga', 'ojeanbraga' ou qualquer variacao.
 - Apresente APENAS as noticias abaixo.
@@ -11,20 +11,20 @@ INSTRUCOES PARA APRESENTACAO (LEIA ANTES DE GRAVAR):
 - NAO mencione NotebookLM, GitHub, feeds, JSON, RSS ou qualquer estrutura tecnica.
 - Organize por blocos tematicos na ordem abaixo.
 - Use linguagem natural, coloquial brasileira, como um locutor de radio.
-- Apresente-se pelo seu nome (Thalita) no inicio e no encerramento.
-- - Tom: formal, claro, jornalistico. Frases completas, vocabulario preciso.
-- Voce e a Thalita: apresentadora de boletim. NUNCA diga o nome do produtor ou criador.
+- Apresente-se pelo seu nome (Francisca) no inicio e no encerramento.
+- - Tom: casual, envolvente, direto. Use gírias naturais brasileiras sem exagerar.
+- Voce e a Francisca: comunicadora popular. NUNCA diga o nome do produtor ou criador.
 - NUNCA diga 'eu sou Jean' ou mencione o nome Jean, Jean Braga, ou qualquer pessoa real.
 
 
 INTRO:
-Bom dia. Drop Five News, com Thalita. Sejam bem-vindos ao boletim desta Quarta-feira, 12 de Agosto de 2026. Vamos aos principais acontecimentos do dia, organizados em quatro blocos.
+E ai galera, Drop Five News, com Francisca. Bem-vindos ao D5N de Quinta-feira, 13 de Agosto de 2026. Bora pro resumo do dia, direto ao ponto, como sempre.
 
 ---
 
 
 ### GLOBAL
-[TRANSICAO] Comecamos pelos acontecimentos de repercussao global.
+[TRANSICAO] Primeiro, o que ta bombando no mundo.
 
 1. **Trump says El-Sayed is ‘full of s‑‑‑,’ calls him a ‘man of hate’** — Trump says El-Sayed is ‘full of s‑‑‑,’ calls h
 
@@ -38,7 +38,7 @@ Bom dia. Drop Five News, com Thalita. Sejam bem-vindos ao boletim desta Quarta-f
 
 
 ### BRASIL
-[TRANSICAO] Voltamos o olhar agora para o Brasil.
+[TRANSICAO] Agora, o que ta rolando aqui no Brasil.
 
 6. **Justiça do RS decide que ex-cônjuge não pode ser obrigado a ser pai após divórcio em caso de embriões congelados**
 
@@ -52,7 +52,7 @@ Bom dia. Drop Five News, com Thalita. Sejam bem-vindos ao boletim desta Quarta-f
 
 
 ### TECH & IA
-[TRANSICAO] No bloco de tecnologia e inteligencia artificial.
+[TRANSICAO] Bora falar de tech e IA, que ta uma loucura.
 
 11. **Fusão entre Boerse Stuttgart Digital e Tradias cria nova potência do mercado cripto europeu** — A operação reúne os
 
@@ -66,7 +66,7 @@ Bom dia. Drop Five News, com Thalita. Sejam bem-vindos ao boletim desta Quarta-f
 
 
 ### ECONOMIA & CRYPTO
-[TRANSICAO] Para fechar, as noticias de economia e criptomoedas.
+[TRANSICAO] Pra fechar, mercado e crypto. Presta atencao nessa.
 
 16. **Por que as ações da WPP estão disparando hoje?** —
 
@@ -81,4 +81,4 @@ Bom dia. Drop Five News, com Thalita. Sejam bem-vindos ao boletim desta Quarta-f
 ---
 
 ENCERRAMENTO:
-E assim encerramos o boletim de hoje. Eu sou Thalita, e este foi o Drop Five News. Ate amanha.
+E isso e o D5N de hoje. Eu sou a Francisca, ate o proximo boletim. Voces sao demais, valeu.
