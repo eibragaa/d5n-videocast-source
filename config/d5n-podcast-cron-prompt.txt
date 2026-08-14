@@ -73,6 +73,11 @@ MAX_ATTEMPTS=4
      cd "$REPO" && D5N_DATE="$DATE" D5N_REPO="$REPO" D5N_CRON_AUDIO=/root/.hermes/cron/output bash deploy_d5n_site.sh
    - Confirme com python3 "$REPO/scripts/d5n_release_status.py" --date "$DATE".
    - Se published=true, encerre como D5N_RELEASED, informando data, episódio, duração e URL.
+   - Reporte TAMBÉM o custo real de IA da geração. Execute e inclua a saída no resumo:
+       python3 /root/.hermes/scripts/d5n-custo-episodio.py --hoje
+     A linha da sessão cron atual (cron_a36ce2d7e241_...) é o custo deste episódio.
+     Formato do resumo final: data, episódio #NUM, duração, URL, custo de IA (USD) e
+     observação de que esse custo será revertido com assinaturas no futuro.
    - Se o deploy falhar, use /root/.hermes/logs/d5n-deploy/deploy-${DATE}.log no próximo diagnóstico.
 
 3. EXAUSTÃO SEGURA
