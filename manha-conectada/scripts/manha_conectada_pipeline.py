@@ -34,7 +34,7 @@ RSS_CTA = (
     "O RSS próprio está no site do Drop Five News."
 )
 TZ = ZoneInfo("America/Sao_Paulo")
-MIN_WORDS, MAX_WORDS = 600, 950
+MIN_WORDS, MAX_WORDS = 600, 1100
 MIN_SECONDS, MAX_SECONDS = 225, 390
 FORBIDDEN = (
     "e aí, pessoal", "se liga", "vale lembrar", "em um mundo", "não é apenas",
@@ -279,21 +279,21 @@ def generate_script(day: date, news: list[dict[str, str]]) -> str:
     prompt = f"""Você é editor-chefe e roteirista da MANHÃ CONECTADA, programa em áudio do Drop Five News.
 DATA EDITORIAL: {day.strftime('%d/%m/%Y')}, {weekdays[day.weekday()]}.
 
-Escreva um roteiro jornalístico falável em português brasileiro, entre {MIN_WORDS} e {MAX_WORDS} palavras, para voz masculina. Entregue SOMENTE o texto falado, sem markdown, rubricas, emojis, listas ou URLs.
+Escreva um roteiro jornalístico falável em português brasileiro, com alvo de 750 a 850 palavras e limite absoluto entre {MIN_WORDS} e {MAX_WORDS} palavras, para voz masculina. Faça uma contagem silenciosa antes de responder e enxugue repetições se ultrapassar o alvo. Entregue SOMENTE o texto falado, sem markdown, rubricas, emojis, listas ou URLs.
 
 Arquitetura obrigatória, inspirada na eficiência de briefings modernos sem imitar apresentadores ou marcas:
-1. Comece pela notícia mais forte já na primeira frase. Entregue três manchetes específicas em até 35 palavras; só então diga: “Eu sou Antonio e esta é a Manhã Conectada, do Drop Five News.”
+1. Faça um cold open com três a seis manchetes-tiro específicas, começando pela consequência ou pelo fato mais forte. Use no máximo 45 palavras e não dê contexto nessa passagem; só então diga: “Eu sou Antonio e esta é a Manhã Conectada, do Drop Five News.” Varie naturalmente a frase que convida o ouvinte a seguir.
 2. Desenvolva cinco notícias em sequência fluida: agenda do dia; Brasil; mundo; tecnologia; economia. Se uma categoria estiver fraca, substitua por uma notícia mais relevante — nunca complete tabela por obrigação.
-3. Cada notícia segue fato → contexto → efeito prático → próximo movimento. Mantenha ritmo alto, mas dê contexto suficiente para o ouvinte não depender de outro conteúdo.
-4. Faça uma notícia puxar a seguinte por continuidade, contraste ou consequência. Evite anunciar “agora vamos falar de”.
+3. Cada notícia segue gancho → contexto ou detalhe → consequência concreta para o ouvinte → próximo movimento. Mantenha ritmo alto, mas dê contexto suficiente para o ouvinte não depender de outro conteúdo. Varie os fechos: não repita rótulos como “na prática” ou “efeito prático”.
+4. Faça uma notícia puxar a seguinte por continuidade, contraste ou consequência. Use transições vivas e curtas; evite anunciar “agora vamos falar de”. Uma vez no meio do roteiro, fale diretamente com “você” para criar proximidade, sem pedir comentário.
 5. Antes do encerramento, inclua o “Sinal 11”: escolha um único acontecimento verificável que ainda pode mudar o dia até o começo da tarde e diga objetivamente o que acompanhar. Não dê conselho financeiro.
-6. Feche com uma síntese útil, diga exatamente “{RSS_CTA}” e termine com “Bom dia!”. Não faça despedidas antes do final.
+6. Feche com uma síntese útil e um CTA multiplataforma natural para curtir, compartilhar e se inscrever. Diga exatamente “{RSS_CTA}” e encerre com uma despedida calorosa seguida de “Bom dia!”. Não faça despedidas antes do final.
 
 Regras editoriais:
 - Não invente números, declarações, causas ou consequências.
 - Não diga “segundo especialistas” sem atribuição disponível.
-- Não faça recomendação financeira nem peça comentários/compartilhamentos.
-- Não use clichês, superlativos, perguntas retóricas ou entusiasmo artificial.
+- Não faça recomendação financeira nem peça comentários.
+- Não use clichês, superlativos, perguntas retóricas em série ou entusiasmo artificial.
 - Não use as expressões: {', '.join(FORBIDDEN)}.
 - Diga “Drop Five News” por extenso.
 - Não fale URLs, nomes de arquivos, emojis ou instruções de produção.
