@@ -27,7 +27,7 @@
     <podcast:locked owner="eibragaa@gmail.com">no</podcast:locked>
     <podcast:guid>manha-conectada.d5n-daily.netlify.app</podcast:guid>
     <atom:link href="https://d5n-daily.netlify.app/manha-conectada.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Tue, 11 Aug 2026 11:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2026 11:00:00 -0300</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/manha-conectada-cover.png</url>
       <title>Manhã Conectada</title>
@@ -36,9 +36,25 @@
     <copyright>© 2026 Drop Five News</copyright>
     <generator>D5N Pipeline — Manhã Conectada</generator>
     <item>
+      <title>Manhã Conectada — 14/08/2026</title>
+      <itunes:title>Manhã Conectada — 14/08/2026</itunes:title>
+      <itunes:episode>12</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>06:02</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <guid isPermaLink="false">manha-conectada-2026-08-14</guid>
+      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-14.mp3" length="8685652" type="audio/mpeg"/>
+      <pubDate>Fri, 14 Aug 2026 11:00:00 -0300</pubDate>
+      <description>Manhã Conectada de 14/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:02.</description>
+      <itunes:summary>Manhã Conectada de 14/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:02.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 14/08/2026</strong></p><p>Manhã Conectada de 14/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:02.</p><ul><li>Lula: Estou tentando falar com Trump para não se meter nas coisas do Brasil - noticias.uol.com.br</li><li>Notícias sobre edital de 13 de agosto de 2026 - estrategiaconcursos.com.br</li><li>Os perfis no Instagram que espalham desinformação e aplicam golpe em migrantes que tentam chegar a Ceuta - BBC</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    </item>
+    <item>
       <title>Manhã Conectada — 11/08/2026</title>
       <itunes:title>Manhã Conectada — 11/08/2026</itunes:title>
-      <itunes:episode>14</itunes:episode>
+      <itunes:episode>11</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>05:18</itunes:duration>
@@ -54,7 +70,7 @@
     <item>
       <title>Manhã Conectada — 10/08/2026</title>
       <itunes:title>Manhã Conectada — 10/08/2026</itunes:title>
-      <itunes:episode>13</itunes:episode>
+      <itunes:episode>10</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>04:40</itunes:duration>
@@ -66,54 +82,6 @@
       <description>Manhã Conectada de 10/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:40.</description>
       <itunes:summary>Manhã Conectada de 10/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:40.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 10/08/2026</strong></p><p>Manhã Conectada de 10/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:40.</p><ul><li>Desenrola Adimplentes começa hoje após ajustes para atrair os bancos - O GLOBO</li><li>Piauí lidera ranking de calor e baixa umidade no Brasil - SBT News</li><li>Saiba como pressionar os senadores para acabar com a escala 6x1 - TVT News</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Manhã Conectada — 06/08/2026</title>
-      <itunes:title>Manhã Conectada — 06/08/2026</itunes:title>
-      <itunes:episode>12</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>04:20</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
-      <guid isPermaLink="false">manha-conectada-2026-08-06</guid>
-      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-06.mp3" length="6236830" type="audio/mpeg"/>
-      <pubDate>Thu, 06 Aug 2026 11:00:00 -0300</pubDate>
-      <description>Manhã Conectada de 06/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:20.</description>
-      <itunes:summary>Manhã Conectada de 06/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:20.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 06/08/2026</strong></p><p>Manhã Conectada de 06/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:20.</p><ul><li>EUA esperam que Irã responda hoje sobre proposta de paz - cnnbrasil.com.br</li><li>A dois meses da eleição, Brasil enfrenta crises diplomáticas inéditas com EUA e Argentina - bbc.com</li><li>Governo cria conselho para gerir verba do Brasil Soberano 3 - SBT News</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Manhã Conectada — 05/08/2026</title>
-      <itunes:title>Manhã Conectada — 05/08/2026</itunes:title>
-      <itunes:episode>11</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>04:07</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
-      <guid isPermaLink="false">manha-conectada-2026-08-05</guid>
-      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-05.mp3" length="5925868" type="audio/mpeg"/>
-      <pubDate>Wed, 05 Aug 2026 11:00:00 -0300</pubDate>
-      <description>Manhã Conectada de 05/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:07.</description>
-      <itunes:summary>Manhã Conectada de 05/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:07.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 05/08/2026</strong></p><p>Manhã Conectada de 05/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:07.</p><ul><li>Revogação de visto de embaixadora do Brasil nos EUA é 'instrumento arbitrário para pressionar governo brasileiro', afirma analista - BBC</li><li>Brasil Urgente ao vivo: assista ao programa agora - band.com.br</li><li>EUA esperam que Irã responda hoje sobre proposta de paz - CNN Brasil</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Manhã Conectada — 03/08/2026</title>
-      <itunes:title>Manhã Conectada — 03/08/2026</itunes:title>
-      <itunes:episode>10</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>05:00</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
-      <guid isPermaLink="false">manha-conectada-2026-08-03</guid>
-      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-03.mp3" length="7209212" type="audio/mpeg"/>
-      <pubDate>Mon, 03 Aug 2026 11:00:00 -0300</pubDate>
-      <description>Manhã Conectada de 03/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:00.</description>
-      <itunes:summary>Manhã Conectada de 03/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:00.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 03/08/2026</strong></p><p>Manhã Conectada de 03/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:00.</p><ul><li>Trump anuncia começo de novas negociações com Irã hoje; petróleo cai - CNN Brasil</li><li>'Lula vive um efeito Biden', diz cientista política americana sobre desânimo do eleitorado brasileiro - BBC</li><li>Por que impedimento semiautomático não é utilizado na Copa do Brasil - UOL</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
       <title>Manhã Conectada — 31/07/2026</title>

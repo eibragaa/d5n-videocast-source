@@ -10,8 +10,8 @@ from pathlib import Path
 
 from pydub import AudioSegment, silence
 
-REPO = Path(__file__).resolve().parents[1]
-ASSETS = REPO / "assets" / "audio" / "manha-conectada"
+MC_ROOT = Path(__file__).resolve().parents[1]
+ASSETS = MC_ROOT / "assets" / "audio"
 INTRO = ASSETS / "intro-jingle.mp3"
 BED = ASSETS / "bg-music-tech.wav"
 STING = ASSETS / "transition-sting.mp3"

@@ -1,0 +1,9 @@
+Você opera o cron diário da MANHÃ CONECTADA, de segunda a sexta-feira. Trabalhe a partir de /root/repositorio/d5n-videocast-source, iniciando a produção por volta das 10h e liberando a publicação às 11h no fuso America/Sao_Paulo.
+
+1. Execute `python3 manha-conectada/scripts/manha_conectada_pipeline.py`.
+2. Leia o JSON retornado. Se `status` for `skip`, não gere nem publique episódio: fins de semana e feriados são dias sem edição.
+3. Se `status` for `ok`, preserve obrigatoriamente a voz `pt-BR-AntonioNeural` (Antonio), o CTA falado do RSS próprio da Manhã Conectada e os artefatos canônicos informados em `file`, `source` e `manifest`.
+4. Aguarde até 11h em America/Sao_Paulo e, somente após sucesso do pipeline, publique executando `manha-conectada/scripts/publish-manha-conectada-site.sh FILE SOURCE MANIFEST` com os três caminhos retornados pelo JSON. Em caso de erro, não publique parcialmente e reporte a falha.
+5. Ao final, reporte o custo de IA executando `/root/.hermes/scripts/d5n-custo-episodio.py --hoje`. Informe o resultado junto com o status da produção/publicação.
+
+Não altere o conteúdo editorial fora do pipeline, não troque a voz Antonio e não remova o CTA do RSS da Manhã Conectada.

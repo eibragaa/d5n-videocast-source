@@ -1,0 +1,203 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-08-14",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/manha-conectada/audio/manha-conectada-2026-08-14.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/manha-conectada/roteiros/source-manha-2026-08-14.md",
+  "sha256": "45774a91594980e2c0f2eaf3db319d56c7b7ca0a48e52347d96a45fef75a4a2e",
+  "text_gate": {
+    "words": 931,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 380.760816,
+    "size": 9138929,
+    "bit_rate": 192014,
+    "lufs": -16.58,
+    "true_peak_dbtp": -1.69,
+    "lra": 2.9
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Lula: Estou tentando falar com Trump para não se meter nas coisas do Brasil - noticias.uol.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcC1pa1B3WFV2bTFwRHJOYlUtUU5nMTFrN1E2cGtKTk5mNE4tVjMyTi00MWQ4eXo5TnMyVUJZQXVqbHJXZnE5eVpyaUloWlZXNGhrQ29oWHFwVzBuQlRjNzA1RllFcURIVkw4bm5UaGpzaWRmbW83MkNGNTlER0JTYU00dFdRU2dvbHZXcTByNUlEMFFycmI0UEhTcHd4RGx5Ymdv?oc=5",
+      "source": "noticias.uol.com.br",
+      "published": "Fri, 14 Aug 2026 19:04:45 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Notícias sobre edital de 13 de agosto de 2026 - estrategiaconcursos.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMnJBV3gyakFCZTFwd1hhLWttdVJkakRtem1ocEpVMFdySE1QaHlSdS1BOHM3cWJoNDhyTjVjX0hDakFjeE5TSkNGSktEUHpRb2ZyZE5RdzJQZGsyTmtQWGxjN2lKeUFReTBVNWpmbXJkV25yRGxtNzBqVE5mTmJFc0IyTWttRVN50gGOAUFVX3lxTE9oRmp0b1FuVTFxWllLaGIzcW02T1FSbHBEMmJ4V0cybGVCY01Hck1BbjhsNDRHQkVqUENBYWlhLUtXbDBiRzNiUTVILUJMeUFTUF9YMXdMSEpSczlQNTBRNnZuYngwRHJxeU5HZEVmWnhWdklhR0hNWEViMktCTkt3dzFkZUJPLUlkaGJDamc?oc=5",
+      "source": "estrategiaconcursos.com.br",
+      "published": "Fri, 14 Aug 2026 18:18:27 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Os perfis no Instagram que espalham desinformação e aplicam golpe em migrantes que tentam chegar a Ceuta - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBDQTFPTkpIX0QyWmxGTTVQNGhxQnVUaXJ0MkRjTmJoamZWWTh0bHY3RHVYTTNFRzA3N3NCTjU3bVJPcWljQzg2V2tXMzBwd1FnSTZiaEFNZ2hibElDTHJES2pB0gFnQVVfeXFMTkpoZDk2YUR0UzM0ZmoxVUVjanNRRklEa3NPd0lVb0x6OUpPMGJQSEZiY1NNbTRna0NQTVJvY0R0Z2tKbVBSc2ppSnY4NVVrUlJwYlR1Qm1XU0N0QjJDNjZPN1Jqc0kxUQ?oc=5",
+      "source": "BBC",
+      "published": "Fri, 14 Aug 2026 16:56:13 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Varejo nos EUA, PIB na Europa, desemprego no Brasil e mais destaques nesta sexta - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPUHJFUmJhYWU0T3IwQ1NVUzJWZmwzZ1RiSUlhVWJrMGw4NERFYWpsM2tVRVoxdVgyTWI0bzVxYmFsVDlwUkVhOEMxN3E2d19UR043TXZKS1pYVTV5a2s2STVFRENqdFgyWm85WnBmc05ZTFFzdUlZc3llOTZCTWJBUF9qcS1qQTlEa3hsdWNRN3fSAZYBQVVfeXFMTjQzNlNXa1RkeHBWbktkeTlYOHJIeldZWmZZc1BldDBMdVJ2OHFPWFhmN0FXQ09CQ3hvenZlc1V2Wi1RUkEyM2U5bU1ieDJfNEEweC14Zjd5SjNtVDZhcXlEeFZSUU5SbnJLSUd3YWxlb0tYcEZKcXRkQXRrRlBoTXNvYjQwZkZsZkhZT3U1Ul9LQlNLRVV3?oc=5",
+      "source": "InfoMoney",
+      "published": "Fri, 14 Aug 2026 09:12:34 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Mercados hoje: taxa de desemprego no Brasil e dados de varejo nos EUA estão no radar - Bora Investir",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNNHRuSTRkREtqSzgxQkdhMndfT3VCNXZHby1OdGlHNnRxYlljQUlFS0hwRGxnTE9VcWxXVU8zVXFnbFJ6Nnl6TWFtTGt1RzRYLVl4Y0hicXVOZ2lXWGFXTFVSb3doaVF6NXpqeE8yMDg0eFlUYlhoZ0ZHVzlOTDZ3dVhJU3FQTU1BVU9kVHlWQWlpZ01MUGx2aHZuZjJTYTZSSU1ZT0V3bTd1Y21DMTdIYzl3MlhpcGJ1SV9rWTdGVjVGQQ?oc=5",
+      "source": "Bora Investir",
+      "published": "Fri, 14 Aug 2026 12:41:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "EUA ameaçam Irã com isolamento econômico 'como o mundo nunca viu' - G1",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNU1QtS3Z0Y25lLUJkVEp0LXNyeXJxZ3Rxc1Utamp3S1FaX0dQdk01QXJMeWpoUVROLUpSVFRtaEFWeThVVld6THg3MTFhTllYeVdSQ3lCa2xHQW40em95TFhCS3hlZG80YlRId1VIVjVuN05pZ1d1X19OTGhZazF5amVXQkdBTTd1TjRUOTlyMHFidlhiQW5mOTBYS0hPRElWZWxaMTVwY0h1VEZyeU95TWRCaVDSAcMBQVVfeXFMTkJabFBMVUxUaE9RRjhsNFRhWEZzdlJfbjhWZDhXM1EzVVpFZERqRFBBVG9iclYyOEZsMDJva1N1QW8yTTJ2MW5LV1U4MUVDWklGOFltLUdoLVgySVZxbWlYbm9PNTlBSHZLSnRhbGNwUGdLbmdCS0J0TmRJdHhGMGVlUkQ1U2JSMVk0aGdWTTRuc2owSnpoSjJhUDlHVmc4aWpDamtPd0o4QWwxZTROWXpXbDNVdEZqSWtsU3FBQlh6dkZr?oc=5",
+      "source": "G1",
+      "published": "Fri, 14 Aug 2026 10:01:30 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Lélia Gonzalez - Um notável legado por um mundo mais justo - Vatican News",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPaWF1YkVHRERtT3VaOWZaOEVGY3AxR0xQekNDMmJuVzVicHRObllPdXV4RHlTaUVKWVJCR2RIdnY2UUpQcEVjTG9xWXRoR3RTN1hrZERPVmRoWmliY3pxV280WnVfWkxnMS1PTjI4UlRpNC1xN0l4eVVYaFdSMGdkTWtoWG85eG9QdldVZlVZSlNJaHNQMXZqeXQ0RUxqZ2xuNGNlc0FnOVRWa2pUSy1iWA?oc=5",
+      "source": "Vatican News",
+      "published": "Fri, 14 Aug 2026 16:18:23 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Petróleo oscila com bloqueio no Estreito de Ormuz - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPQmtLejVtYkFGaUxubnBoTnlZSlI4ajRSZWNFX0NLZkdyMUl0UTlTS3pkMDliSHY1R1RwRWVpRkN5TEpTbEVXN1dOcG9Hdk9JQl82ZC1zZ24waFBNci12MHAwME5VSXBiNFM4RHNGcUdfSHItUDVJVVJQR1AycFdyTUpPNXMwT3NDOGhKWmc3VFBIaU5w?oc=5",
+      "source": "SBT News",
+      "published": "Fri, 14 Aug 2026 14:28:11 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Fim do mistério em Quem Ama Cuida: Saiba quando Heitor volta do mundo dos mortos - noticiasdatv.uol.com.br",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQXzZhS3FvX1k3bnVtaUhSVnRNeTJKNWpJZ2tXdmpZRS1oeVoyTUJ6S3JHcms4Y3VxczZzX0h6enlXX1NPRUxzbzRxWW45cnJWd2dOVG9STWRmeVF4OERZcFNkZzJwb0Rvb3lpNS1uRUt2TnRyOHpLOFJzN3hucUMtSDl6TmZGR3gteG5xYlllRExpLTNGd19vUEhDR3ViWkpwSlR4bG1IMVJQd3ZERTNpdnd6dkN4ZmZ6V3Y1NHBBMDNOSTUyWHNSYlo4LW90XzDSAd4BQVVfeXFMUGktZi1VUEx2cDllSW9iZ0lKOVRoS1RxemM4V1ZQUU9GcFZxeWJyeDloN3dDRjhIeFZ0WXVFUjdLU2NNZEE3UHlycFhPRTBiY2Q2eVQ1amdPN0txMGVKWXN4djNPaTBweF9mOE1rV21RNExzTUg0OWZ1eGFFSVNzU3V6aTB1RzQ2cFdoM28xRExmZ1IwNmJtZldlUnRQQWlBRUdSMk9yLTRiYzlFamNLTG1mVElUYWFSVEhOZnJnS0FXVEZFMXdXbWtqTktJeE8tQ2lWS29DVmMxS3dkZ2FB?oc=5",
+      "source": "noticiasdatv.uol.com.br",
+      "published": "Fri, 14 Aug 2026 17:02:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Veja as notícias do mundo dos esportes no Jornal Hoje, 14/08/2026 - G1",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPY2FRdURZN0htR1VhbkZ3UkZleW5HLXdKamxLSmlBaDdDQ2dWVHc0dk92QXNNU1RfQkFhZDROX001bnVIY2Q0RUJOVE4wRVZPUElvSTZyOFpBODhWcUMyX3RlbGZUMWoydHloZ1FXUElkVEFWSHJoWnp4YUVJR214X3RzMW9GdDRQUGxMSmhDWmpQU25rS0ZXYTVkdzEyTjdDajBYS1liNG41TVY0a1NrbDgwaFg3c03SAcYBQVVfeXFMUEpSNC1WQmdEeHJSRGZFckdIc0hLakMwTnVkcGRjbUJjMzNNbk1fS2M4OUtSenduSEQ0ZzhUQzBSbFhiWWxFVVVrUS1GWnY2WUNsTWt4cTNXX3R4N3FaUUsxLVJfQmxfUUZsM2lyX0tzVGRpdi1UcFVzaklCZUdTaTIwOTNpR0J5TlJRbzhGYmNZRGFvWWwyWGk5TkFmcHBDNGVOelpjZU03NnQweURXMlY5Skp1WWg5ZnVfSDJFUVBoNlZWem9B?oc=5",
+      "source": "G1",
+      "published": "Fri, 14 Aug 2026 18:11:46 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Olinda lança projeto pioneiro com relógios e inteligência artificial para monitorar pacientes do SUS - Prefeitura de Olinda",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPZUMzNTM0UzVtcnd2bEYtSmMyM0RyMkFCeFUwN3V3WnlaLTUzMjZndll5MjFqckFRNGREZi1sN3VtamwzXzA0YnZCRU9DdmFQWFpoYU9sMU1ZUFdHX0xmSTBGVVhvejl5Nl8yZFFpbFprQTItTm9yUmYxR1I3R1M3cWJoSEFmQi1HdGU1bE5vQmgtaXVwYW5sNS1yMXFGbU9lWHBmUm53eUZTUFV6TUdNSXBCWF9TYVY1YnpPSnRXWl9fdVdOUm8zdGxxZGp5TzVIaFJxZg?oc=5",
+      "source": "Prefeitura de Olinda",
+      "published": "Fri, 14 Aug 2026 20:03:36 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Inteligência Artificial amplia ferramentas para professores e estudantes - Diário do Poder",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOOW9BYlFIOG14N293VWlTNVNSQmtNS0padi1XN1FabjNfaS0tdWphb0tla1ZWZnd2anVGRWI4eGdxNERXT3JVV0Z1MUJadFl1Tk5rd2s3NFAxQzY3d0RCZzJQNHg0QWExNi1XQU5wRy1yRlFXUXVtdWI3OFo3dkxpdTM0aXVuTnFZOWw1SHhIaFkzalc4R3ljNm5TcjE0UkFvUWFod2JfSzRuMzRmNkpZVE91Q2RWeDBEMi1rMGQ1a283c2FGS1hKddIBzgFBVV95cUxQTl9nSkctam0tdW4tZl9QZ0tIMGJocGR0NEJZdG1QeDRjZGpoTzBwakt5bURORnducm9GVHhYa3Z2VTdYaS1qbG9PMFR0aGtfb2JXaG9PanFIREtyYlNZNXNiNTgxYVlhUHJZUTZnWVdyUmxjeWhGaG9RUEt4X2JnSU5zVzk3RU9KWUM2bklFcVdfeWY4RkM5dGJINm93cl9rUF9BXzJUNVp0YUhMbEtQb0VBNlBHRGlDaG5EVWdTcktPbkE0LUd3S0paVEpGUQ?oc=5",
+      "source": "Diário do Poder",
+      "published": "Fri, 14 Aug 2026 19:47:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "O caminho (sinuoso) para o País ter uma inteligência artificial made in Brasil - NeoFeed",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQN19zQ2oxVFN2SFU2c3ZKR3VNeTZmMUU4OG90QjVPNFU5MC03NnBNU0IxN2ExemtyUjFfOGc0V2ZMQmV3SEpEdjBwOG9RTWFySEJSYmExUDQ5YmRNY2t5TDFEMDVHT3lLMGsybFNXWUtvTkJtdHFQZ0pSNHo3aHl6UnJUXzFVWDY2Zmh2SlJCeEtEZVZMTF8tQWs0VVhwV3NlNE85ZWx0Z2NNdw?oc=5",
+      "source": "NeoFeed",
+      "published": "Fri, 14 Aug 2026 14:08:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Leão XIV escolhe limites da IA como tema da próxima Jornada Mundial da Paz - SITEPD",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNNEZvNnAzc3BYQW9HZnFoQklJWDlYcENUbmZHQVpwRDN4ZEhlcl9SOTZKMkxYZk8xaHktdG9uUzBFN1BteFFGTmlfRXprTzFSVEsyUzRCSXRrOHFPNXNaSUl4TzhLOHc3Y3MyczlQSFVkdTVzdVBiYjhmLVFZR19kTkhBY0h2bkt1NzNLZ3RXSDV5dk14eXhqcEpkYzR4RGdXemZPd1k4TEw2ZGRr?oc=5",
+      "source": "SITEPD",
+      "published": "Fri, 14 Aug 2026 19:52:25 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Os desafios de se regulamentar a IA no Brasil e no mundo - Olhar Digital",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNRVI2NnVEeEcwR0thZGZQTS13eGVCNUEzeEpTYTB4Z3cxenRxeTRIam9JcVhFM2ItQ2ZvR1BxMUZIMENuUVZ4V2Z6Q0Q0eGM5LWNpM0pTSWIwczNGWXUtNWN5SFZ2SklfWUlENVZhck0yaHFvTnlDV0VXOTNzRGlzNkNjQVR4RDJ2ZGR3N2UyWUVtRHJCUFdZUERMWHFGLVZibWQxcVJoOW1WeThjR3JpdEtLVmlVTDFQMnplbQ?oc=5",
+      "source": "Olhar Digital",
+      "published": "Fri, 14 Aug 2026 16:46:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "O que o Brasil ganha e o que arrisca ao acionar lei de reciprocidade para revidar 'tarifaço' dos EUA? - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBpRHBfN3VhY3diamRTZU5GTGRZVGZyclBQU0R4U3NuNERFZ3QzUXRtZzF2YmdsbmhqaWlhVm9XRG0xelpNd2lNb0wxQXkteVNvQ1dEMWt3MG4tdVJUZ3Jvbk9B0gFnQVVfeXFMTlh4UENKbTdBSnhtMXcyaGxFUmstWC1tdzRzOUZpU25vaUxPZG1IRXhKdzdwMEhDZW82UHgxS0pjcnJFMzR3X084VGFHMF9BZmVlVWxlck9RNm93V2ktOHdXQ2F6d0VIUQ?oc=5",
+      "source": "BBC",
+      "published": "Fri, 14 Aug 2026 17:59:06 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Economia em Destaque: Aumento da percepção de risco pressiona ativos brasileiros - XP Investimentos",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOQ2UzalhxUUd6QncwM3RSanI5dE5kVmRzWl9lcEZ4a29hbHFNb0dkSjRhOFUtRDJjeHU0Wi1qaHZIWm9iZDd4R2tzZGVzTlVKTEEyNlpTeHhWOVJMOEl4R1Y2TkZ5RVkxUHZMZmtZQXpTdUxmMTBCNnpCd2p6WXZyazlFSzhQZjV5SjBhazBySDJyMXVPa1N3c0N2dFRhWGlOaHZMUXg5RnRwWmhLd05Uek1JeEEwOUUxMFE?oc=5",
+      "source": "XP Investimentos",
+      "published": "Fri, 14 Aug 2026 20:15:50 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Por que quase dobrou número de CEOs no Brasil planejando investir mais em IA para força de trabalho - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQbUhkeXVNNmQ0ek9PSXZscFdyeXotTHQtdDBTWTNwd2ROSTJVcXFlZ2l5WEpDb3ZHdF8wcURVclBYbW03ZS03eExQbnI4WDBMUFdwVDlYUkpPZ3M3U0g0dGJRR1VpZnBxck15V3N2N0VycVRaaU1CWGk1UExKSzk3N2JCX19Vckc4eDZYcWlRa1hRazFwUzlQaXFuM2ZUa3lwckZqdmcxNFlNc2RKdS1pdzN6Y3JGaEdGSzNXTDFrSzV6c3lqYTBmX2VQZ1VWaDNpSjNNV2FBaG53RkEyZXNWUtIB5gFBVV95cUxNNExaZjZYalplS3JsN0xQSGd4VURrdWxKbjliUWI5YVd2VmZNWTZ2c24tWko5cUtYMW9VR0IyV1NfRlJrMk1GVl9vRFV0YVA5OEo4RlVLZV9uMDZvS2Z6enVOb2FxU25idEdndFlQTl9aemtsZTFMUmxQM3Fycmk3ZW5CUXpCZnh6OTR6YjVlMERIUnFJaHJSOGk2QnI0MGg4Y25EcThKaXhPS1hFNi1lMVhBSTN0eG5IVVlUa05wLVR0cmZQcVNUeGRmSmp5Tm5xaEhqd25TX3E1TEpKM1JZRHRnWml4UQ?oc=5",
+      "source": "Estadão",
+      "published": "Fri, 14 Aug 2026 18:09:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Ação de reciprocidade será longa e exige 'ajuste fino' para não afundar mais a economia, dizem analistas - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNMDBZY3ZsQUV1UGZJWmdCdWxUUGYzdmZMRXhYVHJqMTFuWGFFeUhXSjBaTW1aQTVyVFBXZE1zOWJtWWs3ODhVM0lrcVZHcmt1Ykd4Sml6SkhJY1JSWmxhbnp3MkNIcGNMR2c2TThlZFZZUE1BNDVVenMyTlh6bFc5ZW1NemZHbTc0YnZfNWljckxMcXMwdEdoSXd3T2UySFg3NjJtWHZZZ2NRckw1aVVJVzM1R3d4NDkwaHM3UU9OcFFvdXF6Wkg2X2twcjFsbjkxcklONENZSEFjV1VCNVl2Yjhxb1c5ZWpZ?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Fri, 14 Aug 2026 20:15:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "“Uma guerra comercial não interessa ao Brasil”, diz FIEMG sobre retaliação ao tarifaço - VEJA",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNTDhlcTRMTWt5RzJqUE1XZDZ6MG53d2w4QVVYRFJ6Ql85bVZON0NCR1VWVkNIZmVQZjBjWDRUejBHUU15Y2Q2ci1nT3AtTXJTN2N4MWZYWnZQUUVhS2FiQVNUOGNwMGE4UlhlbjlkUTJYSU1kbG1OemF3b09RUnFaWF85b0gtUE9idlRNYzJXc09Dd0dSMnJvWmF5blFhalJJU2RzT1pMQ2xLS1d5aWRMMFBuZUNtaW5pMlpz?oc=5",
+      "source": "VEJA",
+      "published": "Fri, 14 Aug 2026 16:58:21 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Foo Fighters e New Order anunciam novos shows no Brasil; confira agenda da semana em SP - Jovem Pan",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPNlpXdFNKYXlneXhTR3BDVGxiYkw2d2c5NGNSUklETnYxTTM4NEd3aWlLUWl2V0VlRmhCMUNObW9COUdHVEJQV2VrYV9FNDd4TGNRby1aaW1ZeDVOY2tFNG14Z2JPVGQ4X1R6U3Y2OG5lOGsySTN1c2M4X3J3eHVWWVpXZENZcWtUMWFqd0ZOYkpnd0lsZVVEcG1VU0lTTFBVZzBITE0tMXlTTGN2SElLTHNfQWgtd1dfeE5WUnFXUWVaZkNfZlBDdGlvdVd2QXJ2V2M1Rk1B?oc=5",
+      "source": "Jovem Pan",
+      "published": "Fri, 14 Aug 2026 19:08:59 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Fronteira entre Brasil e Argentina ganha agenda conjunta para fortalecer pequenos negócios e integração - Agência Sebrae de Notícias",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQR0dIY0w2RE5ONi1DNDNCT0JSVTEzNnprU3RXcFBHdFVaS213cDctN1FXd092Skk2MlpCc3Y3M3dKWnAycGROWGFTYnJKWkNaeDNZTVlOTnpsbmFnRk9QTjZBeDMwR0liRDJLOTRqMWhwMjZJMzQ5NUJNYjlvOUstcjVET3BMQTNVWjNnSHB3VFlIa0gwcWsya1NMQkxGekhacG4ybi1qRVhqakYxMHk4dVlzR1FSUW5uWDBsMDhGWEpqVzAyV2hVMzJGYW54WEtRenRWVWtTdkNEYkJfaHFKTV83cElLdFNmUE9r?oc=5",
+      "source": "Agência Sebrae de Notícias",
+      "published": "Fri, 14 Aug 2026 15:33:52 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Lula e Sheinbaum reforçam parceria entre Brasil e México em comércio, energia e agenda social - TVT News",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxORFNSUGV2aWg1aVd1R21GcWRIcnJQeVA0SEtqS0ZxOFVSWjNuazdTUFZLdDFia3BZYVliSlJ2RXdwYV9feTg1UFQtZTF4d2p0VHdmR3lYbjFfRkZxZUhqZFpxWlQzckNhNEZfV1dIZTJ2V3drVlYxYnBxUEpxV2RIeA?oc=5",
+      "source": "TVT News",
+      "published": "Fri, 14 Aug 2026 15:25:29 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Candidatos ao Governo do Maranhão divulgam agenda para hoje - G1",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOd2d6Tlc2MXpvUFpkVW16c01BTmJDOUwxMDNYNS1rYVhYQkFNQkRvSjFReWs3aEJCNTBtMUpNVkVvNUtyM0NjUHlQV2Y4Tk1vdWJFTVRXZ09aV3NNLS1JWGdzMEpsR2t1V1BrVk9UczJlR1B0cjZ2a0ZtRGtMYVZPWE9yeTVfN0MtamFYUXFaYUQ2cDJ5eFhhVE83Vlp0Q3loVkJyeUhFRVF6dnVHX3Bldm5pbE5CMGcySEdYdTBnQ1JadzhOemJUQ3BoTzBDRmvSAd4BQVVfeXFMTjBORE1wTGFFZUdQTHVCUnJjdFhfNWdNX0RIalhwQV90bnhrTUpQUUZ4ZEV2REpMSVJZdWptZTZKLWRvQ25IcFNXdThuTEdvSTNJZ0ctWVI5RDUycTA1ZzZISGdPbGRPOC1UU2dsOWhRU2tfb05hMVZmcGxGdE5yUWYtTkE5X2lPSE9qZ0I5bXFLR1BGbDdTR3BuelpYbmhXYUY5NjlVTDNfTDRUUG5WdlJTVVpmaVFZWFJGNGhNMWZSWV95bVhUTWNnM0NkSzRsQV9rdkJvQWo0NVlZX0l3?oc=5",
+      "source": "G1",
+      "published": "Fri, 14 Aug 2026 15:43:32 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda de Sexta: Jackson Lima, gastronomia e arte no ES - ES Brasil",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPUTBMdTBqbEo2WmZZZWtsdmYtbEVtcEkxak1hRk93N0V1VzlvRlNYdlhLdUFKOHh6S2plMW41Y09oUkJwX1k0MWpoWWp4UVRpX3pjVVNQVFdjUlMxYmdPd3EyY2M0aXNUeUJRWTMtbk9lTUZVRlNpZkV4MGZ0SUMxU1VQWm0?oc=5",
+      "source": "ES Brasil",
+      "published": "Fri, 14 Aug 2026 12:00:00 GMT"
+    }
+  ],
+  "generated_at": "2026-08-14T17:52:34.930105-03:00"
+}

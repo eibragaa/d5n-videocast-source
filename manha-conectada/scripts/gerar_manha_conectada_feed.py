@@ -56,7 +56,7 @@ def _sha256(path: Path) -> str:
 
 def load_episodes(repo: Path) -> list[Episode]:
     """Carrega somente manifestos canônicos e falha em inconsistência publicável."""
-    manifest_dir = repo / "manifests" / "manha-conectada"
+    manifest_dir = repo / "manifests"
     audio_dir = repo / "audio"
     episodes: list[Episode] = []
 
@@ -221,10 +221,10 @@ def feed_has_episode(feed_data: bytes | str, editorial_date: str) -> bool:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--repo", type=Path, default=Path(os.environ.get("D5N_BASE", Path(__file__).parents[1])))
+    parser.add_argument("--repo", type=Path, default=Path(os.environ.get("MANHA_CONECTADA_ROOT", Path(__file__).parents[1])))
     parser.add_argument("--check-date")
     args = parser.parse_args()
-    output = args.repo / FEED_NAME
+    output = args.repo / "feeds" / FEED_NAME
 
     if args.check_date:
         if not DATE_RE.fullmatch(args.check_date):
@@ -242,6 +242,7 @@ def main() -> int:
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(f"ERRO: {exc}", file=sys.stderr)
         return 1
+    output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(rss, encoding="utf-8")
     print(f"✅ {FEED_NAME} — {len(episodes)} episódios; mais recente: {episodes[-1].editorial_date}")
     return 0

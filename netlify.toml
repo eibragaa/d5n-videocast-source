@@ -90,6 +90,21 @@
 
 # 404
 [[redirects]]
+  from = "/manha-conectada.xml"
+  to = "/manha-conectada/feeds/manha-conectada.xml"
+  status = 200
+
+[[redirects]]
+  from = "/manha-conectada-cover.png"
+  to = "/manha-conectada/assets/manha-conectada-cover.png"
+  status = 200
+
+[[redirects]]
+  from = "/audio/manha-conectada-*"
+  to = "/manha-conectada/audio/manha-conectada-:splat"
+  status = 200
+
+[[redirects]]
   from = "/404"
   to = "/index.html"
   status = 200

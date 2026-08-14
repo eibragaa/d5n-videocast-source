@@ -12,8 +12,8 @@ from pathlib import Path
 from urllib.parse import unquote, urlparse
 from zoneinfo import ZoneInfo
 
-REPO = Path("/root/repositorio/d5n-videocast-source")
-FEED = REPO / "manha-conectada.xml"
+MC_ROOT = Path(__file__).resolve().parents[1]
+FEED = MC_ROOT / "feeds" / "manha-conectada.xml"
 PUBLIC_FEED = "https://d5n-daily.netlify.app/manha-conectada.xml"
 TZ = ZoneInfo("America/Sao_Paulo")
 now = datetime.now(TZ)
@@ -30,7 +30,7 @@ except SystemExit:
 except Exception:
     pass
 
-manifest = REPO / "manifests" / "manha-conectada" / f"{day.isoformat()}.json"
+manifest = MC_ROOT / "manifests" / f"{day.isoformat()}.json"
 issues: list[str] = []
 try:
     m = json.loads(manifest.read_text())

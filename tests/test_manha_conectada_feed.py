@@ -3,13 +3,14 @@ import importlib.util
 import json
 import sys
 import tempfile
+import tomllib
 import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
 
 REPO = Path(__file__).parents[1]
-SCRIPT = REPO / "scripts" / "gerar_manha_conectada_feed.py"
+SCRIPT = REPO / "manha-conectada" / "scripts" / "gerar_manha_conectada_feed.py"
 
 
 def load_module():
@@ -29,7 +30,7 @@ class ManhaConectadaFeedTests(unittest.TestCase):
         self.addCleanup(self.tmp.cleanup)
         self.repo = Path(self.tmp.name)
         (self.repo / "audio").mkdir()
-        (self.repo / "manifests" / "manha-conectada").mkdir(parents=True)
+        (self.repo / "manifests").mkdir(parents=True)
 
     def add_episode(self, editorial_date="2026-07-31", *, prototype=False):
         audio_name = f"manha-conectada-{editorial_date}.mp3"
@@ -47,7 +48,7 @@ class ManhaConectadaFeedTests(unittest.TestCase):
                 {"title": "Mercados acompanham novos indicadores"},
             ],
         }
-        path = self.repo / "manifests" / "manha-conectada" / f"{editorial_date}.json"
+        path = self.repo / "manifests" / f"{editorial_date}.json"
         path.write_text(json.dumps(manifest, ensure_ascii=False), encoding="utf-8")
         return audio, path
 
@@ -97,8 +98,26 @@ class ManhaConectadaFeedTests(unittest.TestCase):
 
 
 class ManhaPublisherContractTests(unittest.TestCase):
+    def test_netlify_preserves_public_feed_cover_and_audio_urls(self):
+        with (REPO / "netlify.toml").open("rb") as stream:
+            redirects = tomllib.load(stream)["redirects"]
+        rules = {rule["from"]: (rule["to"], rule["status"]) for rule in redirects}
+
+        self.assertEqual(
+            rules["/manha-conectada.xml"],
+            ("/manha-conectada/feeds/manha-conectada.xml", 200),
+        )
+        self.assertEqual(
+            rules["/manha-conectada-cover.png"],
+            ("/manha-conectada/assets/manha-conectada-cover.png", 200),
+        )
+        self.assertEqual(
+            rules["/audio/manha-conectada-*"],
+            ("/manha-conectada/audio/manha-conectada-:splat", 200),
+        )
+
     def test_publisher_generates_validates_and_commits_the_feed(self):
-        publisher = (REPO / "scripts" / "publish-manha-conectada-site.sh").read_text(
+        publisher = (REPO / "manha-conectada" / "scripts" / "publish-manha-conectada-site.sh").read_text(
             encoding="utf-8"
         )
         self.assertIn("gerar_manha_conectada_feed.py", publisher)

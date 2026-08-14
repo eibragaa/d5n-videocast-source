@@ -2,8 +2,9 @@
 set -euo pipefail
 
 REPO="${D5N_BASE:-/root/repositorio/d5n-videocast-source}"
+MC_ROOT="$REPO/manha-conectada"
 VERIFY_SCRIPT="${D5N_VERIFY_SCRIPT:-/root/.hermes/scripts/d5n-verify-site.py}"
-FEED="manha-conectada.xml"
+FEED="$MC_ROOT/feeds/manha-conectada.xml"
 
 if [ "$#" -ne 3 ]; then
   printf 'Uso: %s AUDIO SOURCE MANIFEST\n' "$0" >&2
@@ -40,8 +41,8 @@ if [ -n "$(git ls-files --unmerged 2>/dev/null)" ]; then
 fi
 
 python3 gerar_pagina_d5n.py --site-only
-python3 scripts/gerar_manha_conectada_feed.py --repo "$REPO"
-python3 scripts/gerar_manha_conectada_feed.py --repo "$REPO" --check-date "$RELEASE_DATE"
+python3 "$MC_ROOT/scripts/gerar_manha_conectada_feed.py" --repo "$MC_ROOT"
+python3 "$MC_ROOT/scripts/gerar_manha_conectada_feed.py" --repo "$MC_ROOT" --check-date "$RELEASE_DATE"
 python3 "$VERIFY_SCRIPT"
 
 # Publicação seletiva: nunca incorpora arquivos estranhos que estejam no checkout.

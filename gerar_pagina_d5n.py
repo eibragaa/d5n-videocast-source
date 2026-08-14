@@ -419,7 +419,7 @@ def list_episodes():
 
 def _manha_summary(date_str):
     """Extrai o cold open do roteiro canônico sem expor metadados técnicos."""
-    source_path = os.path.join(BASE, f"source-manha-{date_str}.md")
+    source_path = os.path.join(BASE, "manha-conectada", "roteiros", f"source-manha-{date_str}.md")
     try:
         with open(source_path, encoding="utf-8") as source_file:
             content = source_file.read()
@@ -446,7 +446,7 @@ def _manha_summary(date_str):
 
 def load_manha_conectada_episodes(limit=None):
     """Carrega apenas edições canônicas, publicáveis e com áudio presente."""
-    manifest_dir = os.path.join(BASE, "manifests", "manha-conectada")
+    manifest_dir = os.path.join(BASE, "manha-conectada", "manifests")
     if not os.path.isdir(manifest_dir):
         return []
 
@@ -462,7 +462,7 @@ def load_manha_conectada_episodes(limit=None):
             datetime.strptime(date_str, "%Y-%m-%d")
             expected_file = f"manha-conectada-{date_str}.mp3"
             output_name = os.path.basename(str(manifest.get("output", "")))
-            audio_path = os.path.join(AUDIO_DIR, expected_file)
+            audio_path = os.path.join(BASE, "manha-conectada", "audio", expected_file)
             duration = round(float(manifest.get("audio", {}).get("duration", 0)))
             if (
                 str(manifest.get("program", "")).strip().upper() != "MANHÃ CONECTADA"

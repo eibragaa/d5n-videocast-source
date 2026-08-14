@@ -33,15 +33,19 @@ class PipelineContractTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             base = Path(tmp)
             audio_dir = base / "audio"
-            manifest_dir = base / "manifests" / "manha-conectada"
+            manifest_dir = base / "manha-conectada" / "manifests"
             audio_dir.mkdir(parents=True)
             manifest_dir.mkdir(parents=True)
 
-            canonical_audio = audio_dir / "manha-conectada-2026-07-21.mp3"
-            prototype_audio = audio_dir / "manha-conectada-2026-07-22-prototipo.mp3"
+            mc_audio_dir = base / "manha-conectada" / "audio"
+            mc_audio_dir.mkdir(parents=True)
+            canonical_audio = mc_audio_dir / "manha-conectada-2026-07-21.mp3"
+            prototype_audio = mc_audio_dir / "manha-conectada-2026-07-22-prototipo.mp3"
             canonical_audio.write_bytes(b"canonical-audio")
             prototype_audio.write_bytes(b"prototype-audio")
-            (base / "source-manha-2026-07-21.md").write_text(
+            roteiros_dir = base / "manha-conectada" / "roteiros"
+            roteiros_dir.mkdir(parents=True)
+            (roteiros_dir / "source-manha-2026-07-21.md").write_text(
                 "# MANHÃ CONECTADA — 21/07/2026\n\n"
                 "## Roteiro aprovado\n\n"
                 "O Brasil reage às tarifas; a tecnologia avança na saúde; e os mercados acompanham novos indicadores. "
@@ -55,7 +59,7 @@ class PipelineContractTests(unittest.TestCase):
                 "prototype": False,
                 "voice": "pt-BR-AntonioNeural",
                 "output": str(canonical_audio),
-                "source_file": str(base / "source-manha-2026-07-21.md"),
+                "source_file": str(roteiros_dir / "source-manha-2026-07-21.md"),
                 "audio": {"duration": 298.2},
                 "text_gate": {"words": 703},
             }), encoding="utf-8")
@@ -89,7 +93,7 @@ class PipelineContractTests(unittest.TestCase):
         self.assertNotIn("prototipo", rendered)
 
     def test_manha_conectada_requires_spoken_rss_cta(self):
-        pipeline = load_module(REPO / "scripts" / "manha_conectada_pipeline.py", "manha_pipeline_cta")
+        pipeline = load_module(REPO / "manha-conectada" / "scripts" / "manha_conectada_pipeline.py", "manha_pipeline_cta")
         body = "Notícia confirmada com contexto e efeito prático para o dia. " * 65
         missing_cta = "Manhã Conectada, do Drop Five News. " + body + "Bom dia!"
 
@@ -124,8 +128,8 @@ class PipelineContractTests(unittest.TestCase):
                 gate.AUDIO_DIR = original_audio_dir
 
     def test_manha_conectada_cron_publishes_site_fail_closed(self):
-        cron = (REPO / "scripts" / "run-manha-conectada-cron.sh").read_text(encoding="utf-8")
-        publisher_path = REPO / "scripts" / "publish-manha-conectada-site.sh"
+        cron = (REPO / "manha-conectada" / "scripts" / "run-manha-conectada-cron.sh").read_text(encoding="utf-8")
+        publisher_path = REPO / "manha-conectada" / "scripts" / "publish-manha-conectada-site.sh"
 
         self.assertTrue(publisher_path.exists())
         publisher = publisher_path.read_text(encoding="utf-8")

@@ -160,9 +160,17 @@ d5n-videocast-source/
 │       ├── resumo_YYYY-MM-DD.png
 │       └── individuais/
 │
-├── scripts/                     # Scripts auxiliares
-│   ├── amanha-conectada-pipeline.sh  # Pipeline "Amanhã Conectada"
-│   ├── amanha_conectada_mixer.py     # Mixer do Amanhã Conectada
+├── manha-conectada/             # Projeto isolado da Manhã Conectada
+│   ├── scripts/                 # Pipeline, mixer, RSS, publicação e cron
+│   ├── assets/                  # Capa e identidade sonora próprias
+│   ├── audio/                   # Episódios da MC
+│   ├── manifests/               # Histórico de manifests
+│   ├── roteiros/                # source-manha-YYYY-MM-DD.md
+│   ├── feeds/                   # RSS próprio (URL pública preservada por rewrite)
+│   ├── docs/                    # Diretrizes editoriais
+│   └── cron-prompt.txt          # Prompt operacional do cron diário
+│
+├── scripts/                     # Scripts auxiliares do D5N
 │   ├── d5n-babysitter.py            # Validação automática
 │   ├── d5n_marketing.py              # Geração de copy marketing
 │   ├── validate_mp3.py              # Validação de MP3

@@ -21,21 +21,24 @@ from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-REPO = Path("/root/repositorio/d5n-videocast-source")
-AUDIO_DIR = REPO / "audio"
-REPORTS_DIR = REPO / "reports" / "manha-conectada"
-MANIFEST_DIR = REPO / "manifests" / "manha-conectada"
+MC_ROOT = Path(__file__).resolve().parents[1]
+REPO = MC_ROOT.parent
+AUDIO_DIR = MC_ROOT / "audio"
+REPORTS_DIR = MC_ROOT / "reports"
+MANIFEST_DIR = MC_ROOT / "manifests"
+SCRIPT_DIR = MC_ROOT / "scripts"
+ROTEIROS_DIR = MC_ROOT / "roteiros"
 VOICE = "pt-BR-AntonioNeural"
 RSS_CTA = (
     "Agora você também pode assinar o Manhã Conectada no seu aplicativo de podcast. "
     "O RSS próprio está no site do Drop Five News."
 )
 TZ = ZoneInfo("America/Sao_Paulo")
-MIN_WORDS, MAX_WORDS = 540, 820
+MIN_WORDS, MAX_WORDS = 600, 950
 MIN_SECONDS, MAX_SECONDS = 225, 390
 FORBIDDEN = (
     "e aí, pessoal", "se liga", "vale lembrar", "em um mundo", "não é apenas",
-    "mais do que nunca", "mergulhar", "jornada", "revolucionar", "game changer",
+    "mais do que nunca", "mergulhar", "revolucionar", "game changer",
     "vale destacar", "fica a dica", "bombou", "galera",
 )
 RSS_QUERIES = (
@@ -234,8 +237,23 @@ def collect_news(day: date) -> list[dict[str, str]]:
     return items[:25]
 
 
+def deepseek_token() -> str | None:
+    """Retorna a DEEPSEEK_API_KEY (provedor de IA da geração da MC)."""
+    env_key = os.environ.get("DEEPSEEK_API_KEY")
+    if env_key:
+        return env_key
+    try:
+        for line in Path("/root/.hermes/.env").read_text().splitlines():
+            if line.startswith("DEEPSEEK_API_KEY="):
+                return line.split("=", 1)[1].strip()
+    except Exception:
+        pass
+    return None
+
+
 def auth_token() -> str | None:
-    """Tenta obter token opencode-go do ambiente, depois do auth.json."""
+    """Fallback legado (opencode-go). Mantido para compatibilidade, mas o
+    pipeline prefere DeepSeek direto em generate_script()."""
     env_key = os.environ.get("OPENCODE_GO_API_KEY")
     if env_key:
         return env_key
@@ -288,8 +306,8 @@ Regras editoriais:
 FONTES CANDIDATAS:
 {source_text}
 """
-    # Tenta chamada direta à API opencode-go (mais rápida, 0 tokens de overhead).
-    token = auth_token()
+    # Tenta chamada direta à API DeepSeek (mais rápida, 0 tokens de overhead).
+    token = deepseek_token()
     if token:
         try:
             payload = json.dumps({
@@ -297,19 +315,40 @@ FONTES CANDIDATAS:
                 "messages": [{"role": "user", "content": prompt}],
                 "max_tokens": 12000,
                 "temperature": 0.35,
+                "thinking": {"type": "disabled"},
             }).encode()
             req = urllib.request.Request(
-                "https://opencode.ai/zen/go/v1/chat/completions",
+                "https://api.deepseek.com/v1/chat/completions",
                 data=payload,
                 headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json", "User-Agent": "DropFiveNews/1.0"},
             )
             response = json.loads(urllib.request.urlopen(req, timeout=240).read())
             content = response.get("choices", [{}])[0].get("message", {}).get("content", "").strip()
         except Exception as primary_exc:
-            print(f"AVISO API direta indisponível: {primary_exc}; usando Hermes CLI", file=sys.stderr)
+            print(f"AVISO API DeepSeek indisponível: {primary_exc}; tentando opencode-go", file=sys.stderr)
             content = None
     else:
         content = None
+    if content is None:
+        token = auth_token()
+        if token:
+            try:
+                payload = json.dumps({
+                    "model": "deepseek-v4-flash",
+                    "messages": [{"role": "user", "content": prompt}],
+                    "max_tokens": 12000,
+                    "temperature": 0.35,
+                }).encode()
+                req = urllib.request.Request(
+                    "https://opencode.ai/zen/go/v1/chat/completions",
+                    data=payload,
+                    headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json", "User-Agent": "DropFiveNews/1.0"},
+                )
+                response = json.loads(urllib.request.urlopen(req, timeout=240).read())
+                content = response.get("choices", [{}])[0].get("message", {}).get("content", "").strip()
+            except Exception as fallback_exc:
+                print(f"AVISO opencode-go indisponível: {fallback_exc}", file=sys.stderr)
+                content = None
     if content is None:
         proc = run([
             "hermes", "-z", prompt, "--provider", "openai-codex", "-m", "gpt-5.6-sol",
@@ -376,7 +415,8 @@ def loudness(path: Path) -> dict[str, float]:
 
 
 def write_source(day: date, text: str, news: list[dict[str, str]], metrics: dict[str, float | int | str], output: Path) -> Path:
-    path = REPO / f"source-manha-{day.isoformat()}.md"
+    path = ROTEIROS_DIR / f"source-manha-{day.isoformat()}.md"
+    path.parent.mkdir(parents=True, exist_ok=True)
     sources = "\n".join(f"- [{x['source']}]({x['url']}) — {x['title']}" for x in news)
     path.write_text(
         f"# MANHÃ CONECTADA — {day.strftime('%d/%m/%Y')}\n\n"
@@ -417,7 +457,7 @@ def main() -> int:
     if not MIN_SECONDS <= float(voice_metrics["duration"]) <= MAX_SECONDS:
         raise RuntimeError(f"duração da voz fora da faixa: {voice_metrics['duration']:.1f}s")
 
-    mixer = REPO / "scripts" / "amanha_conectada_mixer.py"
+    mixer = SCRIPT_DIR / "amanha_conectada_mixer.py"
     proc = run([sys.executable, str(mixer), "--voz", str(voice), "--output", str(output)], timeout=600)
     if proc.returncode != 0:
         raise RuntimeError("Mixer falhou: " + (proc.stderr or proc.stdout)[-500:])
