@@ -59,6 +59,24 @@ PAUSE_EXTRA_MS = 650
 HIGH_LUF = -16
 TRUE_PEAK = -1.5
 BITS = 192
+LEAD_MS = 2_500
+HEADER_BREATH_MS = 350
+GLOBAL_FADE_IN_MS = 800
+GLOBAL_FADE_OUT_MS = 2_000
+LIGHT_TRACK_GAIN_DB = -25.0
+HOT_TRACK_GAIN_DB = -31.0
+HEADER_VOICE = "pt-BR-AntonioNeural"
+HEADER_LABELS = {
+    "mundo": "Mundo",
+    "brasil": "Brasil",
+    "tecnologia": "Tecnologia",
+    "economia": "Economia",
+    "interacao": "Sua vez",
+    "ofertas": "Ofertas do dia",
+    "frase": "Mensagem do dia",
+    "recomendacoes": "Recomendações",
+    "historia": "História do dia",
+}
 
 
 def require(path: Path) -> None:
@@ -134,14 +152,60 @@ def track_for(name: str, voice_ms: int) -> tuple[Path, float]:
         filename = FALLBACK_TRACK
     require(path)
     # As camas leves medem cerca de -19 LUFS; as quentes, cerca de -12 LUFS.
-    # Os ganhos abaixo colocam ambas na faixa aproximada de -28 a -29 LUFS.
-    gain = -10.0 if filename in LIGHT_TRACKS else -16.0
+    # Ducking agressivo: a cama fica bem abaixo da voz em todas as seções.
+    gain = LIGHT_TRACK_GAIN_DB if filename in LIGHT_TRACKS else HOT_TRACK_GAIN_DB
     return path, gain
 
 
-def mix_section(name: str, voice: AudioSegment) -> tuple[AudioSegment, str, float]:
+def valid_header(path: Path) -> bool:
+    if not path.is_file() or path.stat().st_size < 1_000:
+        return False
+    try:
+        return len(AudioSegment.from_file(path)) > 100
+    except Exception:
+        return False
+
+
+def synthesize_header(audio_dir: Path, name: str) -> Path | None:
+    label = HEADER_LABELS.get(name)
+    if label is None:
+        return None
+    target = audio_dir / f"{name}_header.mp3"
+    if valid_header(target):
+        return target
+
+    temp = target.with_suffix(".tmp.mp3")
+    try:
+        import asyncio
+        import edge_tts
+
+        temp.unlink(missing_ok=True)
+        asyncio.run(edge_tts.Communicate(label, HEADER_VOICE).save(str(temp)))
+        if not valid_header(temp):
+            raise RuntimeError("arquivo sintetizado inválido")
+        temp.replace(target)
+        return target
+    except Exception as exc:
+        temp.unlink(missing_ok=True)
+        print(f"AVISO: header {name!r} não foi sintetizado: {exc}", file=sys.stderr)
+        return None
+
+
+def mix_section(
+    name: str, voice: AudioSegment, header: AudioSegment | None = None
+) -> tuple[AudioSegment, str, float]:
+    content = voice
+    voice_offset = 0
+    if header is not None:
+        header = header.set_channels(1).set_frame_rate(44100)
+        content = header + AudioSegment.silent(HEADER_BREATH_MS, frame_rate=44100) + voice
+        voice_offset = len(header) + HEADER_BREATH_MS
+    if name == "coldopen":
+        content = AudioSegment.silent(LEAD_MS, frame_rate=44100) + voice
+        voice_offset = LEAD_MS
+
     path, gain = track_for(name, len(voice))
-    bed = loop_to(AudioSegment.from_file(path).set_channels(1).set_frame_rate(44100), len(voice)) + gain
+    bed = loop_to(AudioSegment.from_file(path).set_channels(1).set_frame_rate(44100), len(content)) + gain
     fade_out = min(4_500 if name == "outro" else 900, max(1, len(bed)))
     bed = bed.fade_in(min(500, len(bed))).fade_out(fade_out)
     if name == "coldopen":
@@ -149,7 +213,12 @@ def mix_section(name: str, voice: AudioSegment) -> tuple[AudioSegment, str, floa
         require(signature_path)
         signature = AudioSegment.from_file(signature_path).set_channels(1).set_frame_rate(44100) - 10
         bed = bed.overlay(signature[:len(bed)].fade_out(min(700, len(signature))))
-    return bed.overlay(voice.fade_in(12)), path.name, gain
+    spoken = content if voice_offset == 0 else AudioSegment.silent(
+        voice_offset, frame_rate=44100
+    ) + voice.fade_in(12)
+    if header is not None:
+        spoken = header + AudioSegment.silent(HEADER_BREATH_MS, frame_rate=44100) + voice.fade_in(12)
+    return bed.overlay(spoken), path.name, gain
 
 
 def main() -> int:
@@ -168,10 +237,15 @@ def main() -> int:
     voice_map = _read_voice_map([name for name, *_ in segments], editorial_date)
     mixed = AudioSegment.empty()
     rendered: list[dict] = []
+    section_headers: dict[str, str] = {}
     cursor_ms = 0
     for index, (name, _text, mp3_path) in enumerate(segments):
         voice = extend_pauses(AudioSegment.from_file(mp3_path).set_channels(1).set_frame_rate(44100))
-        section, track_name, gain = mix_section(name, voice)
+        header_path = synthesize_header(audio_dir, name)
+        header = AudioSegment.from_file(header_path) if header_path is not None else None
+        if header_path is not None:
+            section_headers[name] = header_path.name
+        section, track_name, gain = mix_section(name, voice, header)
         start_ms = cursor_ms
         mixed += section
         cursor_ms += len(section)
@@ -189,7 +263,7 @@ def main() -> int:
     with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
         tmp_path = Path(tmp.name)
     try:
-        mixed.fade_out(1_800).export(tmp_path, format="wav")
+        mixed.fade_in(GLOBAL_FADE_IN_MS).fade_out(GLOBAL_FADE_OUT_MS).export(tmp_path, format="wav")
         command = [
             "ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", str(tmp_path),
             "-af", f"highpass=f=65,loudnorm=I={HIGH_LUF}:TP={TRUE_PEAK}:LRA=11",
@@ -219,8 +293,9 @@ def main() -> int:
     ]
     manifest = {
         "schema": 2, "programa": "Drop Five News", "tts_provider": "edge-tts-local",
-        "header_voice": "pt-BR-AntonioNeural", "editorial_date": editorial_date.isoformat(),
+        "header_voice": HEADER_VOICE, "editorial_date": editorial_date.isoformat(),
         "sections": sections, "content_voices": voices,
+        "section_headers": section_headers,
         "presentation_mode": ("sexta-dual-dinamica" if editorial_date.weekday() == 4 else
                               "solo-thalita" if voice_map["intro"] == thalita else "solo-francisca"),
         "section_voice_map": {name: voice_map[name] for name in sections},

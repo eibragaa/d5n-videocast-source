@@ -135,7 +135,7 @@ def main() -> None:
      xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
      xmlns:podcast="https://podcastindex.org/namespace/1.0">
   <channel>
-    <title>Drop Five News</title>
+    <title>Hoje no Drop Five News</title>
     <link>{BASE_URL}/</link>
     <language>pt-br</language>
     <description>{channel_desc}</description>
@@ -157,7 +157,7 @@ def main() -> None:
     <lastBuildDate>{last_build}</lastBuildDate>
     <image>
       <url>{IMAGE_URL}</url>
-      <title>Drop Five News</title>
+      <title>Hoje no Drop Five News</title>
       <link>{BASE_URL}/</link>
       <width>3000</width>
       <height>3000</height>

@@ -608,7 +608,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
         <button class="speed-btn" id="speedBtn" onclick="cycleSpeed()" title="Velocidade">1×</button>
       </div>
       <div class="player-meta">
-        <div class="player-title">Drop Five News — Episódio #{podcast["num"]} — {data_curta}</div>
+        <div class="player-title">Hoje no Drop Five News — Episódio #{podcast["num"]} — {data_curta}</div>
         <div class="chapter-current" id="currentChapter" aria-live="polite">{current_chapter}</div>
       </div>
     </div>
@@ -1514,7 +1514,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
     audio.load();
 
     const titleEl = document.querySelector('.player-title');
-    if (titleEl) titleEl.textContent = `Drop Five News — Episódio #${{el.dataset.episode}} — ${{el.dataset.date}}`;
+    if (titleEl) titleEl.textContent = `Hoje no Drop Five News — Episódio #${{el.dataset.episode}} — ${{el.dataset.date}}`;
     const download = document.querySelector('.player-download');
     if (download) download.href = src;
     document.querySelectorAll('.archive-link').forEach(link => link.classList.toggle('is-playing', link === el));
@@ -1736,7 +1736,7 @@ def gerar_source_md(date, data_br, noticias, voice=None):
 
 def gerar_feeds_json(date, data_br, noticias):
     items = [{"id":date,"title":f"D5N • {data_br}","url":f"https://d5n-daily.netlify.app/","date_published":date,"summary":f"{len(noticias)} notícias","tags":["notícias","D5N"],"content_text":"\n".join(f"[{n.get('pilar','')}] {n['titulo']}" for n in noticias)}]
-    return json.dumps({"version":"https://jsonfeed.org/version/1","title":"DropFiveNews","home_page_url":"https://d5n-daily.netlify.app","feed_url":"https://d5n-daily.netlify.app/feed.json","description":"Curadoria diária de notícias","author":{"name":"Jean Braga","url":"https://instagram.com/ojeanbraga.s"},"items":items},ensure_ascii=False,indent=2)
+    return json.dumps({"version":"https://jsonfeed.org/version/1","title":"Hoje no Drop Five News","home_page_url":"https://d5n-daily.netlify.app","feed_url":"https://d5n-daily.netlify.app/feed.json","description":"Curadoria diária de notícias","author":{"name":"Jean Braga","url":"https://instagram.com/ojeanbraga.s"},"items":items},ensure_ascii=False,indent=2)
 
 def gerar_feed_rss(date, data_br, noticias):
     import xml.sax.saxutils as saxutils
@@ -1744,7 +1744,7 @@ def gerar_feed_rss(date, data_br, noticias):
     return f'''<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>DropFiveNews</title>
+    <title>Hoje no Drop Five News</title>
     <link>https://d5n-daily.netlify.app</link>
     <description>Curadoria diária de notícias</description>
     <language>pt-br</language>

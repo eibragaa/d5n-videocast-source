@@ -66,6 +66,7 @@ def validate_manifest(payload: dict, editorial_date: str, duration: float) -> di
         "editorial_date": editorial_date,
         "audio_duration": round(duration, 3),
         "chapters": chapters,
+        "section_headers": payload.get("section_headers", {}),
     }
     return canonical
 

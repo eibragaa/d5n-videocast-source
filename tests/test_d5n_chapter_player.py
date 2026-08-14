@@ -35,18 +35,30 @@ def load_module(path, name):
 
 
 class ChapterPlayerContractTests(unittest.TestCase):
+    def test_player_uses_hoje_no_drop_five_news_episode_title(self):
+        source = GENERATOR.read_text(encoding="utf-8")
+
+        self.assertIn("Hoje no Drop Five News — Episódio #", source)
+
     def test_chapter_gate_accepts_v3_timeline_with_intro_at_zero(self):
         gate = load_module(CHAPTER_GATE, "d5n_chapter_gate")
         chapters = [
             {"id": section_id, "start": index * 10, "end": (index + 1) * 10}
             for index, section_id in enumerate(EXPECTED_IDS)
         ]
-        payload = {"schema": 2, "editorial_date": "2026-08-14", "chapters": chapters}
+        headers = {"mundo": "mundo_header.mp3", "frase": "frase_header.mp3"}
+        payload = {
+            "schema": 2,
+            "editorial_date": "2026-08-14",
+            "chapters": chapters,
+            "section_headers": headers,
+        }
 
         canonical = gate.validate_manifest(payload, "2026-08-14", len(EXPECTED_IDS) * 10)
 
         self.assertEqual([chapter["id"] for chapter in canonical["chapters"]], EXPECTED_IDS)
         self.assertEqual(canonical["chapters"][0]["start"], 0)
+        self.assertEqual(canonical["section_headers"], headers)
 
     def test_generator_rejects_generic_or_incomplete_chapters(self):
         generator = load_module(GENERATOR, "d5n_generator_chapters_invalid")

@@ -145,6 +145,20 @@ class PipelineContractTests(unittest.TestCase):
         self.assertEqual(sections[0], "coldopen")
         self.assertEqual(sections[-1], "outro")
 
+    def test_v10_premium_mix_contract(self):
+        mixer = load_module(PROFILE_MIXER, "d5n_profile_mixer_premium")
+
+        self.assertEqual(mixer.LEAD_MS, 2_500)
+        self.assertEqual(mixer.GLOBAL_FADE_IN_MS, 800)
+        self.assertGreaterEqual(mixer.GLOBAL_FADE_OUT_MS, 1_800)
+        self.assertEqual(mixer.LIGHT_TRACK_GAIN_DB, -25.0)
+        self.assertEqual(mixer.HOT_TRACK_GAIN_DB, -31.0)
+        self.assertEqual(mixer.HEADER_VOICE, "pt-BR-AntonioNeural")
+        self.assertEqual(mixer.HEADER_LABELS["frase"], "Mensagem do dia")
+        self.assertNotIn("coldopen", mixer.HEADER_LABELS)
+        self.assertNotIn("intro", mixer.HEADER_LABELS)
+        self.assertNotIn("outro", mixer.HEADER_LABELS)
+
     def test_site_credits_follow_the_restored_weekly_voice_schedule(self):
         generator = load_module(REPO / "gerar_pagina_d5n.py", "d5n_generator_voice_schedule")
         expected = {

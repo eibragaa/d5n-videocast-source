@@ -6,7 +6,7 @@
      xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
      xmlns:podcast="https://podcastindex.org/namespace/1.0">
   <channel>
-    <title>Drop Five News</title>
+    <title>Hoje no Drop Five News</title>
     <link>https://d5n-daily.netlify.app/</link>
     <language>pt-br</language>
     <description>Curadoria diária de notícias em áudio. O D5N entrega todos os dias um resumo sonoro com as notícias mais relevantes do Brasil e do mundo — direto, sem enrolação.</description>
@@ -33,7 +33,7 @@
     <lastBuildDate>Fri, 14 Aug 2026 06:52:12 -0400</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/podcast-cover.png</url>
-      <title>Drop Five News</title>
+      <title>Hoje no Drop Five News</title>
       <link>https://d5n-daily.netlify.app/</link>
       <width>3000</width>
       <height>3000</height>

@@ -127,6 +127,17 @@ def validate_manifest(errors: list[str]) -> dict:
     chapters = data.get("chapters")
     if not isinstance(chapters, list) or not chapters or chapters[0].get("id") != "intro" or chapters[0].get("start") != 0:
         fail(errors, "capítulos devem começar com intro em 0s")
+    section_headers = data.get("section_headers")
+    if not isinstance(section_headers, dict):
+        fail(errors, "manifesto sem mapeamento section_headers")
+    else:
+        allowed_headers = set(SECTION_ORDER) - {"coldopen", "intro", "outro"}
+        if not set(section_headers).issubset(allowed_headers):
+            fail(errors, "section_headers contém seção sem header temático")
+        for section, filename in section_headers.items():
+            expected_name = f"{section}_header.mp3"
+            if filename != expected_name or not (AUDIO_DIR / filename).is_file():
+                fail(errors, f"header inválido no manifesto: {section} → {filename!r}")
 
     try:
         editorial_date = datetime.date.fromisoformat(data["editorial_date"])
