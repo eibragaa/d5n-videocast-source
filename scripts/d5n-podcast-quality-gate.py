@@ -68,8 +68,8 @@ def probe_audio(errors: list[str]) -> dict:
     stream = (data.get("streams") or [{}])[0]
     duration = float(fmt.get("duration", 0))
     bitrate = int(fmt.get("bit_rate", 0))
-    if not 300 <= duration <= 720:
-        fail(errors, f"duração fora de 5–12 min: {duration:.2f}s")
+    if not 480 <= duration <= 720:
+        fail(errors, f"duração fora de 8–12 min: {duration:.2f}s")
     if bitrate < 128_000:
         fail(errors, f"bitrate abaixo de 128 kbps: {bitrate}")
     if stream.get("codec_name") != "mp3":

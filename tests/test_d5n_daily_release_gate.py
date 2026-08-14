@@ -58,12 +58,12 @@ class ReleaseGateTests(unittest.TestCase):
         self.assertTrue(any("data editorial" in error for error in errors))
         self.assertTrue(any("contrato D5N v3" in error for error in errors))
 
-    def test_audio_rejects_episode_shorter_than_five_minutes(self):
+    def test_audio_rejects_episode_shorter_than_eight_minutes(self):
         errors = gate.validate_audio_metadata(
-            {"duration": 299.9, "bit_rate": 192000, "codec_name": "mp3", "sample_rate": 44100}
+            {"duration": 479.9, "bit_rate": 192000, "codec_name": "mp3", "sample_rate": 44100}
         )
 
-        self.assertTrue(any("300" in error for error in errors))
+        self.assertTrue(any("480" in error for error in errors))
 
     def test_script_accepts_non_spoken_metadata_header_before_intro(self):
         fill = "Notícia confirmada, com contexto e impacto prático para o dia. " * 12

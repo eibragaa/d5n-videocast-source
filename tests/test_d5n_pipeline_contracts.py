@@ -148,11 +148,14 @@ class PipelineContractTests(unittest.TestCase):
     def test_v10_premium_mix_contract(self):
         mixer = load_module(PROFILE_MIXER, "d5n_profile_mixer_premium")
 
-        self.assertEqual(mixer.LEAD_MS, 2_500)
+        self.assertEqual(mixer.MIN_SECONDS, 480)
+        self.assertEqual(mixer.MAX_SECONDS, 720)
+        self.assertEqual(mixer.LEAD_MS, 2_000)
         self.assertEqual(mixer.GLOBAL_FADE_IN_MS, 800)
         self.assertGreaterEqual(mixer.GLOBAL_FADE_OUT_MS, 1_800)
-        self.assertEqual(mixer.LIGHT_TRACK_GAIN_DB, -25.0)
-        self.assertEqual(mixer.HOT_TRACK_GAIN_DB, -31.0)
+        self.assertEqual(mixer.LIGHT_TRACK_GAIN_DB, -20.0)
+        self.assertEqual(mixer.HOT_TRACK_GAIN_DB, -26.0)
+        self.assertEqual(mixer.VOICE_TARGET_DBFS, -19.0)
         self.assertEqual(mixer.HEADER_VOICE, "pt-BR-AntonioNeural")
         self.assertEqual(mixer.HEADER_LABELS["frase"], "Mensagem do dia")
         self.assertNotIn("coldopen", mixer.HEADER_LABELS)

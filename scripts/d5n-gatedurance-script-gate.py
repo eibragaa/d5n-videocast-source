@@ -13,7 +13,7 @@ Regras cobertas:
      "Bom dia!"; outro termina com "Bom dia!".
   4. Higiene de fala: sem (hum...), (pausa), (pensando), numeração por extenso
      "1 (um)", sem emoji/URL/markdown no texto falado, sem reticências espaçadas.
-  5. Contagem: roteiro falado 850–1900 palavras.
+  5. Contagem: roteiro falado 1100–1900 palavras.
   6. Proibições: clichês da lista BANNED_PHRASES, despedida intermediária, CTA fora
      do encerramento, expressões FORBIDDEN.
 
@@ -37,7 +37,7 @@ SECTION_ORDER = (
 )
 REQUIRED_SECTIONS = {"intro", "mundo", "brasil", "tecnologia", "economia", "ofertas", "outro"}
 MIN_SECTIONS = 9
-MIN_WORDS = 850
+MIN_WORDS = 1100
 MAX_WORDS = 1900
 
 MONTHS_PT = {

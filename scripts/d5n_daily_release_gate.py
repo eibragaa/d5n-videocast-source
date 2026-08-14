@@ -19,9 +19,9 @@ SECTION_ORDER = (
 )
 REQUIRED_SECTIONS = {"coldopen", "intro", "mundo", "brasil", "tecnologia", "economia", "outro"}
 MIN_SECTIONS = 8
-MIN_WORDS = 850
+MIN_WORDS = 1100
 MAX_WORDS = 1900
-MIN_DURATION = 300.0
+MIN_DURATION = 480.0
 MAX_DURATION = 720.0
 
 MONTHS_PT = {
@@ -109,7 +109,10 @@ def validate_audio_metadata(metadata: dict) -> list[str]:
     bitrate = int(metadata.get("bit_rate", 0) or 0)
     sample_rate = int(metadata.get("sample_rate", 0) or 0)
     if not MIN_DURATION <= duration <= MAX_DURATION:
-        errors.append(f"duração deve ficar entre 300 e 720 segundos; recebida {duration:.2f}s")
+        errors.append(
+            f"duração deve ficar entre {MIN_DURATION:.0f} e {MAX_DURATION:.0f} segundos; "
+            f"recebida {duration:.2f}s"
+        )
     if bitrate < 128_000:
         errors.append(f"bitrate abaixo de 128 kbps: {bitrate}")
     if metadata.get("codec_name") != "mp3":

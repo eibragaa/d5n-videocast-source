@@ -52,19 +52,22 @@ TRACKS = {
     "outro": "Vinheta2.wav",
 }
 LIGHT_TRACKS = {"NEW-INTRO.wav", "Cenario-global.wav", "Politica.wav", "Tech.wav", "TECNOLOGIA.wav"}
-MIN_SECONDS = 300
+MIN_SECONDS = 480
 MAX_SECONDS = 720
 PAUSE_MS = 300
 PAUSE_EXTRA_MS = 650
 HIGH_LUF = -16
 TRUE_PEAK = -1.5
 BITS = 192
-LEAD_MS = 2_500
+LEAD_MS = 2_000
 HEADER_BREATH_MS = 350
 GLOBAL_FADE_IN_MS = 800
 GLOBAL_FADE_OUT_MS = 2_000
-LIGHT_TRACK_GAIN_DB = -25.0
-HOT_TRACK_GAIN_DB = -31.0
+LIGHT_TRACK_GAIN_DB = -20.0
+HOT_TRACK_GAIN_DB = -26.0
+VOICE_TARGET_DBFS = -19.0
+SIGNATURE_GAIN_DB = -8.0
+SIGNATURE_GAP_MS = 150
 HEADER_VOICE = "pt-BR-AntonioNeural"
 HEADER_LABELS = {
     "mundo": "Mundo",
@@ -152,7 +155,7 @@ def track_for(name: str, voice_ms: int) -> tuple[Path, float]:
         filename = FALLBACK_TRACK
     require(path)
     # As camas leves medem cerca de -19 LUFS; as quentes, cerca de -12 LUFS.
-    # Ducking agressivo: a cama fica bem abaixo da voz em todas as seções.
+    # Ganhos distintos mantêm a cama bem abaixo da voz já nivelada.
     gain = LIGHT_TRACK_GAIN_DB if filename in LIGHT_TRACKS else HOT_TRACK_GAIN_DB
     return path, gain
 
@@ -194,6 +197,8 @@ def synthesize_header(audio_dir: Path, name: str) -> Path | None:
 def mix_section(
     name: str, voice: AudioSegment, header: AudioSegment | None = None
 ) -> tuple[AudioSegment, str, float]:
+    if voice.dBFS != float("-inf"):
+        voice = voice + (VOICE_TARGET_DBFS - voice.dBFS)
     content = voice
     voice_offset = 0
     if header is not None:
@@ -208,17 +213,20 @@ def mix_section(
     bed = loop_to(AudioSegment.from_file(path).set_channels(1).set_frame_rate(44100), len(content)) + gain
     fade_out = min(4_500 if name == "outro" else 900, max(1, len(bed)))
     bed = bed.fade_in(min(500, len(bed))).fade_out(fade_out)
-    if name == "coldopen":
-        signature_path = ASSET_DIR / "Vinheta.wav"
-        require(signature_path)
-        signature = AudioSegment.from_file(signature_path).set_channels(1).set_frame_rate(44100) - 10
-        bed = bed.overlay(signature[:len(bed)].fade_out(min(700, len(signature))))
     spoken = content if voice_offset == 0 else AudioSegment.silent(
         voice_offset, frame_rate=44100
     ) + voice.fade_in(12)
     if header is not None:
         spoken = header + AudioSegment.silent(HEADER_BREATH_MS, frame_rate=44100) + voice.fade_in(12)
-    return bed.overlay(spoken), path.name, gain
+    section = bed.overlay(spoken)
+    if name == "coldopen":
+        # A assinatura entra somente depois das manchetes, antes da intro, sem voz concorrente.
+        signature_path = ASSET_DIR / "Vinheta.wav"
+        require(signature_path)
+        signature = AudioSegment.from_file(signature_path).set_channels(1).set_frame_rate(44100)
+        signature = (signature + SIGNATURE_GAIN_DB).fade_in(80).fade_out(min(700, len(signature)))
+        section += AudioSegment.silent(SIGNATURE_GAP_MS, frame_rate=44100) + signature
+    return section, path.name, gain
 
 
 def main() -> int:

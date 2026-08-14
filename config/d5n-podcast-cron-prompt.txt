@@ -7,7 +7,7 @@ CONTRATO D5N v3
 - Fonte diária com GLOBAL, BRASIL, TECH e ECONOMIA, URLs verificáveis e contexto substantivo.
 - Ordem canônica: coldopen, intro, mundo, brasil, tecnologia, economia, interacao, ofertas, frase, recomendacoes, historia, outro.
 - Obrigatórias: coldopen, intro, mundo, brasil, tecnologia, economia e outro. Gere no mínimo 8 seções; opcionais só entram quando houver conteúdo real.
-- Duração final de 5–12 minutos, com alvo editorial de 8–10 minutos.
+- Duração final SEMPRE entre 8 e 12 minutos; nunca menos que 8. Alvo editorial de 9–10 minutos.
 - O CTA não é uma seção separada. Ele integra outro.txt e deve comunicar: “Agora você também pode assinar o Manhã Conectada no seu aplicativo de podcast. O RSS próprio está no site do Drop Five News.”
 - Estilo inspirado em Amanda Flaury: conversa inteligente, segura, natural e contextualizada. Varie diariamente abertura, ritmo, transições e fechamento. Evite bordões fixos, enumeração mecânica, clichês de IA e frases de preenchimento.
 - Use as vozes, trilhas, manifesto e especificações técnicas exigidas pelos gates.
@@ -17,12 +17,12 @@ CONTRATO D5N v3
 ARQUITETURA DO ROTEIRO
 - coldopen.txt: abra com a notícia no primeiro segundo. Entregue 3–4 manchetes-tiro específicas, curtas e fortes. Não diga “Bom dia” e não faça autoapresentação aqui.
 - intro.txt: a fala deve começar literalmente com “Bom dia!”. Inclua autoapresentação, uma pergunta concreta de engajamento e, de forma natural, dia da semana, data completa e identificação do Drop Five News. Não repita a arquitetura dos sete episódios anteriores.
-- mundo.txt, brasil.txt, tecnologia.txt e economia.txt: construa cada notícia como gancho → detalhe/contexto → EFEITO PRÁTICO para quem ouve. Diferencie fatos confirmados de análise.
+- mundo.txt, brasil.txt, tecnologia.txt e economia.txt: construa cada notícia como gancho → detalhe/contexto → EFEITO PRÁTICO para quem ouve. Diferencie fatos confirmados de análise. Gere notícias e contexto suficientes em cada bloco para sustentar pelo menos 8 minutos no episódio completo, sem repetição nem preenchimento artificial.
 - interacao.txt: faça uma única pergunta de engajamento no meio do programa, ligada ao assunto do dia.
 - ofertas.txt: bloco comercial rápido, direto e factual; não invente preço, desconto, estoque ou patrocinador.
 - frase.txt: frase do dia obtida no Pensador, com autoria verificável e atribuição clara.
 - recomendacoes.txt: indique 1–2 livros ou títulos de streaming reais. É opcional; omita o arquivo se não puder verificar cada item.
-- historia.txt: fato histórico relacionado à data. É opcional; omita o arquivo se não houver fato verificável.
+- historia.txt: o que foi notícia NESTA data em anos passados, com ano e contexto. Use somente fato histórico verificável. É opcional; omita o arquivo se não houver fato verificável.
 - outro.txt: reúna CTA do RSS da Manhã Conectada, lembrete útil e bordão de despedida. Varie a redação e o bordão diariamente, sem perder os quatro termos obrigatórios do CTA. Termine com “Bom dia!”.
 
 ESTADO E LIMITE
@@ -49,7 +49,7 @@ MAX_ATTEMPTS=4
    C. ROTEIRO
    - Gere ou atualize em /tmp/d5n_audio somente estes arquivos aplicáveis: coldopen.txt, intro.txt, mundo.txt, brasil.txt, tecnologia.txt, economia.txt, interacao.txt, ofertas.txt, frase.txt, recomendacoes.txt, historia.txt e outro.txt.
    - Não crie cta.txt. Apague apenas um cta.txt residual desta execução antes dos gates; o conteúdo obrigatório pertence a outro.txt.
-   - Preserve fatos e atribuições. Compare intro e outro com os sete snapshots anteriores. Garanta no mínimo 8 blocos, todas as obrigatórias e volume de fala compatível com 5–12 minutos.
+   - Preserve fatos e atribuições. Compare intro e outro com os sete snapshots anteriores. Garanta no mínimo 8 blocos, todas as obrigatórias e volume de fala suficiente para 8–12 minutos, mirando 9–10 minutos e nunca menos que 8.
    - Execute:
      python3 /root/.hermes/scripts/d5n-pre-gen-gate.py
      python3 /root/.hermes/scripts/d5n-mensagem-validate.py
