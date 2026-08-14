@@ -42,12 +42,12 @@ class ReleaseGateTests(unittest.TestCase):
 
         self.assertTrue(any("ECONOMIA" in error for error in errors))
 
-    def test_manifest_rejects_stale_date_and_cta_before_news(self):
+    def test_manifest_rejects_stale_date_and_obsolete_cta_section(self):
         manifest = self.base / "manifest.json"
         manifest.write_text(
             json.dumps({
                 "editorial_date": "2026-07-21",
-                "sections": ["intro", "mundo", "cta", "brasil", "tecnologia", "economia", "ofertas", "frase", "outro"],
+                "sections": ["coldopen", "intro", "mundo", "cta", "brasil", "tecnologia", "economia", "ofertas", "frase", "outro"],
                 "section_voice_map": {name: "voice" for name in gate.SECTION_ORDER},
             }),
             encoding="utf-8",
@@ -56,7 +56,7 @@ class ReleaseGateTests(unittest.TestCase):
         errors = gate.validate_manifest(manifest, date(2026, 7, 22))
 
         self.assertTrue(any("data editorial" in error for error in errors))
-        self.assertTrue(any("CTA" in error for error in errors))
+        self.assertTrue(any("contrato D5N v3" in error for error in errors))
 
     def test_audio_rejects_episode_shorter_than_five_minutes(self):
         errors = gate.validate_audio_metadata(
@@ -68,6 +68,7 @@ class ReleaseGateTests(unittest.TestCase):
     def test_script_accepts_non_spoken_metadata_header_before_intro(self):
         fill = "Notícia confirmada, com contexto e impacto prático para o dia. " * 12
         segments = {
+            "coldopen": "Tarifas mudam o comércio. Uma nova tecnologia chega ao mercado. " + fill,
             "intro": "Bom dia! Quarta-feira, 22 de julho de 2026. " + fill,
             "mundo": fill,
             "brasil": fill,
@@ -75,7 +76,6 @@ class ReleaseGateTests(unittest.TestCase):
             "economia": fill,
             "ofertas": fill,
             "frase": fill,
-            "cta": fill,
             "outro": fill + " Até a próxima e bom dia!",
         }
         segments["intro"] = (
@@ -104,7 +104,7 @@ class ReleaseGateTests(unittest.TestCase):
 
         errors, _ = gate.validate_script(audio_dir, date(2026, 7, 22), history_dir=self.base / "history")
 
-        self.assertTrue(any("9 seções" in error for error in errors))
+        self.assertTrue(any("8 seções" in error for error in errors))
         self.assertTrue(any("data editorial" in error for error in errors))
         self.assertTrue(any("Bom dia" in error for error in errors))
 
@@ -165,16 +165,15 @@ class ReleaseGateTests(unittest.TestCase):
         self.assertEqual(script_errors, [])
         self.assertEqual(audio_errors, [])
         self.assertEqual(snapshot["date"], "2026-07-22")
-        self.assertEqual(len(snapshot["segments"]), 9)
+        self.assertEqual(len(snapshot["segments"]), 8)
 
     @staticmethod
     def _valid_sections(opening=None):
         return {
+            "coldopen": "Tarifas mudam o comércio. Uma nova tecnologia chega ao mercado. O crédito muda hoje.",
             "intro": opening or "Bom dia! Quarta-feira, 22 de julho de 2026. Uma mudança silenciosa virou a notícia mais importante da manhã.",
             "mundo": "No mundo, o primeiro fato muda relações entre países e pede contexto. " * 25,
-            "cta": "Fica comigo porque os próximos blocos completam esse cenário. " * 10,
             "brasil": "No Brasil, a decisão afeta serviços, empresas e cidadãos de formas diferentes. " * 25,
-            "saude": "Na saúde, o avanço abre possibilidades, mas ainda exige cautela. " * 15,
             "tecnologia": "Em tecnologia, a inteligência artificial deixa o laboratório e entra na rotina. " * 25,
             "economia": "Na economia, os números alteram decisões de famílias e negócios. " * 25,
             "ofertas": "A mensagem de hoje é simples: contexto antes da pressa melhora escolhas. " * 15,

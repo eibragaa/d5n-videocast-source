@@ -14,11 +14,11 @@ from pathlib import Path
 
 PILLARS = ("GLOBAL", "BRASIL", "TECH", "ECONOMIA")
 SECTION_ORDER = (
-    "intro", "mundo", "brasil", "saude", "ciencia", "politica", "tecnologia",
-    "economia", "ofertas", "frase", "historia", "cta", "outro",
+    "coldopen", "intro", "mundo", "brasil", "tecnologia", "economia",
+    "interacao", "ofertas", "frase", "recomendacoes", "historia", "outro",
 )
-REQUIRED_SECTIONS = {"intro", "mundo", "brasil", "tecnologia", "economia", "ofertas", "outro"}
-MIN_SECTIONS = 9
+REQUIRED_SECTIONS = {"coldopen", "intro", "mundo", "brasil", "tecnologia", "economia", "outro"}
+MIN_SECTIONS = 8
 MIN_WORDS = 850
 MAX_WORDS = 1900
 MIN_DURATION = 300.0
@@ -169,7 +169,7 @@ def validate_script(audio_dir: Path, editorial_date: date, history_dir: Path) ->
 
     errors = []
     if len(segments) < MIN_SECTIONS:
-        errors.append(f"roteiro precisa de pelo menos 9 seções; encontradas {len(segments)}")
+        errors.append(f"roteiro precisa de pelo menos {MIN_SECTIONS} seções; encontradas {len(segments)}")
     missing = sorted(REQUIRED_SECTIONS - set(segments))
     if missing:
         errors.append("seções essenciais ausentes: " + ", ".join(missing))
@@ -244,18 +244,14 @@ def validate_manifest(path: Path, editorial_date: date) -> list[str]:
         errors.append(f"manifesto com data editorial incorreta; esperado {editorial_date.isoformat()}")
     sections = manifest.get("sections")
     if not isinstance(sections, list) or len(sections) < MIN_SECTIONS:
-        errors.append("manifesto precisa registrar pelo menos 9 seções")
+        errors.append(f"manifesto precisa registrar pelo menos {MIN_SECTIONS} seções")
     elif not REQUIRED_SECTIONS.issubset(set(sections)):
         errors.append("manifesto não registra todas as seções essenciais")
     else:
-        if "cta" in sections and "economia" in sections and sections.index("cta") < sections.index("economia"):
-            errors.append("CTA deve vir depois do giro de notícias/economia")
-        if "cta" in sections and "outro" in sections and sections.index("cta") > sections.index("outro"):
-            errors.append("CTA deve vir antes do outro")
         expected_order = [name for name in SECTION_ORDER if name in sections]
         known_order = [name for name in sections if name in SECTION_ORDER]
-        if known_order != expected_order:
-            errors.append("ordem das seções no manifesto não segue o contrato D5N v2")
+        if known_order != expected_order or len(known_order) != len(sections):
+            errors.append("ordem das seções no manifesto não segue o contrato D5N v3")
     voice_map = manifest.get("section_voice_map")
     if isinstance(sections, list) and (
         not isinstance(voice_map, dict) or not set(sections).issubset(voice_map)

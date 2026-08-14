@@ -11,15 +11,22 @@ import datetime
 from pathlib import Path
 
 AUDIO_DIR = Path(os.environ.get("D5N_AUDIO_DIR", "/tmp/d5n_audio"))
-MIXED = Path(os.environ.get("D5N_MIXED_FILE", "/tmp/d5n_mixado_v9.mp3"))
+MIXED = Path(os.environ.get("D5N_MIXED_FILE", "/tmp/d5n_mixado_v10.mp3"))
 MANIFEST = AUDIO_DIR / "manifest.json"
 EXPECTED = {
+    "schema": 2,
     "programa": "Drop Five News",
     "tts_provider": "edge-tts-local",
     "header_voice": "pt-BR-AntonioNeural",
     "loudness_target_lufs": -16,
     "true_peak_target_dbtp": -1.5,
 }
+SECTION_ORDER = (
+    "coldopen", "intro", "mundo", "brasil", "tecnologia", "economia",
+    "interacao", "ofertas", "frase", "recomendacoes", "historia", "outro",
+)
+REQUIRED_SECTIONS = {"coldopen", "intro", "mundo", "brasil", "tecnologia", "economia", "outro"}
+MIN_SECTIONS = 8
 THALITA = "pt-BR-ThalitaMultilingualNeural"
 FRANCISCA = "pt-BR-FranciscaNeural"
 FORBIDDEN = ("cinto", "DropFiveNews", "Drop News")
@@ -108,9 +115,18 @@ def validate_manifest(errors: list[str]) -> dict:
         if data.get(key) != expected:
             fail(errors, f"manifesto {key}: esperado {expected!r}, recebido {data.get(key)!r}")
     sections = data.get("sections")
-    if not isinstance(sections, list) or not {"intro", "outro"}.issubset(sections):
-        fail(errors, "manifesto sem intro/outro na ordem de seções")
+    if not isinstance(sections, list) or len(sections) < MIN_SECTIONS:
+        fail(errors, f"manifesto precisa registrar pelo menos {MIN_SECTIONS} seções")
         return data
+    if not REQUIRED_SECTIONS.issubset(sections):
+        fail(errors, "manifesto não registra todas as seções essenciais")
+    expected_order = [name for name in SECTION_ORDER if name in sections]
+    known_order = [name for name in sections if name in SECTION_ORDER]
+    if known_order != expected_order or len(known_order) != len(sections):
+        fail(errors, "ordem das seções no manifesto não segue o contrato D5N v3")
+    chapters = data.get("chapters")
+    if not isinstance(chapters, list) or not chapters or chapters[0].get("id") != "intro" or chapters[0].get("start") != 0:
+        fail(errors, "capítulos devem começar com intro em 0s")
 
     try:
         editorial_date = datetime.date.fromisoformat(data["editorial_date"])
@@ -174,14 +190,14 @@ def validate_spoken_text(errors: list[str]) -> None:
         is_header = path.stem.endswith("_header")
         if path.stem not in {"intro", "outro"} and not is_header and GOODBYE.search(text):
             fail(errors, f"{path.name}: despedida intermediária")
-        if path.stem not in {"cta", "outro"} and re.search(r"instagram|siga|segue a gente|me segue", text, re.I):
+        if path.stem != "outro" and re.search(r"instagram|siga|segue a gente|me segue", text, re.I):
             fail(errors, f"{path.name}: CTA fora do encerramento")
-        if path.stem == "cta" and all(term in folded for term in RSS_CTA_TERMS):
+        if path.stem == "outro" and all(term in folded for term in RSS_CTA_TERMS):
             rss_cta_seen = True
     if not official_name_seen:
         fail(errors, "nome oficial 'Drop Five News' ausente dos segmentos")
     if not rss_cta_seen:
-        fail(errors, "CTA do RSS próprio do Manhã Conectada ausente de cta.txt")
+        fail(errors, "CTA do RSS próprio do Manhã Conectada ausente de outro.txt")
 
 
 def main() -> int:

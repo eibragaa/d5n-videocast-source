@@ -8,10 +8,12 @@ import json
 import subprocess
 from pathlib import Path
 
-EXPECTED_IDS = [
-    "intro", "mundo", "brasil", "tecnologia", "economia",
-    "ofertas", "frase", "cta", "outro",
+SECTION_ORDER = [
+    "intro", "mundo", "brasil", "tecnologia", "economia", "interacao",
+    "ofertas", "frase", "recomendacoes", "historia", "outro",
 ]
+REQUIRED_IDS = {"intro", "mundo", "brasil", "tecnologia", "economia", "outro"}
+MIN_CHAPTERS = 7  # coldopen é pré-roll e não aparece na navegação do player
 
 
 def audio_duration(path: Path) -> float:
@@ -39,7 +41,8 @@ def validate_manifest(payload: dict, editorial_date: str, duration: float) -> di
     if not isinstance(chapters, list):
         raise ValueError("campo chapters ausente")
     ids = [chapter.get("id") for chapter in chapters]
-    if ids != EXPECTED_IDS:
+    expected = [section_id for section_id in SECTION_ORDER if section_id in ids]
+    if len(ids) < MIN_CHAPTERS or not REQUIRED_IDS.issubset(ids) or ids != expected:
         raise ValueError(f"ordem de capítulos inválida: {ids}")
 
     starts = []

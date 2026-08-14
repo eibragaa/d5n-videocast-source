@@ -1,18 +1,29 @@
-DROP FIVE NEWS — GERAÇÃO, AUTOCORREÇÃO E PUBLICAÇÃO DIÁRIA
+DROP FIVE NEWS — GERAÇÃO PREMIUM, AUTOCORREÇÃO E PUBLICAÇÃO
 
-Objetivo: publicar um episódio D5N novo TODOS OS DIAS, inclusive domingo. Execute o fluxo completo; não entregue apenas um plano. Data editorial obrigatória: America/Sao_Paulo.
+Objetivo: gerar e publicar o episódio D5N da data editorial em dias de produção. Execute o fluxo completo, não apenas um plano. O domingo é reservado à manutenção: não gere nem publique episódio quando weekday()==6. Fuso editorial: America/Sao_Paulo.
 
-CONTRATO IMUTÁVEL
-- Dados reais e atuais; nunca placeholders e nunca reutilize trends, roteiro ou áudio de outra data.
-- Fonte diária com GLOBAL, BRASIL, TECH e ECONOMIA, URLs verificáveis e conteúdo substantivo.
-- Formato v2 com 9 seções obrigatórias: intro, mundo, brasil, tecnologia, economia, ofertas, frase, cta e outro. CTA depois das notícias e antes do outro.
-- A seção cta deve dizer exatamente: “Agora você também pode assinar o Manhã Conectada no seu aplicativo de podcast. O RSS próprio está no site do Drop Five News.”
-- Duração final entre 5 e 12 minutos; alvo de 8–10 minutos.
-- Estilo Amanda Flaury: conversa inteligente, segura, natural e contextualizada. Varie a abertura, o ritmo, as transições e o fechamento diariamente. Evite bordões fixos, enumeração mecânica e clichês de IA.
-- A abertura deve começar com “Bom dia!”, mas não repita a arquitetura “Hoje é [data]. Aqui é [apresentadora]...”. Alterne diariamente entre gancho factual, pergunta concreta, consequência prática, contraste ou cena curta; encaixe a data completa e a identificação da apresentadora em posições naturais diferentes. Compare com os 7 snapshots anteriores antes do TTS.
-- Use as vozes, trilhas, manifesto e especificações técnicas definidas pelos gates existentes.
+CONTRATO D5N v3
+- Use dados reais, atuais e verificáveis; nunca invente fatos, ofertas, livros, filmes, séries, datas históricas, fontes ou URLs.
+- Fonte diária com GLOBAL, BRASIL, TECH e ECONOMIA, URLs verificáveis e contexto substantivo.
+- Ordem canônica: coldopen, intro, mundo, brasil, tecnologia, economia, interacao, ofertas, frase, recomendacoes, historia, outro.
+- Obrigatórias: coldopen, intro, mundo, brasil, tecnologia, economia e outro. Gere no mínimo 8 seções; opcionais só entram quando houver conteúdo real.
+- Duração final de 5–12 minutos, com alvo editorial de 8–10 minutos.
+- O CTA não é uma seção separada. Ele integra outro.txt e deve comunicar: “Agora você também pode assinar o Manhã Conectada no seu aplicativo de podcast. O RSS próprio está no site do Drop Five News.”
+- Estilo inspirado em Amanda Flaury: conversa inteligente, segura, natural e contextualizada. Varie diariamente abertura, ritmo, transições e fechamento. Evite bordões fixos, enumeração mecânica, clichês de IA e frases de preenchimento.
+- Use as vozes, trilhas, manifesto e especificações técnicas exigidas pelos gates.
 - Nunca altere, desative ou contorne um gate para fazer uma tentativa passar.
 - Nunca publique parcialmente. Cópia para o site, contador, commit e push só podem ocorrer via deploy_d5n_site.sh depois de todos os gates verdes.
+
+ARQUITETURA DO ROTEIRO
+- coldopen.txt: abra com a notícia no primeiro segundo. Entregue 3–4 manchetes-tiro específicas, curtas e fortes. Não diga “Bom dia” e não faça autoapresentação aqui.
+- intro.txt: a fala deve começar literalmente com “Bom dia!”. Inclua autoapresentação, uma pergunta concreta de engajamento e, de forma natural, dia da semana, data completa e identificação do Drop Five News. Não repita a arquitetura dos sete episódios anteriores.
+- mundo.txt, brasil.txt, tecnologia.txt e economia.txt: construa cada notícia como gancho → detalhe/contexto → EFEITO PRÁTICO para quem ouve. Diferencie fatos confirmados de análise.
+- interacao.txt: faça uma única pergunta de engajamento no meio do programa, ligada ao assunto do dia.
+- ofertas.txt: bloco comercial rápido, direto e factual; não invente preço, desconto, estoque ou patrocinador.
+- frase.txt: frase do dia obtida no Pensador, com autoria verificável e atribuição clara.
+- recomendacoes.txt: indique 1–2 livros ou títulos de streaming reais. É opcional; omita o arquivo se não puder verificar cada item.
+- historia.txt: fato histórico relacionado à data. É opcional; omita o arquivo se não houver fato verificável.
+- outro.txt: reúna CTA do RSS da Manhã Conectada, lembrete útil e bordão de despedida. Varie a redação e o bordão diariamente, sem perder os quatro termos obrigatórios do CTA. Termine com “Bom dia!”.
 
 ESTADO E LIMITE
 REPO=/root/repositorio/d5n-videocast-source
@@ -21,54 +32,50 @@ MAX_ATTEMPTS=4
 
 1. Antes de gerar, execute:
    python3 "$REPO/scripts/d5n_release_status.py" --date "$DATE"
-   Se retornar published=true, encerre imediatamente como D5N_ALREADY_PUBLISHED. Não regenere, não altere contador e não faça novo push.
+   Se for domingo, encerre como D5N_MAINTENANCE. Se retornar published=true, encerre como D5N_ALREADY_PUBLISHED. Não regenere, não altere contador e não faça novo push.
 
 2. PARA CADA tentativa de 1 até MAX_ATTEMPTS:
 
    A. DIAGNÓSTICO
    - Leia o erro exato da tentativa anterior, se houver.
-   - Corrija somente o artefato que causou a falha. Exemplos: trends inválidos → recolher trends; roteiro curto/repetitivo → reescrever apenas os blocos afetados; seção de TTS ausente → regenerar essa seção; mix inválido → refazer o mix.
-   - Não reduza thresholds, não remova seções e não aceite dados antigos.
+   - Corrija somente o artefato que causou a falha. Trends inválidos exigem nova coleta; roteiro curto, repetitivo ou inexato exige reescrita dos blocos afetados; TTS ausente exige regenerar a seção; mix inválido exige refazer o mix.
+   - Não reduza thresholds, não remova seções obrigatórias e não aceite dados antigos.
 
    B. TRENDS DO DIA
    - Arquivo canônico: /root/.hermes/cron/output/drop5news-trends-${DATE}.txt
-   - Se ausente ou inválido, pesquise novamente com AnySearch e fontes primárias/confiáveis. Grave GLOBAL, BRASIL, TECH e ECONOMIA com URLs e contexto suficiente.
-   - Arquivo vazio, curto, sem os quatro pilares ou com data errada reprova e deve ser recolhido nesta mesma tentativa.
+   - Se ausente ou inválido, pesquise novamente com fontes primárias ou confiáveis. Grave GLOBAL, BRASIL, TECH e ECONOMIA com URLs e contexto suficiente.
+   - Arquivo vazio, curto, sem os quatro pilares ou com data errada reprova e deve ser recolhido nesta tentativa.
 
    C. ROTEIRO
-   - Gere/atualize os arquivos falados em /tmp/d5n_audio usando somente os trends validados do dia.
-   - Preserve fatos e atribuições; diferencie fato de análise.
-   - No arquivo cta.txt, preserve literalmente a chamada obrigatória do RSS próprio do Manhã Conectada.
-   - Garanta 9 blocos essenciais, CTA na posição correta, abertura/fechamento não repetitivos e volume de fala compatível com 5–12 minutos.
+   - Gere ou atualize em /tmp/d5n_audio somente estes arquivos aplicáveis: coldopen.txt, intro.txt, mundo.txt, brasil.txt, tecnologia.txt, economia.txt, interacao.txt, ofertas.txt, frase.txt, recomendacoes.txt, historia.txt e outro.txt.
+   - Não crie cta.txt. Apague apenas um cta.txt residual desta execução antes dos gates; o conteúdo obrigatório pertence a outro.txt.
+   - Preserve fatos e atribuições. Compare intro e outro com os sete snapshots anteriores. Garanta no mínimo 8 blocos, todas as obrigatórias e volume de fala compatível com 5–12 minutos.
    - Execute:
      python3 /root/.hermes/scripts/d5n-pre-gen-gate.py
      python3 /root/.hermes/scripts/d5n-mensagem-validate.py
-   - Se um gate falhar, volte ao diagnóstico e reescreva somente os blocos indicados antes de gerar áudio.
+   - Se um gate falhar, volte ao diagnóstico e reescreva somente os blocos indicados antes do TTS.
 
    D. TTS E MIX
-   - Gere todos os áudios de seção exigidos pelo mixer, sem pular entrada ausente.
-   - Execute o mixer efetivo:
-     python3 /root/.hermes/scripts/drop5news-mixer-v9.py --audio-dir /tmp/d5n_audio --output /tmp/d5n_mixado_v9.mp3 --editorial-date "$DATE"
-   - Confirme a criação de /tmp/d5n_audio/manifest.json e do MP3 final da data.
+   - Gere um MP3 para cada arquivo de seção presente, sem pular entrada obrigatória.
+   - Execute:
+     python3 /root/.hermes/scripts/drop5news-mixer-v10.py --audio-dir /tmp/d5n_audio --output /tmp/d5n_mixado_v10.mp3 --editorial-date "$DATE"
+   - Confirme /tmp/d5n_audio/manifest.json e /tmp/d5n_mixado_v10.mp3.
 
    E. GATES FINAIS
-   - Execute o gate técnico:
-     python3 "$REPO/scripts/d5n-podcast-quality-gate.py"
-   - Execute o gate editorial diário com o MP3 atual:
-     python3 "$REPO/scripts/d5n_daily_release_gate.py" --date "$DATE" --audio "CAMINHO_MP3_ATUAL" --audio-dir /tmp/d5n_audio --history-dir "$REPO/podcast-scripts" --write-snapshot
+   - Execute:
+     D5N_MIXED_FILE=/tmp/d5n_mixado_v10.mp3 python3 "$REPO/scripts/d5n-podcast-quality-gate.py"
+     python3 "$REPO/scripts/d5n_daily_release_gate.py" --date "$DATE" --audio /tmp/d5n_mixado_v10.mp3 --audio-dir /tmp/d5n_audio --history-dir "$REPO/podcast-scripts" --write-snapshot
    - Se qualquer gate falhar, não publique. Volte ao diagnóstico e corrija somente o artefato apontado.
 
    F. PUBLICAÇÃO ATÔMICA
-   - Somente após todos os gates verdes, copie o MP3 aprovado para /root/.hermes/cron/output/d5n-podcast-${DATE}.mp3.
+   - Após todos os gates verdes, copie o MP3 aprovado para /root/.hermes/cron/output/d5n-podcast-${DATE}.mp3.
    - Execute:
      cd "$REPO" && D5N_DATE="$DATE" D5N_REPO="$REPO" D5N_CRON_AUDIO=/root/.hermes/cron/output bash deploy_d5n_site.sh
-   - O deploy deve fazer staging seletivo, commit, push e criar o recibo somente após push bem-sucedido.
-   - Confirme:
-     python3 "$REPO/scripts/d5n_release_status.py" --date "$DATE"
+   - Confirme com python3 "$REPO/scripts/d5n_release_status.py" --date "$DATE".
    - Se published=true, encerre como D5N_RELEASED, informando data, episódio, duração e URL.
-   - Se o deploy falhar, use o log /root/.hermes/logs/d5n-deploy/deploy-${DATE}.log no diagnóstico da próxima tentativa.
+   - Se o deploy falhar, use /root/.hermes/logs/d5n-deploy/deploy-${DATE}.log no próximo diagnóstico.
 
 3. EXAUSTÃO SEGURA
-- Depois de MAX_ATTEMPTS=4 sem published=true, pare a execução para evitar loop infinito e gasto descontrolado.
-- Preserve o marcador de falha e retorne D5N_BLOCKED com estágio, erro exato e artefato que precisa ser corrigido.
-- O job de recuperação retomará o mesmo ciclo mais tarde no dia. Nunca declare sucesso sem recibo válido.
+- Depois de MAX_ATTEMPTS=4 sem published=true, pare para evitar loop infinito e gasto descontrolado.
+- Preserve o marcador de falha e retorne D5N_BLOCKED com estágio, erro exato e artefato a corrigir.
+- Nunca declare sucesso sem recibo válido.

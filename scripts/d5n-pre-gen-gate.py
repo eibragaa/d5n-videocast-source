@@ -8,8 +8,8 @@ import sys
 from pathlib import Path
 
 AUDIO_DIR = Path(os.environ.get("D5N_AUDIO_DIR", "/tmp/d5n_audio"))
-REQUIRED = {"intro", "mundo", "brasil", "tecnologia", "economia", "ofertas", "outro"}
-MIN_SECTIONS = 9
+REQUIRED = {"coldopen", "intro", "mundo", "brasil", "tecnologia", "economia", "outro"}
+MIN_SECTIONS = 8
 
 
 def main() -> int:
@@ -20,27 +20,26 @@ def main() -> int:
 
     errors = []
     if not audio_dir.is_dir():
-        errors.append(f"diretorio de roteiro ausente: {audio_dir}")
+        errors.append(f"diretório de roteiro ausente: {audio_dir}")
         print("BLOQUEADO: " + " | ".join(errors))
         return 1
 
     presentes = {
         p.stem for p in audio_dir.glob("*.txt")
-        if p.stat().st_size and p.stem not in {"cta", "outro", "intro"}
+        if p.stat().st_size and p.stem not in {"outro", "intro"}
     }
     presentes |= {p.stem for p in audio_dir.glob("*.txt") if p.stat().st_size}
 
     if len(presentes) < MIN_SECTIONS:
-        errors.append(f"secoes ausentes ou vazias: apenas {len(presentes)} de {MIN_SECTIONS}+")
+        errors.append(f"seções ausentes ou vazias: apenas {len(presentes)} de {MIN_SECTIONS}+")
     missing = sorted(REQUIRED - presentes)
     if missing:
         errors.append("secoes obrigatorias ausentes: " + ", ".join(missing))
 
-    # O CTA e o outro devem existir e não estar vazios.
-    for nome in ("cta", "outro"):
-        f = audio_dir / f"{nome}.txt"
-        if not f.is_file() or f.stat().st_size < 10:
-            errors.append(f"secao obrigatoria ausente ou vazia: {nome}")
+    # O CTA faz parte do encerramento; outro precisa ter conteúdo falado.
+    outro = audio_dir / "outro.txt"
+    if not outro.is_file() or outro.stat().st_size < 10:
+        errors.append("secao obrigatoria ausente ou vazia: outro")
 
     if errors:
         print("BLOQUEADO: " + " | ".join(errors))

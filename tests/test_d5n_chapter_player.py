@@ -6,7 +6,7 @@ from pathlib import Path
 
 REPO = Path(__file__).parents[1]
 GENERATOR = REPO / "gerar_pagina_d5n.py"
-MIXER = Path("/root/.hermes/profiles/d5n/skills/media/trends-podcast/scripts/drop5news-mixer-v9.py")
+CHAPTER_GATE = REPO / "scripts" / "d5n_chapter_manifest.py"
 DEPLOY = REPO / "deploy_d5n_site.sh"
 VERIFIER = Path("/root/.hermes/scripts/d5n-verify-site.py")
 EXPECTED_IDS = [
@@ -15,9 +15,11 @@ EXPECTED_IDS = [
     "brasil",
     "tecnologia",
     "economia",
+    "interacao",
     "ofertas",
     "frase",
-    "cta",
+    "recomendacoes",
+    "historia",
     "outro",
 ]
 
@@ -33,18 +35,18 @@ def load_module(path, name):
 
 
 class ChapterPlayerContractTests(unittest.TestCase):
-    def test_mixer_emits_exact_nine_section_timeline(self):
-        mixer = load_module(MIXER, "d5n_mixer_chapters")
-        starts = [(section_id, index * 10_000) for index, section_id in enumerate(EXPECTED_IDS)]
+    def test_chapter_gate_accepts_v3_timeline_with_intro_at_zero(self):
+        gate = load_module(CHAPTER_GATE, "d5n_chapter_gate")
+        chapters = [
+            {"id": section_id, "start": index * 10, "end": (index + 1) * 10}
+            for index, section_id in enumerate(EXPECTED_IDS)
+        ]
+        payload = {"schema": 2, "editorial_date": "2026-08-14", "chapters": chapters}
 
-        chapters = mixer.finalize_chapters(starts, total_ms=90_000)
+        canonical = gate.validate_manifest(payload, "2026-08-14", len(EXPECTED_IDS) * 10)
 
-        self.assertEqual([chapter["id"] for chapter in chapters], EXPECTED_IDS)
-        self.assertEqual(chapters[0]["start"], 0)
-        self.assertEqual(chapters[-1]["end"], 90)
-        for current, following in zip(chapters, chapters[1:]):
-            self.assertEqual(current["end"], following["start"])
-            self.assertGreater(current["duration"], 0)
+        self.assertEqual([chapter["id"] for chapter in canonical["chapters"]], EXPECTED_IDS)
+        self.assertEqual(canonical["chapters"][0]["start"], 0)
 
     def test_generator_rejects_generic_or_incomplete_chapters(self):
         generator = load_module(GENERATOR, "d5n_generator_chapters_invalid")
@@ -56,7 +58,7 @@ class ChapterPlayerContractTests(unittest.TestCase):
 
         self.assertEqual(generator.validate_chapters(generic, duration=360), [])
 
-    def test_generator_renders_nine_clickable_youtube_style_segments(self):
+    def test_generator_renders_clickable_v3_segments(self):
         generator = load_module(GENERATOR, "d5n_generator_chapters_render")
         chapters = [
             {
@@ -71,8 +73,8 @@ class ChapterPlayerContractTests(unittest.TestCase):
 
         rendered = generator.render_chapter_segments(chapters)
 
-        self.assertEqual(rendered.count('class="chapter-segment"'), 9)
-        self.assertEqual(rendered.count('class="chapter-segment-fill"'), 9)
+        self.assertEqual(rendered.count('class="chapter-segment"'), len(EXPECTED_IDS))
+        self.assertEqual(rendered.count('class="chapter-segment-fill"'), len(EXPECTED_IDS))
         self.assertIn('data-chapter-start="0"', rendered)
         self.assertIn('aria-label="Ir para o capítulo Abertura', rendered)
 
@@ -83,7 +85,9 @@ class ChapterPlayerContractTests(unittest.TestCase):
         self.assertIn('CHAPTER_DEST="chapters/${DATE}.json"', deploy)
         self.assertIn('git add -- "$CHAPTER_DEST"', deploy)
 
-    def test_site_verifier_requires_nine_real_chapters(self):
+    def test_site_verifier_requires_real_chapters(self):
+        if not VERIFIER.is_file():
+            self.skipTest("verificador do Hermes não está instalado neste ambiente")
         verifier = VERIFIER.read_text(encoding="utf-8")
 
         self.assertIn("Tem 9 capítulos reais", verifier)

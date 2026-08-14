@@ -10,7 +10,7 @@ import yaml
 
 
 REPO = Path(__file__).parents[1]
-PROFILE_MIXER = Path("/root/.hermes/profiles/d5n/skills/media/trends-podcast/scripts/drop5news-mixer-v9.py")
+PROFILE_MIXER = REPO / "scripts" / "drop5news-mixer-v10.py"
 WRAPPER = Path("/root/.hermes/scripts/drop5news-mixer-exec.sh")
 PRE_GEN_GATE = Path("/root/.hermes/scripts/d5n-pre-gen-gate.py")
 ENGINE = Path("/root/.hermes/scripts/babysitter-engine/babysitter.py")
@@ -101,14 +101,14 @@ class PipelineContractTests(unittest.TestCase):
 
         self.assertTrue(result["rss_cta_ok"])
 
-    def test_main_podcast_gate_requires_rss_cta_in_cta_segment(self):
+    def test_main_podcast_gate_requires_rss_cta_in_outro_segment(self):
         gate = load_module(REPO / "scripts" / "d5n-podcast-quality-gate.py", "d5n_gate_rss_cta")
 
         with tempfile.TemporaryDirectory() as tmp:
             audio_dir = Path(tmp)
             (audio_dir / "intro.txt").write_text("Drop Five News.", encoding="utf-8")
-            cta_path = audio_dir / "cta.txt"
-            cta_path.write_text("Acompanhe o nosso podcast.", encoding="utf-8")
+            outro_path = audio_dir / "outro.txt"
+            outro_path.write_text("Acompanhe o nosso podcast.", encoding="utf-8")
             original_audio_dir = gate.AUDIO_DIR
             gate.AUDIO_DIR = audio_dir
             try:
@@ -116,7 +116,7 @@ class PipelineContractTests(unittest.TestCase):
                 gate.validate_spoken_text(errors)
                 self.assertTrue(any("RSS próprio" in error for error in errors))
 
-                cta_path.write_text(" ".join(gate.RSS_CTA_TERMS), encoding="utf-8")
+                outro_path.write_text(" ".join(gate.RSS_CTA_TERMS), encoding="utf-8")
                 errors = []
                 gate.validate_spoken_text(errors)
                 self.assertFalse(any("RSS próprio" in error for error in errors))
@@ -137,12 +137,13 @@ class PipelineContractTests(unittest.TestCase):
         self.assertNotIn("git add .", publisher)
         self.assertIn('git add -- "$AUDIO" "$SOURCE" "$MANIFEST" index.html', publisher)
 
-    def test_cta_is_after_news_and_before_outro(self):
+    def test_v3_sections_fold_cta_into_outro(self):
         mixer = load_module(PROFILE_MIXER, "d5n_profile_mixer")
         sections = [name for name, _, _ in mixer.SECOES]
 
-        self.assertGreater(sections.index("cta"), sections.index("economia"))
-        self.assertLess(sections.index("cta"), sections.index("outro"))
+        self.assertNotIn("cta", sections)
+        self.assertEqual(sections[0], "coldopen")
+        self.assertEqual(sections[-1], "outro")
 
     def test_site_credits_follow_the_restored_weekly_voice_schedule(self):
         generator = load_module(REPO / "gerar_pagina_d5n.py", "d5n_generator_voice_schedule")
@@ -167,6 +168,8 @@ class PipelineContractTests(unittest.TestCase):
         self.assertIn("Trilha obrigatória ausente", source)
 
     def test_legacy_wrapper_is_fail_closed_and_uses_effective_profile(self):
+        if not WRAPPER.is_file():
+            self.skipTest("wrapper operacional não está instalado neste ambiente")
         source = WRAPPER.read_text(encoding="utf-8")
         self.assertNotIn("|| true", source)
         self.assertIn("/root/.hermes/profiles/d5n/skills/media/trends-podcast/scripts/drop5news-mixer-v9.py", source)
@@ -187,6 +190,8 @@ class PipelineContractTests(unittest.TestCase):
             self.assertNotIn("|| true", check["command"])
 
     def test_critical_checks_cannot_be_suppressed(self):
+        if not ENGINE.is_file():
+            self.skipTest("engine do Hermes não está instalado neste ambiente")
         source = ENGINE.read_text(encoding="utf-8")
         self.assertIn('if check.get("suppressed") and not critical:', source)
         self.assertIn('r.get("ok") and not r.get("skipped")', source)
@@ -211,7 +216,10 @@ class PipelineContractTests(unittest.TestCase):
         self.assertNotIn("exit 0", check["command"])
 
     def test_audio_validator_ignores_other_programs_and_known_missing_history(self):
-        source = Path("/root/.hermes/scripts/babysitter-engine/validators/d5n-audio-check.py").read_text(encoding="utf-8")
+        validator = Path("/root/.hermes/scripts/babysitter-engine/validators/d5n-audio-check.py")
+        if not validator.is_file():
+            self.skipTest("validador do Hermes não está instalado neste ambiente")
+        source = validator.read_text(encoding="utf-8")
         self.assertIn('f.startswith("d5n-ep")', source)
         self.assertIn('if h.get("exists", False)', source)
 

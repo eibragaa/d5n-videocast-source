@@ -254,9 +254,11 @@ def get_duration(filepath):
 
 
 EXPECTED_CHAPTER_IDS = [
-    "intro", "mundo", "brasil", "tecnologia", "economia",
-    "ofertas", "frase", "cta", "outro",
+    "intro", "mundo", "brasil", "tecnologia", "economia", "interacao",
+    "ofertas", "frase", "recomendacoes", "historia", "outro",
 ]
+REQUIRED_CHAPTER_IDS = {"intro", "mundo", "brasil", "tecnologia", "economia", "outro"}
+MIN_CHAPTERS = 7
 CHAPTER_LABELS = {
     "intro": "Abertura",
     "mundo": "Mundo",
@@ -265,7 +267,9 @@ CHAPTER_LABELS = {
     "economia": "Economia & Mercados",
     "ofertas": "Ofertas do Dia",
     "frase": "Frase do Dia",
-    "cta": "Comunidade D5N",
+    "interacao": "Sua vez",
+    "recomendacoes": "Recomendações",
+    "historia": "História do dia",
     "outro": "Encerramento",
 }
 
@@ -277,9 +281,11 @@ def format_chapter_time(seconds):
 
 def validate_chapters(chapters, duration):
     """Valida e normaliza os nove capítulos canônicos contra o MP3 real."""
-    if not isinstance(chapters, list) or len(chapters) != len(EXPECTED_CHAPTER_IDS):
+    if not isinstance(chapters, list) or len(chapters) < MIN_CHAPTERS:
         return []
-    if [chapter.get("id") for chapter in chapters] != EXPECTED_CHAPTER_IDS:
+    ids = [chapter.get("id") for chapter in chapters]
+    expected = [section_id for section_id in EXPECTED_CHAPTER_IDS if section_id in ids]
+    if not REQUIRED_CHAPTER_IDS.issubset(ids) or ids != expected:
         return []
     try:
         total = float(duration)
