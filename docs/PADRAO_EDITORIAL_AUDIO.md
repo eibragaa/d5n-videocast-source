@@ -1,20 +1,21 @@
-# Padrão editorial e de áudio — Drop Five News
+# Padrão editorial e de áudio — Hoje no Drop Five News
 
-Vigência: 18 de julho de 2026.
+Vigência: 14 de agosto de 2026 (contrato D5N v3 / Mixer v10).
 
 ## Publicação
 
 - O podcast é produzido de **segunda a sábado**.
 - **Domingo não tem episódio**: é reservado para manutenção de TTS, mixer e pipeline.
-- O nome editorial e falado é sempre **Drop Five News**.
+- O nome editorial e falado é **Drop Five News**; o nome do programa/feeds é **"Hoje no Drop Five News"**.
 - A data editorial usa `America/Sao_Paulo` e deve ser narrada em português brasileiro.
 - Reprocessamentos históricos devem definir `D5N_EDITORIAL_DATE=AAAA-MM-DD`.
+- **Duração final SEMPRE entre 8 e 12 minutos; nunca menos que 8.** Alvo editorial de 9–10 min.
 
 ## Roteiro
 
 1. Todo texto falado deve estar em português brasileiro.
 2. Não narrar emoji, markdown, URL, nome de arquivo ou instrução técnica.
-3. CTA e despedida aparecem somente no encerramento geral.
+3. CTA e despedida aparecem somente no encerramento geral (outro).
 4. Não usar Voz da Comunidade, comentário simulado, audiência inventada ou micro-momento sussurrado.
 5. Não inventar fatos, fontes, organizações, números, percentuais ou curiosidades.
 6. Killpoints editoriais são opcionais e exigem sustentação factual:
@@ -27,6 +28,26 @@ Vigência: 18 de julho de 2026.
    - silêncio intencional em tema sensível;
    - assinatura sonora.
 7. A substring `cinto`, sem diferenciar maiúsculas e minúsculas, é proibida em qualquer roteiro, template ou frase selecionada.
+
+## Estrutura do roteiro (D5N v3 — 12 seções)
+
+Ordem canônica: `coldopen, intro, mundo, brasil, tecnologia, economia, interacao,
+ofertas, frase, recomendacoes, historia, outro`.
+
+- **coldopen**: abre com a notícia no primeiro segundo; 3–4 manchetes-tiro. Sem "Bom dia".
+- **intro**: começa com "Bom dia!", autoapresentação com o NOME real da apresentadora
+  (Thalita/Francisca), pergunta de engajamento, data e identificação.
+- **mundo/brasil/tecnologia/economia**: cada notícia gancho → contexto → consequência
+  (varie a expressão do efeito, sem fórmula mecânica repetida).
+- **interacao**: uma pergunta de engajamento no meio, como hook espontâneo (sem header).
+- **ofertas**: bloco comercial rápido e factual.
+- **frase** (Mensagem do Dia): do Pensador, com autoria verificável.
+- **recomendacoes**: 1–2 filmes/séries do IMDB com nota >8 (verificado, nunca inventar).
+- **historia**: o que foi notícia nesta data em anos passados (fato verificável).
+- **outro**: CTA do RSS da Manhã Conectada + CTA multiplataforma + bordão + "Bom dia!".
+
+Obrigatórias: `coldopen, intro, mundo, brasil, tecnologia, economia, outro`
+(`MIN_SECTIONS=8`). Opcionais só entram quando houver conteúdo real.
 
 ## Mensagem do Dia
 
@@ -51,20 +72,22 @@ A produção usa exclusivamente **Edge TTS local**:
 
 A escolha é calculada pela **data editorial** (`D5N_EDITORIAL_DATE`) em `America/Sao_Paulo`, nunca pelo dia em que um reprocessamento é executado. Na sexta-feira, o manifesto registra `presentation_mode: sexta-dual-dinamica`, as duas vozes e o mapa de voz por seção. Gemini TTS é legado e não deve ser usado.
 
-## Mixer v9
+## Mixer v10
 
-Cópias sincronizadas:
-
-- `~/.hermes/profiles/d5n/skills/media/trends-podcast/scripts/drop5news-mixer-v9.py`
-- `~/.hermes/profiles/d5n/skills/media/trends-podcast/templates/drop5news-mixer-v9.py`
+Cópia efetiva: `/root/.hermes/scripts/drop5news-mixer-v10.py` (espelhada em
+`scripts/drop5news-mixer-v10.py` no repo). O mixer v9 (`drop5news-mixer-v9.py`) ainda
+existe como referência, mas NÃO é o efetivo.
 
 Requisitos:
 
 - preservar a ordem real das seções mesmo quando blocos opcionais estiverem ausentes;
 - usar o nome carregado junto ao bloco, sem inferir por índice;
-- trilha abaixo da narração, com fades e transições;
+- **lead musical de 3s** antes da primeira voz (música entra, locução depois);
+- trilha própria por bloco em `assets/audio/d5n/` com ducking e fades;
+- headers temáticos com voz `pt-BR-AntonioNeural` (section_headers no manifest);
 - saída mono, 44,1 kHz, MP3 192 kbps;
 - normalização final com alvo de **−16 LUFS** e true peak de **−1,5 dBTP**;
+- **duração entre 480 e 720 s (8–12 min)**;
 - gravar `/tmp/d5n_audio/manifest.json` com provedor, vozes, seções e alvos de áudio.
 
 ## Gates bloqueantes

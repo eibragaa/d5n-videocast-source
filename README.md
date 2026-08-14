@@ -29,10 +29,11 @@ D5N é um boletim diário de notícias curado por IA, publicado automaticamente 
 | Formato | Descrição |
 |---------|-----------|
 | **Site HTML** | Página estática com design premium (Libre Baskerville + DM Sans) |
-| **Podcast MP3** | ~5–7 min, seções factuais disponíveis, apresentação alternada entre Thalita e Francisca; sexta-feira usa ambas. Headers com Antonio. Segunda a sábado: `d5n-ep{NNN}-{DATE}.mp3`; domingo não há episódio. |
+| **Podcast MP3** | **8–12 min** (sempre ≥8 min), 12 seções premium (coldopen, intro, mundo, brasil, tecnologia, economia, interacao, ofertas, frase, recomendacoes, historia, outro). Apresentação alternada entre Thalita e Francisca; sexta-feira usa ambas; headers com Antonio. Trilhas próprias do D5N + ducking. Segunda a sábado: `d5n-ep{NNN}-{DATE}.mp3`; domingo não há episódio. |
 | **Cards Instagram** | PNG 1080×1080 com foto de fundo + headline |
 | **Feed JSON/RSS** | Para apps e agregadores |
 | **Arquivo Markdown** | Histórico diário em `/2026/YYYY-MM-DD.md` |
+| **Manhã Conectada** | Briefing matinal (seg-sex, 11h BR) em `manha-conectada/` — pipeline, mixer e assets próprios, voz Antonio, ducking sidechain. |
 
 ---
 

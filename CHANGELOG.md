@@ -8,9 +8,34 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/), e este 
 
 ## [Unreleased]
 
+### Added
+- **Mixer v10 premium** (`scripts/drop5news-mixer-v10.py`) — contrato D5N v3 com 12 seções:
+  `coldopen, intro, mundo, brasil, tecnologia, economia, interacao, ofertas, frase,
+  recomendacoes, historia, outro`. CTA integrado ao `outro` (não há mais seção `cta`).
+  Trilhas próprias do D5N em `assets/audio/d5n/` (14 do Drive do cliente), ducking,
+  lead musical de 3s, headers temáticos com voz do Antônio, fades globais.
+- **Duração obrigatória 8–12 min** — `MIN_SECONDS=480` no mixer; `MIN_DURATION=480` e
+  `MIN_WORDS=1100` no daily release gate. Nunca menos que 8 min.
+- **Acumulador de custo de IA** — `/root/.hermes/scripts/d5n-custo-episodio.py`
+  (`--hoje` / `--gravar` / `--mensal`) usa tokens reais do state.db + preços oficiais
+  DeepSeek; cron reporta o custo por episódio no delivery.
+- **Manhã Conectada reorganizada** — isolada em `manha-conectada/` (scripts/assets/
+  manifests/roteiros/feeds/docs/audio) no mesmo repo, sem quebrar URLs públicas
+  (redirects no netlify.toml). Novo padrão de áudio: intro própria `intro-mc-nova.mp3`,
+  bg `bg-music-mc.wav`, ducking sidechain no mixer. Cron `manha-conectada-diario`
+  (seg-sex, publicação às 11h BR — episódio pronto no player).
+
 ### Changed
-- **Episódios de fim de semana não consomem mais números de sequência** — `deploy_d5n_site.sh` detecta sáb/dom e salva áudio como `d5n-weekend-{DATE}.mp3` sem atualizar `last_episode` no contador. `find_latest_podcast()` pula entradas de fds no histórico para manter o player com sequência limpa.
-- **README, CHANGELOG, ARCHITECTURE** — Documentação atualizada com novo comportamento de fim de semana.
+- **Título do programa/feeds** — "Drop Five News" → **"Hoje no Drop Five News"**
+  (estilo Tecmundo), mantendo a numeração/sequência epNNN.
+- **Pipeline da Manhã Conectada** — passou a usar **DeepSeek direto** (api.deepseek.com)
+  com `"thinking": {"type": "disabled"}` (o reasoning do deepseek-v4-flash estourava os
+  tokens e retornava roteiro vazio). Limite de palavras 600–1100.
+- **Estilo de roteiro premium** — apresentadora se apresenta pelo nome real; efeito
+  prático variado e natural (sem repetir a expressão a cada bloco); interação sem header
+  (hook espontâneo); recomendações de filmes/séries do IMDB com nota >8; história do dia
+  = o que foi notícia nesta data em anos passados.
+- **README, CHANGELOG, ARCHITECTURE** — atualizados para o padrão premium (mixer v10).
 
 ### Planned
 - Newsletter com captura de email (ConvertKit/Mailchimp)
