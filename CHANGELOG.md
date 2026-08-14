@@ -24,6 +24,11 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/), e este 
   (redirects no netlify.toml). Novo padrão de áudio: intro própria `intro-mc-nova.mp3`,
   bg `bg-music-mc.wav`, ducking sidechain no mixer. Cron `manha-conectada-diario`
   (seg-sex, publicação às 11h BR — episódio pronto no player).
+- **Variação "Vídeo Telejornal"** (`d5n-video-telejornal/`) — gera vídeo 9:16 estilo
+  telejornal a partir da narração: timing por frase via SentenceBoundary do Edge TTS,
+  stock video por frase no Pexels com keywords semânticas em inglês (DeepSeek, fallback
+  heurístico), visual instagram-premium (scrim obsidiana + menta), legendas `.ass`,
+  mux ffmpeg. 100% local (sem ASR — ctranslate2 dá SIGILL na CPU sem AVX2).
 
 ### Changed
 - **Título do programa/feeds** — "Drop Five News" → **"Hoje no Drop Five News"**
