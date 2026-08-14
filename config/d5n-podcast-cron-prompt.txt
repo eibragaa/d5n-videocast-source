@@ -48,8 +48,8 @@ MAX_ATTEMPTS=4
    D. TTS E MIX
    - Gere todos os áudios de seção exigidos pelo mixer, sem pular entrada ausente.
    - Execute o mixer efetivo:
-     python3 /root/.hermes/profiles/d5n/skills/media/trends-podcast/scripts/drop5news-mixer-v9.py
-   - Confirme a criação de /tmp/d5n_mix_manifest.json e do MP3 final da data.
+     python3 /root/.hermes/scripts/drop5news-mixer-v9.py --audio-dir /tmp/d5n_audio --output /tmp/d5n_mixado_v9.mp3 --editorial-date "$DATE"
+   - Confirme a criação de /tmp/d5n_audio/manifest.json e do MP3 final da data.
 
    E. GATES FINAIS
    - Execute o gate técnico:
@@ -59,9 +59,9 @@ MAX_ATTEMPTS=4
    - Se qualquer gate falhar, não publique. Volte ao diagnóstico e corrija somente o artefato apontado.
 
    F. PUBLICAÇÃO ATÔMICA
-   - Somente após todos os gates verdes, copie o MP3 aprovado para /root/.hermes/profiles/d5n/cron/output/d5n-podcast-${DATE}.mp3.
+   - Somente após todos os gates verdes, copie o MP3 aprovado para /root/.hermes/cron/output/d5n-podcast-${DATE}.mp3.
    - Execute:
-     cd "$REPO" && bash deploy_d5n_site.sh
+     cd "$REPO" && D5N_DATE="$DATE" D5N_REPO="$REPO" D5N_CRON_AUDIO=/root/.hermes/cron/output bash deploy_d5n_site.sh
    - O deploy deve fazer staging seletivo, commit, push e criar o recibo somente após push bem-sucedido.
    - Confirme:
      python3 "$REPO/scripts/d5n_release_status.py" --date "$DATE"
