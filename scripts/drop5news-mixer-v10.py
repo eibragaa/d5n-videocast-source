@@ -59,7 +59,7 @@ PAUSE_EXTRA_MS = 650
 HIGH_LUF = -16
 TRUE_PEAK = -1.5
 BITS = 192
-LEAD_MS = 2_000
+LEAD_MS = 3_000
 HEADER_BREATH_MS = 350
 GLOBAL_FADE_IN_MS = 800
 GLOBAL_FADE_OUT_MS = 2_000
@@ -74,7 +74,8 @@ HEADER_LABELS = {
     "brasil": "Brasil",
     "tecnologia": "Tecnologia",
     "economia": "Economia",
-    "interacao": "Sua vez",
+    # "interacao" propositalmente SEM header — a pergunta deve soar como hook natural,
+    # não como seção anunciada.
     "ofertas": "Ofertas do dia",
     "frase": "Mensagem do dia",
     "recomendacoes": "Recomendações",

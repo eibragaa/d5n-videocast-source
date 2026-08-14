@@ -150,7 +150,7 @@ class PipelineContractTests(unittest.TestCase):
 
         self.assertEqual(mixer.MIN_SECONDS, 480)
         self.assertEqual(mixer.MAX_SECONDS, 720)
-        self.assertEqual(mixer.LEAD_MS, 2_000)
+        self.assertEqual(mixer.LEAD_MS, 3_000)
         self.assertEqual(mixer.GLOBAL_FADE_IN_MS, 800)
         self.assertGreaterEqual(mixer.GLOBAL_FADE_OUT_MS, 1_800)
         self.assertEqual(mixer.LIGHT_TRACK_GAIN_DB, -20.0)
@@ -161,6 +161,7 @@ class PipelineContractTests(unittest.TestCase):
         self.assertNotIn("coldopen", mixer.HEADER_LABELS)
         self.assertNotIn("intro", mixer.HEADER_LABELS)
         self.assertNotIn("outro", mixer.HEADER_LABELS)
+        self.assertNotIn("interacao", mixer.HEADER_LABELS)  # interação usa hook natural, sem header
 
     def test_site_credits_follow_the_restored_weekly_voice_schedule(self):
         generator = load_module(REPO / "gerar_pagina_d5n.py", "d5n_generator_voice_schedule")

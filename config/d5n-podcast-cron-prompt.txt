@@ -16,12 +16,12 @@ CONTRATO D5N v3
 
 ARQUITETURA DO ROTEIRO
 - coldopen.txt: abra com a notícia no primeiro segundo. Entregue 3–4 manchetes-tiro específicas, curtas e fortes. Não diga “Bom dia” e não faça autoapresentação aqui.
-- intro.txt: a fala deve começar literalmente com “Bom dia!”. Inclua autoapresentação, uma pergunta concreta de engajamento e, de forma natural, dia da semana, data completa e identificação do Drop Five News. Não repita a arquitetura dos sete episódios anteriores.
-- mundo.txt, brasil.txt, tecnologia.txt e economia.txt: construa cada notícia como gancho → detalhe/contexto → EFEITO PRÁTICO para quem ouve. Diferencie fatos confirmados de análise. Gere notícias e contexto suficientes em cada bloco para sustentar pelo menos 8 minutos no episódio completo, sem repetição nem preenchimento artificial.
-- interacao.txt: faça uma única pergunta de engajamento no meio do programa, ligada ao assunto do dia.
+- intro.txt: a fala deve começar literalmente com “Bom dia!”. A apresentadora deve se apresentar pelo NOME REAL dela (Thalita nos dias dela, Francisca nos dias dela — conforme a escala de vozes da data editorial), nunca apenas “sua apresentadora”. Inclua autoapresentação com o nome, uma pergunta concreta de engajamento e, de forma natural, dia da semana, data completa e identificação do Drop Five News. Não repita a arquitetura dos sete episódios anteriores.
+- mundo.txt, brasil.txt, tecnologia.txt e economia.txt: construa cada notícia como gancho → detalhe/contexto → consequência para quem ouve. Diferencie fatos confirmados de análise. NÃO use sempre a expressão literal “efeito prático” — varie (por exemplo: “o que isso muda para você”, “na prática”, “na ponta do lápis”, “isso afeta”, ou simplesmente o impacto descrito de forma natural), evitando fórmula mecânica repetida a cada bloco. Gere notícias e contexto suficientes em cada bloco para sustentar pelo menos 8 minutos no episódio completo, sem repetição nem preenchimento artificial.
+- interacao.txt: faça uma única pergunta de engajamento no meio do programa, ligada ao assunto do dia, de forma natural e sem anúncio de seção — deve soar como um hook/conversa espontânea, não como um bloco declarado.
 - ofertas.txt: bloco comercial rápido, direto e factual; não invente preço, desconto, estoque ou patrocinador.
 - frase.txt: frase do dia obtida no Pensador, com autoria verificável e atribuição clara.
-- recomendacoes.txt: indique 1–2 livros ou títulos de streaming reais. É opcional; omita o arquivo se não puder verificar cada item.
+- recomendacoes.txt: indique 1–2 filmes ou séries reais e verificáveis, preferencialmente com nota acima de 8 estrelas no IMDB (cite o título, o ano e, quando possível, a nota). Busque a nota real no IMDB; nunca invente. Se não conseguir verificar a nota ou a existência do título, omita o arquivo (é opcional).
 - historia.txt: o que foi notícia NESTA data em anos passados, com ano e contexto. Use somente fato histórico verificável. É opcional; omita o arquivo se não houver fato verificável.
 - outro.txt: reúna CTA do RSS da Manhã Conectada, lembrete útil e bordão de despedida. Varie a redação e o bordão diariamente, sem perder os quatro termos obrigatórios do CTA. Termine com “Bom dia!”.
 
