@@ -1,6 +1,6 @@
 {
   "version": "https://jsonfeed.org/version/1",
-  "title": "DropFiveNews",
+  "title": "Hoje no Drop Five News",
   "home_page_url": "https://d5n-daily.netlify.app",
   "feed_url": "https://d5n-daily.netlify.app/feed.json",
   "description": "Curadoria diária de notícias",
@@ -10,10 +10,10 @@
   },
   "items": [
     {
-      "id": "2026-08-14",
-      "title": "D5N • Sexta-feira, 14 de Agosto de 2026",
+      "id": "2026-08-17",
+      "title": "D5N • Segunda-feira, 17 de Agosto de 2026",
       "url": "https://d5n-daily.netlify.app/",
-      "date_published": "2026-08-14",
+      "date_published": "2026-08-17",
       "summary": "20 notícias",
       "tags": [
         "notícias",
