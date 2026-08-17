@@ -165,7 +165,11 @@ def validate_pre_generation_content():
         if not os.path.isfile(validator):
             errors.append(f"❌ Validador obrigatório ausente: {validator}")
             continue
-        result = subprocess.run(["python3", validator], capture_output=True, text=True, timeout=20, env=env)
+        try:
+            result = subprocess.run(["python3", validator], capture_output=True, text=True, timeout=20, env=env)
+        except subprocess.TimeoutExpired:
+            errors.append(f"❌ Validador {validator} excedeu 20 segundos (timeout)")
+            continue
         if result.returncode != 0:
             detail = (result.stdout or result.stderr).strip()
             errors.append(f"❌ Gate de roteiro bloqueou a produção: {detail}")

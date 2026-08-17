@@ -184,7 +184,13 @@ def synthesize_header(audio_dir: Path, name: str) -> Path | None:
         import edge_tts
 
         temp.unlink(missing_ok=True)
-        asyncio.run(edge_tts.Communicate(label, HEADER_VOICE).save(str(temp)))
+        # Defensive pattern: edge-tts é chamada de rede — sem timeout, um hang
+        # trava o pipeline de 3h indefinidamente. wait_for impõe teto; em timeout
+        # o except degrada o header pra None e o pipeline segue (header é opcional).
+        asyncio.run(asyncio.wait_for(
+            edge_tts.Communicate(label, HEADER_VOICE).save(str(temp)),
+            timeout=45,
+        ))
         if not valid_header(temp):
             raise RuntimeError("arquivo sintetizado inválido")
         temp.replace(target)
