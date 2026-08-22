@@ -832,6 +832,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="Manhã Conectada" href="/manha-conectada.xml">
+<link rel="alternate" type="application/rss+xml" title="Fechamento do Mercado" href="/fechamento.xml">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Drop Five News">
@@ -1054,11 +1055,10 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   @keyframes fadeSlideUp {{ from{{opacity:0;transform:translateY(12px);}} to{{opacity:1;transform:translateY(0);}} }}
   .hero {{ animation:fadeSlideUp 0.6s ease both; }}
   .player-bar {{ animation:fadeSlideUp 0.6s 0.15s ease both; }}
-  .player-bar::before {{ content:""; position:absolute; inset:0; background-image:url("/podcast-cover.png"); background-size:cover; background-position:center; opacity:0.09; pointer-events:none; z-index:0; }}
   .player-bar .player-track, .player-bar .player-meta {{ position:relative; z-index:1; }}
   /* D5N box com header padrão grid 2col (igual MC/FM) — classes reutilizadas */
   .d5n-program {{ display:grid; grid-template-columns:minmax(230px,.82fr) minmax(0,1.35fr); margin:3rem 0 2.5rem; overflow:hidden; border:1px solid var(--d5n-line); border-radius:14px; background:var(--d5n-deep); box-shadow:inset 0 1px rgba(255,255,255,.025); position:relative; }}
-  .d5n-program::before {{ content:""; position:absolute; inset:0; background-image:url("/podcast-cover.png"); background-size:cover; background-position:center; opacity:0.06; pointer-events:none; z-index:0; }}
+  .d5n-program::before {{ content:""; position:absolute; inset:0; background-image:url("/podcast-cover.png"); background-size:cover; background-position:center; opacity:0.10; pointer-events:none; z-index:0; }}
   .d5n-intro {{ position:relative; padding:2rem; border-right:1px solid var(--d5n-line); background:rgba(17,26,43,0.88); overflow:hidden; backdrop-filter:blur(1px); z-index:1; }}
   .d5n-intro::after {{ content:'05'; position:absolute; right:-.15rem; bottom:-1.3rem; color:transparent; -webkit-text-stroke:1px rgba(148,163,184,.14); font-size:8.5rem; font-weight:700; line-height:1; letter-spacing:-.08em; pointer-events:none; }}
   .d5n-kicker {{ display:flex; align-items:center; gap:.55rem; margin-bottom:1.3rem; color:var(--d5n); font-size:.63rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }}
@@ -1319,6 +1319,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
         <a href="/feed.json">JSON Feed</a>
         <a href="/d5n-feed.xml">RSS</a>
         <a href="/manha-conectada.xml">RSS Manhã Conectada</a>
+        <a href="/fechamento.xml">RSS Fechamento</a>
         <a href="https://github.com/eibragaa/d5n-videocast-source">GitHub</a>
         <a href="https://pilastack.dev" style="color:var(--accent)">PilaStack 🔥</a>
       </div>
