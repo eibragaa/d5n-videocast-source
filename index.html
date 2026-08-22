@@ -235,6 +235,16 @@
   .player-bar { animation:fadeSlideUp 0.6s 0.15s ease both; }
   .player-bar::before { content:""; position:absolute; inset:0; background-image:url("/podcast-cover.png"); background-size:cover; background-position:center; opacity:0.06; pointer-events:none; z-index:0; }
   .player-bar .player-track, .player-bar .player-meta { position:relative; z-index:1; }
+  /* D5N box com header padrão grid 2col (igual MC/FM) — classes reutilizadas */
+  .d5n-program { display:grid; grid-template-columns:minmax(230px,.82fr) minmax(0,1.35fr); margin:3rem 0 2.5rem; overflow:hidden; border:1px solid var(--d5n-line); border-radius:14px; background:var(--d5n-deep); box-shadow:inset 0 1px rgba(255,255,255,.025); position:relative; }
+  .d5n-program::before { content:""; position:absolute; inset:0; background-image:url("/podcast-cover.png"); background-size:cover; background-position:center; opacity:0.06; pointer-events:none; z-index:0; }
+  .d5n-intro { position:relative; padding:2rem; border-right:1px solid var(--d5n-line); background:rgba(17,26,43,0.88); overflow:hidden; backdrop-filter:blur(1px); z-index:1; }
+  .d5n-intro::after { content:'05'; position:absolute; right:-.15rem; bottom:-1.3rem; color:transparent; -webkit-text-stroke:1px rgba(148,163,184,.14); font-size:8.5rem; font-weight:700; line-height:1; letter-spacing:-.08em; pointer-events:none; }
+  .d5n-kicker { display:flex; align-items:center; gap:.55rem; margin-bottom:1.3rem; color:var(--d5n); font-size:.63rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
+  .d5n-sun { width:10px; height:10px; border-radius:50%; background:var(--d5n); box-shadow:0 0 0 4px rgba(148,163,184,.1); }
+  .d5n-intro h2 { position:relative; z-index:1; color:var(--text); font-size:clamp(1.8rem,4vw,2.55rem); font-weight:600; line-height:.98; letter-spacing:-.045em; }
+  .d5n-intro h2 strong { color:var(--d5n); font-weight:700; }
+  .d5n-program .morning-listen--d5n { background:rgba(19,25,32,0.72); }
 
   .weekend-notice { margin:2rem 0 0; padding:0.75rem 1rem; background:var(--surface); border:1px solid var(--border); border-radius:3px; display:flex; align-items:center; gap:0.75rem; opacity:0.7; }
   .weekend-icon { font-size:1.2rem; flex-shrink:0; }
@@ -341,15 +351,27 @@
   .morning-program#manha-conectada::before { background-image:url("/manha-conectada/assets/manha-conectada-cover.png"); }
   .morning-program#fechamento::before { background-image:url("/fechamento/assets/fechamento-cover.png"); }
   .morning-program .morning-intro, .morning-program .morning-listen { position:relative; z-index:1; }
-  .fechamento-program { border-color:var(--fechamento-line) !important; }
+  /* Fechamento — identidade própria noite petróleo, distinta de Manhã âmbar */
+  .fechamento-program { border-color:var(--fechamento-line) !important; background:var(--fechamento-deep) !important; }
+  .fechamento-program::before { opacity:0.12 !important; }
+  .fechamento-intro { background:rgba(10,26,43,0.90) !important; border-right-color:var(--fechamento-line) !important; }
+  .fechamento-intro::after { content:'17' !important; -webkit-text-stroke:1px rgba(14,165,233,.18) !important; }
   .fechamento-kicker { color:var(--fechamento) !important; }
   .fechamento-sun, .fechamento-dot { background:var(--fechamento) !important; box-shadow:0 0 0 4px rgba(14,165,233,.12) !important; }
-  .fechamento-intro { background:rgba(13,26,43,0.85) !important; backdrop-filter:blur(1px); }
+  .fechamento-program h2 strong { color:var(--fechamento) !important; }
+  .fechamento-program .morning-player { background:rgba(14,165,233,0.08) !important; border-color:var(--fechamento-line) !important; }
+  .fechamento-program .morning-progress { background:#0f2a3d !important; }
+  .fechamento-program .morning-progress span { background:var(--fechamento) !important; }
+  .fechamento-program .morning-time { color:#7dd3fc !important; }
   .fechamento-program .morning-download { border-color:var(--fechamento-line) !important; color:var(--fechamento) !important; }
-  .fechamento-episode.is-active { border-color:var(--fechamento-line) !important; background:rgba(14,165,233,.08) !important; color:var(--fechamento) !important; }
+  .fechamento-program .morning-play { background:var(--fechamento) !important; color:#052030 !important; }
+  .fechamento-episode.is-active { border-color:var(--fechamento-line) !important; background:rgba(14,165,233,.10) !important; color:var(--fechamento) !important; }
+  .fechamento-episode:hover { border-color:var(--fechamento-line) !important; }
+  /* Manhã fica com cover 0.10 quente, D5N 0.06 sutil já */
+  .morning-program#manha-conectada::before { opacity:0.10; }
 
   @media (max-width:700px) {
-    .morning-program { grid-template-columns:1fr; margin:2rem 0; }
+    .morning-program, .d5n-program { grid-template-columns:1fr; margin:2rem 0; }
     .morning-intro { padding:1.5rem; border-right:0; border-bottom:1px solid var(--border); }
     .morning-intro::after { font-size:7rem; }
     .morning-listen { padding:1.5rem; }
@@ -454,8 +476,17 @@
   </div>
 
   
-    <div class="player-bar">
-      <div class="player-track">
+    <section class="d5n-program" data-animate aria-labelledby="d5nTitle">
+      <div class="d5n-intro">
+        <div class="d5n-kicker"><span class="d5n-sun" aria-hidden="true"></span> Edição das 05h</div>
+        <h2 id="d5nTitle">Hoje no<br><strong>Drop Five News</strong></h2>
+        <p>Notícias essenciais, contexto e tecnologia em um briefing para começar o dia informado.</p>
+        <div class="morning-byline"><span>Curadoria diária</span><span>Seg–Sáb · 05h</span></div>
+      </div>
+      <div class="morning-listen morning-listen--d5n">
+        <div class="morning-now" style="color:var(--d5n)"><span class="morning-live-dot" style="background:var(--d5n)"></span><span>Última edição</span><span>18 Ago 2026</span></div>
+        <div class="player-bar" style="margin:1rem 0 0">
+          <div class="player-track">
         <button class="play-btn" id="playBtn" onclick="togglePlay()" aria-label="Reproduzir episódio">
           <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
           <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
@@ -472,7 +503,9 @@
         <div class="player-title">Hoje no Drop Five News — Episódio #61 — 18 Ago 2026</div>
         <div class="chapter-current" id="currentChapter" aria-live="polite">Capítulo 1 de 9 · Abertura</div>
       </div>
-    </div>
+        </div>
+      </div>
+    </section>
     <audio id="audioEl" src="/audio/d5n-ep061-2026-08-18.mp3" preload="metadata"></audio>
 
 

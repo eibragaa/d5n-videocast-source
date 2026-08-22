@@ -13,3 +13,10 @@ Loop Crítico→Executor AAA aplicado.
 - `fechamento-intro` `rgba(13,26,43,0.85)`
 - Ordem: D5N hero 5h → MC 11h → FM 17h (stack verificado)
 - Tests 10/10, `index.html` 126KB, `--site-only` ok
+
+## Sprint 7 — Diferenciar FM vs MC + Padronizar D5N
+- FM distinta: border --fechamento-deep, cover 0.12, ::after 17, azul, player petroleo, progress #0f2a3d, play azul
+- MC quente: cover 0.10, ambar, ::after 11
+- D5N padronizado: --d5n vars, d5n-program grid 2col header 05h + cover 0.06, num 05, player-bar 14px unificado
+- Stack: hero -> d5n-program 05h -> MC 11h -> FM 17h, bordas por horario, arte completa rgba+blur
+- 3 boxes premium distintos, mesma grade 230px/.82fr, 14px radius
