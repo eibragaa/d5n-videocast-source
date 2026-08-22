@@ -7,7 +7,16 @@
 🌐 **Site:** [d5n-daily.netlify.app](https://d5n-daily.netlify.app/)
 📱 **Instagram:** [@jeanbraga.ai](https://instagram.com/jeanbraga.ai)
 🎧 **Podcast:** Spotify / Discord (segunda a sábado; domingo reservado para manutenção)
-📡 **RSS:** `/d5n-feed.xml` | **JSON Feed:** `/feed.json`
+📡 **RSS:** `/d5n-feed.xml` · `/manha-conectada.xml` · `/fechamento.xml` (Fechamento 17h) | **JSON Feed:** `/feed.json`
+
+---
+
+## Estado Atual (2026-08-22 — produção `master`)
+- **Master** `f61ed88` live em https://d5n-daily.netlify.app — `d5n-daily` `cc6d8958` `master` production
+- **Cron** `fechamento-diario` `30 16 * * 1-5` (host = 17h BRT seg-sex) + `d5n-fechamento-mercado` 17h card intacto + `manha-conectada` 11h
+- **Feeds:** `/2026-08-22` epis, `/d5n-feed.xml` + `/manha-conectada.xml` + `/fechamento.xml` (`fechamento-cover.png` 1400)
+- **Custo:** DeepSeek v4-flash `thinking disabled` — `f61ed88` 496s 1335w LUFS -16.98 — `compression` `nvidia nemotron` 401 corrigido
+- **Site AAA:** `d5n-program 05h` grafite `0.10` + `MC 11h` âmbar `0.14` + `FM 17h` petróleo `0.14`/`17`, `51 chapter-segment`, `4 covers`, stack `5h→11h→17h`
 
 ---
 
@@ -28,7 +37,7 @@ D5N é um boletim diário de notícias curado por IA, publicado automaticamente 
 
 | Formato | Descrição |
 |---------|-----------|
-| **Site HTML** | Página estática com design premium (Libre Baskerville + DM Sans) |
+| **Hub 3 programas** | D5N 05h + Manhã 11h + Fechamento 17h — mesma grade 14px, covers opacas, capítulos na barra |
 | **Podcast MP3** | **8–12 min** (sempre ≥8 min), 12 seções premium (coldopen, intro, mundo, brasil, tecnologia, economia, interacao, ofertas, frase, recomendacoes, historia, outro). Apresentação alternada entre Thalita e Francisca; sexta-feira usa ambas; headers com Antonio. Trilhas próprias do D5N + ducking. Segunda a sábado: `d5n-ep{NNN}-{DATE}.mp3`; domingo não há episódio. |
 | **Cards Instagram** | PNG 1080×1080 com foto de fundo + headline |
 | **Feed JSON/RSS** | Para apps e agregadores |
@@ -162,6 +171,15 @@ d5n-videocast-source/
 │       └── individuais/
 │
 ├── manha-conectada/             # Projeto isolado da Manhã Conectada
+├── fechamento/                # Fechamento do Mercado 17h (pipeline, mixer, RSS, capa 1400)
+│   ├── scripts/                 # Pipeline, mixer, RSS, publicação e cron
+│   ├── assets/                  # Capa 1400 + identidade sonora
+│   ├── audio/                   # Episódios FM
+│   ├── manifests/               # Manifests
+│   ├── roteiros/                # source-fechamento-YYYY-MM-DD.md
+│   ├── feeds/                   # RSS próprio
+│   └── docs/                    # Contrato/RSS
+
 │   ├── scripts/                 # Pipeline, mixer, RSS, publicação e cron
 │   ├── assets/                  # Capa e identidade sonora próprias
 │   ├── audio/                   # Episódios da MC

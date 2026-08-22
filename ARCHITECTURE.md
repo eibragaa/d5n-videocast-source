@@ -123,7 +123,12 @@ feed.json (2-3KB) — JSON Feed v1
 d5n-feed.xml (1-2KB) — RSS 2.0
 ```
 
-#### 3.4 Arquivo Histórico
+#### 3.4 Hub 3 programas (`index.html`)
+```
+index.html — stack D5N 05h (d5n-program grafite 0.10) → MC 11h (âmbar 0.14) → FM 17h (petróleo 0.14/`17`) — mesma grade 14px, covers opacas, `51 chapter-segment`
+```
+
+#### 3.5 Arquivo Histórico
 ```
 2026/YYYY-MM-DD.md (1-2KB) — Markdown da edição
 ```
@@ -169,6 +174,13 @@ cards-instagram/YYYY-MM-DD/
 4. **Netlify** — Auto-deploy em ~2 minutos
 
 **Fallback:** GitHub Actions (04:00 UTC) se cron local falhar
+
+### Fase 4b: Fechamento do Mercado 17h (seg-sex, 17h BRT)
+
+**Script:** `fechamento/scripts/fechamento_pipeline.py` (LLM DeepSeek v4-flash `thinking disabled`) + `fechamento/scripts/fechamento_mixer.py` (sidechain `480-650s`)  
+**Duração:** 8:16 (1335w, LUFS -16.98, TP -1.7)  
+**Saída:** `fechamento/audio/fechamento-YYYY-MM-DD.mp3` + `fechamento/feeds/fechamento.xml` → `/fechamento.xml` (RSS) + `fechamento/assets/fechamento-cover.png` 1400  
+**Cron:** `fechamento-diario` `30 16 * * 1-5` host = 17h BRT · `fechamento/docs/FECHAMENTO_CONTRATO.md`
 
 ### Fase 7: Distribuição (03:12 BRT)
 

@@ -30,6 +30,14 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/), e este 
   heurístico), visual instagram-premium (scrim obsidiana + menta), legendas `.ass`,
   mux ffmpeg. 100% local (sem ASR — ctranslate2 dá SIGILL na CPU sem AVX2).
 
+## [Unreleased Fechamento] - 2026-08-22
+### Added
+- **Fechamento do Mercado 17h** (`fechamento/` isolado — espelho `manha-conectada/`): pipeline `deepseek-v4-flash thinking disabled` 900-1500w `480-650s`, mixer sidechain, feed `/fechamento.xml` + `fechamento-cover.png` 1400, cron `fechamento-diario` `30 16 * * 1-5` host, ep protótipo 2026-08-22 8:16 1335w LUFS -16.98
+- **Site AAA** (`master` `f61ed88` → `d5n-daily` `cc6d8958` `master`): `d5n-program 05h` grafite `0.10` + `MC 11h` âmbar `0.14` + `FM 17h` petróleo `0.14`/`17`, mesma grade `14px`, `51 chapter-segment` (MC/FM barra capítulos igual D5N), covers `4`, stack `5h→11h→17h`, `RSS FECHAMENTO` head+footer
+- **Cron fix** `auxiliary.compression` `custom:openrouter` 401 → `nvidia nemotron` + timeout `180s`
+- **Docs** `fechamento/docs/SITE_APERFEICOAMENTO_CRITICO.md` + `FECHAMENTO_RSS.md` + `MELHORIAS_SPRINT5.md` + `SPRINTS.md`
+- **Tests** `10/10` fechamento + `5/5` MC verdes; `master` `18c144d`→`f61ed88` live (clear-cache `6a899873`)
+
 ### Changed
 - **Título do programa/feeds** — "Drop Five News" → **"Hoje no Drop Five News"**
   (estilo Tecmundo), mantendo a numeração/sequência epNNN.
