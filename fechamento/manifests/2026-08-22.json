@@ -1,0 +1,196 @@
+{
+  "program": "FECHAMENTO DO MERCADO",
+  "date": "2026-08-22",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": true,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/fechamento/audio/fechamento-2026-08-22.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/fechamento/roteiros/source-fechamento-2026-08-22.md",
+  "sha256": "c54d936f03385d53a7c7b634ed637a37f1c1d4afb204b9a79fed2a2c2fc77209",
+  "text_gate": {
+    "words": 1335,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 496.091429,
+    "size": 11906864,
+    "bit_rate": 192010,
+    "lufs": -16.98,
+    "true_peak_dbtp": -1.7,
+    "lra": 3.1
+  },
+  "sources": [
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Fechamento (21/08) | Ibovespa estende recuperação e sobe 1,85%; dólar cai a R$ 5,1451 - InvesTalk",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9OLV96Tnp1S2dUUWlZV2tpM2VWejNRUFVmdi1qOXBqWUdOZGNyZVVySk1JcG9ReVItNVVFaG9sdk92TEx0ekhJVlVsUGREbUFRaGx0V09odUhuMlJac0Z0OHMtMnFXMUF4bFRwOTVfOHBnbVZGakE?oc=5",
+      "source": "InvesTalk",
+      "published": "Fri, 21 Aug 2026 20:34:00 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Dólar hoje cai 1%, a R$ 5,14, com ajuda do exterior e eleições - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQR0twa0ZrbU5sODJ3MmhhX1ZFVDVWaHhnWHZPcVZ1QTE5Vnh6VTBlMXo3STliYThpU09zd1lUZHVUWWtzX3RaQkt0MDZXWEFRUDg0WGdUX3VRUFZpaHFTWi1INHAyNHd5RHljSXJBeEdoazl6OElwRDRXQWNDeVU1aDBTZEZ1MWpXeTZDbC1aN1lWeUZLSXRFQVY5Y3nSAaIBQVVfeXFMTkdZS05NVlRDYk0ySjUzZU9iTy05LWZlaGZuY183Ri1QUk9TYWgtQ1VpNUpZeXJQTVYxQVFFSkpPbmR4TF9rb1FMTWV1dGF6bXRXN2xfUk9pVkZtZzUtNHRsdUhQX2JmR25NcDAwUW1GWHp5N2I5cDFhYVNwZHh2ODkyaFdzN3lnSW9CVXZUQndxb3p5bGcyS3laNlgxdDJhNDdn?oc=5",
+      "source": "InfoMoney",
+      "published": "Fri, 21 Aug 2026 20:19:02 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa dispara 1,85% e retoma 171 mil pontos com bancos e Vale (VALE3) - suno.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNY1pJNEs2OWtjS2ZvZ193b2ROTUpEQnU0SDkybWtReUxldS1BSEo3cERUbC1QeHpOM2ZoNzJsRlRrdWFHZUROMWJHV25sWmo2b3puLWNvYVVqYmZGb1BKUFJCZ040NWxqcmx3TFNwNjhXNnJJb1ZSM3hfdk1zdldKdERQOWpHWGpSOWfSAYoBQVVfeXFMTWNaSTRLNjlrY0tmb2dfd29kTk1KREJ1NEg5Mm1rUXlMZXUtQUhKN3BEVGwtUHh6TjNmaDcybEZUa3VhR2VETjFiR1dubFpqNm96bi1jb2FVamJmRm9QSlBSQmdONDVsanJsd0xTcDY4VzZySW9WUjN4X3ZNc3ZXSnREUDlqR1hqUjln?oc=5",
+      "source": "suno.com.br",
+      "published": "Fri, 21 Aug 2026 21:15:03 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Vamos sobe 10,48% e lidera ganhos do Ibovespa; veja maiores altas e baixas - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOdmxQY09XX0wyaFFOODZsX1NxUmpzcE5DbEdORGtQREhzUmtFLTlueVk1R29QQUtNa05OTENiUHlKbGZUckpYZGJJdGlfcUxVMEFGazZQc2tEZ0R1Rnd5TGJsVFI5MUxTVTE3QzBlenFtT2k2eXE1c0ZfbDllOGpoSmJHRkRFQzlMcmdLUUV3b3NVVEpUZzFVZXpCdERidUFlcmdXbGNjZURSTWxjQkRxdjVkRTdkd0FmZTB1RExFaG1JbXYyS0hpUUV3N094TkXSAc8BQVVfeXFMTnZsUGNPV19MMmhRTjg2bF9TcVJqc3BOQ2xHTkRrUERIc1JrRS05bnlZNUdvUEFLTWtOTkxDYlB5SmxmVHJKWGRiSXRpX3FMVTBBRms2UHNrRGdEdUZ3eUxibFRSOTFMU1UxN0MwZXpxbU9pNnlxNXNGX2w5ZThqaEpiR0ZERUM5THJnS1FFd29zVVRKVGcxVWV6QnREYnVBZXJnV2xjY2VEUk1sY0JEcXY1ZEU3ZHdBZmUwdURMRWhtSW12MktIaVFFdzdPeE5F?oc=5",
+      "source": "Estadão",
+      "published": "Fri, 21 Aug 2026 22:03:00 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Dólar Recua Para R$ 5,14 E Ibovespa Fecha Em Forte Alta No Mercado Financeiro - ABC Agora",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1WaGRNel9RV0RPc2tFU2pvOWdaODdHZ1lESERzNE9odlpUVGtLTDFGWEdNcnlxcG5mZ2N0YUx1NzJOSVhObC1aSWc3UjRNUFc0OTlucHUzdm1zdW5nQTRJOHVZYVU2VkUxdm9FdjlKNGk2QQ?oc=5",
+      "source": "ABC Agora",
+      "published": "Sat, 22 Aug 2026 00:21:19 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Variação do dólar: como impacta sua vida financeira - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQdVYwRHNmeUJfbUlER0NibF9fTTg5NzNKMEN0XzU5eUx5UUttTGpISGlsaHhsYW80MkVXaGtZNDVpREtVc0FRbTVDaFFlekhOVFlNVXZkMkJQR2ExUEdhVGVBeHIzUlFPY2oyVlhfUkk4VzVzVW5sSmxucmdMclNaZlB1eEl3c1phVUFjczhnemN5TW0yTjhuQlJlZWpOdGZzcEllQll0QQ?oc=5",
+      "source": "CNN Brasil",
+      "published": "Fri, 21 Aug 2026 09:33:50 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Ibovespa quase 2% com melhora no exterior e expectativa por corte de juros; dólar cai - G1",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFB0WTZQZmcwYkpxTUhKT05sbDBwR1UwT3NjNnRUQnpGbUpiNHkzbjY3dWsyUGp1RWxrSGJzcU10LVRWNDFLNWhIZ1NLNU5CcjNPa2UzRGZDOTN2TnktMDNwV3o0WkRBQnYwbTlnWHplNXFPRnNwb01IOdIBhwFBVV95cUxOQTFROTlLaUo3bV9xM1cyUVczYllINTRkTkVUaF90TmVJZHNEazdYbXJyZHhnZG9xbzN0VWVmU0hUUGEzNkUyTE42WGFURXRwQV93cFdySWtQLXJyWmEtekVHeTRBSFhGSVB3MjlGM01jSExvME1nbFl4MzktZGNKaEswQS10Qlk?oc=5",
+      "source": "G1",
+      "published": "Fri, 21 Aug 2026 12:00:28 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "A crise dos Treasuries: por que os títulos americanos ameaçam a estabilidade global - ISTOÉ DINHEIRO",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxORDJaQU04R1RVUEg1S0tkY0xvNFk2OU4tSXZVX0RwZThJUWRCSm9MQWJvZ2JqY1ZsM1dmWWE2aE1HUWl0U2FRbm9TcUdmMWhhZmE5MHVKSzJ3UVdNODV1VGFsSFFoUURuN0gyNWJEN2dDdm1wTDhscHBHOXZPQ05XWnZmV0YzLWs?oc=5",
+      "source": "ISTOÉ DINHEIRO",
+      "published": "Fri, 21 Aug 2026 20:13:33 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar despenca para R$ 5,14 e Bolsa registra terceira alta seguida com alívio global - ICL Notícias",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE80S20tVDRsQXlValVRYlg4ZzZLY0pIZ1hrZ3pyUHUwem50cm1FUXJ0WkpEckdXeWs4dFNmTFBQUnRZRW1lVG4yZUU4NGE2Nzltc3l2eXJmbkphYVRybGllbHlUWEJacVJRM0MxelUwaHpEck9zNjlXRQ?oc=5",
+      "source": "ICL Notícias",
+      "published": "Fri, 21 Aug 2026 20:53:20 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Notícias Ao Vivo do Brasil e do Mundo - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPV2x6UWFUbUl4MExPTHJ2Y3BuYTVLdzhvS2M1VDZyX0xLcjRvcmQzYU5haV8zTUlWQVlMaEtlWUtTSHhvQ08zaWpSSlE2OHFwNU55NVNMRy1zanBqR1lfRDZXWWFyNm1HOG5URFY2bkwtOWI3dGh4Tld1N1FsYXBiNTBKM2pFTzNvODIxeTY5OXZ6eFFTVDdWV0YzQmxIQ1hFUW4tVHNDQk53Tm4xTHFpQ0h2aHpsWTBuQnBJNndzaFVxdVE?oc=5",
+      "source": "CNN Brasil",
+      "published": "Sat, 22 Aug 2026 04:04:21 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Do topo ao poço da América Latina: Ibovespa perde o encanto e entra na lanterna dos gringos - Seu Dinheiro",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNMXZWNmY0R3JkdHpySmZodktjNnBETWNTcVptQkF4NVhWTFViT3VzanZhUFp3Mlh2VElscFpvU2tycmpkUDZfMHFacEtES1gxMGRrUUNXbnprWDBlNW1UUHJ2WU5PMGJQcFRRM05IU0gxa3l1VVlnZWN2dlU4ZGU1UmhKamFha0xmNUxmem1QbHpmU3FyZmhyZDd6cWRhZkRId3JBV2JmU0RnWVd2TDhKNVQteHh0T0o0a2pqT25ld3dLZkxRUl9KbTV3OVVVb3dUSnc?oc=5",
+      "source": "Seu Dinheiro",
+      "published": "Fri, 21 Aug 2026 22:34:07 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Debandada de estrangeiros da bolsa já é a terceira maior desde 2008 — e pode não ter acabado - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOb0xtUXhELXRaYUFXUU1DZ0wxUUVldGllUFVoZUdmTE9SX0Y1cUJ4ejBucldTTFlhLVdhTFdXUUJOeTBLSXdyLTBPUDB4VUJNNUU4WWh2bmFxWWZOTWtaeGpUV0VIaGxKV3lxaXEtM1l6LTRBV3RPbUEtMUJrcmVRSktWUm5QN0MtOHQ0cGZQdGxIRGJ3N0tCbmNyUUNfQkJMVkVhek5kdEtBMHFlX2NKSEFrdElLS0lRSU92aVlrZmRfM0twdklsaDB4MFFyWUtVTk1PYkN5ZW1UeXF1WUtRN2E3WjRpUdIB9AFBVV95cUxNeUdrTFFYUE5FLTV6Zy02b0dIRHo3c2NCU3NrU09iU2RKWHpPVGdzVF9TX3ltLTZBdzV2QkZIMVBhZTloaUtzTU9NbjBKd05YWW1rU0N3Q0w5LV85UEZpNEg4ZUVkMTRPOGJxeUlSVk1Qek0ySFRZeVVtcmwyRXBKUDR0dl9ucndLRzU2dk9wXzU2cVhtYm9acWFPUTVWdmNYRVhxSjZIVV9vdUNQbm1WM1pQOGpaTWJOcEJGUjQ3YkRqbTlzWFhUNzB4V29EVFZUUk9DYTZidzNOclZRdWJjUUpMZGZjNEIwZ251aVpDSGVZYWhi?oc=5",
+      "source": "Valor Econômico",
+      "published": "Fri, 21 Aug 2026 14:54:15 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Saída de estrangeiros já é a 3ª maior desde 2008: O que esperar agora, segundo o JP Morgan - Money Times",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPMGlzZ0hQUGRjeUVvb0Y4RlVzSTZMRWJTbEw1VGg4cG5DNWExSnJpNm1uWHVuMjNTS0pwZmM3VWNVQUg1TVRUOFJucXhLUXFnWTM5UnFuUDR1dWdFYmxuYkVMeE12blZTVXpuNVdrcjBvX1d3ZkF2Vkc2X21ZdUtJck9EbnJTa0ZBOEFYSnhNVGRONU9HeUw5Q2tXSkZtcGZ3TjlTbzhsbjYxd1JpTnRnY09LZm8yb002emphSG1tdEg?oc=5",
+      "source": "Money Times",
+      "published": "Fri, 21 Aug 2026 13:10:00 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Debandada de estrangeiros e desaceleração à vista: é hora de sair da Bolsa? - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOSFpabkZsdXJ5YVJONzRSSjJtQWVxRWczNmR3LWlXZF9EUkVVYnFycElsWlVWdm1OOHAyWk02emp4ckl6YlJYX3I0ME5zMjl5LVl3Rng1OE5Demhvd0laSlNTVzZRQ0hCdlItNWN2TW5aeEJDOEF2dXZKelVXRUJlWHNzR3BsZW9rRThrUlNnTkV3YTFSa2Q5Vml1bjhWWWV1N25HU0p1aFVQNHlJR2FWdU5pOVdBSWNt0gG-AUFVX3lxTFBSTGxiaVBKdXAyZXhDcW8wMGhobjhMLU5DTjlucEc5NGdrNWUtM0YtQ3BVWkF2U2JJOS1naGZuaC1WX2NkQUtXYTBqbEVpV1Vod2ZNQTJOZzYwWS1sMU9kalp6YU12cFRkSmEtZER4SnJLMmVhZGxCakNwVDhzVFZQN29MbUEyb3N2RkxOSHZ1dGhqbURDd3R6dVF2RHBST1JuQ1hWbHhFaldLY0dDM2FtdVBKeU9YM3hJVkZYLVE?oc=5",
+      "source": "InfoMoney",
+      "published": "Fri, 21 Aug 2026 14:00:00 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Canais de YouTube que acompanham mercados crescem entre investidores: saiba mais - InvesTalk",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOeVB5UTZoalA5dVhnSTZyOFVwZG1ta3l3OEJTd05OUEF0OFU3LVQxNFdQQzJsN3JOLTZRTkkzeGxTUGFzVmcxakt3RjgxQlR2YW5GN09qUGhiSFl0TjM2UzBzZXIwdkJfaDFmcHhJZW1ZSXdMRFNrVmdvR3B3Zm5jVTFXVVFwMDVZZlhkZ3drbE1PSkZFS3RlX21HdnJSZ25Mb0wwZXQ5YTU2M3dkM1VnX1Q3emwzZmM2YllWdm1LVkhzbDA?oc=5",
+      "source": "InvesTalk",
+      "published": "Fri, 21 Aug 2026 14:09:12 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Mercado financeiro interrompe projeção de queda da inflação para 2026 - Canal Rural",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNNTNzUjExblBnMGlWdEI5NDE3WW03MHBfS0hYNXZlN1hOVmhnWmNHNjJoVFVOMVBZanBvMzlqVGdjaHdRa3ZQNTFTUTdzbkFHTzlEZHFBb0VvTklRcHk2TFEwTWNGTm1jMFdzYWRuaGwtRzN2dGdBdk01Zzh2bTk4MG1teXBud01BQTJ4TXVXWVgzaDBOZFRzZ0ZxMHpGa3dtRHJhY2RSRk9uTHM?oc=5",
+      "source": "Canal Rural",
+      "published": "Sat, 22 Aug 2026 00:05:10 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Os EUA \"descobrem\" o déficit fiscal e a dívida pública elevada: bem-vindos ao Brasil - NeoFeed",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQbEhBTF9sTzFRQldEeFE4QjZmX0JqVE43RXpiMEpDakVIdW1PbmJobVBfTU9NN1JSMmg3VnNWYmZGVTE3RU0tb1hLZU9TU3F3UEtGLUQ3WHVrREZUMTZUaTVUcGt5S1VQZk5KanVwX2RqUW5LTHg1TmlRZVN4dmdLcnRZQVZnYjFRZ2RMZWY1cktoRlVVVzVtQ05rYUxCZ1RDa3d4bmkyTUJyLUhPN25yWHRMMnY?oc=5",
+      "source": "NeoFeed",
+      "published": "Fri, 21 Aug 2026 21:11:00 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Brasil é grande. mas quando falamos de patrimônio global, ele é pequeno - Investing.com Brasil - Finanças, Câmbio e Investimentos",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPallaR1lSSzNKcEphaDNtTGM1Xy1mdkFnRmpHejN2YnZfRnVoN01ZSTFwbDEtc3VHanVGdmFUWk9uVDZYcmcyMWVGNVUyWndFUWloRzdGclNNUzB3SU9yVk5jZlY5WThCdzhWR1lIUXVLQnFjYjZEUU1QNVY4X0JpRlJycGtnRjFlNFV3NkxPUHlXZ053cHpKdFJ2Q3JVZ25vTXVzNVdreFVjU3I4aUxCcW1PSQ?oc=5",
+      "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+      "published": "Fri, 21 Aug 2026 14:24:00 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Fuga de capital estrangeiro e juros altos: até onde vai a volatilidade no Ibovespa? - ISTOÉ DINHEIRO",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9zRllJX2pmUHZjMURzeWRrLUZ6SVZycWtaOHFSTzdRcXlNcHFGak40YTkxU1E1d05LdjlOVVhvSmVKU3J5TUtsb2VBaHRQQ1VOXzl1aEZZbXBab3lCaWJuSEpMSG8wSHNiVE9DLTdpN18zenBmQzltNVlsOUM?oc=5",
+      "source": "ISTOÉ DINHEIRO",
+      "published": "Fri, 21 Aug 2026 14:52:46 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Durigan nega crise no varejo após pedido de recuperação das Casas Bahia - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNbFBycGFKWUh4YWtJSnh3WjJBNWkzRlJWREJsTGliSEVFSy1jcHZyYjB4cEFVZnZIeEhkb3Q4N3FaUHpqM0h5M2cxRFRpZnVyNXRhdEdlaVhjNHQ1ZXNTLWtNR2p2X21DMU05bEZFMVJHdFJPZTNuRHB4TzhiNlZ6Sk9HR3loMHNmdXJiU1ViZWlQYWlDQXZ0WDlVT2JycVZJajdSWXZjd21UeWhGTXVrTVZhbk5IWVBfRVFoU2pxTEg?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Fri, 21 Aug 2026 20:53:00 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Durigan nega crise no varejo e vê “narrativa” da oposição - Metrópoles",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQaTFsRjVQREx1eEc3Mk5hczdYQThhYndjeEtmU0FOemJ0TlMzXzVIZ0JyTHBEcDBqZndQSFAxN2lmMFV4MHpzc01JbW91c3VWaGpNVnRicHZWdjFaZUE3QVUwMTZVbmczNkNpbURfUngxMVE3R0IwZUh0RzROV3pEazZFenBWajV4WVNQd0tnaHB6aWM?oc=5",
+      "source": "Metrópoles",
+      "published": "Fri, 21 Aug 2026 20:59:00 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Casas Bahia em crise: Por que o endividamento virou um alerta para o varejo brasileiro? - jcorreiodopovo.com.br",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNeHJHR05QTGxPMjVfNmlSS3BuSmhPMkgxeFdJZ2oxQWxsVUNvZU44YkQ0ZGFZYXN4WlI2QXhVazlGYi1nZXdFNWdsU0YtUnVjU3Q4MVE5REFDZ01NT0dnZEVzdXEtQkllQjRFaU42ODU0YktzNnNFM0lOcGNkdVZCRzB6Tkx0Vm4zX3F6SzVCYzRmcFVZZzEyM182SWdRZzBndnN0TlFkRnpsQklWZjBwd3BBUXB3cmFQR3ZVQ21lcWMyVnBXMERmWTh3ZUFuVTQ3ck5xWDZsUDdoRE1vc2hNYVljXzk2WW1nVmc?oc=5",
+      "source": "jcorreiodopovo.com.br",
+      "published": "Fri, 21 Aug 2026 21:10:34 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Recuperação judicial cresce no Brasil e atinge agronegócio e varejo - Gazeta do Povo",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPTXVyejVTekJrdXZ5WkxKc0lQYVRQV2tzdHpLbkhVNmk4YmZOellCbkNsQlhZWV9XdWpzOHdVWmJIVl9WNWdoTjNiY1RIMnZ0MG5OWHJ4VGhhN0Z4TnlmazNkUXBPMmk1WDZxR3lubGNGR1ZXNDBjcHZuSU9IeXY2T2FRVVNxYkh1bWVta2g4NVduYmt1eGQzR2QtU01haHlycFl3SExVSTM?oc=5",
+      "source": "Gazeta do Povo",
+      "published": "Sat, 22 Aug 2026 00:41:00 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Casas Bahia (BHIA3): Ministro nega haver crise no varejo e culpa juros altos e e-commerce por dificuldades - Money Times",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaVB2Y2F2YkRpQjFOTEdFSUN2WTFnS1BlcldMaHJBWDhpWTBFTndjaWh5Sm1KNUExeFl4NUxQWVE4QmwtNUo2Q2NTcGtVTFZqSmp2bklrazVPbFByalpsN1hTd0ptTFdhcnVfSWc3cDNCZmFKMG9nQnBIOUtDOHNRS0lUNkNhakRvbDgyUDViQ3Rpek5zUjlIY19LRUFPNmJXeVluT2J0UWFqQl9vc2MyNHM5YkI?oc=5",
+      "source": "Money Times",
+      "published": "Fri, 21 Aug 2026 21:26:00 GMT"
+    }
+  ],
+  "generated_at": "2026-08-22T06:33:19.683016-03:00"
+}

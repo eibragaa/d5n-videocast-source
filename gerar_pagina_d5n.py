@@ -531,8 +531,8 @@ def render_manha_conectada_program(episodes):
         <button class="morning-play" id="morningPlayBtn" type="button" onclick="toggleMorningPlay()" aria-label="Reproduzir Manhã Conectada">
           <span id="morningPlayGlyph" aria-hidden="true">▶</span>
         </button>
-        <div class="morning-progress" id="morningProgress" role="slider" tabindex="0" aria-label="Progresso da Manhã Conectada" aria-valuemin="0" aria-valuemax="{latest["duration"]}" aria-valuenow="0">
-          <span id="morningProgressFill"></span>
+        <div class="morning-progress" id="morningProgress" role="slider" tabindex="0" aria-label="Progresso da Manhã Conectada" aria-valuemin="0" aria-valuemax="' + str(latest["duration"]) + '" aria-valuenow="0">
+          <div class="player-chapters" id="morningChapters" data-chapters="[]"><div class="chapter-segment" style="--chapter-weight:1" data-chapter-index="0"><span class="chapter-segment-track"><span class="chapter-segment-fill" id="morningProgressFill"></span></span><span class="chapter-tooltip">Manhã Conectada<small>00:00</small></span></div></div>
         </div>
         <span class="morning-time" id="morningTime">0:00 / {latest["dur_str"]}</span>
         <a class="morning-download" id="morningDownload" href="{html_lib.escape(latest["path"], quote=True)}" download aria-label="Baixar esta edição">↓</a>
@@ -545,6 +545,58 @@ def render_manha_conectada_program(episodes):
     </div>
   </section>'''
 
+
+
+def _fechamento_summary(date_str):
+    source_path = os.path.join(BASE, "fechamento", "roteiros", f"source-fechamento-{date_str}.md")
+    try:
+        with open(source_path, encoding="utf-8") as f:
+            content = f.read()
+        m = re.search(r"## Roteiro aprovado\s+(.+?)(?:\n\s*\n|\n## )", content, flags=re.S)
+        if not m:
+            return "O resumo do pregao com contexto, numeros e o Radar Amanha."
+        summary = re.sub(r"\s+", " ", m.group(1)).strip()
+        summary = re.sub(r"\s*Boa noite! Eu sou Antonio e este e o Fechamento do Mercado, do Drop Five News\.?", "", summary, flags=re.I).strip()
+        if len(summary) > 235:
+            summary = summary[:232].rsplit(" ", 1)[0].rstrip(" ,;:") + "\u2026"
+        return summary
+    except OSError:
+        return "O resumo do pregao com contexto, numeros e o Radar Amanha."
+
+def load_fechamento_episodes(limit=None):
+    manifest_dir = os.path.join(BASE, "fechamento", "manifests")
+    if not os.path.isdir(manifest_dir):
+        return []
+    episodes = []
+    for manifest_path in sorted((os.path.join(manifest_dir, n) for n in os.listdir(manifest_dir) if n.endswith(".json")), reverse=True):
+        try:
+            with open(manifest_path, encoding="utf-8") as f:
+                manifest = json.load(f)
+            date_str = str(manifest.get("date", ""))
+            datetime.strptime(date_str, "%Y-%m-%d")
+            expected_file = f"fechamento-{date_str}.mp3"
+            output_name = os.path.basename(str(manifest.get("output", "")))
+            audio_path = os.path.join(BASE, "fechamento", "audio", expected_file)
+            duration = round(float(manifest.get("audio", {}).get("duration", 0)))
+            if (str(manifest.get("program", "")).strip().upper() != "FECHAMENTO DO MERCADO" or manifest.get("prototype") is not False or output_name != expected_file or not os.path.isfile(audio_path) or duration <= 0):
+                continue
+            voice = str(manifest.get("voice", ""))
+            episodes.append({"date": date_str, "date_label": format_data_curta(date_str), "file": expected_file, "path": f"/audio/{expected_file}", "duration": duration, "dur_str": f"{duration // 60}:{duration % 60:02d}", "presenter": "Antonio" if "Antonio" in voice else voice, "summary": _fechamento_summary(date_str), "words": int(manifest.get("text_gate", {}).get("words", 0) or 0)})
+        except (OSError, TypeError, ValueError, json.JSONDecodeError):
+            continue
+        if limit is not None and len(episodes) >= limit:
+            break
+    return episodes
+
+def render_fechamento_program(episodes):
+    if not episodes:
+        return ""
+    latest = episodes[0]
+    btns = []
+    for i, ep in enumerate(episodes):
+        active = " is-active" if i == 0 else ""
+        btns.append('<button type="button" class="morning-episode fechamento-episode' + active + '" data-audio="' + html_lib.escape(ep["path"], quote=True) + '" data-date="' + html_lib.escape(ep["date_label"], quote=True) + '" data-duration="' + str(ep["duration"]) + '" data-summary="' + html_lib.escape(ep["summary"], quote=True) + '" onclick="selectFechamentoEpisode(this)" aria-label="Ouvir Fechamento de ' + html_lib.escape(ep["date_label"], quote=True) + '"><span>' + html_lib.escape(ep["date_label"]) + '</span><small>' + ep["dur_str"] + '</small></button>')
+    return '<section class="morning-program fechamento-program" id="fechamento" data-animate aria-labelledby="fechamentoTitle"><div class="morning-intro fechamento-intro"><div class="morning-kicker fechamento-kicker"><span class="morning-sun fechamento-sun" aria-hidden="true"></span> Edição das 17h</div><h2 id="fechamentoTitle">Fechamento<br><strong>do Mercado</strong></h2><p>O pregao em contexto — numeros, porques e o Radar Amanha.</p><div class="morning-byline"><span>Com Antonio</span><span>Seg–Sex \u00b7 17h</span></div></div><div class="morning-listen"><div class="morning-now"><span class="morning-live-dot fechamento-dot" aria-hidden="true"></span><span id="fechamentoDate">' + html_lib.escape(latest["date_label"]) + '</span><span>Ultima edicao</span></div><p class="morning-summary" id="fechamentoSummary">' + html_lib.escape(latest["summary"]) + '</p><div class="morning-player"><button class="morning-play" id="fechamentoPlayBtn" type="button" onclick="toggleFechamentoPlay()" aria-label="Reproduzir Fechamento"><span id="fechamentoPlayGlyph" aria-hidden="true">\u25b6</span></button><div class="morning-progress" id="fechamentoProgress" role="slider" tabindex="0" aria-label="Progresso do Fechamento" aria-valuemin="0" aria-valuemax="' + str(latest["duration"]) + '" aria-valuenow="0"><div class="player-chapters" id="fechamentoChapters" data-chapters="[]"><div class="chapter-segment" style="--chapter-weight:1" data-chapter-index="0"><span class="chapter-segment-track"><span class="chapter-segment-fill" id="fechamentoProgressFill"></span></span><span class="chapter-tooltip">Fechamento do Mercado<small>00:00</small></span></div></div></div><span class="morning-time" id="fechamentoTime">0:00 / ' + latest["dur_str"] + '</span><a class="morning-download" id="fechamentoDownload" href="' + html_lib.escape(latest["path"], quote=True) + '" download>\u2193</a></div><audio id="fechamentoAudio" src="' + html_lib.escape(latest["path"], quote=True) + '" preload="metadata"></audio><div class="morning-history" aria-label="Edicoes do Fechamento"><span class="morning-history-label">Arquivo</span>' + ''.join(btns) + '</div></div></section>'
 
 def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage_data=None, voice=None):
     n = len(noticias)
@@ -566,6 +618,10 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
     manha_episodes = load_manha_conectada_episodes()
     morning_html = render_manha_conectada_program(manha_episodes)
     morning_nav = '<a class="header-program-link" href="#manha-conectada">Manhã Conectada</a>' if morning_html else ''
+    fechamento_episodes = load_fechamento_episodes()
+    fechamento_html = render_fechamento_program(fechamento_episodes)
+    fechamento_nav = '<a class="header-program-link" href="#fechamento">Fechamento</a>' if fechamento_html else ''
+    premium_block = fechamento_html if fechamento_html else '  <div class="premium-block" data-animate>\n    <div class="premium-eyebrow">\u2726 Proximo formato \u00b7 Em desenvolvimento</div>\n    <h3 class="premium-title">Fechamento do Mercado</h3>\n    <p class="premium-desc">O resumo das 17h com mercados, d\u00f3lar, ativos e os movimentos que ajudam a preparar o pr\u00f3ximo dia.</p>\n    <span class="btn-premium" aria-label="Fechamento do Mercado em desenvolvimento">Em breve</span>\n  </div>'
     
     # Quality score do Coverage Ledger
     qs = coverage_data.get("quality_score") if coverage_data else None
@@ -593,8 +649,17 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
         total_dur_sec = pod_dur_sec % 60
 
         player_html = f'''
-    <div class="player-bar">
-      <div class="player-track">
+    <section class="d5n-program" data-animate aria-labelledby="d5nTitle">
+      <div class="d5n-intro">
+        <div class="d5n-kicker"><span class="d5n-sun" aria-hidden="true"></span> Edição das 05h</div>
+        <h2 id="d5nTitle">Hoje no<br><strong>Drop Five News</strong></h2>
+        <p>Notícias essenciais, contexto e tecnologia em um briefing para começar o dia informado.</p>
+        <div class="morning-byline"><span>Curadoria diária</span><span>Seg–Sáb · 05h</span></div>
+      </div>
+      <div class="morning-listen morning-listen--d5n">
+        <div class="morning-now" style="color:var(--d5n)"><span class="morning-live-dot" style="background:var(--d5n)"></span><span>Última edição</span><span>{data_curta}</span></div>
+        <div class="player-bar" style="margin:1rem 0 0">
+          <div class="player-track">
         <button class="play-btn" id="playBtn" onclick="togglePlay()" aria-label="Reproduzir episódio">
           <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
           <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
@@ -611,7 +676,9 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
         <div class="player-title">Hoje no Drop Five News — Episódio #{podcast["num"]} — {data_curta}</div>
         <div class="chapter-current" id="currentChapter" aria-live="polite">{current_chapter}</div>
       </div>
-    </div>
+        </div>
+      </div>
+    </section>
     <audio id="audioEl" src="{podcast["path"]}" preload="metadata"></audio>'''
     else:
         player_html = ''
@@ -827,7 +894,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .hero-stat span {{ font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }}
   .divider-v {{ width:1px; height:24px; background:var(--border); }}
 
-  .player-bar {{ margin:2rem 0 0; padding:0.75rem 1.25rem; background:var(--surface); border:1px solid var(--border); border-radius:3px; }}
+  .player-bar {{ margin:2rem 0 0; padding:0.75rem 1.25rem; background:var(--surface); border:1px solid var(--border); border-radius:14px; position:relative; overflow:hidden; }}
   .player-track {{ display:flex; align-items:center; gap:0.5rem; }}
   .play-btn {{ width:32px; height:32px; border-radius:50%; border:1px solid var(--accent-dim); background:transparent; color:var(--accent); cursor:pointer; flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:all 0.2s; }}
   .play-btn:hover {{ background:var(--accent-dim); color:#fff; }}
@@ -987,6 +1054,18 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   @keyframes fadeSlideUp {{ from{{opacity:0;transform:translateY(12px);}} to{{opacity:1;transform:translateY(0);}} }}
   .hero {{ animation:fadeSlideUp 0.6s ease both; }}
   .player-bar {{ animation:fadeSlideUp 0.6s 0.15s ease both; }}
+  .player-bar::before {{ content:""; position:absolute; inset:0; background-image:url("/podcast-cover.png"); background-size:cover; background-position:center; opacity:0.09; pointer-events:none; z-index:0; }}
+  .player-bar .player-track, .player-bar .player-meta {{ position:relative; z-index:1; }}
+  /* D5N box com header padrão grid 2col (igual MC/FM) — classes reutilizadas */
+  .d5n-program {{ display:grid; grid-template-columns:minmax(230px,.82fr) minmax(0,1.35fr); margin:3rem 0 2.5rem; overflow:hidden; border:1px solid var(--d5n-line); border-radius:14px; background:var(--d5n-deep); box-shadow:inset 0 1px rgba(255,255,255,.025); position:relative; }}
+  .d5n-program::before {{ content:""; position:absolute; inset:0; background-image:url("/podcast-cover.png"); background-size:cover; background-position:center; opacity:0.06; pointer-events:none; z-index:0; }}
+  .d5n-intro {{ position:relative; padding:2rem; border-right:1px solid var(--d5n-line); background:rgba(17,26,43,0.88); overflow:hidden; backdrop-filter:blur(1px); z-index:1; }}
+  .d5n-intro::after {{ content:'05'; position:absolute; right:-.15rem; bottom:-1.3rem; color:transparent; -webkit-text-stroke:1px rgba(148,163,184,.14); font-size:8.5rem; font-weight:700; line-height:1; letter-spacing:-.08em; pointer-events:none; }}
+  .d5n-kicker {{ display:flex; align-items:center; gap:.55rem; margin-bottom:1.3rem; color:var(--d5n); font-size:.63rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }}
+  .d5n-sun {{ width:10px; height:10px; border-radius:50%; background:var(--d5n); box-shadow:0 0 0 4px rgba(148,163,184,.1); }}
+  .d5n-intro h2 {{ position:relative; z-index:1; color:var(--text); font-size:clamp(1.8rem,4vw,2.55rem); font-weight:600; line-height:.98; letter-spacing:-.045em; }}
+  .d5n-intro h2 strong {{ color:var(--d5n); font-weight:700; }}
+  .d5n-program .morning-listen--d5n {{ background:rgba(19,25,32,0.55); }}
 
   .weekend-notice {{ margin:2rem 0 0; padding:0.75rem 1rem; background:var(--surface); border:1px solid var(--border); border-radius:3px; display:flex; align-items:center; gap:0.75rem; opacity:0.7; }}
   .weekend-icon {{ font-size:1.2rem; flex-shrink:0; }}
@@ -1057,11 +1136,11 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   @media (prefers-reduced-motion:reduce) {{ *,*::before,*::after {{ animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; }} }}
 
   /* ── Manhã Conectada ── */
-  :root {{ --morning:#f4b942; --morning-deep:#241d12; --morning-line:#5b4925; }}
+  :root {{ --morning:#f4b942; --morning-deep:#241d12; --morning-line:#5b4925; --fechamento:#0ea5e9; --fechamento-deep:#0a1a2a; --fechamento-line:#164a6a; --d5n:#94a3b8; --d5n-deep:#111a2b; --d5n-line:#2a3a52; }}
   .header-program-link {{ color:var(--text-secondary); font-size:.68rem; font-weight:600; letter-spacing:.04em; text-decoration:none; transition:color .2s ease; }}
   .header-program-link:hover {{ color:var(--morning); }}
   .morning-program {{ display:grid; grid-template-columns:minmax(230px,.82fr) minmax(0,1.35fr); margin:3rem 0 2.5rem; overflow:hidden; border:1px solid var(--border); border-radius:14px; background:var(--surface); box-shadow:inset 0 1px rgba(255,255,255,.025); }}
-  .morning-intro {{ position:relative; padding:2rem; border-right:1px solid var(--border); background:#101727; overflow:hidden; }}
+  .morning-intro {{ position:relative; padding:2rem; border-right:1px solid var(--border); background:rgba(16,23,39,0.72); overflow:hidden; backdrop-filter:blur(1px); }}
   .morning-intro::after {{ content:'11'; position:absolute; right:-.15rem; bottom:-1.3rem; color:transparent; -webkit-text-stroke:1px rgba(244,185,66,.14); font-size:8.5rem; font-weight:700; line-height:1; letter-spacing:-.08em; pointer-events:none; }}
   .morning-kicker {{ display:flex; align-items:center; gap:.55rem; margin-bottom:1.3rem; color:var(--morning); font-size:.63rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }}
   .morning-sun {{ width:10px; height:10px; border-radius:50%; background:var(--morning); box-shadow:0 0 0 4px rgba(244,185,66,.1); }}
@@ -1070,7 +1149,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .morning-intro p {{ position:relative; z-index:1; max-width:26rem; margin-top:1.2rem; color:var(--text-secondary); font-size:.82rem; line-height:1.65; }}
   .morning-byline {{ position:relative; z-index:1; display:flex; gap:1rem; margin-top:1.4rem; color:var(--muted); font-size:.62rem; letter-spacing:.08em; text-transform:uppercase; }}
   .morning-byline span + span {{ padding-left:1rem; border-left:1px solid var(--border); }}
-  .morning-listen {{ display:flex; min-width:0; flex-direction:column; justify-content:center; padding:2rem; }}
+  .morning-listen {{ display:flex; min-width:0; flex-direction:column; justify-content:center; padding:2rem; background:rgba(19,25,32,0.55); backdrop-filter:blur(1px); }}
   .morning-now {{ display:flex; align-items:center; gap:.6rem; color:var(--morning); font-size:.63rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }}
   .morning-now span:last-child {{ margin-left:auto; color:var(--muted); font-weight:500; }}
   .morning-live-dot {{ width:6px; height:6px; border-radius:50%; background:var(--morning); box-shadow:0 0 0 4px rgba(244,185,66,.08); }}
@@ -1088,9 +1167,32 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .morning-episode small {{ color:var(--faint); font-size:.56rem; }}
   .morning-episode:hover,.morning-episode.is-active {{ border-color:var(--morning-line); background:rgba(244,185,66,.06); color:var(--morning); }}
   .morning-program.visible {{ animation:fadeSlideUp .5s ease both; }}
+  .morning-program {{ position:relative; }}
+  .morning-program::before {{ content:""; position:absolute; inset:0; background-size:cover; background-position:center; opacity:0.14; pointer-events:none; z-index:0; }}
+  .morning-program#manha-conectada::before {{ background-image:url("/manha-conectada/assets/manha-conectada-cover.png"); }}
+  .morning-program#fechamento::before {{ background-image:url("/fechamento/assets/fechamento-cover.png"); }}
+  .morning-program .morning-intro, .morning-program .morning-listen {{ position:relative; z-index:1; }}
+  /* Fechamento — identidade própria noite petróleo, distinta de Manhã âmbar */
+  .fechamento-program {{ border-color:var(--fechamento-line) !important; background:var(--fechamento-deep) !important; }}
+  .fechamento-program::before {{ opacity:0.12 !important; }}
+  .fechamento-intro {{ background:rgba(10,26,43,0.90) !important; border-right-color:var(--fechamento-line) !important; }}
+  .fechamento-intro::after {{ content:'17' !important; -webkit-text-stroke:1px rgba(14,165,233,.18) !important; }}
+  .fechamento-kicker {{ color:var(--fechamento) !important; }}
+  .fechamento-sun, .fechamento-dot {{ background:var(--fechamento) !important; box-shadow:0 0 0 4px rgba(14,165,233,.12) !important; }}
+  .fechamento-program h2 strong {{ color:var(--fechamento) !important; }}
+  .fechamento-program .morning-player {{ background:rgba(14,165,233,0.08) !important; border-color:var(--fechamento-line) !important; }}
+  .fechamento-program .morning-progress {{ background:#0f2a3d !important; }}
+  .fechamento-program .morning-progress span {{ background:var(--fechamento) !important; }}
+  .fechamento-program .morning-time {{ color:#7dd3fc !important; }}
+  .fechamento-program .morning-download {{ border-color:var(--fechamento-line) !important; color:var(--fechamento) !important; }}
+  .fechamento-program .morning-play {{ background:var(--fechamento) !important; color:#052030 !important; }}
+  .fechamento-episode.is-active {{ border-color:var(--fechamento-line) !important; background:rgba(14,165,233,.10) !important; color:var(--fechamento) !important; }}
+  .fechamento-episode:hover {{ border-color:var(--fechamento-line) !important; }}
+  /* Manhã fica com cover 0.10 quente, D5N 0.06 sutil já */
+  .morning-program#manha-conectada::before {{ opacity:0.10; }}
 
   @media (max-width:700px) {{
-    .morning-program {{ grid-template-columns:1fr; margin:2rem 0; }}
+    .morning-program, .d5n-program {{ grid-template-columns:1fr; margin:2rem 0; }}
     .morning-intro {{ padding:1.5rem; border-right:0; border-bottom:1px solid var(--border); }}
     .morning-intro::after {{ font-size:7rem; }}
     .morning-listen {{ padding:1.5rem; }}
@@ -1130,7 +1232,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   </a>
   <span class="header-meta">{data_br}</span>
   <div class="header-right">
-    {morning_nav}
+    {morning_nav}{fechamento_nav}
     <span class="edition-badge">#{podcast["num"] if podcast else "---"}</span>
     <div class="tech-bar">
       <span class="tech-item">IBOV <span class="tech-value">—</span></span>
@@ -1167,6 +1269,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   {player_html}
 
 {morning_html}
+{premium_block}
 
   <div class="search-bar">
     <input type="search" id="searchInput" placeholder="Buscar notícias..." aria-label="Buscar notícias">
@@ -1181,13 +1284,6 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   </div>
 
   {sections_html}
-
-  <div class="premium-block" data-animate>
-    <div class="premium-eyebrow">✦ Próximo formato · Em desenvolvimento</div>
-    <h3 class="premium-title">Fechamento do Mercado</h3>
-    <p class="premium-desc">O resumo das 17h com mercados, dólar, ativos e os movimentos que ajudam a preparar o próximo dia.</p>
-    <span class="btn-premium" aria-label="Fechamento do Mercado em desenvolvimento">Em breve</span>
-  </div>
 
   <section class="section" style="border-bottom:none;padding-bottom:0">
     <div class="section-header">
@@ -1425,6 +1521,74 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
     if (morningProgress) morningProgress.setAttribute('aria-valuemax', button.dataset.duration || '0');
     updateMorningPlayer();
     morningAudio.play().then(() => setMorningPlayState(true)).catch(error => console.warn('Play failed:', error));
+  }}
+
+  // ── Fechamento do Mercado player (espelho MC) ──
+  const fechamentoAudio = document.getElementById('fechamentoAudio');
+  const fechamentoProgress = document.getElementById('fechamentoProgress');
+  const fechamentoProgressFill = document.getElementById('fechamentoProgressFill');
+  const fechamentoTime = document.getElementById('fechamentoTime');
+  const fechamentoPlayBtn = document.getElementById('fechamentoPlayBtn');
+  const fechamentoPlayGlyph = document.getElementById('fechamentoPlayGlyph');
+  function updateFechamentoPlayer() {{
+    if (!fechamentoAudio) return;
+    const cur = fechamentoAudio.currentTime || 0;
+    const dur = fechamentoAudio.duration || parseInt(fechamentoProgress?.dataset.duration || fechamentoProgress?.getAttribute('aria-valuemax') || '0', 10) || 0;
+    if (fechamentoProgressFill) fechamentoProgressFill.style.width = dur ? (cur/dur*100)+'%' : '0';
+    if (fechamentoTime) fechamentoTime.textContent = fmt(cur) + ' / ' + fmt(dur);
+    if (fechamentoProgress) fechamentoProgress.setAttribute('aria-valuenow', String(Math.floor(cur)));
+    if (dur) fechamentoProgress.setAttribute('aria-valuemax', String(Math.floor(dur)));
+  }}
+  function setFechamentoPlayState(playing) {{
+    if (fechamentoPlayGlyph) fechamentoPlayGlyph.textContent = playing ? 'Ⅱ' : '▶';
+    if (fechamentoPlayBtn) fechamentoPlayBtn.setAttribute('aria-label', playing ? 'Pausar Fechamento' : 'Reproduzir Fechamento');
+  }}
+  function toggleFechamentoPlay() {{
+    if (!fechamentoAudio) return;
+    if (fechamentoAudio.paused) {{
+      if (typeof audio !== 'undefined' && audio && !audio.paused) audio.pause();
+      if (morningAudio && !morningAudio.paused) morningAudio.pause();
+      fechamentoAudio.play().then(() => setFechamentoPlayState(true)).catch(e => console.warn('Play failed:', e));
+    }} else {{
+      fechamentoAudio.pause();
+    }}
+  }}
+  function selectFechamentoEpisode(button) {{
+    if (!fechamentoAudio || !button?.dataset.audio) return;
+    fechamentoAudio.pause();
+    fechamentoAudio.src = button.dataset.audio;
+    fechamentoAudio.load();
+    document.querySelectorAll('.fechamento-episode').forEach(item => item.classList.toggle('is-active', item === button));
+    const date = document.getElementById('fechamentoDate');
+    const summary = document.getElementById('fechamentoSummary');
+    const download = document.getElementById('fechamentoDownload');
+    if (date) date.textContent = button.dataset.date || '';
+    if (summary) summary.textContent = button.dataset.summary || '';
+    if (download) download.href = button.dataset.audio;
+    if (fechamentoProgress) fechamentoProgress.setAttribute('aria-valuemax', button.dataset.duration || '0');
+    updateFechamentoPlayer();
+    fechamentoAudio.play().then(() => setFechamentoPlayState(true)).catch(e => console.warn('Play failed:', e));
+  }}
+  if (fechamentoAudio) {{
+    fechamentoAudio.addEventListener('timeupdate', updateFechamentoPlayer);
+    fechamentoAudio.addEventListener('loadedmetadata', updateFechamentoPlayer);
+    fechamentoAudio.addEventListener('play', () => setFechamentoPlayState(true));
+    fechamentoAudio.addEventListener('pause', () => setFechamentoPlayState(false));
+    fechamentoAudio.addEventListener('ended', () => {{ setFechamentoPlayState(false); updateFechamentoPlayer(); }});
+  }}
+  if (fechamentoProgress) {{
+    fechamentoProgress.addEventListener('click', event => {{
+      if (!fechamentoAudio?.duration) return;
+      const rect = fechamentoProgress.getBoundingClientRect();
+      fechamentoAudio.currentTime = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width)) * fechamentoAudio.duration;
+    }});
+    fechamentoProgress.addEventListener('keydown', event => {{
+      if (!fechamentoAudio?.duration || !['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+      event.preventDefault();
+      if (event.key === 'Home') fechamentoAudio.currentTime = 0;
+      else if (event.key === 'End') fechamentoAudio.currentTime = fechamentoAudio.duration;
+      else fechamentoAudio.currentTime = Math.max(0, Math.min(fechamentoAudio.duration, fechamentoAudio.currentTime + (event.key === 'ArrowRight' ? 5 : -5)));
+    }});
   }}
 
   if (morningAudio) {{
