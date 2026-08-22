@@ -1065,7 +1065,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .d5n-sun {{ width:10px; height:10px; border-radius:50%; background:var(--d5n); box-shadow:0 0 0 4px rgba(148,163,184,.1); }}
   .d5n-intro h2 {{ position:relative; z-index:1; color:var(--text); font-size:clamp(1.8rem,4vw,2.55rem); font-weight:600; line-height:.98; letter-spacing:-.045em; }}
   .d5n-intro h2 strong {{ color:var(--d5n); font-weight:700; }}
-  .d5n-program .morning-listen--d5n {{ background:rgba(19,25,32,0.72); }}
+  .d5n-program .morning-listen--d5n {{ background:rgba(19,25,32,0.55); }}
 
   .weekend-notice {{ margin:2rem 0 0; padding:0.75rem 1rem; background:var(--surface); border:1px solid var(--border); border-radius:3px; display:flex; align-items:center; gap:0.75rem; opacity:0.7; }}
   .weekend-icon {{ font-size:1.2rem; flex-shrink:0; }}
@@ -1140,7 +1140,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .header-program-link {{ color:var(--text-secondary); font-size:.68rem; font-weight:600; letter-spacing:.04em; text-decoration:none; transition:color .2s ease; }}
   .header-program-link:hover {{ color:var(--morning); }}
   .morning-program {{ display:grid; grid-template-columns:minmax(230px,.82fr) minmax(0,1.35fr); margin:3rem 0 2.5rem; overflow:hidden; border:1px solid var(--border); border-radius:14px; background:var(--surface); box-shadow:inset 0 1px rgba(255,255,255,.025); }}
-  .morning-intro {{ position:relative; padding:2rem; border-right:1px solid var(--border); background:rgba(16,23,39,0.88); overflow:hidden; backdrop-filter:blur(1px); }}
+  .morning-intro {{ position:relative; padding:2rem; border-right:1px solid var(--border); background:rgba(16,23,39,0.72); overflow:hidden; backdrop-filter:blur(1px); }}
   .morning-intro::after {{ content:'11'; position:absolute; right:-.15rem; bottom:-1.3rem; color:transparent; -webkit-text-stroke:1px rgba(244,185,66,.14); font-size:8.5rem; font-weight:700; line-height:1; letter-spacing:-.08em; pointer-events:none; }}
   .morning-kicker {{ display:flex; align-items:center; gap:.55rem; margin-bottom:1.3rem; color:var(--morning); font-size:.63rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }}
   .morning-sun {{ width:10px; height:10px; border-radius:50%; background:var(--morning); box-shadow:0 0 0 4px rgba(244,185,66,.1); }}
@@ -1149,7 +1149,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .morning-intro p {{ position:relative; z-index:1; max-width:26rem; margin-top:1.2rem; color:var(--text-secondary); font-size:.82rem; line-height:1.65; }}
   .morning-byline {{ position:relative; z-index:1; display:flex; gap:1rem; margin-top:1.4rem; color:var(--muted); font-size:.62rem; letter-spacing:.08em; text-transform:uppercase; }}
   .morning-byline span + span {{ padding-left:1rem; border-left:1px solid var(--border); }}
-  .morning-listen {{ display:flex; min-width:0; flex-direction:column; justify-content:center; padding:2rem; background:rgba(19,25,32,0.72); backdrop-filter:blur(1px); }}
+  .morning-listen {{ display:flex; min-width:0; flex-direction:column; justify-content:center; padding:2rem; background:rgba(19,25,32,0.55); backdrop-filter:blur(1px); }}
   .morning-now {{ display:flex; align-items:center; gap:.6rem; color:var(--morning); font-size:.63rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }}
   .morning-now span:last-child {{ margin-left:auto; color:var(--muted); font-weight:500; }}
   .morning-live-dot {{ width:6px; height:6px; border-radius:50%; background:var(--morning); box-shadow:0 0 0 4px rgba(244,185,66,.08); }}
@@ -1168,7 +1168,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .morning-episode:hover,.morning-episode.is-active {{ border-color:var(--morning-line); background:rgba(244,185,66,.06); color:var(--morning); }}
   .morning-program.visible {{ animation:fadeSlideUp .5s ease both; }}
   .morning-program {{ position:relative; }}
-  .morning-program::before {{ content:""; position:absolute; inset:0; background-size:cover; background-position:center; opacity:0.10; pointer-events:none; z-index:0; }}
+  .morning-program::before {{ content:""; position:absolute; inset:0; background-size:cover; background-position:center; opacity:0.14; pointer-events:none; z-index:0; }}
   .morning-program#manha-conectada::before {{ background-image:url("/manha-conectada/assets/manha-conectada-cover.png"); }}
   .morning-program#fechamento::before {{ background-image:url("/fechamento/assets/fechamento-cover.png"); }}
   .morning-program .morning-intro, .morning-program .morning-listen {{ position:relative; z-index:1; }}
