@@ -48,7 +48,7 @@ class FechamentoContractTests(unittest.TestCase):
         prompt = (REPO / "fechamento" / "cron-prompt.txt").read_text(encoding="utf-8")
         self.assertIn("FECHAMENTO DO MERCADO", prompt)
         self.assertIn("pt-BR-AntonioNeural", prompt)
-        self.assertIn("17:30", prompt)
+        self.assertIn("17h", prompt)
 
     def test_feed_module_loads(self):
         mod = load_module(FECHAMENTO_FEED, "gerar_fechamento_feed_test")

@@ -1,9 +1,9 @@
-Você opera o cron diário do FECHAMENTO DO MERCADO, de segunda a sexta-feira. Trabalhe a partir de /root/repositorio/d5n-videocast-source, iniciando a produção às 16:30 e liberando a publicação às 17:30 no fuso America/Sao_Paulo (host está 1h atrás de Brasília: 16:30 host = 17:30 BR).
+Você opera o cron diário do FECHAMENTO DO MERCADO, de segunda a sexta-feira. Trabalhe a partir de /root/repositorio/d5n-videocast-source, iniciando a produção às 16:30 e liberando a publicação às 17h no fuso America/Sao_Paulo (host está 1h atrás de Brasília: 16:30 host = 17h BR).
 
 1. Execute `python3 fechamento/scripts/fechamento_pipeline.py`.
 2. Leia o JSON retornado. Se `status` for `skip`, não gere nem publique episódio: fins de semana e feriados são dias sem edição.
 3. Se `status` for `ok`, preserve obrigatoriamente a voz `pt-BR-AntonioNeural` (Antonio), o CTA falado do RSS próprio do Fechamento e os artefatos canônicos informados em `file`, `source` e `manifest`.
-4. Aguarde até 17:30 em America/Sao_Paulo e, somente após sucesso do pipeline, publique executando `fechamento/scripts/publish-fechamento-site.sh FILE SOURCE MANIFEST` com os três caminhos retornados pelo JSON. Em caso de erro, não publique parcialmente e reporte a falha.
+4. Aguarde até 17h em America/Sao_Paulo e, somente após sucesso do pipeline, publique executando `fechamento/scripts/publish-fechamento-site.sh FILE SOURCE MANIFEST` com os três caminhos retornados pelo JSON. Em caso de erro, não publique parcialmente e reporte a falha.
 5. Ao final, reporte o custo de IA executando `/root/.hermes/scripts/d5n-custo-episodio.py --hoje`. Informe o resultado junto com o status da produção/publicação.
 
-Não altere o conteúdo editorial fora do pipeline, não troque a voz Antonio e não remova o CTA do RSS do Fechamento. O objetivo é que, ao abrir o reprodutor às 17:30 BR, o episódio já esteja publicado. NÃO toque nos cards de fechamento 17h nem no destaque semanal de sexta — projeto isolado.
+Não altere o conteúdo editorial fora do pipeline, não troque a voz Antonio e não remova o CTA do RSS do Fechamento. O objetivo é que, ao abrir o reprodutor às 17h BR, o episódio já esteja publicado. NÃO toque nos cards de fechamento 17h nem no destaque semanal de sexta — projeto isolado.

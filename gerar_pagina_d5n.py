@@ -596,7 +596,7 @@ def render_fechamento_program(episodes):
     for i, ep in enumerate(episodes):
         active = " is-active" if i == 0 else ""
         btns.append('<button type="button" class="morning-episode fechamento-episode' + active + '" data-audio="' + html_lib.escape(ep["path"], quote=True) + '" data-date="' + html_lib.escape(ep["date_label"], quote=True) + '" data-duration="' + str(ep["duration"]) + '" data-summary="' + html_lib.escape(ep["summary"], quote=True) + '" onclick="selectFechamentoEpisode(this)" aria-label="Ouvir Fechamento de ' + html_lib.escape(ep["date_label"], quote=True) + '"><span>' + html_lib.escape(ep["date_label"]) + '</span><small>' + ep["dur_str"] + '</small></button>')
-    return '<section class="morning-program fechamento-program" id="fechamento" data-animate aria-labelledby="fechamentoTitle"><div class="morning-intro fechamento-intro"><div class="morning-kicker fechamento-kicker"><span class="morning-sun fechamento-sun" aria-hidden="true"></span> Edicao das 17:30</div><h2 id="fechamentoTitle">Fechamento<br><strong>do Mercado</strong></h2><p>O pregao em contexto — numeros, porques e o Radar Amanha.</p><div class="morning-byline"><span>Com Antonio</span><span>Seg-Sex \u00b7 17:30</span></div></div><div class="morning-listen"><div class="morning-now"><span class="morning-live-dot fechamento-dot" aria-hidden="true"></span><span id="fechamentoDate">' + html_lib.escape(latest["date_label"]) + '</span><span>Ultima edicao</span></div><p class="morning-summary" id="fechamentoSummary">' + html_lib.escape(latest["summary"]) + '</p><div class="morning-player"><button class="morning-play" id="fechamentoPlayBtn" type="button" onclick="toggleFechamentoPlay()" aria-label="Reproduzir Fechamento"><span id="fechamentoPlayGlyph" aria-hidden="true">\u25b6</span></button><div class="morning-progress" id="fechamentoProgress" role="slider" tabindex="0" aria-label="Progresso do Fechamento" aria-valuemin="0" aria-valuemax="' + str(latest["duration"]) + '" aria-valuenow="0"><span id="fechamentoProgressFill"></span></div><span class="morning-time" id="fechamentoTime">0:00 / ' + latest["dur_str"] + '</span><a class="morning-download" id="fechamentoDownload" href="' + html_lib.escape(latest["path"], quote=True) + '" download>\u2193</a></div><audio id="fechamentoAudio" src="' + html_lib.escape(latest["path"], quote=True) + '" preload="metadata"></audio><div class="morning-history" aria-label="Edicoes do Fechamento"><span class="morning-history-label">Arquivo</span>' + ''.join(btns) + '</div></div></section>'
+    return '<section class="morning-program fechamento-program" id="fechamento" data-animate aria-labelledby="fechamentoTitle"><div class="morning-intro fechamento-intro"><div class="morning-kicker fechamento-kicker"><span class="morning-sun fechamento-sun" aria-hidden="true"></span> Edição das 17h</div><h2 id="fechamentoTitle">Fechamento<br><strong>do Mercado</strong></h2><p>O pregao em contexto — numeros, porques e o Radar Amanha.</p><div class="morning-byline"><span>Com Antonio</span><span>Seg–Sex \u00b7 17h</span></div></div><div class="morning-listen"><div class="morning-now"><span class="morning-live-dot fechamento-dot" aria-hidden="true"></span><span id="fechamentoDate">' + html_lib.escape(latest["date_label"]) + '</span><span>Ultima edicao</span></div><p class="morning-summary" id="fechamentoSummary">' + html_lib.escape(latest["summary"]) + '</p><div class="morning-player"><button class="morning-play" id="fechamentoPlayBtn" type="button" onclick="toggleFechamentoPlay()" aria-label="Reproduzir Fechamento"><span id="fechamentoPlayGlyph" aria-hidden="true">\u25b6</span></button><div class="morning-progress" id="fechamentoProgress" role="slider" tabindex="0" aria-label="Progresso do Fechamento" aria-valuemin="0" aria-valuemax="' + str(latest["duration"]) + '" aria-valuenow="0"><span id="fechamentoProgressFill"></span></div><span class="morning-time" id="fechamentoTime">0:00 / ' + latest["dur_str"] + '</span><a class="morning-download" id="fechamentoDownload" href="' + html_lib.escape(latest["path"], quote=True) + '" download>\u2193</a></div><audio id="fechamentoAudio" src="' + html_lib.escape(latest["path"], quote=True) + '" preload="metadata"></audio><div class="morning-history" aria-label="Edicoes do Fechamento"><span class="morning-history-label">Arquivo</span>' + ''.join(btns) + '</div></div></section>'
 
 def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage_data=None, voice=None):
     n = len(noticias)
@@ -1113,7 +1113,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   @media (prefers-reduced-motion:reduce) {{ *,*::before,*::after {{ animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; }} }}
 
   /* ── Manhã Conectada ── */
-  :root {{ --morning:#f4b942; --morning-deep:#241d12; --morning-line:#5b4925; }}
+  :root {{ --morning:#f4b942; --morning-deep:#241d12; --morning-line:#5b4925; --fechamento:#0ea5e9; --fechamento-deep:#0a1a2a; --fechamento-line:#164a6a; }}
   .header-program-link {{ color:var(--text-secondary); font-size:.68rem; font-weight:600; letter-spacing:.04em; text-decoration:none; transition:color .2s ease; }}
   .header-program-link:hover {{ color:var(--morning); }}
   .morning-program {{ display:grid; grid-template-columns:minmax(230px,.82fr) minmax(0,1.35fr); margin:3rem 0 2.5rem; overflow:hidden; border:1px solid var(--border); border-radius:14px; background:var(--surface); box-shadow:inset 0 1px rgba(255,255,255,.025); }}
@@ -1144,6 +1144,12 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .morning-episode small {{ color:var(--faint); font-size:.56rem; }}
   .morning-episode:hover,.morning-episode.is-active {{ border-color:var(--morning-line); background:rgba(244,185,66,.06); color:var(--morning); }}
   .morning-program.visible {{ animation:fadeSlideUp .5s ease both; }}
+  .fechamento-program {{ border-color:var(--fechamento-line) !important; }}
+  .fechamento-kicker {{ color:var(--fechamento) !important; }}
+  .fechamento-sun, .fechamento-dot {{ background:var(--fechamento) !important; box-shadow:0 0 0 4px rgba(14,165,233,.12) !important; }}
+  .fechamento-intro {{ background:#0d1a2b !important; }}
+  .fechamento-program .morning-download {{ border-color:var(--fechamento-line) !important; color:var(--fechamento) !important; }}
+  .fechamento-episode.is-active {{ border-color:var(--fechamento-line) !important; background:rgba(14,165,233,.08) !important; color:var(--fechamento) !important; }}
 
   @media (max-width:700px) {{
     .morning-program {{ grid-template-columns:1fr; margin:2rem 0; }}
@@ -1476,6 +1482,74 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
     if (morningProgress) morningProgress.setAttribute('aria-valuemax', button.dataset.duration || '0');
     updateMorningPlayer();
     morningAudio.play().then(() => setMorningPlayState(true)).catch(error => console.warn('Play failed:', error));
+  }}
+
+  // ── Fechamento do Mercado player (espelho MC) ──
+  const fechamentoAudio = document.getElementById('fechamentoAudio');
+  const fechamentoProgress = document.getElementById('fechamentoProgress');
+  const fechamentoProgressFill = document.getElementById('fechamentoProgressFill');
+  const fechamentoTime = document.getElementById('fechamentoTime');
+  const fechamentoPlayBtn = document.getElementById('fechamentoPlayBtn');
+  const fechamentoPlayGlyph = document.getElementById('fechamentoPlayGlyph');
+  function updateFechamentoPlayer() {{
+    if (!fechamentoAudio) return;
+    const cur = fechamentoAudio.currentTime || 0;
+    const dur = fechamentoAudio.duration || parseInt(fechamentoProgress?.dataset.duration || fechamentoProgress?.getAttribute('aria-valuemax') || '0', 10) || 0;
+    if (fechamentoProgressFill) fechamentoProgressFill.style.width = dur ? (cur/dur*100)+'%' : '0';
+    if (fechamentoTime) fechamentoTime.textContent = fmt(cur) + ' / ' + fmt(dur);
+    if (fechamentoProgress) fechamentoProgress.setAttribute('aria-valuenow', String(Math.floor(cur)));
+    if (dur) fechamentoProgress.setAttribute('aria-valuemax', String(Math.floor(dur)));
+  }}
+  function setFechamentoPlayState(playing) {{
+    if (fechamentoPlayGlyph) fechamentoPlayGlyph.textContent = playing ? 'Ⅱ' : '▶';
+    if (fechamentoPlayBtn) fechamentoPlayBtn.setAttribute('aria-label', playing ? 'Pausar Fechamento' : 'Reproduzir Fechamento');
+  }}
+  function toggleFechamentoPlay() {{
+    if (!fechamentoAudio) return;
+    if (fechamentoAudio.paused) {{
+      if (typeof audio !== 'undefined' && audio && !audio.paused) audio.pause();
+      if (morningAudio && !morningAudio.paused) morningAudio.pause();
+      fechamentoAudio.play().then(() => setFechamentoPlayState(true)).catch(e => console.warn('Play failed:', e));
+    }} else {{
+      fechamentoAudio.pause();
+    }}
+  }}
+  function selectFechamentoEpisode(button) {{
+    if (!fechamentoAudio || !button?.dataset.audio) return;
+    fechamentoAudio.pause();
+    fechamentoAudio.src = button.dataset.audio;
+    fechamentoAudio.load();
+    document.querySelectorAll('.fechamento-episode').forEach(item => item.classList.toggle('is-active', item === button));
+    const date = document.getElementById('fechamentoDate');
+    const summary = document.getElementById('fechamentoSummary');
+    const download = document.getElementById('fechamentoDownload');
+    if (date) date.textContent = button.dataset.date || '';
+    if (summary) summary.textContent = button.dataset.summary || '';
+    if (download) download.href = button.dataset.audio;
+    if (fechamentoProgress) fechamentoProgress.setAttribute('aria-valuemax', button.dataset.duration || '0');
+    updateFechamentoPlayer();
+    fechamentoAudio.play().then(() => setFechamentoPlayState(true)).catch(e => console.warn('Play failed:', e));
+  }}
+  if (fechamentoAudio) {{
+    fechamentoAudio.addEventListener('timeupdate', updateFechamentoPlayer);
+    fechamentoAudio.addEventListener('loadedmetadata', updateFechamentoPlayer);
+    fechamentoAudio.addEventListener('play', () => setFechamentoPlayState(true));
+    fechamentoAudio.addEventListener('pause', () => setFechamentoPlayState(false));
+    fechamentoAudio.addEventListener('ended', () => {{ setFechamentoPlayState(false); updateFechamentoPlayer(); }});
+  }}
+  if (fechamentoProgress) {{
+    fechamentoProgress.addEventListener('click', event => {{
+      if (!fechamentoAudio?.duration) return;
+      const rect = fechamentoProgress.getBoundingClientRect();
+      fechamentoAudio.currentTime = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width)) * fechamentoAudio.duration;
+    }});
+    fechamentoProgress.addEventListener('keydown', event => {{
+      if (!fechamentoAudio?.duration || !['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+      event.preventDefault();
+      if (event.key === 'Home') fechamentoAudio.currentTime = 0;
+      else if (event.key === 'End') fechamentoAudio.currentTime = fechamentoAudio.duration;
+      else fechamentoAudio.currentTime = Math.max(0, Math.min(fechamentoAudio.duration, fechamentoAudio.currentTime + (event.key === 'ArrowRight' ? 5 : -5)));
+    }});
   }}
 
   if (morningAudio) {{
