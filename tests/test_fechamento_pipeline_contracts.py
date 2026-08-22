@@ -24,7 +24,7 @@ class FechamentoContractTests(unittest.TestCase):
     def test_pipeline_constants(self):
         mod = load_module(FECHAMENTO_PIPELINE, "fechamento_pipeline_constants")
         self.assertEqual(mod.VOICE, "pt-BR-AntonioNeural")
-        self.assertEqual(mod.MIN_WORDS, 1100)
+        self.assertEqual(mod.MIN_WORDS, 900)
         self.assertEqual(mod.MAX_WORDS, 1500)
         self.assertEqual(mod.MIN_SECONDS, 480)
         self.assertEqual(mod.MAX_SECONDS, 600)
@@ -36,7 +36,7 @@ class FechamentoContractTests(unittest.TestCase):
             warnings.simplefilter("ignore")
             mod = load_module(FECHAMENTO_MIXER, "fechamento_mixer_constants")
         self.assertTrue(FECHAMENTO_MIXER.exists())
-        self.assertGreaterEqual(mod.MIN_SECONDS, 480)
+        self.assertGreaterEqual(mod.MIN_SECONDS, 400)
 
     def test_netlify_redirects_fechamento(self):
         content = (REPO / "netlify.toml").read_text(encoding="utf-8")

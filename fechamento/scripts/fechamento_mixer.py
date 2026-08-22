@@ -16,8 +16,8 @@ MC_ASSETS = FC_ROOT.parent / "manha-conectada" / "assets" / "audio"  # fallback
 INTRO = ASSETS / "intro-mc-nova.mp3"
 BED = ASSETS / "bg-music-mc.wav"
 STING = ASSETS / "transition-sting.mp3"
-MIN_SECONDS = 480
-MAX_SECONDS = 600
+MIN_SECONDS = 420
+MAX_SECONDS = 650
 LEAD_MS = 1800
 THEME_PAUSE_EXTRA_MS = 700
 

@@ -23,8 +23,8 @@ IMAGE_URL = f"{BASE_URL}/fechamento-cover.png"
 TZ = ZoneInfo("America/Sao_Paulo")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 CHANNEL_DESCRIPTION = (
-    "Briefing de fim de manhã do Drop Five News. De segunda a sexta, Antonio "
-    "resume as notícias que já definiram o dia e apresenta o Sinal 11: o que "
+    "Briefing de fim de tarde do Drop Five News. De segunda a sexta, Antonio "
+    "resume as notícias que já definiram o dia e apresenta o Radar Amanhã: o que "
     "ainda pode mudar o cenário até o começo da tarde."
 )
 

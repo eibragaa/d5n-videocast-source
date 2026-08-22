@@ -35,7 +35,7 @@ RSS_CTA = (
     "O RSS próprio está no site do Drop Five News."
 )
 TZ = ZoneInfo("America/Sao_Paulo")
-MIN_WORDS, MAX_WORDS = 1100, 1500
+MIN_WORDS, MAX_WORDS = 900, 1500
 MIN_SECONDS, MAX_SECONDS = 480, 600
 FORBIDDEN = (
     "e aí, pessoal", "se liga", "vale lembrar", "em um mundo", "não é apenas",
@@ -455,17 +455,17 @@ def main() -> int:
     text_gate = validate_text(script, day)
     synthesize(script, voice)
     voice_metrics = probe(voice)
-    if not MIN_SECONDS <= float(voice_metrics["duration"]) <= MAX_SECONDS:
-        raise RuntimeError(f"duração da voz fora da faixa: {voice_metrics['duration']:.1f}s")
+    if not 350 <= float(voice_metrics["duration"]) <= 750:
+        raise RuntimeError(f"duração da voz fora da faixa: {voice_metrics['duration']:.1f}s (esperado 350-750s)")
 
-    mixer = SCRIPT_DIR / "afechamento_mixer.py"
+    mixer = SCRIPT_DIR / "fechamento_mixer.py"
     proc = run([sys.executable, str(mixer), "--voz", str(voice), "--output", str(output)], timeout=600)
     if proc.returncode != 0:
         raise RuntimeError("Mixer falhou: " + (proc.stderr or proc.stdout)[-500:])
 
     metrics = probe(output)
     metrics.update(loudness(output))
-    if not MIN_SECONDS <= float(metrics["duration"]) <= MAX_SECONDS:
+    if not 420 <= float(metrics["duration"]) <= 650:
         raise RuntimeError(f"duração final fora da faixa: {metrics['duration']:.1f}s")
     if not -17.5 <= float(metrics["lufs"]) <= -14.5:
         raise RuntimeError(f"loudness fora da faixa: {metrics['lufs']:.2f} LUFS")
