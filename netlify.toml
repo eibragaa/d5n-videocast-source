@@ -104,6 +104,41 @@
   to = "/manha-conectada/audio/manha-conectada-:splat"
   status = 200
 
+
+[[headers]]
+  for = "/fechamento.xml"
+  [headers.values]
+    Content-Type = "application/rss+xml; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+[[headers]]
+  for = "/fechamento-cover.png"
+  [headers.values]
+    Content-Type = "image/png"
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/fechamento/*.mp3"
+  [headers.values]
+    Content-Type = "audio/mpeg"
+    Cache-Control = "public, max-age=86400"
+    Accept-Ranges = "bytes"
+
+[[redirects]]
+  from = "/fechamento.xml"
+  to = "/fechamento/feeds/fechamento.xml"
+  status = 200
+
+[[redirects]]
+  from = "/fechamento-cover.png"
+  to = "/fechamento/assets/fechamento-cover.png"
+  status = 200
+
+[[redirects]]
+  from = "/audio/fechamento-*"
+  to = "/fechamento/audio/fechamento-:splat"
+  status = 200
+
 [[redirects]]
   from = "/404"
   to = "/index.html"

@@ -546,6 +546,58 @@ def render_manha_conectada_program(episodes):
   </section>'''
 
 
+
+def _fechamento_summary(date_str):
+    source_path = os.path.join(BASE, "fechamento", "roteiros", f"source-fechamento-{date_str}.md")
+    try:
+        with open(source_path, encoding="utf-8") as f:
+            content = f.read()
+        m = re.search(r"## Roteiro aprovado\s+(.+?)(?:\n\s*\n|\n## )", content, flags=re.S)
+        if not m:
+            return "O resumo do pregao com contexto, numeros e o Radar Amanha."
+        summary = re.sub(r"\s+", " ", m.group(1)).strip()
+        summary = re.sub(r"\s*Boa noite! Eu sou Antonio e este e o Fechamento do Mercado, do Drop Five News\.?", "", summary, flags=re.I).strip()
+        if len(summary) > 235:
+            summary = summary[:232].rsplit(" ", 1)[0].rstrip(" ,;:") + "\u2026"
+        return summary
+    except OSError:
+        return "O resumo do pregao com contexto, numeros e o Radar Amanha."
+
+def load_fechamento_episodes(limit=None):
+    manifest_dir = os.path.join(BASE, "fechamento", "manifests")
+    if not os.path.isdir(manifest_dir):
+        return []
+    episodes = []
+    for manifest_path in sorted((os.path.join(manifest_dir, n) for n in os.listdir(manifest_dir) if n.endswith(".json")), reverse=True):
+        try:
+            with open(manifest_path, encoding="utf-8") as f:
+                manifest = json.load(f)
+            date_str = str(manifest.get("date", ""))
+            datetime.strptime(date_str, "%Y-%m-%d")
+            expected_file = f"fechamento-{date_str}.mp3"
+            output_name = os.path.basename(str(manifest.get("output", "")))
+            audio_path = os.path.join(BASE, "fechamento", "audio", expected_file)
+            duration = round(float(manifest.get("audio", {}).get("duration", 0)))
+            if (str(manifest.get("program", "")).strip().upper() != "FECHAMENTO DO MERCADO" or manifest.get("prototype") is not False or output_name != expected_file or not os.path.isfile(audio_path) or duration <= 0):
+                continue
+            voice = str(manifest.get("voice", ""))
+            episodes.append({"date": date_str, "date_label": format_data_curta(date_str), "file": expected_file, "path": f"/audio/{expected_file}", "duration": duration, "dur_str": f"{duration // 60}:{duration % 60:02d}", "presenter": "Antonio" if "Antonio" in voice else voice, "summary": _fechamento_summary(date_str), "words": int(manifest.get("text_gate", {}).get("words", 0) or 0)})
+        except (OSError, TypeError, ValueError, json.JSONDecodeError):
+            continue
+        if limit is not None and len(episodes) >= limit:
+            break
+    return episodes
+
+def render_fechamento_program(episodes):
+    if not episodes:
+        return ""
+    latest = episodes[0]
+    btns = []
+    for i, ep in enumerate(episodes):
+        active = " is-active" if i == 0 else ""
+        btns.append('<button type="button" class="morning-episode fechamento-episode' + active + '" data-audio="' + html_lib.escape(ep["path"], quote=True) + '" data-date="' + html_lib.escape(ep["date_label"], quote=True) + '" data-duration="' + str(ep["duration"]) + '" data-summary="' + html_lib.escape(ep["summary"], quote=True) + '" onclick="selectFechamentoEpisode(this)" aria-label="Ouvir Fechamento de ' + html_lib.escape(ep["date_label"], quote=True) + '"><span>' + html_lib.escape(ep["date_label"]) + '</span><small>' + ep["dur_str"] + '</small></button>')
+    return '<section class="morning-program fechamento-program" id="fechamento" data-animate aria-labelledby="fechamentoTitle"><div class="morning-intro fechamento-intro"><div class="morning-kicker fechamento-kicker"><span class="morning-sun fechamento-sun" aria-hidden="true"></span> Edicao das 17:30</div><h2 id="fechamentoTitle">Fechamento<br><strong>do Mercado</strong></h2><p>O pregao em contexto — numeros, porques e o Radar Amanha.</p><div class="morning-byline"><span>Com Antonio</span><span>Seg-Sex \u00b7 17:30</span></div></div><div class="morning-listen"><div class="morning-now"><span class="morning-live-dot fechamento-dot" aria-hidden="true"></span><span id="fechamentoDate">' + html_lib.escape(latest["date_label"]) + '</span><span>Ultima edicao</span></div><p class="morning-summary" id="fechamentoSummary">' + html_lib.escape(latest["summary"]) + '</p><div class="morning-player"><button class="morning-play" id="fechamentoPlayBtn" type="button" onclick="toggleFechamentoPlay()" aria-label="Reproduzir Fechamento"><span id="fechamentoPlayGlyph" aria-hidden="true">\u25b6</span></button><div class="morning-progress" id="fechamentoProgress" role="slider" tabindex="0" aria-label="Progresso do Fechamento" aria-valuemin="0" aria-valuemax="' + str(latest["duration"]) + '" aria-valuenow="0"><span id="fechamentoProgressFill"></span></div><span class="morning-time" id="fechamentoTime">0:00 / ' + latest["dur_str"] + '</span><a class="morning-download" id="fechamentoDownload" href="' + html_lib.escape(latest["path"], quote=True) + '" download>\u2193</a></div><audio id="fechamentoAudio" src="' + html_lib.escape(latest["path"], quote=True) + '" preload="metadata"></audio><div class="morning-history" aria-label="Edicoes do Fechamento"><span class="morning-history-label">Arquivo</span>' + ''.join(btns) + '</div></div></section>'
+
 def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage_data=None, voice=None):
     n = len(noticias)
     por_pilar = {}
@@ -566,6 +618,10 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
     manha_episodes = load_manha_conectada_episodes()
     morning_html = render_manha_conectada_program(manha_episodes)
     morning_nav = '<a class="header-program-link" href="#manha-conectada">Manhã Conectada</a>' if morning_html else ''
+    fechamento_episodes = load_fechamento_episodes()
+    fechamento_html = render_fechamento_program(fechamento_episodes)
+    fechamento_nav = '<a class="header-program-link" href="#fechamento">Fechamento</a>' if fechamento_html else ''
+    premium_block = fechamento_html if fechamento_html else '  <div class="premium-block" data-animate>\n    <div class="premium-eyebrow">\u2726 Proximo formato \u00b7 Em desenvolvimento</div>\n    <h3 class="premium-title">Fechamento do Mercado</h3>\n    <p class="premium-desc">O resumo das 17h com mercados, d\u00f3lar, ativos e os movimentos que ajudam a preparar o pr\u00f3ximo dia.</p>\n    <span class="btn-premium" aria-label="Fechamento do Mercado em desenvolvimento">Em breve</span>\n  </div>'
     
     # Quality score do Coverage Ledger
     qs = coverage_data.get("quality_score") if coverage_data else None
@@ -1130,7 +1186,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   </a>
   <span class="header-meta">{data_br}</span>
   <div class="header-right">
-    {morning_nav}
+    {morning_nav}{fechamento_nav}
     <span class="edition-badge">#{podcast["num"] if podcast else "---"}</span>
     <div class="tech-bar">
       <span class="tech-item">IBOV <span class="tech-value">—</span></span>
@@ -1182,12 +1238,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
 
   {sections_html}
 
-  <div class="premium-block" data-animate>
-    <div class="premium-eyebrow">✦ Próximo formato · Em desenvolvimento</div>
-    <h3 class="premium-title">Fechamento do Mercado</h3>
-    <p class="premium-desc">O resumo das 17h com mercados, dólar, ativos e os movimentos que ajudam a preparar o próximo dia.</p>
-    <span class="btn-premium" aria-label="Fechamento do Mercado em desenvolvimento">Em breve</span>
-  </div>
+{premium_block}
 
   <section class="section" style="border-bottom:none;padding-bottom:0">
     <div class="section-header">
