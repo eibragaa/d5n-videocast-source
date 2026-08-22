@@ -6,3 +6,8 @@
 - 5D download fix: toggleFechamentoPlay/selectFechamentoEpisode/updateFechamentoPlayer JS
 - 5E RSS: feed + redirect + cover placeholder aguardando ilustração
 - DeepSeek $1.98, custo ~$0.001/ep, thinking disabled
+
+## Sprint 6 — Refinos AAA (aperfeiçoamento crítico)
+- 6A: D5N box identidade — --d5n vars, player-bar 14px + ::before podcast-cover 0.06, track/meta z-index
+- 6B: Boxes unificados — intro/listen semi-transparent (rgba + blur) para arte completa, cover 0.10, sem header dividido
+- Validado: ordem 5h→11h→17h, covers opacas D5N/MC/FM, radius 14px unificado

@@ -883,7 +883,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .hero-stat span {{ font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }}
   .divider-v {{ width:1px; height:24px; background:var(--border); }}
 
-  .player-bar {{ margin:2rem 0 0; padding:0.75rem 1.25rem; background:var(--surface); border:1px solid var(--border); border-radius:3px; }}
+  .player-bar {{ margin:2rem 0 0; padding:0.75rem 1.25rem; background:var(--surface); border:1px solid var(--border); border-radius:14px; position:relative; overflow:hidden; }}
   .player-track {{ display:flex; align-items:center; gap:0.5rem; }}
   .play-btn {{ width:32px; height:32px; border-radius:50%; border:1px solid var(--accent-dim); background:transparent; color:var(--accent); cursor:pointer; flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:all 0.2s; }}
   .play-btn:hover {{ background:var(--accent-dim); color:#fff; }}
@@ -1043,6 +1043,8 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   @keyframes fadeSlideUp {{ from{{opacity:0;transform:translateY(12px);}} to{{opacity:1;transform:translateY(0);}} }}
   .hero {{ animation:fadeSlideUp 0.6s ease both; }}
   .player-bar {{ animation:fadeSlideUp 0.6s 0.15s ease both; }}
+  .player-bar::before {{ content:""; position:absolute; inset:0; background-image:url("/podcast-cover.png"); background-size:cover; background-position:center; opacity:0.06; pointer-events:none; z-index:0; }}
+  .player-bar .player-track, .player-bar .player-meta {{ position:relative; z-index:1; }}
 
   .weekend-notice {{ margin:2rem 0 0; padding:0.75rem 1rem; background:var(--surface); border:1px solid var(--border); border-radius:3px; display:flex; align-items:center; gap:0.75rem; opacity:0.7; }}
   .weekend-icon {{ font-size:1.2rem; flex-shrink:0; }}
@@ -1113,11 +1115,11 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   @media (prefers-reduced-motion:reduce) {{ *,*::before,*::after {{ animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; }} }}
 
   /* ── Manhã Conectada ── */
-  :root {{ --morning:#f4b942; --morning-deep:#241d12; --morning-line:#5b4925; --fechamento:#0ea5e9; --fechamento-deep:#0a1a2a; --fechamento-line:#164a6a; }}
+  :root {{ --morning:#f4b942; --morning-deep:#241d12; --morning-line:#5b4925; --fechamento:#0ea5e9; --fechamento-deep:#0a1a2a; --fechamento-line:#164a6a; --d5n:#94a3b8; --d5n-deep:#111a2b; --d5n-line:#2a3a52; }}
   .header-program-link {{ color:var(--text-secondary); font-size:.68rem; font-weight:600; letter-spacing:.04em; text-decoration:none; transition:color .2s ease; }}
   .header-program-link:hover {{ color:var(--morning); }}
   .morning-program {{ display:grid; grid-template-columns:minmax(230px,.82fr) minmax(0,1.35fr); margin:3rem 0 2.5rem; overflow:hidden; border:1px solid var(--border); border-radius:14px; background:var(--surface); box-shadow:inset 0 1px rgba(255,255,255,.025); }}
-  .morning-intro {{ position:relative; padding:2rem; border-right:1px solid var(--border); background:#101727; overflow:hidden; }}
+  .morning-intro {{ position:relative; padding:2rem; border-right:1px solid var(--border); background:rgba(16,23,39,0.88); overflow:hidden; backdrop-filter:blur(1px); }}
   .morning-intro::after {{ content:'11'; position:absolute; right:-.15rem; bottom:-1.3rem; color:transparent; -webkit-text-stroke:1px rgba(244,185,66,.14); font-size:8.5rem; font-weight:700; line-height:1; letter-spacing:-.08em; pointer-events:none; }}
   .morning-kicker {{ display:flex; align-items:center; gap:.55rem; margin-bottom:1.3rem; color:var(--morning); font-size:.63rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }}
   .morning-sun {{ width:10px; height:10px; border-radius:50%; background:var(--morning); box-shadow:0 0 0 4px rgba(244,185,66,.1); }}
@@ -1126,7 +1128,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .morning-intro p {{ position:relative; z-index:1; max-width:26rem; margin-top:1.2rem; color:var(--text-secondary); font-size:.82rem; line-height:1.65; }}
   .morning-byline {{ position:relative; z-index:1; display:flex; gap:1rem; margin-top:1.4rem; color:var(--muted); font-size:.62rem; letter-spacing:.08em; text-transform:uppercase; }}
   .morning-byline span + span {{ padding-left:1rem; border-left:1px solid var(--border); }}
-  .morning-listen {{ display:flex; min-width:0; flex-direction:column; justify-content:center; padding:2rem; }}
+  .morning-listen {{ display:flex; min-width:0; flex-direction:column; justify-content:center; padding:2rem; background:rgba(19,25,32,0.72); backdrop-filter:blur(1px); }}
   .morning-now {{ display:flex; align-items:center; gap:.6rem; color:var(--morning); font-size:.63rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }}
   .morning-now span:last-child {{ margin-left:auto; color:var(--muted); font-weight:500; }}
   .morning-live-dot {{ width:6px; height:6px; border-radius:50%; background:var(--morning); box-shadow:0 0 0 4px rgba(244,185,66,.08); }}
@@ -1145,14 +1147,14 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .morning-episode:hover,.morning-episode.is-active {{ border-color:var(--morning-line); background:rgba(244,185,66,.06); color:var(--morning); }}
   .morning-program.visible {{ animation:fadeSlideUp .5s ease both; }}
   .morning-program {{ position:relative; }}
-  .morning-program::before {{ content:""; position:absolute; inset:0; background-size:cover; background-position:center; opacity:0.07; pointer-events:none; z-index:0; }}
+  .morning-program::before {{ content:""; position:absolute; inset:0; background-size:cover; background-position:center; opacity:0.10; pointer-events:none; z-index:0; }}
   .morning-program#manha-conectada::before {{ background-image:url("/manha-conectada/assets/manha-conectada-cover.png"); }}
   .morning-program#fechamento::before {{ background-image:url("/fechamento/assets/fechamento-cover.png"); }}
   .morning-program .morning-intro, .morning-program .morning-listen {{ position:relative; z-index:1; }}
   .fechamento-program {{ border-color:var(--fechamento-line) !important; }}
   .fechamento-kicker {{ color:var(--fechamento) !important; }}
   .fechamento-sun, .fechamento-dot {{ background:var(--fechamento) !important; box-shadow:0 0 0 4px rgba(14,165,233,.12) !important; }}
-  .fechamento-intro {{ background:#0d1a2b !important; }}
+  .fechamento-intro {{ background:rgba(13,26,43,0.85) !important; backdrop-filter:blur(1px); }}
   .fechamento-program .morning-download {{ border-color:var(--fechamento-line) !important; color:var(--fechamento) !important; }}
   .fechamento-episode.is-active {{ border-color:var(--fechamento-line) !important; background:rgba(14,165,233,.08) !important; color:var(--fechamento) !important; }}
 
