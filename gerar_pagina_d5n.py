@@ -1144,6 +1144,11 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .morning-episode small {{ color:var(--faint); font-size:.56rem; }}
   .morning-episode:hover,.morning-episode.is-active {{ border-color:var(--morning-line); background:rgba(244,185,66,.06); color:var(--morning); }}
   .morning-program.visible {{ animation:fadeSlideUp .5s ease both; }}
+  .morning-program {{ position:relative; }}
+  .morning-program::before {{ content:""; position:absolute; inset:0; background-size:cover; background-position:center; opacity:0.07; pointer-events:none; z-index:0; }}
+  .morning-program#manha-conectada::before {{ background-image:url("/manha-conectada/assets/manha-conectada-cover.png"); }}
+  .morning-program#fechamento::before {{ background-image:url("/fechamento/assets/fechamento-cover.png"); }}
+  .morning-program .morning-intro, .morning-program .morning-listen {{ position:relative; z-index:1; }}
   .fechamento-program {{ border-color:var(--fechamento-line) !important; }}
   .fechamento-kicker {{ color:var(--fechamento) !important; }}
   .fechamento-sun, .fechamento-dot {{ background:var(--fechamento) !important; box-shadow:0 0 0 4px rgba(14,165,233,.12) !important; }}
@@ -1229,6 +1234,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   {player_html}
 
 {morning_html}
+{premium_block}
 
   <div class="search-bar">
     <input type="search" id="searchInput" placeholder="Buscar notícias..." aria-label="Buscar notícias">
@@ -1243,8 +1249,6 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   </div>
 
   {sections_html}
-
-{premium_block}
 
   <section class="section" style="border-bottom:none;padding-bottom:0">
     <div class="section-header">
