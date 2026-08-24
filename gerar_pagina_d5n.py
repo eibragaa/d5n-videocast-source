@@ -1321,7 +1321,6 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
         <a href="/manha-conectada.xml">RSS Manhã Conectada</a>
         <a href="/fechamento.xml">RSS Fechamento</a>
         <a href="https://github.com/eibragaa/d5n-videocast-source">GitHub</a>
-        <a href="https://pilastack.dev" style="color:var(--accent)">PilaStack 🔥</a>
       </div>
     </div>
   </div>
