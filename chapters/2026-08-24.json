@@ -1,0 +1,72 @@
+{
+  "schema": 2,
+  "editorial_date": "2026-08-24",
+  "audio_duration": 660.715,
+  "chapters": [
+    {
+      "id": "intro",
+      "start": 0.0,
+      "end": 33.494
+    },
+    {
+      "id": "mundo",
+      "start": 33.494,
+      "end": 100.48
+    },
+    {
+      "id": "brasil",
+      "start": 100.48,
+      "end": 219.262
+    },
+    {
+      "id": "tecnologia",
+      "start": 219.262,
+      "end": 314.786
+    },
+    {
+      "id": "economia",
+      "start": 314.786,
+      "end": 383.5
+    },
+    {
+      "id": "interacao",
+      "start": 383.5,
+      "end": 410.248
+    },
+    {
+      "id": "ofertas",
+      "start": 410.248,
+      "end": 437.61
+    },
+    {
+      "id": "frase",
+      "start": 437.61,
+      "end": 464.468
+    },
+    {
+      "id": "recomendacoes",
+      "start": 464.468,
+      "end": 518.134
+    },
+    {
+      "id": "historia",
+      "start": 518.134,
+      "end": 578.954
+    },
+    {
+      "id": "outro",
+      "start": 578.954,
+      "end": 660.678
+    }
+  ],
+  "section_headers": {
+    "mundo": "mundo_header.mp3",
+    "brasil": "brasil_header.mp3",
+    "tecnologia": "tecnologia_header.mp3",
+    "economia": "economia_header.mp3",
+    "ofertas": "ofertas_header.mp3",
+    "frase": "frase_header.mp3",
+    "recomendacoes": "recomendacoes_header.mp3",
+    "historia": "historia_header.mp3"
+  }
+}
