@@ -16,6 +16,7 @@
 - **Cron** `fechamento-diario` `30 16 * * 1-5` (host = 17h BRT seg-sex) + `d5n-fechamento-mercado` 17h card intacto + `manha-conectada` 11h
 - **Feeds:** `/2026-08-22` epis, `/d5n-feed.xml` + `/manha-conectada.xml` + `/fechamento.xml` (`fechamento-cover.png` 1400)
 - **Custo:** DeepSeek v4-flash `thinking disabled` — `f61ed88` 496s 1335w LUFS -16.98 — `compression` `nvidia nemotron` 401 corrigido
+- **Cadeia de roteiro (MC/FM):** DeepSeek direto → opencode-go → **Groq `gpt-oss-120b`** (fallback gratuito) → Hermes CLI. Chaves em `/root/.hermes/.env` (`DEEPSEEK_API_KEY`, `GROQ_API_KEY`, `CEREBRAS_API_KEY`)
 - **Site AAA:** `d5n-program 05h` grafite `0.10` + `MC 11h` âmbar `0.14` + `FM 17h` petróleo `0.14`/`17`, `51 chapter-segment`, `4 covers`, stack `5h→11h→17h`
 
 ---

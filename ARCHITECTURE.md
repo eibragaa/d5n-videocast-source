@@ -177,7 +177,13 @@ cards-instagram/YYYY-MM-DD/
 
 ### Fase 4b: Fechamento do Mercado 17h (seg-sex, 17h BRT)
 
-**Script:** `fechamento/scripts/fechamento_pipeline.py` (LLM DeepSeek v4-flash `thinking disabled`) + `fechamento/scripts/fechamento_mixer.py` (sidechain `480-650s`)  
+**Script:** `fechamento/scripts/fechamento_pipeline.py` (LLM: DeepSeek v4-flash `thinking disabled`; fallback opencode-go → Groq `gpt-oss-120b` → Hermes CLI) + `fechamento/scripts/fechamento_mixer.py` (sidechain `480-650s`)
+
+**Cadeia de fallback do roteiro (MC e FM):**
+1. DeepSeek direto (`api.deepseek.com`, `deepseek-v4-flash`, thinking disabled)
+2. opencode-go (`opencode.ai/zen/go/v1`, mesmo modelo)
+3. Groq (`api.groq.com/openai/v1`, `openai/gpt-oss-120b`) — camada gratuita; strip automático de `<think>`
+4. Hermes CLI (`hermes -z ... --provider openai-codex -m gpt-5.6-sol`)  
 **Duração:** 8:16 (1335w, LUFS -16.98, TP -1.7)  
 **Saída:** `fechamento/audio/fechamento-YYYY-MM-DD.mp3` + `fechamento/feeds/fechamento.xml` → `/fechamento.xml` (RSS) + `fechamento/assets/fechamento-cover.png` 1400  
 **Cron:** `fechamento-diario` `30 16 * * 1-5` host = 17h BRT · `fechamento/docs/FECHAMENTO_CONTRATO.md`

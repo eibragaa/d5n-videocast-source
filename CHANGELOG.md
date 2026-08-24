@@ -9,6 +9,8 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/), e este 
 ## [Unreleased]
 
 ### Added
+- **Groq como fallback gratuito de roteiro** — `manha-conectada/scripts/manha_conectada_pipeline.py` e `fechamento/scripts/fechamento_pipeline.py` ganham `generate_script_groq()` (`openai/gpt-oss-120b`, `GROQ_API_KEY` em `/root/.hermes/.env`). Ordem: DeepSeek → opencode-go → Groq → Hermes CLI.
+- **Publicação imediata MC/FM** — crons não esperam mais o horário de exibição para publicar: o RSS (`manha-conectada.xml`, `fechamento.xml`) é atualizado assim que o áudio fica pronto, corrigindo o atraso visto entre 18–21/08 (drift de modelo + `d5n-verify-site.py` ausente, recriado em 24/08).
 - **Mixer v10 premium** (`scripts/drop5news-mixer-v10.py`) — contrato D5N v3 com 12 seções:
   `coldopen, intro, mundo, brasil, tecnologia, economia, interacao, ofertas, frase,
   recomendacoes, historia, outro`. CTA integrado ao `outro` (não há mais seção `cta`).
