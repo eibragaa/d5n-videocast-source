@@ -27,7 +27,7 @@
     <podcast:locked owner="eibragaa@gmail.com">no</podcast:locked>
     <podcast:guid>fechamento.d5n-daily.netlify.app</podcast:guid>
     <atom:link href="https://d5n-daily.netlify.app/fechamento.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sat, 22 Aug 2026 17:30:00 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 24 Aug 2026 17:30:00 -0300</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/fechamento-cover.png</url>
       <title>Fechamento do Mercado</title>
@@ -35,6 +35,22 @@
     </image>
     <copyright>© 2026 Drop Five News</copyright>
     <generator>D5N Pipeline — Fechamento do Mercado</generator>
+    <item>
+      <title>Fechamento do Mercado — 24/08/2026</title>
+      <itunes:title>Fechamento do Mercado — 24/08/2026</itunes:title>
+      <itunes:episode>2</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>07:26</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.png"/>
+      <guid isPermaLink="false">fechamento-2026-08-24</guid>
+      <link>https://d5n-daily.netlify.app/#fechamento</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/fechamento-2026-08-24.mp3" length="10706276" type="audio/mpeg"/>
+      <pubDate>Mon, 24 Aug 2026 17:30:00 -0300</pubDate>
+      <description>Fechamento do Mercado de 24/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:26.</description>
+      <itunes:summary>Fechamento do Mercado de 24/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:26.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Fechamento do Mercado • 24/08/2026</strong></p><p>Fechamento do Mercado de 24/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:26.</p><ul><li>Ibovespa Hoje Ao Vivo: Bolsa sobe com alta de 4% de VALE3 e bancos; PETR4 cai 3% - InfoMoney</li><li>Mini índice do Ibovespa pode buscar 176 mil pontos após fechar acima da média de 200 períodos, avalia BTG; mini dólar mira 5.120 - Money Times</li><li>Usiminas (USIM5) sobe forte com notícia sobre fechamento de capital da companhia - InfoMoney</li></ul><p><a href="https://d5n-daily.netlify.app/#fechamento">Ouça no site</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>Fechamento do Mercado — 22/08/2026</title>
       <itunes:title>Fechamento do Mercado — 22/08/2026</itunes:title>
