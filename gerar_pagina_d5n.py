@@ -1320,7 +1320,6 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
         <a href="/d5n-feed.xml">RSS</a>
         <a href="/manha-conectada.xml">RSS Manhã Conectada</a>
         <a href="/fechamento.xml">RSS Fechamento</a>
-        <a href="https://github.com/eibragaa/d5n-videocast-source">GitHub</a>
       </div>
     </div>
   </div>
