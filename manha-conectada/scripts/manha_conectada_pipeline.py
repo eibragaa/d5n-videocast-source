@@ -251,6 +251,52 @@ def deepseek_token() -> str | None:
     return None
 
 
+
+def groq_token() -> str | None:
+    """Retorna a GROQ_API_KEY (fallback gratuito para geracao do roteiro)."""
+    env_key = os.environ.get("GROQ_API_KEY")
+    if env_key:
+        return env_key
+    try:
+        for line in Path("/root/.hermes/.env").read_text().splitlines():
+            if line.startswith("GROQ_API_KEY="):
+                return line.split("=", 1)[1].strip()
+    except Exception:
+        pass
+    return None
+
+
+def generate_script_groq(prompt: str) -> str | None:
+    """Gera o roteiro via Groq (gpt-oss-120b, camada gratuita). None em falha."""
+    token = groq_token()
+    if not token:
+        return None
+    try:
+        payload = json.dumps({
+            "model": "openai/gpt-oss-120b",
+            "messages": [{"role": "user", "content": prompt}],
+            "max_completion_tokens": 16384,
+            "temperature": 0.35,
+        }).encode()
+        req = urllib.request.Request(
+            "https://api.groq.com/openai/v1/chat/completions",
+            data=payload,
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Content-Type": "application/json",
+                "User-Agent": "DropFiveNews/1.0",
+            },
+        )
+        response = json.loads(urllib.request.urlopen(req, timeout=240).read())
+        content = response.get("choices", [{}])[0].get("message", {}).get("content", "").strip()
+        # gpt-oss pode retornar raciocinio; mantem apenas o texto final
+        if "</think>" in content:
+            content = content.split("</think>", 1)[1].strip()
+        return content or None
+    except Exception as exc:
+        print(f"AVISO Groq indisponivel: {exc}", file=sys.stderr)
+        return None
+
 def auth_token() -> str | None:
     """Fallback legado (opencode-go). Mantido para compatibilidade, mas o
     pipeline prefere DeepSeek direto em generate_script()."""
@@ -350,6 +396,9 @@ FONTES CANDIDATAS:
                 print(f"AVISO opencode-go indisponível: {fallback_exc}", file=sys.stderr)
                 content = None
     if content is None:
+        content = generate_script_groq(prompt)
+        if content:
+            return re.sub(r"^```(?:text)?\s*|\s*```$", "", content, flags=re.I | re.S).strip()
         proc = run([
             "hermes", "-z", prompt, "--provider", "openai-codex", "-m", "gpt-5.6-sol",
             "--cli", "--ignore-rules", "--safe-mode",
