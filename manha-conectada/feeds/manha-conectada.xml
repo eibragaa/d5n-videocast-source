@@ -27,7 +27,7 @@
     <podcast:locked owner="eibragaa@gmail.com">no</podcast:locked>
     <podcast:guid>manha-conectada.d5n-daily.netlify.app</podcast:guid>
     <atom:link href="https://d5n-daily.netlify.app/manha-conectada.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 17 Aug 2026 11:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 24 Aug 2026 11:00:00 -0300</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/manha-conectada-cover.png</url>
       <title>Manhã Conectada</title>
@@ -35,6 +35,22 @@
     </image>
     <copyright>© 2026 Drop Five News</copyright>
     <generator>D5N Pipeline — Manhã Conectada</generator>
+    <item>
+      <title>Manhã Conectada — 24/08/2026</title>
+      <itunes:title>Manhã Conectada — 24/08/2026</itunes:title>
+      <itunes:episode>14</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>06:26</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <guid isPermaLink="false">manha-conectada-2026-08-24</guid>
+      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-24.mp3" length="9264944" type="audio/mpeg"/>
+      <pubDate>Mon, 24 Aug 2026 11:00:00 -0300</pubDate>
+      <description>Manhã Conectada de 24/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:26.</description>
+      <itunes:summary>Manhã Conectada de 24/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:26.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 24/08/2026</strong></p><p>Manhã Conectada de 24/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:26.</p><ul><li>Debate da Band: os principais momentos do primeiro confronto entre candidatos à Presidência - BBC</li><li>Brasil Urgente ao vivo: assista ao programa agora - band.com.br</li><li>Brasil e IICA lançam hub para compartilhar tecnologias agropecuárias da EMBRAPA com a América Latina - 3tres3.com</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>Manhã Conectada — 17/08/2026</title>
       <itunes:title>Manhã Conectada — 17/08/2026</itunes:title>
