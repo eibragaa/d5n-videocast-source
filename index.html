@@ -36,6 +36,33 @@
     --accent-dim:#334155; --global:#6db88a; --tech:#60a5d4; --econ:#a89060; --red:#e06060;
   }
   html { font-size:16px; scroll-behavior:smooth; }
+
+  /* homelabDesign: animated background orbs — combat "lê como PDF" */
+  .bg-orb{ position:fixed; border-radius:50%; pointer-events:none; z-index:0; filter:blur(80px); opacity:.18; animation:orbFloat 20s ease-in-out infinite; }
+  .bg-orb-1{ width:600px; height:600px; background:#00D4FF; top:-200px; left:-200px; animation-duration:25s; }
+  .bg-orb-2{ width:500px; height:500px; background:#7C3AED; top:30%; right:-150px; animation-duration:30s; animation-delay:-8s; }
+  .bg-orb-3{ width:400px; height:400px; background:#00D4FF; bottom:-100px; left:30%; animation-duration:22s; animation-delay:-14s; }
+  @keyframes orbFloat{ 0%,100%{transform:translate(0,0) scale(1);} 33%{transform:translate(30px,-40px) scale(1.06);} 66%{transform:translate(-20px,20px) scale(.95);} }
+  /* dot grid glow — subtle depth */
+  body::after{ content:''; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.07; background-image:radial-gradient(rgba(0,212,255,.5) 1px,transparent 1px); background-size:28px 28px; }
+
+  /* homelabDesign: custom cursor */
+  *{ cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='7' fill='none' stroke='%2300D4FF' stroke-width='1.5'/%3E%3Ccircle cx='10' cy='10' r='2' fill='%2300D4FF'/%3E%3C/svg%3E") 10 10, auto; }
+  a,button,.filter-btn,.news-item,.archive-link,.archive-toggle,.morning-episode,.chapter-segment{ cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M5 3l14 9-7 2-3 7z' fill='%2300D4FF'/%3E%3C/svg%3E") 10 10, pointer; }
+  /* homelabDesign: scroll reveal */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease;}
+  .reveal.visible{opacity:1;transform:none;}
+  .section{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;}
+  .section.visible{opacity:1;transform:none;}
+
+
+  /* homelabDesign: scroll reveal */
+  .reveal{ opacity:0; transform:translateY(16px); transition:opacity .55s ease, transform .55s ease; }
+  .reveal.visible{ opacity:1; transform:none; }
+  /* stagger section entrances */
+  .section{ opacity:0; transform:translateY(18px); transition:opacity .5s ease, transform .5s ease; }
+  .section.visible{ opacity:1; transform:none; }
+
   body {
     background:var(--bg); color:var(--text);
     font-family:'Inter',sans-serif; font-weight:300;
@@ -402,6 +429,10 @@
 <script defer src="https://cloud.umami.is/script.js" data-website-id="e0919f78-6147-42e0-a382-d3792662ea3a"></script>
 </head>
 <body>
+<!-- homelabDesign: animated background orbs -->
+<div class="bg-orb bg-orb-1" aria-hidden="true"></div>
+<div class="bg-orb bg-orb-2" aria-hidden="true"></div>
+<div class="bg-orb bg-orb-3" aria-hidden="true"></div>
 <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
 <header>
@@ -412,7 +443,7 @@
   <span class="header-meta">Terça-feira, 25 de Agosto de 2026</span>
   <div class="header-right">
     <a class="header-program-link" href="#manha-conectada">Manhã Conectada</a><a class="header-program-link" href="#fechamento">Fechamento</a>
-    <span class="edition-badge">#62</span>
+    <span class="edition-badge">#63</span>
     <div class="tech-bar">
       <span class="tech-item">IBOV <span class="tech-value">—</span></span>
       <span class="tech-item">USD <span class="tech-value">—</span></span>
@@ -471,7 +502,7 @@
       <div class="divider-v"></div>
       <div class="hero-stat"><strong>4</strong><span>pilares</span></div>
       <div class="divider-v"></div>
-      <div class="hero-stat"><strong>0:00</strong><span>podcast</span></div>
+      <div class="hero-stat"><strong>9:08</strong><span>podcast</span></div>
     </div>
   </div>
 
@@ -491,22 +522,22 @@
           <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
           <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
         </button>
-        <div class="player-progress" id="progressBar" onclick="seekAudio(event)" role="slider" tabindex="0" aria-label="Progresso do episódio" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0">
-          <div class="player-chapters" id="chaptersContainer" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]"><button type="button" class="chapter-segment" style="--chapter-weight:0.000" data-chapter-index="0" data-chapter-start="0" aria-label="Ir para o capítulo Episódio completo, em 0:00"><span class="chapter-segment-track"><span class="chapter-segment-fill"></span></span><span class="chapter-tooltip">Episódio completo<small>0:00</small></span></button></div>
+        <div class="player-progress" id="progressBar" onclick="seekAudio(event)" role="slider" tabindex="0" aria-label="Progresso do episódio" aria-valuemin="0" aria-valuemax="548" aria-valuenow="0">
+          <div class="player-chapters" id="chaptersContainer" data-chapters="[{&quot;id&quot;:&quot;intro&quot;,&quot;label&quot;:&quot;Abertura&quot;,&quot;start&quot;:0.0,&quot;end&quot;:34.452,&quot;duration&quot;:34.452},{&quot;id&quot;:&quot;mundo&quot;,&quot;label&quot;:&quot;Mundo&quot;,&quot;start&quot;:34.452,&quot;end&quot;:154.982,&quot;duration&quot;:120.53},{&quot;id&quot;:&quot;brasil&quot;,&quot;label&quot;:&quot;Brasil&quot;,&quot;start&quot;:154.982,&quot;end&quot;:237.472,&quot;duration&quot;:82.49},{&quot;id&quot;:&quot;tecnologia&quot;,&quot;label&quot;:&quot;Tecnologia &amp; IA&quot;,&quot;start&quot;:237.472,&quot;end&quot;:306.33,&quot;duration&quot;:68.858},{&quot;id&quot;:&quot;economia&quot;,&quot;label&quot;:&quot;Economia &amp; Mercados&quot;,&quot;start&quot;:306.33,&quot;end&quot;:370.22,&quot;duration&quot;:63.89},{&quot;id&quot;:&quot;interacao&quot;,&quot;label&quot;:&quot;Sua vez&quot;,&quot;start&quot;:370.22,&quot;end&quot;:387.128,&quot;duration&quot;:16.908},{&quot;id&quot;:&quot;ofertas&quot;,&quot;label&quot;:&quot;Ofertas do Dia&quot;,&quot;start&quot;:387.128,&quot;end&quot;:406.858,&quot;duration&quot;:19.73},{&quot;id&quot;:&quot;frase&quot;,&quot;label&quot;:&quot;Frase do Dia&quot;,&quot;start&quot;:406.858,&quot;end&quot;:415.812,&quot;duration&quot;:8.954},{&quot;id&quot;:&quot;recomendacoes&quot;,&quot;label&quot;:&quot;Recomendações&quot;,&quot;start&quot;:415.812,&quot;end&quot;:445.478,&quot;duration&quot;:29.666},{&quot;id&quot;:&quot;historia&quot;,&quot;label&quot;:&quot;História do dia&quot;,&quot;start&quot;:445.478,&quot;end&quot;:476.968,&quot;duration&quot;:31.49},{&quot;id&quot;:&quot;outro&quot;,&quot;label&quot;:&quot;Encerramento&quot;,&quot;start&quot;:476.968,&quot;end&quot;:548.0,&quot;duration&quot;:71.032}]"><button type="button" class="chapter-segment" style="--chapter-weight:34.452" data-chapter-index="0" data-chapter-start="0" aria-label="Ir para o capítulo Abertura, em 0:00"><span class="chapter-segment-track"><span class="chapter-segment-fill"></span></span><span class="chapter-tooltip">Abertura<small>0:00</small></span></button><button type="button" class="chapter-segment" style="--chapter-weight:120.530" data-chapter-index="1" data-chapter-start="34.452" aria-label="Ir para o capítulo Mundo, em 0:34"><span class="chapter-segment-track"><span class="chapter-segment-fill"></span></span><span class="chapter-tooltip">Mundo<small>0:34</small></span></button><button type="button" class="chapter-segment" style="--chapter-weight:82.490" data-chapter-index="2" data-chapter-start="154.982" aria-label="Ir para o capítulo Brasil, em 2:34"><span class="chapter-segment-track"><span class="chapter-segment-fill"></span></span><span class="chapter-tooltip">Brasil<small>2:34</small></span></button><button type="button" class="chapter-segment" style="--chapter-weight:68.858" data-chapter-index="3" data-chapter-start="237.472" aria-label="Ir para o capítulo Tecnologia &amp; IA, em 3:57"><span class="chapter-segment-track"><span class="chapter-segment-fill"></span></span><span class="chapter-tooltip">Tecnologia &amp; IA<small>3:57</small></span></button><button type="button" class="chapter-segment" style="--chapter-weight:63.890" data-chapter-index="4" data-chapter-start="306.33" aria-label="Ir para o capítulo Economia &amp; Mercados, em 5:06"><span class="chapter-segment-track"><span class="chapter-segment-fill"></span></span><span class="chapter-tooltip">Economia &amp; Mercados<small>5:06</small></span></button><button type="button" class="chapter-segment" style="--chapter-weight:16.908" data-chapter-index="5" data-chapter-start="370.22" aria-label="Ir para o capítulo Sua vez, em 6:10"><span class="chapter-segment-track"><span class="chapter-segment-fill"></span></span><span class="chapter-tooltip">Sua vez<small>6:10</small></span></button><button type="button" class="chapter-segment" style="--chapter-weight:19.730" data-chapter-index="6" data-chapter-start="387.128" aria-label="Ir para o capítulo Ofertas do Dia, em 6:27"><span class="chapter-segment-track"><span class="chapter-segment-fill"></span></span><span class="chapter-tooltip">Ofertas do Dia<small>6:27</small></span></button><button type="button" class="chapter-segment" style="--chapter-weight:8.954" data-chapter-index="7" data-chapter-start="406.858" aria-label="Ir para o capítulo Frase do Dia, em 6:46"><span class="chapter-segment-track"><span class="chapter-segment-fill"></span></span><span class="chapter-tooltip">Frase do Dia<small>6:46</small></span></button><button type="button" class="chapter-segment" style="--chapter-weight:29.666" data-chapter-index="8" data-chapter-start="415.812" aria-label="Ir para o capítulo Recomendações, em 6:55"><span class="chapter-segment-track"><span class="chapter-segment-fill"></span></span><span class="chapter-tooltip">Recomendações<small>6:55</small></span></button><button type="button" class="chapter-segment" style="--chapter-weight:31.490" data-chapter-index="9" data-chapter-start="445.478" aria-label="Ir para o capítulo História do dia, em 7:25"><span class="chapter-segment-track"><span class="chapter-segment-fill"></span></span><span class="chapter-tooltip">História do dia<small>7:25</small></span></button><button type="button" class="chapter-segment" style="--chapter-weight:71.032" data-chapter-index="10" data-chapter-start="476.968" aria-label="Ir para o capítulo Encerramento, em 7:56"><span class="chapter-segment-track"><span class="chapter-segment-fill"></span></span><span class="chapter-tooltip">Encerramento<small>7:56</small></span></button></div>
         </div>
-        <span class="player-time" id="playerTime">0:00 / 0:00</span>
-        <a class="player-download" href="/audio/d5n-ep062-2026-08-24.mp3" download title="Baixar MP3">↓ MP3</a>
+        <span class="player-time" id="playerTime">0:00 / 9:08</span>
+        <a class="player-download" href="/audio/d5n-ep063-2026-08-25.mp3" download title="Baixar MP3">↓ MP3</a>
         <button class="player-copy-btn" onclick="copyAudioLink()" title="Copiar link do áudio" id="copyBtn">🔗</button>
         <button class="speed-btn" id="speedBtn" onclick="cycleSpeed()" title="Velocidade">1×</button>
       </div>
       <div class="player-meta">
-        <div class="player-title">Hoje no Drop Five News — Episódio #62 — 25 Ago 2026</div>
-        <div class="chapter-current" id="currentChapter" aria-live="polite">Episódio completo</div>
+        <div class="player-title">Hoje no Drop Five News — Episódio #63 — 25 Ago 2026</div>
+        <div class="chapter-current" id="currentChapter" aria-live="polite">Capítulo 1 de 11 · Abertura</div>
       </div>
         </div>
       </div>
     </section>
-    <audio id="audioEl" src="/audio/d5n-ep062-2026-08-24.mp3" preload="metadata"></audio>
+    <audio id="audioEl" src="/audio/d5n-ep063-2026-08-25.mp3" preload="metadata"></audio>
 
 
   <section class="morning-program" id="manha-conectada" data-animate aria-labelledby="morningTitle">
@@ -699,7 +730,14 @@
     </div>
     <div class="archive-archive" id="archive-list">
 
-    <div class="archive-link archive-link--visible" data-audio="/audio/d5n-ep062-2026-08-24.mp3" data-duration="0" data-episode="062" data-date="24 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--visible" data-audio="/audio/d5n-ep063-2026-08-25.mp3" data-duration="548" data-episode="063" data-date="25 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;intro&quot;,&quot;label&quot;:&quot;Abertura&quot;,&quot;start&quot;:0.0,&quot;end&quot;:34.452,&quot;duration&quot;:34.452},{&quot;id&quot;:&quot;mundo&quot;,&quot;label&quot;:&quot;Mundo&quot;,&quot;start&quot;:34.452,&quot;end&quot;:154.982,&quot;duration&quot;:120.53},{&quot;id&quot;:&quot;brasil&quot;,&quot;label&quot;:&quot;Brasil&quot;,&quot;start&quot;:154.982,&quot;end&quot;:237.472,&quot;duration&quot;:82.49},{&quot;id&quot;:&quot;tecnologia&quot;,&quot;label&quot;:&quot;Tecnologia &amp; IA&quot;,&quot;start&quot;:237.472,&quot;end&quot;:306.33,&quot;duration&quot;:68.858},{&quot;id&quot;:&quot;economia&quot;,&quot;label&quot;:&quot;Economia &amp; Mercados&quot;,&quot;start&quot;:306.33,&quot;end&quot;:370.22,&quot;duration&quot;:63.89},{&quot;id&quot;:&quot;interacao&quot;,&quot;label&quot;:&quot;Sua vez&quot;,&quot;start&quot;:370.22,&quot;end&quot;:387.128,&quot;duration&quot;:16.908},{&quot;id&quot;:&quot;ofertas&quot;,&quot;label&quot;:&quot;Ofertas do Dia&quot;,&quot;start&quot;:387.128,&quot;end&quot;:406.858,&quot;duration&quot;:19.73},{&quot;id&quot;:&quot;frase&quot;,&quot;label&quot;:&quot;Frase do Dia&quot;,&quot;start&quot;:406.858,&quot;end&quot;:415.812,&quot;duration&quot;:8.954},{&quot;id&quot;:&quot;recomendacoes&quot;,&quot;label&quot;:&quot;Recomendações&quot;,&quot;start&quot;:415.812,&quot;end&quot;:445.478,&quot;duration&quot;:29.666},{&quot;id&quot;:&quot;historia&quot;,&quot;label&quot;:&quot;História do dia&quot;,&quot;start&quot;:445.478,&quot;end&quot;:476.968,&quot;duration&quot;:31.49},{&quot;id&quot;:&quot;outro&quot;,&quot;label&quot;:&quot;Encerramento&quot;,&quot;start&quot;:476.968,&quot;end&quot;:548.0,&quot;duration&quot;:71.032}]" onclick="playArchive(this)">
+      <div>
+        <div class="archive-link-date">Ep #063 · 25 Ago 2026</div>
+        <div class="archive-link-meta">9:08 <span class="archive-voice">Francisca</span></div>
+      </div>
+      <span class="archive-link-play">▶</span>
+    </div>
+    <div class="archive-link archive-link--visible" data-audio="/audio/d5n-ep062-2026-08-24.mp3" data-duration="661" data-episode="062" data-date="24 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;intro&quot;,&quot;label&quot;:&quot;Abertura&quot;,&quot;start&quot;:0.0,&quot;end&quot;:33.494,&quot;duration&quot;:33.494},{&quot;id&quot;:&quot;mundo&quot;,&quot;label&quot;:&quot;Mundo&quot;,&quot;start&quot;:33.494,&quot;end&quot;:100.48,&quot;duration&quot;:66.986},{&quot;id&quot;:&quot;brasil&quot;,&quot;label&quot;:&quot;Brasil&quot;,&quot;start&quot;:100.48,&quot;end&quot;:219.262,&quot;duration&quot;:118.782},{&quot;id&quot;:&quot;tecnologia&quot;,&quot;label&quot;:&quot;Tecnologia &amp; IA&quot;,&quot;start&quot;:219.262,&quot;end&quot;:314.786,&quot;duration&quot;:95.524},{&quot;id&quot;:&quot;economia&quot;,&quot;label&quot;:&quot;Economia &amp; Mercados&quot;,&quot;start&quot;:314.786,&quot;end&quot;:383.5,&quot;duration&quot;:68.714},{&quot;id&quot;:&quot;interacao&quot;,&quot;label&quot;:&quot;Sua vez&quot;,&quot;start&quot;:383.5,&quot;end&quot;:410.248,&quot;duration&quot;:26.748},{&quot;id&quot;:&quot;ofertas&quot;,&quot;label&quot;:&quot;Ofertas do Dia&quot;,&quot;start&quot;:410.248,&quot;end&quot;:437.61,&quot;duration&quot;:27.362},{&quot;id&quot;:&quot;frase&quot;,&quot;label&quot;:&quot;Frase do Dia&quot;,&quot;start&quot;:437.61,&quot;end&quot;:464.468,&quot;duration&quot;:26.858},{&quot;id&quot;:&quot;recomendacoes&quot;,&quot;label&quot;:&quot;Recomendações&quot;,&quot;start&quot;:464.468,&quot;end&quot;:518.134,&quot;duration&quot;:53.666},{&quot;id&quot;:&quot;historia&quot;,&quot;label&quot;:&quot;História do dia&quot;,&quot;start&quot;:518.134,&quot;end&quot;:578.954,&quot;duration&quot;:60.82},{&quot;id&quot;:&quot;outro&quot;,&quot;label&quot;:&quot;Encerramento&quot;,&quot;start&quot;:578.954,&quot;end&quot;:661.0,&quot;duration&quot;:82.046}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #062 · 24 Ago 2026</div>
         <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
@@ -713,7 +751,7 @@
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--visible" data-audio="/audio/d5n-ep060-2026-08-17.mp3" data-duration="0" data-episode="060" data-date="17 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep060-2026-08-17.mp3" data-duration="561" data-episode="060" data-date="17 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;intro&quot;,&quot;label&quot;:&quot;Abertura&quot;,&quot;start&quot;:0.0,&quot;end&quot;:32.004,&quot;duration&quot;:32.004},{&quot;id&quot;:&quot;mundo&quot;,&quot;label&quot;:&quot;Mundo&quot;,&quot;start&quot;:32.004,&quot;end&quot;:141.33,&quot;duration&quot;:109.326},{&quot;id&quot;:&quot;brasil&quot;,&quot;label&quot;:&quot;Brasil&quot;,&quot;start&quot;:141.33,&quot;end&quot;:206.084,&quot;duration&quot;:64.754},{&quot;id&quot;:&quot;tecnologia&quot;,&quot;label&quot;:&quot;Tecnologia &amp; IA&quot;,&quot;start&quot;:206.084,&quot;end&quot;:295.39,&quot;duration&quot;:89.306},{&quot;id&quot;:&quot;economia&quot;,&quot;label&quot;:&quot;Economia &amp; Mercados&quot;,&quot;start&quot;:295.39,&quot;end&quot;:381.122,&quot;duration&quot;:85.732},{&quot;id&quot;:&quot;interacao&quot;,&quot;label&quot;:&quot;Sua vez&quot;,&quot;start&quot;:381.122,&quot;end&quot;:398.414,&quot;duration&quot;:17.292},{&quot;id&quot;:&quot;ofertas&quot;,&quot;label&quot;:&quot;Ofertas do Dia&quot;,&quot;start&quot;:398.414,&quot;end&quot;:423.28,&quot;duration&quot;:24.866},{&quot;id&quot;:&quot;frase&quot;,&quot;label&quot;:&quot;Frase do Dia&quot;,&quot;start&quot;:423.28,&quot;end&quot;:436.41,&quot;duration&quot;:13.13},{&quot;id&quot;:&quot;recomendacoes&quot;,&quot;label&quot;:&quot;Recomendações&quot;,&quot;start&quot;:436.41,&quot;end&quot;:467.278,&quot;duration&quot;:30.868},{&quot;id&quot;:&quot;historia&quot;,&quot;label&quot;:&quot;História do dia&quot;,&quot;start&quot;:467.278,&quot;end&quot;:500.162,&quot;duration&quot;:32.884},{&quot;id&quot;:&quot;outro&quot;,&quot;label&quot;:&quot;Encerramento&quot;,&quot;start&quot;:500.162,&quot;end&quot;:561.0,&quot;duration&quot;:60.838}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #060 · 17 Ago 2026</div>
         <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
@@ -1134,7 +1172,7 @@
       <span class="archive-link-archive-ghost">◌</span>
     </div>
     <button class="archive-toggle" type="button" aria-expanded="false" aria-controls="archive-list">
-      <span class="archive-toggle-label">Ver episódios anteriores (59)</span>
+      <span class="archive-toggle-label">Ver episódios anteriores (60)</span>
       <span class="archive-toggle-arrow">↓</span>
     </button>
   </div>
@@ -1501,7 +1539,7 @@
   // Archive dropdown toggle (episódios anteriores)
   const archiveEl = document.querySelector('.archive-archive');
   const toggleBtn = document.querySelector('.archive-toggle');
-  const hiddenCount = 59;
+  const hiddenCount = 60;
   if (archiveEl && toggleBtn) {
     toggleBtn.addEventListener('click', () => {
       const expanded = archiveEl.classList.toggle('expanded');
