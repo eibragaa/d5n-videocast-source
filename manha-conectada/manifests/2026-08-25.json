@@ -1,0 +1,203 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-08-25",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/manha-conectada/audio/manha-conectada-2026-08-25.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/manha-conectada/roteiros/source-manha-2026-08-25.md",
+  "sha256": "a372e7625ac21422fb57703498e403d672f286f227cf4daaa695722637ea957f",
+  "text_gate": {
+    "words": 902,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 348.003265,
+    "size": 8352748,
+    "bit_rate": 192015,
+    "lufs": -17.06,
+    "true_peak_dbtp": -1.7,
+    "lra": 2.8
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Brasil Urgente ao vivo: assista ao programa agora - band.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9NS1hZMXFhaHI0LVpSYkFrVXpWak9DQlJpeTI4MTdRUUFvTXlvemVqeUpIS0FnSmNNREtCME9Tb2pwVldZbzhONmltR0pCNGFaU2VXQkcxMFBORzVFdExTTXViTkVBNkhucjQyaVJocjJPbVNjb19zVnZB?oc=5",
+      "source": "band.com.br",
+      "published": "Tue, 25 Aug 2026 08:44:11 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Notícias sobre edital de 21 de agosto de 2026 - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMnJBV3gyakFCZTFwd1hhLWttdVJkakRtem1ocEpVMFdySE1QaHlSdS1BOHM3cWJoNDhyTjVjX0hDakFjeE5TSkNGSktEUHpRb2ZyZE5RdzJQZGsyTmtQWGxjN2lKeUFReTBVNWpmbXJkV25yRGxtNzBqVE5mTmJFc0IyTWttRVN50gGOAUFVX3lxTE9oRmp0b1FuVTFxWllLaGIzcW02T1FSbHBEMmJ4V0cybGVCY01Hck1BbjhsNDRHQkVqUENBYWlhLUtXbDBiRzNiUTVILUJMeUFTUF9YMXdMSEpSczlQNTBRNnZuYngwRHJxeU5HZEVmWnhWdklhR0hNWEViMktCTkt3dzFkZUJPLUlkaGJDamc?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Tue, 25 Aug 2026 04:27:26 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Como Lito Sousa conquistou a internet falando de aviação e agora mobiliza seguidores contra doença rara - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1ob3NHaGIwbzlRb2hYenhhLWNDSkpyVENBbjB5OTNFdEZHN3FiUV9BSHVzc1VsRDlfb1c2VTlkbmZsV0J5ZTd4YkhPaDA5STVnYlZEQWl2ZDhjVF9MWm1SWW1B0gFnQVVfeXFMUFMtN1pJSDBjd1l2RXNkcXVvVUlxakdSS05CTVpLa24yYU0xZ2ZfYTJ2SUNlUzRtTnFETkR0UEd0NHR3OWFzSVZsYmEzaEpUTnNySzR5U0tZX2lGNS1qd2lTcUtjS1NzZw?oc=5",
+      "source": "BBC",
+      "published": "Tue, 25 Aug 2026 08:43:26 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Frio continua e temperaturas seguem baixas nesta terça - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPd2JzMjExVGc4d2ppc1JJY2lYVmhHM05kY0JKaVk5UjVmQ2FtUTR6dkdwdVFGMTBNU19UdFVHb0g3a1pGQzNmMmRjTnRpUkhfNFhmcnFVcG5lbDNNRkhNZW9Vb09wUGxjV2lpbzduWFlDTWtOajJpZU9ONGV1ZkRtZmxNVmZsSGJObGIxZElTUi1hQTR2V2dKaU8yY3U?oc=5",
+      "source": "SBT News",
+      "published": "Tue, 25 Aug 2026 11:35:47 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Nestlé não fechou fábricas nem anunciou 16 mil demissões no Brasil em 2026 - UOL Notícias",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNUVlVRVZWeEl5SThCUE1kYzFOdWd4VjlhODlsV2w2R19fVklCVjlybF9BNmRyMkRsdWRtbjdkNjhCQU5aUjdmVlhhYWowNEg1ZE1mc3ViQmNXRHFScnItSnBMemZXY0ZaLW9yOFdpZks1d3g4U21sclk5Z2dRaHlTMUNqM1lhempSdWdMMUdvVTFRS1FwZTROTDF4V1BQZWcwSWtUR1lJMldqRTd1T21icE1DV0dxYXBTNno4QjVfT0xVR2lMbi10RQ?oc=5",
+      "source": "UOL Notícias",
+      "published": "Mon, 24 Aug 2026 15:04:46 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "\"Estamos preparados\", diz Irã sobre guerra econômica dos EUA - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQTjE5blQ3dEVqVUlROGNNWVRoTUVfS2JEYUVjeER2WFRlMnpzbDFGbWVaR1FXSFplODRPSUk2Zy1GYXNQNER2UTdIZXJ4b3c4aWctek5ZSVpaNi00Xy10RGxLMklfckJYUkNMODFQQWh2X0pLZWFqZE1acUNSR0RybDc3OGJ4b0ZSN0VVcXRpSWlLNUlERTNvUXNpSk96ZVU?oc=5",
+      "source": "SBT News",
+      "published": "Tue, 25 Aug 2026 07:40:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Ainda sem detalhes, 'Dia D econômico' de Trump contra Irã fica apenas na ameaça - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPUkkyNVVsbzFqWWdnSnhXUkRiT3FobEhhbGhOVUdmcl9RNkNKNlVCelZXUFdCLXUySTk2LXNJYWxVQ0h0MW9WdndzUE5lRmt3U0p1eUlKamc5WGp1MTVfUkpFMlhSdWxSR2VpNDJ5X2hSYkktTGo3VnE4dDRFbDdpNHFTM3FoTHlmaHYtYVZpYTd4OUdGR3M3eUZZSl9KT2NLRXNUb21EMTVzeE5nalBQV2hjcU5QYzUybVZTSF9uTmJvdWJJ?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Mon, 24 Aug 2026 22:33:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "EUA impõem novas sanções ao Irã; Trump pressiona líderes mundiais para que cortem relações com Teerã - G1",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQblRmbi1MaDRCUUJnWGEtVXI0MVVEZGtUVExIZjVpVkMxWlBKYWNpZFpVazlHNE1zOEstWVlOTkVUM1VQM2hRLTlHczJ1OHM2MEw5NDJxR1Zma0ZXTE1xMjFRSEtfWUg4WUVROS03TWxsZFNZNV9mT0tEdWZsaHQ0QW1VZk9BS3hLdTU2TDFn0gGcAUFVX3lxTE83bUtHNXBsOUFYc1dnVVhhZmpZN1llcDJUOE9DRjNjbWpSTkVNenR2VVhVSHdQV09XWW1xSGdVTHlzUEVmZFdsd0JCU0tqR0dmTjZURTBTbDdlaXVzQnZDQjN3SVpaQ1A2OGpvUGo1OVdfYzNFU2lHMGZ4THRPZXR3aEdxRXFYQzUzTVFfY2lGTGpvRmd0eDRyODV2RQ?oc=5",
+      "source": "G1",
+      "published": "Mon, 24 Aug 2026 17:19:39 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Petroleiro é atingido por projétil não identificado na costa de Omã - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNdHFCbUdPZW9tSFFjc3hCYS1XRkNmU3dJX3RHVXVmbEFoLWlFNE1GSHRDR0dHOHpGZzJTRk52djFmb3ZDdjg5UUFrd2t0REtXMnVSWWdILTZKZ0w0NG40cUlDdTYxZzh6T3YxamdtS3lHanp5VTluUlNVRjJHWXc1QjRuSFRyelUxX1N1WE5GbEZwVVIzTVZnb09IdHJUczNfekc5M2ZkckQ5U0HSAasBQVVfeXFMTXRxQm1HT2VvbUhRY3N4QmEtV0ZDZlN3SV90R1V1ZmxBaC1pRTRNRkh0Q0dHRzh6RmcyU0ZOdnYxZm92Q3Y4OVFBa3drdERLVzJ1UllnSC02SmdMNDRuNHFJQ3U2MWc4ek92MWpnbUt5R2p6eVU5blJTVUYyR1l3NUI0bkhUcnpVMV9TdVhORmxGcFVSM01WZ29PSHRyVHMzX3pHOTNmZHJEOVNB?oc=5",
+      "source": "InfoMoney",
+      "published": "Tue, 25 Aug 2026 09:28:31 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "ANPD multa TikTok em R$ 153,7 milhões por coleta irregular de dados de crianças e adolescentes - Francês News",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQakhkbjZXXzkzTGpLeERmcS1tZ2l5b3VyUTMxUG5sd1lnOWpFMERMc2VOcXM4c015NXY3S1Y1VmswczhuU1dWTkRERHBkYklkYzNBNXdnRk93d2FrQXNlRzI5UmV2NzY2UFZPRlpMSmZ1UldMVE1DVWd1Sk1scEVtS2x4SmNCZE5QVDhHbzNmT0lsYXlqcFk0VFNQaTkzMkliZ1Y2ci1aeG9JbTJqRVZ4WEdpUU1ubXJTQ2tVa0RwcHhMeGROUHRFRGRUaENqNTdoMzlqNHBoQm0?oc=5",
+      "source": "Francês News",
+      "published": "Tue, 25 Aug 2026 12:38:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Inteligência Artificial pode trazer o fim do “Digite 1 para falar com...\" - viva.com.br",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNNVRtRDVlMEJkTGs3dGNoalNwWThiRGJISEFCZGx0cDhuSlBZekNKRTFNTUhSX3dRUVVaNzAtcUZxRFZKSzJIX3N3SEdLU1FrMnZZa1hsamlQa0R2TDMzZlhuV0ZCdXcyakhVSnVteWJFbXhYMXRSOFA4S2UwemljVndvbENWYUNlV1R3WHduWVFXTFdDNzRrVTBjXy15RG9YdU9IYUoxdw?oc=5",
+      "source": "viva.com.br",
+      "published": "Tue, 25 Aug 2026 12:23:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Inteligência artificial: o que está por trás das respostas que ela dá? - O GLOBO",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNUUt4WjBzR2l0X1JRZGJveUM1Q3BDY1pSSU42YXdwVnI2eVpkbk9DajZoRFdPTVl3aGNDTzZxbHlHNjd3UC1nZ1VnUlpPNnBmaHhfQTMteGFVZXU4bElicWZicl9ZT29nMHNCdjBfZmdHWTZWaVoxbWktNDl0R213RnpfQzdqRWFHWGNNSE1oTHVaMTlsWmF3ODlUUXVlVHhPUUJQN3RGdm9UT1BFblJpa1NRNGpZVnZuQkJmNnBpYw?oc=5",
+      "source": "O GLOBO",
+      "published": "Tue, 25 Aug 2026 04:00:26 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Semana da Computação tem programação voltada à tecnologia e à inteligência artificial na Amazônia - UFPA – Universidade Federal do Pará",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMS1XWUJteWcyN2d6bldON2VpVFJaT2VpVnNFaVNYLUZvVnZoZ0RIbGFUeGdpa3JsLUtXMEpPQnpTc1ItRlJSVWxqYWFkZ3NGVlg0V1V0ckxxRVhadFROTWswS3dILWNWajhobmMxNGNUcVNzWXQxOU5tdWgzTS1vZnZPcUJSdzVBMXdoN19jMXRvS1ltc1E4NGtyNHU4WUpLaDhDV1E0WGtSUW9Mcm5WbGVRZGg?oc=5",
+      "source": "UFPA – Universidade Federal do Pará",
+      "published": "Mon, 24 Aug 2026 18:55:15 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Da fisioterapia à inteligência artificial: como a tecnologia está mudando o cuidado preventivo - webrun.com.br",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOV05jWXZETVRrM1NWdGJaQkpzZHZobFMyVDVKbHpveTZReXZMUkJLUjVFb2wwVGZZbW94YXFBTkNfZThkbXJkMlZxVGdZcmp1RUtXV3p4eHhWVE5tMzVPc3lSR09WUzlrbGoyRWxGelY1TFFKR2VXOG9Kc25ybXNZX2ZzSk90N3NyU1h5ak05bmNRSFJaV2ZpM3E1a3g4VUM1S1A2MUlybHFyYzJ2OVpGQXowekgweFU?oc=5",
+      "source": "webrun.com.br",
+      "published": "Tue, 25 Aug 2026 12:52:10 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Febraban Tech 2026: Bancos usam IA, mas decisões sensíveis ficam com humanos - Finsiders Brasil",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPQnpzb1M5VUQ0alVoT3VWUGtaeEROR1lrWEc3b0tWV0dxNzZPQk1tVGl5YTlxVTNiRzE1eXJQNnRNM1RLWnZoNFVIcGlVYWpQdllGVzl4OTlybUpYazY1Rko4Q3FCNFh3NkViSzA1NDRhRGdCa1dVTHBmTll1aFduaFZMaWFMMXhKeE1sQW1tU3lPOUk0UXplcFpXYTVtWUZpYU81Y2tPRUpSODRqSjAzbW5oa3NqQQ?oc=5",
+      "source": "Finsiders Brasil",
+      "published": "Tue, 25 Aug 2026 02:30:12 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Braskem perdeu mercado para indústria estrangeira nos últimos anos, dizem especialistas - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOTmJsQ0dmc0V6c1ktNGFHZTVmUXlsbTlIM3g3Xzc2UjRORTJNaXdIak1jWFRxbU5NZXVwWXJNTW53d05aQm85Zm1faVlpel92cXJIVG5aMExXV0FuQkc5QnZxZWtqdU1aRE9MTjJwUmxNMFJGUE82M2I4bmpVVkpuTllheklrc1JPOUtJRXktaDgtNFVycTRxem1EUWNKR2NCSlo4a0VYaE9ySnEzZEtXcUNvRUEtM3g1dUhfZ1ZKY0lOWVh3eVptc0l0WEdYZE5Ub3ZFRA?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Tue, 25 Aug 2026 07:00:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Bets causam prejuízo ao PIB cinco vezes maior do que tarifaço de Trump, aponta estudo - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5SQ21WVmo0X2VhQ1R5ZkdrQS1vR25GUkRYNnZpOFllVjJuMWFqdHRlY2xGWHlINnBRaTBueTJZbDlvcTZ2MWlDLWxPTUhHNjFrb0ZXTW9qY0NBeXAyYnVSbnFB0gFnQVVfeXFMT1gwLTgyUkxLNGR5cXMyaTZnQ0sxa29HbDVLcFpTdmhIQUpsZ012MWt2eEh0NmtXUF9mYjlmbkstMlNXRVFoZnZudEhSTU41ZFZGbDFId294djZZR0ljd0pfaUdTeXdtaw?oc=5",
+      "source": "BBC",
+      "published": "Mon, 24 Aug 2026 16:51:42 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Brasil precisa reequilibrar relação entre os Poderes, afirmam Eduardo Giannetti e Samuel Pessôa - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQUVh0Wl92UjU2eHVsU29QT2k4UmtRZlI1R3lEQktSWWltQ0hsQ0xxcmM1N1dQTDRjMTVpdm9iZ3lvMm1TQi05R3AyQ3UtWmRCRGw4Sm9LM2I3WnZadDAwMG5uNlUxVEEtOEFqTHdQLWJMSG9tMDBtdmtKeHVJU1B3LWNIUUowU3VzRVRnRWFpWlZHbDVhcmdBdTFrcFNndTd6Um9jd2FfNUp5T0U5X3VDWWtPVEhkZk5XQ0l3NVNZVE9LeWhjSXBsMVE1b9IB0AFBVV95cUxQbWh5cWtoUVJPUmk2cDBNMG1jaUN1alJGYllXT0Myb051OHBoTkxRcVVCd1lFVEZQbG92aWtoaDd0bzdjRWJTRDdzUFB0bXp0b3Q1ZVVjZ1RqMXRMa1M2SjdEQWEzd3EwOWR2ZXA0b0gzc3hjVVFOV1YzbFl3VUI3VEFUcDhGTndFbVBXY2VGSkVtclpuYUFWTUd4Zk02SHFLLUpTbjE3MEZuTmI5emM1VlNCZTRrcXNIbFNxa1k0a2thWVhJVjFOS1M4UmtyeElI?oc=5",
+      "source": "Estadão",
+      "published": "Tue, 25 Aug 2026 08:30:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Para 50%, a economia do Brasil está ruim ou péssima, aponta BTG/Nexus - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQRlZkaUswVXVmRzcybFVyajhLREFWZG5SYUhFakRzUFZGZWJHQzEyZTVtMVBCWURoOXZQWEdGRzcxVDRYSFNPNmRwVURnVFo1akRiNk00ZWdzNHhjMFU0TmVkeElnT3BJaHY1TEtXcWlUZVdZaE90YUZfZFJpQUtVcXJPWTN2RnFlc29JaVpWbFBGa2RKcUh1djlvSGxXSHlnMzA3Wk9QajIxZ0lveUFULXY4Q2xkVWRCd21BYUFIX1F3V3diUGpUVVBqWFg5Vms?oc=5",
+      "source": "CNN Brasil",
+      "published": "Mon, 24 Aug 2026 14:51:14 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Brasil atrai US$ 77,6 bi em investimento estrangeiro e lidera na América Latina - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOOGhJOWR6bEE3MDFEUEhQc2JnXzZIakFQdmdxYnJrM0ZEMXlRbTc2dzZwSW56Mmw4bXNmdjh6UUREQmI1MGFuMS1GVFVXN0NMZElLZ3YtV1dtTW5KTHhBVVhlc09EbUZlNENQZGVWWThRUGw4dDliMENqZ0VtdGhLZWR6dnBlVEFwNGt1MlZGTVRXTFhLRmUyeEVSaEh6bV94dUFYQlUxNG5EQXZ1NWJ5UU9ta9IBuAFBVV95cUxPNUozYWFUZTFDSkRSQWtwSFBlTkZPdFN6RXNNbW5tZkh4cHZVSXk5Z1d2NVZZS2NrWlEwVkM2UVJwS3VnaGM5d3p0T2pBajVUUkU0VWJpTXphZzZ1NV9fZVMzMlhnemFad0NneXd6eXVYUW13UldZN3YtYWpOakUxSkpFdE9pUnRTOVh1VW5JZkNWdVNva0xqRXYzcXZYcmdzVzVmM0Z2TmdPUWNDWTNUcHd0RXhVUlVr?oc=5",
+      "source": "InfoMoney",
+      "published": "Tue, 25 Aug 2026 09:01:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Sistema CNA/Senar promove Agenda Brasil - Portal CNA Brasil",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE0tV3VjM0VhLWNkajF6VjlZcU1uTHU2bC1fU18zcE9YWmFYTldWa3hXYlp2X1dCV2V0c18wX2tiMEZBdmRSaXJvQVotUTU2WTdBTDVxdVhVM05KemRKaWhJMHpQb3hiRDF6eEJzd2tjcG1iOHk4a1F3WUMwVjJDUQ?oc=5",
+      "source": "Portal CNA Brasil",
+      "published": "Tue, 25 Aug 2026 10:42:36 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda do dia: Dados de arrecadação de julho no Brasil são destaque - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOQ2ZhZElOdFB2RHluMlp6cDJoUWZYNHFaS2wzcUxMeHBXQkZVeWYyVlpkYTRQTE1mZXM0N0VrQjVEajY1d2w4azFyMkpfMkxrbHlweXNvajBueFZMUS13SDdjeXpJQlRJcy1yZ2pJVU9rSXBlOGpsY3E1XzZTejU3THVXbnhQV3NLc0hKRF9IcmZuV2NBR1pPRVpPMk5SQ2FkTUFnYkt0RzlwVzA2UDBhWXVOeVBQYksxZ2UzckFSeW9qd9IB0AFBVV95cUxObWVXZGRXZTZIejZMTWFIcE5mV1lVc3ZhLWxMOHJoaS1RbVRRTHdfYXBITEJxamJKVXFGZXdtUzZRTFlWYXZ5YTdrd0MzUTAzRERIbGxRVi1GSmdBSTE2ZWx1Z0tkUDJjazZ3MlZCczM1QkZHSVk4SG5zZ01OQkhaNlV1ZG41dW5SNC1FNTJFTVlpX21uZ3hCWWJkb0tsc056STJ3aG1vZm1aWDNqVUxZWWZPbklFZURrbGJpTlZYa2dzYlB0Z2FfNmRieVByWnQ3?oc=5",
+      "source": "Valor Econômico",
+      "published": "Tue, 25 Aug 2026 10:42:01 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Flávio Bolsonaro cumpre agenda em Maceió nesta terça-feira; veja programação dos presidenciáveis - Francês News",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxObW8zeHpzdVB2Sm9INVJXYnA0cVRRMWNuUlRyV3h6ekM4alhiaktuSWh3OFkzSkx0dHhlSi1QNHZaMmxEb3JMT0t3Q09IZGpBSURVNldiVndybmotZjJmOWdyZlVQOGE2aFRQVkRnNEFEUllIODRsR2FwQnBSdWJCVkIyQVlIemRyd0NxLURnYnNfcm93UmdMRWhfX2xuWnBlWC04czB6UElhMlRrQnZleEI3dlQxSW9aNmtUZmE3X2NOLTA2TmNIb3JHbUlLNXpSZHlCY1V3N2tEaHJ1?oc=5",
+      "source": "Francês News",
+      "published": "Tue, 25 Aug 2026 09:45:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "DECISÃO 2026: agenda candidatos Governo de SP na terça (25) - Times Brasil | CNBC",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQemJsMG5tMzVFY3AtYjQ4Wkp1dXgyOWdRTVUydmpFOWMzbWVRTGRibjRQaExNNXFodE8weTBaMjdDWXd6ZDRIb1VhbmtnZERnbS1pT2swWlpRMThrckRyeW43Ul91Y25mbE1Oc2JCU3NmWmc4Nld5emluTzk1TVRwbE14NHR4Nm9qM1BMOUllNVpkMjh0azdfQm9VZk5KNVFHMlZYMDVhRmlWWS1KNEhNNW5ac2MtOGprZ21mVFp3?oc=5",
+      "source": "Times Brasil | CNBC",
+      "published": "Tue, 25 Aug 2026 10:13:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Evento abre semestre da UAB e agenda do Laboratório de Pesquisa e Inovação Darcy Ribeiro - UnB Notícias",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQeGo4dGNHM3FUZEUtY3M2VWJ6SlRURkltd2ZSZTlwdm9hR0hjS192cnJTWVc2YnN0UDRnZGdNMFRlaWlvc1VWRExudGpoRDRyUndORzFtaGczdjlDYVU2aFBoQ1RKUUh2WVduYlZCTG9rR2hBUkM3MGZHMWRqMERiRkNFNVBzNHlCc09scGJwMlhEOG0zNVZxaHpDeUFKU0d0RHhWSktxY0pEZmVKbnpxUTlWSW1YNTNkTFllMHduMW5OUQ?oc=5",
+      "source": "UnB Notícias",
+      "published": "Mon, 24 Aug 2026 19:09:02 GMT"
+    }
+  ],
+  "generated_at": "2026-08-25T10:06:11.912326-03:00"
+}

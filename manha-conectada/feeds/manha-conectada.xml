@@ -27,7 +27,7 @@
     <podcast:locked owner="eibragaa@gmail.com">no</podcast:locked>
     <podcast:guid>manha-conectada.d5n-daily.netlify.app</podcast:guid>
     <atom:link href="https://d5n-daily.netlify.app/manha-conectada.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 24 Aug 2026 11:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 11:00:00 -0300</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/manha-conectada-cover.png</url>
       <title>Manhã Conectada</title>
@@ -35,6 +35,22 @@
     </image>
     <copyright>© 2026 Drop Five News</copyright>
     <generator>D5N Pipeline — Manhã Conectada</generator>
+    <item>
+      <title>Manhã Conectada — 25/08/2026</title>
+      <itunes:title>Manhã Conectada — 25/08/2026</itunes:title>
+      <itunes:episode>15</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>05:48</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <guid isPermaLink="false">manha-conectada-2026-08-25</guid>
+      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-25.mp3" length="8352748" type="audio/mpeg"/>
+      <pubDate>Tue, 25 Aug 2026 11:00:00 -0300</pubDate>
+      <description>Manhã Conectada de 25/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:48.</description>
+      <itunes:summary>Manhã Conectada de 25/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:48.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 25/08/2026</strong></p><p>Manhã Conectada de 25/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:48.</p><ul><li>Brasil Urgente ao vivo: assista ao programa agora - band.com.br</li><li>Notícias sobre edital de 21 de agosto de 2026 - Estratégia Concursos</li><li>Como Lito Sousa conquistou a internet falando de aviação e agora mobiliza seguidores contra doença rara - BBC</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>Manhã Conectada — 24/08/2026</title>
       <itunes:title>Manhã Conectada — 24/08/2026</itunes:title>
