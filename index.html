@@ -36,33 +36,6 @@
     --accent-dim:#334155; --global:#6db88a; --tech:#60a5d4; --econ:#a89060; --red:#e06060;
   }
   html { font-size:16px; scroll-behavior:smooth; }
-
-  /* homelabDesign: animated background orbs — combat "lê como PDF" */
-  .bg-orb{ position:fixed; border-radius:50%; pointer-events:none; z-index:0; filter:blur(80px); opacity:.18; animation:orbFloat 20s ease-in-out infinite; }
-  .bg-orb-1{ width:600px; height:600px; background:#00D4FF; top:-200px; left:-200px; animation-duration:25s; }
-  .bg-orb-2{ width:500px; height:500px; background:#7C3AED; top:30%; right:-150px; animation-duration:30s; animation-delay:-8s; }
-  .bg-orb-3{ width:400px; height:400px; background:#00D4FF; bottom:-100px; left:30%; animation-duration:22s; animation-delay:-14s; }
-  @keyframes orbFloat{ 0%,100%{transform:translate(0,0) scale(1);} 33%{transform:translate(30px,-40px) scale(1.06);} 66%{transform:translate(-20px,20px) scale(.95);} }
-  /* dot grid glow — subtle depth */
-  body::after{ content:''; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.07; background-image:radial-gradient(rgba(0,212,255,.5) 1px,transparent 1px); background-size:28px 28px; }
-
-  /* homelabDesign: custom cursor */
-  *{ cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='7' fill='none' stroke='%2300D4FF' stroke-width='1.5'/%3E%3Ccircle cx='10' cy='10' r='2' fill='%2300D4FF'/%3E%3C/svg%3E") 10 10, auto; }
-  a,button,.filter-btn,.news-item,.archive-link,.archive-toggle,.morning-episode,.chapter-segment{ cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M5 3l14 9-7 2-3 7z' fill='%2300D4FF'/%3E%3C/svg%3E") 10 10, pointer; }
-  /* homelabDesign: scroll reveal */
-  .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease;}
-  .reveal.visible{opacity:1;transform:none;}
-  .section{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;}
-  .section.visible{opacity:1;transform:none;}
-
-
-  /* homelabDesign: scroll reveal */
-  .reveal{ opacity:0; transform:translateY(16px); transition:opacity .55s ease, transform .55s ease; }
-  .reveal.visible{ opacity:1; transform:none; }
-  /* stagger section entrances */
-  .section{ opacity:0; transform:translateY(18px); transition:opacity .5s ease, transform .5s ease; }
-  .section.visible{ opacity:1; transform:none; }
-
   body {
     background:var(--bg); color:var(--text);
     font-family:'Inter',sans-serif; font-weight:300;
@@ -429,10 +402,6 @@
 <script defer src="https://cloud.umami.is/script.js" data-website-id="e0919f78-6147-42e0-a382-d3792662ea3a"></script>
 </head>
 <body>
-<!-- homelabDesign: animated background orbs -->
-<div class="bg-orb bg-orb-1" aria-hidden="true"></div>
-<div class="bg-orb bg-orb-2" aria-hidden="true"></div>
-<div class="bg-orb bg-orb-3" aria-hidden="true"></div>
 <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
 <header>
@@ -740,196 +709,196 @@
     <div class="archive-link archive-link--visible" data-audio="/audio/d5n-ep062-2026-08-24.mp3" data-duration="661" data-episode="062" data-date="24 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;intro&quot;,&quot;label&quot;:&quot;Abertura&quot;,&quot;start&quot;:0.0,&quot;end&quot;:33.494,&quot;duration&quot;:33.494},{&quot;id&quot;:&quot;mundo&quot;,&quot;label&quot;:&quot;Mundo&quot;,&quot;start&quot;:33.494,&quot;end&quot;:100.48,&quot;duration&quot;:66.986},{&quot;id&quot;:&quot;brasil&quot;,&quot;label&quot;:&quot;Brasil&quot;,&quot;start&quot;:100.48,&quot;end&quot;:219.262,&quot;duration&quot;:118.782},{&quot;id&quot;:&quot;tecnologia&quot;,&quot;label&quot;:&quot;Tecnologia &amp; IA&quot;,&quot;start&quot;:219.262,&quot;end&quot;:314.786,&quot;duration&quot;:95.524},{&quot;id&quot;:&quot;economia&quot;,&quot;label&quot;:&quot;Economia &amp; Mercados&quot;,&quot;start&quot;:314.786,&quot;end&quot;:383.5,&quot;duration&quot;:68.714},{&quot;id&quot;:&quot;interacao&quot;,&quot;label&quot;:&quot;Sua vez&quot;,&quot;start&quot;:383.5,&quot;end&quot;:410.248,&quot;duration&quot;:26.748},{&quot;id&quot;:&quot;ofertas&quot;,&quot;label&quot;:&quot;Ofertas do Dia&quot;,&quot;start&quot;:410.248,&quot;end&quot;:437.61,&quot;duration&quot;:27.362},{&quot;id&quot;:&quot;frase&quot;,&quot;label&quot;:&quot;Frase do Dia&quot;,&quot;start&quot;:437.61,&quot;end&quot;:464.468,&quot;duration&quot;:26.858},{&quot;id&quot;:&quot;recomendacoes&quot;,&quot;label&quot;:&quot;Recomendações&quot;,&quot;start&quot;:464.468,&quot;end&quot;:518.134,&quot;duration&quot;:53.666},{&quot;id&quot;:&quot;historia&quot;,&quot;label&quot;:&quot;História do dia&quot;,&quot;start&quot;:518.134,&quot;end&quot;:578.954,&quot;duration&quot;:60.82},{&quot;id&quot;:&quot;outro&quot;,&quot;label&quot;:&quot;Encerramento&quot;,&quot;start&quot;:578.954,&quot;end&quot;:661.0,&quot;duration&quot;:82.046}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #062 · 24 Ago 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">11:01 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--visible" data-audio="/audio/d5n-ep061-2026-08-18.mp3" data-duration="0" data-episode="061" data-date="18 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--visible" data-audio="/audio/d5n-ep061-2026-08-18.mp3" data-duration="582" data-episode="061" data-date="18 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;intro&quot;,&quot;label&quot;:&quot;Abertura&quot;,&quot;start&quot;:0.0,&quot;end&quot;:31.812,&quot;duration&quot;:31.812},{&quot;id&quot;:&quot;mundo&quot;,&quot;label&quot;:&quot;Mundo&quot;,&quot;start&quot;:31.812,&quot;end&quot;:128.078,&quot;duration&quot;:96.266},{&quot;id&quot;:&quot;brasil&quot;,&quot;label&quot;:&quot;Brasil&quot;,&quot;start&quot;:128.078,&quot;end&quot;:232.192,&quot;duration&quot;:104.114},{&quot;id&quot;:&quot;tecnologia&quot;,&quot;label&quot;:&quot;Tecnologia &amp; IA&quot;,&quot;start&quot;:232.192,&quot;end&quot;:351.282,&quot;duration&quot;:119.09},{&quot;id&quot;:&quot;economia&quot;,&quot;label&quot;:&quot;Economia &amp; Mercados&quot;,&quot;start&quot;:351.282,&quot;end&quot;:418.22,&quot;duration&quot;:66.938},{&quot;id&quot;:&quot;interacao&quot;,&quot;label&quot;:&quot;Sua vez&quot;,&quot;start&quot;:418.22,&quot;end&quot;:441.752,&quot;duration&quot;:23.532},{&quot;id&quot;:&quot;frase&quot;,&quot;label&quot;:&quot;Frase do Dia&quot;,&quot;start&quot;:441.752,&quot;end&quot;:457.354,&quot;duration&quot;:15.602},{&quot;id&quot;:&quot;historia&quot;,&quot;label&quot;:&quot;História do dia&quot;,&quot;start&quot;:457.354,&quot;end&quot;:500.148,&quot;duration&quot;:42.794},{&quot;id&quot;:&quot;outro&quot;,&quot;label&quot;:&quot;Encerramento&quot;,&quot;start&quot;:500.148,&quot;end&quot;:582.0,&quot;duration&quot;:81.852}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #061 · 18 Ago 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Francisca</span></div>
+        <div class="archive-link-meta">9:42 <span class="archive-voice">Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
     <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep060-2026-08-17.mp3" data-duration="561" data-episode="060" data-date="17 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;intro&quot;,&quot;label&quot;:&quot;Abertura&quot;,&quot;start&quot;:0.0,&quot;end&quot;:32.004,&quot;duration&quot;:32.004},{&quot;id&quot;:&quot;mundo&quot;,&quot;label&quot;:&quot;Mundo&quot;,&quot;start&quot;:32.004,&quot;end&quot;:141.33,&quot;duration&quot;:109.326},{&quot;id&quot;:&quot;brasil&quot;,&quot;label&quot;:&quot;Brasil&quot;,&quot;start&quot;:141.33,&quot;end&quot;:206.084,&quot;duration&quot;:64.754},{&quot;id&quot;:&quot;tecnologia&quot;,&quot;label&quot;:&quot;Tecnologia &amp; IA&quot;,&quot;start&quot;:206.084,&quot;end&quot;:295.39,&quot;duration&quot;:89.306},{&quot;id&quot;:&quot;economia&quot;,&quot;label&quot;:&quot;Economia &amp; Mercados&quot;,&quot;start&quot;:295.39,&quot;end&quot;:381.122,&quot;duration&quot;:85.732},{&quot;id&quot;:&quot;interacao&quot;,&quot;label&quot;:&quot;Sua vez&quot;,&quot;start&quot;:381.122,&quot;end&quot;:398.414,&quot;duration&quot;:17.292},{&quot;id&quot;:&quot;ofertas&quot;,&quot;label&quot;:&quot;Ofertas do Dia&quot;,&quot;start&quot;:398.414,&quot;end&quot;:423.28,&quot;duration&quot;:24.866},{&quot;id&quot;:&quot;frase&quot;,&quot;label&quot;:&quot;Frase do Dia&quot;,&quot;start&quot;:423.28,&quot;end&quot;:436.41,&quot;duration&quot;:13.13},{&quot;id&quot;:&quot;recomendacoes&quot;,&quot;label&quot;:&quot;Recomendações&quot;,&quot;start&quot;:436.41,&quot;end&quot;:467.278,&quot;duration&quot;:30.868},{&quot;id&quot;:&quot;historia&quot;,&quot;label&quot;:&quot;História do dia&quot;,&quot;start&quot;:467.278,&quot;end&quot;:500.162,&quot;duration&quot;:32.884},{&quot;id&quot;:&quot;outro&quot;,&quot;label&quot;:&quot;Encerramento&quot;,&quot;start&quot;:500.162,&quot;end&quot;:561.0,&quot;duration&quot;:60.838}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #060 · 17 Ago 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">9:21 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep059-2026-08-14.mp3" data-duration="0" data-episode="059" data-date="14 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep059-2026-08-14.mp3" data-duration="333" data-episode="059" data-date="14 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:333,&quot;duration&quot;:333}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #059 · 14 Ago 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita + Francisca</span></div>
+        <div class="archive-link-meta">5:33 <span class="archive-voice">Thalita + Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep058-2026-08-11.mp3" data-duration="0" data-episode="058" data-date="11 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep058-2026-08-11.mp3" data-duration="719" data-episode="058" data-date="11 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:719,&quot;duration&quot;:719}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #058 · 11 Ago 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Francisca</span></div>
+        <div class="archive-link-meta">11:59 <span class="archive-voice">Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep057-2026-08-10.mp3" data-duration="0" data-episode="057" data-date="10 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep057-2026-08-10.mp3" data-duration="613" data-episode="057" data-date="10 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:613,&quot;duration&quot;:613}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #057 · 10 Ago 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">10:13 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep056-2026-08-08.mp3" data-duration="0" data-episode="056" data-date="8 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep056-2026-08-08.mp3" data-duration="601" data-episode="056" data-date="8 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:601,&quot;duration&quot;:601}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #056 · 8 Ago 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">10:01 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep055-2026-08-07.mp3" data-duration="0" data-episode="055" data-date="7 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep055-2026-08-07.mp3" data-duration="405" data-episode="055" data-date="7 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:405,&quot;duration&quot;:405}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #055 · 7 Ago 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita + Francisca</span></div>
+        <div class="archive-link-meta">6:45 <span class="archive-voice">Thalita + Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep054-2026-08-06.mp3" data-duration="0" data-episode="054" data-date="6 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep054-2026-08-06.mp3" data-duration="391" data-episode="054" data-date="6 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:391,&quot;duration&quot;:391}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #054 · 6 Ago 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Francisca</span></div>
+        <div class="archive-link-meta">6:31 <span class="archive-voice">Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep053-2026-08-05.mp3" data-duration="0" data-episode="053" data-date="5 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep053-2026-08-05.mp3" data-duration="529" data-episode="053" data-date="5 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:529,&quot;duration&quot;:529}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #053 · 5 Ago 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">8:49 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep052-2026-08-04.mp3" data-duration="0" data-episode="052" data-date="4 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep052-2026-08-04.mp3" data-duration="537" data-episode="052" data-date="4 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:537,&quot;duration&quot;:537}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #052 · 4 Ago 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Francisca</span></div>
+        <div class="archive-link-meta">8:57 <span class="archive-voice">Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep051-2026-08-03.mp3" data-duration="0" data-episode="051" data-date="3 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep051-2026-08-03.mp3" data-duration="548" data-episode="051" data-date="3 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:548,&quot;duration&quot;:548}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #051 · 3 Ago 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">9:08 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep050-2026-08-01.mp3" data-duration="0" data-episode="050" data-date="1 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep050-2026-08-01.mp3" data-duration="528" data-episode="050" data-date="1 Ago 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:528,&quot;duration&quot;:528}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #050 · 1 Ago 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">8:48 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep049-2026-07-31.mp3" data-duration="0" data-episode="049" data-date="31 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep049-2026-07-31.mp3" data-duration="626" data-episode="049" data-date="31 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:626,&quot;duration&quot;:626}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #049 · 31 Jul 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita + Francisca</span></div>
+        <div class="archive-link-meta">10:26 <span class="archive-voice">Thalita + Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep048-2026-07-30.mp3" data-duration="0" data-episode="048" data-date="30 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep048-2026-07-30.mp3" data-duration="571" data-episode="048" data-date="30 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:571,&quot;duration&quot;:571}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #048 · 30 Jul 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Francisca</span></div>
+        <div class="archive-link-meta">9:31 <span class="archive-voice">Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep047-2026-07-29.mp3" data-duration="0" data-episode="047" data-date="29 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep047-2026-07-29.mp3" data-duration="663" data-episode="047" data-date="29 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:663,&quot;duration&quot;:663}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #047 · 29 Jul 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">11:03 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep046-2026-07-28.mp3" data-duration="0" data-episode="046" data-date="28 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep046-2026-07-28.mp3" data-duration="536" data-episode="046" data-date="28 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:536,&quot;duration&quot;:536}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #046 · 28 Jul 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Francisca</span></div>
+        <div class="archive-link-meta">8:56 <span class="archive-voice">Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep045-2026-07-27.mp3" data-duration="0" data-episode="045" data-date="27 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep045-2026-07-27.mp3" data-duration="489" data-episode="045" data-date="27 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:489,&quot;duration&quot;:489}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #045 · 27 Jul 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">8:09 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep044-2026-07-25.mp3" data-duration="0" data-episode="044" data-date="25 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep044-2026-07-25.mp3" data-duration="507" data-episode="044" data-date="25 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:507,&quot;duration&quot;:507}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #044 · 25 Jul 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">8:27 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep043-2026-07-23.mp3" data-duration="0" data-episode="043" data-date="23 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep043-2026-07-23.mp3" data-duration="541" data-episode="043" data-date="23 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:541,&quot;duration&quot;:541}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #043 · 23 Jul 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Francisca</span></div>
+        <div class="archive-link-meta">9:01 <span class="archive-voice">Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep042-2026-07-22.mp3" data-duration="0" data-episode="042" data-date="22 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep042-2026-07-22.mp3" data-duration="360" data-episode="042" data-date="22 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:360,&quot;duration&quot;:360}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #042 · 22 Jul 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">6:00 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep041-2026-07-21.mp3" data-duration="0" data-episode="041" data-date="21 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep041-2026-07-21.mp3" data-duration="260" data-episode="041" data-date="21 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:260,&quot;duration&quot;:260}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #041 · 21 Jul 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Francisca</span></div>
+        <div class="archive-link-meta">4:20 <span class="archive-voice">Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep040-2026-07-20.mp3" data-duration="0" data-episode="040" data-date="20 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep040-2026-07-20.mp3" data-duration="250" data-episode="040" data-date="20 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:250,&quot;duration&quot;:250}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #040 · 20 Jul 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">4:10 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep039-2026-07-18.mp3" data-duration="0" data-episode="039" data-date="18 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep039-2026-07-18.mp3" data-duration="453" data-episode="039" data-date="18 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:453,&quot;duration&quot;:453}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #039 · 18 Jul 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">7:33 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep038-2026-07-17.mp3" data-duration="0" data-episode="038" data-date="17 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep038-2026-07-17.mp3" data-duration="377" data-episode="038" data-date="17 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:377,&quot;duration&quot;:377}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #038 · 17 Jul 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita + Francisca</span></div>
+        <div class="archive-link-meta">6:17 <span class="archive-voice">Thalita + Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep037-2026-07-16.mp3" data-duration="0" data-episode="037" data-date="16 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep037-2026-07-16.mp3" data-duration="377" data-episode="037" data-date="16 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:377,&quot;duration&quot;:377}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #037 · 16 Jul 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Francisca</span></div>
+        <div class="archive-link-meta">6:17 <span class="archive-voice">Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep036-2026-07-15.mp3" data-duration="0" data-episode="036" data-date="15 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep036-2026-07-15.mp3" data-duration="217" data-episode="036" data-date="15 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:217,&quot;duration&quot;:217}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #036 · 15 Jul 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">3:37 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep035-2026-07-13.mp3" data-duration="0" data-episode="035" data-date="13 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep035-2026-07-13.mp3" data-duration="311" data-episode="035" data-date="13 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:311,&quot;duration&quot;:311}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #035 · 13 Jul 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">5:11 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
@@ -940,80 +909,80 @@
       </div>
       <span class="archive-link-archive-ghost">◌</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep033-2026-07-09.mp3" data-duration="0" data-episode="033" data-date="9 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep033-2026-07-09.mp3" data-duration="371" data-episode="033" data-date="9 Jul 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:371,&quot;duration&quot;:371}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #033 · 9 Jul 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Francisca</span></div>
+        <div class="archive-link-meta">6:11 <span class="archive-voice">Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep032-2026-06-29.mp3" data-duration="0" data-episode="032" data-date="29 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep032-2026-06-29.mp3" data-duration="396" data-episode="032" data-date="29 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:396,&quot;duration&quot;:396}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #032 · 29 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">6:36 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep031-2026-06-28.mp3" data-duration="0" data-episode="031" data-date="28 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep031-2026-06-28.mp3" data-duration="396" data-episode="031" data-date="28 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:396,&quot;duration&quot;:396}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #031 · 28 Jun 2026</div>
-        <div class="archive-link-meta">0:00 </div>
+        <div class="archive-link-meta">6:36 </div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep030-2026-06-27.mp3" data-duration="0" data-episode="030" data-date="27 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep030-2026-06-27.mp3" data-duration="227" data-episode="030" data-date="27 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:227,&quot;duration&quot;:227}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #030 · 27 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">3:47 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep029-2026-06-26.mp3" data-duration="0" data-episode="029" data-date="26 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep029-2026-06-26.mp3" data-duration="468" data-episode="029" data-date="26 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:468,&quot;duration&quot;:468}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #029 · 26 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita + Francisca</span></div>
+        <div class="archive-link-meta">7:48 <span class="archive-voice">Thalita + Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep028-2026-06-24.mp3" data-duration="0" data-episode="028" data-date="24 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep028-2026-06-24.mp3" data-duration="483" data-episode="028" data-date="24 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:483,&quot;duration&quot;:483}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #028 · 24 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">8:03 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep027-2026-06-22.mp3" data-duration="0" data-episode="027" data-date="22 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep027-2026-06-22.mp3" data-duration="343" data-episode="027" data-date="22 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:343,&quot;duration&quot;:343}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #027 · 22 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">5:43 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep026-2026-06-21.mp3" data-duration="0" data-episode="026" data-date="21 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep026-2026-06-21.mp3" data-duration="408" data-episode="026" data-date="21 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:408,&quot;duration&quot;:408}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #026 · 21 Jun 2026</div>
-        <div class="archive-link-meta">0:00 </div>
+        <div class="archive-link-meta">6:48 </div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep025-2026-06-20.mp3" data-duration="0" data-episode="025" data-date="20 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep025-2026-06-20.mp3" data-duration="455" data-episode="025" data-date="20 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:455,&quot;duration&quot;:455}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #025 · 20 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">7:35 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep024-2026-06-19.mp3" data-duration="0" data-episode="024" data-date="19 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep024-2026-06-19.mp3" data-duration="405" data-episode="024" data-date="19 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:405,&quot;duration&quot;:405}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #024 · 19 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita + Francisca</span></div>
+        <div class="archive-link-meta">6:45 <span class="archive-voice">Thalita + Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep023-2026-06-16.mp3" data-duration="0" data-episode="023" data-date="16 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep023-2026-06-16.mp3" data-duration="481" data-episode="023" data-date="16 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:481,&quot;duration&quot;:481}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #023 · 16 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Francisca</span></div>
+        <div class="archive-link-meta">8:01 <span class="archive-voice">Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
@@ -1031,24 +1000,24 @@
       </div>
       <span class="archive-link-archive-ghost">◌</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep020-2026-06-13.mp3" data-duration="0" data-episode="020" data-date="13 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep020-2026-06-13.mp3" data-duration="495" data-episode="020" data-date="13 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:495,&quot;duration&quot;:495}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #020 · 13 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">8:15 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep019-2026-06-12.mp3" data-duration="0" data-episode="019" data-date="12 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep019-2026-06-12.mp3" data-duration="321" data-episode="019" data-date="12 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:321,&quot;duration&quot;:321}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #019 · 12 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita + Francisca</span></div>
+        <div class="archive-link-meta">5:21 <span class="archive-voice">Thalita + Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep018-2026-06-11.mp3" data-duration="0" data-episode="018" data-date="11 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep018-2026-06-11.mp3" data-duration="298" data-episode="018" data-date="11 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:298,&quot;duration&quot;:298}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #018 · 11 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Francisca</span></div>
+        <div class="archive-link-meta">4:58 <span class="archive-voice">Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
@@ -1059,66 +1028,66 @@
       </div>
       <span class="archive-link-archive-ghost">◌</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep016-2026-06-10.mp3" data-duration="0" data-episode="016" data-date="10 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep016-2026-06-10.mp3" data-duration="368" data-episode="016" data-date="10 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:368,&quot;duration&quot;:368}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #016 · 10 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">6:08 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep015-2026-06-09.mp3" data-duration="0" data-episode="015" data-date="9 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep015-2026-06-09.mp3" data-duration="331" data-episode="015" data-date="9 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:331,&quot;duration&quot;:331}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #015 · 9 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Francisca</span></div>
+        <div class="archive-link-meta">5:31 <span class="archive-voice">Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep014-2026-06-08.mp3" data-duration="0" data-episode="014" data-date="8 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep014-2026-06-08.mp3" data-duration="488" data-episode="014" data-date="8 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:488,&quot;duration&quot;:488}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #014 · 8 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">8:08 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep013-2026-06-07.mp3" data-duration="0" data-episode="013" data-date="7 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep013-2026-06-07.mp3" data-duration="488" data-episode="013" data-date="7 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:488,&quot;duration&quot;:488}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #013 · 7 Jun 2026</div>
-        <div class="archive-link-meta">0:00 </div>
+        <div class="archive-link-meta">8:08 </div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep012-2026-06-06.mp3" data-duration="0" data-episode="012" data-date="6 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep012-2026-06-06.mp3" data-duration="451" data-episode="012" data-date="6 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:451,&quot;duration&quot;:451}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #012 · 6 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">7:31 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep011-2026-06-05.mp3" data-duration="0" data-episode="011" data-date="5 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep011-2026-06-05.mp3" data-duration="372" data-episode="011" data-date="5 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:372,&quot;duration&quot;:372}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #011 · 5 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita + Francisca</span></div>
+        <div class="archive-link-meta">6:12 <span class="archive-voice">Thalita + Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep010-2026-06-05.mp3" data-duration="0" data-episode="010" data-date="5 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep010-2026-06-05.mp3" data-duration="372" data-episode="010" data-date="5 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:372,&quot;duration&quot;:372}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #010 · 5 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita + Francisca</span></div>
+        <div class="archive-link-meta">6:12 <span class="archive-voice">Thalita + Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep009-2026-06-04.mp3" data-duration="0" data-episode="009" data-date="4 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep009-2026-06-04.mp3" data-duration="529" data-episode="009" data-date="4 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:529,&quot;duration&quot;:529}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #009 · 4 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Francisca</span></div>
+        <div class="archive-link-meta">8:49 <span class="archive-voice">Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep008-2026-06-03.mp3" data-duration="0" data-episode="008" data-date="3 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep008-2026-06-03.mp3" data-duration="493" data-episode="008" data-date="3 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:493,&quot;duration&quot;:493}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #008 · 3 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">8:13 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
@@ -1129,24 +1098,24 @@
       </div>
       <span class="archive-link-archive-ghost">◌</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep006-2026-06-01.mp3" data-duration="0" data-episode="006" data-date="1 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep006-2026-06-01.mp3" data-duration="335" data-episode="006" data-date="1 Jun 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:335,&quot;duration&quot;:335}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #006 · 1 Jun 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita</span></div>
+        <div class="archive-link-meta">5:35 <span class="archive-voice">Thalita</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep005-2026-05-29.mp3" data-duration="0" data-episode="005" data-date="29 Mai 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep005-2026-05-29.mp3" data-duration="471" data-episode="005" data-date="29 Mai 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:471,&quot;duration&quot;:471}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #005 · 29 Mai 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Thalita + Francisca</span></div>
+        <div class="archive-link-meta">7:51 <span class="archive-voice">Thalita + Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
-    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep004-2026-05-28.mp3" data-duration="0" data-episode="004" data-date="28 Mai 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:0,&quot;duration&quot;:0}]" onclick="playArchive(this)">
+    <div class="archive-link archive-link--hidden" data-audio="/audio/d5n-ep004-2026-05-28.mp3" data-duration="166" data-episode="004" data-date="28 Mai 2026" data-chapters="[{&quot;id&quot;:&quot;full&quot;,&quot;label&quot;:&quot;Episódio completo&quot;,&quot;start&quot;:0,&quot;end&quot;:166,&quot;duration&quot;:166}]" onclick="playArchive(this)">
       <div>
         <div class="archive-link-date">Ep #004 · 28 Mai 2026</div>
-        <div class="archive-link-meta">0:00 <span class="archive-voice">Francisca</span></div>
+        <div class="archive-link-meta">2:46 <span class="archive-voice">Francisca</span></div>
       </div>
       <span class="archive-link-play">▶</span>
     </div>
