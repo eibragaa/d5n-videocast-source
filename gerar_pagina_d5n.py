@@ -270,6 +270,7 @@ CHAPTER_LABELS = {
     "interacao": "Sua vez",
     "recomendacoes": "Recomendações",
     "historia": "História do dia",
+    "cta": "Sua vez",
     "outro": "Encerramento",
 }
 
@@ -280,12 +281,18 @@ def format_chapter_time(seconds):
 
 
 def validate_chapters(chapters, duration):
-    """Valida e normaliza os nove capítulos canônicos contra o MP3 real."""
+    """Valida e normaliza os capítulos canônicos contra o MP3 real.
+
+    Relaxado: aceita qualquer sequência desde que tenha intro/outro + obrigatórios.
+    Episódios com capítulos extras (cta, ofertas, frase etc.) são válidos.
+    """
     if not isinstance(chapters, list) or len(chapters) < MIN_CHAPTERS:
         return []
     ids = [chapter.get("id") for chapter in chapters]
-    expected = [section_id for section_id in EXPECTED_CHAPTER_IDS if section_id in ids]
-    if not REQUIRED_CHAPTER_IDS.issubset(ids) or ids != expected:
+    # Prefixo fixo e sufixo fixo, conteúdo do meio é flexível.
+    if not ids or ids[0] != "intro" or ids[-1] != "outro":
+        return []
+    if not REQUIRED_CHAPTER_IDS.issubset(ids):
         return []
     try:
         total = float(duration)
@@ -443,6 +450,27 @@ def render_chapter_segments(chapters):
 def chapters_data_attribute(chapters):
     payload = json.dumps(chapters, ensure_ascii=False, separators=(",", ":"))
     return html_lib.escape(payload, quote=True)
+
+
+def render_chapter_list(chapters, player_id="audioEl"):
+    """Lista de capítulos clicáveis no estilo YouTube (id=chapterList + tick marks no track)."""
+    if not chapters:
+        return ""
+    items = []
+    for i, ch in enumerate(chapters):
+        label = CHAPTER_LABELS.get(ch["id"], ch["label"])
+        ts = format_chapter_time(ch["start"])
+        is_active = " is-active" if i == 0 else ""
+        items.append(
+            f'<button type="button" class="chapter-list-item{is_active}" '
+            f'data-start="{ch["start"]:g}" data-player="{player_id}" '
+            f'aria-label="Ir para {label} em {ts}">'
+            f'<span class="chapter-list-time">{ts}</span>'
+            f'<span class="chapter-list-label">{html_lib.escape(label)}</span>'
+            f'<span class="chapter-list-icon">▶</span>'
+            f'</button>'
+        )
+    return "".join(items)
 
 
 def find_latest_podcast():
@@ -754,6 +782,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
         }]
         chapters_json = chapters_data_attribute(display_chapters)
         chapter_segments = render_chapter_segments(display_chapters)
+        chapter_list_html = render_chapter_list(display_chapters, "audioEl")
         current_chapter = (
             f'Capítulo 1 de {len(chapters)} · {html_lib.escape(chapters[0]["label"])}'
             if chapters else "Episódio completo"
@@ -772,6 +801,9 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
       <div class="morning-listen morning-listen--d5n">
         <div class="morning-now" style="color:var(--d5n)"><span class="morning-live-dot" style="background:var(--d5n)"></span><span>Última edição</span><span>{data_curta}</span></div>
         <p class="morning-summary d5n-summary" id="d5nSummary">{html_lib.escape(_d5n_summary(date))}</p>
+        <div class="chapter-list" id="chapterList" aria-label="Capítulos">
+          {chapter_list_html}
+        </div>
         <div class="player-bar" style="margin:1rem 0 0">
           <div class="player-track">
         <button class="play-btn" id="playBtn" onclick="togglePlay()" aria-label="Reproduzir episódio">
@@ -779,7 +811,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
           <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
         </button>
         <div class="player-progress" id="progressBar" onclick="seekAudio(event)" role="slider" tabindex="0" aria-label="Progresso do episódio" aria-valuemin="0" aria-valuemax="{pod_dur_sec}" aria-valuenow="0">
-          <div class="player-chapters" id="chaptersContainer" data-chapters="{chapters_json}">{chapter_segments}</div>
+          <div class="player-chapters" id="chaptersContainer" data-chapters="{chapters_json}" data-has-chapter-list="true">{chapter_segments}</div>
         </div>
         <span class="player-time" id="playerTime">0:00 / {total_dur_min}:{total_dur_sec:02d}</span>
         <a class="player-download" href="{podcast["path"]}" download title="Baixar MP3">↓ MP3</a>
@@ -1024,6 +1056,8 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .chapter-tooltip {{ position:absolute; z-index:20; bottom:20px; left:50%; transform:translate(-50%,4px); opacity:0; visibility:hidden; pointer-events:none; background:#05080d; border:1px solid var(--border); color:#fff; font-size:.62rem; font-weight:600; line-height:1.2; padding:7px 9px; border-radius:6px; white-space:nowrap; box-shadow:0 8px 24px rgba(0,0,0,.35); transition:opacity .15s ease,transform .15s ease; }}
   .chapter-tooltip small {{ display:block; color:var(--text-secondary); font-size:.56rem; font-weight:500; margin-top:3px; }}
   .chapter-segment:hover .chapter-tooltip,.chapter-segment:focus-visible .chapter-tooltip {{ opacity:1; visibility:visible; transform:translate(-50%,0); }}
+  /* Tick marks entre capítulos (estilo YouTube) */
+  .chapter-segment:not(:last-child) .chapter-segment-track {{ border-right:1.5px solid rgba(255,255,255,0.18); }}
   .player-time {{ font-family:'DM Mono',monospace; font-size:0.6rem; color:var(--muted); white-space:nowrap; flex-shrink:0; }}
   .player-download {{ color:var(--muted); text-decoration:none; font-size:0.6rem; flex-shrink:0; transition:color 0.2s; }}
   .player-download:hover {{ color:var(--accent); }}
@@ -1035,6 +1069,17 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .player-meta {{ display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-top:.55rem; }}
   .player-title {{ font-size:0.65rem; color:var(--muted); letter-spacing:0.04em; }}
   .chapter-current {{ font-size:.65rem; color:var(--brand-cyan); font-weight:600; letter-spacing:.02em; text-align:right; }}
+  /* ── Chapter list (estilo YouTube) ── */
+  .chapter-list {{ display:flex; flex-wrap:wrap; gap:.4rem .6rem; margin:.6rem 0; padding:.6rem .75rem; background:rgba(148,163,184,0.05); border:1px solid rgba(148,163,184,0.1); border-radius:10px; }}
+  .chapter-list-item {{ display:flex; align-items:center; gap:.45rem; padding:.3rem .55rem .3rem .4rem; border:1px solid rgba(148,163,184,0.12); border-radius:6px; background:transparent; cursor:pointer; color:var(--text-secondary); font-family:'Inter',sans-serif; font-size:.62rem; font-weight:500; transition:all .15s ease; flex-shrink:0; }}
+  .chapter-list-item:hover,.chapter-list-item:focus-visible {{ background:rgba(148,163,184,0.08); color:var(--text-primary); border-color:rgba(148,163,184,0.25); }}
+  .chapter-list-item.is-active {{ background:rgba(37,99,235,0.12); border-color:rgba(37,99,235,0.4); color:#60a5fa; }}
+  .chapter-list-time {{ font-family:'DM Mono',monospace; font-size:.56rem; color:var(--muted); flex-shrink:0; }}
+  .chapter-list-label {{ white-space:nowrap; }}
+  .chapter-list-item.is-active .chapter-list-label {{ color:#93c5fd; }}
+  .chapter-list-icon {{ font-size:.5rem; color:var(--accent); opacity:0; transition:opacity .15s; flex-shrink:0; }}
+  .chapter-list-item.is-active .chapter-list-icon {{ opacity:1; }}
+  .chapter-list-item:hover .chapter-list-icon {{ opacity:.7; }}
 
   .section {{ padding:2.5rem 0; border-bottom:1px solid var(--border-lt); }}
   .section-header {{ display:flex; align-items:baseline; gap:0.75rem; margin-bottom:1.75rem; padding-bottom:0.75rem; border-bottom:1px solid var(--border); }}
@@ -1547,6 +1592,12 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
     chaptersContainer?.querySelectorAll('.chapter-segment').forEach((segment, index) => {{
       segment.classList.toggle('is-active', index === activeIdx);
     }});
+    // also highlight active chapter in the list
+    if (chapterList) {{
+      chapterList.querySelectorAll('.chapter-list-item').forEach((item, index) => {{
+        item.classList.toggle('is-active', index === activeIdx);
+      }});
+    }}
     if (currentChapterEl && activeIdx !== currentChapterIdx) {{
       currentChapterIdx = activeIdx;
       currentChapterEl.textContent = chapters.length === 1
@@ -1558,6 +1609,22 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
 
   bindChapterSegments();
   updateChapterProgress();
+
+  // ── Chapter list: click to seek + highlight active ──
+  const chapterList = document.getElementById('chapterList');
+  function seekToChapter(start, playerId) {{
+    const audioEl = document.getElementById(playerId || 'audioEl');
+    if (!audioEl) return;
+    audioEl.currentTime = Number(start);
+    if (audioEl.paused) audioEl.play().catch(() => {{}});
+  }}
+  if (chapterList) {{
+    chapterList.addEventListener('click', (e) => {{
+      const btn = e.target.closest('.chapter-list-item');
+      if (!btn) return;
+      seekToChapter(btn.dataset.start, btn.dataset.player);
+    }});
+  }}
 
   function togglePlay() {{
     if (!audio) return;
