@@ -547,6 +547,27 @@ def render_manha_conectada_program(episodes):
 
 
 
+def _d5n_summary(date_str):
+    """Cold open do episódio D5N a partir do manifest canônico do dia."""
+    coldopen_path = os.path.join(BASE, "manifests", "d5n", date_str, "coldopen.txt")
+    try:
+        with open(coldopen_path, encoding="utf-8") as f:
+            summary = re.sub(r"\s+", " ", f.read()).strip()
+        if not summary:
+            raise OSError("coldopen vazio")
+        summary = re.sub(
+            r"\s*Fica com a gente, o Drop Five News começa agora\.?$",
+            "",
+            summary,
+            flags=re.I,
+        ).strip()
+        if len(summary) > 235:
+            summary = summary[:232].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
+        return summary
+    except OSError:
+        return "As notícias essenciais do dia, com contexto e tecnologia, em um briefing de cinco histórias."
+
+
 def _fechamento_summary(date_str):
     source_path = os.path.join(BASE, "fechamento", "roteiros", f"source-fechamento-{date_str}.md")
     try:
@@ -658,6 +679,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
       </div>
       <div class="morning-listen morning-listen--d5n">
         <div class="morning-now" style="color:var(--d5n)"><span class="morning-live-dot" style="background:var(--d5n)"></span><span>Última edição</span><span>{data_curta}</span></div>
+        <p class="morning-summary d5n-summary" id="d5nSummary">{html_lib.escape(_d5n_summary(date))}</p>
         <div class="player-bar" style="margin:1rem 0 0">
           <div class="player-track">
         <button class="play-btn" id="playBtn" onclick="togglePlay()" aria-label="Reproduzir episódio">
@@ -1068,6 +1090,7 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   .d5n-intro p {{ position:relative; z-index:1; max-width:26rem; margin-top:1.2rem; color:var(--text-secondary); font-size:.82rem; line-height:1.65; }}
   .d5n-intro .morning-byline {{ gap:.8rem; }}
   .d5n-intro .morning-byline span {{ white-space:nowrap; }}
+  .d5n-summary {{ margin:1rem 0 0 !important; min-height:0 !important; }}
   .d5n-program .morning-listen--d5n {{ background:rgba(19,25,32,0.55); }}
 
   .weekend-notice {{ margin:2rem 0 0; padding:0.75rem 1rem; background:var(--surface); border:1px solid var(--border); border-radius:3px; display:flex; align-items:center; gap:0.75rem; opacity:0.7; }}
