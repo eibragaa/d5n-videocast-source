@@ -17,6 +17,10 @@ from urllib.parse import unquote, urlparse
 from xml.sax.saxutils import escape, quoteattr
 from zoneinfo import ZoneInfo
 
+# shared chapters (MC/FM)
+sys.path.insert(0, str(Path(__file__).parents[2]))
+from _shared_chapters import load_program_chapters, build_chapters_rss, build_chapters_description, _fmt_dur
+
 BASE_URL = "https://d5n-daily.netlify.app"
 FEED_NAME = "manha-conectada.xml"
 IMAGE_URL = f"{BASE_URL}/manha-conectada-cover.png"
@@ -36,6 +40,12 @@ class Episode:
     duration: int
     size: int
     headlines: tuple[str, ...]
+    chapters: list = None   # capítulos RSS (pode estar vazio)
+    # type: ignore[assignment]
+
+    def __post_init__(self):
+        if self.chapters is None:
+            object.__setattr__(self, 'chapters', [])
 
     @property
     def guid(self) -> str:
@@ -96,6 +106,9 @@ def load_episodes(repo: Path) -> list[Episode]:
             for item in manifest.get("sources", [])[:3]
             if str(item.get("title", "")).strip()
         )
+        # Carrega capítulos derivados do roteiro
+        chapters = load_program_chapters("manha-conectada", editorial_date.isoformat(), duration)
+
         episodes.append(
             Episode(
                 editorial_date=editorial_date,
@@ -103,6 +116,7 @@ def load_episodes(repo: Path) -> list[Episode]:
                 duration=duration,
                 size=audio_path.stat().st_size,
                 headlines=headlines,
+                chapters=chapters,
             )
         )
 
@@ -135,11 +149,22 @@ def build_feed(repo: Path) -> tuple[str, list[Episode]]:
             f"Manhã Conectada de {date_br}. Briefing das notícias que definiram "
             f"a manhã, com apresentação de Antonio. Duração: {minutes}:{seconds:02d}."
         )
+        chapters_rss = build_chapters_rss(episode.chapters, episode.enclosure_url, episode.duration)
+        chapters_desc = build_chapters_description(episode.chapters, episode.duration)
+        desc_full = description + (f"\n\n📑 Capítulos:\n{chapters_desc}" if chapters_desc else "")
         headline_html = "".join(f"<li>{escape(title)}</li>" for title in episode.headlines)
+        chapters_html = ""
+        if episode.chapters:
+            rows = "".join(
+                f'<li><strong>{escape(ch["label"])}</strong> — {_fmt_dur(float(ch["start"]))}</li>'
+                for ch in episode.chapters
+            )
+            chapters_html = f"<p>📑 <strong>Capítulos:</strong></p><ul>{rows}</ul>"
         content_html = (
             f"<p><strong>Manhã Conectada • {date_br}</strong></p>"
             f"<p>{escape(description)}</p>"
             + (f"<ul>{headline_html}</ul>" if headline_html else "")
+            + chapters_html
             + f'<p><a href="{BASE_URL}/#manha-conectada">Ouça no site</a></p>'
         )
         items.append(
@@ -156,8 +181,9 @@ def build_feed(repo: Path) -> tuple[str, list[Episode]]:
       <enclosure url={quoteattr(episode.enclosure_url)} length="{episode.size}" type="audio/mpeg"/>
       <pubDate>{format_datetime(published)}</pubDate>
       <description>{escape(description)}</description>
-      <itunes:summary>{escape(description)}</itunes:summary>
+      <itunes:summary>{escape(desc_full)}</itunes:summary>
       <content:encoded><![CDATA[{content_html}]]></content:encoded>
+{chapters_rss}
     </item>"""
         )
 
@@ -167,7 +193,9 @@ def build_feed(repo: Path) -> tuple[str, list[Episode]]:
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
      xmlns:atom="http://www.w3.org/2005/Atom"
      xmlns:content="http://purl.org/rss/1.0/modules/content/"
-     xmlns:podcast="https://podcastindex.org/namespace/1.0">
+     xmlns:podcast="https://podcastindex.org/namespace/1.0"
+     xmlns:psrc="https://podcastindex.org/namespace/podcast/chapters"
+     xmlns:psc="http://podlove.org/player's/models/chapters">
   <channel>
     <title>Manhã Conectada</title>
     <link>{BASE_URL}/#manha-conectada</link>
