@@ -341,7 +341,10 @@
   .morning-play { display:grid; width:38px; height:38px; flex:0 0 38px; place-items:center; border:0; border-radius:50%; background:var(--morning); color:#151006; cursor:pointer; font-size:.72rem; transition:transform .18s ease,filter .18s ease; }
   .morning-play:hover { transform:translateY(-1px); filter:brightness(1.08); }
   .morning-progress { position:relative; height:7px; min-width:90px; flex:1; overflow:hidden; border-radius:999px; background:#493b21; cursor:pointer; }
-  .morning-progress span { display:block; width:0; height:100%; border-radius:inherit; background:var(--morning); transition:width .1s linear; }
+  .morning-progress > span { display:block; width:0; height:100%; border-radius:inherit; background:var(--morning); transition:width .1s linear; }
+  .morning-progress span.chapter-segment-track, .fechamento-program .morning-progress span.chapter-segment-track { width:auto; }
+  .morning-progress .chapter-segment-track { background:#493b21; }
+  .morning-progress .chapter-segment.is-active .chapter-segment-track { background:#5d4c2c; }
   .morning-time { color:#c8b98f; font-family:'DM Mono',monospace; font-size:.58rem; white-space:nowrap; }
   .morning-download { display:grid; width:28px; height:28px; place-items:center; color:var(--morning); border:1px solid var(--morning-line); border-radius:7px; text-decoration:none; }
   .morning-history { display:flex; align-items:stretch; gap:.45rem; margin-top:1rem; overflow-x:auto; scrollbar-width:thin; }
@@ -365,7 +368,9 @@
   .fechamento-program h2 strong { color:var(--fechamento) !important; }
   .fechamento-program .morning-player { background:rgba(14,165,233,0.08) !important; border-color:var(--fechamento-line) !important; }
   .fechamento-program .morning-progress { background:#0f2a3d !important; }
-  .fechamento-program .morning-progress span { background:var(--fechamento) !important; }
+  .fechamento-program .morning-progress > span { background:var(--fechamento) !important; }
+  .fechamento-program .morning-progress .chapter-segment-track { background:#0f2a3d !important; }
+  .fechamento-program .morning-progress .chapter-segment.is-active .chapter-segment-track { background:#154a6a !important; }
   .fechamento-program .morning-time { color:#7dd3fc !important; }
   .fechamento-program .morning-download { border-color:var(--fechamento-line) !important; color:var(--fechamento) !important; }
   .fechamento-program .morning-play { background:var(--fechamento) !important; color:#052030 !important; }
