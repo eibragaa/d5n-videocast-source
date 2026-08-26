@@ -985,11 +985,13 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
 <meta property="og:title" content="Drop Five News — notícias essenciais para o seu dia">
 <meta property="og:description" content="Brasil, mundo e tecnologia com contexto, curadoria e um novo episódio de segunda a sábado.">
 <meta property="og:url" content="https://d5n-daily.netlify.app/">
-<meta property="og:image" content="https://d5n-daily.netlify.app/social-card.png">
+<meta property="og:image" content="https://d5n-daily.netlify.app/podcast-cover.jpg">
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="1400">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Drop Five News">
 <meta name="twitter:description" content="Notícias essenciais e contexto em um podcast diário.">
-<meta name="twitter:image" content="https://d5n-daily.netlify.app/social-card.png">
+<meta name="twitter:image" content="https://d5n-daily.netlify.app/podcast-cover.jpg">
 <title>Drop Five News — {data_br}</title>
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"PodcastSeries","name":"Drop Five News","url":"https://d5n-daily.netlify.app/","description":"Notícias essenciais, contexto e tecnologia em um podcast diário.","inLanguage":"pt-BR"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
