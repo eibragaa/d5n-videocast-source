@@ -250,7 +250,7 @@
   .player-bar .player-track, .player-bar .player-meta { position:relative; z-index:1; }
   /* D5N box com header padrão grid 2col (igual MC/FM) — classes reutilizadas */
   .d5n-program { display:grid; grid-template-columns:minmax(230px,.82fr) minmax(0,1.35fr); margin:3rem 0 2.5rem; overflow:hidden; border:1px solid var(--d5n-line); border-radius:14px; background:var(--d5n-deep); box-shadow:inset 0 1px rgba(255,255,255,.025); position:relative; }
-  .d5n-program::before { content:""; position:absolute; inset:0; background-image:url("/podcast-cover.png"); background-size:cover; background-position:center; opacity:0.10; pointer-events:none; z-index:0; }
+  .d5n-program::before { content:""; position:absolute; inset:0; background-image:url("/podcast-cover.jpg"); background-size:cover; background-position:center; opacity:0.10; pointer-events:none; z-index:0; }
   .d5n-intro { position:relative; padding:2rem; border-right:1px solid var(--d5n-line); background:rgba(17,26,43,0.88); overflow:hidden; backdrop-filter:blur(1px); z-index:1; }
   .d5n-intro::after { content:'05'; position:absolute; right:-.15rem; bottom:-1.3rem; color:transparent; -webkit-text-stroke:1px rgba(148,163,184,.14); font-size:8.5rem; font-weight:700; line-height:1; letter-spacing:-.08em; pointer-events:none; }
   .d5n-kicker { display:flex; align-items:center; gap:.55rem; margin-bottom:1.3rem; color:var(--d5n); font-size:.63rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
@@ -368,8 +368,8 @@
   .morning-program.visible { animation:fadeSlideUp .5s ease both; }
   .morning-program { position:relative; }
   .morning-program::before { content:""; position:absolute; inset:0; background-size:cover; background-position:center; opacity:0.14; pointer-events:none; z-index:0; }
-  .morning-program#manha-conectada::before { background-image:url("/manha-conectada/assets/manha-conectada-cover.png"); }
-  .morning-program#fechamento::before { background-image:url("/fechamento/assets/fechamento-cover.png"); }
+  .morning-program#manha-conectada::before { background-image:url("/manha-conectada-cover.jpg"); }
+  .morning-program#fechamento::before { background-image:url("/fechamento-cover.jpg"); }
   .morning-program .morning-intro, .morning-program .morning-listen { position:relative; z-index:1; }
   /* Fechamento — identidade própria noite petróleo, distinta de Manhã âmbar */
   .fechamento-program { border-color:var(--fechamento-line) !important; background:var(--fechamento-deep) !important; }
