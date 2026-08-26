@@ -1,0 +1,54 @@
+{
+  "schema": 2,
+  "editorial_date": "2026-08-26",
+  "audio_duration": 631.693,
+  "chapters": [
+    {
+      "id": "intro",
+      "start": 0.0,
+      "end": 44.366
+    },
+    {
+      "id": "mundo",
+      "start": 44.366,
+      "end": 175.508
+    },
+    {
+      "id": "brasil",
+      "start": 175.508,
+      "end": 303.58
+    },
+    {
+      "id": "tecnologia",
+      "start": 303.58,
+      "end": 433.066
+    },
+    {
+      "id": "economia",
+      "start": 433.066,
+      "end": 549.184
+    },
+    {
+      "id": "interacao",
+      "start": 549.184,
+      "end": 563.956
+    },
+    {
+      "id": "frase",
+      "start": 563.956,
+      "end": 577.134
+    },
+    {
+      "id": "outro",
+      "start": 577.134,
+      "end": 631.664
+    }
+  ],
+  "section_headers": {
+    "mundo": "mundo_header.mp3",
+    "brasil": "brasil_header.mp3",
+    "tecnologia": "tecnologia_header.mp3",
+    "economia": "economia_header.mp3",
+    "frase": "frase_header.mp3"
+  }
+}
