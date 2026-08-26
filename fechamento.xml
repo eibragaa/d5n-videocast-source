@@ -18,7 +18,7 @@
       <itunes:name>Jean Braga</itunes:name>
       <itunes:email>eibragaa@gmail.com</itunes:email>
     </itunes:owner>
-    <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.png"/>
+    <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
     <itunes:complete>no</itunes:complete>
@@ -31,7 +31,7 @@
     <atom:link href="https://d5n-daily.netlify.app/fechamento.xml" rel="self" type="application/rss+xml"/>
     <lastBuildDate>Wed, 26 Aug 2026 17:30:00 -0300</lastBuildDate>
     <image>
-      <url>https://d5n-daily.netlify.app/fechamento-cover.png</url>
+      <url>https://d5n-daily.netlify.app/fechamento-cover.jpg</url>
       <title>Fechamento do Mercado</title>
       <link>https://d5n-daily.netlify.app/#fechamento</link>
     </image>
@@ -44,7 +44,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>07:53</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg"/>
       <guid isPermaLink="false">fechamento-2026-08-26</guid>
       <link>https://d5n-daily.netlify.app/#fechamento</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/fechamento-2026-08-26.mp3" length="11364562" type="audio/mpeg"/>
@@ -84,7 +84,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:38</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg"/>
       <guid isPermaLink="false">fechamento-2026-08-24</guid>
       <link>https://d5n-daily.netlify.app/#fechamento</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/fechamento-2026-08-24.mp3" length="12427223" type="audio/mpeg"/>
@@ -124,7 +124,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:16</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg"/>
       <guid isPermaLink="false">fechamento-2026-08-22</guid>
       <link>https://d5n-daily.netlify.app/#fechamento</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/fechamento-2026-08-22.mp3" length="11906864" type="audio/mpeg"/>

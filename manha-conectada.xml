@@ -18,7 +18,7 @@
       <itunes:name>Jean Braga</itunes:name>
       <itunes:email>eibragaa@gmail.com</itunes:email>
     </itunes:owner>
-    <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+    <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
     <itunes:complete>no</itunes:complete>
@@ -31,7 +31,7 @@
     <atom:link href="https://d5n-daily.netlify.app/manha-conectada.xml" rel="self" type="application/rss+xml"/>
     <lastBuildDate>Wed, 26 Aug 2026 11:00:00 -0300</lastBuildDate>
     <image>
-      <url>https://d5n-daily.netlify.app/manha-conectada-cover.png</url>
+      <url>https://d5n-daily.netlify.app/manha-conectada-cover.jpg</url>
       <title>Manhã Conectada</title>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
     </image>
@@ -44,7 +44,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:23</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
       <guid isPermaLink="false">manha-conectada-2026-08-26</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-26.mp3" length="9186576" type="audio/mpeg"/>
@@ -90,7 +90,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>05:48</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
       <guid isPermaLink="false">manha-conectada-2026-08-25</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-25.mp3" length="8352748" type="audio/mpeg"/>
@@ -136,7 +136,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:26</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
       <guid isPermaLink="false">manha-conectada-2026-08-24</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-24.mp3" length="9264944" type="audio/mpeg"/>
@@ -182,7 +182,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>04:56</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
       <guid isPermaLink="false">manha-conectada-2026-08-17</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-17.mp3" length="7095736" type="audio/mpeg"/>
@@ -228,7 +228,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:16</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
       <guid isPermaLink="false">manha-conectada-2026-08-14</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-14.mp3" length="9031096" type="audio/mpeg"/>
@@ -274,7 +274,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>05:18</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
       <guid isPermaLink="false">manha-conectada-2026-08-11</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-11.mp3" length="7631141" type="audio/mpeg"/>
@@ -320,7 +320,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>04:40</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
       <guid isPermaLink="false">manha-conectada-2026-08-10</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-10.mp3" length="6726469" type="audio/mpeg"/>
@@ -366,7 +366,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>04:57</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
       <guid isPermaLink="false">manha-conectada-2026-07-31</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-31.mp3" length="7123948" type="audio/mpeg"/>
@@ -412,7 +412,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>05:34</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
       <guid isPermaLink="false">manha-conectada-2026-07-30</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-30.mp3" length="8004797" type="audio/mpeg"/>
@@ -458,7 +458,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>04:46</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
       <guid isPermaLink="false">manha-conectada-2026-07-29</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-29.mp3" length="6870038" type="audio/mpeg"/>
@@ -504,7 +504,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>05:00</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
       <guid isPermaLink="false">manha-conectada-2026-07-28</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-28.mp3" length="7194165" type="audio/mpeg"/>
@@ -550,7 +550,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>04:49</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
       <guid isPermaLink="false">manha-conectada-2026-07-27</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-27.mp3" length="6940255" type="audio/mpeg"/>
@@ -596,7 +596,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>04:45</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
       <guid isPermaLink="false">manha-conectada-2026-07-24</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-24.mp3" length="6848722" type="audio/mpeg"/>
@@ -627,7 +627,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>05:24</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
       <guid isPermaLink="false">manha-conectada-2026-07-23</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-23.mp3" length="7783488" type="audio/mpeg"/>
@@ -673,7 +673,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>04:58</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
       <guid isPermaLink="false">manha-conectada-2026-07-21</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-21.mp3" length="7157803" type="audio/mpeg"/>
@@ -719,7 +719,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>04:54</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
       <guid isPermaLink="false">manha-conectada-2026-07-20</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-20.mp3" length="7056865" type="audio/mpeg"/>
