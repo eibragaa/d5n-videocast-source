@@ -329,6 +329,97 @@ def load_episode_chapters(date_str, duration):
         return []
 
 
+# Capítulos dos programas curtos (MC/FM): derivados da estrutura do roteiro.
+MC_CHAPTER_LABELS = [
+    "Abertura", "Agenda", "Clima & País", "Mundo", "Tecnologia",
+    "Economia", "Sinal 11", "Encerramento",
+]
+FM_CHAPTER_LABELS = [
+    "Abertura", "Bolsa", "Câmbio", "Fluxo estrangeiro",
+    "Empresas & Radar Amanhã", "Encerramento",
+]
+
+
+def _paragraph_chapters(source_path, labels, duration, lead=1.8):
+    """Divide a duração entre os parágrafos temáticos do roteiro aprovado.
+
+    O mixer antecede a locução com um lead instrumental (`lead` segundos) e
+    insere respiros de tema entre parágrafos; a divisão proporcional por
+    caracteres reproduz as fronteiras com erro pequeno e estável.
+    """
+    try:
+        with open(source_path, encoding="utf-8") as source_file:
+            content = source_file.read()
+    except OSError:
+        return []
+    match = re.search(
+        r"## Roteiro aprovado\s+(.+?)(?:\n\s*\n## |\Z)", content, flags=re.S
+    )
+    if not match:
+        return []
+    paragraphs = [
+        re.sub(r"\s+", " ", block).strip()
+        for block in match.group(1).split("\n\n")
+        if len(block.strip()) > 80
+    ]
+    if not paragraphs:
+        return []
+    # Sempre abre com Abertura (lead) e fecha com Encerramento (último parágrafo).
+    usable = paragraphs[:-1] if len(paragraphs) > 2 else paragraphs
+    middle = max(0, len(labels) - 2)
+    weights = [max(40, len(p)) for p in usable[:middle]] or [1]
+    total_weight = sum(weights)
+    speakable = max(10.0, duration - lead)
+    chapters = [{"id": "intro", "label": labels[0], "start": 0.0}]
+    cursor = lead
+    for index, weight in enumerate(weights):
+        span = speakable * 0.92 * weight / total_weight
+        chapters.append({
+            "id": f"seg{index}",
+            "label": labels[1 + index] if 1 + index < len(labels) - 1 else labels[-2],
+            "start": round(cursor, 3),
+        })
+        cursor += span
+    last = labels[-1] if len(labels) > 1 else labels[0]
+    chapters.append({"id": "outro", "label": last, "start": round(max(cursor, duration * 0.9), 3)})
+    # Normaliza: end/duration coerentes e monotonia garantida.
+    normalized = []
+    for index, chapter in enumerate(chapters):
+        start = min(chapter["start"], duration - 1.0)
+        end = chapters[index + 1]["start"] if index + 1 < len(chapters) else duration
+        end = min(end, duration)
+        if index > 0 and end <= start:
+            return []
+        normalized.append({
+            "id": chapter["id"],
+            "label": chapter["label"],
+            "start": round(start, 3),
+            "end": round(end, 3),
+            "duration": round(end - start, 3),
+        })
+    return normalized
+
+
+def load_program_chapters(kind, date_str, duration):
+    """Capítulos MC/FM: usa manifesto dedicado se existir; senão deriva do roteiro."""
+    dedicated = os.path.join(BASE, kind, "chapters", f"{date_str}.json")
+    try:
+        with open(dedicated, encoding="utf-8") as chapter_file:
+            manifest = json.load(chapter_file)
+        chapters = validate_chapters(manifest.get("chapters"), duration)
+        if chapters:
+            return chapters
+    except (OSError, TypeError, ValueError, json.JSONDecodeError):
+        pass
+    if kind == "manha-conectada":
+        source_path = os.path.join(BASE, kind, "roteiros", f"source-manha-{date_str}.md")
+        labels = MC_CHAPTER_LABELS
+    else:
+        source_path = os.path.join(BASE, kind, "roteiros", f"source-fechamento-{date_str}.md")
+        labels = FM_CHAPTER_LABELS
+    return _paragraph_chapters(source_path, labels, duration)
+
+
 def render_chapter_segments(chapters):
     """Renderiza segmentos proporcionais, clicáveis e acessíveis como no YouTube."""
     rendered = []
@@ -482,6 +573,7 @@ def load_manha_conectada_episodes(limit=None):
                 "dur_str": f"{duration // 60}:{duration % 60:02d}",
                 "presenter": "Antonio" if "Antonio" in voice else voice,
                 "summary": _manha_summary(date_str),
+                "chapters": load_program_chapters("manha-conectada", date_str, duration),
                 "words": int(manifest.get("text_gate", {}).get("words", 0) or 0),
             })
         except (OSError, TypeError, ValueError, json.JSONDecodeError):
@@ -532,7 +624,7 @@ def render_manha_conectada_program(episodes):
           <span id="morningPlayGlyph" aria-hidden="true">▶</span>
         </button>
         <div class="morning-progress" id="morningProgress" role="slider" tabindex="0" aria-label="Progresso da Manhã Conectada" aria-valuemin="0" aria-valuemax="{latest["duration"]}" aria-valuenow="0">
-          <div class="player-chapters" id="morningChapters" data-chapters="[]"><div class="chapter-segment" style="--chapter-weight:1" data-chapter-index="0"><span class="chapter-segment-track"><span class="chapter-segment-fill" id="morningProgressFill"></span></span><span class="chapter-tooltip">Manhã Conectada<small>00:00</small></span></div></div>
+          <div class="player-chapters" id="morningChapters" data-chapters="{chapters_data_attribute(latest["chapters"])}">{render_chapter_segments(latest["chapters"])}</div>
         </div>
         <span class="morning-time" id="morningTime">0:00 / {latest["dur_str"]}</span>
         <a class="morning-download" id="morningDownload" href="{html_lib.escape(latest["path"], quote=True)}" download aria-label="Baixar esta edição">↓</a>
@@ -602,7 +694,7 @@ def load_fechamento_episodes(limit=None):
             if (str(manifest.get("program", "")).strip().upper() != "FECHAMENTO DO MERCADO" or manifest.get("prototype") is not False or output_name != expected_file or not os.path.isfile(audio_path) or duration <= 0):
                 continue
             voice = str(manifest.get("voice", ""))
-            episodes.append({"date": date_str, "date_label": format_data_curta(date_str), "file": expected_file, "path": f"/audio/{expected_file}", "duration": duration, "dur_str": f"{duration // 60}:{duration % 60:02d}", "presenter": "Antonio" if "Antonio" in voice else voice, "summary": _fechamento_summary(date_str), "words": int(manifest.get("text_gate", {}).get("words", 0) or 0)})
+            episodes.append({"date": date_str, "date_label": format_data_curta(date_str), "file": expected_file, "path": f"/audio/{expected_file}", "duration": duration, "dur_str": f"{duration // 60}:{duration % 60:02d}", "presenter": "Antonio" if "Antonio" in voice else voice, "summary": _fechamento_summary(date_str), "chapters": load_program_chapters("fechamento", date_str, duration), "words": int(manifest.get("text_gate", {}).get("words", 0) or 0)})
         except (OSError, TypeError, ValueError, json.JSONDecodeError):
             continue
         if limit is not None and len(episodes) >= limit:
@@ -617,7 +709,7 @@ def render_fechamento_program(episodes):
     for i, ep in enumerate(episodes):
         active = " is-active" if i == 0 else ""
         btns.append('<button type="button" class="morning-episode fechamento-episode' + active + '" data-audio="' + html_lib.escape(ep["path"], quote=True) + '" data-date="' + html_lib.escape(ep["date_label"], quote=True) + '" data-duration="' + str(ep["duration"]) + '" data-summary="' + html_lib.escape(ep["summary"], quote=True) + '" onclick="selectFechamentoEpisode(this)" aria-label="Ouvir Fechamento de ' + html_lib.escape(ep["date_label"], quote=True) + '"><span>' + html_lib.escape(ep["date_label"]) + '</span><small>' + ep["dur_str"] + '</small></button>')
-    return '<section class="morning-program fechamento-program" id="fechamento" data-animate aria-labelledby="fechamentoTitle"><div class="morning-intro fechamento-intro"><div class="morning-kicker fechamento-kicker"><span class="morning-sun fechamento-sun" aria-hidden="true"></span> Edição das 17h</div><h2 id="fechamentoTitle">Fechamento<br><strong>do Mercado</strong></h2><p>O pregao em contexto — numeros, porques e o Radar Amanha.</p><div class="morning-byline"><span>Com Antonio</span><span>Seg–Sex \u00b7 17h</span></div></div><div class="morning-listen"><div class="morning-now"><span class="morning-live-dot fechamento-dot" aria-hidden="true"></span><span id="fechamentoDate">' + html_lib.escape(latest["date_label"]) + '</span><span>Ultima edicao</span></div><p class="morning-summary" id="fechamentoSummary">' + html_lib.escape(latest["summary"]) + '</p><div class="morning-player"><button class="morning-play" id="fechamentoPlayBtn" type="button" onclick="toggleFechamentoPlay()" aria-label="Reproduzir Fechamento"><span id="fechamentoPlayGlyph" aria-hidden="true">\u25b6</span></button><div class="morning-progress" id="fechamentoProgress" role="slider" tabindex="0" aria-label="Progresso do Fechamento" aria-valuemin="0" aria-valuemax="' + str(latest["duration"]) + '" aria-valuenow="0"><div class="player-chapters" id="fechamentoChapters" data-chapters="[]"><div class="chapter-segment" style="--chapter-weight:1" data-chapter-index="0"><span class="chapter-segment-track"><span class="chapter-segment-fill" id="fechamentoProgressFill"></span></span><span class="chapter-tooltip">Fechamento do Mercado<small>00:00</small></span></div></div></div><span class="morning-time" id="fechamentoTime">0:00 / ' + latest["dur_str"] + '</span><a class="morning-download" id="fechamentoDownload" href="' + html_lib.escape(latest["path"], quote=True) + '" download>\u2193</a></div><audio id="fechamentoAudio" src="' + html_lib.escape(latest["path"], quote=True) + '" preload="metadata"></audio><div class="morning-history" aria-label="Edicoes do Fechamento"><span class="morning-history-label">Arquivo</span>' + ''.join(btns) + '</div></div></section>'
+    return '<section class="morning-program fechamento-program" id="fechamento" data-animate aria-labelledby="fechamentoTitle"><div class="morning-intro fechamento-intro"><div class="morning-kicker fechamento-kicker"><span class="morning-sun fechamento-sun" aria-hidden="true"></span> Edição das 17h</div><h2 id="fechamentoTitle">Fechamento<br><strong>do Mercado</strong></h2><p>O pregao em contexto — numeros, porques e o Radar Amanha.</p><div class="morning-byline"><span>Com Antonio</span><span>Seg–Sex \u00b7 17h</span></div></div><div class="morning-listen"><div class="morning-now"><span class="morning-live-dot fechamento-dot" aria-hidden="true"></span><span id="fechamentoDate">' + html_lib.escape(latest["date_label"]) + '</span><span>Ultima edicao</span></div><p class="morning-summary" id="fechamentoSummary">' + html_lib.escape(latest["summary"]) + '</p><div class="morning-player"><button class="morning-play" id="fechamentoPlayBtn" type="button" onclick="toggleFechamentoPlay()" aria-label="Reproduzir Fechamento"><span id="fechamentoPlayGlyph" aria-hidden="true">\u25b6</span></button><div class="morning-progress" id="fechamentoProgress" role="slider" tabindex="0" aria-label="Progresso do Fechamento" aria-valuemin="0" aria-valuemax="' + str(latest["duration"]) + '" aria-valuenow="0"><div class="player-chapters" id="fechamentoChapters" data-chapters="' + chapters_data_attribute(latest["chapters"]) + '">' + render_chapter_segments(latest["chapters"]) + '</div></div><span class="morning-time" id="fechamentoTime">0:00 / ' + latest["dur_str"] + '</span><a class="morning-download" id="fechamentoDownload" href="' + html_lib.escape(latest["path"], quote=True) + '" download>\u2193</a></div><audio id="fechamentoAudio" src="' + html_lib.escape(latest["path"], quote=True) + '" preload="metadata"></audio><div class="morning-history" aria-label="Edicoes do Fechamento"><span class="morning-history-label">Arquivo</span>' + ''.join(btns) + '</div></div></section>'
 
 def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage_data=None, voice=None):
     n = len(noticias)
@@ -1502,13 +1594,26 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   }}
 
   // ── Player independente da Manhã Conectada ──
+  let morningChaptersData = [];
+  try {{ morningChaptersData = JSON.parse(document.getElementById('morningChapters')?.dataset.chapters || '[]'); }} catch (e) {{}}
   function updateMorningPlayer() {{
     if (!morningAudio) return;
     const current = Number(morningAudio.currentTime || 0);
     const fallbackDuration = Number(morningProgress?.getAttribute('aria-valuemax') || 0);
     const duration = Number(morningAudio.duration || fallbackDuration);
     const pct = duration ? Math.min(100, Math.max(0, current / duration * 100)) : 0;
-    if (morningProgressFill) morningProgressFill.style.width = `${{pct}}%`;
+    if (morningChaptersData.length) {{
+      let activeIdx = 0;
+      morningChaptersData.forEach((chapter, index) => {{
+        const start = Number(chapter.start || 0);
+        const end = Number(chapter.end || duration || start + 1);
+        const progress = current <= start ? 0 : current >= end ? 100 : ((current - start) / Math.max(.001, end - start)) * 100;
+        const fill = document.querySelector(`#morningChapters [data-chapter-index="${{index}}"] .chapter-segment-fill`);
+        if (fill) fill.style.width = `${{Math.max(0, Math.min(100, progress))}}%`;
+        if (current >= start) activeIdx = index;
+      }});
+      document.querySelectorAll('#morningChapters .chapter-segment').forEach((segment, index) => segment.classList.toggle('is-active', index === activeIdx));
+    }} else if (morningProgressFill) morningProgressFill.style.width = `${{pct}}%`;
     if (morningTime) morningTime.textContent = `${{fmt(current)}} / ${{fmt(duration)}}`;
     if (morningProgress) {{
       morningProgress.setAttribute('aria-valuenow', String(Math.floor(current)));
@@ -1555,11 +1660,24 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   const fechamentoTime = document.getElementById('fechamentoTime');
   const fechamentoPlayBtn = document.getElementById('fechamentoPlayBtn');
   const fechamentoPlayGlyph = document.getElementById('fechamentoPlayGlyph');
+  let fechamentoChaptersData = [];
+  try {{ fechamentoChaptersData = JSON.parse(document.getElementById('fechamentoChapters')?.dataset.chapters || '[]'); }} catch (e) {{}}
   function updateFechamentoPlayer() {{
     if (!fechamentoAudio) return;
     const cur = fechamentoAudio.currentTime || 0;
     const dur = fechamentoAudio.duration || parseInt(fechamentoProgress?.dataset.duration || fechamentoProgress?.getAttribute('aria-valuemax') || '0', 10) || 0;
-    if (fechamentoProgressFill) fechamentoProgressFill.style.width = dur ? (cur/dur*100)+'%' : '0';
+    if (fechamentoChaptersData.length) {{
+      let activeIdx = 0;
+      fechamentoChaptersData.forEach((chapter, index) => {{
+        const start = Number(chapter.start || 0);
+        const end = Number(chapter.end || dur || start + 1);
+        const progress = cur <= start ? 0 : cur >= end ? 100 : ((cur - start) / Math.max(.001, end - start)) * 100;
+        const fill = document.querySelector(`#fechamentoChapters [data-chapter-index="${{index}}"] .chapter-segment-fill`);
+        if (fill) fill.style.width = `${{Math.max(0, Math.min(100, progress))}}%`;
+        if (cur >= start) activeIdx = index;
+      }});
+      document.querySelectorAll('#fechamentoChapters .chapter-segment').forEach((segment, index) => segment.classList.toggle('is-active', index === activeIdx));
+    }} else if (fechamentoProgressFill) fechamentoProgressFill.style.width = dur ? (cur/dur*100)+'%' : '0';
     if (fechamentoTime) fechamentoTime.textContent = fmt(cur) + ' / ' + fmt(dur);
     if (fechamentoProgress) fechamentoProgress.setAttribute('aria-valuenow', String(Math.floor(cur)));
     if (dur) fechamentoProgress.setAttribute('aria-valuemax', String(Math.floor(dur)));
