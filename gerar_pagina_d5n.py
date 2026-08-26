@@ -1209,8 +1209,8 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   @media (max-width:600px) {{
     .hero {{ padding:3rem 0 2rem; }} .hero::after {{ font-size:5rem; top:1rem; }}
     .hero-sub {{ gap:.8rem; flex-wrap:wrap; }} .divider-v {{ display:none; }}
-    .player-bar {{ padding:1rem; }} .player-track {{ flex-wrap:wrap; }}
-    .player-progress {{ order:5; flex-basis:100%; margin-top:.4rem; height:12px; }}
+    .player-bar {{ padding:1rem; }} .player-track {{ flex-wrap:wrap; row-gap:.55rem; }}
+    .player-progress {{ order:5; flex-basis:100%; margin-top:.2rem; height:12px; }}
     .player-meta {{ align-items:flex-start; flex-direction:column; gap:.2rem; }}
     .chapter-current {{ text-align:left; }}
     .player-title {{ font-size:.72rem; }} .edition-badge {{ display:none; }}
