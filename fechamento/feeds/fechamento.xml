@@ -27,7 +27,7 @@
     <podcast:locked owner="eibragaa@gmail.com">no</podcast:locked>
     <podcast:guid>fechamento.d5n-daily.netlify.app</podcast:guid>
     <atom:link href="https://d5n-daily.netlify.app/fechamento.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 24 Aug 2026 17:30:00 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 17:30:00 -0300</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/fechamento-cover.png</url>
       <title>Fechamento do Mercado</title>
@@ -35,6 +35,22 @@
     </image>
     <copyright>© 2026 Drop Five News</copyright>
     <generator>D5N Pipeline — Fechamento do Mercado</generator>
+    <item>
+      <title>Fechamento do Mercado — 26/08/2026</title>
+      <itunes:title>Fechamento do Mercado — 26/08/2026</itunes:title>
+      <itunes:episode>3</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>07:53</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.png"/>
+      <guid isPermaLink="false">fechamento-2026-08-26</guid>
+      <link>https://d5n-daily.netlify.app/#fechamento</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/fechamento-2026-08-26.mp3" length="11364562" type="audio/mpeg"/>
+      <pubDate>Wed, 26 Aug 2026 17:30:00 -0300</pubDate>
+      <description>Fechamento do Mercado de 26/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:53.</description>
+      <itunes:summary>Fechamento do Mercado de 26/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:53.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Fechamento do Mercado • 26/08/2026</strong></p><p>Fechamento do Mercado de 26/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:53.</p><ul><li>Fechamento (25/08) | Ibovespa fecha em nova alta, de 1,55%, aos 174.576 pontos - InvesTalk</li><li>Ibovespa fecha em alta, mesmo com queda do petróleo derrubando petroleiras - InfoMoney</li><li>Ibovespa dispara 1,55% e volta aos 174 mil pontos com Vale (VALE3) e bancos - suno.com.br</li></ul><p><a href="https://d5n-daily.netlify.app/#fechamento">Ouça no site</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>Fechamento do Mercado — 24/08/2026</title>
       <itunes:title>Fechamento do Mercado — 24/08/2026</itunes:title>

@@ -1,0 +1,203 @@
+{
+  "program": "FECHAMENTO DO MERCADO",
+  "date": "2026-08-26",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/fechamento/audio/fechamento-2026-08-26.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/fechamento/roteiros/source-fechamento-2026-08-26.md",
+  "sha256": "fca9a94e59e9d3516fcd9e30f3fe6275743828bda3f37f35f0156a4cc54b19b4",
+  "text_gate": {
+    "words": 1170,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 473.49551,
+    "size": 11364562,
+    "bit_rate": 192011,
+    "lufs": -16.98,
+    "true_peak_dbtp": -1.7,
+    "lra": 2.9
+  },
+  "sources": [
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Fechamento (25/08) | Ibovespa fecha em nova alta, de 1,55%, aos 174.576 pontos - InvesTalk",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE00OFZld1RhU3VyQko5cjJwVjl2MWgzV2NZblRPV1dtZURjSmJXcDFESWt6eXJDXzdrdVYxQi12a2VGdkNydF9YU3hJZnFFemFrS21qS08zTjcwNFg0UFM1N3NiaFAtRjQtOTJCczZyZl9VaXJIMlE?oc=5",
+      "source": "InvesTalk",
+      "published": "Tue, 25 Aug 2026 20:40:08 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa fecha em alta, mesmo com queda do petróleo derrubando petroleiras - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPbzRpZXE5Y2ZZZ0tVQ29WZkZ4SDd0eUkzeGtFTEJtajI3OWVvNTlkVWJUdktiWHE5dTZ3bEZOdUJxb0JVeEtZU2poZVUxNDFQbnBJOUo1aVEyMU9LU3RTbDcxS3l3SXRQRnNUZS1YdVA1VW5xTTJTazFZT25ZeU5QYWFn0gGHAUFVX3lxTE00YUc2UkRTbmpIM1hrM2hVVi1ZNzI1TE9QTXdiVlBTYVljM3ZPZ1hNX0h4Si1RVFNWbHZiX21OQUZEN3V3V2JmZGY3ZHJnTjBBSXp2RG41VmNlMW1ad1E3YzcxSUlCdEZIZXY0SGFRXzFaSkc5bkt6NUJaeFhmaHNKWlR5czZ2cw?oc=5",
+      "source": "InfoMoney",
+      "published": "Tue, 25 Aug 2026 21:04:48 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa dispara 1,55% e volta aos 174 mil pontos com Vale (VALE3) e bancos - suno.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNMWg5d2FwM2Nfdzl1Y0RDazNTSThBRlluVjFVTm16cWpnX01GRFRxeEVjd091dXc4djQ2QldOZUUxNUFPemhuOGZXUVdScm9RQ3IwZkF6Z3lEZUVfWGhLQjhsd3lUZ096Njc5UC0zNk9Td0hVVTZ1Z1ByQVBNbVZOXzFsbjVxWlhsOGfSAYoBQVVfeXFMTTFoOXdhcDNjX3c5dWNEQ2szU0k4QUZZblYxVU5tenFqZ19NRkRUcXhFY3dPdXV3OHY0NkJXTmVFMTVBT3pobjhmV1FXUnJvUUNyMGZBemd5RGVFX1hoS0I4bHd5VGdPejY3OVAtMzZPU3dIVVU2dWdQckFQTW1WTl8xbG41cVpYbDhn?oc=5",
+      "source": "suno.com.br",
+      "published": "Tue, 25 Aug 2026 21:55:03 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa sobe 1,55% com exterior positivo e cenário eleitoral; Petrobras recua - Bloomberg Línea Brasil",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQWE9fOFRCaDZXTWNxSVN1QS1JRzRSZ3dRR21hV2JlU1Z2cVZhM0NRRnVTd0tZVlRxV1MtbmJza2ZEdGZQeXFEVGY2Q01fVF9nX3B0ajY0LXk4eURCemZDTW1OQ2hUTVZScHhCampNLTIzX1NFcGRFVEg4X09zOVEzM3lWbjJBSXlOdzBVNW9mQW5POC10blYtRDdGczBYMVExcGtrbWZSTVFSeXk5dTQwams4M0VxWEZNZVBHRUhQNGpuZGhaM2FtakZTSkdOb3PSAc8BQVVfeXFMUFhPXzhUQmg2V01jcUlTdUEtSUc0Umd3UUdtYVdiZVNWdnFWYTNDUUZ1U3dLWVZUcVdTLW5ic2tmRHRmUHlxRFRmNkNNX1RfZ19wdGo2NC15OHlEQnpmQ01tTkNoVE1WUnB4QmpqTS0yM19TRXBkRVRIOF9PczlRMzN5Vm4yQUl5TncwVTVvZkFuTzgtdG5WLUQ3RnMwWDFRMXBra21mUk1RUnl5OXU0MGprODNFcVhGTWVQR0VIUDRqbmRoWjNhbWpGU0pHTm9z?oc=5",
+      "source": "Bloomberg Línea Brasil",
+      "published": "Tue, 25 Aug 2026 18:33:00 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Dólar cai a R$ 5,14 e Ibovespa tem forte alta com otimismo no exterior - UOL Economia",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNTWx1Zk5xS0EwR0xva002YUR6dVNpMzVRYzdlQjVraExHb2I4Tk03WWY1aThEYVp6dFpRcUNpVG4xOTJkUVdydUx0U0d0eWtWS3NJV3FZZGhzRWFSeDJXdURPdmw4QlJIM003VzBQSHFZQlBhQzVEUEVOUm5pQS1XWU9MQXhqZ1NKTTl6LVg1endjUVdqWEM2SG43TklnZFUxLWtRN295aTJJb3A3a0JwNjZzcjdxcThYRXhWX0FB?oc=5",
+      "source": "UOL Economia",
+      "published": "Tue, 25 Aug 2026 20:09:38 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar fecha em queda e Bolsa tem forte alta em meio a ameaças de sanções dos EUA contra Irã - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPcW5EU1U4YVQ1YXZLMkpJT3VoSUFEWUtRaDA2clFGNDB2UXE4d2NiNVFQTWVocHNiRGVwWXBGemVuRWsyOHdwenpiYXhNOGl2QURYUGxfN1VGV3d4WUdZOHlHQjNzanB1X1ZPYmROUnc1NmhweUQtdEt0VVR4a1oxMlZGcmxPZmNXaHVqM0laSWx1WHVXc25DcDdxSENtenlvOWFncTFQX2xBQVB1MElMUXZVR25ETm1Tb2l6Y3FpZ2o1NW8?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Tue, 25 Aug 2026 13:20:00 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar hoje: siga ao vivo o valor da cotação - GZH",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPT211SXRrbm5oVDZ6MTRuNjY1YjNSaE40a0w4amdfSmZvckNQcUpDZFFFenQyMFBSRTM0Tkk1RW1IaWx3eWtPcnFjTGVVVDQ3eDRHWlZSUXQ0N3MyZlV5WHRGNjJZMDdaeTBJZ3FqRUxmT2UxWEM2SGdiUTVfNmxKQ29lQUctaVhzUmFwTVlLMTNvOXFVS05vNnh1Z1hWVTVmZEl3ZmxTZ1hGQ0xrQUUxYUsxZVktTjBtVkdXWVJyUVFGS19DWGc?oc=5",
+      "source": "GZH",
+      "published": "Tue, 25 Aug 2026 12:01:11 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar hoje cai 0,23%, a R$ 5,14, acompanhando exterior e recuo de petróleo - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPYkt4ZjVhTzlZajBYd0VBRnpzbnhqY085dEFwZldhX2drbDVfTVdmTVZ3NmNTZDRLZzI0bGVfVlNOdHJrRHcxeTQ5TzQzVkwxQkNPZTJ6UHB6cW9TeXh3N0Y0Z1cxSk41R1BBcng3M1NMR1B0ME9qTVJaUlBrYzdER1M2RUZLeXdBNTNTSW91eDk5ZEZZVFJjcnU1NWHSAaIBQVVfeXFMUFhpWWM4RU85VWdGRkgySXJ5QVAxMU1vNGhPLWFucUZ1anJka2lYekpoN3dia2UyR21GWHpiYnhUQk1EaVh4cktwb2hRY0cySVVIVTgwSTR3bHdoNjc4SEdCekd4S3V6cEJNWno0aUtGSXhrcjM0aWVSLWRSTWFseENBa0pnY3FmNEtWRjJ3bTJDeFZ6R2VyNm1EV29uVHZyR1BB?oc=5",
+      "source": "InfoMoney",
+      "published": "Tue, 25 Aug 2026 20:20:09 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Bitcoin ultrapassa US$ 80 mil com desvalorização do dólar - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOQ1l5T3hlTkJnenVwRXVjVk1jU0x2Yml0SGRSSm1DSGM3VmFlSU1vNm9ZQnFwVXg4eXpOVFE5QW9fNjJacEYzOTJmdFduczl2OGdQaEtOTkRzRUpXeGRHZnp3T0VrUVladzBjbERhTnpKTmdOYjNZSzhoY3BCT2tIU09MeVhfYmhRZFJHRzRFWnVtYjY4c2l1aDc2TloweUcydmpXX2ZlTmVWdktCaFE?oc=5",
+      "source": "CNN Brasil",
+      "published": "Tue, 25 Aug 2026 16:06:48 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar comercial: impacto da política monetária e Selic - ISTOÉ DINHEIRO",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBnTWg2SXFTVVpJM2prNU9tY01mRTlITFZjbDhVRlFNM1A5blFVY29qRUZRNDRsSnJ4YUlhU0NSSjJtZDEzQ2tIZnZtTUVmSF9QVnVzdDNZNEZjYlQxZTJBZGVBMXlwUmYzTHloenBsZGlkS2owWXc3TURXYzU1SG8?oc=5",
+      "source": "ISTOÉ DINHEIRO",
+      "published": "Tue, 25 Aug 2026 14:58:03 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Mercado começa a dar uma segunda chance ao Brasil - e a bolsa aproveita - Valor Investe",
+      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPNzFpcGM3SHJFaWRNbll1NUd2cTZ3N0hBMUoxZE5Bc3JoQXBQa2txNmV2RjJpMWhmUmpJSUdaMDJQeHlpeFlxejBJS2tBZG1uZnZDQm9TX0lFR3liXzg0TXI2ZlFLRGZiSWtLNERRTnRPdWtOZG1jM2MyRGo1Y3FmRTZuN3hnWHZDcC05X0xBaHVuYlMtaERJbk9xNFUxUkdJNUNnRkV4VGJRc1ZIX1dQRVNMVldmQk02Tm1qNXVOOTNuVUxUNGZJalZkVHRobGY1TjRtVzdTZnhFUFpTdDlSZDhCX3lsVGZoNnoySkdtY2U0ZkJHUi1sbGd30gGIAkFVX3lxTFBQTXQwUHRudXpDdWh5ci1ITndiZUFkZVJsNl9ycFdCeERmME5vbW84WGlvNEVINy0zZkVDNUhrUjdpUkdha3ZQR3JVbndfTDlVc0I5eENjQzZ5bjhRbE9YY010UXdEY3huZEh3aXA3ZWlqZkRrT1VzTy1HN3gzV0NkRktXMHBsTmRJenhVNHFmM3ZWVTVyaU05ZEpEd0ZKRmp5LXgzZnlNV25Bbi1sUm5LdG5XaXlsY21sRUZqR2ROREd6MGpxWEdFMWw4bWFmNjJ3cVFWQmFRS0xrb0dpZldvMjRUZFJNYUpuZkIxMi1lQVpNcVdOSXEtS0k4blJ3OW9LVjNrb2tVUQ?oc=5",
+      "source": "Valor Investe",
+      "published": "Tue, 25 Aug 2026 20:36:40 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Mesmo com saída recorde de estrangeiros, o que fez Ibovespa subir? - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPNWx3NlhjZldEUlM4a1NQczFUeEdPNzdDb1U3c0N6eElGbHBSaHpzaGx1Y19qQkxFYXFLWC1fQ2RiZUsyQnNjX28wNkJaeDNPd2VHdWNHRV95aFN3bU9RRXFuWDFsRGd3OEIyWXAwS19OZHR2OThBeEtWRU1PUW5Hbm5xVlBBYWtRV0g3a0VnRnNCZzJOSWlOeXROZVJ1eUJXSGJBQkxR0gGrAUFVX3lxTE1qUDlOU3d0S2JtTldJald4ZTVSOFRLc1gwVFowbVZNWUZMbElhX3JVQzU4VDE5SUFNNTVZQVJ5cXhqSFNYaXhrVlRQQWxob3VvU1d6bmJIRGxIcnpDMEplVmg5WVBYRTVySnpMUnZPSnJIcEp1LWFSb0NZYk1zNUVsYTF3TkxPZTlfMGhELUhZNm9zbVpwT05kLU8xNDRCLWJ6NlJmUjNMcDNzcw?oc=5",
+      "source": "InfoMoney",
+      "published": "Tue, 25 Aug 2026 17:25:19 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Ibovespa consegue 5ª alta seguida, de novo com Vale e bancos; dólar desce a R$ 5,14 - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPRy1QaTVrMnRfdVhtMlcwbEV1Zml4UkF4bVZCZjdJSXlFd2xLellhMDdfeHhJUzVwcGNNM1g0OXVObFllLWkwcFFmTVFWd0ZMX2gzY0NTWm5EQlJkQmlGeUpaYW1COXZfdFNXczFCcjVpRHpOMmMzTlJGQmt6SE1iVUItMVRmVE9KMnc2UzJDcw?oc=5",
+      "source": "InfoMoney",
+      "published": "Tue, 25 Aug 2026 20:29:57 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Ibovespa perto dos 200 mil pontos: vale a pena investir ou está caro? - Nord Investimentos",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxORHVmdHdiX3JfRnh3dEF2UjZBcXdHR0FiZEd1bE9vNjZTQzBGRHZadUFkZFduSzBldzJEWDBNSUxuVmVYdGVVTFVaNTYxSjlqMFhQUG9vd3V4Y29OR0h5M2xoakxHMkZxWEEyWTc5dk4tbnRrLXdEcFRUXzBNU1k2eG1waTnSAYoBQVVfeXFMTUkxc2x0dTYxRVI1WkhKT3JfckR4NFpGTlNMZ3BVMWpxMmFhY1NramtyWW82REJNZnZqYXphY2NGSmhMSGlMVFBXRk1WUjdDVm5XNUxCcjl2SWU5TGFrQUl3MGdkRllRY0loUWwzRXpiMHUxbHpkaEhJd1pwd1czdWZyTFV3bnRNSE13?oc=5",
+      "source": "Nord Investimentos",
+      "published": "Tue, 25 Aug 2026 05:02:29 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Ibovespa sobe e supera saída recorde de estrangeiros - SpaceMoney",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOWDlQaDd3LWlmalQ4UEVYa3VITTNyakFtUVMxcEdoQTIyd1B0eHp1RVhCaGlUaWtBeTRBbFI5S0ZWZVE3enkzcDdmYWJBNFhsandUbU1Fd2lJc2VMUE1JMV9zd0J3RmMyTE1KaDJ5WXM5djFnTE9VeG9fakdFQm5USEVkOFYzVXZrLTN4T2ZLbnJqMEswbUJCWV8tZV9hNW5KWFZMc19peFZtY251MFZpS1ln?oc=5",
+      "source": "SpaceMoney",
+      "published": "Tue, 25 Aug 2026 17:47:12 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Mercado financeiro passou por transformação silenciosa - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPZW1JaXZtcE00cEhBbXpzY0stMlZjOWdPU2VoYzJ2R1EwdFhRNFBHa0Y4eTU0ZzdrTjhjQnZYSHUzMjBFNW5RdF9ZZ3RXVGVwanNjS3hFai1RZHVKZ3VGVzRlZzNJOTE3U2o4LTRzODU1bE96clFrZnBCblZIVnBjWHhBbjI1c2MwYXVmbGZpbllDZ2prNEHSAZsBQVVfeXFMUFVTMWNSX3BBbU1UZFhoSjgyN0x3ZDJnWWVsajNmUV91STNWMTdSRnRSdkFMaHN1OGo0QzZKdkQ5bTRCa2pDaXhMQWt0MmprUjk4cnNwS2xRcHJtV2lwTXVjZk1TY1UzVEs0MFE2aFRINlI2Rkh6ay12YmtMNUItcm5EWS04SnJxUnpYNlFTaFZWY0NNWUQ5MWptT28?oc=5",
+      "source": "Estadão",
+      "published": "Wed, 26 Aug 2026 01:00:00 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Risco de recessão no Brasil em 2027: Por que o mercado acendeu o sinal de alerta - ISTOÉ DINHEIRO",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE4yM1pBTEdCdUJxZmZqaERLeTlYd1ZrNEhTSkRSU2hseVZPLVczRHAxZHBabWh4NFBrUzd2emVEbTRDYnhJdU5vTTBJN2pMZWRBMzZQeDEwcFptMkp4c2V1Q3ptVl9PT1dVTjBvLThlQlptUFJaUlR5RHdB?oc=5",
+      "source": "ISTOÉ DINHEIRO",
+      "published": "Tue, 25 Aug 2026 15:12:36 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Terça-feira, 25/8/2026 - Notícias sobre o mercado financeiro, com Álvaro Bandeira. - Jornal do Brasil",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQVmE0WHVOTFo2cEgza1U0S2ZWeU9pdU5ENzlBZXlOM3V3VFBNT3h1XzQzN19hUHlhTGtVN3NBeWU3ZGJIRy1ndzBsSU16M21JYXJaWkdBNG50dUc2YlZJbmVsb1ZwYTRxQS1KUWJnUU92Znk1NTl3S1BmZnN6SFZvc1lleklBVUNDX19EbWZ2cmJsOHpLcDZLd3hwRDgydjRrX1VzLXBSN1VFR3Rqa0pJTFpUQXVJNld5Qmd2ZDh6N2JxeTF0UFo0anBMSVZLdw?oc=5",
+      "source": "Jornal do Brasil",
+      "published": "Tue, 25 Aug 2026 13:53:00 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Setor bancário investirá R$ 50,4 bilhões em tecnologia, diz Febraban Tech - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOWnVhdHlaYUF5RUxIN3p5aDdyQjFMSXFqTVRpdDhXTWpqV2xEdmpHZktvVXc1aWhuRklaNHZWaWREbG44b2hvVFV5akRFbHpXX3R6cHp1N2xVcjBITU5kYndoQkc5WUxpSWVlZUx6UWFvX0d4NHROaUlFQWdtdGJWZGo4SnFCZTBaWmtwVmRPUlgtX0pPcVRIUjFfUDZoWEU3LWdGOVk2MHM1U2JaNW9xUnE5ZG45aHEyRUpoelRQM0tFek9tTThZSg?oc=5",
+      "source": "CNN Brasil",
+      "published": "Tue, 25 Aug 2026 21:03:13 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Ibovespa fecha último pregão aos 174.667 pontos - Brasil 61",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPOEJHSl9seWpfV3hNbEY0UkN0eEVkX19hY3VJNEdSeHRodjFQRzVRa0paOW15X2FiZFJDbDBFTktqZHhJQXFST0p2VkpBenZvQmE4S0dPc2Z3U0hTUEM5bjF6WV9EbkJyTTEzNmVpY20tVmdkcDAzclpDenBOTmQ5eWxueEV3ZUJKeGfSAY8BQVVfeXFMUC1tM2g0TFVKMlVwMGk3b0EzZzMwWkVwSXV6ZFBuZDNCMnByS2tNWExpN3RqX3VpQnNyZ3REWVJoMUdDMHdPYVNMOWVCdmszYkxKLVUzNVVIeVMtM2RaaC1sTzlXbmN2ZWY1ZFFUV0xSWE95Y0FJbGJmLWFtWng0NVhfRW1yUHkwMXFZV1M1SDg?oc=5",
+      "source": "Brasil 61",
+      "published": "Tue, 25 Aug 2026 23:00:00 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Recuperação judicial das Casas Bahia expõe crise do varejo e mudança no consumo - revistatempo.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPd3k4OFdvaVN6cURWZThpOHZtODJxRW16bmZRcHZ4OHNDY0Z1QnBSRUI0bVBuLWE2VjNIU0xpVjlNS0R5T1FXZXNPUW9KdUZjNVNRWWNBaXRiUVdXcVNyU1Ytc1NHNEpPMDIzLWhVRjNyU0NRMnRKajhvT3BqUG9TUndLR1RYNXZLaWFNTlZvSERJWlh0VDlkRVFZdkxTZHNjZnNXNF9ybVNsa1FEalFCcFppemE3Ti1UTDNn?oc=5",
+      "source": "revistatempo.com.br",
+      "published": "Wed, 26 Aug 2026 04:02:39 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Crise das Casas Bahia (BHIA3): o que realmente aconteceu para levar a varejista à recuperação judicial? - Seu Dinheiro",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQU1VhX09FWi1ZanlLTGZuNFhWTW5LZlV6TV9pbHhRNnJyaFd0YjY3X0ZDSUFoRFN4UGxYTlJ3aHlZNW82emdleUxxOVBNV2drSzF4dFdZUlZfUkI0UGNRSGlobEQ4WmJMMF9HRUh3Q3o3SW16YS01WkptZE9kc084ZjV3b1JSMmhORDZlckE0MzZUc29UYlRpbUV3Q1hhclFtdUZUdEp5WGhwUmY0Vlpvakxiek5EX2FSRWZJaGVYaGJmZEhnWFF0WmtYeFppWlJMR3dBSE0wclVjZw?oc=5",
+      "source": "Seu Dinheiro",
+      "published": "Tue, 25 Aug 2026 21:51:11 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Varejo descobre o custo de ser grande e fecha mais de 1,1 mil lojas desde 2022 - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQUHFzVWU1LUVwX2VTV3BwOC1hVUVkelRnWnlwN1ktWUNtVE9xSXpxMEpYaHFjQlpUYTQtRmZ1WlVoU1ZxaDRFaHE2T2lqdUFkWTBfM0xCcmphMGRfY05adjBNNGlIbmJKZ0hzemZwMzhkZ1c3RVJJMjZvRUdGYzJxeEUwY2RJODlhdmlUUFoybDdFNTV6VUFZbDBPRDNiZlFENXViOU9TZjVKYUl0U2RFaXlmWENaMzF5QmlOV0JCYmJETEJrUGJRNFlB0gHPAUFVX3lxTE5DTjZ4WkIzbmJpYm01QTZZcjZnYXlHZmhVdzROaEN1ek02T3NBckwxRzdQMDg0d1ZKcnBVRUJXRS1XVmQ4UVZXamFUeE92Qi1tUDEtSkl2OWlkbG5lQnV4TnlhMzFUSWNVSW9ITlFHcnF2T0hwNlZsQ2VCTXAyY0dJdTJjX2RZT25EblctSy1iaEdsY0lZNU1UOThTOWFfUDNGUk5DeDY5bnU1YnE0aXk3S0dBQnp0bnlOTTNqbGdkcVplSzRvUFRUbW9PaWswbw?oc=5",
+      "source": "Estadão",
+      "published": "Wed, 26 Aug 2026 01:00:00 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "As gigantes do varejo que quebraram - VEJA",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNM2N4MGlhS2FkMDhLOUc0SENPZUpueUtmR0ZOOGd0QW9TZHBSSTlmbFhzLVFiRW1aMWhPUkZNX0JhTmlkRVBMMTEyczI1akNxdFBsTmx1czNMRW00dldXVEUwLWVONGd0V1VIS040cHkzTF9oeW1VWWJtbHQzbTVsNjVuODZxdzjSAYcBQVVfeXFMTTNjeDBpYUthZDA4SzlHNEhDT2VKbnlLZkdGTjhndEFvU2RwUkk5ZmxYcy1RYkVtWjFoT1JGTV9CYU5pZEVQTDExMnMyNWpDcXRQbE5sdXMzTEVtNHZXV1RFMC1lTjRndFdVSEtONHB5M0xfaHltVVlibWx0M201bDY1bjg2cXc4?oc=5",
+      "source": "VEJA",
+      "published": "Wed, 26 Aug 2026 01:28:37 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Nike fecha lojas físicas nos EUA em reestruturação para enfrentar crise no varejo - Máquina do Esporte",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNNmJRaXRncVN4X1o0MUJ0eDJVVVBJeTU0UGo0dDBSaFB2ZUd0dkptSkV2VTZjRGE5aEo2aUdpRHpKTE10ODByRVVPM2tqRGtHRTU3QnhwY25JUEkwdjV5Sk1wSUdvUXd6RC1iSkpLS1Z6MTFkNEs1Rm00Tlh5T3FPSGVBSWNKRDB6WE9QN1hTS3NBUlZYREZNeVpQQWhtNFBnN3Z1UTR5T2JuSlpBOTY3ZWtiZVRUN29rQWRNX1FVUQ?oc=5",
+      "source": "Máquina do Esporte",
+      "published": "Tue, 25 Aug 2026 15:00:00 GMT"
+    }
+  ],
+  "generated_at": "2026-08-26T01:40:13.853646-03:00"
+}
