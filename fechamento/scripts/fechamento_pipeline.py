@@ -35,7 +35,7 @@ RSS_CTA = (
     "O RSS próprio está no site do Drop Five News."
 )
 TZ = ZoneInfo("America/Sao_Paulo")
-MIN_WORDS, MAX_WORDS = 900, 1500
+MIN_WORDS, MAX_WORDS = 1100, 1500
 MIN_SECONDS, MAX_SECONDS = 480, 600
 FORBIDDEN = (
     "e aí, pessoal", "se liga", "vale lembrar", "em um mundo", "não é apenas",
@@ -317,7 +317,7 @@ def auth_token() -> str | None:
     return None
 
 
-def generate_script(day: date, news: list[dict[str, str]]) -> str:
+def generate_script(day: date, news: list[dict[str, str]], feedback: list[str] | None = None) -> str:
     weekdays = ["segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado", "domingo"]
     source_text = "\n".join(
         f"[{i}] {x['title']} | veículo: {x['source']} | publicado: {x['published']} | URL: {x['url']}"
@@ -326,7 +326,8 @@ def generate_script(day: date, news: list[dict[str, str]]) -> str:
     prompt = f"""Você é editor-chefe e roteirista da FECHAMENTO DO MERCADO, programa em áudio do Drop Five News.
 DATA EDITORIAL: {day.strftime('%d/%m/%Y')}, {weekdays[day.weekday()]}.
 
-Escreva um roteiro jornalístico falável em português brasileiro, com alvo de 1250 palavras e limite absoluto entre {MIN_WORDS} e {MAX_WORDS} palavras, para voz masculina. Faça uma contagem silenciosa antes de responder e enxugue repetições se ultrapassar o alvo. Entregue SOMENTE o texto falado, sem markdown, rubricas, emojis, listas ou URLs.
+Escreva um roteiro jornalístico falável em português brasileiro, com alvo de 1350 palavras e limite absoluto entre {MIN_WORDS} e {MAX_WORDS} palavras, para voz masculina. Faça uma contagem silenciosa antes de responder e enxugue repetições se ultrapassar o alvo. Entregue SOMENTE o texto falado, sem markdown, rubricas, emojis, listas ou URLs.
+{'' if not feedback else chr(10) + 'CORREÇÕES OBRIGATÓRIAS DO CRÍTICO (versão anterior foi reprovada):' + chr(10) + chr(10).join('- ' + f for f in feedback) + chr(10)}
 
 Arquitetura obrigatória (Sextouro — 6 blocos provocativos, dado→contexto→impacto):
 1. Cold open 3-4 manchetes-tiro do pregão (Ibovespa, dólar, destaque), pela consequência. Máx 50 palavras, sem contexto; só então: “Boa noite! Eu sou Antonio e este é o Fechamento do Mercado, do Drop Five News.”
@@ -500,12 +501,31 @@ def main() -> int:
     voice = Path(f"/tmp/fechamento-{day.isoformat()}-voice.mp3")
 
     news = collect_news(day)
-    script = generate_script(day, news)
-    text_gate = validate_text(script, day)
-    synthesize(script, voice)
-    voice_metrics = probe(voice)
-    if not 350 <= float(voice_metrics["duration"]) <= 750:
-        raise RuntimeError(f"duração da voz fora da faixa: {voice_metrics['duration']:.1f}s (esperado 350-750s)")
+    # Loop crítico-executor: o crítico (gates de texto/voz/mix) reprova com
+    # feedback específico e o executor regenera incorporando a correção.
+    MAX_ROUNDS = 4
+    feedback: list[str] = []
+    script = None
+    for attempt in range(1, MAX_ROUNDS + 1):
+        script = generate_script(day, news, feedback)
+        try:
+            text_gate = validate_text(script, day)
+        except RuntimeError as exc:
+            feedback.append(f"TEXTO reprovado no gate editorial: {exc}. Corrija e regenere.")
+            print(f"AVISO crítico rodada {attempt}: {feedback[-1]}", file=sys.stderr)
+            continue
+        synthesize(script, voice)
+        voice_metrics = probe(voice)
+        vdur = float(voice_metrics["duration"])
+        if 350 <= vdur <= 750:
+            break  # aprovado pelo crítico
+        if vdur < 350:
+            feedback.append(f"ROTEIRO CURTO demais para a locução: {vdur:.0f}s de áudio (mínimo 420s). Expanda cada bloco com mais contexto e impacto até ~1350 palavras.")
+        else:
+            feedback.append(f"ROTEIRO LONGO demais para a locução: {vdur:.0f}s de áudio (máximo 650s). Enxugue repetições e resumos até ~1250 palavras.")
+        print(f"AVISO crítico rodada {attempt}: {feedback[-1]}", file=sys.stderr)
+    else:
+        raise RuntimeError("crítico reprovou após " + str(MAX_ROUNDS) + " rodadas: última queixa — " + feedback[-1])
 
     mixer = SCRIPT_DIR / "fechamento_mixer.py"
     proc = run([sys.executable, str(mixer), "--voz", str(voice), "--output", str(output)], timeout=600)
