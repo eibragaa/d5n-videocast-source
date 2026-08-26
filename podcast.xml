@@ -19,7 +19,7 @@
       <itunes:name>Jean Braga</itunes:name>
       <itunes:email>eibragaa@gmail.com</itunes:email>
     </itunes:owner>
-    <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+    <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:keywords>notícias,brasil,mundo,política,economia,tecnologia,podcast,diário,resumo</itunes:keywords>
     <itunes:type>episodic</itunes:type>
@@ -32,9 +32,9 @@
 <podcast:guid>d5n-daily.netlify.app</podcast:guid>
 <podcast:funding url="https://github.com/sponsors/eibragaa">Support D5N</podcast:funding>
     <atom:link href="https://d5n-daily.netlify.app/podcast.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 26 Aug 2026 10:47:47 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 11:12:09 -0400</lastBuildDate>
     <image>
-      <url>https://d5n-daily.netlify.app/podcast-cover.png</url>
+      <url>https://d5n-daily.netlify.app/podcast-cover.jpg</url>
       <title>Hoje no Drop Five News</title>
       <link>https://d5n-daily.netlify.app/</link>
       <width>3000</width>
@@ -50,7 +50,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>10:31</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-08-26-ep064</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep064-2026-08-26.mp3" length="15161303" type="audio/mpeg"/>
@@ -96,7 +96,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>09:07</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-08-25-ep063</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep063-2026-08-25.mp3" length="13152591" type="audio/mpeg"/>
@@ -151,7 +151,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>11:00</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-08-24-ep062</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep062-2026-08-24.mp3" length="15857832" type="audio/mpeg"/>
@@ -206,7 +206,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>09:41</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-08-18-ep061</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep061-2026-08-18.mp3" length="13965731" type="audio/mpeg"/>
@@ -255,7 +255,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>09:21</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-08-17-ep060</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep060-2026-08-17.mp3" length="13474838" type="audio/mpeg"/>
@@ -310,7 +310,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>05:33</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-08-14-ep059</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep059-2026-08-14.mp3" length="7997901" type="audio/mpeg"/>
@@ -359,7 +359,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>11:58</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-08-11-ep058</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep058-2026-08-11.mp3" length="17247128" type="audio/mpeg"/>
@@ -408,7 +408,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>10:12</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-08-10-ep057</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep057-2026-08-10.mp3" length="14706772" type="audio/mpeg"/>
@@ -457,7 +457,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>10:01</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-08-08-ep056</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep056-2026-08-08.mp3" length="14430919" type="audio/mpeg"/>
@@ -506,7 +506,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:44</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-08-07-ep055</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep055-2026-08-07.mp3" length="9710070" type="audio/mpeg"/>
@@ -555,7 +555,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:30</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-08-06-ep054</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep054-2026-08-06.mp3" length="9374031" type="audio/mpeg"/>
@@ -604,7 +604,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:48</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-08-05-ep053</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep053-2026-08-05.mp3" length="12695553" type="audio/mpeg"/>
@@ -653,7 +653,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:57</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-08-04-ep052</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep052-2026-08-04.mp3" length="12893039" type="audio/mpeg"/>
@@ -702,7 +702,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>09:07</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-08-03-ep051</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep051-2026-08-03.mp3" length="13146949" type="audio/mpeg"/>
@@ -751,7 +751,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:48</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-08-01-ep050</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep050-2026-08-01.mp3" length="12680506" type="audio/mpeg"/>
@@ -800,7 +800,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>10:26</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-07-31-ep049</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep049-2026-07-31.mp3" length="15032781" type="audio/mpeg"/>
@@ -849,7 +849,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>09:30</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-07-30-ep048</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep048-2026-07-30.mp3" length="13694266" type="audio/mpeg"/>
@@ -898,7 +898,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>11:03</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-07-29-ep047</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep047-2026-07-29.mp3" length="15917391" type="audio/mpeg"/>
@@ -947,7 +947,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:55</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-07-28-ep046</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep046-2026-07-28.mp3" length="12853541" type="audio/mpeg"/>
@@ -996,7 +996,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:09</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-07-27-ep045</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep045-2026-07-27.mp3" length="11740725" type="audio/mpeg"/>
@@ -1045,7 +1045,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:27</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-07-25-ep044</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep044-2026-07-25.mp3" length="12172686" type="audio/mpeg"/>
@@ -1094,7 +1094,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>09:00</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-07-23-ep043</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep043-2026-07-23.mp3" length="12975168" type="audio/mpeg"/>
@@ -1143,7 +1143,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:00</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-07-22-ep042</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep042-2026-07-22.mp3" length="8644901" type="audio/mpeg"/>
@@ -1192,7 +1192,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>04:20</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-07-21-ep041</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep041-2026-07-21.mp3" length="6251876" type="audio/mpeg"/>
@@ -1209,7 +1209,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>04:10</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-07-20-ep040</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep040-2026-07-20.mp3" length="6009878" type="audio/mpeg"/>
@@ -1226,7 +1226,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>07:33</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-07-18-ep039</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep039-2026-07-18.mp3" length="10876803" type="audio/mpeg"/>
@@ -1243,7 +1243,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:17</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-07-17-ep038</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep038-2026-07-17.mp3" length="9053665" type="audio/mpeg"/>
@@ -1260,7 +1260,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:17</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-07-16-ep037</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep037-2026-07-16.mp3" length="9053665" type="audio/mpeg"/>
@@ -1277,7 +1277,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>03:37</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-07-15-ep036</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep036-2026-07-15.mp3" length="5211785" type="audio/mpeg"/>
@@ -1294,7 +1294,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>05:10</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-07-13-ep035</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep035-2026-07-13.mp3" length="7460614" type="audio/mpeg"/>
@@ -1311,7 +1311,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:10</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-07-09-ep033</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep033-2026-07-09.mp3" length="8901946" type="audio/mpeg"/>
@@ -1328,7 +1328,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:36</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-29-ep032</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep032-2026-06-29.mp3" length="9508823" type="audio/mpeg"/>
@@ -1345,7 +1345,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:35</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-28-ep031</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep031-2026-06-28.mp3" length="9493776" type="audio/mpeg"/>
@@ -1362,7 +1362,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>03:47</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-27-ep030</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep030-2026-06-27.mp3" length="5457545" type="audio/mpeg"/>
@@ -1379,7 +1379,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>07:48</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-26-ep029</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep029-2026-06-26.mp3" length="5618982" type="audio/mpeg"/>
@@ -1396,7 +1396,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:03</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-24-ep028</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep028-2026-06-24.mp3" length="11598410" type="audio/mpeg"/>
@@ -1413,7 +1413,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>05:43</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-22-ep027</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep027-2026-06-22.mp3" length="8234883" type="audio/mpeg"/>
@@ -1430,7 +1430,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:48</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-21-ep026</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep026-2026-06-21.mp3" length="9799723" type="audio/mpeg"/>
@@ -1447,7 +1447,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>07:34</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-20-ep025</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep025-2026-06-20.mp3" length="10917554" type="audio/mpeg"/>
@@ -1464,7 +1464,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:45</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-19-ep024</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep024-2026-06-19.mp3" length="9721982" type="audio/mpeg"/>
@@ -1481,7 +1481,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:01</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-16-ep023</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep023-2026-06-16.mp3" length="11556405" type="audio/mpeg"/>
@@ -1498,7 +1498,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:14</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-13-ep020</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep020-2026-06-13.mp3" length="11872382" type="audio/mpeg"/>
@@ -1515,7 +1515,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>05:21</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-12-ep019</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep019-2026-06-12.mp3" length="7708255" type="audio/mpeg"/>
@@ -1532,7 +1532,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>04:57</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-11-ep018</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep018-2026-06-11.mp3" length="7142756" type="audio/mpeg"/>
@@ -1549,7 +1549,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:07</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-10-ep016</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep016-2026-06-10.mp3" length="8831102" type="audio/mpeg"/>
@@ -1566,7 +1566,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>05:30</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-09-ep015</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep015-2026-06-09.mp3" length="7940222" type="audio/mpeg"/>
@@ -1583,7 +1583,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:07</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-08-ep014</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep014-2026-06-08.mp3" length="5852517" type="audio/mpeg"/>
@@ -1600,7 +1600,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:07</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-07-ep013</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep013-2026-06-07.mp3" length="5852517" type="audio/mpeg"/>
@@ -1617,7 +1617,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>07:30</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-06-ep012</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep012-2026-06-06.mp3" length="5409271" type="audio/mpeg"/>
@@ -1634,7 +1634,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:12</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-05-ep011</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep011-2026-06-05.mp3" length="8936428" type="audio/mpeg"/>
@@ -1651,7 +1651,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:12</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-05-ep010</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep010-2026-06-05.mp3" length="8936428" type="audio/mpeg"/>
@@ -1668,7 +1668,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:49</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-04-ep009</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep009-2026-06-04.mp3" length="12698061" type="audio/mpeg"/>
@@ -1685,7 +1685,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:12</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-03-ep008</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep008-2026-06-03.mp3" length="11825989" type="audio/mpeg"/>
@@ -1702,7 +1702,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>05:34</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-06-01-ep006</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep006-2026-06-01.mp3" length="8039905" type="audio/mpeg"/>
@@ -1719,7 +1719,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>07:51</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-05-29-ep005</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep005-2026-05-29.mp3" length="11315661" type="audio/mpeg"/>
@@ -1736,7 +1736,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>02:46</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
       <guid isPermaLink="false">d5n-2026-05-28-ep004</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep004-2026-05-28.mp3" length="2866578" type="audio/mpeg"/>

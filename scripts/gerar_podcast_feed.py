@@ -12,7 +12,7 @@ from xml.sax.saxutils import escape
 
 REPO = Path(os.environ.get("D5N_BASE", Path(__file__).resolve().parent.parent))
 BASE_URL = "https://d5n-daily.netlify.app"
-IMAGE_URL = f"{BASE_URL}/podcast-cover.png"
+IMAGE_URL = f"{BASE_URL}/podcast-cover.jpg"
 COUNTER = REPO / "episode-counter.json"
 OUTPUT = REPO / "podcast.xml"
 MANIFEST_FILE = REPO / "episode-manifest.json"
