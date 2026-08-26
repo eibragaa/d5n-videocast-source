@@ -27,7 +27,7 @@
     <podcast:locked owner="eibragaa@gmail.com">no</podcast:locked>
     <podcast:guid>fechamento.d5n-daily.netlify.app</podcast:guid>
     <atom:link href="https://d5n-daily.netlify.app/fechamento.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sat, 22 Aug 2026 17:30:00 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 17:30:00 -0300</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/fechamento-cover.png</url>
       <title>Fechamento do Mercado</title>
@@ -35,6 +35,38 @@
     </image>
     <copyright>© 2026 Drop Five News</copyright>
     <generator>D5N Pipeline — Fechamento do Mercado</generator>
+    <item>
+      <title>Fechamento do Mercado — 26/08/2026</title>
+      <itunes:title>Fechamento do Mercado — 26/08/2026</itunes:title>
+      <itunes:episode>3</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>07:47</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.png"/>
+      <guid isPermaLink="false">fechamento-2026-08-26</guid>
+      <link>https://d5n-daily.netlify.app/#fechamento</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/fechamento-2026-08-26.mp3" length="11211589" type="audio/mpeg"/>
+      <pubDate>Wed, 26 Aug 2026 17:30:00 -0300</pubDate>
+      <description>Fechamento do Mercado de 26/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:47.</description>
+      <itunes:summary>Fechamento do Mercado de 26/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:47.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Fechamento do Mercado • 26/08/2026</strong></p><p>Fechamento do Mercado de 26/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:47.</p><ul><li>Ibovespa Hoje Ao Vivo: Bolsa perde força e oscila; PETR4 sobe - InfoMoney</li><li>Mercado agora | Bolsas da Europa sobem, com expectativa por resolução em Ormuz e balanço da Nvidia - InvesTalk</li><li>Ibovespa hoje: IPCA-15 aumenta expectativa por novo corte da Selic e inflação dos EUA dentro do esperado; veja destaques desta quarta (26) - Empiricus</li></ul><p><a href="https://d5n-daily.netlify.app/#fechamento">Ouça no site</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Fechamento do Mercado — 24/08/2026</title>
+      <itunes:title>Fechamento do Mercado — 24/08/2026</itunes:title>
+      <itunes:episode>2</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>08:38</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.png"/>
+      <guid isPermaLink="false">fechamento-2026-08-24</guid>
+      <link>https://d5n-daily.netlify.app/#fechamento</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/fechamento-2026-08-24.mp3" length="12427223" type="audio/mpeg"/>
+      <pubDate>Mon, 24 Aug 2026 17:30:00 -0300</pubDate>
+      <description>Fechamento do Mercado de 24/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 8:38.</description>
+      <itunes:summary>Fechamento do Mercado de 24/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 8:38.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Fechamento do Mercado • 24/08/2026</strong></p><p>Fechamento do Mercado de 24/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 8:38.</p><ul><li>Ibovespa Hoje Ao Vivo: Bolsa sobe com VALE3; PETR4 e BRKM5 despencam - InfoMoney</li><li>Dólar sobe a R$ 5,15 e Bolsa se valoriza com Ibovespa 'em indefinição' - UOL Economia</li><li>Tempo real: Ibovespa avança e dribla cautela no exterior com sanções dos EUA ao Irã; dólar sobe - Money Times</li></ul><p><a href="https://d5n-daily.netlify.app/#fechamento">Ouça no site</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>Fechamento do Mercado — 22/08/2026</title>
       <itunes:title>Fechamento do Mercado — 22/08/2026</itunes:title>
