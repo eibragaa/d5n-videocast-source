@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Pipeline editorial e de áudio da MANHÃ CONECTADA.
 
-Coleta RSS, redige com LLM, valida o roteiro, sintetiza Antonio pt-BR,
+Coleta RSS, redige com LLM, valida o roteiro, sintetiza Francisca pt-BR,
 mixa, mede e publica artefatos locais. O envio é responsabilidade do cron Hermes.
 """
 from __future__ import annotations
@@ -28,7 +28,7 @@ REPORTS_DIR = MC_ROOT / "reports"
 MANIFEST_DIR = MC_ROOT / "manifests"
 SCRIPT_DIR = MC_ROOT / "scripts"
 ROTEIROS_DIR = MC_ROOT / "roteiros"
-VOICE = "pt-BR-AntonioNeural"
+VOICE = "pt-BR-FranciscaNeural"
 RSS_CTA = (
     "Agora você também pode assinar o Manhã Conectada no seu aplicativo de podcast. "
     "O RSS próprio está no site do Drop Five News."
@@ -279,10 +279,10 @@ def generate_script(day: date, news: list[dict[str, str]]) -> str:
     prompt = f"""Você é editor-chefe e roteirista da MANHÃ CONECTADA, programa em áudio do Drop Five News.
 DATA EDITORIAL: {day.strftime('%d/%m/%Y')}, {weekdays[day.weekday()]}.
 
-Escreva um roteiro jornalístico falável em português brasileiro, com alvo de 750 a 850 palavras e limite absoluto entre {MIN_WORDS} e {MAX_WORDS} palavras, para voz masculina. Faça uma contagem silenciosa antes de responder e enxugue repetições se ultrapassar o alvo. Entregue SOMENTE o texto falado, sem markdown, rubricas, emojis, listas ou URLs.
+Escreva um roteiro jornalístico falável em português brasileiro, com alvo de 750 a 850 palavras e limite absoluto entre {MIN_WORDS} e {MAX_WORDS} palavras, para voz feminina. Faça uma contagem silenciosa antes de responder e enxugue repetições se ultrapassar o alvo. Entregue SOMENTE o texto falado, sem markdown, rubricas, emojis, listas ou URLs.
 
 Arquitetura obrigatória, inspirada na eficiência de briefings modernos sem imitar apresentadores ou marcas:
-1. Faça um cold open com três a seis manchetes-tiro específicas, começando pela consequência ou pelo fato mais forte. Use no máximo 45 palavras e não dê contexto nessa passagem; só então diga: “Eu sou Antonio e esta é a Manhã Conectada, do Drop Five News.” Varie naturalmente a frase que convida o ouvinte a seguir.
+1. Faça um cold open com três a seis manchetes-tiro específicas, começando pela consequência ou pelo fato mais forte. Use no máximo 45 palavras e não dê contexto nessa passagem; só então diga: “Eu sou Francisca e esta é a Manhã Conectada, do Drop Five News.” Varie naturalmente a frase que convida o ouvinte a seguir.
 2. Desenvolva cinco notícias em sequência fluida: agenda do dia; Brasil; mundo; tecnologia; economia. Se uma categoria estiver fraca, substitua por uma notícia mais relevante — nunca complete tabela por obrigação.
 3. Cada notícia segue gancho → contexto ou detalhe → consequência concreta para o ouvinte → próximo movimento. Mantenha ritmo alto, mas dê contexto suficiente para o ouvinte não depender de outro conteúdo. Varie os fechos: não repita rótulos como “na prática” ou “efeito prático”.
 4. Faça uma notícia puxar a seguinte por continuidade, contraste ou consequência. Use transições vivas e curtas; evite anunciar “agora vamos falar de”. Uma vez no meio do roteiro, fale diretamente com “você” para criar proximidade, sem pedir comentário.

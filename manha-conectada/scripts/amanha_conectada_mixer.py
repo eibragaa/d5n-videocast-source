@@ -12,8 +12,8 @@ from pydub import AudioSegment, silence
 
 MC_ROOT = Path(__file__).resolve().parents[1]
 ASSETS = MC_ROOT / "assets" / "audio"
-INTRO = ASSETS / "intro-mc-nova.mp3"
-BED = ASSETS / "bg-music-mc.wav"
+INTRO = ASSETS / "intro-mc-8bit.mp3"
+BED = ASSETS / "bg-mc-matinal.mp3"
 STING = ASSETS / "transition-sting.mp3"
 MIN_SECONDS = 225
 MAX_SECONDS = 390

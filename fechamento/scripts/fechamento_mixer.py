@@ -13,8 +13,8 @@ from pydub import AudioSegment, silence
 FC_ROOT = Path(__file__).resolve().parents[1]
 ASSETS = FC_ROOT / "assets" / "audio"
 MC_ASSETS = FC_ROOT.parent / "manha-conectada" / "assets" / "audio"  # fallback
-INTRO = ASSETS / "intro-mc-nova.mp3"
-BED = ASSETS / "bg-music-mc.wav"
+INTRO = ASSETS / "intro-fm-8bit.mp3"
+BED = ASSETS / "bg-fm-mercado.mp3"
 STING = ASSETS / "transition-sting.mp3"
 MIN_SECONDS = 420
 MAX_SECONDS = 650
