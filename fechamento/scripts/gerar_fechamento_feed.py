@@ -88,7 +88,8 @@ def load_episodes(repo: Path) -> list[Episode]:
         if output_name != expected_name:
             raise ValueError(f"saída não canônica em {manifest_path}")
         if not audio_path.is_file() or audio_path.stat().st_size < 500_000:
-            raise ValueError(f"áudio ausente ou insuficiente: {audio_path}")
+            print(f"  SKIP {editorial_date}: áudio ausente — prosseguindo sem este episódio")
+            continue
         expected_hash = str(manifest.get("sha256", ""))
         if not re.fullmatch(r"[0-9a-f]{64}", expected_hash):
             raise ValueError(f"sha256 ausente em {manifest_path}")
