@@ -1,0 +1,196 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-08-27",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/manha-conectada/audio/manha-conectada-2026-08-27.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/manha-conectada/roteiros/source-manha-2026-08-27.md",
+  "sha256": "0cd45816ea0673e8f5d9522127f817a27911ce0330670b0a971f0c51d1c0a3f5",
+  "text_gate": {
+    "words": 889,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 372.114286,
+    "size": 8931412,
+    "bit_rate": 192014,
+    "lufs": -16.97,
+    "true_peak_dbtp": -1.67,
+    "lra": 3.1
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Brasil Urgente ao vivo: assista ao programa agora - band.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBQZGxMdVk2dU1aeEJMeDRVOGstWUtNVXZ5aG5QODRlYnFtZUg4MVBXN0VfTkZMSTVncDFscWhLMzB4eXM0ZVR3eTZpeFNWdkdyeDRwLU05akZ1ekF1cnVsQ3dHV2pfZ1RXR21kNHBqcGJvQWRJS2lPSEZB?oc=5",
+      "source": "band.com.br",
+      "published": "Thu, 27 Aug 2026 07:26:15 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Notícias sobre edital de 26 de agosto de 2026 - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMnJBV3gyakFCZTFwd1hhLWttdVJkakRtem1ocEpVMFdySE1QaHlSdS1BOHM3cWJoNDhyTjVjX0hDakFjeE5TSkNGSktEUHpRb2ZyZE5RdzJQZGsyTmtQWGxjN2lKeUFReTBVNWpmbXJkV25yRGxtNzBqVE5mTmJFc0IyTWttRVN50gGOAUFVX3lxTE9oRmp0b1FuVTFxWllLaGIzcW02T1FSbHBEMmJ4V0cybGVCY01Hck1BbjhsNDRHQkVqUENBYWlhLUtXbDBiRzNiUTVILUJMeUFTUF9YMXdMSEpSczlQNTBRNnZuYngwRHJxeU5HZEVmWnhWdklhR0hNWEViMktCTkt3dzFkZUJPLUlkaGJDamc?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Thu, 27 Aug 2026 07:27:58 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Colapso glacial: o fenômeno que causou a enchente repentina na fronteira entre Nepal e Tibete - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5xMllIZVJYU1JBV1g0dW43Q2FoRDJFekZKQVl6ZUJVcm91N1RDRWxKSTM2UG1tTU1LZGFzMXFfZl9qY21jSnZHT1hreWRrWDNmbGdsRUM4ZlJvbzNJU2V2NGhB0gFnQVVfeXFMTmI4bHNMbVlyRXM2WlNZXzdlemYybjRSVVd5ejRod2ZKbnVnenpOcGdkT2VkdlMtalAxN2d5Z1ZHcGQ2NFZsbUc4QmxXZnJMczRFeVR0Zzd5MkFjTHczbE11UjV4YzhPdw?oc=5",
+      "source": "BBC",
+      "published": "Thu, 27 Aug 2026 12:09:45 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Lito: últimas notícias sobre sua saúde e busca por tratamento - O POVO",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOcm1GY3FndGR0bzVISjZPUWIyQzJGSGtsc185eENqVXZwcWpobHVsbDdCbXpXUkZtYlRqcHVycXpvVWNaTFlZSnc5c0E0Vmw3MUM2ckh4bS05VHNwR2djRTNCaVB5eFZFZHRzYl9zZXFRSEo5MTFHbWMzWFNXdXZtdkFUSzQwMTdFWlBVbHB5d0pfWlJXWHMxNXFfUGd3WmdyazFTWndQeWpLNUw0V0cwWGxMbTZRbjVF?oc=5",
+      "source": "O POVO",
+      "published": "Thu, 27 Aug 2026 11:46:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Jogo do Internacional hoje pela Copa do Brasil: que horas começa e onde assistir - UOL",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOaWNlQXFEWGcwUlowdjN4cXU5bGYtbEN1STFEVEtUZkdWNXdmd2REV25OSWZiNV9nNjJ4WmZlSG9QTnJSVlBhRjhzM2tWYk9HX3NJMl82ZnVnMDhzRHlUNXVvbGVPZS1UYVl4N1d4WUxuM2VWTklZZWRKTElPTHpDMDNBWWdERU5MZ3hCUmVBRDk5SFQxanNSY0lFV3FWVVl0bFF2c3llVWRYd2VkYW9JRGdvRmM2LXBFMS1VYkN4aDljODh3RXR3aG9lU3hIMFJDSkJTUFB5Ty1pMTA?oc=5",
+      "source": "UOL",
+      "published": "Thu, 27 Aug 2026 12:00:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Casa Branca diz que não há negociações em andamento com o Irã e continua bloqueio naval - Midiamax",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOTm8xSmU3T2psdVJ1djFzQjFlb3lqT1VLclBDQjI1dkl3YlhZX1pjNU14d0xlNTExUHFISEh5bjZ4ajNwdnF1UW5HOW5lX0tybGNBUmdVRWZkaDBod1Bvcl90WnZMWHV2QmdIcVJ4MUdNRXhUUGljcWhQS1Z1bUwtOEtuczVmcmlSTTBqZU9mbVc3OUUzTHBUcThITmpobFZqNmdnTFFXeUxtaEJG?oc=5",
+      "source": "Midiamax",
+      "published": "Thu, 27 Aug 2026 13:37:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Avalanche no Nepal e no Tibete: número de mortes chega a 362, e quase 1.500 estão desaparecidos - G1",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQS0VPVS00UkVXejJ3MExWaW5pNGk2cE1iTFk1WFcxb0J3SUpIa2hUVWM0czVrTHltM3JwcXYyVy1ROWllaVZRVEF2WkRzN1dicE5tV20teDJ6LXNGM1Raa1BDZmhpVHlKSGNpRm1UcktVUEVQT2FCUnBpSmhuV2NFalpSdUtrRGVyQS02RnFBSkJwUWVCOVJGczZZVFppcVRMMEc3WHdyR1JSMlpnaXlNTVVVdUkzaVZJTWpSQWowM0hwb05kemxtSkZ30gHYAUFVX3lxTE1DOEVJTzdmR3dEdXBWaW9UZThmUmR4dWNyRDgwQ1g1bGlYc2dIUEI1NzhZNUxXQWJwLUUxRlVPXzUwNWlEZFZRZV9EdXc5bG1YTlVKQ1NsMWtDWmtqTDZsWC1DZkQ0LXdKQVZUUzM1cDFzQlQ5OUZrN3ZVWU1EOUxKSi1CWU9DNTBpa2xKbDJ1STBYLXFCdFdhYWFTQ1dmeW9QMWxNRlQ5S2ZZVjlKb1RBWWxYTTBLZWcwdzBUMTZPcHhOOHBnTGhDblQybFZ6YU9nLTBXYVQ0LQ?oc=5",
+      "source": "G1",
+      "published": "Thu, 27 Aug 2026 09:09:37 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Colapso glacial: o fenômeno que causou a enchente repentina no Nepal e no Tibete - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPZDFMYUZxQUNMeEx3eFJQQW1YRV82dmFhenN4UThGN3Z4X1BOOGFzLXB6Sk5iVlNBUDdzY2NyOWJQcXdSLTVpUHowVl9pV2pLYTlsdm5remtaelJ3TzRUUFg5Z0VialA4VzBGX2lXMFJxUjQ2Q2NoS21OUkhzdkxjLTFEaC1VeWpOb0dOdmdkWF9IZDExZE44ell0OTYwVjhVbkNYLW12Z3oyZWF5a1l3dzZIWkZ6VlZ4d3Z0NzZ2TExwamY5ODcwYg?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Thu, 27 Aug 2026 14:53:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Nepaleses no Brasil arrecadam recursos para vítimas no Nepal - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPNms3bm9WOE5uSDJEMzI1OVZtRGt3TEFCTS1VUGMzM2p6WDBDN0F1MjA2SC1UdERoRmdKRnRHemk5NS1TX3ZJb2lCYl9iQWR2R0UwdFp0aFUtSjFhZllzNTQ1a24wZEQzVnZ2bUNmMDlZbXRUekpZZ2ZueDExVUFLOHdEYTN5bloyc0FURTVzcWlMd1R5RTJYTmpEbDhDallJOFdV?oc=5",
+      "source": "SBT News",
+      "published": "Thu, 27 Aug 2026 11:24:57 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Crimes virtuais contra crianças e adolescentes aumentam 78% nas férias escolares - Francês News",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPSExEX0N0c3lrNWNHbGFXVFBNcTVjVmVxemJ1M0diOF9GNWpiOEFaQ2xhb1RaRUR6LXpxTnVlaWg0MlI2ejZQNDVhbHFvZy1ZMjBJY0FaVGpMR3ppRUZROVlMaXo3dk9XNTVYeDBpZHYzcU92eThhZndYcHV5TTVUaWR3T2dOZHVmaFNnLVFtNThvNGU4cFlzVURVVXRObGdGUGVhbjRQcThhM3dSZ3BwblE1YUVva0xBNGdBWE5qYk8ySF8tVFZr?oc=5",
+      "source": "Francês News",
+      "published": "Thu, 27 Aug 2026 15:30:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "O Brasil no centro da revolução global da inteligência artificial - ecommercebrasil.com.br",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNREVqVWhreXdmWmpzR3FHeGFfQUh2NUNSbHN5cWF0SVZYZUlCYkYwUkpPd0hlS0ZGWVhSTHJwUk16TDAyWnBkQ1JDRkFsY0xMZDQ0MElocHRJYWFmQWpSdVZwMVc3dUNNbUotVEtacEtqTFF6YVFYMHFSVGpYaVUtNTJQVU9ZM3E3cFliV0tQd21wLVoxR3duZUNXMnV5aVoyZnlMR3ZNUFprbWpQ?oc=5",
+      "source": "ecommercebrasil.com.br",
+      "published": "Thu, 27 Aug 2026 14:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Tecnologia com inteligência artificial é usado para descarte correto de óleo de cozinha - diariodigital.com.br",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPblZfNVdfZFhPSUhkemloek9LR2VTcUpVb2E0S2RaWFAxb2dfSVY2eTNnZmd6Y2h4ZDFpQlRPMVdmeldUNzBtMUxBSHAtS2tRdG9sY1ViS3djRG42dHUxdmRQSzJXWEN5eDBhV0d4bGtsZ01JWWlvbUwtbW1FVHVWMFlMWmdEQjg2UzJKOGlBc0hPVmxURE5HOXZ5VGdxZEFxWVRGS2Q5QThXc04xWjlfLWJqQmJNXy1xaW9ueg?oc=5",
+      "source": "diariodigital.com.br",
+      "published": "Thu, 27 Aug 2026 13:37:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Por que as ações da Apple e Microsoft estão de fora da alta do setor de tecnologia hoje? - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOSXVFMEJKNjU3T3IySy1JSXh1Ym1wWVNpMUJDZjFlbjdDTlp4eWlPQjRST2dyRTNOTHd0VnliSDV6dll0U3hPQlZabjNycGxsSUpWcTJDQ05xaDl1RzZ5OTkxb095dTBDSmJYZ0tEU1NnWGxuVXhaZklEaU0wTFc0aXhwR2xPd1VEMmh4Q3BmbUktMHkyckhLLUNFd01QRU1HNlVqU2h3NUZuZ2lkeWl2YVdidkRxaWtBNWNQT2FqcVFSU2dteDJ3MXB1aWhIY1V5U0Vzbm9YcWY5TXo0UkHSAewBQVVfeXFMTm1Fa21tejU3ZXZuWHFFNmNMeUVFZExSYXZsSnVMTnRnRlFHMnRIME9tUW1LUktRQS1fVW1VekVVWVkyczB3djYzVTFTSWxoeldFN1lvT28tNjBpUnRxUDFpLS11cjczVXZ2LVlBM2xIWHp3SWlmTzlXYkxZUUJndDlmbmh3c0hlN2ZqWjF3NkpvSGNHRkYtR3NyajdDTmE5V0FJZ2lvSldVZWw1RVBxUXM3cWdpNE5qVEExRHlMM2phdTVKR3FjYTViTUplLVZLNVFKb0pIczhMc3JLRVp5TXRNaDBiNjNNWmNycjc?oc=5",
+      "source": "Valor Econômico",
+      "published": "Thu, 27 Aug 2026 12:01:36 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Estudo aponta 5 padrões de líderes em inteligência artificial - Eletrolar News",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQazhaWlk5cW5HYUFZd25yZFkxQkROaDlQTWlPYTFESUc3akk5NExfNi1mRVBtbGkwMTdqcjBqOXN3VGpxZGFuNG1LWXlmMjhHQkl3TnFnTFNSRXYwNzZhbUZyX1pIb1NZQkpxSklKblVqODBPdHJhX3hNMkx6SGtIVzBfUUxzMnhlS2NIXzUwdU5mcnlPSHc?oc=5",
+      "source": "Eletrolar News",
+      "published": "Thu, 27 Aug 2026 15:28:54 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Colunista de A Gazeta lança livro sobre IA e os riscos da tecnologia - A Gazeta",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQS044WEFlWnNhb0k2S1FsLVhZM3FrUVJMVER1R2hNQUxVTUtHOUI5LXZla21YV0tMWUVOeTFaeThpV3JERm4xRjRIRGotaEtVeWNqbU5YU0tNQThtdVVwTHBXM0tUYUhNTklPRk1WXzNKMnIyN2hraVFULTI3RFlCUE0zTFk5dHVXT0tZRy1DYlJOQ2psQXl3aGhLZFpRS2dLSkdIQjVJZk44QloycVdKdzZpdw?oc=5",
+      "source": "A Gazeta",
+      "published": "Thu, 27 Aug 2026 14:22:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Economia de serviços ficou concentrada no Sudeste em 2024, diz IBGE - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOcTU3NVFIN1dRX1d6U1o5aFNjdDBybU15T1NpS2ZfY3M2am9QSjZGQkNxWXZzR040Y0lMRFhXODhVUnJBbFlPVHdpejJjNzJnOVQ1Y2NSdllSclFYWHdsOElvZFpGR0g0QkpNd2hGYkNvQmx5aUp3Tk1TMjh1MHRQd0YteDZ0UlEyS1A4RmtfSXlIOHNkbDROblRNdlhPOGV6V3g4Y0tEeFctVTFQWFdDR2tMbklLUWE3dXYwZXpIV3F1WWNoUGkzWkJ5RDhud9IBzgFBVV95cUxOcTU3NVFIN1dRX1d6U1o5aFNjdDBybU15T1NpS2ZfY3M2am9QSjZGQkNxWXZzR040Y0lMRFhXODhVUnJBbFlPVHdpejJjNzJnOVQ1Y2NSdllSclFYWHdsOElvZFpGR0g0QkpNd2hGYkNvQmx5aUp3Tk1TMjh1MHRQd0YteDZ0UlEyS1A4RmtfSXlIOHNkbDROblRNdlhPOGV6V3g4Y0tEeFctVTFQWFdDR2tMbklLUWE3dXYwZXpIV3F1WWNoUGkzWkJ5RDhudw?oc=5",
+      "source": "Valor Econômico",
+      "published": "Thu, 27 Aug 2026 13:00:30 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Economia brasileira impõe desafios às viagens corporativas; veja dicas para TMCs - Panrotas",
+      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNSmtVdDI2SUpCU2JFSTZaNUxwZFUyZHFSSkNYSlJ3WGxFTGhUelBybXJOZ3lDQjFrbVhlUGV2bGtzTTRmZHppdERvWnI1VXl5dkdmYkVEOC0wdkhVcHZ4R1V1RnBELUxheWI0eTh5d2hNOUtXNUwwRnZOSjRycWl4Rkwwa1Y2NWZhdmpCdDUydk53NjlkQ1lpSUFfYmowUTdxQjhKcVJZczZ1V2p4M242cVFNeF9JdDBydUxOOUlvUlVoWUE3X2xEWVBxdmhZQ2JHeWJzcktteWs2S1lkcTJveXJOdV94TFRGV2VnbGtB?oc=5",
+      "source": "Panrotas",
+      "published": "Thu, 27 Aug 2026 14:21:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Brasil tem rombo externo de US$ 8,1 bi em julho, diz BC - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPOENtTW5rcWk0TTZBdWFENThnMXdUOVZYZjU2aEVHX3hqMW1QUy1ISk1QXy1hTmQ4U081VC15Yzh0LTZ3NDB3WDJVTjRsdG5QdmszOThWM1VPMUJpa0l1ZzFXTnZoMmNNWmNjMVZ2bVFCNDI1akd6NWp2SFotRlFSTHVrUnE3WF9MODd4LUNENHJFdDJmaVlGb1RjZkZuSFJUQlRmQWphOWp6ejBU?oc=5",
+      "source": "SBT News",
+      "published": "Thu, 27 Aug 2026 12:05:53 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "CEO do Hcor defende prova para médicos e cobra regulação de novas escolas - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOTTFqRjF1MkFQeWdWeVM0Mm00WHdqSnpGSkYzRGV4Q0tER0c1TmZ4RG1RLWdfbk9tQnVqbnAwa21aalZwTkZwcE1scHV3c1Iwd24xR3RGNW5BN2V1ckRNUy1Wa1pDcDFxcHNGMkhnY3lSNGl4bmY1a2RNVUp3NUx2bUJiWVRrbVlGNE9BNXBMTFBYMUV4VHJEZzZsNExRZ0trRHVCa1Q0dnVyRUJZdHFmSzBHYlVpWDZNZlUxUTFvYVVSekE?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Thu, 27 Aug 2026 10:00:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Dólar oscila perto da estabilidade com agenda carregada no Brasil e no exterior - Canal Rural",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQ3hLeUJNNTFHNDlhRm1SQk5NbmNWeC1DT0pHOEJFRl9nQ2l3N3VYRERZSnFNOXJvUzFIRVlpNGhrQ1Z0TFd3Y1FlYVZ6UDRyM01TREhHWTZhMUY1R2pKcS1BRDIxLWpmMWtEb3ZLeExtWVBGZFJ3RDQyZkw5NFpocXh0dXAxOHo2OXBFOElwa05vRmluY3d4ZjRNVVZSVC1QMDVIc001bUJiR181Y1hMelI5ZEFHek1GRnVv?oc=5",
+      "source": "Canal Rural",
+      "published": "Thu, 27 Aug 2026 13:58:24 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Veja a agenda dos presidenciáveis nesta quinta-feira - Tribuna Hoje",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPb3o5NVpXZFBDWldsTC1Hbl9VVzRFUEZEVW5BYW5KUHZnLVZST3hnSkFYMmV6ckEzYlNSX2RDcE5FMktQMkwwMlh1bGdieTU4UDhMS29iZFhYT1BCX2pXNkoyeTRORjR5UUotUjdjbF9NZXZMVGV3WWtOZDdqSXppLWx3LVZDaF9wTFNDX0N5Q1FJVXE3TEFMWkNfYlA3RUpGdXBicnFrUHptLU5fN3lXQkN3dmpOVlR1dldTN1FDTQ?oc=5",
+      "source": "Tribuna Hoje",
+      "published": "Thu, 27 Aug 2026 14:04:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Soberania ou subordinação: o chamado do Terceiro Congresso Pan-Americano de Montevidéu e uma agenda progressista para as Américas – Larissa Ramina - Brasil 247",
+      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPZUY3aHBiR2xlYWR5aFI0TUF4SWp4RDRKeHlsblZJd25rY0dvXzYzb2tyLVpUT1hucWl1YzhkNERJVnYwc2U1emRVMi14X2NNRTFUQk5HaFNUUWFELTdwRGxzd2JMTm1PQk44bTJzOUlNZGtNU2prazVaVTRqOThEUnNnTHR6UXF0c0pRSnFMSGw2X1NjZWhIeENWMEUyTnJTaGp0WU8wOVpBVlpCRlRjUG1HRHhIc3lZTGxGTlVmTEpaYk9MQkdHVDF0UjlyZmFHQW9rNWNwMWpMQWx0UWRrbGhzOWpTZTZpZU5ubDl1QmlCUQ?oc=5",
+      "source": "Brasil 247",
+      "published": "Thu, 27 Aug 2026 15:17:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "[Agenda Funarte SP] Grupo Mangalot Capoeira promove \"No Íntimo da Construção\" em São Paulo - www.gov.br",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNcEpVM3hJRElXMnFqQXJaUGljeHpoOHpLNk1UY2d0dnkzN1FGbFJab3BGaHNPdDRhVUpWakhsR1Jfb0JXM0VUdFhQYWFzTWtNcFhHaVIyVHpqNFd0djNJbTNvR0NBLThsLU04TDE5Z2hxRWxtYjJPOEFQTUVmdW05eEZSRTRPWDZYM2xtUUdmcm9hQTFLT3RJZy1xQ1JFZk4yRXZ2VUlRcUFwV3AxbVZuTmY4QzkzYWRTSVZjamtXdmJweXVIWjBhTE5jYXF5QU1SUGtkZ1FMMjYtM3FHM2x3MHNjSWpHemM?oc=5",
+      "source": "www.gov.br",
+      "published": "Thu, 27 Aug 2026 14:19:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Taxa de desemprego, Jackson Hole, balança comercial nos EUA e mais destaques desta 5ª - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQdFdvX1ZuTTVDZnBESTVnRGVvc2pMWlhxQmd3TnU1S280QWppNERNRGVYVTN4QUhUUU5sUDlrZFFtM0F6QmRUVjJhQ2lDc09MZWRFS0Jha0dVUlBoSXBtTVlydksyaHFDNFRia0gyYTZhbmhuZThVNWFXb0xVV0ZXcE1wN0QwUHlCdkVVWXpuU3dSLXJ5WTcyLUZvZ3VxZ0dGdXVhRTF5SmHSAa4BQVVfeXFMT0doYl9oQUxGejY3dXk3QXFvNEVNSnJhdEd1SWpLbzYwM3gtdThrYVJzX1ppVUZJVVdqeER3QS1CcTFrVEVzc1RDY2IyYTVsQ0xyb3lVLVhFY0FtdlgzMzgxTk4wcDk1Q3d1NXRscWFMei1OaU9iU3NKSE9MMVhXLTBPYlBkaE15ck1XaURDaC1pNDdPRXoxMmRaU29nbjVnWmFxN2FNbHRtRUdqTC1B?oc=5",
+      "source": "InfoMoney",
+      "published": "Thu, 27 Aug 2026 09:09:12 GMT"
+    }
+  ],
+  "generated_at": "2026-08-27T12:51:24.360172-03:00"
+}
