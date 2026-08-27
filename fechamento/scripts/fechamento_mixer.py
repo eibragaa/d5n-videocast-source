@@ -6,6 +6,8 @@ import argparse
 import subprocess
 import sys
 import tempfile
+import random
+from datetime import date
 from pathlib import Path
 
 from pydub import AudioSegment, silence
@@ -13,8 +15,20 @@ from pydub import AudioSegment, silence
 FC_ROOT = Path(__file__).resolve().parents[1]
 ASSETS = FC_ROOT / "assets" / "audio"
 MC_ASSETS = FC_ROOT.parent / "manha-conectada" / "assets" / "audio"  # fallback
-INTRO = ASSETS / "intro-fm-8bit.mp3"
-BED = ASSETS / "bg-fm-mercado.mp3"
+# Rotação por data
+FM_INTROS = [ASSETS / "intro-fm-01.mp3", ASSETS / "intro-fm-07.mp3"]
+FM_BEDS = [ASSETS / "bg-fm-01.mp3", ASSETS / "bg-fm-07.mp3"]
+
+def pick_daily(assets):
+    today = date.today()
+    seed = today.year * 10000 + today.month * 100 + today.day
+    random.seed(seed)
+    c = random.choice(assets)
+    random.seed()
+    return c
+
+INTRO = pick_daily(FM_INTROS)
+BED = pick_daily(FM_BEDS)
 STING = ASSETS / "transition-sting.mp3"
 MIN_SECONDS = 420
 MAX_SECONDS = 650

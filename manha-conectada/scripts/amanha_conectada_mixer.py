@@ -6,19 +6,63 @@ import argparse
 import subprocess
 import sys
 import tempfile
-from pathlib import Path
-
+import random
+from datetime import date
 from pydub import AudioSegment, silence
+from pathlib import Path
 
 MC_ROOT = Path(__file__).resolve().parents[1]
 ASSETS = MC_ROOT / "assets" / "audio"
-INTRO = ASSETS / "intro-mc-8bit.mp3"
-BED = ASSETS / "bg-mc-matinal.mp3"
 STING = ASSETS / "transition-sting.mp3"
 MIN_SECONDS = 225
 MAX_SECONDS = 390
 LEAD_MS = 1800
 THEME_PAUSE_EXTRA_MS = 700
+
+# Rotação de BGs por data — mesma intro + BG = par combinável
+MC_INTROS = [
+    ASSETS / "intro-mc-03.mp3",
+    ASSETS / "intro-mc-04.mp3",
+    ASSETS / "intro-mc-06.mp3",
+]
+MC_BEDS = [
+    ASSETS / "bg-mc-03.mp3",
+    ASSETS / "bg-mc-04.mp3",
+    ASSETS / "bg-mc-06.mp3",
+]
+FM_INTROS = [
+    ASSETS / "intro-fm-01.mp3",
+    ASSETS / "intro-fm-07.mp3",
+]
+FM_BEDS = [
+    ASSETS / "bg-fm-01.mp3",
+    ASSETS / "bg-fm-07.mp3",
+]
+
+
+def pick_daily(assets: list[Path]) -> Path:
+    """Escolhe deterministicamente baseado na data — mesmo ep. sempre o mesmo."""
+    today = date.today()
+    seed = today.year * 10000 + today.month * 100 + today.day
+    random.seed(seed)
+    chosen = random.choice(assets)
+    random.seed()  # reset
+    return chosen
+
+
+def daily_intro(programa: str = "mc") -> Path:
+    intros = MC_INTROS if programa == "mc" else FM_INTROS
+    return pick_daily(intros)
+
+
+def daily_bed(programa: str = "mc") -> Path:
+    beds = MC_BEDS if programa == "mc" else FM_BEDS
+    return pick_daily(beds)
+
+
+# Intro e BED do dia (padrão — pode ser sobrescrito via arg)
+INTRO = daily_intro("mc")
+BED = daily_bed("mc")
 
 
 def loop_to(audio: AudioSegment, length: int) -> AudioSegment:
