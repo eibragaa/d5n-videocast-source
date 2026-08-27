@@ -16,7 +16,7 @@ ASSETS = MC_ROOT / "assets" / "audio"
 STING = ASSETS / "transition-sting.mp3"
 MIN_SECONDS = 225
 MAX_SECONDS = 390
-LEAD_MS = 1800
+LEAD_MS = 2000
 THEME_PAUSE_EXTRA_MS = 700
 
 # Rotação de BGs por data — mesma intro + BG = par combinável
@@ -135,7 +135,7 @@ def main() -> int:
 
     # Abertura instrumental audível; cama sobe levemente e respira entre temas.
     voice_canvas = AudioSegment.silent(duration=LEAD_MS, frame_rate=44100) + voice
-    music = loop_to(bed - 25, len(voice_canvas)).fade_in(500).fade_out(2200)
+    music = loop_to(bed - 18, len(voice_canvas)).fade_in(500).fade_out(2200)
     music = music.overlay(intro, position=0)
     # Assinatura em transições alternadas; as demais deixam só a trilha exposta.
     for index, position in enumerate(transition_positions):
