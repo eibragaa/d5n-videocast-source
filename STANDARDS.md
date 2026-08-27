@@ -199,6 +199,39 @@ Se o `BASE_URL` ou o caminho no enclosure for mudado, verificar:
 
 ---
 
+## 🎙️ Identidade Sonora e Vozes
+
+| Programa | Apresentador(a) | Voz TTS | Tom | Intro 8-bit | Trilha BG |
+|---|---|---|---|---|---|
+| **D5N** | Thalita/Francisca | `pt-BR-ThalitaMultilingualNeural` / `pt-BR-AntonioNeural` | Diário, ágil, 12 seções | *(intocado)* | *(intocado)* |
+| **MC** | **Francisca** | `pt-BR-FranciscaNeural` | Matinal, acolhedor, dinâmico | `intro-mc-8bit.mp3` (Dm, 120BPM) | `bg-mc-matinal.mp3` (Dm, 60s loop) |
+| **FM** | **Antonio** | `pt-BR-AntonioNeural` | Sextouro-style, mercado, closing | `intro-fm-8bit.mp3` (G major, 130BPM) | `bg-fm-mercado.mp3` (G, 60s loop) |
+
+### Ativos de áudio MC
+```
+manha-conectada/assets/audio/
+├── intro-mc-8bit.mp3       # ✅ NOVO — intro chiptune Dm 120BPM
+├── bg-mc-matinal.mp3       # ✅ NOVO — trilha Dm 60s loop
+├── bg-music-mc.wav_OLD     # 🔒 backup (não apagar)
+├── intro-mc-nova.mp3_OLD   # 🔒 backup (não apagar)
+├── intro-jingle.mp3        # legado
+├── transition-sting.mp3    # sting de transição
+```
+
+### Ativos de áudio FM
+```
+fechamento/assets/audio/
+├── intro-fm-8bit.mp3       # ✅ NOVO — intro chiptune G 130BPM (closing épico)
+├── bg-fm-mercado.mp3       # ✅ NOVO — trilha G 60s loop (mercado)
+├── bg-music-mc.wav_OLD     # 🔒 backup (não apagar)
+├── intro-mc-nova.mp3_OLD   # 🔒 backup (não apagar)
+├── transition-sting.mp3    # sting de transição
+```
+
+> **Importante:** Nunca apagar os arquivos `_OLD` — são o rollback rápido.
+
+---
+
 ## 🔧 Comandos Úteis
 
 ```bash
