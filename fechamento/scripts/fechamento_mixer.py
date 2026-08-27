@@ -6,8 +6,6 @@ import argparse
 import subprocess
 import sys
 import tempfile
-import random
-from datetime import date
 from pathlib import Path
 
 from pydub import AudioSegment, silence
@@ -15,24 +13,12 @@ from pydub import AudioSegment, silence
 FC_ROOT = Path(__file__).resolve().parents[1]
 ASSETS = FC_ROOT / "assets" / "audio"
 MC_ASSETS = FC_ROOT.parent / "manha-conectada" / "assets" / "audio"  # fallback
-# Rotação por data
-FM_INTROS = [ASSETS / "intro-fm-01.mp3", ASSETS / "intro-fm-07.mp3"]
-FM_BEDS = [ASSETS / "bg-fm-01.mp3", ASSETS / "bg-fm-07.mp3"]
-
-def pick_daily(assets):
-    today = date.today()
-    seed = today.year * 10000 + today.month * 100 + today.day
-    random.seed(seed)
-    c = random.choice(assets)
-    random.seed()
-    return c
-
-INTRO = pick_daily(FM_INTROS)
-BED = pick_daily(FM_BEDS)
+INTRO = ASSETS / "intro-mc-nova.mp3"
+BED = ASSETS / "bg-music-mc.wav"
 STING = ASSETS / "transition-sting.mp3"
 MIN_SECONDS = 420
 MAX_SECONDS = 650
-LEAD_MS = 2000
+LEAD_MS = 1800
 THEME_PAUSE_EXTRA_MS = 700
 
 
@@ -110,7 +96,7 @@ def main() -> int:
 
     # Abertura instrumental audível; cama sobe levemente e respira entre temas.
     voice_canvas = AudioSegment.silent(duration=LEAD_MS, frame_rate=44100) + voice
-    music = loop_to(bed - 12, len(voice_canvas)).fade_in(800).fade_out(1000)
+    music = loop_to(bed - 25, len(voice_canvas)).fade_in(500).fade_out(2200)
     music = music.overlay(intro, position=0)
     # Assinatura em transições alternadas; as demais deixam só a trilha exposta.
     for index, position in enumerate(transition_positions):
@@ -134,8 +120,10 @@ def main() -> int:
                 "[0:a][key]sidechaincompress="
                 "threshold=0.018:ratio=8:attack=15:release=320[ducked];"
                 f"[ducked][voice]amix=inputs=2:normalize=0,"
-                f"afade=t=out:st={fade_start:.3f}:d=1.0[out]"
+                f"afade=t=out:st={fade_start:.3f}:d=1.8,"
+                "loudnorm=I=-16:TP=-1.5:LRA=11[out]"
             ),
+            "-map", "[out]",
             "-ar", "44100", "-ac", "1", "-c:a", "libmp3lame", "-b:a", "192k", str(output),
         ]
         proc = subprocess.run(cmd, text=True, capture_output=True, timeout=600)
