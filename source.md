@@ -1,5 +1,5 @@
 # DROP FIVE NEWS - Boletim Diario
-## Terça-feira, 18 de Agosto de 2026
+## Quinta-feira, 27 de Agosto de 2026
 
 INSTRUCOES PARA APRESENTACAO (LEIA ANTES DE GRAVAR):
 - Idioma: portugues brasileiro (NAO use portugues de Portugal).
@@ -18,7 +18,7 @@ INSTRUCOES PARA APRESENTACAO (LEIA ANTES DE GRAVAR):
 
 
 INTRO:
-E ai galera, Drop Five News, com Francisca. Bem-vindos ao D5N de Terça-feira, 18 de Agosto de 2026. Bora pro resumo do dia, direto ao ponto, como sempre.
+E ai galera, Drop Five News, com Francisca. Bem-vindos ao D5N de Quinta-feira, 27 de Agosto de 2026. Bora pro resumo do dia, direto ao ponto, como sempre.
 
 ---
 
