@@ -1,29 +1,36 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:ns1="https://podcastindex.org/namespace/1.0" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://purl.org/rss/1.0/modules/content/" xmlns:ns4="http://podlove.org/simple-chapters" version="2.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:podcast="https://podcastindex.org/namespace/1.0"
+     xmlns:psrc="https://podcastindex.org/namespace/1.0"
+     xmlns:psc="http://podlove.org/simple-chapters">
  <channel>
     <title>Fechamento do Mercado</title>
     <link>https://d5n-daily.netlify.app/#fechamento</link>
     <language>pt-br</language>
     <description>Briefing de fim de tarde do Drop Five News. De segunda a sexta, Antonio resume as notícias que já definiram o dia e apresenta o Radar Amanhã: o que ainda pode mudar o cenário até o começo da tarde.</description>
-    <ns0:subtitle>O resumo do pregão com contexto e Radar Amanhã</ns0:subtitle>
-    <ns0:summary>Briefing de fim de tarde do Drop Five News. De segunda a sexta, Antonio resume as notícias que já definiram o dia e apresenta o Radar Amanhã: o que ainda pode mudar o cenário até o começo da tarde.</ns0:summary>
-    <ns0:author>Drop Five News</ns0:author>
-    <ns0:owner>
-      <ns0:name>Jean Braga</ns0:name>
-      <ns0:email>eibragaa@gmail.com</ns0:email>
-    </ns0:owner>
-    <ns0:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg" />
-    <ns0:explicit>false</ns0:explicit>
-    <ns0:type>episodic</ns0:type>
-    <ns0:complete>no</ns0:complete>
-    <ns0:category text="News">
-      <ns0:category text="Daily News" />
-    </ns0:category>
-    <ns0:category text="Business" />
-    <ns1:locked owner="eibragaa@gmail.com">no</ns1:locked>
-    <ns1:guid>fechamento.d5n-daily.netlify.app</ns1:guid>
-    <ns2:link href="https://d5n-daily.netlify.app/fechamento.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 27 Aug 2026 06:10:24 +0000</lastBuildDate>
+    <itunes:subtitle>O resumo do pregão com contexto e Radar Amanhã</itunes:subtitle>
+    <itunes:summary>Briefing de fim de tarde do Drop Five News. De segunda a sexta, Antonio resume as notícias que já definiram o dia e apresenta o Radar Amanhã: o que ainda pode mudar o cenário até o começo da tarde.</itunes:summary>
+    <itunes:author>Drop Five News</itunes:author>
+    <itunes:owner>
+      <itunes:name>Jean Braga</itunes:name>
+      <itunes:email>eibragaa@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg"/>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <itunes:complete>no</itunes:complete>
+    <ttl>60</ttl>
+    <itunes:category text="News">
+      <itunes:category text="Daily News"/>
+    </itunes:category>
+    <itunes:category text="Business"/>
+    <podcast:locked owner="eibragaa@gmail.com">no</podcast:locked>
+    <podcast:guid>fechamento.d5n-daily.netlify.app</podcast:guid>
+    <atom:link href="https://d5n-daily.netlify.app/fechamento.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Wed, 26 Aug 2026 17:30:00 -0300</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/fechamento-cover.jpg</url>
       <title>Fechamento do Mercado</title>
@@ -33,55 +40,55 @@
     <generator>D5N Pipeline — Fechamento do Mercado</generator>
     <item>
       <title>Fechamento do Mercado — 26/08/2026</title>
-      <ns0:title>Fechamento do Mercado — 26/08/2026</ns0:title>
-      <ns0:episode>3</ns0:episode>
-      <ns0:season>1</ns0:season>
-      <ns0:episodeType>full</ns0:episodeType>
-      <ns0:duration>07:47</ns0:duration>
-      <ns0:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg" />
+      <itunes:title>Fechamento do Mercado — 26/08/2026</itunes:title>
+      <itunes:episode>2</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>07:47</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg"/>
       <guid isPermaLink="false">fechamento-2026-08-26</guid>
       <link>https://d5n-daily.netlify.app/#fechamento</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/fechamento-2026-08-26.mp3" length="11211589" type="audio/mpeg" />
+      <enclosure url="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-08-26.mp3" length="11211589" type="audio/mpeg"/>
       <pubDate>Wed, 26 Aug 2026 17:30:00 -0300</pubDate>
       <description>Fechamento do Mercado de 26/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:47.</description>
-      <ns0:summary>Fechamento do Mercado de 26/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:47.</ns0:summary>
-      <ns3:encoded>&lt;p&gt;&lt;strong&gt;Fechamento do Mercado • 26/08/2026&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Fechamento do Mercado de 26/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:47.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Ibovespa Hoje Ao Vivo: Bolsa perde força e oscila; PETR4 sobe - InfoMoney&lt;/li&gt;&lt;li&gt;Mercado agora | Bolsas da Europa sobem, com expectativa por resolução em Ormuz e balanço da Nvidia - InvesTalk&lt;/li&gt;&lt;li&gt;Ibovespa hoje: IPCA-15 aumenta expectativa por novo corte da Selic e inflação dos EUA dentro do esperado; veja destaques desta quarta (26) - Empiricus&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://d5n-daily.netlify.app/#fechamento"&gt;Ouça no site&lt;/a&gt;&lt;/p&gt;</ns3:encoded>
-  <ns1:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/fechamento-2026-08-26.mp3">
-  <ns4:chapters version="2.2">
-    <ns4:chapter start="00:00" title="Abertura" />
-    <ns4:chapter start="01:17" title="Radar Mercado" />
-    <ns4:chapter start="02:35" title="Dólar" />
-    <ns4:chapter start="03:53" title="Bolsas" />
-    <ns4:chapter start="05:11" title="Empresas" />
-    <ns4:chapter start="06:29" title="Encerramento" />
-  </ns4:chapters>
-  </ns1:chapters>
+      <itunes:summary>Fechamento do Mercado de 26/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:47.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Fechamento do Mercado • 26/08/2026</strong></p><p>Fechamento do Mercado de 26/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:47.</p><ul><li>Ibovespa Hoje Ao Vivo: Bolsa perde força e oscila; PETR4 sobe - InfoMoney</li><li>Mercado agora | Bolsas da Europa sobem, com expectativa por resolução em Ormuz e balanço da Nvidia - InvesTalk</li><li>Ibovespa hoje: IPCA-15 aumenta expectativa por novo corte da Selic e inflação dos EUA dentro do esperado; veja destaques desta quarta (26) - Empiricus</li></ul><p><a href="https://d5n-daily.netlify.app/#fechamento">Ouça no site</a></p>]]></content:encoded>
+  <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-08-26.mp3">
+  <psc:chapters version="2.2">
+    <psc:chapter start="00:00" title="Abertura"/>
+    <psc:chapter start="01:17" title="Radar Mercado"/>
+    <psc:chapter start="02:35" title="Dólar"/>
+    <psc:chapter start="03:53" title="Bolsas"/>
+    <psc:chapter start="05:11" title="Empresas"/>
+    <psc:chapter start="06:29" title="Encerramento"/>
+  </psc:chapters>
+  </podcast:chapters>
     </item>
     <item>
       <title>Fechamento do Mercado — 22/08/2026</title>
-      <ns0:title>Fechamento do Mercado — 22/08/2026</ns0:title>
-      <ns0:episode>1</ns0:episode>
-      <ns0:season>1</ns0:season>
-      <ns0:episodeType>full</ns0:episodeType>
-      <ns0:duration>08:16</ns0:duration>
-      <ns0:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg" />
+      <itunes:title>Fechamento do Mercado — 22/08/2026</itunes:title>
+      <itunes:episode>1</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>08:16</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg"/>
       <guid isPermaLink="false">fechamento-2026-08-22</guid>
       <link>https://d5n-daily.netlify.app/#fechamento</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/fechamento-2026-08-22.mp3" length="11906864" type="audio/mpeg" />
+      <enclosure url="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-08-22.mp3" length="11906864" type="audio/mpeg"/>
       <pubDate>Sat, 22 Aug 2026 17:30:00 -0300</pubDate>
       <description>Fechamento do Mercado de 22/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 8:16.</description>
-      <ns0:summary>Fechamento do Mercado de 22/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 8:16.</ns0:summary>
-      <ns3:encoded>&lt;p&gt;&lt;strong&gt;Fechamento do Mercado • 22/08/2026&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Fechamento do Mercado de 22/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 8:16.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Fechamento (21/08) | Ibovespa estende recuperação e sobe 1,85%; dólar cai a R$ 5,1451 - InvesTalk&lt;/li&gt;&lt;li&gt;Dólar hoje cai 1%, a R$ 5,14, com ajuda do exterior e eleições - InfoMoney&lt;/li&gt;&lt;li&gt;Ibovespa dispara 1,85% e retoma 171 mil pontos com bancos e Vale (VALE3) - suno.com.br&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://d5n-daily.netlify.app/#fechamento"&gt;Ouça no site&lt;/a&gt;&lt;/p&gt;</ns3:encoded>
-  <ns1:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/fechamento-2026-08-22.mp3">
-  <ns4:chapters version="2.2">
-    <ns4:chapter start="00:00" title="Abertura" />
-    <ns4:chapter start="01:22" title="Radar Mercado" />
-    <ns4:chapter start="02:45" title="Dólar" />
-    <ns4:chapter start="04:08" title="Bolsas" />
-    <ns4:chapter start="05:30" title="Empresas" />
-    <ns4:chapter start="06:53" title="Encerramento" />
-  </ns4:chapters>
-  </ns1:chapters>
+      <itunes:summary>Fechamento do Mercado de 22/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 8:16.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Fechamento do Mercado • 22/08/2026</strong></p><p>Fechamento do Mercado de 22/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 8:16.</p><ul><li>Fechamento (21/08) | Ibovespa estende recuperação e sobe 1,85%; dólar cai a R$ 5,1451 - InvesTalk</li><li>Dólar hoje cai 1%, a R$ 5,14, com ajuda do exterior e eleições - InfoMoney</li><li>Ibovespa dispara 1,85% e retoma 171 mil pontos com bancos e Vale (VALE3) - suno.com.br</li></ul><p><a href="https://d5n-daily.netlify.app/#fechamento">Ouça no site</a></p>]]></content:encoded>
+  <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-08-22.mp3">
+  <psc:chapters version="2.2">
+    <psc:chapter start="00:00" title="Abertura"/>
+    <psc:chapter start="01:22" title="Radar Mercado"/>
+    <psc:chapter start="02:45" title="Dólar"/>
+    <psc:chapter start="04:08" title="Bolsas"/>
+    <psc:chapter start="05:30" title="Empresas"/>
+    <psc:chapter start="06:53" title="Encerramento"/>
+  </psc:chapters>
+  </podcast:chapters>
     </item>
   </channel>
 </rss>

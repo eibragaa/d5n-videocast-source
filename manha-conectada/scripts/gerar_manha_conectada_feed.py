@@ -43,7 +43,7 @@ class Episode:
 
     @property
     def enclosure_url(self) -> str:
-        return f"{BASE_URL}/audio/{self.audio_name}"
+        return f"{BASE_URL}/manha-conectada/audio/{self.audio_name}"
 
 
 def _sha256(path: Path) -> str:
