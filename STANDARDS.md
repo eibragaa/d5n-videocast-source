@@ -195,10 +195,22 @@ d5n-videocast-source/
 
 ## Regras de Ouro
 
-1. **Sempre commitar o XML gerado** junto com o script — o Netlify precisa do XML no repo
-2. **Copiar feeds para repo root** — `*.xml` no root é o que o Netlify serve em `/`
-3. **Usar `.jpg` para RSS** — agregadores aceitam JPEG para `itunes:image`
-4. **Usar `.png` para site** — backgrounds com transparência
-5. **D5N = labels sem timestamp** — coldopen.txt não tem timing real
-6. **MC/FM = timestamp real** — roteiro aprovado tem parágrafos que refletem o áudio
-7. **Push para master** — ativa o deploy automático do Netlify
+1. **SEMPRE fazer `git push origin HEAD:master`** após commits — o Netlify builda apenas o `master`. Se commits ficarem num branch separado, verificar com `git log master --oneline` e corrigir com `git push origin <branch>:master`.
+2. **ATUALIZAR FEEDS EM AMBOS OS LOCAIS** — o `netlify.toml` tem redirects: `/manha-conectada.xml` → `manha-conectada/feeds/manha-conectada.xml` e `/fechamento.xml` → `fechamento/feeds/fechamento.xml`. Sempre copiar: `cp manha-conectada.xml manha-conectada/feeds/ && cp fechamento.xml fechamento/feeds/`.
+3. **MC script requer manifests canônicos** — `manha-conectada/scripts/gerar_manha_conectada_feed.py` exige `manifests/<data>.json` com `prototype: false` para cada episódio. Se o script gerar poucos episódios, os manifests podem ter sido movidos ou deletados. Nesse caso, usar o XML existente (ele foi gerado quando os manifests existiam) e atualizá-lo manualmente.
+4. **Push para master ativa o Netlify** — o deploy é automático ao fazer push no master.
+5. **Validar XML antes de push** — rodar `python3 -c "import xml.etree.ElementTree as ET; ET.parse('podcast.xml')"`.
+
+## Estado Atual dos Feeds (2026-08-26)
+
+| Programa | Episódios | lastBuildDate | ttl | Capas | Capítulos |
+|---|---|---|---|---|---|
+| D5N | 56 | 26/08 23:29 | 60 | ✅ .jpg | ✅ 5 eps com labels |
+| MC | 16 | 26/08 23:50 | 60 | ✅ .jpg | ✅ timestamp real |
+| FM | 3 | 26/08 17:30 | 60 | ✅ .jpg | ✅ labels proporcionais |
+
+## URLs para Cadastro no Agregador
+
+- **D5N:** `https://d5n-daily.netlify.app/podcast.xml`
+- **MC:** `https://d5n-daily.netlify.app/manha-conectada.xml`
+- **FM:** `https://d5n-daily.netlify.app/fechamento.xml`
