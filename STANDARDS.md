@@ -1,216 +1,222 @@
-# Padrões do Projeto D5N — Estado Atual
+# STANDARDS — Drop Five News Podcast Pipeline
 
-> **Última atualização:** 2026-08-26
-> **Live:** https://d5n-daily.netlify.app
-
----
-
-## Os 3 Programas e Seus Feeds RSS
-
-| Programa | Feed RSS (URL pública) | Script | Capítulos |
-|---|---|---|---|
-| Drop Five News (D5N) | `https://d5n-daily.netlify.app/podcast.xml` | `scripts/gerar_podcast_feed.py` | Labels sem timestamp (coldopen.txt) |
-| Manhã Conectada (MC) | `https://d5n-daily.netlify.app/manha-conectada.xml` | `manha-conectada/scripts/gerar_manha_conectada_feed.py` | Com timestamp real (roteiro) |
-| Fechamento do Mercado (FM) | `https://d5n-daily.netlify.app/fechamento.xml` | `fechamento/scripts/gerar_fechamento_feed.py` | Com timestamp real (roteiro) |
+> Arquitetura, padrões e procedimentos para os 3 programas de áudio do D5N:
+> **D5N** (Drop Five News), **MC** (Manhã Conectada), **FM** (Fechamento do Mercado).
 
 ---
 
-## Capas dos Programas (arte final)
+## 🎯 Arquitetura de Feeds
 
-| Programa | RSS / Agregador | Site (background) |
+Cada programa tem **2 cópias** do feed XML:
+
+| Feed | Usado por | Onde está |
 |---|---|---|
-| D5N | `podcast-cover.jpg` (1400×1400) | `podcast-cover-bg.png` (400×400) |
-| Manhã Conectada | `manha-conectada-cover.jpg` (1400×1400) | `manha-conectada-cover-bg.png` (400×400) |
-| Fechamento | `fechamento-cover.jpg` (1400×1400) | `fechamento-cover-bg.png` (400×400) |
+| `*.xml` (root) | Agregadores externos (AntennaPod, Pocket Casts, etc.) | Raiz do repo |
+| `feeds/*.xml` | Redirect Netlify `/programa.xml` → `/programa/feeds/` | `feeds/` de cada programa |
 
-- **Origem das capas:** `/manha-conectada/assets/` e `/fechamento/assets/` (arte profissional)
-- **D5N:** `/img_1e60980ddb60.jpg` (enviada via WhatsApp pelo Jean)
-- **RSS:** JPEG para compatibilidade com agregadores
-- **Site:** PNG 400×400 com `mix-blend-mode:luminosity` + backgrounds semi-transparentes
-
----
-
-## Formato de Capítulos RSS
-
-### Namespace
-```xml
-xmlns:podcast="https://podcastindex.org/namespace/1.0"
-xmlns:psc="http://podlove.org/simple-chapters"
+Os **redirects Netlify** (netlify.toml) mapeiam:
+```
+/manha-conectada.xml  → /manha-conectada/feeds/manha-conectada.xml
+/fechamento.xml       → /fechamento/feeds/fechamento.xml
+/audio/fechamento-*   → /fechamento/audio/fechamento-:splat
+/audio/manha-conectada-* → /manha-conectada/audio/manha-conectada-:splat
 ```
 
-### D5N — labels sem timestamp (coldopen.txt sem timing real)
-```xml
-<podcast:chapters version="1.2" src="...mp3">
-  <psrc:chapter title="Abertura"/>
-  <psrc:chapter title="Brasil &amp; Política"/>
-  <psrc:chapter title="Economia"/>
-  <psrc:chapter title="Mundo"/>
-  <psrc:chapter title="Tecnologia &amp; Inovações"/>
-  <psrc:chapter title="Encerramento"/>
-</podcast:chapters>
-<psc:chapters version="2.0">
-  <psc:chapter title="Abertura"/>
-  ...
-</psc:chapters>
-```
-
-### MC — timestamp real (proporcional ao roteiro)
-```xml
-<psrc:chapter startTime="0" title="Abertura"/>
-<psrc:chapter startTime="1800" title="Agenda"/>
-<psrc:chapter startTime="53312" title="Clima &amp; País"/>
-...
-```
-
----
-
-## Gerar Todos os Feeds
-
+**REGRA:** Após regenerar qualquer feed, **copiar para ambas as localizações**:
 ```bash
-cd /root/repositorio/d5n-videocast-source
-
-# D5N
-python3 scripts/gerar_podcast_feed.py
-
 # MC
 python3 manha-conectada/scripts/gerar_manha_conectada_feed.py
+cp manha-conectada/feeds/manha-conectada.xml manha-conectada.xml
 
 # FM
 python3 fechamento/scripts/gerar_fechamento_feed.py
+cp feeds/fechamento.xml ../fechamento.xml
 
-# Copiar para repo root (Netlify serve do root)
-cp manha-conectada/feeds/manha-conectada.xml .
-cp fechamento/feeds/fechamento.xml .
-
-# Commit + push (dispara Netlify)
-git add podcast.xml manha-conectada.xml fechamento.xml
-git commit -m "chore: regenerate feeds"
-git push origin HEAD:master
+# D5N
+python3 scripts/gerar_podcast_feed.py   # já gera em podcast.xml (root)
 ```
 
 ---
 
-## Crons de Publicação
+## 🏛️ Regras de Ouro
 
-| Cron | Horário | O que faz |
-|---|---|---|
-| `d5n-podcast-diario` | 03:00 seg-sáb | Gera D5N + podcast.xml (chama `gerar_podcast_feed.py`) |
-| `manha-conectada-diario` | 09:00 seg-sex | Gera MC (chama `gerar_manha_conectada_feed.py`) |
-| `fechamento-diario` | 16:30 seg-sex | Gera FM (chama `gerar_fechamento_feed.py`) |
-| `d5n-fechamento-mercado` | 17:00 seg-sex | Script card fechamento (no_agent) |
-| `fm-publish-watchdog` | 18:00 seg-sex | Watchdog FM (no_agent) |
+### 1. Sempre `git push origin HEAD:master`
+O Netlify builda **apenas** o branch `master`. Commits em outros branches não vão ao ar.
+```bash
+# ✅ CERTO — push direto para master
+git add ... && git commit -m "..." && git push origin HEAD:master
 
-**Importante:** os crons rodam a pipeline completa que chama os scripts de feed. O site (`gerar_pagina_d5n.py`) também chama `gerar_podcast_feed.py` ao gerar.
+# ❌ ERRADO — vai para branch, Netlify não builda
+git add ... && git commit -m "..." && git push origin HEAD:test/fechamento-mercado
+```
+
+**Verificação:** após push, confirmar com `git log master --oneline | head -3`
+
+### 2. Sempre validar antes de pushar
+Rodar `scripts/validate_feeds.py` após gerar feeds:
+```bash
+python3 scripts/validate_feeds.py
+# Saída deve mostrar: ✅ ALL 3/3 feeds PASS
+```
+
+### 3. Sempre verificar URLs de enclosure
+Um enclosure **DEVE** apontar para o caminho real do MP3:
+
+| Programa | Caminho do enclosure |
+|---|---|
+| D5N | `https://d5n-daily.netlify.app/audio/{arquivo}.mp3` |
+| MC | `https://d5n-daily.netlify.app/manha-conectada/audio/{arquivo}.mp3` |
+| FM | `https://d5n-daily.netlify.app/fechamento/audio/{arquivo}.mp3` |
+
+**NUNCA** usar `/audio/` para MC ou FM — esses programas têm subdiretórios próprios.
+
+### 4. O episódio só entra no feed se o MP3 existir
+Os scripts de feed **validam que o arquivo existe** antes de incluir. Feed com enclosure fantasma (MP3 que não existe) = podcast quebrado para os ouvintes.
 
 ---
 
-## D5N — Como Gerar Capítulos
+## 📡 Estado Atual dos Feeds (2026-08-27)
 
-Os capítulos D5N usam o `coldopen.txt` do manifest do dia:
-```
-manifests/d5n/<data>/coldopen.txt  →  load_program_chapters("d5n", date, dur)
-```
+| Programa | Episódios | Último | ttl | Capas | Caminho MP3 |
+|---|---|---|---|---|---|
+| D5N | 54 | 27/08 (ep065) | ✅ 60 | ✅ cover.jpg | `/audio/` |
+| MC | 13 | 17/08 | ✅ 60 | ✅ cover.jpg | `/manha-conectada/audio/` |
+| FM | 2 | 26/08 | ✅ 60 | ✅ cover.jpg | `/fechamento/audio/` |
 
-- Divide o coldopen em frases por pontuação forte
-- Gera 6 labels: Abertura, Brasil & Política, Economia, Mundo, Tecnologia & Inovações, Encerramento
-- **Sem timestamp real** — só labels (coldopen é texto corrido, sem timing)
-
-Para episódios sem `coldopen.txt` → nenhum capítulo.
-
----
-
-## MC/FM — Como Gerar Capítulos
-
-MC e FM usam os roteiros aprovados:
-```
-manha-conectada/roteiros/source-manha-<data>.md
-fechamento/roteiros/source-fechamento-<data>.md
-  →  load_program_chapters("manha-conectada"|"fechamento", date, dur)
-```
-
-- Extrai parágrafos do bloco `## Roteiro aprovado`
-- Pesa por tamanho para distribuir timestamps proporcionais
-- **Com timestamp real**
-
-### Labels MC (8 labels)
-`Abertura → Agenda → Clima & País → Mundo → Tecnologia → Economia → Sinal 11 → Encerramento`
-
-### Labels FM (6 labels)
-`Abertura → Bolsa → Câmbio → Fluxo estrangeiro → Empresas & Radar Amanhã → Encerramento`
+### Sobre os episódios ausentes (24-26/08)
+- **D5N ep062-064 (24-26/ago):** Manifests existem mas MP3s não foram gerados. Pendente pipeline.
+- **MC 24-26/ago:** Sem manifestos — episódio não foi gerado pela pipeline.
+- **FM 24-25/ago:** MP3s ausentes.
 
 ---
 
-## CSS do Site — Backgrounds de Capas
+## 🔄 Cron Jobs (automação)
 
-Os painéis MC/FM/D5N usam `::before` com as capas bg:
-
-```css
-.d5n-program::before {
-  background-image: url("/podcast-cover-bg.png");
-  opacity: 0.55;
-  mix-blend-mode: luminosity;
-}
-.morning-program#manha-conectada::before {
-  background-image: url("/manha-conectada-cover-bg.png");
-  opacity: 0.40;
-}
-.morning-program#fechamento::before {
-  background-image: url("/fechamento-cover-bg.png");
-  opacity: 0.50;
-}
-```
-
-Backgrounds dos painéis semi-transparentes para o cover aparecer por baixo:
-```css
-background: rgba(10,16,30,0.45-0.55);
-```
+| Cron | Schedule | O que faz | Status |
+|---|---|---|---|
+| `d5n-podcast-diario` | seg-sex 03:00 BRT | Gera D5N feed + valida + push | ✅ |
+| `manha-conectada-diario` | seg-sex 09:00 BRT | Gera MC feed + valida + push | ✅ |
+| `fechamento-diario` | seg-sex 16:30 BRT | Gera FM feed + valida + push | ✅ |
+| `d5n-fechamento-mercado` | seg-sex 17:00 BRT | Card B3 fechamento mercado | ⚠️ erro |
+| `fm-publish-watchdog` | seg-sex 18:00 BRT | Verifica FM no feed, regenera se ausente | ✅ |
 
 ---
 
-## Estrutura de Arquivos Chave
+## 📁 Estrutura do Repo
 
 ```
 d5n-videocast-source/
-├── _shared_chapters.py          # Funções compartilhadas de capítulos
-├── scripts/gerar_podcast_feed.py # D5N feed RSS
+├── audio/                         # D5N MP3s (ep001-ep065)
+│   └── d5n-ep{NNN}-{DATA}.mp3
+├── manifests/
+│   └── d5n/
+│       └── {DATA}/manifest.json   # Um por episódio gerado
 ├── manha-conectada/
-│   ├── scripts/gerar_manha_conectada_feed.py
-│   └── feeds/manha-conectada.xml
+│   ├── audio/                     # MC MP3s
+│   ├── feeds/                     # Feed MC (redirect Netlify)
+│   │   └── manha-conectada.xml
+│   ├── manifests/                  # Um por episódio MC
+│   │   └── {DATA}.json
+│   └── scripts/
+│       └── gerar_manha_conectada_feed.py
 ├── fechamento/
-│   ├── scripts/gerar_fechamento_feed.py
-│   └── feeds/fechamento.xml
-├── podcast.xml                  # D5N (copiado do scripts/gerar_podcast_feed.py)
-├── manha-conectada.xml          # MC (copiado)
-├── fechamento.xml               # FM (copiado)
-├── podcast-cover.jpg            # D5N RSS
-├── podcast-cover-bg.png        # D5N site
-├── manha-conectada-cover.jpg   # MC RSS
-├── manha-conectada-cover-bg.png # MC site
-├── fechamento-cover.jpg         # FM RSS
-├── fechamento-cover-bg.png     # FM site
-└── gerar_pagina_d5n.py         # Site completo + chama scripts de feed
+│   ├── audio/                     # FM MP3s
+│   ├── feeds/                     # Feed FM (redirect Netlify)
+│   │   └── fechamento.xml
+│   ├── manifests/
+│   └── scripts/
+│       └── gerar_fechamento_feed.py
+├── scripts/
+│   ├── gerar_podcast_feed.py      # Gera podcast.xml (D5N)
+│   ├── validate_feeds.py          # Pre-flight validation
+│   └── gerar_pagina_d5n.py
+├── podcast.xml                    # Feed D5N (root)
+├── manha-conectada.xml           # Feed MC (root, redirect → feeds/)
+├── fechamento.xml                 # Feed FM (root, redirect → feeds/)
+├── episode-counter.json           # Contador global D5N (legado)
+├── netlify.toml                   # Headers + redirects
+└── STANDARDS.md                   # Este arquivo
 ```
 
 ---
 
-## Regras de Ouro
+## 🧪 Pre-Flight Validation
 
-1. **SEMPRE fazer `git push origin HEAD:master`** após commits — o Netlify builda apenas o `master`. Se commits ficarem num branch separado, verificar com `git log master --oneline` e corrigir com `git push origin <branch>:master`.
-2. **ATUALIZAR FEEDS EM AMBOS OS LOCAIS** — o `netlify.toml` tem redirects: `/manha-conectada.xml` → `manha-conectada/feeds/manha-conectada.xml` e `/fechamento.xml` → `fechamento/feeds/fechamento.xml`. Sempre copiar: `cp manha-conectada.xml manha-conectada/feeds/ && cp fechamento.xml fechamento/feeds/`.
-3. **MC script requer manifests canônicos** — `manha-conectada/scripts/gerar_manha_conectada_feed.py` exige `manifests/<data>.json` com `prototype: false` para cada episódio. Se o script gerar poucos episódios, os manifests podem ter sido movidos ou deletados. Nesse caso, usar o XML existente (ele foi gerado quando os manifests existiam) e atualizá-lo manualmente.
-4. **Push para master ativa o Netlify** — o deploy é automático ao fazer push no master.
-5. **Validar XML antes de push** — rodar `python3 -c "import xml.etree.ElementTree as ET; ET.parse('podcast.xml')"`.
+```bash
+# Validar todos os feeds
+python3 scripts/validate_feeds.py
 
-## Estado Atual dos Feeds (2026-08-26)
+# Validar um específico
+python3 scripts/validate_feeds.py --feed D5N
 
-| Programa | Episódios | lastBuildDate | ttl | Capas | Capítulos |
-|---|---|---|---|---|---|
-| D5N | 56 | 26/08 23:29 | 60 | ✅ .jpg | ✅ 5 eps com labels |
-| MC | 16 | 26/08 23:50 | 60 | ✅ .jpg | ✅ timestamp real |
-| FM | 3 | 26/08 17:30 | 60 | ✅ .jpg | ✅ labels proporcionais |
+# Validar vs live (Netlify)
+python3 scripts/validate_feeds.py --live
+```
 
-## URLs para Cadastro no Agregador
+**O que verifica:**
+- ✅ XML bem formado
+- ✅ `<ttl>60</ttl>` presente
+- ✅ MP3s respondem HTTP 200 (sample 5 episódios)
+- ✅ Enclosures são URLs válidas
 
-- **D5N:** `https://d5n-daily.netlify.app/podcast.xml`
-- **MC:** `https://d5n-daily.netlify.app/manha-conectada.xml`
-- **FM:** `https://d5n-daily.netlify.app/fechamento.xml`
+**Exit codes:** 0 = OK, 1 = FAIL (não pushar)
+
+---
+
+## ⚠️ Armadilhas Conhecidas
+
+### 1. Episode counter vs manifests
+O D5N feed é gerado pelos **manifests** (`manifests/d5n/{date}/manifest.json`), não pelo `episode-counter.json`. Se um manifest tem `prototype: false` e `audio.file` pointing to an existing MP3, entra no feed. Se falta `audio.file`, não entra.
+
+**Para adicionar episódio ao D5N:** criar `manifests/d5n/{data}/manifest.json` com:
+```json
+{
+  "prototype": false,
+  "audio": {"file": "d5n-ep{NNN}-{DATA}.mp3"},
+  "sha256": "..."
+}
+```
+
+### 2. MC: manifest sem `audio.file`
+Os manifests MC (`manha-conectada/manifests/{DATA}.json`) têm `audio` como objeto com `duration/size/lufs` mas **sem campo `file`**. O script deriva o nome do arquivo da data do manifest (`{DATA}` → `manha-conectada-{DATA}.mp3`).
+
+### 3. Reverts destroem trabalho
+Se um `git revert` ou reset for feito no master, todo o trabalho pode ser perdido. Sempre verificar `git log master --oneline` após operações de git.
+
+### 4. Namespace dos capítulos
+Os namespaces de capítulo devem ser:
+```xml
+xmlns:psrc="https://podcastindex.org/namespace/1.0"
+xmlns:psc="http://podlove.org/simple-chapters"
+```
+Namespace `podcastindex.org/namespace/podcast/chapters` é **incorreto** — causa XML inválido.
+
+### 5. Caminhos de enclosure em scripts
+Se o `BASE_URL` ou o caminho no enclosure for mudado, verificar:
+- O **Netlify redirect** correspondente existe em `netlify.toml`
+- O **script de validação** `validate_feeds.py` verifica URLs contra o `mp3_base` em cada config
+- O **diretório de destino** no Netlify coincide com a URL
+
+---
+
+## 🔧 Comandos Úteis
+
+```bash
+# Verificar feeds live
+curl -sI https://d5n-daily.netlify.app/podcast.xml | head -1
+curl -sI https://d5n-daily.netlify.app/manha-conectada.xml | head -1
+curl -sI https://d5n-daily.netlify.app/fechamento.xml | head -1
+
+# Verificar MP3 específico
+curl -sI https://d5n-daily.netlify.app/audio/d5n-ep065-2026-08-27.mp3 | head -1
+
+# Forçar rebuild Netlify (via Git push)
+git add -A && git commit -m "trigger" && git push origin HEAD:master
+
+# Ver git state vs Netlify
+git log master --oneline -3
+curl -s https://d5n-daily.netlify.app/podcast.xml | grep lastBuildDate
+
+# Count episodes
+grep -c '<item>' podcast.xml manha-conectada.xml fechamento.xml
+```
