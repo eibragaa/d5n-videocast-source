@@ -1,34 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"
-     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
-     xmlns:atom="http://www.w3.org/2005/Atom"
-     xmlns:content="http://purl.org/rss/1.0/modules/content/"
-     xmlns:podcast="https://podcastindex.org/namespace/1.0">
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:ns1="https://podcastindex.org/namespace/1.0" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="http://purl.org/rss/1.0/modules/content/" xmlns:ns4="https://podcastindex.org/namespace/podcast/chapters" xmlns:ns5="http://podlove.org/player's/models/chapters" version="2.0">
   <channel>
     <title>Manhã Conectada</title>
     <link>https://d5n-daily.netlify.app/#manha-conectada</link>
     <language>pt-br</language>
     <description>Briefing de fim de manhã do Drop Five News. De segunda a sexta, Antonio resume as notícias que já definiram o dia e apresenta o Sinal 11: o que ainda pode mudar o cenário até o começo da tarde.</description>
-    <itunes:subtitle>As notícias que definiram a manhã e o Sinal 11</itunes:subtitle>
-    <itunes:summary>Briefing de fim de manhã do Drop Five News. De segunda a sexta, Antonio resume as notícias que já definiram o dia e apresenta o Sinal 11: o que ainda pode mudar o cenário até o começo da tarde.</itunes:summary>
-    <itunes:author>Drop Five News</itunes:author>
-    <itunes:owner>
-      <itunes:name>Jean Braga</itunes:name>
-      <itunes:email>eibragaa@gmail.com</itunes:email>
-    </itunes:owner>
-    <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
-    <itunes:explicit>false</itunes:explicit>
-    <itunes:type>episodic</itunes:type>
-    <itunes:complete>no</itunes:complete>
+    <ns0:subtitle>As notícias que definiram a manhã e o Sinal 11</ns0:subtitle>
+    <ns0:summary>Briefing de fim de manhã do Drop Five News. De segunda a sexta, Antonio resume as notícias que já definiram o dia e apresenta o Sinal 11: o que ainda pode mudar o cenário até o começo da tarde.</ns0:summary>
+    <ns0:author>Drop Five News</ns0:author>
+    <ns0:owner>
+      <ns0:name>Jean Braga</ns0:name>
+      <ns0:email>eibragaa@gmail.com</ns0:email>
+    </ns0:owner>
+    <ns0:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg" />
+    <ns0:explicit>false</ns0:explicit>
+    <ns0:type>episodic</ns0:type>
+    <ns0:complete>no</ns0:complete>
     <ttl>60</ttl>
-    <itunes:category text="News">
-      <itunes:category text="Daily News"/>
-    </itunes:category>
-    <itunes:category text="Business"/>
-    <podcast:locked owner="eibragaa@gmail.com">no</podcast:locked>
-    <podcast:guid>manha-conectada.d5n-daily.netlify.app</podcast:guid>
-    <atom:link href="https://d5n-daily.netlify.app/manha-conectada.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 26 Aug 2026 11:00:00 -0300</lastBuildDate>
+    <ns0:category text="News">
+      <ns0:category text="Daily News" />
+    </ns0:category>
+    <ns0:category text="Business" />
+    <ns1:locked owner="eibragaa@gmail.com">no</ns1:locked>
+    <ns1:guid>manha-conectada.d5n-daily.netlify.app</ns1:guid>
+    <ns2:link href="https://d5n-daily.netlify.app/manha-conectada.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Aug 2026 06:10:04 +0000</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/manha-conectada-cover.jpg</url>
       <title>Manhã Conectada</title>
@@ -37,260 +33,587 @@
     <copyright>© 2026 Drop Five News</copyright>
     <generator>D5N Pipeline — Manhã Conectada</generator>
     <item>
-      <title>Manhã Conectada — 26/08/2026</title>
-      <itunes:title>Manhã Conectada — 26/08/2026</itunes:title>
-      <itunes:episode>16</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>04:44</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
-      <guid isPermaLink="false">manha-conectada-2026-08-26</guid>
-      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-26.mp3" length="6823017" type="audio/mpeg"/>
-      <pubDate>Wed, 26 Aug 2026 11:00:00 -0300</pubDate>
-      <description>Manhã Conectada de 26/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:44.</description>
-      <itunes:summary>Manhã Conectada de 26/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:44.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 26/08/2026</strong></p><p>Manhã Conectada de 26/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:44.</p><ul><li>Enchentes no Nepal e no Tibete: o que se sabe sobre a tragédia que deixou mortos e centenas de desaparecidos - BBC</li><li>Brasil Urgente ao vivo: assista ao programa agora - band.com.br</li><li>Notícias sobre edital de 26 de agosto de 2026 - Estratégia Concursos</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Manhã Conectada — 25/08/2026</title>
-      <itunes:title>Manhã Conectada — 25/08/2026</itunes:title>
-      <itunes:episode>15</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>06:11</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
-      <guid isPermaLink="false">manha-conectada-2026-08-25</guid>
-      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-25.mp3" length="8899439" type="audio/mpeg"/>
-      <pubDate>Tue, 25 Aug 2026 11:00:00 -0300</pubDate>
-      <description>Manhã Conectada de 25/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:11.</description>
-      <itunes:summary>Manhã Conectada de 25/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:11.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 25/08/2026</strong></p><p>Manhã Conectada de 25/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:11.</p><ul><li>Enchentes no Nepal e no Tibete: o que se sabe sobre a tragédia que deixou mortos e centenas de desaparecidos - BBC</li><li>Notícias sobre edital de 26 de agosto de 2026 - Estratégia Concursos</li><li>Soja vai a R$ 160 nos portos do Brasil com nova disparada em Chicago e alta do dólar nesta 4ª - Notícias Agrícolas</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Manhã Conectada — 24/08/2026</title>
-      <itunes:title>Manhã Conectada — 24/08/2026</itunes:title>
-      <itunes:episode>14</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>05:48</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
-      <guid isPermaLink="false">manha-conectada-2026-08-24</guid>
-      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-24.mp3" length="8342717" type="audio/mpeg"/>
-      <pubDate>Mon, 24 Aug 2026 11:00:00 -0300</pubDate>
-      <description>Manhã Conectada de 24/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:48.</description>
-      <itunes:summary>Manhã Conectada de 24/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:48.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 24/08/2026</strong></p><p>Manhã Conectada de 24/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:48.</p><ul><li>Enchentes no Nepal e no Tibete: o que se sabe sobre a tragédia que deixou mortos e centenas de desaparecidos - BBC</li><li>Notícias sobre edital de 26 de agosto de 2026 - Estratégia Concursos</li><li>Soja vai a R$ 160 nos portos do Brasil com nova disparada em Chicago e alta do dólar nesta 4ª - Notícias Agrícolas</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
-    </item>
-    <item>
       <title>Manhã Conectada — 17/08/2026</title>
-      <itunes:title>Manhã Conectada — 17/08/2026</itunes:title>
-      <itunes:episode>13</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>04:56</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
+      <ns0:title>Manhã Conectada — 17/08/2026</ns0:title>
+      <ns0:episode>13</ns0:episode>
+      <ns0:season>1</ns0:season>
+      <ns0:episodeType>full</ns0:episodeType>
+      <ns0:duration>04:56</ns0:duration>
+      <ns0:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg" />
       <guid isPermaLink="false">manha-conectada-2026-08-17</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-17.mp3" length="7095736" type="audio/mpeg"/>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-17.mp3" length="7095736" type="audio/mpeg" />
       <pubDate>Mon, 17 Aug 2026 11:00:00 -0300</pubDate>
       <description>Manhã Conectada de 17/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:56.</description>
-      <itunes:summary>Manhã Conectada de 17/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:56.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 17/08/2026</strong></p><p>Manhã Conectada de 17/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:56.</p><ul><li>Hayden Panettiere: o que se sabe sobre a morte da atriz de 'Heroes' aos 36 anos - bbc.com</li><li>EUA consideram novas sanções contra Alexandre de Moraes, diz jornal britânico - terra.com.br</li><li>Discord tem até esta segunda para suspender lives no Brasil - SBT News</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+      <ns0:summary>Manhã Conectada de 17/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:56.
+
+📑 Capítulos:
+⏱ 00:00 — Abertura
+⏱ 00:01 — Agenda
+⏱ 00:35 — Clima &amp; País
+⏱ 01:25 — Mundo
+⏱ 02:13 — Tecnologia
+⏱ 02:59 — Economia
+⏱ 03:42 — Sinal 11
+⏱ 04:32 — Encerramento</ns0:summary>
+      <ns3:encoded>&lt;p&gt;&lt;strong&gt;Manhã Conectada • 17/08/2026&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Manhã Conectada de 17/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:56.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Hayden Panettiere: o que se sabe sobre a morte da atriz de 'Heroes' aos 36 anos - bbc.com&lt;/li&gt;&lt;li&gt;EUA consideram novas sanções contra Alexandre de Moraes, diz jornal britânico - terra.com.br&lt;/li&gt;&lt;li&gt;Discord tem até esta segunda para suspender lives no Brasil - SBT News&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;📑 &lt;strong&gt;Capítulos:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Abertura&lt;/strong&gt; — 00:00&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Agenda&lt;/strong&gt; — 00:01&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Clima &amp;amp; País&lt;/strong&gt; — 00:35&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Mundo&lt;/strong&gt; — 01:25&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Tecnologia&lt;/strong&gt; — 02:13&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Economia&lt;/strong&gt; — 02:59&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Sinal 11&lt;/strong&gt; — 03:42&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Encerramento&lt;/strong&gt; — 04:32&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://d5n-daily.netlify.app/#manha-conectada"&gt;Ouça no site&lt;/a&gt;&lt;/p&gt;</ns3:encoded>
+    <ns1:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-17.mp3">
+            <ns4:chapter startTime="0" title="Abertura" />
+      <ns4:chapter startTime="1800" title="Agenda" />
+      <ns4:chapter startTime="35980" title="Clima &amp; País" />
+      <ns4:chapter startTime="85089" title="Mundo" />
+      <ns4:chapter startTime="133683" title="Tecnologia" />
+      <ns4:chapter startTime="179188" title="Economia" />
+      <ns4:chapter startTime="222429" title="Sinal 11" />
+      <ns4:chapter startTime="272464" title="Encerramento" />
+    </ns1:chapters>
+    <ns5:chapters version="2.0">
+            <ns5:chapter startTime="0" title="Abertura" />
+      <ns5:chapter startTime="1800" title="Agenda" />
+      <ns5:chapter startTime="35980" title="Clima &amp; País" />
+      <ns5:chapter startTime="85089" title="Mundo" />
+      <ns5:chapter startTime="133683" title="Tecnologia" />
+      <ns5:chapter startTime="179188" title="Economia" />
+      <ns5:chapter startTime="222429" title="Sinal 11" />
+      <ns5:chapter startTime="272464" title="Encerramento" />
+    </ns5:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 14/08/2026</title>
-      <itunes:title>Manhã Conectada — 14/08/2026</itunes:title>
-      <itunes:episode>12</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>06:16</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
+      <ns0:title>Manhã Conectada — 14/08/2026</ns0:title>
+      <ns0:episode>12</ns0:episode>
+      <ns0:season>1</ns0:season>
+      <ns0:episodeType>full</ns0:episodeType>
+      <ns0:duration>06:16</ns0:duration>
+      <ns0:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg" />
       <guid isPermaLink="false">manha-conectada-2026-08-14</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-14.mp3" length="9031096" type="audio/mpeg"/>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-14.mp3" length="9031096" type="audio/mpeg" />
       <pubDate>Fri, 14 Aug 2026 11:00:00 -0300</pubDate>
       <description>Manhã Conectada de 14/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:16.</description>
-      <itunes:summary>Manhã Conectada de 14/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:16.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 14/08/2026</strong></p><p>Manhã Conectada de 14/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:16.</p><ul><li>Lula: Estou tentando falar com Trump para não se meter nas coisas do Brasil - UOL Notícias</li><li>Notícias sobre edital de 13 de agosto de 2026 - estrategiaconcursos.com.br</li><li>Os perfis no Instagram que espalham desinformação e aplicam golpe em migrantes que tentam chegar a Ceuta - BBC</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+      <ns0:summary>Manhã Conectada de 14/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:16.
+
+📑 Capítulos:
+⏱ 00:00 — Abertura
+⏱ 00:01 — Agenda
+⏱ 00:51 — Clima &amp; País
+⏱ 01:46 — Mundo
+⏱ 03:03 — Tecnologia
+⏱ 04:01 — Economia
+⏱ 04:51 — Sinal 11
+⏱ 05:46 — Encerramento</ns0:summary>
+      <ns3:encoded>&lt;p&gt;&lt;strong&gt;Manhã Conectada • 14/08/2026&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Manhã Conectada de 14/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:16.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Lula: Estou tentando falar com Trump para não se meter nas coisas do Brasil - UOL Notícias&lt;/li&gt;&lt;li&gt;Notícias sobre edital de 13 de agosto de 2026 - estrategiaconcursos.com.br&lt;/li&gt;&lt;li&gt;Os perfis no Instagram que espalham desinformação e aplicam golpe em migrantes que tentam chegar a Ceuta - BBC&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;📑 &lt;strong&gt;Capítulos:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Abertura&lt;/strong&gt; — 00:00&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Agenda&lt;/strong&gt; — 00:01&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Clima &amp;amp; País&lt;/strong&gt; — 00:51&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Mundo&lt;/strong&gt; — 01:46&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Tecnologia&lt;/strong&gt; — 03:03&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Economia&lt;/strong&gt; — 04:01&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Sinal 11&lt;/strong&gt; — 04:51&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Encerramento&lt;/strong&gt; — 05:46&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://d5n-daily.netlify.app/#manha-conectada"&gt;Ouça no site&lt;/a&gt;&lt;/p&gt;</ns3:encoded>
+    <ns1:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-14.mp3">
+            <ns4:chapter startTime="0" title="Abertura" />
+      <ns4:chapter startTime="1800" title="Agenda" />
+      <ns4:chapter startTime="51948" title="Clima &amp; País" />
+      <ns4:chapter startTime="106290" title="Mundo" />
+      <ns4:chapter startTime="183704" title="Tecnologia" />
+      <ns4:chapter startTime="241002" title="Economia" />
+      <ns4:chapter startTime="291150" title="Sinal 11" />
+      <ns4:chapter startTime="346064" title="Encerramento" />
+    </ns1:chapters>
+    <ns5:chapters version="2.0">
+            <ns5:chapter startTime="0" title="Abertura" />
+      <ns5:chapter startTime="1800" title="Agenda" />
+      <ns5:chapter startTime="51948" title="Clima &amp; País" />
+      <ns5:chapter startTime="106290" title="Mundo" />
+      <ns5:chapter startTime="183704" title="Tecnologia" />
+      <ns5:chapter startTime="241002" title="Economia" />
+      <ns5:chapter startTime="291150" title="Sinal 11" />
+      <ns5:chapter startTime="346064" title="Encerramento" />
+    </ns5:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 11/08/2026</title>
-      <itunes:title>Manhã Conectada — 11/08/2026</itunes:title>
-      <itunes:episode>11</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>05:18</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
+      <ns0:title>Manhã Conectada — 11/08/2026</ns0:title>
+      <ns0:episode>11</ns0:episode>
+      <ns0:season>1</ns0:season>
+      <ns0:episodeType>full</ns0:episodeType>
+      <ns0:duration>05:18</ns0:duration>
+      <ns0:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg" />
       <guid isPermaLink="false">manha-conectada-2026-08-11</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-11.mp3" length="7631141" type="audio/mpeg"/>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-11.mp3" length="7631141" type="audio/mpeg" />
       <pubDate>Tue, 11 Aug 2026 11:00:00 -0300</pubDate>
       <description>Manhã Conectada de 11/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:18.</description>
-      <itunes:summary>Manhã Conectada de 11/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:18.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 11/08/2026</strong></p><p>Manhã Conectada de 11/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:18.</p><ul><li>Notícias sobre edital de 10 de agosto de 2026 - Estratégia Concursos</li><li>Lula busca se reaproximar de Trump - Assine o Meio</li><li>Chuva forte atinge parte do Brasil nesta terça; veja onde - SBT News</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+      <ns0:summary>Manhã Conectada de 11/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:18.
+
+📑 Capítulos:
+⏱ 00:00 — Abertura
+⏱ 00:01 — Agenda
+⏱ 00:15 — Clima &amp; País
+⏱ 01:06 — Mundo
+⏱ 02:05 — Tecnologia
+⏱ 03:00 — Economia
+⏱ 03:58 — Sinal 11
+⏱ 04:52 — Encerramento</ns0:summary>
+      <ns3:encoded>&lt;p&gt;&lt;strong&gt;Manhã Conectada • 11/08/2026&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Manhã Conectada de 11/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:18.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Notícias sobre edital de 10 de agosto de 2026 - Estratégia Concursos&lt;/li&gt;&lt;li&gt;Lula busca se reaproximar de Trump - Assine o Meio&lt;/li&gt;&lt;li&gt;Chuva forte atinge parte do Brasil nesta terça; veja onde - SBT News&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;📑 &lt;strong&gt;Capítulos:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Abertura&lt;/strong&gt; — 00:00&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Agenda&lt;/strong&gt; — 00:01&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Clima &amp;amp; País&lt;/strong&gt; — 00:15&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Mundo&lt;/strong&gt; — 01:06&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Tecnologia&lt;/strong&gt; — 02:05&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Economia&lt;/strong&gt; — 03:00&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Sinal 11&lt;/strong&gt; — 03:58&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Encerramento&lt;/strong&gt; — 04:52&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://d5n-daily.netlify.app/#manha-conectada"&gt;Ouça no site&lt;/a&gt;&lt;/p&gt;</ns3:encoded>
+    <ns1:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-11.mp3">
+            <ns4:chapter startTime="0" title="Abertura" />
+      <ns4:chapter startTime="1800" title="Agenda" />
+      <ns4:chapter startTime="15906" title="Clima &amp; País" />
+      <ns4:chapter startTime="66716" title="Mundo" />
+      <ns4:chapter startTime="125281" title="Tecnologia" />
+      <ns4:chapter startTime="180375" title="Economia" />
+      <ns4:chapter startTime="238127" title="Sinal 11" />
+      <ns4:chapter startTime="292704" title="Encerramento" />
+    </ns1:chapters>
+    <ns5:chapters version="2.0">
+            <ns5:chapter startTime="0" title="Abertura" />
+      <ns5:chapter startTime="1800" title="Agenda" />
+      <ns5:chapter startTime="15906" title="Clima &amp; País" />
+      <ns5:chapter startTime="66716" title="Mundo" />
+      <ns5:chapter startTime="125281" title="Tecnologia" />
+      <ns5:chapter startTime="180375" title="Economia" />
+      <ns5:chapter startTime="238127" title="Sinal 11" />
+      <ns5:chapter startTime="292704" title="Encerramento" />
+    </ns5:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 10/08/2026</title>
-      <itunes:title>Manhã Conectada — 10/08/2026</itunes:title>
-      <itunes:episode>10</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>04:40</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
+      <ns0:title>Manhã Conectada — 10/08/2026</ns0:title>
+      <ns0:episode>10</ns0:episode>
+      <ns0:season>1</ns0:season>
+      <ns0:episodeType>full</ns0:episodeType>
+      <ns0:duration>04:40</ns0:duration>
+      <ns0:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg" />
       <guid isPermaLink="false">manha-conectada-2026-08-10</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-10.mp3" length="6726469" type="audio/mpeg"/>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-10.mp3" length="6726469" type="audio/mpeg" />
       <pubDate>Mon, 10 Aug 2026 11:00:00 -0300</pubDate>
       <description>Manhã Conectada de 10/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:40.</description>
-      <itunes:summary>Manhã Conectada de 10/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:40.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 10/08/2026</strong></p><p>Manhã Conectada de 10/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:40.</p><ul><li>Desenrola Adimplentes começa hoje após ajustes para atrair os bancos - O GLOBO</li><li>Piauí lidera ranking de calor e baixa umidade no Brasil - SBT News</li><li>Saiba como pressionar os senadores para acabar com a escala 6x1 - TVT News</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+      <ns0:summary>Manhã Conectada de 10/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:40.
+
+📑 Capítulos:
+⏱ 00:00 — Abertura
+⏱ 00:01 — Agenda
+⏱ 00:18 — Clima &amp; País
+⏱ 01:04 — Mundo
+⏱ 01:51 — Tecnologia
+⏱ 02:47 — Economia
+⏱ 03:33 — Sinal 11
+⏱ 04:17 — Encerramento</ns0:summary>
+      <ns3:encoded>&lt;p&gt;&lt;strong&gt;Manhã Conectada • 10/08/2026&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Manhã Conectada de 10/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:40.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Desenrola Adimplentes começa hoje após ajustes para atrair os bancos - O GLOBO&lt;/li&gt;&lt;li&gt;Piauí lidera ranking de calor e baixa umidade no Brasil - SBT News&lt;/li&gt;&lt;li&gt;Saiba como pressionar os senadores para acabar com a escala 6x1 - TVT News&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;📑 &lt;strong&gt;Capítulos:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Abertura&lt;/strong&gt; — 00:00&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Agenda&lt;/strong&gt; — 00:01&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Clima &amp;amp; País&lt;/strong&gt; — 00:18&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Mundo&lt;/strong&gt; — 01:04&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Tecnologia&lt;/strong&gt; — 01:51&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Economia&lt;/strong&gt; — 02:47&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Sinal 11&lt;/strong&gt; — 03:33&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Encerramento&lt;/strong&gt; — 04:17&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://d5n-daily.netlify.app/#manha-conectada"&gt;Ouça no site&lt;/a&gt;&lt;/p&gt;</ns3:encoded>
+    <ns1:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/manha-conectada-2026-08-10.mp3">
+            <ns4:chapter startTime="0" title="Abertura" />
+      <ns4:chapter startTime="1800" title="Agenda" />
+      <ns4:chapter startTime="18621" title="Clima &amp; País" />
+      <ns4:chapter startTime="64119" title="Mundo" />
+      <ns4:chapter startTime="111395" title="Tecnologia" />
+      <ns4:chapter startTime="167415" title="Economia" />
+      <ns4:chapter startTime="213728" title="Sinal 11" />
+      <ns4:chapter startTime="257744" title="Encerramento" />
+    </ns1:chapters>
+    <ns5:chapters version="2.0">
+            <ns5:chapter startTime="0" title="Abertura" />
+      <ns5:chapter startTime="1800" title="Agenda" />
+      <ns5:chapter startTime="18621" title="Clima &amp; País" />
+      <ns5:chapter startTime="64119" title="Mundo" />
+      <ns5:chapter startTime="111395" title="Tecnologia" />
+      <ns5:chapter startTime="167415" title="Economia" />
+      <ns5:chapter startTime="213728" title="Sinal 11" />
+      <ns5:chapter startTime="257744" title="Encerramento" />
+    </ns5:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 31/07/2026</title>
-      <itunes:title>Manhã Conectada — 31/07/2026</itunes:title>
-      <itunes:episode>9</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>04:57</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
+      <ns0:title>Manhã Conectada — 31/07/2026</ns0:title>
+      <ns0:episode>9</ns0:episode>
+      <ns0:season>1</ns0:season>
+      <ns0:episodeType>full</ns0:episodeType>
+      <ns0:duration>04:57</ns0:duration>
+      <ns0:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg" />
       <guid isPermaLink="false">manha-conectada-2026-07-31</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-31.mp3" length="7123948" type="audio/mpeg"/>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-31.mp3" length="7123948" type="audio/mpeg" />
       <pubDate>Fri, 31 Jul 2026 11:00:00 -0300</pubDate>
       <description>Manhã Conectada de 31/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:57.</description>
-      <itunes:summary>Manhã Conectada de 31/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:57.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 31/07/2026</strong></p><p>Manhã Conectada de 31/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:57.</p><ul><li>Terremoto de magnitude 5,6 é registrado perto da fronteira entre Peru e Brasil - G1</li><li>Notícias sobre edital de 29 de julho de 2026 - Estratégia Concursos</li><li>Espanha mobiliza Exército em Ceuta após entrada de 49 mil migrantes em 24 horas; ao menos 18 morreram - BBC</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+      <ns0:summary>Manhã Conectada de 31/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:57.
+
+📑 Capítulos:
+⏱ 00:00 — Abertura
+⏱ 00:01 — Agenda
+⏱ 00:16 — Clima &amp; País
+⏱ 01:04 — Mundo
+⏱ 01:56 — Tecnologia
+⏱ 02:49 — Economia
+⏱ 03:42 — Sinal 11
+⏱ 04:33 — Encerramento</ns0:summary>
+      <ns3:encoded>&lt;p&gt;&lt;strong&gt;Manhã Conectada • 31/07/2026&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Manhã Conectada de 31/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:57.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Terremoto de magnitude 5,6 é registrado perto da fronteira entre Peru e Brasil - G1&lt;/li&gt;&lt;li&gt;Notícias sobre edital de 29 de julho de 2026 - Estratégia Concursos&lt;/li&gt;&lt;li&gt;Espanha mobiliza Exército em Ceuta após entrada de 49 mil migrantes em 24 horas; ao menos 18 morreram - BBC&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;📑 &lt;strong&gt;Capítulos:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Abertura&lt;/strong&gt; — 00:00&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Agenda&lt;/strong&gt; — 00:01&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Clima &amp;amp; País&lt;/strong&gt; — 00:16&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Mundo&lt;/strong&gt; — 01:04&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Tecnologia&lt;/strong&gt; — 01:56&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Economia&lt;/strong&gt; — 02:49&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Sinal 11&lt;/strong&gt; — 03:42&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Encerramento&lt;/strong&gt; — 04:33&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://d5n-daily.netlify.app/#manha-conectada"&gt;Ouça no site&lt;/a&gt;&lt;/p&gt;</ns3:encoded>
+    <ns1:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-31.mp3">
+            <ns4:chapter startTime="0" title="Abertura" />
+      <ns4:chapter startTime="1800" title="Agenda" />
+      <ns4:chapter startTime="16117" title="Clima &amp; País" />
+      <ns4:chapter startTime="64584" title="Mundo" />
+      <ns4:chapter startTime="116191" title="Tecnologia" />
+      <ns4:chapter startTime="169176" title="Economia" />
+      <ns4:chapter startTime="222850" title="Sinal 11" />
+      <ns4:chapter startTime="273384" title="Encerramento" />
+    </ns1:chapters>
+    <ns5:chapters version="2.0">
+            <ns5:chapter startTime="0" title="Abertura" />
+      <ns5:chapter startTime="1800" title="Agenda" />
+      <ns5:chapter startTime="16117" title="Clima &amp; País" />
+      <ns5:chapter startTime="64584" title="Mundo" />
+      <ns5:chapter startTime="116191" title="Tecnologia" />
+      <ns5:chapter startTime="169176" title="Economia" />
+      <ns5:chapter startTime="222850" title="Sinal 11" />
+      <ns5:chapter startTime="273384" title="Encerramento" />
+    </ns5:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 30/07/2026</title>
-      <itunes:title>Manhã Conectada — 30/07/2026</itunes:title>
-      <itunes:episode>8</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>05:34</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
+      <ns0:title>Manhã Conectada — 30/07/2026</ns0:title>
+      <ns0:episode>8</ns0:episode>
+      <ns0:season>1</ns0:season>
+      <ns0:episodeType>full</ns0:episodeType>
+      <ns0:duration>05:34</ns0:duration>
+      <ns0:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg" />
       <guid isPermaLink="false">manha-conectada-2026-07-30</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-30.mp3" length="8004797" type="audio/mpeg"/>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-30.mp3" length="8004797" type="audio/mpeg" />
       <pubDate>Thu, 30 Jul 2026 11:00:00 -0300</pubDate>
       <description>Manhã Conectada de 30/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:34.</description>
-      <itunes:summary>Manhã Conectada de 30/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:34.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 30/07/2026</strong></p><p>Manhã Conectada de 30/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:34.</p><ul><li>Crise diplomática causada por Milei: Brasil e Argentina podem romper relação? - g1.globo.com</li><li>Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos</li><li>Após deixar 5 mortes, ventania deve perder força no Sudeste - SBT News</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+      <ns0:summary>Manhã Conectada de 30/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:34.
+
+📑 Capítulos:
+⏱ 00:00 — Abertura
+⏱ 00:01 — Agenda
+⏱ 00:20 — Clima &amp; País
+⏱ 01:17 — Mundo
+⏱ 02:14 — Tecnologia
+⏱ 03:09 — Economia
+⏱ 04:03 — Sinal 11
+⏱ 05:07 — Encerramento</ns0:summary>
+      <ns3:encoded>&lt;p&gt;&lt;strong&gt;Manhã Conectada • 30/07/2026&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Manhã Conectada de 30/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:34.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Crise diplomática causada por Milei: Brasil e Argentina podem romper relação? - g1.globo.com&lt;/li&gt;&lt;li&gt;Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos&lt;/li&gt;&lt;li&gt;Após deixar 5 mortes, ventania deve perder força no Sudeste - SBT News&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;📑 &lt;strong&gt;Capítulos:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Abertura&lt;/strong&gt; — 00:00&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Agenda&lt;/strong&gt; — 00:01&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Clima &amp;amp; País&lt;/strong&gt; — 00:20&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Mundo&lt;/strong&gt; — 01:17&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Tecnologia&lt;/strong&gt; — 02:14&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Economia&lt;/strong&gt; — 03:09&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Sinal 11&lt;/strong&gt; — 04:03&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Encerramento&lt;/strong&gt; — 05:07&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://d5n-daily.netlify.app/#manha-conectada"&gt;Ouça no site&lt;/a&gt;&lt;/p&gt;</ns3:encoded>
+    <ns1:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-30.mp3">
+            <ns4:chapter startTime="0" title="Abertura" />
+      <ns4:chapter startTime="1800" title="Agenda" />
+      <ns4:chapter startTime="20569" title="Clima &amp; País" />
+      <ns4:chapter startTime="77530" title="Mundo" />
+      <ns4:chapter startTime="134081" title="Tecnologia" />
+      <ns4:chapter startTime="189567" title="Economia" />
+      <ns4:chapter startTime="243168" title="Sinal 11" />
+      <ns4:chapter startTime="307424" title="Encerramento" />
+    </ns1:chapters>
+    <ns5:chapters version="2.0">
+            <ns5:chapter startTime="0" title="Abertura" />
+      <ns5:chapter startTime="1800" title="Agenda" />
+      <ns5:chapter startTime="20569" title="Clima &amp; País" />
+      <ns5:chapter startTime="77530" title="Mundo" />
+      <ns5:chapter startTime="134081" title="Tecnologia" />
+      <ns5:chapter startTime="189567" title="Economia" />
+      <ns5:chapter startTime="243168" title="Sinal 11" />
+      <ns5:chapter startTime="307424" title="Encerramento" />
+    </ns5:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 29/07/2026</title>
-      <itunes:title>Manhã Conectada — 29/07/2026</itunes:title>
-      <itunes:episode>7</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>04:46</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
+      <ns0:title>Manhã Conectada — 29/07/2026</ns0:title>
+      <ns0:episode>7</ns0:episode>
+      <ns0:season>1</ns0:season>
+      <ns0:episodeType>full</ns0:episodeType>
+      <ns0:duration>04:46</ns0:duration>
+      <ns0:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg" />
       <guid isPermaLink="false">manha-conectada-2026-07-29</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-29.mp3" length="6870038" type="audio/mpeg"/>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-29.mp3" length="6870038" type="audio/mpeg" />
       <pubDate>Wed, 29 Jul 2026 11:00:00 -0300</pubDate>
       <description>Manhã Conectada de 29/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:46.</description>
-      <itunes:summary>Manhã Conectada de 29/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:46.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 29/07/2026</strong></p><p>Manhã Conectada de 29/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:46.</p><ul><li>Move Brasil: crédito para motoristas de app e táxi patina, e governo já prevê emprestar menos de um terço do previsto - O GLOBO</li><li>Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos</li><li>Com governo Milei, exportações à Argentina seguem em queda - SBT News</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+      <ns0:summary>Manhã Conectada de 29/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:46.
+
+📑 Capítulos:
+⏱ 00:00 — Abertura
+⏱ 00:01 — Agenda
+⏱ 00:18 — Clima &amp; País
+⏱ 01:08 — Mundo
+⏱ 01:57 — Tecnologia
+⏱ 02:47 — Economia
+⏱ 03:39 — Sinal 11
+⏱ 04:23 — Encerramento</ns0:summary>
+      <ns3:encoded>&lt;p&gt;&lt;strong&gt;Manhã Conectada • 29/07/2026&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Manhã Conectada de 29/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:46.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Move Brasil: crédito para motoristas de app e táxi patina, e governo já prevê emprestar menos de um terço do previsto - O GLOBO&lt;/li&gt;&lt;li&gt;Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos&lt;/li&gt;&lt;li&gt;Com governo Milei, exportações à Argentina seguem em queda - SBT News&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;📑 &lt;strong&gt;Capítulos:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Abertura&lt;/strong&gt; — 00:00&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Agenda&lt;/strong&gt; — 00:01&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Clima &amp;amp; País&lt;/strong&gt; — 00:18&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Mundo&lt;/strong&gt; — 01:08&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Tecnologia&lt;/strong&gt; — 01:57&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Economia&lt;/strong&gt; — 02:47&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Sinal 11&lt;/strong&gt; — 03:39&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Encerramento&lt;/strong&gt; — 04:23&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://d5n-daily.netlify.app/#manha-conectada"&gt;Ouça no site&lt;/a&gt;&lt;/p&gt;</ns3:encoded>
+    <ns1:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-29.mp3">
+            <ns4:chapter startTime="0" title="Abertura" />
+      <ns4:chapter startTime="1800" title="Agenda" />
+      <ns4:chapter startTime="18539" title="Clima &amp; País" />
+      <ns4:chapter startTime="68463" title="Mundo" />
+      <ns4:chapter startTime="117511" title="Tecnologia" />
+      <ns4:chapter startTime="167070" title="Economia" />
+      <ns4:chapter startTime="219260" title="Sinal 11" />
+      <ns4:chapter startTime="263264" title="Encerramento" />
+    </ns1:chapters>
+    <ns5:chapters version="2.0">
+            <ns5:chapter startTime="0" title="Abertura" />
+      <ns5:chapter startTime="1800" title="Agenda" />
+      <ns5:chapter startTime="18539" title="Clima &amp; País" />
+      <ns5:chapter startTime="68463" title="Mundo" />
+      <ns5:chapter startTime="117511" title="Tecnologia" />
+      <ns5:chapter startTime="167070" title="Economia" />
+      <ns5:chapter startTime="219260" title="Sinal 11" />
+      <ns5:chapter startTime="263264" title="Encerramento" />
+    </ns5:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 28/07/2026</title>
-      <itunes:title>Manhã Conectada — 28/07/2026</itunes:title>
-      <itunes:episode>6</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>05:00</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
+      <ns0:title>Manhã Conectada — 28/07/2026</ns0:title>
+      <ns0:episode>6</ns0:episode>
+      <ns0:season>1</ns0:season>
+      <ns0:episodeType>full</ns0:episodeType>
+      <ns0:duration>05:00</ns0:duration>
+      <ns0:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg" />
       <guid isPermaLink="false">manha-conectada-2026-07-28</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-28.mp3" length="7194165" type="audio/mpeg"/>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-28.mp3" length="7194165" type="audio/mpeg" />
       <pubDate>Tue, 28 Jul 2026 11:00:00 -0300</pubDate>
       <description>Manhã Conectada de 28/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:00.</description>
-      <itunes:summary>Manhã Conectada de 28/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:00.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 28/07/2026</strong></p><p>Manhã Conectada de 28/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:00.</p><ul><li>Notícias sobre edital de 24 de julho de 2026 - Estratégia Concursos</li><li>Mercados hoje: investidores repercutem dados de inflação no Brasil - Bora Investir</li><li>Brasil registra alta nos casos de HIV - Sociedade ON</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+      <ns0:summary>Manhã Conectada de 28/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:00.
+
+📑 Capítulos:
+⏱ 00:00 — Abertura
+⏱ 00:01 — Agenda
+⏱ 00:18 — Clima &amp; País
+⏱ 01:08 — Mundo
+⏱ 01:56 — Tecnologia
+⏱ 02:46 — Economia
+⏱ 03:40 — Sinal 11
+⏱ 04:36 — Encerramento</ns0:summary>
+      <ns3:encoded>&lt;p&gt;&lt;strong&gt;Manhã Conectada • 28/07/2026&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Manhã Conectada de 28/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:00.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Notícias sobre edital de 24 de julho de 2026 - Estratégia Concursos&lt;/li&gt;&lt;li&gt;Mercados hoje: investidores repercutem dados de inflação no Brasil - Bora Investir&lt;/li&gt;&lt;li&gt;Brasil registra alta nos casos de HIV - Sociedade ON&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;📑 &lt;strong&gt;Capítulos:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Abertura&lt;/strong&gt; — 00:00&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Agenda&lt;/strong&gt; — 00:01&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Clima &amp;amp; País&lt;/strong&gt; — 00:18&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Mundo&lt;/strong&gt; — 01:08&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Tecnologia&lt;/strong&gt; — 01:56&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Economia&lt;/strong&gt; — 02:46&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Sinal 11&lt;/strong&gt; — 03:40&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Encerramento&lt;/strong&gt; — 04:36&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://d5n-daily.netlify.app/#manha-conectada"&gt;Ouça no site&lt;/a&gt;&lt;/p&gt;</ns3:encoded>
+    <ns1:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-28.mp3">
+            <ns4:chapter startTime="0" title="Abertura" />
+      <ns4:chapter startTime="1800" title="Agenda" />
+      <ns4:chapter startTime="18093" title="Clima &amp; País" />
+      <ns4:chapter startTime="68955" title="Mundo" />
+      <ns4:chapter startTime="116440" title="Tecnologia" />
+      <ns4:chapter startTime="166861" title="Economia" />
+      <ns4:chapter startTime="220365" title="Sinal 11" />
+      <ns4:chapter startTime="276144" title="Encerramento" />
+    </ns1:chapters>
+    <ns5:chapters version="2.0">
+            <ns5:chapter startTime="0" title="Abertura" />
+      <ns5:chapter startTime="1800" title="Agenda" />
+      <ns5:chapter startTime="18093" title="Clima &amp; País" />
+      <ns5:chapter startTime="68955" title="Mundo" />
+      <ns5:chapter startTime="116440" title="Tecnologia" />
+      <ns5:chapter startTime="166861" title="Economia" />
+      <ns5:chapter startTime="220365" title="Sinal 11" />
+      <ns5:chapter startTime="276144" title="Encerramento" />
+    </ns5:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 27/07/2026</title>
-      <itunes:title>Manhã Conectada — 27/07/2026</itunes:title>
-      <itunes:episode>5</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>04:49</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
+      <ns0:title>Manhã Conectada — 27/07/2026</ns0:title>
+      <ns0:episode>5</ns0:episode>
+      <ns0:season>1</ns0:season>
+      <ns0:episodeType>full</ns0:episodeType>
+      <ns0:duration>04:49</ns0:duration>
+      <ns0:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg" />
       <guid isPermaLink="false">manha-conectada-2026-07-27</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-27.mp3" length="6940255" type="audio/mpeg"/>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-27.mp3" length="6940255" type="audio/mpeg" />
       <pubDate>Mon, 27 Jul 2026 11:00:00 -0300</pubDate>
       <description>Manhã Conectada de 27/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:49.</description>
-      <itunes:summary>Manhã Conectada de 27/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:49.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 27/07/2026</strong></p><p>Manhã Conectada de 27/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:49.</p><ul><li>Argentina não pedirá desculpas ao Brasil pelas falas de Milei, diz jornal - UOL Notícias</li><li>Incêndio atinge prédio às margens da Avenida Brasil, em Irajá; bombeiros retiram moradores - O GLOBO</li><li>Após Trump pausar bombardeios, Irã sinaliza que suspenderá ataques - CNN Brasil</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+      <ns0:summary>Manhã Conectada de 27/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:49.
+
+📑 Capítulos:
+⏱ 00:00 — Abertura
+⏱ 00:01 — Agenda
+⏱ 00:14 — Clima &amp; País
+⏱ 01:00 — Mundo
+⏱ 01:52 — Tecnologia
+⏱ 02:40 — Economia
+⏱ 03:36 — Sinal 11
+⏱ 04:26 — Encerramento</ns0:summary>
+      <ns3:encoded>&lt;p&gt;&lt;strong&gt;Manhã Conectada • 27/07/2026&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Manhã Conectada de 27/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:49.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Argentina não pedirá desculpas ao Brasil pelas falas de Milei, diz jornal - UOL Notícias&lt;/li&gt;&lt;li&gt;Incêndio atinge prédio às margens da Avenida Brasil, em Irajá; bombeiros retiram moradores - O GLOBO&lt;/li&gt;&lt;li&gt;Após Trump pausar bombardeios, Irã sinaliza que suspenderá ataques - CNN Brasil&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;📑 &lt;strong&gt;Capítulos:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Abertura&lt;/strong&gt; — 00:00&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Agenda&lt;/strong&gt; — 00:01&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Clima &amp;amp; País&lt;/strong&gt; — 00:14&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Mundo&lt;/strong&gt; — 01:00&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Tecnologia&lt;/strong&gt; — 01:52&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Economia&lt;/strong&gt; — 02:40&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Sinal 11&lt;/strong&gt; — 03:36&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Encerramento&lt;/strong&gt; — 04:26&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://d5n-daily.netlify.app/#manha-conectada"&gt;Ouça no site&lt;/a&gt;&lt;/p&gt;</ns3:encoded>
+    <ns1:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-27.mp3">
+            <ns4:chapter startTime="0" title="Abertura" />
+      <ns4:chapter startTime="1800" title="Agenda" />
+      <ns4:chapter startTime="14906" title="Clima &amp; País" />
+      <ns4:chapter startTime="60921" title="Mundo" />
+      <ns4:chapter startTime="112179" title="Tecnologia" />
+      <ns4:chapter startTime="160160" title="Economia" />
+      <ns4:chapter startTime="216805" title="Sinal 11" />
+      <ns4:chapter startTime="266024" title="Encerramento" />
+    </ns1:chapters>
+    <ns5:chapters version="2.0">
+            <ns5:chapter startTime="0" title="Abertura" />
+      <ns5:chapter startTime="1800" title="Agenda" />
+      <ns5:chapter startTime="14906" title="Clima &amp; País" />
+      <ns5:chapter startTime="60921" title="Mundo" />
+      <ns5:chapter startTime="112179" title="Tecnologia" />
+      <ns5:chapter startTime="160160" title="Economia" />
+      <ns5:chapter startTime="216805" title="Sinal 11" />
+      <ns5:chapter startTime="266024" title="Encerramento" />
+    </ns5:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 24/07/2026</title>
-      <itunes:title>Manhã Conectada — 24/07/2026</itunes:title>
-      <itunes:episode>4</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>04:45</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
+      <ns0:title>Manhã Conectada — 24/07/2026</ns0:title>
+      <ns0:episode>4</ns0:episode>
+      <ns0:season>1</ns0:season>
+      <ns0:episodeType>full</ns0:episodeType>
+      <ns0:duration>04:45</ns0:duration>
+      <ns0:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg" />
       <guid isPermaLink="false">manha-conectada-2026-07-24</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-24.mp3" length="6848722" type="audio/mpeg"/>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-24.mp3" length="6848722" type="audio/mpeg" />
       <pubDate>Fri, 24 Jul 2026 11:00:00 -0300</pubDate>
       <description>Manhã Conectada de 24/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:45.</description>
-      <itunes:summary>Manhã Conectada de 24/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:45.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 24/07/2026</strong></p><p>Manhã Conectada de 24/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:45.</p><ul><li>Tarifaço de Trump: veja a cronologia e como ficam as novas tarifas para o Brasil - G1</li><li>Brasil Urgente ao vivo: assista ao programa agora - band.com.br</li><li>Brasil reage a novas tarifas dos EUA e anuncia acionamento da Lei da Reciprocidade - Francês News</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+      <ns0:summary>Manhã Conectada de 24/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:45.
+
+📑 Capítulos:
+⏱ 00:00 — Abertura
+⏱ 00:01 — Agenda
+⏱ 04:22 — Encerramento</ns0:summary>
+      <ns3:encoded>&lt;p&gt;&lt;strong&gt;Manhã Conectada • 24/07/2026&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Manhã Conectada de 24/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:45.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Tarifaço de Trump: veja a cronologia e como ficam as novas tarifas para o Brasil - G1&lt;/li&gt;&lt;li&gt;Brasil Urgente ao vivo: assista ao programa agora - band.com.br&lt;/li&gt;&lt;li&gt;Brasil reage a novas tarifas dos EUA e anuncia acionamento da Lei da Reciprocidade - Francês News&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;📑 &lt;strong&gt;Capítulos:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Abertura&lt;/strong&gt; — 00:00&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Agenda&lt;/strong&gt; — 00:01&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Encerramento&lt;/strong&gt; — 04:22&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://d5n-daily.netlify.app/#manha-conectada"&gt;Ouça no site&lt;/a&gt;&lt;/p&gt;</ns3:encoded>
+    <ns1:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-24.mp3">
+            <ns4:chapter startTime="0" title="Abertura" />
+      <ns4:chapter startTime="1800" title="Agenda" />
+      <ns4:chapter startTime="262344" title="Encerramento" />
+    </ns1:chapters>
+    <ns5:chapters version="2.0">
+            <ns5:chapter startTime="0" title="Abertura" />
+      <ns5:chapter startTime="1800" title="Agenda" />
+      <ns5:chapter startTime="262344" title="Encerramento" />
+    </ns5:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 23/07/2026</title>
-      <itunes:title>Manhã Conectada — 23/07/2026</itunes:title>
-      <itunes:episode>3</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>05:24</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
+      <ns0:title>Manhã Conectada — 23/07/2026</ns0:title>
+      <ns0:episode>3</ns0:episode>
+      <ns0:season>1</ns0:season>
+      <ns0:episodeType>full</ns0:episodeType>
+      <ns0:duration>05:24</ns0:duration>
+      <ns0:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg" />
       <guid isPermaLink="false">manha-conectada-2026-07-23</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-23.mp3" length="7783488" type="audio/mpeg"/>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-23.mp3" length="7783488" type="audio/mpeg" />
       <pubDate>Thu, 23 Jul 2026 11:00:00 -0300</pubDate>
       <description>Manhã Conectada de 23/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:24.</description>
-      <itunes:summary>Manhã Conectada de 23/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:24.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 23/07/2026</strong></p><p>Manhã Conectada de 23/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:24.</p><ul><li>Como nova tarifa contra o Brasil faz parte de estratégia maior de Trump para inimigos (e aliados) - G1</li><li>China quer depender menos do agro brasileiro: o plano chinês — e por que isso assusta o Brasil - BBC</li><li>Brasil Urgente ao vivo: assista ao programa agora - band.com.br</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+      <ns0:summary>Manhã Conectada de 23/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:24.
+
+📑 Capítulos:
+⏱ 00:00 — Abertura
+⏱ 00:01 — Agenda
+⏱ 00:21 — Clima &amp; País
+⏱ 01:14 — Mundo
+⏱ 02:10 — Tecnologia
+⏱ 03:06 — Economia
+⏱ 04:03 — Sinal 11
+⏱ 04:58 — Encerramento</ns0:summary>
+      <ns3:encoded>&lt;p&gt;&lt;strong&gt;Manhã Conectada • 23/07/2026&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Manhã Conectada de 23/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:24.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Como nova tarifa contra o Brasil faz parte de estratégia maior de Trump para inimigos (e aliados) - G1&lt;/li&gt;&lt;li&gt;China quer depender menos do agro brasileiro: o plano chinês — e por que isso assusta o Brasil - BBC&lt;/li&gt;&lt;li&gt;Brasil Urgente ao vivo: assista ao programa agora - band.com.br&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;📑 &lt;strong&gt;Capítulos:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Abertura&lt;/strong&gt; — 00:00&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Agenda&lt;/strong&gt; — 00:01&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Clima &amp;amp; País&lt;/strong&gt; — 00:21&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Mundo&lt;/strong&gt; — 01:14&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Tecnologia&lt;/strong&gt; — 02:10&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Economia&lt;/strong&gt; — 03:06&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Sinal 11&lt;/strong&gt; — 04:03&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Encerramento&lt;/strong&gt; — 04:58&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://d5n-daily.netlify.app/#manha-conectada"&gt;Ouça no site&lt;/a&gt;&lt;/p&gt;</ns3:encoded>
+    <ns1:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-23.mp3">
+            <ns4:chapter startTime="0" title="Abertura" />
+      <ns4:chapter startTime="1800" title="Agenda" />
+      <ns4:chapter startTime="21622" title="Clima &amp; País" />
+      <ns4:chapter startTime="74597" title="Mundo" />
+      <ns4:chapter startTime="130782" title="Tecnologia" />
+      <ns4:chapter startTime="186760" title="Economia" />
+      <ns4:chapter startTime="243853" title="Sinal 11" />
+      <ns4:chapter startTime="298224" title="Encerramento" />
+    </ns1:chapters>
+    <ns5:chapters version="2.0">
+            <ns5:chapter startTime="0" title="Abertura" />
+      <ns5:chapter startTime="1800" title="Agenda" />
+      <ns5:chapter startTime="21622" title="Clima &amp; País" />
+      <ns5:chapter startTime="74597" title="Mundo" />
+      <ns5:chapter startTime="130782" title="Tecnologia" />
+      <ns5:chapter startTime="186760" title="Economia" />
+      <ns5:chapter startTime="243853" title="Sinal 11" />
+      <ns5:chapter startTime="298224" title="Encerramento" />
+    </ns5:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 21/07/2026</title>
-      <itunes:title>Manhã Conectada — 21/07/2026</itunes:title>
-      <itunes:episode>2</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>04:58</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
+      <ns0:title>Manhã Conectada — 21/07/2026</ns0:title>
+      <ns0:episode>2</ns0:episode>
+      <ns0:season>1</ns0:season>
+      <ns0:episodeType>full</ns0:episodeType>
+      <ns0:duration>04:58</ns0:duration>
+      <ns0:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg" />
       <guid isPermaLink="false">manha-conectada-2026-07-21</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-21.mp3" length="7157803" type="audio/mpeg"/>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-21.mp3" length="7157803" type="audio/mpeg" />
       <pubDate>Tue, 21 Jul 2026 11:00:00 -0300</pubDate>
       <description>Manhã Conectada de 21/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:58.</description>
-      <itunes:summary>Manhã Conectada de 21/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:58.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 21/07/2026</strong></p><p>Manhã Conectada de 21/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:58.</p><ul><li>EUA podem perder para o Brasil o papel de maior exportador agrícola do mundo, diz Financial Times - BBC</li><li>Governo se reúne com setores afetados pelo tarifaço dos EUA - SBT News</li><li>Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+      <ns0:summary>Manhã Conectada de 21/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:58.
+
+📑 Capítulos:
+⏱ 00:00 — Abertura
+⏱ 00:01 — Agenda
+⏱ 00:18 — Clima &amp; País
+⏱ 01:07 — Mundo
+⏱ 01:58 — Tecnologia
+⏱ 02:44 — Economia
+⏱ 03:37 — Sinal 11
+⏱ 04:34 — Encerramento</ns0:summary>
+      <ns3:encoded>&lt;p&gt;&lt;strong&gt;Manhã Conectada • 21/07/2026&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Manhã Conectada de 21/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:58.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;EUA podem perder para o Brasil o papel de maior exportador agrícola do mundo, diz Financial Times - BBC&lt;/li&gt;&lt;li&gt;Governo se reúne com setores afetados pelo tarifaço dos EUA - SBT News&lt;/li&gt;&lt;li&gt;Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;📑 &lt;strong&gt;Capítulos:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Abertura&lt;/strong&gt; — 00:00&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Agenda&lt;/strong&gt; — 00:01&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Clima &amp;amp; País&lt;/strong&gt; — 00:18&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Mundo&lt;/strong&gt; — 01:07&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Tecnologia&lt;/strong&gt; — 01:58&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Economia&lt;/strong&gt; — 02:44&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Sinal 11&lt;/strong&gt; — 03:37&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Encerramento&lt;/strong&gt; — 04:34&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://d5n-daily.netlify.app/#manha-conectada"&gt;Ouça no site&lt;/a&gt;&lt;/p&gt;</ns3:encoded>
+    <ns1:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-21.mp3">
+            <ns4:chapter startTime="0" title="Abertura" />
+      <ns4:chapter startTime="1800" title="Agenda" />
+      <ns4:chapter startTime="18252" title="Clima &amp; País" />
+      <ns4:chapter startTime="67678" title="Mundo" />
+      <ns4:chapter startTime="118637" title="Tecnologia" />
+      <ns4:chapter startTime="164159" title="Economia" />
+      <ns4:chapter startTime="217768" title="Sinal 11" />
+      <ns4:chapter startTime="274304" title="Encerramento" />
+    </ns1:chapters>
+    <ns5:chapters version="2.0">
+            <ns5:chapter startTime="0" title="Abertura" />
+      <ns5:chapter startTime="1800" title="Agenda" />
+      <ns5:chapter startTime="18252" title="Clima &amp; País" />
+      <ns5:chapter startTime="67678" title="Mundo" />
+      <ns5:chapter startTime="118637" title="Tecnologia" />
+      <ns5:chapter startTime="164159" title="Economia" />
+      <ns5:chapter startTime="217768" title="Sinal 11" />
+      <ns5:chapter startTime="274304" title="Encerramento" />
+    </ns5:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 20/07/2026</title>
-      <itunes:title>Manhã Conectada — 20/07/2026</itunes:title>
-      <itunes:episode>1</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>04:54</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
+      <ns0:title>Manhã Conectada — 20/07/2026</ns0:title>
+      <ns0:episode>1</ns0:episode>
+      <ns0:season>1</ns0:season>
+      <ns0:episodeType>full</ns0:episodeType>
+      <ns0:duration>04:54</ns0:duration>
+      <ns0:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg" />
       <guid isPermaLink="false">manha-conectada-2026-07-20</guid>
       <link>https://d5n-daily.netlify.app/#manha-conectada</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-20.mp3" length="7056865" type="audio/mpeg"/>
+      <enclosure url="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-20.mp3" length="7056865" type="audio/mpeg" />
       <pubDate>Mon, 20 Jul 2026 11:00:00 -0300</pubDate>
       <description>Manhã Conectada de 20/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:54.</description>
-      <itunes:summary>Manhã Conectada de 20/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:54.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 20/07/2026</strong></p><p>Manhã Conectada de 20/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:54.</p><ul><li>Trump quer punir o Brasil por sucesso do Pix, diz vencedor do Nobel - band.com.br</li><li>Queda da Argentina mantém Brasil da era Pelé como último bi consecutivo - UOL</li><li>Análise: tarifaço ao Brasil é medida política? - G1</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+      <ns0:summary>Manhã Conectada de 20/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:54.
+
+📑 Capítulos:
+⏱ 00:00 — Abertura
+⏱ 00:01 — Agenda
+⏱ 00:14 — Clima &amp; País
+⏱ 01:02 — Mundo
+⏱ 01:59 — Tecnologia
+⏱ 02:44 — Economia
+⏱ 03:41 — Sinal 11
+⏱ 04:30 — Encerramento</ns0:summary>
+      <ns3:encoded>&lt;p&gt;&lt;strong&gt;Manhã Conectada • 20/07/2026&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Manhã Conectada de 20/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:54.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Trump quer punir o Brasil por sucesso do Pix, diz vencedor do Nobel - band.com.br&lt;/li&gt;&lt;li&gt;Queda da Argentina mantém Brasil da era Pelé como último bi consecutivo - UOL&lt;/li&gt;&lt;li&gt;Análise: tarifaço ao Brasil é medida política? - G1&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;📑 &lt;strong&gt;Capítulos:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Abertura&lt;/strong&gt; — 00:00&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Agenda&lt;/strong&gt; — 00:01&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Clima &amp;amp; País&lt;/strong&gt; — 00:14&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Mundo&lt;/strong&gt; — 01:02&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Tecnologia&lt;/strong&gt; — 01:59&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Economia&lt;/strong&gt; — 02:44&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Sinal 11&lt;/strong&gt; — 03:41&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Encerramento&lt;/strong&gt; — 04:30&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://d5n-daily.netlify.app/#manha-conectada"&gt;Ouça no site&lt;/a&gt;&lt;/p&gt;</ns3:encoded>
+    <ns1:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/manha-conectada-2026-07-20.mp3">
+            <ns4:chapter startTime="0" title="Abertura" />
+      <ns4:chapter startTime="1800" title="Agenda" />
+      <ns4:chapter startTime="14865" title="Clima &amp; País" />
+      <ns4:chapter startTime="62820" title="Mundo" />
+      <ns4:chapter startTime="119826" title="Tecnologia" />
+      <ns4:chapter startTime="164861" title="Economia" />
+      <ns4:chapter startTime="221428" title="Sinal 11" />
+      <ns4:chapter startTime="270624" title="Encerramento" />
+    </ns1:chapters>
+    <ns5:chapters version="2.0">
+            <ns5:chapter startTime="0" title="Abertura" />
+      <ns5:chapter startTime="1800" title="Agenda" />
+      <ns5:chapter startTime="14865" title="Clima &amp; País" />
+      <ns5:chapter startTime="62820" title="Mundo" />
+      <ns5:chapter startTime="119826" title="Tecnologia" />
+      <ns5:chapter startTime="164861" title="Economia" />
+      <ns5:chapter startTime="221428" title="Sinal 11" />
+      <ns5:chapter startTime="270624" title="Encerramento" />
+    </ns5:chapters>
     </item>
   </channel>
 </rss>
