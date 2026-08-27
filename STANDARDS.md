@@ -201,34 +201,54 @@ Se o `BASE_URL` ou o caminho no enclosure for mudado, verificar:
 
 ## 🎙️ Identidade Sonora e Vozes
 
-| Programa | Apresentador(a) | Voz TTS | Tom | Intro 8-bit | Trilha BG |
+> ⚠️ **Critérios de aprovação:** ver `docs/MC_FM_AUDIO_IDENTITY.md`
+> - BG: -12dB (não -25dB)
+> - LEAD: 2-3s
+> - Pausas: 1.5-2s entre blocos
+> - Fade in/out: 0.8-1s
+> - Sem loudnorm
+
+| Programa | Apresentador | Voz TTS | Tom | BG Rotativo | Intro |
 |---|---|---|---|---|---|
-| **D5N** | Thalita/Francisca | `pt-BR-ThalitaMultilingualNeural` / `pt-BR-AntonioNeural` | Diário, ágil, 12 seções | *(intocado)* | *(intocado)* |
-| **MC** | **Francisca** | `pt-BR-FranciscaNeural` | Matinal, acolhedor, dinâmico | `intro-mc-8bit.mp3` (Dm, 120BPM) | `bg-mc-matinal.mp3` (Dm, 60s loop) |
-| **FM** | **Antonio** | `pt-BR-AntonioNeural` | Sextouro-style, mercado, closing | `intro-fm-8bit.mp3` (G major, 130BPM) | `bg-fm-mercado.mp3` (G, 60s loop) |
+| **D5N** | Thalita/Francisca | `pt-BR-ThalitaMultilingualNeural` | Diário, ágil, 12 seções | *(intocado)* | *(intocado)* |
+| **MC** | Francisca | `pt-BR-FranciscaNeural` | Matinal, acolhedor | `bg-mc-{03,04,06}.mp3` (rotativo/dia) | `intro-mc-{03,04,06}.mp3` |
+| **FM** | Antonio | `pt-BR-AntonioNeural` | Mercado, closing | `bg-fm-{01,07}.mp3` (rotativo/dia) | `intro-fm-{01,07}.mp3` |
 
-### Ativos de áudio MC
+### Parâmetros de mix (MC & FM)
+
+| Parâmetro | Valor | Nota |
+|---|---|---|
+| LEAD_MS | 2000 | narração começa 2s depois |
+| BG volume | -12dB | audível, não morre |
+| Fade in BG | 800ms | entrada suave |
+| Fade out BG | 1000ms | saída suave |
+| Fade out final | 1000ms | 1s antes do fim |
+| Sem loudnorm | — | proibido (muda timbre) |
+
+### Locais de ativos
+
 ```
+assets/audio/
+├── bg-mc-03.mp3          # cand-03: grave/íntimo
+├── bg-mc-04.mp3          # cand-04: grave/quente ← demo atual
+├── bg-mc-06.mp3          # cand-06: equilibrado/suave
+├── bg-fm-01.mp3          # cand-01: grave/intimidador ← demo atual
+├── bg-fm-07.mp3          # cand-07: grave/ambiente
+├── intro-mc-{03,04,06}.mp3   # 5s de cada BG
+├── intro-fm-{01,07}.mp3
+└── intros-candidatos/    # origem: 7 MP3s do Drive (cand-01 a cand-07)
+    └── cand-{01-07}.mp3
+
 manha-conectada/assets/audio/
-├── intro-mc-8bit.mp3       # ✅ NOVO — intro chiptune Dm 120BPM
-├── bg-mc-matinal.mp3       # ✅ NOVO — trilha Dm 60s loop
-├── bg-music-mc.wav_OLD     # 🔒 backup (não apagar)
-├── intro-mc-nova.mp3_OLD   # 🔒 backup (não apagar)
-├── intro-jingle.mp3        # legado
-├── transition-sting.mp3    # sting de transição
-```
+├── transition-sting.mp3   # sting de transição entre blocos
 
-### Ativos de áudio FM
-```
 fechamento/assets/audio/
-├── intro-fm-8bit.mp3       # ✅ NOVO — intro chiptune G 130BPM (closing épico)
-├── bg-fm-mercado.mp3       # ✅ NOVO — trilha G 60s loop (mercado)
-├── bg-music-mc.wav_OLD     # 🔒 backup (não apagar)
-├── intro-mc-nova.mp3_OLD   # 🔒 backup (não apagar)
-├── transition-sting.mp3    # sting de transição
+└── transition-sting.mp3
 ```
 
-> **Importante:** Nunca apagar os arquivos `_OLD` — são o rollback rápido.
+> **Rotação:** mixers usam seed determinística por data — mesmo ep sempre mesmo BG.
+
+> **Rollback:** arquivos `_OLD` preservados. Para reverter: renomear `_OLD` → ativo.
 
 ---
 

@@ -110,7 +110,7 @@ def main() -> int:
 
     # Abertura instrumental audível; cama sobe levemente e respira entre temas.
     voice_canvas = AudioSegment.silent(duration=LEAD_MS, frame_rate=44100) + voice
-    music = loop_to(bed - 18, len(voice_canvas)).fade_in(500).fade_out(2200)
+    music = loop_to(bed - 12, len(voice_canvas)).fade_in(800).fade_out(1000)
     music = music.overlay(intro, position=0)
     # Assinatura em transições alternadas; as demais deixam só a trilha exposta.
     for index, position in enumerate(transition_positions):
@@ -134,10 +134,8 @@ def main() -> int:
                 "[0:a][key]sidechaincompress="
                 "threshold=0.018:ratio=8:attack=15:release=320[ducked];"
                 f"[ducked][voice]amix=inputs=2:normalize=0,"
-                f"afade=t=out:st={fade_start:.3f}:d=1.8,"
-                "loudnorm=I=-16:TP=-1.5:LRA=11[out]"
+                f"afade=t=out:st={fade_start:.3f}:d=1.0[out]"
             ),
-            "-map", "[out]",
             "-ar", "44100", "-ac", "1", "-c:a", "libmp3lame", "-b:a", "192k", str(output),
         ]
         proc = subprocess.run(cmd, text=True, capture_output=True, timeout=600)
