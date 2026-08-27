@@ -184,6 +184,7 @@ def build_feed(repo: Path) -> tuple[str, list[Episode]]:
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
     <itunes:complete>no</itunes:complete>
+    <ttl>60</ttl>
     <itunes:category text="News">
       <itunes:category text="Daily News"/>
     </itunes:category>

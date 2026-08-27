@@ -24,6 +24,7 @@
     <itunes:keywords>notícias,brasil,mundo,política,economia,tecnologia,podcast,diário,resumo</itunes:keywords>
     <itunes:type>episodic</itunes:type>
     <itunes:complete>No</itunes:complete>
+    <ttl>60</ttl>
     <itunes:category text="News">
   <itunes:category text="Daily News"/>
 </itunes:category>
@@ -32,7 +33,7 @@
 <podcast:guid>d5n-daily.netlify.app</podcast:guid>
 <podcast:funding url="https://github.com/sponsors/eibragaa">Support D5N</podcast:funding>
     <atom:link href="https://d5n-daily.netlify.app/podcast.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 26 Aug 2026 22:32:51 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 23:29:05 -0400</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/podcast-cover.jpg</url>
       <title>Hoje no Drop Five News</title>

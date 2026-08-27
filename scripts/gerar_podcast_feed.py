@@ -173,6 +173,7 @@ def main() -> None:
     <itunes:keywords>notícias,brasil,mundo,política,economia,tecnologia,podcast,diário,resumo</itunes:keywords>
     <itunes:type>episodic</itunes:type>
     <itunes:complete>No</itunes:complete>
+    <ttl>60</ttl>
     {ITUNES_CATEGORIES}
     {PODCAST_LOCKED}
     <atom:link href="{BASE_URL}/podcast.xml" rel="self" type="application/rss+xml"/>
