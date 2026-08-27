@@ -144,17 +144,27 @@ def _fmt_dur(seconds: float) -> str:
     return f"{h:02d}:{m:02d}:{s:02d}" if h else f"{m:02d}:{s:02d}"
 
 
-def build_chapters_rss(chapters: list[dict], ep_url: str, dur_sec: float) -> str:
-    """Bloco podcast:chapters (PSRC) + psc:chapters (Podlove)."""
+def build_chapters_rss(chapters: list[dict], ep_url: str, dur_sec: float, has_timing: bool = True) -> str:
+    """Bloco podcast:chapters (PSRC) + psc:chapters (Podlove).
+
+    has_timing=False: D5N coldopen.txt não tem timing real — omite startTime
+    para não mostrar timestamps falsos nos players.
+    """
     if not chapters:
         return ""
     psrc_blocks = []
     for ch in chapters:
-        start_ms = int(float(ch["start"]) * 1000)
-        psrc_blocks.append(
-            f'      <psrc:chapter startTime="{start_ms}" '
-            f'title="{escape(ch["label"])}"/>'
-        )
+        if has_timing:
+            start_ms = int(float(ch["start"]) * 1000)
+            psrc_blocks.append(
+                f'      <psrc:chapter startTime="{start_ms}" '
+                f'title="{escape(ch["label"])}"/>'
+            )
+        else:
+            # Sem timing — só label (Spotify/Apple ignoram se não houver)
+            psrc_blocks.append(
+                f'      <psrc:chapter title="{escape(ch["label"])}"/>'
+            )
     psrc_inner = "\n".join(psrc_blocks)
     return f"""\
     <podcast:chapters version="1.2" src="{ep_url}">

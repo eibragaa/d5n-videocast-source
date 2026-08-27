@@ -31,7 +31,7 @@
 <podcast:guid>d5n-daily.netlify.app</podcast:guid>
 <podcast:funding url="https://github.com/sponsors/eibragaa">Support D5N</podcast:funding>
     <atom:link href="https://d5n-daily.netlify.app/podcast.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 26 Aug 2026 22:20:15 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 22:23:28 -0400</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/podcast-cover.jpg</url>
       <title>Hoje no Drop Five News</title>
@@ -51,20 +51,20 @@
       <itunes:duration>09:41</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
           <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep061-2026-08-18.mp3">
-            <psrc:chapter startTime="0" title="Abertura"/>
-      <psrc:chapter startTime="1800" title="Brasil &amp; Política"/>
-      <psrc:chapter startTime="216522" title="Economia"/>
-      <psrc:chapter startTime="379040" title="Mundo"/>
-      <psrc:chapter startTime="467687" title="Tecnologia &amp; Inovações"/>
-      <psrc:chapter startTime="534664" title="Encerramento"/>
+            <psrc:chapter title="Abertura"/>
+      <psrc:chapter title="Brasil &amp; Política"/>
+      <psrc:chapter title="Economia"/>
+      <psrc:chapter title="Mundo"/>
+      <psrc:chapter title="Tecnologia &amp; Inovações"/>
+      <psrc:chapter title="Encerramento"/>
     </podcast:chapters>
     <psc:chapters version="2.0">
-            <psc:chapter startTime="0" title="Abertura"/>
-      <psc:chapter startTime="1800" title="Brasil &amp; Política"/>
-      <psc:chapter startTime="216522" title="Economia"/>
-      <psc:chapter startTime="379040" title="Mundo"/>
-      <psc:chapter startTime="467687" title="Tecnologia &amp; Inovações"/>
-      <psc:chapter startTime="534664" title="Encerramento"/>
+            <psc:chapter title="Abertura"/>
+      <psc:chapter title="Brasil &amp; Política"/>
+      <psc:chapter title="Economia"/>
+      <psc:chapter title="Mundo"/>
+      <psc:chapter title="Tecnologia &amp; Inovações"/>
+      <psc:chapter title="Encerramento"/>
     </psc:chapters>
       <guid isPermaLink="false">d5n-2026-08-18-ep061</guid>
       <link>https://d5n-daily.netlify.app/</link>
@@ -87,20 +87,20 @@
 ⏱ 07:47 — Tecnologia &amp; Inovações
 ⏱ 08:54 — Encerramento</itunes:summary>
       <content:encoded><![CDATA[<p><strong>D5N · Episódio #061 · 18/08/2026</strong></p><p>🎧 9:41 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep061-2026-08-18.mp3">
-            <psrc:chapter startTime="0" title="Abertura"/>
-      <psrc:chapter startTime="1800" title="Brasil &amp; Política"/>
-      <psrc:chapter startTime="216522" title="Economia"/>
-      <psrc:chapter startTime="379040" title="Mundo"/>
-      <psrc:chapter startTime="467687" title="Tecnologia &amp; Inovações"/>
-      <psrc:chapter startTime="534664" title="Encerramento"/>
+            <psrc:chapter title="Abertura"/>
+      <psrc:chapter title="Brasil &amp; Política"/>
+      <psrc:chapter title="Economia"/>
+      <psrc:chapter title="Mundo"/>
+      <psrc:chapter title="Tecnologia &amp; Inovações"/>
+      <psrc:chapter title="Encerramento"/>
     </podcast:chapters>
     <psc:chapters version="2.0">
-            <psc:chapter startTime="0" title="Abertura"/>
-      <psc:chapter startTime="1800" title="Brasil &amp; Política"/>
-      <psc:chapter startTime="216522" title="Economia"/>
-      <psc:chapter startTime="379040" title="Mundo"/>
-      <psc:chapter startTime="467687" title="Tecnologia &amp; Inovações"/>
-      <psc:chapter startTime="534664" title="Encerramento"/>
+            <psc:chapter title="Abertura"/>
+      <psc:chapter title="Brasil &amp; Política"/>
+      <psc:chapter title="Economia"/>
+      <psc:chapter title="Mundo"/>
+      <psc:chapter title="Tecnologia &amp; Inovações"/>
+      <psc:chapter title="Encerramento"/>
     </psc:chapters><p>Drop Five News · Episódio #061 · 18/08/2026. Resumo do dia com curadoria inteligente. 9:41 min.
 
 ⏱ 00:00 — Abertura
@@ -119,18 +119,18 @@
       <itunes:duration>09:21</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
           <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep060-2026-08-17.mp3">
-            <psrc:chapter startTime="0" title="Abertura"/>
-      <psrc:chapter startTime="1800" title="Brasil &amp; Política"/>
-      <psrc:chapter startTime="180744" title="Economia"/>
-      <psrc:chapter startTime="352806" title="Mundo"/>
-      <psrc:chapter startTime="516264" title="Encerramento"/>
+            <psrc:chapter title="Abertura"/>
+      <psrc:chapter title="Brasil &amp; Política"/>
+      <psrc:chapter title="Economia"/>
+      <psrc:chapter title="Mundo"/>
+      <psrc:chapter title="Encerramento"/>
     </podcast:chapters>
     <psc:chapters version="2.0">
-            <psc:chapter startTime="0" title="Abertura"/>
-      <psc:chapter startTime="1800" title="Brasil &amp; Política"/>
-      <psc:chapter startTime="180744" title="Economia"/>
-      <psc:chapter startTime="352806" title="Mundo"/>
-      <psc:chapter startTime="516264" title="Encerramento"/>
+            <psc:chapter title="Abertura"/>
+      <psc:chapter title="Brasil &amp; Política"/>
+      <psc:chapter title="Economia"/>
+      <psc:chapter title="Mundo"/>
+      <psc:chapter title="Encerramento"/>
     </psc:chapters>
       <guid isPermaLink="false">d5n-2026-08-17-ep060</guid>
       <link>https://d5n-daily.netlify.app/</link>
@@ -151,18 +151,18 @@
 ⏱ 05:52 — Mundo
 ⏱ 08:36 — Encerramento</itunes:summary>
       <content:encoded><![CDATA[<p><strong>D5N · Episódio #060 · 17/08/2026</strong></p><p>🎧 9:21 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep060-2026-08-17.mp3">
-            <psrc:chapter startTime="0" title="Abertura"/>
-      <psrc:chapter startTime="1800" title="Brasil &amp; Política"/>
-      <psrc:chapter startTime="180744" title="Economia"/>
-      <psrc:chapter startTime="352806" title="Mundo"/>
-      <psrc:chapter startTime="516264" title="Encerramento"/>
+            <psrc:chapter title="Abertura"/>
+      <psrc:chapter title="Brasil &amp; Política"/>
+      <psrc:chapter title="Economia"/>
+      <psrc:chapter title="Mundo"/>
+      <psrc:chapter title="Encerramento"/>
     </podcast:chapters>
     <psc:chapters version="2.0">
-            <psc:chapter startTime="0" title="Abertura"/>
-      <psc:chapter startTime="1800" title="Brasil &amp; Política"/>
-      <psc:chapter startTime="180744" title="Economia"/>
-      <psc:chapter startTime="352806" title="Mundo"/>
-      <psc:chapter startTime="516264" title="Encerramento"/>
+            <psc:chapter title="Abertura"/>
+      <psc:chapter title="Brasil &amp; Política"/>
+      <psc:chapter title="Economia"/>
+      <psc:chapter title="Mundo"/>
+      <psc:chapter title="Encerramento"/>
     </psc:chapters><p>Drop Five News · Episódio #060 · 17/08/2026. Resumo do dia com curadoria inteligente. 9:21 min.
 
 ⏱ 00:00 — Abertura

@@ -87,8 +87,9 @@ def main() -> None:
         guid = f"d5n-{ep['date']}-ep{ep['num']}"
 
         # Carrega capítulos do roteiro se existir
+        # D5N coldopen.txt não tem timing real — gera labels sem startTime
         chapters = load_program_chapters("d5n", ep["date"], dur_sec)
-        chapters_rss = build_chapters_rss(chapters, ep_url, dur_sec)
+        chapters_rss = build_chapters_rss(chapters, ep_url, dur_sec, has_timing=False)
         chapters_desc = build_chapters_description(chapters, dur_sec)
 
         minutes = dur_sec // 60
