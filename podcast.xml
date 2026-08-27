@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" 
+<rss version="2.0"
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
      xmlns:atom="http://www.w3.org/2005/Atom"
      xmlns:content="http://purl.org/rss/1.0/modules/content/"
      xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
-     xmlns:podcast="https://podcastindex.org/namespace/1.0">
+     xmlns:podcast="https://podcastindex.org/namespace/1.0"
+     xmlns:psc="http://podlove.org/simple-chapters">
   <channel>
     <title>Hoje no Drop Five News</title>
     <link>https://d5n-daily.netlify.app/</link>
@@ -17,7 +18,7 @@
       <itunes:name>Jean Braga</itunes:name>
       <itunes:email>eibragaa@gmail.com</itunes:email>
     </itunes:owner>
-    <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+    <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:keywords>notícias,brasil,mundo,política,economia,tecnologia,podcast,diário,resumo</itunes:keywords>
     <itunes:type>episodic</itunes:type>
@@ -30,9 +31,9 @@
 <podcast:guid>d5n-daily.netlify.app</podcast:guid>
 <podcast:funding url="https://github.com/sponsors/eibragaa">Support D5N</podcast:funding>
     <atom:link href="https://d5n-daily.netlify.app/podcast.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Tue, 18 Aug 2026 03:25:37 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 22:20:15 -0400</lastBuildDate>
     <image>
-      <url>https://d5n-daily.netlify.app/podcast-cover.png</url>
+      <url>https://d5n-daily.netlify.app/podcast-cover.jpg</url>
       <title>Hoje no Drop Five News</title>
       <link>https://d5n-daily.netlify.app/</link>
       <width>3000</width>
@@ -42,852 +43,1000 @@
     <webMaster>eibragaa@gmail.com (Jean Braga)</webMaster>
     <generator>D5N Pipeline v2</generator>
     <item>
-      <title>D5N • Episódio #061 — 2026-08-18</title>
-      <itunes:title>D5N • Episódio #061 — 2026-08-18</itunes:title>
+      <title>D5N · Episódio #061 — 2026-08-18</title>
+      <itunes:title>D5N · Episódio #061 — 2026-08-18</itunes:title>
       <itunes:episode>61</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>09:41</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep061-2026-08-18.mp3">
+            <psrc:chapter startTime="0" title="Abertura"/>
+      <psrc:chapter startTime="1800" title="Brasil &amp; Política"/>
+      <psrc:chapter startTime="216522" title="Economia"/>
+      <psrc:chapter startTime="379040" title="Mundo"/>
+      <psrc:chapter startTime="467687" title="Tecnologia &amp; Inovações"/>
+      <psrc:chapter startTime="534664" title="Encerramento"/>
+    </podcast:chapters>
+    <psc:chapters version="2.0">
+            <psc:chapter startTime="0" title="Abertura"/>
+      <psc:chapter startTime="1800" title="Brasil &amp; Política"/>
+      <psc:chapter startTime="216522" title="Economia"/>
+      <psc:chapter startTime="379040" title="Mundo"/>
+      <psc:chapter startTime="467687" title="Tecnologia &amp; Inovações"/>
+      <psc:chapter startTime="534664" title="Encerramento"/>
+    </psc:chapters>
       <guid isPermaLink="false">d5n-2026-08-18-ep061</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep061-2026-08-18.mp3" length="13965731" type="audio/mpeg"/>
       <pubDate>Tue, 18 Aug 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #061 • 2026-08-18. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 9:41 min.</description>
-      <itunes:summary>Drop Five News — Episódio #061 • 2026-08-18. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 9:41 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #061</strong></p><p>📅 2026-08-18</p><p>🎧 9:41 minutos de curadoria diária</p><p>Drop Five News — Episódio #061 • 2026-08-18. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 9:41 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #061 · 18/08/2026. Resumo do dia com curadoria inteligente. 9:41 min.
+
+⏱ 00:00 — Abertura
+⏱ 00:01 — Brasil &amp; Política
+⏱ 03:36 — Economia
+⏱ 06:19 — Mundo
+⏱ 07:47 — Tecnologia &amp; Inovações
+⏱ 08:54 — Encerramento</description>
+      <itunes:summary>Drop Five News · Episódio #061 · 18/08/2026. Resumo do dia com curadoria inteligente. 9:41 min.
+
+⏱ 00:00 — Abertura
+⏱ 00:01 — Brasil &amp; Política
+⏱ 03:36 — Economia
+⏱ 06:19 — Mundo
+⏱ 07:47 — Tecnologia &amp; Inovações
+⏱ 08:54 — Encerramento</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #061 · 18/08/2026</strong></p><p>🎧 9:41 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep061-2026-08-18.mp3">
+            <psrc:chapter startTime="0" title="Abertura"/>
+      <psrc:chapter startTime="1800" title="Brasil &amp; Política"/>
+      <psrc:chapter startTime="216522" title="Economia"/>
+      <psrc:chapter startTime="379040" title="Mundo"/>
+      <psrc:chapter startTime="467687" title="Tecnologia &amp; Inovações"/>
+      <psrc:chapter startTime="534664" title="Encerramento"/>
+    </podcast:chapters>
+    <psc:chapters version="2.0">
+            <psc:chapter startTime="0" title="Abertura"/>
+      <psc:chapter startTime="1800" title="Brasil &amp; Política"/>
+      <psc:chapter startTime="216522" title="Economia"/>
+      <psc:chapter startTime="379040" title="Mundo"/>
+      <psc:chapter startTime="467687" title="Tecnologia &amp; Inovações"/>
+      <psc:chapter startTime="534664" title="Encerramento"/>
+    </psc:chapters><p>Drop Five News · Episódio #061 · 18/08/2026. Resumo do dia com curadoria inteligente. 9:41 min.
+
+⏱ 00:00 — Abertura
+⏱ 00:01 — Brasil &amp; Política
+⏱ 03:36 — Economia
+⏱ 06:19 — Mundo
+⏱ 07:47 — Tecnologia &amp; Inovações
+⏱ 08:54 — Encerramento</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #060 — 2026-08-17</title>
-      <itunes:title>D5N • Episódio #060 — 2026-08-17</itunes:title>
+      <title>D5N · Episódio #060 — 2026-08-17</title>
+      <itunes:title>D5N · Episódio #060 — 2026-08-17</itunes:title>
       <itunes:episode>60</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>09:21</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep060-2026-08-17.mp3">
+            <psrc:chapter startTime="0" title="Abertura"/>
+      <psrc:chapter startTime="1800" title="Brasil &amp; Política"/>
+      <psrc:chapter startTime="180744" title="Economia"/>
+      <psrc:chapter startTime="352806" title="Mundo"/>
+      <psrc:chapter startTime="516264" title="Encerramento"/>
+    </podcast:chapters>
+    <psc:chapters version="2.0">
+            <psc:chapter startTime="0" title="Abertura"/>
+      <psc:chapter startTime="1800" title="Brasil &amp; Política"/>
+      <psc:chapter startTime="180744" title="Economia"/>
+      <psc:chapter startTime="352806" title="Mundo"/>
+      <psc:chapter startTime="516264" title="Encerramento"/>
+    </psc:chapters>
       <guid isPermaLink="false">d5n-2026-08-17-ep060</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep060-2026-08-17.mp3" length="13474838" type="audio/mpeg"/>
       <pubDate>Mon, 17 Aug 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #060 • 2026-08-17. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 9:21 min.</description>
-      <itunes:summary>Drop Five News — Episódio #060 • 2026-08-17. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 9:21 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #060</strong></p><p>📅 2026-08-17</p><p>🎧 9:21 minutos de curadoria diária</p><p>Drop Five News — Episódio #060 • 2026-08-17. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 9:21 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #060 · 17/08/2026. Resumo do dia com curadoria inteligente. 9:21 min.
+
+⏱ 00:00 — Abertura
+⏱ 00:01 — Brasil &amp; Política
+⏱ 03:00 — Economia
+⏱ 05:52 — Mundo
+⏱ 08:36 — Encerramento</description>
+      <itunes:summary>Drop Five News · Episódio #060 · 17/08/2026. Resumo do dia com curadoria inteligente. 9:21 min.
+
+⏱ 00:00 — Abertura
+⏱ 00:01 — Brasil &amp; Política
+⏱ 03:00 — Economia
+⏱ 05:52 — Mundo
+⏱ 08:36 — Encerramento</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #060 · 17/08/2026</strong></p><p>🎧 9:21 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep060-2026-08-17.mp3">
+            <psrc:chapter startTime="0" title="Abertura"/>
+      <psrc:chapter startTime="1800" title="Brasil &amp; Política"/>
+      <psrc:chapter startTime="180744" title="Economia"/>
+      <psrc:chapter startTime="352806" title="Mundo"/>
+      <psrc:chapter startTime="516264" title="Encerramento"/>
+    </podcast:chapters>
+    <psc:chapters version="2.0">
+            <psc:chapter startTime="0" title="Abertura"/>
+      <psc:chapter startTime="1800" title="Brasil &amp; Política"/>
+      <psc:chapter startTime="180744" title="Economia"/>
+      <psc:chapter startTime="352806" title="Mundo"/>
+      <psc:chapter startTime="516264" title="Encerramento"/>
+    </psc:chapters><p>Drop Five News · Episódio #060 · 17/08/2026. Resumo do dia com curadoria inteligente. 9:21 min.
+
+⏱ 00:00 — Abertura
+⏱ 00:01 — Brasil &amp; Política
+⏱ 03:00 — Economia
+⏱ 05:52 — Mundo
+⏱ 08:36 — Encerramento</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #059 — 2026-08-14</title>
-      <itunes:title>D5N • Episódio #059 — 2026-08-14</itunes:title>
+      <title>D5N · Episódio #059 — 2026-08-14</title>
+      <itunes:title>D5N · Episódio #059 — 2026-08-14</itunes:title>
       <itunes:episode>59</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>05:33</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-08-14-ep059</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep059-2026-08-14.mp3" length="7997901" type="audio/mpeg"/>
       <pubDate>Fri, 14 Aug 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #059 • 2026-08-14. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 5:33 min.</description>
-      <itunes:summary>Drop Five News — Episódio #059 • 2026-08-14. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 5:33 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #059</strong></p><p>📅 2026-08-14</p><p>🎧 5:33 minutos de curadoria diária</p><p>Drop Five News — Episódio #059 • 2026-08-14. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 5:33 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #059 · 14/08/2026. Ouça o resumo de notícias do dia. 🎧 5:33 min.</description>
+      <itunes:summary>Drop Five News · Episódio #059 · 14/08/2026. Ouça o resumo de notícias do dia. 🎧 5:33 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #059 · 14/08/2026</strong></p><p>🎧 5:33 minutos</p><p>Drop Five News · Episódio #059 · 14/08/2026. Ouça o resumo de notícias do dia. 🎧 5:33 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #058 — 2026-08-11</title>
-      <itunes:title>D5N • Episódio #058 — 2026-08-11</itunes:title>
+      <title>D5N · Episódio #058 — 2026-08-11</title>
+      <itunes:title>D5N · Episódio #058 — 2026-08-11</itunes:title>
       <itunes:episode>58</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>11:58</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-08-11-ep058</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep058-2026-08-11.mp3" length="17247128" type="audio/mpeg"/>
       <pubDate>Tue, 11 Aug 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #058 • 2026-08-11. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 11:58 min.</description>
-      <itunes:summary>Drop Five News — Episódio #058 • 2026-08-11. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 11:58 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #058</strong></p><p>📅 2026-08-11</p><p>🎧 11:58 minutos de curadoria diária</p><p>Drop Five News — Episódio #058 • 2026-08-11. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 11:58 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #058 · 11/08/2026. Ouça o resumo de notícias do dia. 🎧 11:58 min.</description>
+      <itunes:summary>Drop Five News · Episódio #058 · 11/08/2026. Ouça o resumo de notícias do dia. 🎧 11:58 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #058 · 11/08/2026</strong></p><p>🎧 11:58 minutos</p><p>Drop Five News · Episódio #058 · 11/08/2026. Ouça o resumo de notícias do dia. 🎧 11:58 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #057 — 2026-08-10</title>
-      <itunes:title>D5N • Episódio #057 — 2026-08-10</itunes:title>
+      <title>D5N · Episódio #057 — 2026-08-10</title>
+      <itunes:title>D5N · Episódio #057 — 2026-08-10</itunes:title>
       <itunes:episode>57</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>10:12</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-08-10-ep057</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep057-2026-08-10.mp3" length="14706772" type="audio/mpeg"/>
       <pubDate>Mon, 10 Aug 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #057 • 2026-08-10. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 10:12 min.</description>
-      <itunes:summary>Drop Five News — Episódio #057 • 2026-08-10. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 10:12 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #057</strong></p><p>📅 2026-08-10</p><p>🎧 10:12 minutos de curadoria diária</p><p>Drop Five News — Episódio #057 • 2026-08-10. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 10:12 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #057 · 10/08/2026. Ouça o resumo de notícias do dia. 🎧 10:12 min.</description>
+      <itunes:summary>Drop Five News · Episódio #057 · 10/08/2026. Ouça o resumo de notícias do dia. 🎧 10:12 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #057 · 10/08/2026</strong></p><p>🎧 10:12 minutos</p><p>Drop Five News · Episódio #057 · 10/08/2026. Ouça o resumo de notícias do dia. 🎧 10:12 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #056 — 2026-08-08</title>
-      <itunes:title>D5N • Episódio #056 — 2026-08-08</itunes:title>
+      <title>D5N · Episódio #056 — 2026-08-08</title>
+      <itunes:title>D5N · Episódio #056 — 2026-08-08</itunes:title>
       <itunes:episode>56</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>10:01</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-08-08-ep056</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep056-2026-08-08.mp3" length="14430919" type="audio/mpeg"/>
       <pubDate>Sat, 08 Aug 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #056 • 2026-08-08. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 10:01 min.</description>
-      <itunes:summary>Drop Five News — Episódio #056 • 2026-08-08. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 10:01 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #056</strong></p><p>📅 2026-08-08</p><p>🎧 10:01 minutos de curadoria diária</p><p>Drop Five News — Episódio #056 • 2026-08-08. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 10:01 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #056 · 08/08/2026. Ouça o resumo de notícias do dia. 🎧 10:01 min.</description>
+      <itunes:summary>Drop Five News · Episódio #056 · 08/08/2026. Ouça o resumo de notícias do dia. 🎧 10:01 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #056 · 08/08/2026</strong></p><p>🎧 10:01 minutos</p><p>Drop Five News · Episódio #056 · 08/08/2026. Ouça o resumo de notícias do dia. 🎧 10:01 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #055 — 2026-08-07</title>
-      <itunes:title>D5N • Episódio #055 — 2026-08-07</itunes:title>
+      <title>D5N · Episódio #055 — 2026-08-07</title>
+      <itunes:title>D5N · Episódio #055 — 2026-08-07</itunes:title>
       <itunes:episode>55</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:44</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-08-07-ep055</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep055-2026-08-07.mp3" length="9710070" type="audio/mpeg"/>
       <pubDate>Fri, 07 Aug 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #055 • 2026-08-07. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:44 min.</description>
-      <itunes:summary>Drop Five News — Episódio #055 • 2026-08-07. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:44 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #055</strong></p><p>📅 2026-08-07</p><p>🎧 6:44 minutos de curadoria diária</p><p>Drop Five News — Episódio #055 • 2026-08-07. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:44 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #055 · 07/08/2026. Ouça o resumo de notícias do dia. 🎧 6:44 min.</description>
+      <itunes:summary>Drop Five News · Episódio #055 · 07/08/2026. Ouça o resumo de notícias do dia. 🎧 6:44 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #055 · 07/08/2026</strong></p><p>🎧 6:44 minutos</p><p>Drop Five News · Episódio #055 · 07/08/2026. Ouça o resumo de notícias do dia. 🎧 6:44 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #054 — 2026-08-06</title>
-      <itunes:title>D5N • Episódio #054 — 2026-08-06</itunes:title>
+      <title>D5N · Episódio #054 — 2026-08-06</title>
+      <itunes:title>D5N · Episódio #054 — 2026-08-06</itunes:title>
       <itunes:episode>54</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:30</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-08-06-ep054</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep054-2026-08-06.mp3" length="9374031" type="audio/mpeg"/>
       <pubDate>Thu, 06 Aug 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #054 • 2026-08-06. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:30 min.</description>
-      <itunes:summary>Drop Five News — Episódio #054 • 2026-08-06. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:30 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #054</strong></p><p>📅 2026-08-06</p><p>🎧 6:30 minutos de curadoria diária</p><p>Drop Five News — Episódio #054 • 2026-08-06. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:30 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #054 · 06/08/2026. Ouça o resumo de notícias do dia. 🎧 6:30 min.</description>
+      <itunes:summary>Drop Five News · Episódio #054 · 06/08/2026. Ouça o resumo de notícias do dia. 🎧 6:30 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #054 · 06/08/2026</strong></p><p>🎧 6:30 minutos</p><p>Drop Five News · Episódio #054 · 06/08/2026. Ouça o resumo de notícias do dia. 🎧 6:30 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #053 — 2026-08-05</title>
-      <itunes:title>D5N • Episódio #053 — 2026-08-05</itunes:title>
+      <title>D5N · Episódio #053 — 2026-08-05</title>
+      <itunes:title>D5N · Episódio #053 — 2026-08-05</itunes:title>
       <itunes:episode>53</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:48</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-08-05-ep053</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep053-2026-08-05.mp3" length="12695553" type="audio/mpeg"/>
       <pubDate>Wed, 05 Aug 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #053 • 2026-08-05. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:48 min.</description>
-      <itunes:summary>Drop Five News — Episódio #053 • 2026-08-05. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:48 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #053</strong></p><p>📅 2026-08-05</p><p>🎧 8:48 minutos de curadoria diária</p><p>Drop Five News — Episódio #053 • 2026-08-05. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:48 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #053 · 05/08/2026. Ouça o resumo de notícias do dia. 🎧 8:48 min.</description>
+      <itunes:summary>Drop Five News · Episódio #053 · 05/08/2026. Ouça o resumo de notícias do dia. 🎧 8:48 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #053 · 05/08/2026</strong></p><p>🎧 8:48 minutos</p><p>Drop Five News · Episódio #053 · 05/08/2026. Ouça o resumo de notícias do dia. 🎧 8:48 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #052 — 2026-08-04</title>
-      <itunes:title>D5N • Episódio #052 — 2026-08-04</itunes:title>
+      <title>D5N · Episódio #052 — 2026-08-04</title>
+      <itunes:title>D5N · Episódio #052 — 2026-08-04</itunes:title>
       <itunes:episode>52</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:57</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-08-04-ep052</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep052-2026-08-04.mp3" length="12893039" type="audio/mpeg"/>
       <pubDate>Tue, 04 Aug 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #052 • 2026-08-04. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:57 min.</description>
-      <itunes:summary>Drop Five News — Episódio #052 • 2026-08-04. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:57 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #052</strong></p><p>📅 2026-08-04</p><p>🎧 8:57 minutos de curadoria diária</p><p>Drop Five News — Episódio #052 • 2026-08-04. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:57 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #052 · 04/08/2026. Ouça o resumo de notícias do dia. 🎧 8:57 min.</description>
+      <itunes:summary>Drop Five News · Episódio #052 · 04/08/2026. Ouça o resumo de notícias do dia. 🎧 8:57 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #052 · 04/08/2026</strong></p><p>🎧 8:57 minutos</p><p>Drop Five News · Episódio #052 · 04/08/2026. Ouça o resumo de notícias do dia. 🎧 8:57 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #051 — 2026-08-03</title>
-      <itunes:title>D5N • Episódio #051 — 2026-08-03</itunes:title>
+      <title>D5N · Episódio #051 — 2026-08-03</title>
+      <itunes:title>D5N · Episódio #051 — 2026-08-03</itunes:title>
       <itunes:episode>51</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>09:07</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-08-03-ep051</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep051-2026-08-03.mp3" length="13146949" type="audio/mpeg"/>
       <pubDate>Mon, 03 Aug 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #051 • 2026-08-03. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 9:07 min.</description>
-      <itunes:summary>Drop Five News — Episódio #051 • 2026-08-03. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 9:07 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #051</strong></p><p>📅 2026-08-03</p><p>🎧 9:07 minutos de curadoria diária</p><p>Drop Five News — Episódio #051 • 2026-08-03. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 9:07 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #051 · 03/08/2026. Ouça o resumo de notícias do dia. 🎧 9:07 min.</description>
+      <itunes:summary>Drop Five News · Episódio #051 · 03/08/2026. Ouça o resumo de notícias do dia. 🎧 9:07 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #051 · 03/08/2026</strong></p><p>🎧 9:07 minutos</p><p>Drop Five News · Episódio #051 · 03/08/2026. Ouça o resumo de notícias do dia. 🎧 9:07 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #050 — 2026-08-01</title>
-      <itunes:title>D5N • Episódio #050 — 2026-08-01</itunes:title>
+      <title>D5N · Episódio #050 — 2026-08-01</title>
+      <itunes:title>D5N · Episódio #050 — 2026-08-01</itunes:title>
       <itunes:episode>50</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:48</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-08-01-ep050</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep050-2026-08-01.mp3" length="12680506" type="audio/mpeg"/>
       <pubDate>Sat, 01 Aug 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #050 • 2026-08-01. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:48 min.</description>
-      <itunes:summary>Drop Five News — Episódio #050 • 2026-08-01. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:48 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #050</strong></p><p>📅 2026-08-01</p><p>🎧 8:48 minutos de curadoria diária</p><p>Drop Five News — Episódio #050 • 2026-08-01. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:48 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #050 · 01/08/2026. Ouça o resumo de notícias do dia. 🎧 8:48 min.</description>
+      <itunes:summary>Drop Five News · Episódio #050 · 01/08/2026. Ouça o resumo de notícias do dia. 🎧 8:48 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #050 · 01/08/2026</strong></p><p>🎧 8:48 minutos</p><p>Drop Five News · Episódio #050 · 01/08/2026. Ouça o resumo de notícias do dia. 🎧 8:48 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #049 — 2026-07-31</title>
-      <itunes:title>D5N • Episódio #049 — 2026-07-31</itunes:title>
+      <title>D5N · Episódio #049 — 2026-07-31</title>
+      <itunes:title>D5N · Episódio #049 — 2026-07-31</itunes:title>
       <itunes:episode>49</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>10:26</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-07-31-ep049</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep049-2026-07-31.mp3" length="15032781" type="audio/mpeg"/>
       <pubDate>Fri, 31 Jul 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #049 • 2026-07-31. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 10:26 min.</description>
-      <itunes:summary>Drop Five News — Episódio #049 • 2026-07-31. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 10:26 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #049</strong></p><p>📅 2026-07-31</p><p>🎧 10:26 minutos de curadoria diária</p><p>Drop Five News — Episódio #049 • 2026-07-31. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 10:26 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #049 · 31/07/2026. Ouça o resumo de notícias do dia. 🎧 10:26 min.</description>
+      <itunes:summary>Drop Five News · Episódio #049 · 31/07/2026. Ouça o resumo de notícias do dia. 🎧 10:26 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #049 · 31/07/2026</strong></p><p>🎧 10:26 minutos</p><p>Drop Five News · Episódio #049 · 31/07/2026. Ouça o resumo de notícias do dia. 🎧 10:26 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #048 — 2026-07-30</title>
-      <itunes:title>D5N • Episódio #048 — 2026-07-30</itunes:title>
+      <title>D5N · Episódio #048 — 2026-07-30</title>
+      <itunes:title>D5N · Episódio #048 — 2026-07-30</itunes:title>
       <itunes:episode>48</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>09:30</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-07-30-ep048</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep048-2026-07-30.mp3" length="13694266" type="audio/mpeg"/>
       <pubDate>Thu, 30 Jul 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #048 • 2026-07-30. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 9:30 min.</description>
-      <itunes:summary>Drop Five News — Episódio #048 • 2026-07-30. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 9:30 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #048</strong></p><p>📅 2026-07-30</p><p>🎧 9:30 minutos de curadoria diária</p><p>Drop Five News — Episódio #048 • 2026-07-30. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 9:30 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #048 · 30/07/2026. Ouça o resumo de notícias do dia. 🎧 9:30 min.</description>
+      <itunes:summary>Drop Five News · Episódio #048 · 30/07/2026. Ouça o resumo de notícias do dia. 🎧 9:30 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #048 · 30/07/2026</strong></p><p>🎧 9:30 minutos</p><p>Drop Five News · Episódio #048 · 30/07/2026. Ouça o resumo de notícias do dia. 🎧 9:30 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #047 — 2026-07-29</title>
-      <itunes:title>D5N • Episódio #047 — 2026-07-29</itunes:title>
+      <title>D5N · Episódio #047 — 2026-07-29</title>
+      <itunes:title>D5N · Episódio #047 — 2026-07-29</itunes:title>
       <itunes:episode>47</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>11:03</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-07-29-ep047</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep047-2026-07-29.mp3" length="15917391" type="audio/mpeg"/>
       <pubDate>Wed, 29 Jul 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #047 • 2026-07-29. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 11:03 min.</description>
-      <itunes:summary>Drop Five News — Episódio #047 • 2026-07-29. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 11:03 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #047</strong></p><p>📅 2026-07-29</p><p>🎧 11:03 minutos de curadoria diária</p><p>Drop Five News — Episódio #047 • 2026-07-29. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 11:03 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #047 · 29/07/2026. Ouça o resumo de notícias do dia. 🎧 11:03 min.</description>
+      <itunes:summary>Drop Five News · Episódio #047 · 29/07/2026. Ouça o resumo de notícias do dia. 🎧 11:03 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #047 · 29/07/2026</strong></p><p>🎧 11:03 minutos</p><p>Drop Five News · Episódio #047 · 29/07/2026. Ouça o resumo de notícias do dia. 🎧 11:03 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #046 — 2026-07-28</title>
-      <itunes:title>D5N • Episódio #046 — 2026-07-28</itunes:title>
+      <title>D5N · Episódio #046 — 2026-07-28</title>
+      <itunes:title>D5N · Episódio #046 — 2026-07-28</itunes:title>
       <itunes:episode>46</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:55</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-07-28-ep046</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep046-2026-07-28.mp3" length="12853541" type="audio/mpeg"/>
       <pubDate>Tue, 28 Jul 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #046 • 2026-07-28. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:55 min.</description>
-      <itunes:summary>Drop Five News — Episódio #046 • 2026-07-28. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:55 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #046</strong></p><p>📅 2026-07-28</p><p>🎧 8:55 minutos de curadoria diária</p><p>Drop Five News — Episódio #046 • 2026-07-28. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:55 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #046 · 28/07/2026. Ouça o resumo de notícias do dia. 🎧 8:55 min.</description>
+      <itunes:summary>Drop Five News · Episódio #046 · 28/07/2026. Ouça o resumo de notícias do dia. 🎧 8:55 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #046 · 28/07/2026</strong></p><p>🎧 8:55 minutos</p><p>Drop Five News · Episódio #046 · 28/07/2026. Ouça o resumo de notícias do dia. 🎧 8:55 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #045 — 2026-07-27</title>
-      <itunes:title>D5N • Episódio #045 — 2026-07-27</itunes:title>
+      <title>D5N · Episódio #045 — 2026-07-27</title>
+      <itunes:title>D5N · Episódio #045 — 2026-07-27</itunes:title>
       <itunes:episode>45</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:09</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-07-27-ep045</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep045-2026-07-27.mp3" length="11740725" type="audio/mpeg"/>
       <pubDate>Mon, 27 Jul 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #045 • 2026-07-27. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:09 min.</description>
-      <itunes:summary>Drop Five News — Episódio #045 • 2026-07-27. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:09 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #045</strong></p><p>📅 2026-07-27</p><p>🎧 8:09 minutos de curadoria diária</p><p>Drop Five News — Episódio #045 • 2026-07-27. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:09 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #045 · 27/07/2026. Ouça o resumo de notícias do dia. 🎧 8:09 min.</description>
+      <itunes:summary>Drop Five News · Episódio #045 · 27/07/2026. Ouça o resumo de notícias do dia. 🎧 8:09 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #045 · 27/07/2026</strong></p><p>🎧 8:09 minutos</p><p>Drop Five News · Episódio #045 · 27/07/2026. Ouça o resumo de notícias do dia. 🎧 8:09 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #044 — 2026-07-25</title>
-      <itunes:title>D5N • Episódio #044 — 2026-07-25</itunes:title>
+      <title>D5N · Episódio #044 — 2026-07-25</title>
+      <itunes:title>D5N · Episódio #044 — 2026-07-25</itunes:title>
       <itunes:episode>44</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:27</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-07-25-ep044</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep044-2026-07-25.mp3" length="12172686" type="audio/mpeg"/>
       <pubDate>Sat, 25 Jul 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #044 • 2026-07-25. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:27 min.</description>
-      <itunes:summary>Drop Five News — Episódio #044 • 2026-07-25. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:27 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #044</strong></p><p>📅 2026-07-25</p><p>🎧 8:27 minutos de curadoria diária</p><p>Drop Five News — Episódio #044 • 2026-07-25. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:27 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #044 · 25/07/2026. Ouça o resumo de notícias do dia. 🎧 8:27 min.</description>
+      <itunes:summary>Drop Five News · Episódio #044 · 25/07/2026. Ouça o resumo de notícias do dia. 🎧 8:27 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #044 · 25/07/2026</strong></p><p>🎧 8:27 minutos</p><p>Drop Five News · Episódio #044 · 25/07/2026. Ouça o resumo de notícias do dia. 🎧 8:27 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #043 — 2026-07-23</title>
-      <itunes:title>D5N • Episódio #043 — 2026-07-23</itunes:title>
+      <title>D5N · Episódio #043 — 2026-07-23</title>
+      <itunes:title>D5N · Episódio #043 — 2026-07-23</itunes:title>
       <itunes:episode>43</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>09:00</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-07-23-ep043</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep043-2026-07-23.mp3" length="12975168" type="audio/mpeg"/>
       <pubDate>Thu, 23 Jul 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #043 • 2026-07-23. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 9:00 min.</description>
-      <itunes:summary>Drop Five News — Episódio #043 • 2026-07-23. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 9:00 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #043</strong></p><p>📅 2026-07-23</p><p>🎧 9:00 minutos de curadoria diária</p><p>Drop Five News — Episódio #043 • 2026-07-23. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 9:00 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #043 · 23/07/2026. Ouça o resumo de notícias do dia. 🎧 9:00 min.</description>
+      <itunes:summary>Drop Five News · Episódio #043 · 23/07/2026. Ouça o resumo de notícias do dia. 🎧 9:00 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #043 · 23/07/2026</strong></p><p>🎧 9:00 minutos</p><p>Drop Five News · Episódio #043 · 23/07/2026. Ouça o resumo de notícias do dia. 🎧 9:00 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #042 — 2026-07-22</title>
-      <itunes:title>D5N • Episódio #042 — 2026-07-22</itunes:title>
+      <title>D5N · Episódio #042 — 2026-07-22</title>
+      <itunes:title>D5N · Episódio #042 — 2026-07-22</itunes:title>
       <itunes:episode>42</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:00</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-07-22-ep042</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep042-2026-07-22.mp3" length="8644901" type="audio/mpeg"/>
       <pubDate>Wed, 22 Jul 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #042 • 2026-07-22. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:00 min.</description>
-      <itunes:summary>Drop Five News — Episódio #042 • 2026-07-22. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:00 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #042</strong></p><p>📅 2026-07-22</p><p>🎧 6:00 minutos de curadoria diária</p><p>Drop Five News — Episódio #042 • 2026-07-22. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:00 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #042 · 22/07/2026. Ouça o resumo de notícias do dia. 🎧 6:00 min.</description>
+      <itunes:summary>Drop Five News · Episódio #042 · 22/07/2026. Ouça o resumo de notícias do dia. 🎧 6:00 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #042 · 22/07/2026</strong></p><p>🎧 6:00 minutos</p><p>Drop Five News · Episódio #042 · 22/07/2026. Ouça o resumo de notícias do dia. 🎧 6:00 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #041 — 2026-07-21</title>
-      <itunes:title>D5N • Episódio #041 — 2026-07-21</itunes:title>
+      <title>D5N · Episódio #041 — 2026-07-21</title>
+      <itunes:title>D5N · Episódio #041 — 2026-07-21</itunes:title>
       <itunes:episode>41</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>04:20</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-07-21-ep041</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep041-2026-07-21.mp3" length="6251876" type="audio/mpeg"/>
       <pubDate>Tue, 21 Jul 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #041 • 2026-07-21. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 4:20 min.</description>
-      <itunes:summary>Drop Five News — Episódio #041 • 2026-07-21. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 4:20 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #041</strong></p><p>📅 2026-07-21</p><p>🎧 4:20 minutos de curadoria diária</p><p>Drop Five News — Episódio #041 • 2026-07-21. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 4:20 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #041 · 21/07/2026. Ouça o resumo de notícias do dia. 🎧 4:20 min.</description>
+      <itunes:summary>Drop Five News · Episódio #041 · 21/07/2026. Ouça o resumo de notícias do dia. 🎧 4:20 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #041 · 21/07/2026</strong></p><p>🎧 4:20 minutos</p><p>Drop Five News · Episódio #041 · 21/07/2026. Ouça o resumo de notícias do dia. 🎧 4:20 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #040 — 2026-07-20</title>
-      <itunes:title>D5N • Episódio #040 — 2026-07-20</itunes:title>
+      <title>D5N · Episódio #040 — 2026-07-20</title>
+      <itunes:title>D5N · Episódio #040 — 2026-07-20</itunes:title>
       <itunes:episode>40</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>04:10</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-07-20-ep040</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep040-2026-07-20.mp3" length="6009878" type="audio/mpeg"/>
       <pubDate>Mon, 20 Jul 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #040 • 2026-07-20. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 4:10 min.</description>
-      <itunes:summary>Drop Five News — Episódio #040 • 2026-07-20. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 4:10 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #040</strong></p><p>📅 2026-07-20</p><p>🎧 4:10 minutos de curadoria diária</p><p>Drop Five News — Episódio #040 • 2026-07-20. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 4:10 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #040 · 20/07/2026. Ouça o resumo de notícias do dia. 🎧 4:10 min.</description>
+      <itunes:summary>Drop Five News · Episódio #040 · 20/07/2026. Ouça o resumo de notícias do dia. 🎧 4:10 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #040 · 20/07/2026</strong></p><p>🎧 4:10 minutos</p><p>Drop Five News · Episódio #040 · 20/07/2026. Ouça o resumo de notícias do dia. 🎧 4:10 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #039 — 2026-07-18</title>
-      <itunes:title>D5N • Episódio #039 — 2026-07-18</itunes:title>
+      <title>D5N · Episódio #039 — 2026-07-18</title>
+      <itunes:title>D5N · Episódio #039 — 2026-07-18</itunes:title>
       <itunes:episode>39</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>07:33</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-07-18-ep039</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep039-2026-07-18.mp3" length="10876803" type="audio/mpeg"/>
       <pubDate>Sat, 18 Jul 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #039 • 2026-07-18. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 7:33 min.</description>
-      <itunes:summary>Drop Five News — Episódio #039 • 2026-07-18. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 7:33 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #039</strong></p><p>📅 2026-07-18</p><p>🎧 7:33 minutos de curadoria diária</p><p>Drop Five News — Episódio #039 • 2026-07-18. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 7:33 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #039 · 18/07/2026. Ouça o resumo de notícias do dia. 🎧 7:33 min.</description>
+      <itunes:summary>Drop Five News · Episódio #039 · 18/07/2026. Ouça o resumo de notícias do dia. 🎧 7:33 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #039 · 18/07/2026</strong></p><p>🎧 7:33 minutos</p><p>Drop Five News · Episódio #039 · 18/07/2026. Ouça o resumo de notícias do dia. 🎧 7:33 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #038 — 2026-07-17</title>
-      <itunes:title>D5N • Episódio #038 — 2026-07-17</itunes:title>
+      <title>D5N · Episódio #038 — 2026-07-17</title>
+      <itunes:title>D5N · Episódio #038 — 2026-07-17</itunes:title>
       <itunes:episode>38</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:17</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-07-17-ep038</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep038-2026-07-17.mp3" length="9053665" type="audio/mpeg"/>
       <pubDate>Fri, 17 Jul 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #038 • 2026-07-17. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:17 min.</description>
-      <itunes:summary>Drop Five News — Episódio #038 • 2026-07-17. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:17 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #038</strong></p><p>📅 2026-07-17</p><p>🎧 6:17 minutos de curadoria diária</p><p>Drop Five News — Episódio #038 • 2026-07-17. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:17 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #038 · 17/07/2026. Ouça o resumo de notícias do dia. 🎧 6:17 min.</description>
+      <itunes:summary>Drop Five News · Episódio #038 · 17/07/2026. Ouça o resumo de notícias do dia. 🎧 6:17 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #038 · 17/07/2026</strong></p><p>🎧 6:17 minutos</p><p>Drop Five News · Episódio #038 · 17/07/2026. Ouça o resumo de notícias do dia. 🎧 6:17 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #037 — 2026-07-16</title>
-      <itunes:title>D5N • Episódio #037 — 2026-07-16</itunes:title>
+      <title>D5N · Episódio #037 — 2026-07-16</title>
+      <itunes:title>D5N · Episódio #037 — 2026-07-16</itunes:title>
       <itunes:episode>37</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:17</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-07-16-ep037</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep037-2026-07-16.mp3" length="9053665" type="audio/mpeg"/>
       <pubDate>Thu, 16 Jul 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #037 • 2026-07-16. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:17 min.</description>
-      <itunes:summary>Drop Five News — Episódio #037 • 2026-07-16. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:17 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #037</strong></p><p>📅 2026-07-16</p><p>🎧 6:17 minutos de curadoria diária</p><p>Drop Five News — Episódio #037 • 2026-07-16. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:17 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #037 · 16/07/2026. Ouça o resumo de notícias do dia. 🎧 6:17 min.</description>
+      <itunes:summary>Drop Five News · Episódio #037 · 16/07/2026. Ouça o resumo de notícias do dia. 🎧 6:17 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #037 · 16/07/2026</strong></p><p>🎧 6:17 minutos</p><p>Drop Five News · Episódio #037 · 16/07/2026. Ouça o resumo de notícias do dia. 🎧 6:17 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #036 — 2026-07-15</title>
-      <itunes:title>D5N • Episódio #036 — 2026-07-15</itunes:title>
+      <title>D5N · Episódio #036 — 2026-07-15</title>
+      <itunes:title>D5N · Episódio #036 — 2026-07-15</itunes:title>
       <itunes:episode>36</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>03:37</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-07-15-ep036</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep036-2026-07-15.mp3" length="5211785" type="audio/mpeg"/>
       <pubDate>Wed, 15 Jul 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #036 • 2026-07-15. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 3:37 min.</description>
-      <itunes:summary>Drop Five News — Episódio #036 • 2026-07-15. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 3:37 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #036</strong></p><p>📅 2026-07-15</p><p>🎧 3:37 minutos de curadoria diária</p><p>Drop Five News — Episódio #036 • 2026-07-15. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 3:37 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #036 · 15/07/2026. Ouça o resumo de notícias do dia. 🎧 3:37 min.</description>
+      <itunes:summary>Drop Five News · Episódio #036 · 15/07/2026. Ouça o resumo de notícias do dia. 🎧 3:37 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #036 · 15/07/2026</strong></p><p>🎧 3:37 minutos</p><p>Drop Five News · Episódio #036 · 15/07/2026. Ouça o resumo de notícias do dia. 🎧 3:37 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #035 — 2026-07-13</title>
-      <itunes:title>D5N • Episódio #035 — 2026-07-13</itunes:title>
+      <title>D5N · Episódio #035 — 2026-07-13</title>
+      <itunes:title>D5N · Episódio #035 — 2026-07-13</itunes:title>
       <itunes:episode>35</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>05:10</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-07-13-ep035</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep035-2026-07-13.mp3" length="7460614" type="audio/mpeg"/>
       <pubDate>Mon, 13 Jul 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #035 • 2026-07-13. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 5:10 min.</description>
-      <itunes:summary>Drop Five News — Episódio #035 • 2026-07-13. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 5:10 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #035</strong></p><p>📅 2026-07-13</p><p>🎧 5:10 minutos de curadoria diária</p><p>Drop Five News — Episódio #035 • 2026-07-13. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 5:10 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #035 · 13/07/2026. Ouça o resumo de notícias do dia. 🎧 5:10 min.</description>
+      <itunes:summary>Drop Five News · Episódio #035 · 13/07/2026. Ouça o resumo de notícias do dia. 🎧 5:10 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #035 · 13/07/2026</strong></p><p>🎧 5:10 minutos</p><p>Drop Five News · Episódio #035 · 13/07/2026. Ouça o resumo de notícias do dia. 🎧 5:10 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #033 — 2026-07-09</title>
-      <itunes:title>D5N • Episódio #033 — 2026-07-09</itunes:title>
+      <title>D5N · Episódio #033 — 2026-07-09</title>
+      <itunes:title>D5N · Episódio #033 — 2026-07-09</itunes:title>
       <itunes:episode>33</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:10</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-07-09-ep033</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep033-2026-07-09.mp3" length="8901946" type="audio/mpeg"/>
       <pubDate>Thu, 09 Jul 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #033 • 2026-07-09. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:10 min.</description>
-      <itunes:summary>Drop Five News — Episódio #033 • 2026-07-09. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:10 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #033</strong></p><p>📅 2026-07-09</p><p>🎧 6:10 minutos de curadoria diária</p><p>Drop Five News — Episódio #033 • 2026-07-09. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:10 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #033 · 09/07/2026. Ouça o resumo de notícias do dia. 🎧 6:10 min.</description>
+      <itunes:summary>Drop Five News · Episódio #033 · 09/07/2026. Ouça o resumo de notícias do dia. 🎧 6:10 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #033 · 09/07/2026</strong></p><p>🎧 6:10 minutos</p><p>Drop Five News · Episódio #033 · 09/07/2026. Ouça o resumo de notícias do dia. 🎧 6:10 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #032 — 2026-06-29</title>
-      <itunes:title>D5N • Episódio #032 — 2026-06-29</itunes:title>
+      <title>D5N · Episódio #032 — 2026-06-29</title>
+      <itunes:title>D5N · Episódio #032 — 2026-06-29</itunes:title>
       <itunes:episode>32</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:36</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-29-ep032</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep032-2026-06-29.mp3" length="9508823" type="audio/mpeg"/>
       <pubDate>Mon, 29 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #032 • 2026-06-29. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:36 min.</description>
-      <itunes:summary>Drop Five News — Episódio #032 • 2026-06-29. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:36 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #032</strong></p><p>📅 2026-06-29</p><p>🎧 6:36 minutos de curadoria diária</p><p>Drop Five News — Episódio #032 • 2026-06-29. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:36 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #032 · 29/06/2026. Ouça o resumo de notícias do dia. 🎧 6:36 min.</description>
+      <itunes:summary>Drop Five News · Episódio #032 · 29/06/2026. Ouça o resumo de notícias do dia. 🎧 6:36 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #032 · 29/06/2026</strong></p><p>🎧 6:36 minutos</p><p>Drop Five News · Episódio #032 · 29/06/2026. Ouça o resumo de notícias do dia. 🎧 6:36 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #031 — 2026-06-28</title>
-      <itunes:title>D5N • Episódio #031 — 2026-06-28</itunes:title>
+      <title>D5N · Episódio #031 — 2026-06-28</title>
+      <itunes:title>D5N · Episódio #031 — 2026-06-28</itunes:title>
       <itunes:episode>31</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:35</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-28-ep031</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep031-2026-06-28.mp3" length="9493776" type="audio/mpeg"/>
       <pubDate>Sun, 28 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #031 • 2026-06-28. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:35 min.</description>
-      <itunes:summary>Drop Five News — Episódio #031 • 2026-06-28. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:35 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #031</strong></p><p>📅 2026-06-28</p><p>🎧 6:35 minutos de curadoria diária</p><p>Drop Five News — Episódio #031 • 2026-06-28. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:35 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #031 · 28/06/2026. Ouça o resumo de notícias do dia. 🎧 6:35 min.</description>
+      <itunes:summary>Drop Five News · Episódio #031 · 28/06/2026. Ouça o resumo de notícias do dia. 🎧 6:35 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #031 · 28/06/2026</strong></p><p>🎧 6:35 minutos</p><p>Drop Five News · Episódio #031 · 28/06/2026. Ouça o resumo de notícias do dia. 🎧 6:35 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #030 — 2026-06-27</title>
-      <itunes:title>D5N • Episódio #030 — 2026-06-27</itunes:title>
+      <title>D5N · Episódio #030 — 2026-06-27</title>
+      <itunes:title>D5N · Episódio #030 — 2026-06-27</itunes:title>
       <itunes:episode>30</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>03:47</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-27-ep030</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep030-2026-06-27.mp3" length="5457545" type="audio/mpeg"/>
       <pubDate>Sat, 27 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #030 • 2026-06-27. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 3:47 min.</description>
-      <itunes:summary>Drop Five News — Episódio #030 • 2026-06-27. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 3:47 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #030</strong></p><p>📅 2026-06-27</p><p>🎧 3:47 minutos de curadoria diária</p><p>Drop Five News — Episódio #030 • 2026-06-27. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 3:47 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #030 · 27/06/2026. Ouça o resumo de notícias do dia. 🎧 3:47 min.</description>
+      <itunes:summary>Drop Five News · Episódio #030 · 27/06/2026. Ouça o resumo de notícias do dia. 🎧 3:47 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #030 · 27/06/2026</strong></p><p>🎧 3:47 minutos</p><p>Drop Five News · Episódio #030 · 27/06/2026. Ouça o resumo de notícias do dia. 🎧 3:47 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #029 — 2026-06-26</title>
-      <itunes:title>D5N • Episódio #029 — 2026-06-26</itunes:title>
+      <title>D5N · Episódio #029 — 2026-06-26</title>
+      <itunes:title>D5N · Episódio #029 — 2026-06-26</itunes:title>
       <itunes:episode>29</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>07:48</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-26-ep029</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep029-2026-06-26.mp3" length="5618982" type="audio/mpeg"/>
       <pubDate>Fri, 26 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #029 • 2026-06-26. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 7:48 min.</description>
-      <itunes:summary>Drop Five News — Episódio #029 • 2026-06-26. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 7:48 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #029</strong></p><p>📅 2026-06-26</p><p>🎧 7:48 minutos de curadoria diária</p><p>Drop Five News — Episódio #029 • 2026-06-26. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 7:48 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #029 · 26/06/2026. Ouça o resumo de notícias do dia. 🎧 7:48 min.</description>
+      <itunes:summary>Drop Five News · Episódio #029 · 26/06/2026. Ouça o resumo de notícias do dia. 🎧 7:48 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #029 · 26/06/2026</strong></p><p>🎧 7:48 minutos</p><p>Drop Five News · Episódio #029 · 26/06/2026. Ouça o resumo de notícias do dia. 🎧 7:48 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #028 — 2026-06-24</title>
-      <itunes:title>D5N • Episódio #028 — 2026-06-24</itunes:title>
+      <title>D5N · Episódio #028 — 2026-06-24</title>
+      <itunes:title>D5N · Episódio #028 — 2026-06-24</itunes:title>
       <itunes:episode>28</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:03</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-24-ep028</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep028-2026-06-24.mp3" length="11598410" type="audio/mpeg"/>
       <pubDate>Wed, 24 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #028 • 2026-06-24. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:03 min.</description>
-      <itunes:summary>Drop Five News — Episódio #028 • 2026-06-24. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:03 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #028</strong></p><p>📅 2026-06-24</p><p>🎧 8:03 minutos de curadoria diária</p><p>Drop Five News — Episódio #028 • 2026-06-24. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:03 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #028 · 24/06/2026. Ouça o resumo de notícias do dia. 🎧 8:03 min.</description>
+      <itunes:summary>Drop Five News · Episódio #028 · 24/06/2026. Ouça o resumo de notícias do dia. 🎧 8:03 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #028 · 24/06/2026</strong></p><p>🎧 8:03 minutos</p><p>Drop Five News · Episódio #028 · 24/06/2026. Ouça o resumo de notícias do dia. 🎧 8:03 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #027 — 2026-06-22</title>
-      <itunes:title>D5N • Episódio #027 — 2026-06-22</itunes:title>
+      <title>D5N · Episódio #027 — 2026-06-22</title>
+      <itunes:title>D5N · Episódio #027 — 2026-06-22</itunes:title>
       <itunes:episode>27</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>05:43</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-22-ep027</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep027-2026-06-22.mp3" length="8234883" type="audio/mpeg"/>
       <pubDate>Mon, 22 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #027 • 2026-06-22. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 5:43 min.</description>
-      <itunes:summary>Drop Five News — Episódio #027 • 2026-06-22. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 5:43 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #027</strong></p><p>📅 2026-06-22</p><p>🎧 5:43 minutos de curadoria diária</p><p>Drop Five News — Episódio #027 • 2026-06-22. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 5:43 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #027 · 22/06/2026. Ouça o resumo de notícias do dia. 🎧 5:43 min.</description>
+      <itunes:summary>Drop Five News · Episódio #027 · 22/06/2026. Ouça o resumo de notícias do dia. 🎧 5:43 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #027 · 22/06/2026</strong></p><p>🎧 5:43 minutos</p><p>Drop Five News · Episódio #027 · 22/06/2026. Ouça o resumo de notícias do dia. 🎧 5:43 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #026 — 2026-06-21</title>
-      <itunes:title>D5N • Episódio #026 — 2026-06-21</itunes:title>
+      <title>D5N · Episódio #026 — 2026-06-21</title>
+      <itunes:title>D5N · Episódio #026 — 2026-06-21</itunes:title>
       <itunes:episode>26</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:48</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-21-ep026</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep026-2026-06-21.mp3" length="9799723" type="audio/mpeg"/>
       <pubDate>Sun, 21 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #026 • 2026-06-21. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:48 min.</description>
-      <itunes:summary>Drop Five News — Episódio #026 • 2026-06-21. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:48 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #026</strong></p><p>📅 2026-06-21</p><p>🎧 6:48 minutos de curadoria diária</p><p>Drop Five News — Episódio #026 • 2026-06-21. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:48 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #026 · 21/06/2026. Ouça o resumo de notícias do dia. 🎧 6:48 min.</description>
+      <itunes:summary>Drop Five News · Episódio #026 · 21/06/2026. Ouça o resumo de notícias do dia. 🎧 6:48 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #026 · 21/06/2026</strong></p><p>🎧 6:48 minutos</p><p>Drop Five News · Episódio #026 · 21/06/2026. Ouça o resumo de notícias do dia. 🎧 6:48 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #025 — 2026-06-20</title>
-      <itunes:title>D5N • Episódio #025 — 2026-06-20</itunes:title>
+      <title>D5N · Episódio #025 — 2026-06-20</title>
+      <itunes:title>D5N · Episódio #025 — 2026-06-20</itunes:title>
       <itunes:episode>25</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>07:34</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-20-ep025</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep025-2026-06-20.mp3" length="10917554" type="audio/mpeg"/>
       <pubDate>Sat, 20 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #025 • 2026-06-20. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 7:34 min.</description>
-      <itunes:summary>Drop Five News — Episódio #025 • 2026-06-20. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 7:34 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #025</strong></p><p>📅 2026-06-20</p><p>🎧 7:34 minutos de curadoria diária</p><p>Drop Five News — Episódio #025 • 2026-06-20. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 7:34 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #025 · 20/06/2026. Ouça o resumo de notícias do dia. 🎧 7:34 min.</description>
+      <itunes:summary>Drop Five News · Episódio #025 · 20/06/2026. Ouça o resumo de notícias do dia. 🎧 7:34 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #025 · 20/06/2026</strong></p><p>🎧 7:34 minutos</p><p>Drop Five News · Episódio #025 · 20/06/2026. Ouça o resumo de notícias do dia. 🎧 7:34 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #024 — 2026-06-19</title>
-      <itunes:title>D5N • Episódio #024 — 2026-06-19</itunes:title>
+      <title>D5N · Episódio #024 — 2026-06-19</title>
+      <itunes:title>D5N · Episódio #024 — 2026-06-19</itunes:title>
       <itunes:episode>24</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:45</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-19-ep024</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep024-2026-06-19.mp3" length="9721982" type="audio/mpeg"/>
       <pubDate>Fri, 19 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #024 • 2026-06-19. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:45 min.</description>
-      <itunes:summary>Drop Five News — Episódio #024 • 2026-06-19. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:45 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #024</strong></p><p>📅 2026-06-19</p><p>🎧 6:45 minutos de curadoria diária</p><p>Drop Five News — Episódio #024 • 2026-06-19. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:45 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #024 · 19/06/2026. Ouça o resumo de notícias do dia. 🎧 6:45 min.</description>
+      <itunes:summary>Drop Five News · Episódio #024 · 19/06/2026. Ouça o resumo de notícias do dia. 🎧 6:45 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #024 · 19/06/2026</strong></p><p>🎧 6:45 minutos</p><p>Drop Five News · Episódio #024 · 19/06/2026. Ouça o resumo de notícias do dia. 🎧 6:45 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #023 — 2026-06-16</title>
-      <itunes:title>D5N • Episódio #023 — 2026-06-16</itunes:title>
+      <title>D5N · Episódio #023 — 2026-06-16</title>
+      <itunes:title>D5N · Episódio #023 — 2026-06-16</itunes:title>
       <itunes:episode>23</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:01</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-16-ep023</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep023-2026-06-16.mp3" length="11556405" type="audio/mpeg"/>
       <pubDate>Tue, 16 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #023 • 2026-06-16. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:01 min.</description>
-      <itunes:summary>Drop Five News — Episódio #023 • 2026-06-16. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:01 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #023</strong></p><p>📅 2026-06-16</p><p>🎧 8:01 minutos de curadoria diária</p><p>Drop Five News — Episódio #023 • 2026-06-16. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:01 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #023 · 16/06/2026. Ouça o resumo de notícias do dia. 🎧 8:01 min.</description>
+      <itunes:summary>Drop Five News · Episódio #023 · 16/06/2026. Ouça o resumo de notícias do dia. 🎧 8:01 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #023 · 16/06/2026</strong></p><p>🎧 8:01 minutos</p><p>Drop Five News · Episódio #023 · 16/06/2026. Ouça o resumo de notícias do dia. 🎧 8:01 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #020 — 2026-06-13</title>
-      <itunes:title>D5N • Episódio #020 — 2026-06-13</itunes:title>
+      <title>D5N · Episódio #020 — 2026-06-13</title>
+      <itunes:title>D5N · Episódio #020 — 2026-06-13</itunes:title>
       <itunes:episode>20</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:14</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-13-ep020</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep020-2026-06-13.mp3" length="11872382" type="audio/mpeg"/>
       <pubDate>Sat, 13 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #020 • 2026-06-13. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:14 min.</description>
-      <itunes:summary>Drop Five News — Episódio #020 • 2026-06-13. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:14 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #020</strong></p><p>📅 2026-06-13</p><p>🎧 8:14 minutos de curadoria diária</p><p>Drop Five News — Episódio #020 • 2026-06-13. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:14 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #020 · 13/06/2026. Ouça o resumo de notícias do dia. 🎧 8:14 min.</description>
+      <itunes:summary>Drop Five News · Episódio #020 · 13/06/2026. Ouça o resumo de notícias do dia. 🎧 8:14 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #020 · 13/06/2026</strong></p><p>🎧 8:14 minutos</p><p>Drop Five News · Episódio #020 · 13/06/2026. Ouça o resumo de notícias do dia. 🎧 8:14 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #019 — 2026-06-12</title>
-      <itunes:title>D5N • Episódio #019 — 2026-06-12</itunes:title>
+      <title>D5N · Episódio #019 — 2026-06-12</title>
+      <itunes:title>D5N · Episódio #019 — 2026-06-12</itunes:title>
       <itunes:episode>19</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>05:21</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-12-ep019</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep019-2026-06-12.mp3" length="7708255" type="audio/mpeg"/>
       <pubDate>Fri, 12 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #019 • 2026-06-12. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 5:21 min.</description>
-      <itunes:summary>Drop Five News — Episódio #019 • 2026-06-12. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 5:21 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #019</strong></p><p>📅 2026-06-12</p><p>🎧 5:21 minutos de curadoria diária</p><p>Drop Five News — Episódio #019 • 2026-06-12. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 5:21 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #019 · 12/06/2026. Ouça o resumo de notícias do dia. 🎧 5:21 min.</description>
+      <itunes:summary>Drop Five News · Episódio #019 · 12/06/2026. Ouça o resumo de notícias do dia. 🎧 5:21 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #019 · 12/06/2026</strong></p><p>🎧 5:21 minutos</p><p>Drop Five News · Episódio #019 · 12/06/2026. Ouça o resumo de notícias do dia. 🎧 5:21 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #018 — 2026-06-11</title>
-      <itunes:title>D5N • Episódio #018 — 2026-06-11</itunes:title>
+      <title>D5N · Episódio #018 — 2026-06-11</title>
+      <itunes:title>D5N · Episódio #018 — 2026-06-11</itunes:title>
       <itunes:episode>18</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>04:57</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-11-ep018</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep018-2026-06-11.mp3" length="7142756" type="audio/mpeg"/>
       <pubDate>Thu, 11 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #018 • 2026-06-11. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 4:57 min.</description>
-      <itunes:summary>Drop Five News — Episódio #018 • 2026-06-11. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 4:57 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #018</strong></p><p>📅 2026-06-11</p><p>🎧 4:57 minutos de curadoria diária</p><p>Drop Five News — Episódio #018 • 2026-06-11. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 4:57 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #018 · 11/06/2026. Ouça o resumo de notícias do dia. 🎧 4:57 min.</description>
+      <itunes:summary>Drop Five News · Episódio #018 · 11/06/2026. Ouça o resumo de notícias do dia. 🎧 4:57 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #018 · 11/06/2026</strong></p><p>🎧 4:57 minutos</p><p>Drop Five News · Episódio #018 · 11/06/2026. Ouça o resumo de notícias do dia. 🎧 4:57 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #016 — 2026-06-10</title>
-      <itunes:title>D5N • Episódio #016 — 2026-06-10</itunes:title>
+      <title>D5N · Episódio #016 — 2026-06-10</title>
+      <itunes:title>D5N · Episódio #016 — 2026-06-10</itunes:title>
       <itunes:episode>16</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:07</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-10-ep016</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep016-2026-06-10.mp3" length="8831102" type="audio/mpeg"/>
       <pubDate>Wed, 10 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #016 • 2026-06-10. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:07 min.</description>
-      <itunes:summary>Drop Five News — Episódio #016 • 2026-06-10. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:07 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #016</strong></p><p>📅 2026-06-10</p><p>🎧 6:07 minutos de curadoria diária</p><p>Drop Five News — Episódio #016 • 2026-06-10. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:07 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #016 · 10/06/2026. Ouça o resumo de notícias do dia. 🎧 6:07 min.</description>
+      <itunes:summary>Drop Five News · Episódio #016 · 10/06/2026. Ouça o resumo de notícias do dia. 🎧 6:07 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #016 · 10/06/2026</strong></p><p>🎧 6:07 minutos</p><p>Drop Five News · Episódio #016 · 10/06/2026. Ouça o resumo de notícias do dia. 🎧 6:07 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #015 — 2026-06-09</title>
-      <itunes:title>D5N • Episódio #015 — 2026-06-09</itunes:title>
+      <title>D5N · Episódio #015 — 2026-06-09</title>
+      <itunes:title>D5N · Episódio #015 — 2026-06-09</itunes:title>
       <itunes:episode>15</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>05:30</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-09-ep015</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep015-2026-06-09.mp3" length="7940222" type="audio/mpeg"/>
       <pubDate>Tue, 09 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #015 • 2026-06-09. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 5:30 min.</description>
-      <itunes:summary>Drop Five News — Episódio #015 • 2026-06-09. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 5:30 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #015</strong></p><p>📅 2026-06-09</p><p>🎧 5:30 minutos de curadoria diária</p><p>Drop Five News — Episódio #015 • 2026-06-09. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 5:30 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #015 · 09/06/2026. Ouça o resumo de notícias do dia. 🎧 5:30 min.</description>
+      <itunes:summary>Drop Five News · Episódio #015 · 09/06/2026. Ouça o resumo de notícias do dia. 🎧 5:30 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #015 · 09/06/2026</strong></p><p>🎧 5:30 minutos</p><p>Drop Five News · Episódio #015 · 09/06/2026. Ouça o resumo de notícias do dia. 🎧 5:30 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #014 — 2026-06-08</title>
-      <itunes:title>D5N • Episódio #014 — 2026-06-08</itunes:title>
+      <title>D5N · Episódio #014 — 2026-06-08</title>
+      <itunes:title>D5N · Episódio #014 — 2026-06-08</itunes:title>
       <itunes:episode>14</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:07</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-08-ep014</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep014-2026-06-08.mp3" length="5852517" type="audio/mpeg"/>
       <pubDate>Mon, 08 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #014 • 2026-06-08. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:07 min.</description>
-      <itunes:summary>Drop Five News — Episódio #014 • 2026-06-08. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:07 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #014</strong></p><p>📅 2026-06-08</p><p>🎧 8:07 minutos de curadoria diária</p><p>Drop Five News — Episódio #014 • 2026-06-08. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:07 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #014 · 08/06/2026. Ouça o resumo de notícias do dia. 🎧 8:07 min.</description>
+      <itunes:summary>Drop Five News · Episódio #014 · 08/06/2026. Ouça o resumo de notícias do dia. 🎧 8:07 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #014 · 08/06/2026</strong></p><p>🎧 8:07 minutos</p><p>Drop Five News · Episódio #014 · 08/06/2026. Ouça o resumo de notícias do dia. 🎧 8:07 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #013 — 2026-06-07</title>
-      <itunes:title>D5N • Episódio #013 — 2026-06-07</itunes:title>
+      <title>D5N · Episódio #013 — 2026-06-07</title>
+      <itunes:title>D5N · Episódio #013 — 2026-06-07</itunes:title>
       <itunes:episode>13</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:07</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-07-ep013</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep013-2026-06-07.mp3" length="5852517" type="audio/mpeg"/>
       <pubDate>Sun, 07 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #013 • 2026-06-07. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:07 min.</description>
-      <itunes:summary>Drop Five News — Episódio #013 • 2026-06-07. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:07 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #013</strong></p><p>📅 2026-06-07</p><p>🎧 8:07 minutos de curadoria diária</p><p>Drop Five News — Episódio #013 • 2026-06-07. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:07 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #013 · 07/06/2026. Ouça o resumo de notícias do dia. 🎧 8:07 min.</description>
+      <itunes:summary>Drop Five News · Episódio #013 · 07/06/2026. Ouça o resumo de notícias do dia. 🎧 8:07 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #013 · 07/06/2026</strong></p><p>🎧 8:07 minutos</p><p>Drop Five News · Episódio #013 · 07/06/2026. Ouça o resumo de notícias do dia. 🎧 8:07 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #012 — 2026-06-06</title>
-      <itunes:title>D5N • Episódio #012 — 2026-06-06</itunes:title>
+      <title>D5N · Episódio #012 — 2026-06-06</title>
+      <itunes:title>D5N · Episódio #012 — 2026-06-06</itunes:title>
       <itunes:episode>12</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>07:30</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-06-ep012</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep012-2026-06-06.mp3" length="5409271" type="audio/mpeg"/>
       <pubDate>Sat, 06 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #012 • 2026-06-06. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 7:30 min.</description>
-      <itunes:summary>Drop Five News — Episódio #012 • 2026-06-06. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 7:30 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #012</strong></p><p>📅 2026-06-06</p><p>🎧 7:30 minutos de curadoria diária</p><p>Drop Five News — Episódio #012 • 2026-06-06. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 7:30 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #012 · 06/06/2026. Ouça o resumo de notícias do dia. 🎧 7:30 min.</description>
+      <itunes:summary>Drop Five News · Episódio #012 · 06/06/2026. Ouça o resumo de notícias do dia. 🎧 7:30 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #012 · 06/06/2026</strong></p><p>🎧 7:30 minutos</p><p>Drop Five News · Episódio #012 · 06/06/2026. Ouça o resumo de notícias do dia. 🎧 7:30 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #011 — 2026-06-05</title>
-      <itunes:title>D5N • Episódio #011 — 2026-06-05</itunes:title>
+      <title>D5N · Episódio #011 — 2026-06-05</title>
+      <itunes:title>D5N · Episódio #011 — 2026-06-05</itunes:title>
       <itunes:episode>11</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:12</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-05-ep011</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep011-2026-06-05.mp3" length="8936428" type="audio/mpeg"/>
       <pubDate>Fri, 05 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #011 • 2026-06-05. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:12 min.</description>
-      <itunes:summary>Drop Five News — Episódio #011 • 2026-06-05. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:12 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #011</strong></p><p>📅 2026-06-05</p><p>🎧 6:12 minutos de curadoria diária</p><p>Drop Five News — Episódio #011 • 2026-06-05. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:12 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #011 · 05/06/2026. Ouça o resumo de notícias do dia. 🎧 6:12 min.</description>
+      <itunes:summary>Drop Five News · Episódio #011 · 05/06/2026. Ouça o resumo de notícias do dia. 🎧 6:12 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #011 · 05/06/2026</strong></p><p>🎧 6:12 minutos</p><p>Drop Five News · Episódio #011 · 05/06/2026. Ouça o resumo de notícias do dia. 🎧 6:12 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #010 — 2026-06-05</title>
-      <itunes:title>D5N • Episódio #010 — 2026-06-05</itunes:title>
+      <title>D5N · Episódio #010 — 2026-06-05</title>
+      <itunes:title>D5N · Episódio #010 — 2026-06-05</itunes:title>
       <itunes:episode>10</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>06:12</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-05-ep010</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep010-2026-06-05.mp3" length="8936428" type="audio/mpeg"/>
       <pubDate>Fri, 05 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #010 • 2026-06-05. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:12 min.</description>
-      <itunes:summary>Drop Five News — Episódio #010 • 2026-06-05. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:12 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #010</strong></p><p>📅 2026-06-05</p><p>🎧 6:12 minutos de curadoria diária</p><p>Drop Five News — Episódio #010 • 2026-06-05. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 6:12 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #010 · 05/06/2026. Ouça o resumo de notícias do dia. 🎧 6:12 min.</description>
+      <itunes:summary>Drop Five News · Episódio #010 · 05/06/2026. Ouça o resumo de notícias do dia. 🎧 6:12 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #010 · 05/06/2026</strong></p><p>🎧 6:12 minutos</p><p>Drop Five News · Episódio #010 · 05/06/2026. Ouça o resumo de notícias do dia. 🎧 6:12 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #009 — 2026-06-04</title>
-      <itunes:title>D5N • Episódio #009 — 2026-06-04</itunes:title>
+      <title>D5N · Episódio #009 — 2026-06-04</title>
+      <itunes:title>D5N · Episódio #009 — 2026-06-04</itunes:title>
       <itunes:episode>9</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:49</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-04-ep009</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep009-2026-06-04.mp3" length="12698061" type="audio/mpeg"/>
       <pubDate>Thu, 04 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #009 • 2026-06-04. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:49 min.</description>
-      <itunes:summary>Drop Five News — Episódio #009 • 2026-06-04. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:49 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #009</strong></p><p>📅 2026-06-04</p><p>🎧 8:49 minutos de curadoria diária</p><p>Drop Five News — Episódio #009 • 2026-06-04. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:49 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #009 · 04/06/2026. Ouça o resumo de notícias do dia. 🎧 8:49 min.</description>
+      <itunes:summary>Drop Five News · Episódio #009 · 04/06/2026. Ouça o resumo de notícias do dia. 🎧 8:49 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #009 · 04/06/2026</strong></p><p>🎧 8:49 minutos</p><p>Drop Five News · Episódio #009 · 04/06/2026. Ouça o resumo de notícias do dia. 🎧 8:49 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #008 — 2026-06-03</title>
-      <itunes:title>D5N • Episódio #008 — 2026-06-03</itunes:title>
+      <title>D5N · Episódio #008 — 2026-06-03</title>
+      <itunes:title>D5N · Episódio #008 — 2026-06-03</itunes:title>
       <itunes:episode>8</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:12</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-03-ep008</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep008-2026-06-03.mp3" length="11825989" type="audio/mpeg"/>
       <pubDate>Wed, 03 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #008 • 2026-06-03. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:12 min.</description>
-      <itunes:summary>Drop Five News — Episódio #008 • 2026-06-03. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:12 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #008</strong></p><p>📅 2026-06-03</p><p>🎧 8:12 minutos de curadoria diária</p><p>Drop Five News — Episódio #008 • 2026-06-03. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 8:12 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #008 · 03/06/2026. Ouça o resumo de notícias do dia. 🎧 8:12 min.</description>
+      <itunes:summary>Drop Five News · Episódio #008 · 03/06/2026. Ouça o resumo de notícias do dia. 🎧 8:12 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #008 · 03/06/2026</strong></p><p>🎧 8:12 minutos</p><p>Drop Five News · Episódio #008 · 03/06/2026. Ouça o resumo de notícias do dia. 🎧 8:12 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #006 — 2026-06-01</title>
-      <itunes:title>D5N • Episódio #006 — 2026-06-01</itunes:title>
+      <title>D5N · Episódio #006 — 2026-06-01</title>
+      <itunes:title>D5N · Episódio #006 — 2026-06-01</itunes:title>
       <itunes:episode>6</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>05:34</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-06-01-ep006</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep006-2026-06-01.mp3" length="8039905" type="audio/mpeg"/>
       <pubDate>Mon, 01 Jun 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #006 • 2026-06-01. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 5:34 min.</description>
-      <itunes:summary>Drop Five News — Episódio #006 • 2026-06-01. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 5:34 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #006</strong></p><p>📅 2026-06-01</p><p>🎧 5:34 minutos de curadoria diária</p><p>Drop Five News — Episódio #006 • 2026-06-01. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 5:34 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #006 · 01/06/2026. Ouça o resumo de notícias do dia. 🎧 5:34 min.</description>
+      <itunes:summary>Drop Five News · Episódio #006 · 01/06/2026. Ouça o resumo de notícias do dia. 🎧 5:34 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #006 · 01/06/2026</strong></p><p>🎧 5:34 minutos</p><p>Drop Five News · Episódio #006 · 01/06/2026. Ouça o resumo de notícias do dia. 🎧 5:34 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #005 — 2026-05-29</title>
-      <itunes:title>D5N • Episódio #005 — 2026-05-29</itunes:title>
+      <title>D5N · Episódio #005 — 2026-05-29</title>
+      <itunes:title>D5N · Episódio #005 — 2026-05-29</itunes:title>
       <itunes:episode>5</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>07:51</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-05-29-ep005</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep005-2026-05-29.mp3" length="11315661" type="audio/mpeg"/>
       <pubDate>Fri, 29 May 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #005 • 2026-05-29. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 7:51 min.</description>
-      <itunes:summary>Drop Five News — Episódio #005 • 2026-05-29. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 7:51 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #005</strong></p><p>📅 2026-05-29</p><p>🎧 7:51 minutos de curadoria diária</p><p>Drop Five News — Episódio #005 • 2026-05-29. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 7:51 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #005 · 29/05/2026. Ouça o resumo de notícias do dia. 🎧 7:51 min.</description>
+      <itunes:summary>Drop Five News · Episódio #005 · 29/05/2026. Ouça o resumo de notícias do dia. 🎧 7:51 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #005 · 29/05/2026</strong></p><p>🎧 7:51 minutos</p><p>Drop Five News · Episódio #005 · 29/05/2026. Ouça o resumo de notícias do dia. 🎧 7:51 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>D5N • Episódio #004 — 2026-05-28</title>
-      <itunes:title>D5N • Episódio #004 — 2026-05-28</itunes:title>
+      <title>D5N · Episódio #004 — 2026-05-28</title>
+      <itunes:title>D5N · Episódio #004 — 2026-05-28</itunes:title>
       <itunes:episode>4</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>02:46</itunes:duration>
-      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.png"/>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+      
       <guid isPermaLink="false">d5n-2026-05-28-ep004</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep004-2026-05-28.mp3" length="2866578" type="audio/mpeg"/>
       <pubDate>Thu, 28 May 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News — Episódio #004 • 2026-05-28. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 2:46 min.</description>
-      <itunes:summary>Drop Five News — Episódio #004 • 2026-05-28. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 2:46 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N • Episódio #004</strong></p><p>📅 2026-05-28</p><p>🎧 2:46 minutos de curadoria diária</p><p>Drop Five News — Episódio #004 • 2026-05-28. Ouça o resumo de notícias do dia com curadoria inteligente. 🎧 2:46 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #004 · 28/05/2026. Ouça o resumo de notícias do dia. 🎧 2:46 min.</description>
+      <itunes:summary>Drop Five News · Episódio #004 · 28/05/2026. Ouça o resumo de notícias do dia. 🎧 2:46 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #004 · 28/05/2026</strong></p><p>🎧 2:46 minutos</p><p>Drop Five News · Episódio #004 · 28/05/2026. Ouça o resumo de notícias do dia. 🎧 2:46 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
   </channel>
 </rss>
