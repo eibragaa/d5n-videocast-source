@@ -22,6 +22,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
     <itunes:complete>no</itunes:complete>
+    <ttl>60</ttl>
     <itunes:category text="News">
       <itunes:category text="Daily News"/>
     </itunes:category>
@@ -29,7 +30,7 @@
     <podcast:locked owner="eibragaa@gmail.com">no</podcast:locked>
     <podcast:guid>manha-conectada.d5n-daily.netlify.app</podcast:guid>
     <atom:link href="https://d5n-daily.netlify.app/manha-conectada.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 26 Aug 2026 11:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 23:50:00 -0400</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/manha-conectada-cover.jpg</url>
       <title>Manhã Conectada</title>
