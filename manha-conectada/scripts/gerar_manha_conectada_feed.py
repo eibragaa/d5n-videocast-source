@@ -19,7 +19,7 @@ from zoneinfo import ZoneInfo
 
 BASE_URL = "https://d5n-daily.netlify.app"
 FEED_NAME = "manha-conectada.xml"
-IMAGE_URL = f"{BASE_URL}/manha-conectada-cover.png"
+IMAGE_URL = f"{BASE_URL}/manha-conectada-cover.jpg"
 TZ = ZoneInfo("America/Sao_Paulo")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 CHANNEL_DESCRIPTION = (

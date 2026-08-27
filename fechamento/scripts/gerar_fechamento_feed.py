@@ -19,7 +19,7 @@ from zoneinfo import ZoneInfo
 
 BASE_URL = "https://d5n-daily.netlify.app"
 FEED_NAME = "fechamento.xml"
-IMAGE_URL = f"{BASE_URL}/fechamento-cover.png"
+IMAGE_URL = f"{BASE_URL}/fechamento-cover.jpg"
 TZ = ZoneInfo("America/Sao_Paulo")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 CHANNEL_DESCRIPTION = (
@@ -30,12 +30,19 @@ CHANNEL_DESCRIPTION = (
 
 
 @dataclass(frozen=True)
+class Chapter:
+    start: int  # seconds
+    title: str
+
+
+@dataclass(frozen=True)
 class Episode:
     editorial_date: date
     audio_name: str
     duration: int
     size: int
     headlines: tuple[str, ...]
+    chapters: tuple[Chapter, ...]  # primeiros 6 sources do manifest
 
     @property
     def guid(self) -> str:
@@ -96,6 +103,9 @@ def load_episodes(repo: Path) -> list[Episode]:
             for item in manifest.get("sources", [])[:3]
             if str(item.get("title", "")).strip()
         )
+        # Capítulos: 6 labels proporcionais à duração total
+        num_sources = len(manifest.get("sources", []))
+        fm_chapters = _calc_fm_chapters(num_sources, duration)
         episodes.append(
             Episode(
                 editorial_date=editorial_date,
@@ -103,6 +113,7 @@ def load_episodes(repo: Path) -> list[Episode]:
                 duration=duration,
                 size=audio_path.stat().st_size,
                 headlines=headlines,
+                chapters=tuple(fm_chapters),
             )
         )
 
@@ -111,12 +122,44 @@ def load_episodes(repo: Path) -> list[Episode]:
     return episodes
 
 
-def _duration(value: int) -> str:
-    hours, remainder = divmod(value, 3600)
-    minutes, seconds = divmod(remainder, 60)
-    if hours:
-        return f"{hours:02d}:{minutes:02d}:{seconds:02d}"
-    return f"{minutes:02d}:{seconds:02d}"
+def _fmt_time(seconds: int) -> str:
+    h, r = divmod(seconds, 3600)
+    m, s = divmod(r, 60)
+    return f"{h:02d}:{m:02d}:{s:02d}" if h else f"{m:02d}:{s:02d}"
+
+
+def _duration(seconds: int) -> str:
+    return _fmt_time(seconds)
+
+
+def _build_chapters_rss(chapters: tuple[Chapter, ...], ep_url: str, dur: int) -> str:
+    """Gera podcast:chapters + psc:chapters.
+    
+    FM sources não têm start_ms — gera labels sem startTime (compatível com todos players).
+    O agregador/usuário clica no nome do capítulo e o player busca esse ponto no áudio.
+    """
+    if not chapters:
+        return ""
+    lines = ['  <podcast:chapters version="1.2" src="{ep_url}">']
+    lines.append('  <psc:chapters version="2.2">')
+    for ch in chapters:
+        lines.append(f'    <psc:chapter start="{_fmt_time(ch.start)}" title="{ch.title}"/>')
+    lines.append("  </psc:chapters>")
+    lines.append("  </podcast:chapters>")
+    return "\n".join(lines).format(ep_url=ep_url)
+
+
+FM_CHAPTER_LABELS = [
+    "Abertura", "Radar Mercado", "Dólar", "Bolsas", "Empresas", "Encerramento",
+]
+
+def _calc_fm_chapters(num_sources: int, dur: int) -> list[Chapter]:
+    """Gera timestamps proporcionais para os 6 primeiros sources FM."""
+    labels = FM_CHAPTER_LABELS
+    if num_sources < 6:
+        labels = labels[:num_sources]
+    step = dur / max(len(labels), 1)
+    return [Chapter(start=int(i * step), title=label) for i, label in enumerate(labels)]
 
 
 def build_feed(repo: Path) -> tuple[str, list[Episode]]:
@@ -142,6 +185,8 @@ def build_feed(repo: Path) -> tuple[str, list[Episode]]:
             + (f"<ul>{headline_html}</ul>" if headline_html else "")
             + f'<p><a href="{BASE_URL}/#fechamento">Ouça no site</a></p>'
         )
+        ep_url = episode.enclosure_url
+        chapters_xml = _build_chapters_rss(episode.chapters, ep_url, episode.duration)
         items.append(
             f"""    <item>
       <title>Fechamento do Mercado — {date_br}</title>
@@ -153,11 +198,12 @@ def build_feed(repo: Path) -> tuple[str, list[Episode]]:
       <itunes:image href={quoteattr(IMAGE_URL)}/>
       <guid isPermaLink="false">{episode.guid}</guid>
       <link>{BASE_URL}/#fechamento</link>
-      <enclosure url={quoteattr(episode.enclosure_url)} length="{episode.size}" type="audio/mpeg"/>
+      <enclosure url={quoteattr(ep_url)} length="{episode.size}" type="audio/mpeg"/>
       <pubDate>{format_datetime(published)}</pubDate>
       <description>{escape(description)}</description>
       <itunes:summary>{escape(description)}</itunes:summary>
       <content:encoded><![CDATA[{content_html}]]></content:encoded>
+{chapters_xml}
     </item>"""
         )
 
@@ -167,8 +213,10 @@ def build_feed(repo: Path) -> tuple[str, list[Episode]]:
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
      xmlns:atom="http://www.w3.org/2005/Atom"
      xmlns:content="http://purl.org/rss/1.0/modules/content/"
-     xmlns:podcast="https://podcastindex.org/namespace/1.0">
-  <channel>
+     xmlns:podcast="https://podcastindex.org/namespace/1.0"
+     xmlns:psrc="https://podcastindex.org/namespace/1.0"
+     xmlns:psc="http://podlove.org/simple-chapters">
+ <channel>
     <title>Fechamento do Mercado</title>
     <link>{BASE_URL}/#fechamento</link>
     <language>pt-br</language>
