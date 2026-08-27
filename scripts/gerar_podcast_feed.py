@@ -73,7 +73,8 @@ def main() -> None:
     manifests = load_episode_manifest()
     episodes = []
 
-    for ep in reversed(counter["history"]):  # newest first
+    # history é newest-first (índice 0 = mais recente)
+    for ep in counter["history"]:
         mp3 = REPO / "audio" / ep["file"]
         if not mp3.exists():
             continue
@@ -153,6 +154,7 @@ def main() -> None:
      xmlns:content="http://purl.org/rss/1.0/modules/content/"
      xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
      xmlns:podcast="https://podcastindex.org/namespace/1.0"
+     xmlns:psrc="https://podcastindex.org/namespace/1.0"
      xmlns:psc="http://podlove.org/simple-chapters">
   <channel>
     <title>Hoje no Drop Five News</title>

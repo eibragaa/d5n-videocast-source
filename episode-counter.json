@@ -1,360 +1,27 @@
 {
-  "last_episode": 61,
-  "updated": "2026-08-18",
+  "last_episode": 64,
+  "updated": "2026-08-26",
   "format": "d5n-ep{NNN}-{DATE}.mp3",
   "history": [
     {
-      "num": "001",
-      "date": "2026-05-24",
-      "file": "d5n-ep001-2026-05-24.mp3",
-      "exists": false
+      "num": 64,
+      "date": "2026-08-26",
+      "file": "d5n-ep064-2026-08-26.mp3"
     },
     {
-      "num": "002",
-      "date": "2026-05-26",
-      "file": "d5n-ep002-2026-05-26.mp3",
-      "exists": false
+      "num": 63,
+      "date": "2026-08-25",
+      "file": "d5n-ep063-2026-08-25.mp3"
     },
     {
-      "num": "003",
-      "date": "2026-05-27",
-      "file": "d5n-ep003-2026-05-27.mp3",
-      "exists": false
+      "num": 62,
+      "date": "2026-08-24",
+      "file": "d5n-ep062-2026-08-24.mp3"
     },
     {
-      "num": "004",
-      "date": "2026-05-28",
-      "file": "d5n-ep004-2026-05-28.mp3",
-      "exists": true
-    },
-    {
-      "num": "005",
-      "date": "2026-05-29",
-      "file": "d5n-ep005-2026-05-29.mp3",
-      "exists": true
-    },
-    {
-      "num": "006",
-      "date": "2026-06-01",
-      "file": "d5n-ep006-2026-06-01.mp3",
-      "exists": true
-    },
-    {
-      "num": "007",
-      "date": "2026-06-02",
-      "file": "d5n-ep007-2026-06-02.mp3",
-      "exists": false
-    },
-    {
-      "num": "008",
-      "date": "2026-06-03",
-      "file": "d5n-ep008-2026-06-03.mp3",
-      "exists": true
-    },
-    {
-      "num": "009",
-      "date": "2026-06-04",
-      "file": "d5n-ep009-2026-06-04.mp3",
-      "exists": true
-    },
-    {
-      "num": "010",
-      "date": "2026-06-05",
-      "file": "d5n-ep010-2026-06-05.mp3",
-      "exists": true
-    },
-    {
-      "num": "011",
-      "date": "2026-06-05",
-      "file": "d5n-ep011-2026-06-05.mp3",
-      "exists": true
-    },
-    {
-      "num": "012",
-      "date": "2026-06-06",
-      "file": "d5n-ep012-2026-06-06.mp3",
-      "exists": true
-    },
-    {
-      "num": "013",
-      "date": "2026-06-07",
-      "file": "d5n-ep013-2026-06-07.mp3",
-      "exists": true
-    },
-    {
-      "num": "014",
-      "date": "2026-06-08",
-      "file": "d5n-ep014-2026-06-08.mp3",
-      "exists": true
-    },
-    {
-      "num": "015",
-      "date": "2026-06-09",
-      "file": "d5n-ep015-2026-06-09.mp3",
-      "exists": true
-    },
-    {
-      "num": "016",
-      "date": "2026-06-10",
-      "file": "d5n-ep016-2026-06-10.mp3",
-      "exists": true
-    },
-    {
-      "num": "017",
-      "date": "2026-06-11",
-      "file": "d5n-ep017-2026-06-11.mp3",
-      "exists": false
-    },
-    {
-      "num": "018",
-      "date": "2026-06-11",
-      "file": "d5n-ep018-2026-06-11.mp3",
-      "exists": true
-    },
-    {
-      "num": "019",
-      "date": "2026-06-12",
-      "file": "d5n-ep019-2026-06-12.mp3",
-      "exists": true
-    },
-    {
-      "num": "020",
-      "date": "2026-06-13",
-      "file": "d5n-ep020-2026-06-13.mp3",
-      "exists": true
-    },
-    {
-      "num": "021",
-      "date": "2026-06-14",
-      "file": "d5n-ep021-2026-06-14.mp3",
-      "exists": false
-    },
-    {
-      "num": "022",
-      "date": "2026-06-15",
-      "file": "d5n-ep022-2026-06-15.mp3",
-      "exists": false
-    },
-    {
-      "num": "023",
-      "date": "2026-06-16",
-      "file": "d5n-ep023-2026-06-16.mp3",
-      "exists": true
-    },
-    {
-      "num": "024",
-      "date": "2026-06-19",
-      "file": "d5n-ep024-2026-06-19.mp3",
-      "exists": true
-    },
-    {
-      "num": "025",
-      "date": "2026-06-20",
-      "file": "d5n-ep025-2026-06-20.mp3",
-      "exists": true
-    },
-    {
-      "num": "026",
-      "date": "2026-06-21",
-      "file": "d5n-ep026-2026-06-21.mp3",
-      "exists": true
-    },
-    {
-      "num": "027",
-      "date": "2026-06-22",
-      "file": "d5n-ep027-2026-06-22.mp3",
-      "exists": true
-    },
-    {
-      "num": "028",
-      "date": "2026-06-24",
-      "file": "d5n-ep028-2026-06-24.mp3",
-      "exists": true
-    },
-    {
-      "num": "029",
-      "date": "2026-06-26",
-      "file": "d5n-ep029-2026-06-26.mp3",
-      "exists": true
-    },
-    {
-      "num": "030",
-      "date": "2026-06-27",
-      "file": "d5n-ep030-2026-06-27.mp3",
-      "exists": true
-    },
-    {
-      "num": "031",
-      "date": "2026-06-28",
-      "file": "d5n-ep031-2026-06-28.mp3",
-      "exists": true
-    },
-    {
-      "num": "032",
-      "date": "2026-06-29",
-      "file": "d5n-ep032-2026-06-29.mp3",
-      "exists": true
-    },
-    {
-      "num": "033",
-      "date": "2026-07-09",
-      "file": "d5n-ep033-2026-07-09.mp3",
-      "exists": true
-    },
-    {
-      "num": "034",
-      "date": "2026-07-12",
-      "file": "d5n-ep034-2026-07-12.mp3",
-      "exists": false
-    },
-    {
-      "num": "035",
-      "date": "2026-07-13",
-      "file": "d5n-ep035-2026-07-13.mp3",
-      "exists": true
-    },
-    {
-      "num": "036",
-      "date": "2026-07-15",
-      "file": "d5n-ep036-2026-07-15.mp3",
-      "exists": true
-    },
-    {
-      "num": "037",
-      "date": "2026-07-16",
-      "file": "d5n-ep037-2026-07-16.mp3",
-      "exists": true
-    },
-    {
-      "num": "038",
-      "date": "2026-07-17",
-      "file": "d5n-ep038-2026-07-17.mp3",
-      "exists": true
-    },
-    {
-      "num": "039",
-      "date": "2026-07-18",
-      "file": "d5n-ep039-2026-07-18.mp3",
-      "exists": true
-    },
-    {
-      "num": "040",
-      "date": "2026-07-20",
-      "file": "d5n-ep040-2026-07-20.mp3",
-      "exists": true
-    },
-    {
-      "num": "041",
-      "date": "2026-07-21",
-      "file": "d5n-ep041-2026-07-21.mp3",
-      "exists": true
-    },
-    {
-      "num": "042",
-      "date": "2026-07-22",
-      "file": "d5n-ep042-2026-07-22.mp3",
-      "exists": true
-    },
-    {
-      "num": "043",
-      "date": "2026-07-23",
-      "file": "d5n-ep043-2026-07-23.mp3",
-      "exists": true
-    },
-    {
-      "num": "044",
-      "date": "2026-07-25",
-      "file": "d5n-ep044-2026-07-25.mp3",
-      "exists": true
-    },
-    {
-      "num": "045",
-      "date": "2026-07-27",
-      "file": "d5n-ep045-2026-07-27.mp3",
-      "exists": true
-    },
-    {
-      "num": "046",
-      "date": "2026-07-28",
-      "file": "d5n-ep046-2026-07-28.mp3",
-      "exists": true
-    },
-    {
-      "num": "047",
-      "date": "2026-07-29",
-      "file": "d5n-ep047-2026-07-29.mp3",
-      "exists": true
-    },
-    {
-      "num": "048",
-      "date": "2026-07-30",
-      "file": "d5n-ep048-2026-07-30.mp3",
-      "exists": true
-    },
-    {
-      "num": "049",
-      "date": "2026-07-31",
-      "file": "d5n-ep049-2026-07-31.mp3",
-      "exists": true
-    },
-    {
-      "num": "050",
-      "date": "2026-08-01",
-      "file": "d5n-ep050-2026-08-01.mp3",
-      "exists": true
-    },
-    {
-      "num": "051",
-      "date": "2026-08-03",
-      "file": "d5n-ep051-2026-08-03.mp3",
-      "exists": true
-    },
-    {
-      "num": "052",
-      "date": "2026-08-04",
-      "file": "d5n-ep052-2026-08-04.mp3",
-      "exists": true
-    },
-    {
-      "num": "053",
-      "date": "2026-08-05",
-      "file": "d5n-ep053-2026-08-05.mp3",
-      "exists": true
-    },
-    {
-      "num": "054",
-      "date": "2026-08-06",
-      "file": "d5n-ep054-2026-08-06.mp3",
-      "exists": true
-    },
-    {
-      "num": "055",
-      "date": "2026-08-07",
-      "file": "d5n-ep055-2026-08-07.mp3",
-      "exists": true
-    },
-    {
-      "num": "056",
-      "date": "2026-08-08",
-      "file": "d5n-ep056-2026-08-08.mp3",
-      "exists": true
-    },
-    {
-      "num": "057",
-      "date": "2026-08-10",
-      "file": "d5n-ep057-2026-08-10.mp3",
-      "exists": true
-    },
-    {
-      "num": "058",
-      "date": "2026-08-11",
-      "file": "d5n-ep058-2026-08-11.mp3",
-      "exists": true
-    },
-    {
-      "num": "059",
-      "date": "2026-08-14",
-      "file": "d5n-ep059-2026-08-14.mp3",
+      "num": "061",
+      "date": "2026-08-18",
+      "file": "d5n-ep061-2026-08-18.mp3",
       "exists": true
     },
     {
@@ -364,10 +31,358 @@
       "exists": true
     },
     {
-      "num": "061",
-      "date": "2026-08-18",
-      "file": "d5n-ep061-2026-08-18.mp3",
+      "num": "059",
+      "date": "2026-08-14",
+      "file": "d5n-ep059-2026-08-14.mp3",
       "exists": true
+    },
+    {
+      "num": "058",
+      "date": "2026-08-11",
+      "file": "d5n-ep058-2026-08-11.mp3",
+      "exists": true
+    },
+    {
+      "num": "057",
+      "date": "2026-08-10",
+      "file": "d5n-ep057-2026-08-10.mp3",
+      "exists": true
+    },
+    {
+      "num": "056",
+      "date": "2026-08-08",
+      "file": "d5n-ep056-2026-08-08.mp3",
+      "exists": true
+    },
+    {
+      "num": "055",
+      "date": "2026-08-07",
+      "file": "d5n-ep055-2026-08-07.mp3",
+      "exists": true
+    },
+    {
+      "num": "054",
+      "date": "2026-08-06",
+      "file": "d5n-ep054-2026-08-06.mp3",
+      "exists": true
+    },
+    {
+      "num": "053",
+      "date": "2026-08-05",
+      "file": "d5n-ep053-2026-08-05.mp3",
+      "exists": true
+    },
+    {
+      "num": "052",
+      "date": "2026-08-04",
+      "file": "d5n-ep052-2026-08-04.mp3",
+      "exists": true
+    },
+    {
+      "num": "051",
+      "date": "2026-08-03",
+      "file": "d5n-ep051-2026-08-03.mp3",
+      "exists": true
+    },
+    {
+      "num": "050",
+      "date": "2026-08-01",
+      "file": "d5n-ep050-2026-08-01.mp3",
+      "exists": true
+    },
+    {
+      "num": "049",
+      "date": "2026-07-31",
+      "file": "d5n-ep049-2026-07-31.mp3",
+      "exists": true
+    },
+    {
+      "num": "048",
+      "date": "2026-07-30",
+      "file": "d5n-ep048-2026-07-30.mp3",
+      "exists": true
+    },
+    {
+      "num": "047",
+      "date": "2026-07-29",
+      "file": "d5n-ep047-2026-07-29.mp3",
+      "exists": true
+    },
+    {
+      "num": "046",
+      "date": "2026-07-28",
+      "file": "d5n-ep046-2026-07-28.mp3",
+      "exists": true
+    },
+    {
+      "num": "045",
+      "date": "2026-07-27",
+      "file": "d5n-ep045-2026-07-27.mp3",
+      "exists": true
+    },
+    {
+      "num": "044",
+      "date": "2026-07-25",
+      "file": "d5n-ep044-2026-07-25.mp3",
+      "exists": true
+    },
+    {
+      "num": "043",
+      "date": "2026-07-23",
+      "file": "d5n-ep043-2026-07-23.mp3",
+      "exists": true
+    },
+    {
+      "num": "042",
+      "date": "2026-07-22",
+      "file": "d5n-ep042-2026-07-22.mp3",
+      "exists": true
+    },
+    {
+      "num": "041",
+      "date": "2026-07-21",
+      "file": "d5n-ep041-2026-07-21.mp3",
+      "exists": true
+    },
+    {
+      "num": "040",
+      "date": "2026-07-20",
+      "file": "d5n-ep040-2026-07-20.mp3",
+      "exists": true
+    },
+    {
+      "num": "039",
+      "date": "2026-07-18",
+      "file": "d5n-ep039-2026-07-18.mp3",
+      "exists": true
+    },
+    {
+      "num": "038",
+      "date": "2026-07-17",
+      "file": "d5n-ep038-2026-07-17.mp3",
+      "exists": true
+    },
+    {
+      "num": "037",
+      "date": "2026-07-16",
+      "file": "d5n-ep037-2026-07-16.mp3",
+      "exists": true
+    },
+    {
+      "num": "036",
+      "date": "2026-07-15",
+      "file": "d5n-ep036-2026-07-15.mp3",
+      "exists": true
+    },
+    {
+      "num": "035",
+      "date": "2026-07-13",
+      "file": "d5n-ep035-2026-07-13.mp3",
+      "exists": true
+    },
+    {
+      "num": "034",
+      "date": "2026-07-12",
+      "file": "d5n-ep034-2026-07-12.mp3",
+      "exists": false
+    },
+    {
+      "num": "033",
+      "date": "2026-07-09",
+      "file": "d5n-ep033-2026-07-09.mp3",
+      "exists": true
+    },
+    {
+      "num": "032",
+      "date": "2026-06-29",
+      "file": "d5n-ep032-2026-06-29.mp3",
+      "exists": true
+    },
+    {
+      "num": "031",
+      "date": "2026-06-28",
+      "file": "d5n-ep031-2026-06-28.mp3",
+      "exists": true
+    },
+    {
+      "num": "030",
+      "date": "2026-06-27",
+      "file": "d5n-ep030-2026-06-27.mp3",
+      "exists": true
+    },
+    {
+      "num": "029",
+      "date": "2026-06-26",
+      "file": "d5n-ep029-2026-06-26.mp3",
+      "exists": true
+    },
+    {
+      "num": "028",
+      "date": "2026-06-24",
+      "file": "d5n-ep028-2026-06-24.mp3",
+      "exists": true
+    },
+    {
+      "num": "027",
+      "date": "2026-06-22",
+      "file": "d5n-ep027-2026-06-22.mp3",
+      "exists": true
+    },
+    {
+      "num": "026",
+      "date": "2026-06-21",
+      "file": "d5n-ep026-2026-06-21.mp3",
+      "exists": true
+    },
+    {
+      "num": "025",
+      "date": "2026-06-20",
+      "file": "d5n-ep025-2026-06-20.mp3",
+      "exists": true
+    },
+    {
+      "num": "024",
+      "date": "2026-06-19",
+      "file": "d5n-ep024-2026-06-19.mp3",
+      "exists": true
+    },
+    {
+      "num": "023",
+      "date": "2026-06-16",
+      "file": "d5n-ep023-2026-06-16.mp3",
+      "exists": true
+    },
+    {
+      "num": "022",
+      "date": "2026-06-15",
+      "file": "d5n-ep022-2026-06-15.mp3",
+      "exists": false
+    },
+    {
+      "num": "021",
+      "date": "2026-06-14",
+      "file": "d5n-ep021-2026-06-14.mp3",
+      "exists": false
+    },
+    {
+      "num": "020",
+      "date": "2026-06-13",
+      "file": "d5n-ep020-2026-06-13.mp3",
+      "exists": true
+    },
+    {
+      "num": "019",
+      "date": "2026-06-12",
+      "file": "d5n-ep019-2026-06-12.mp3",
+      "exists": true
+    },
+    {
+      "num": "018",
+      "date": "2026-06-11",
+      "file": "d5n-ep018-2026-06-11.mp3",
+      "exists": true
+    },
+    {
+      "num": "017",
+      "date": "2026-06-11",
+      "file": "d5n-ep017-2026-06-11.mp3",
+      "exists": false
+    },
+    {
+      "num": "016",
+      "date": "2026-06-10",
+      "file": "d5n-ep016-2026-06-10.mp3",
+      "exists": true
+    },
+    {
+      "num": "015",
+      "date": "2026-06-09",
+      "file": "d5n-ep015-2026-06-09.mp3",
+      "exists": true
+    },
+    {
+      "num": "014",
+      "date": "2026-06-08",
+      "file": "d5n-ep014-2026-06-08.mp3",
+      "exists": true
+    },
+    {
+      "num": "013",
+      "date": "2026-06-07",
+      "file": "d5n-ep013-2026-06-07.mp3",
+      "exists": true
+    },
+    {
+      "num": "012",
+      "date": "2026-06-06",
+      "file": "d5n-ep012-2026-06-06.mp3",
+      "exists": true
+    },
+    {
+      "num": "011",
+      "date": "2026-06-05",
+      "file": "d5n-ep011-2026-06-05.mp3",
+      "exists": true
+    },
+    {
+      "num": "010",
+      "date": "2026-06-05",
+      "file": "d5n-ep010-2026-06-05.mp3",
+      "exists": true
+    },
+    {
+      "num": "009",
+      "date": "2026-06-04",
+      "file": "d5n-ep009-2026-06-04.mp3",
+      "exists": true
+    },
+    {
+      "num": "008",
+      "date": "2026-06-03",
+      "file": "d5n-ep008-2026-06-03.mp3",
+      "exists": true
+    },
+    {
+      "num": "007",
+      "date": "2026-06-02",
+      "file": "d5n-ep007-2026-06-02.mp3",
+      "exists": false
+    },
+    {
+      "num": "006",
+      "date": "2026-06-01",
+      "file": "d5n-ep006-2026-06-01.mp3",
+      "exists": true
+    },
+    {
+      "num": "005",
+      "date": "2026-05-29",
+      "file": "d5n-ep005-2026-05-29.mp3",
+      "exists": true
+    },
+    {
+      "num": "004",
+      "date": "2026-05-28",
+      "file": "d5n-ep004-2026-05-28.mp3",
+      "exists": true
+    },
+    {
+      "num": "003",
+      "date": "2026-05-27",
+      "file": "d5n-ep003-2026-05-27.mp3",
+      "exists": false
+    },
+    {
+      "num": "002",
+      "date": "2026-05-26",
+      "file": "d5n-ep002-2026-05-26.mp3",
+      "exists": false
+    },
+    {
+      "num": "001",
+      "date": "2026-05-24",
+      "file": "d5n-ep001-2026-05-24.mp3",
+      "exists": false
     }
   ]
 }
