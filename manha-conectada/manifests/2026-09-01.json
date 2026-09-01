@@ -1,0 +1,196 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-09-01",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-FranciscaNeural",
+  "output": "/root/repositorio/d5n-videocast-source/manha-conectada/audio/manha-conectada-2026-09-01.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/manha-conectada/roteiros/source-manha-2026-09-01.md",
+  "sha256": "b8d066fce101a1d9ad68c07622faebb888a851707eed4775a96ef78bf305b713",
+  "text_gate": {
+    "words": 921,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 358.896327,
+    "size": 8614181,
+    "bit_rate": 192014,
+    "lufs": -17.31,
+    "true_peak_dbtp": -1.74,
+    "lra": 2.1
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Meirelles: Brasil terá que fazer \"ajuste fiscal muito sério\" - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQalVtSzd0VFp3SElLeWdUU3pvR3N4UzNrLTJPNXJJNDJjY2lPUy05UFV0ODl2SHFzeVdZYXlwSmZjQmxJLTFtYUhGNDBIbTFRS2lxZFlKbXR4NGxiNmV6QlJDanpKWkw0YmlrNUxfel9mSDJ4TlZfa1FUTG43ejVzcXNFdDEwMjlsdTI5UW1qZUhZa3NNbWRidTVEeGlhVFJzZXUw?oc=5",
+      "source": "SBT News",
+      "published": "Tue, 01 Sep 2026 14:23:02 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Entrega XP: As principais notícias que movem o setor do Varejo | Setembro/26 - XP Investimentos",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOY19Qek1kVC1pa1NNQmlDOGdKMjUwMmNMcmh2dEd5anpVTHA2OTFoUHVROFRuODdXeXZONUVsXzZtZldZSUpGTWQ3Mk5kdWt3YVlEVlM5RzI2YkZtcFF1ZktwNVpaWDhYbHA0YnFZR0t4VUY5WTZmcUFRbm9BZ1FGYW5kVEM0TUh1QWYxMTRGQzBBRlc4dmtzd1hsR3dSQVhMLVFMV1AxeEpockZXZ01XX1RGSlJHaUJSa0VlNg?oc=5",
+      "source": "XP Investimentos",
+      "published": "Tue, 01 Sep 2026 10:43:30 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA1cTN1MUFFQ1RuWmtsRUVoUWZlb0ZNWEZYYmpqcEhYa28tQXJBeGtwcUtTSmJxSzYzclNEQXgzUWRkcWZDS3RPN2stTE5qMjBxV0FnbkN1dUI2QXR0cENsbzlIcmFoNVhodkNlYjktY9IBdEFVX3lxTFBjelh4eG12QWI4NElTV3JINk13bDRzby02MFQ5RndaM0RLcTNhRnJxUXhOOWd3T2dVamRLckFIWGZjOC0yVGRRVmdmS083ZWdZWkJrUUFVSzJWbHdZZ3J5bWZwdWxPYTA0RzdBa3AwVzJYbzNE?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Tue, 01 Sep 2026 13:07:46 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Dívida pública brasileira atinge o maior patamar dos últimos 5 anos - G1",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNTUxzSG5naGJ0MGpQNzVjSzJ4dG9fQk1LVEpybHd3ZVhQal9iSGRjWlNOYkRiUTVmTjlwbXZSY2xLVll0ZDdFd000WlRxRnFLWENHRU9WQUJCQWc4QU1FYUxXUU1UeC1kb0dXNmQzTEhqbU9jWHFrT0FpbkMybWMyZmdSTmd5SzJnQmZ0c1JLcjlDa0NhelpPdGtSUDZWWjNKd1hSUFRCSmI2R3phbkdGcXdNYXhEUWU0eXU4dzJUQVFXMFFnclUxbtIB1wFBVV95cUxPSmZkSGhReXdHaEJ2LTloQktlM3FJU0prb1dSdEFod19mSEFBRkx0Y0N6X1lKeUZsQkNaWVFVQVRvZFBUOFFzNi1BWG9wY1ZQVDBLRElub3ZaQW1Jbl9GQzNTQjVkYmwwUGlOeXlqejU0Q1lrajhsQmd0VUNqc3dORFJmcU5DOENTZlpYV19DTG43aUVUSXhXdEVOaXJPY01aTjVmV01QSGJiOVRuZHE0LTlkQ2pvN0k1VGgzLXRuR0JCRExOajNIUnhjWEtObmJldml5OWROQQ?oc=5",
+      "source": "G1",
+      "published": "Tue, 01 Sep 2026 00:37:12 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Eleições 2026: Justiça Eleitoral reformula plataforma para ajudar eleitor a identificar fake news - Brasil 61",
+      "url": "https://news.google.com/rss/articles/CBMizAJBVV95cUxQZmN5M3B6ZVRkN2I4ZXNkazdKUUFRU0VjNi1WWW5MQV9kdm5CNkt3TTN4ZGhYVXE1c2NHUmRQUEZsclhRMXJyZXFpMnItbGpxRGlVN294YjFxYzExYV9zMTRuMzNPWTE5bmdXMmJlMmVaRDlyTkpqOHdXbFppR2toTWVlSDhnMmFmeE9NNXZ3Snl0N2ZPLUtXN2ZQNzdFcFI4dFZEZUVOdGF1ZUY2SVNxUnI5QjFjWi1KS0R3dkxfWGlXZkZoTE1MOWdhNUkxRXM2bUVSV3pnMXo0NjN5d3JPd2NLLUZSNjhYY3FUTzRXa19KR3F1TVA5QzFKT3hYX1NhUUZwRHhQTmlYWVpHRDJ4cURuRVBZZm1aMVN6OE55N0pBcU02N0ZocHQ2SGJjdzBYN2hDbEdrSjlWN1ppVWFKMXlGcG53cjMzWllNctIB0AFBVV95cUxNMmlvRjFGWXNyaTZWY0Q0cEtHc3RSU3ZYTEZaSWphYlZEdWpNNG1pbUZLaDN2VGtmRTY1a1c1dHdHd2NJc2N4VENyMllIcnlkY0swQWhOdDVJR2VzWEdsWGcwR3FNTy1ybkhjUVlaUjNiUVJTcFFOQTBZVklad29HOEphNzdXSW9ONVNmRDJ6Qi1hRm1JUzNranNqRnU3V3QtSWhGSE5kV1lCSkpCQUFVUE15aFNFVGZjb0RTWEFsZU1KNjE3UW1Gb2dmUEU2dTdk?oc=5",
+      "source": "Brasil 61",
+      "published": "Tue, 01 Sep 2026 14:54:47 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Venda de títulos públicos se espalha pelo mundo e vários países têm maior alta em décadas - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPMjhfVGVHMVE0NkZHQ05TdkhTdjZYRG1tZWJyTzBpU2c2SzZJcDExRHlpeVlfd0VBeHJWYl85MmZxUF80ZVlMMVlMTHhUaDV0Njd2TG03VG9ZcEU2TGtxWk5xM3VzUUhWSFZTZUtweTJqT2hHamRRdWRSX2tGLThyaUZhVV9rMmpmck52SmlfR3ZkWklNTUJDOEVjN0haNGhCQ3NHclN1M2NMRHNXVkdrRzRuWUVNQU10aW5zaHI5Nk1OM3dncmRCdUZPUlJ0U2c4SVZwNk1HdVA?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Tue, 01 Sep 2026 12:44:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "EUA fazem novo bombardeio ao Irã e Trump ameaça: 'Se retaliarem, eles serão alvejados com mais força' - G1",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUWVHSXgzX3hla1BjRXFiQ2ozNk9TbGxfdkFTS2FNS1pnMDB0RFhTRS16cHJxZU9EdjJBWVA2cjJtU2NSMldKQXBpR1FxUHZvU3JxQUppMEl6U05CYjZUS1ZQMXVZMWZsUGYtNUJLRGladGd1aGVOc04wOHlNVVFWemhFSTJOSC1B0gGXAUFVX3lxTE5yOXhtT2VibHJiY1Bnem9PaUVQdlBVeXMtb1dFVWdRazN3S2VBd2xUV015NGo5cWMtRzJTM21CX1RjaHhKNXFQcjY2ZGF5cWNDUHdQTWpCakdBLTl4V3kwR1lmWjMtX1NiZzAtWTAtS0VUY0JwVVotdUhVYzBMQXpyamZwQ195cTBzbDE1TC1vWDlHRzZDZWc?oc=5",
+      "source": "G1",
+      "published": "Tue, 01 Sep 2026 16:37:37 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Alemanha deve responsabilizar Rússia por incidente com drone - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNTGFDb1ZVYTVjand0WmllVVFqNjFVNFBJN3MzVHJSM21xTnVqZHFsM0JuNml1b3dLMEluZHdCTVB1ZGhyZTNzaC1RYktvUEt2c1hJYTdlRlU3UUhOdjFFTUN4amk4UHRWQkozNVc2MGZSRGtIT0ZyeHFkNXpoLUdXNlVvSEl1Y3ZXcF9rbFdtaFB3SWJlc2ZPQWFPV1M5U3VOQnBJ?oc=5",
+      "source": "SBT News",
+      "published": "Tue, 01 Sep 2026 15:33:49 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Em meio a dúvidas sobre crescimento, Shein estreia na Bolsa de Hong Kong com queda inicial das ações - Terra",
+      "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxONHlTS1V5NEtrZk55RGZLbjlTQ2Y0NkhoOTY4cGhua0RLMnlJRGZmeDd5SnFTRWNzeDVWazVEaHBtdFctZ3lYYXhXYmFLWEVRb2tzVlktSXg2a2UwQmY1TzJ5R09IYmI5UXVlWkJYeFNpTXJWN19zZlFMRHBnSHBOSk5xNFF3cDZ1M0U5RGtlaTdHT2cyYlV2c0NVRE1rQzF5VjBhRzhNRjJSM0p0RGVTd1RyRmpNYzBJTG15cm4wbEdpMy03OWY2RkJYdzlnWWNMU2xqUGZJLVh1OGFDRk1FYTEyLU1MR0QzcjU0MFhYN2dvbkpxWmx1UG1UaF9IeWtZbzU4RHBMeUplYjRVNVJRd3ZSRDZlLTVG0gGYAkFVX3lxTE40eVNLVXk0S2tmTnlEZktuOVNDZjQ2SGg5NjhwaG5rREsyeUlEZmZ4N3lKcVNFY3N4NVZrNURocG10Vy1neVhheFdiYUtYRVFva3NWWS1JeDZrZTBCZjVPMnlHT0hiYjlRdWVaQlh4U2lNclY3X3NmUUxEcGdIcE5KTnE0UXdwNnUzRTlEa2VpN0dPZzJiVXZzQ1VETWtDMXlWMGFHOE1GMlIzSnREZVN3VHJGak1jMElMbXlybjBsR2kzLTc5ZjZGQlh3OWdZY0xTbGpQZkktWHU4YUNGTUVhMTItTUxHRDNyNTQwWFg3Z29uSnFabHVQbVRoX0h5a1lvNThEcEx5SmViNFU1UlF3dlJENmUtNUY?oc=5",
+      "source": "Terra",
+      "published": "Tue, 01 Sep 2026 16:41:18 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Fala OAB debate impactos da inteligência artificial na advocacia - oab-ba.org.br",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOQzNnZDRRcFNDUjc3NzhmejNGalFvSU5HQUQwdmM5QUJWR2JfLVh1X0pzMEYtWDhySkNaZmxxUDhkUV9Qa0dybTdyUVRtLXZ6SkI2SG5DOTYtblE5UzhWSzl1UklxVEFFUFMyUlRvODFHb2I1TVZtRTJCcE9nZGFJRllvN01HMXpTdlBZLVBONDZ5dEtudXZ2T0lpN2JFMjQ?oc=5",
+      "source": "oab-ba.org.br",
+      "published": "Tue, 01 Sep 2026 13:21:36 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Inovação não é inteligência artificial - Época Negócios",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNNUNiQllIdFpyOWp2MFhMRGtQUE4xUW81aHNpSXZPRk1HVk9Nd0c4T3ZaSFltMXNfdk1wc1Z1RWFPejdvU05JWHVvZnNmZWdEcHdTYXV2Yzd6UE5Nc3o4QUlvcXR4UG9ULXFZeHN2OURQRS1DaTRaRmcwR0Ryc1lOb0ZhdU9WdjRJXzY0aHZpTU9aVXBVOG1TTUlQcXZ4X09ZZjNTR0hIT0Y0NnE5OVdVN1BlQXdwYWswSWFz?oc=5",
+      "source": "Época Negócios",
+      "published": "Tue, 01 Sep 2026 09:01:20 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Castro realiza InovaTec42 com programação sobre tecnologia, inteligência artificial, AgroTech e cidades inteligentes - Correio dos Campos",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQNVNlMGlzVmFrUzhKWEVPREQwbGJEWE40NUxESVpTWlJQYkRMVDQwVjI3d2Y5RzFDS1FOQmJYUEFZcmZHeWVZUlR4SUpqVkFlbEphWENJTzdSWWpkNmZKaDlwV3FjU19hRTczbmFFUEFQNkthQzluLU50RW1xLVg4NVZEUkVtMzVtblgwOUFfUU9Ta1ZabDhGcU4yZVppcjRWNUYxLWZjeDJMU21USjVFWFVPTUc5cy1NMUp0YXRNeWlMNVpWb3BxZlhVa3pxcHczX2VCR3NZQzVaa1VvWHNpWU5GV1I?oc=5",
+      "source": "Correio dos Campos",
+      "published": "Tue, 01 Sep 2026 18:58:26 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "IA nas empresas: por que a inteligência artificial virou responsabilidade fiduciária | SEGS Portal... - SEGS Portal Nacional",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPY3ZmNjllNm4wdWducUZPcWtxNFF1QXJ5TXQxb1oxZ2l3OFUwVFo4Sm94QkJjZDY1SGtRRUNFdldTbkJ5Um1Zb1FJTVhUeXZMX0JDa1kyMWlxU0FKNlVFOGd5OFdoTTlpem84djREV21abTd3QVBYcE5MeHdRcUgtTUp6WUxvN3B3QjMzY1VHdHNRVU9ZNFFCVzJGUXFvd2k1enV1RDJOVVJfNEp4N3kxMGZMT196anR6TWUwRXhKSdIBxAFBVV95cUxONXhDN0hVeVZGeWpjTTJlSFdfalIzNmd5WVozUmVWQ2lWaXIzNmVxLW9MYThTSnpVUUVTc2dkendTajdqaklFeFBoSDIxT1VDQjR6Nm93WlRmSUoweC1oaGR2OWNfYk5ieC1wdElqd2EtaWI1TVA0eW4yekdjWXZ1a2g2cUZldXREblRvOHI5cFB4cjlUaThxb2pKSnFEcmRIZm1WbnJLR0RUZTdtbGJjYUZzY3JYZUJ1QzYwR1paNFVMSG9Q?oc=5",
+      "source": "SEGS Portal Nacional",
+      "published": "Tue, 01 Sep 2026 17:27:38 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Veja os 5 profissionais de TI mais disputados pelos bancos; setor investirá R$ 3 bi em IA - SITEPD",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNeksxM3F4eGlYYkJIcWNSQVIzSlBIX1BOdVNRMnFDMEpPMzQ2NmE4LU5aVGdhM3pMb1RUekZRTUEtMDdaaHB1ZkdETlhyMXN5b3Z6c09kQWJ6eHdLVHdWZ05vY1hmTXljTTMzaWNhLXpzZ1d0cGdVT1ZEMVJLUXlhalNXaTJ0M3NWTWlROE9zSHB6bWxEamVJMDY5ZVc4enpGSkpXWEplRTdmdm8xbVYtWVlPUXQ1R1R1Q3VIUnRR?oc=5",
+      "source": "SITEPD",
+      "published": "Tue, 01 Sep 2026 14:33:25 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Veja a posição do Brasil em ranking mundial de crescimento do PIB - G1",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQenRqM0JORFRzMHNxLW9ySHFrMENER1RNQVlmeXhCbTRQSXF5OGVuajdObGgwYmxYUkNLc2w1WVdyNGlaMzlSeFNSYTQzY3c2cFVKNXFKNjY0NmYtNUlFb29FUzFVTXJEZHRPal82d1h0SUFYVFJwYjdrc2NMb0hCQVI3RdIBkgFBVV95cUxQMkk0aloxRUlWTmZTUUtZSW5NNXRtSkI0NlN6bXBpTDNfVnMzdzhLdG9UOGczbjI0Z2l2TXAyNXI5TDVJek81Y21DZUJxQmhHR1NRSFY2S01Gb2U3dmJCY1FTazgxbk5jbHB4bWhycW45RHpIeEtmOGFOS2hnWnFjVEVIenJGazJPUm1CQkZCNzVTUQ?oc=5",
+      "source": "G1",
+      "published": "Tue, 01 Sep 2026 15:07:30 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "PIB do Brasil perde força e cresce 0,5% no 2º tri, mostra IBGE - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNb0RieGZMTTFvQllWWmZsa3A3WnlvNVRNcmZyRGdSNGY4Mk5TMlU0dHV3enljWHhzOWxzemdXZWtRa3lxX2tUNFZlTnBjc3FqYlhPWDZFbmNsMUFpaTdOM3lGaF90WWVGYWwzalJGODVVc3RwcDlxdzBzckQwWndhdFUxZ1FEVUw1TVJfQUJpbkh5VG1uaEVXZlhQcGdTZkZxQnVmdDlhb0twRWYtc0ptTUhGNl9sSERpaWk5UHd5a2E2dExHaEMw?oc=5",
+      "source": "CNN Brasil",
+      "published": "Tue, 01 Sep 2026 12:00:44 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "PIB do Brasil perde força no 2º tri: os 3 desafios para o próximo presidente na economia - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE03Q3ZUeXN6YkZ5SkV0VDV0SVdENmVuem0tU1dDNS1xalVwRURQTi1BbzZMeW9ubjlMc0NJTTMzN0x4OFNVelhIRFI5X19sa3VmX0FvZ280MlR0OHBIU0txVnRB0gFnQVVfeXFMT2tqTURraGZUWnBZTWUxNFdhX2dta0Rqck1raDJ4cUlhdnJ3SURkeVBuRklmMEpfVTBXV2Z3ZWcwMWx4a0t4YUxMQXdiWFF5eXNULThvQTlJdWdSSEFJa1dKUUtiX1hQQQ?oc=5",
+      "source": "BBC",
+      "published": "Tue, 01 Sep 2026 12:51:47 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Brasil sobe para 5º lugar entre economias que mais cresceram no 2º tri, diz pesquisa - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQbXRtbl9vTnhsUlkzMFh4V29uOUlTb1h2dm41R2IzMk94cnFoTTlYTzVmYUgzTnAtbFV5MFprT0h5S1lDLW1qajMyb1lsNFVfVUZtNmh2T0pjMkJSUk94bGZHeEdsckt0MDlKaDNBZC10d2JqczRST3Z2ZU1zd1VaU1NZdE5WLWk0N0ttcUJBYnRBV3VudklSYVAtWEttWkVJVkxrQ0RwUFJQN2JYMVdtR043RXRjcmx2eWVXa0hGONIBxAFBVV95cUxQX0w5YnRDTXpwSi1aQmtFWloxeHBPbGI5RzRzdVpfSV9peU5YeVEyQTFxUVFqSk45bEZodE1VbDg4UXVRclM4MlZDTGtJTTZlWmRNWXFiOXU1alJjdHdtT0pQZG5Qdm03cERPcnpsZ0Q3MmRGLWRDTlg1V3VNeXh3MmJULVJHb1Vsb3ctNTMzUVFuYUlpY1l6MGZHS1gwVmpLU3BTWFlqM1hKanZlY3VxN1dNR1pha1VOQ295bGpCM3piZmln?oc=5",
+      "source": "InfoMoney",
+      "published": "Tue, 01 Sep 2026 18:22:51 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Brasil fica em 5º em ranking de alta do PIB com avanço de 0,5% - Poder360",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPanRpNGg3bHNzZUNLS0NNRVlvTVRrRF9mTWo5ZEFjRjVSWjJjclRZWjBLT1AwenJGRmNtRVNGVFF3T1FzeWpHQ2VjTlBrSDRVTWNKMm9iSTdmcEp4WjNGTTdha0dibmZiYVZETkVGOWIzSEI4d1htNGhHQzhaOUNlQzlSUk1CYzhtOFNCcmdhRVdWNzhOeGxJWVpoNjJ6ZHE0T0FmbU85RQ?oc=5",
+      "source": "Poder360",
+      "published": "Tue, 01 Sep 2026 18:52:13 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda do dia: PIB do Brasil e relatório de emprego Jolts nos EUA são destaque - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxObFY0ZHNSSDNKcXh4RWs5VHBWczhrYkVkbEZvbkdKVXM2eWdHcmJjMURHczliN3g2UVRTQk1tRlBQeFNiWkhhUS12N09JOE02dS1PUlEzRmFhQVc2S1ZxWE9Na05QemdPUWN5VDhBQWlUaFV1ZHJiTHNYbFBWRERqZE9rMFR4ZmlnUEcza0JEckM0NEwyS09BYzRrQXlHUlllaV9hN3IzVHZhejlsUnFuam9xc3lBaFdJRGpPMi1WYmRuVzhCeFotQUlSWXpSR0pm0gHfAUFVX3lxTE1GTDJLczNPQnhUVmZWaWotbGd4LVJzNnZNTklhTVR5b1pERGVMenhIc3RpNXZEaFViUlhvZ0NoQTBIUkU2RTJrLTk0azUxWHNmaWlfa3BBYXRmcTNDSWNhWWc3UmFIWlRQZVNoQTBLLVA0Tk81QXVTN1VmRl9Fam1PRXdVUVBBX1haOVViU21BSjZwVGZ1bWVnek5LTHRPeW9VRGJZNXRhZWY2cjB3YTBxc1ljeTAwb3hraFpyNmQwZ2QxZ2VjSTQ4OGk4SmplQ1hmRDZScU5waHJLcjBGR0E?oc=5",
+      "source": "Valor Econômico",
+      "published": "Tue, 01 Sep 2026 10:41:24 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Alagoas vira vitrine para nova agenda de energia limpa latino-americana - Movimento Econômico",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPalNCYU5va0E5c3k1RS1YU1NvUGlrTUdsZlpPemVnSWt2bEw0VTIwOHFaMjhfSmstNFVFZUhUMXppRkZZSm90QzZNYXFQdU1DakxzcFNGSVNKcnhkUzZaUEtTbE1pRW1kUXRYRnY3RUsxVkpIWVgzMzdmbHBlSjJpdkN5MjhoLVozMEJhNUE5SFNDUzc2VFBYZVd2VFdYZTJTdHZWaDU2RnhSUDhabjFHaVR3LW5XTjA5X1QwZ3h3SFVLOVhsQmtxa0RrZjZGdw?oc=5",
+      "source": "Movimento Econômico",
+      "published": "Tue, 01 Sep 2026 18:33:10 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "EVENTO | Minerais críticos e Agenda 2030 serão tema de encontro em São Paulo - Brasil Mineral",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOem54UWFPSFl3R3V5Q2xsOHNBT0p4UWk3MjVTZGZkdl9MM1pqQjgwM3RLby13eF9TX29NQmxyRElrRWRlTk1MUm56UE1mdlhZMEZvdndJRTItYTdPTjByM0VVUC1RWWJXeDVyOXppX1BybC02NU1LVFpvVzNZYnUxTExGOUUxMHR6dkxjZ1FIc0d1dHRUakNTMXlHT0kyQVhJR0lzcWZodjZ0UDNvelE?oc=5",
+      "source": "Brasil Mineral",
+      "published": "Tue, 01 Sep 2026 18:29:39 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Concurso Público: confira a programação das aulas de hoje! - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9RZzhuWTNNQjhfRUVRTXZSdHE3RGVseGI4VWNvMlJ3aHdqajY4QVVQV09pUHVfZkZYdXk3WnFiTjlMbS1YbXVEXzQ0d1BfTHhzcVpUQnUyazhOcXVObDdyWmlGdVZ6UkZXWmfSAW9BVV95cUxNb1U4ekpYaVQwOENfMXZ6X3pzUjhyMGNMS09DNFpYZkx2aUdsVFd6X2k4OTNZcW1HZi1mMlFlSndoS3pHLXdqZGV1NXJFbzAtYTZTWDBzZWVKb1JYLWkwRWxjWE1GNnh1QTlEd1EzV1E?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Tue, 01 Sep 2026 15:06:08 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "ANPD recebe contribuições para agenda regulatória 2027-2028 - Midiamax",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQZ0pPdTZQYktFRVJuWTFVb05raG9lajlCTmpzeVNIOUZreFR3UUozYWdoZDFra0o5cVRiam5fa0hESUViZGR6X1V6TC16NVJ2NEw0NzZFYTRFRVRuN2ttQlZrNlRHbWxrSFpFWXlVWTYyeGtBdUdxVkV6UTVETWxXMlFEMEQ3RjB5S0pXS0x5blIwSjh3c3c?oc=5",
+      "source": "Midiamax",
+      "published": "Tue, 01 Sep 2026 14:50:00 GMT"
+    }
+  ],
+  "generated_at": "2026-09-01T16:08:31.171014-03:00"
+}
