@@ -28,7 +28,7 @@
     <podcast:locked owner="eibragaa@gmail.com">no</podcast:locked>
     <podcast:guid>manha-conectada.d5n-daily.netlify.app</podcast:guid>
     <atom:link href="https://d5n-daily.netlify.app/manha-conectada.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 31 Aug 2026 11:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 11:00:00 -0300</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/manha-conectada-cover.jpg</url>
       <title>Manhã Conectada</title>
@@ -36,6 +36,22 @@
     </image>
     <copyright>© 2026 Drop Five News</copyright>
     <generator>D5N Pipeline — Manhã Conectada</generator>
+    <item>
+      <title>Manhã Conectada — 01/09/2026</title>
+      <itunes:title>Manhã Conectada — 01/09/2026</itunes:title>
+      <itunes:episode>16</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>05:59</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
+      <guid isPermaLink="false">manha-conectada-2026-09-01</guid>
+      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
+      <enclosure url="https://d5n-daily.netlify.app/manha-conectada/audio/manha-conectada-2026-09-01.mp3" length="8614181" type="audio/mpeg"/>
+      <pubDate>Tue, 01 Sep 2026 11:00:00 -0300</pubDate>
+      <description>Manhã Conectada de 01/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:59.</description>
+      <itunes:summary>Manhã Conectada de 01/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:59.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 01/09/2026</strong></p><p>Manhã Conectada de 01/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:59.</p><ul><li>Meirelles: Brasil terá que fazer "ajuste fiscal muito sério" - SBT News</li><li>Entrega XP: As principais notícias que movem o setor do Varejo | Setembro/26 - XP Investimentos</li><li>Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>Manhã Conectada — 31/08/2026</title>
       <itunes:title>Manhã Conectada — 31/08/2026</itunes:title>

@@ -1,0 +1,189 @@
+{
+  "program": "FECHAMENTO DO MERCADO",
+  "date": "2026-09-01",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/fechamento/audio/fechamento-2026-09-01.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/fechamento/roteiros/source-fechamento-2026-09-01.md",
+  "sha256": "0a3a874d82d3bc3721426c873fca9f6e690649425712795d30c32d69de407e2e",
+  "text_gate": {
+    "words": 1353,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 560.039184,
+    "size": 13441610,
+    "bit_rate": 192009,
+    "lufs": -17.92,
+    "true_peak_dbtp": -1.71,
+    "lra": 2.7
+  },
+  "sources": [
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Dólar vira para queda após abrir em alta, com exterior e dados no radar - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZ21SeWRlWlIzMXFjM0MwTjZzQldPX2c2Y3M2YldzLWxkUlhKcFZqaXFmQ2xjekV4S1Jac3N3NWFlaHVub3VlNzQyY1ljODRXaG5KNVA3azhRZmlVbWRSZG55TVBMbEMwU2FTLVNjNFdsa3J3MG1uVDgzaWtLN21Oa2k1UkIwOTZtUEswY2VHSHNyb2NSaWJoX0h3Q0LSAaIBQVVfeXFMTUFaaFhTWTdvcWg2Y1NBUFdPMEtnSk9RMUY1V1NIQnEwS2xuNVhNYUNZbUpqR2thbXBQY1paZm1UQmZCTjNQQkdYUm43ZXRXYW9nUUFaMXZjb2VkR1NnUHdqQXNmYVlzb0RNVEp5ZGxUSzZzczBmOVB3RTJ0OVJhVXNJOVI1Z1BFcGtobV9ZMThuVjJFNC15WTBPc2tQVllMNC13?oc=5",
+      "source": "InfoMoney",
+      "published": "Tue, 01 Sep 2026 14:50:31 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Fechamento (31/08) | Nove sessões no azul: Ibovespa fecha em alta de 1%; no mês, tem queda de 0,33% - InvesTalk",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE03SnZiM3pmRTNqQTZoR21vOGdGRFBvckxrc0ZuLVhwaWZIVFRRcUt5RWFaR0xsdGFYZGF4V09sRWhoWWJuRkVIbzJmT3F3eWk2RW0yV2RjaHAxUzJCMzVNdGpDdE5nd3JUNXBkejl0dUNSb2RUM1E?oc=5",
+      "source": "InvesTalk",
+      "published": "Mon, 31 Aug 2026 20:36:00 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Dólar recua a R$ 5,18, mas fecha agosto em alta; Ibovespa avança - UOL Economia",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQVkdSUFNyZ21Zdmd4NDdtSGZxRHYtTjlsMWttbkxWZ2hBdHlsaE1oblRBb2QxbGxSR0Q5czRNTWt0bFIwRWYxQXI0SXNnZ1BpbWlXRUdET1pHTEc4RHhBYUZURWFIekRZU19fSGV3OERXMWpLTjBHVlEwa2FGYVRlVTZNbzhZYUl6TTdudmtxejF6RXRRU3F5bllwQjRwUzFCVmpLaHBSR01NZ3NibnkwUjlka3k0LXZzOHc?oc=5",
+      "source": "UOL Economia",
+      "published": "Mon, 31 Aug 2026 21:48:19 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa hoje colado nos 178k: Força dos touros ou exaustão hoje? - Investing.com Brasil - Finanças, Câmbio e Investimentos",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQeWpQQk1sZk1tN0l1djZYYmdvMTN3X3EzTWFMZVhaQjVtSXpwR25DM1JuSEd1dndIOFpQc0dta3VPbzMwUlh5dHlmMHVadDJta0t5MjZTMjlrQVFQRW5FMXFlMWM3VnE3OG5rclNFYlVqREJSRkdTRG1RVUhQU0dRNWJscEZNc3oyM043YnJnWktUbEI4TFY1YjBIbThHQlc4XzBJU3kwLS1QQ2NOSFlmaHJOaHlhbmpnUFNfd3h3?oc=5",
+      "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+      "published": "Tue, 01 Sep 2026 11:38:00 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa dispara 1% e engata 9ª alta seguida com Petrobras (PETR4) - suno.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOTUVmeFBBcThIQjJSY0FWTkVMdWh4ay1tV0dqY3poblBfT3pZT2pid2xIdHRSYkVLdnFxSGVJMHpQd3pGcEZSeVZCdVkzZG1yNkd2QW14Nm9oOHl5ak4tSnNuMEdiTV91cmFMUUJtM2lLUjJyZ1FNbjczdG0xV0tIME530gGHAUFVX3lxTE16SlQ1ZkQtbTBFSnlydGpMeFpNRElWN29mdlkwVDh2TExnd2pHZUx3UzU2YUE1aXlZdnN2cm5zV29iSUx5YXdkNWpmODBTbFZXc29UREVzQmdjTDJPbHgzQ2drY2I5alRwd3BOM2c4TGVGRnZ5U19pV2dScnRiekd5RkpnSVRQNA?oc=5",
+      "source": "suno.com.br",
+      "published": "Mon, 31 Aug 2026 21:25:08 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Bolsa dispara com alta do petróleo e desaceleração do PIB no radar; dólar recua - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQU0x4UTB2cmVYN1Z0bEpQeTFjUllyQ2JNRTFZRlY2WThfUmQ3ZVZlUkZYRUVwU1hRd2lWdF9xaTVwbzNOWXJQbUVkbHUydFFBSlFFZVp3aWVHVHVlV3gxUzNSYlFLa3BxZk5qc1JTb1ROYlNzRzZJZDhnRmlCRDhvSUVDZ3FrRXFQYndlRmJMcUQ0WDRfeW12VVB2UHlBZTQ?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Tue, 01 Sep 2026 12:55:00 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Milho sobe 9,1% em agosto com dólar valorizado e demanda firme - O Presente Rural",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNNktaTWFXbkpEYTExeUczU04tOUpGcXBVMUF3ZExOUlJvYkFqZ2NzUFlXbWxhRDVCbTNVOWRjVmRZUWdiZzJ1cy0yMEI1b3JMQmNOc05MLTFhT1BIYmFLamtMYi10aTV3MU9lUDhLRk1wYXJYZWczT3R4dDRVY2VORHUzRngwYkdYbG9ZOGFSemJUZ3ItWVBqUQ?oc=5",
+      "source": "O Presente Rural",
+      "published": "Tue, 01 Sep 2026 17:24:09 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar e juros futuros se descolam do exterior e passam a cair de olho em quadro eleitoral e PIB - valor.globo.com",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNTkNOWXlaSHpOOHFHV2ZHRUxOT2tqZnNoeHZ0UkNLeHBmNUNwQWdQQlZXUlR5T2c2aHM3aHBBMk5hMmVWZ2lmRVZfOGFEbDZRMXZQNk9UdlgwdlRCbTFsZGI4cDdBX3ZHbjJfc0E4bWlpTE84c3BOQkdEVEVLeHl3WWV1MFE0YUNLY2JvV21TenVIaGFlaEJIM0sxZDN6Q1VDR3FDdDFvUDBpREM4OEFnNm45WXZYZWZhaTRjTUlpY3dxa0ZnY0gyU1VZTDM2WVFOcHFOODJOWdIB1wFBVV95cUxNTkNOWXlaSHpOOHFHV2ZHRUxOT2tqZnNoeHZ0UkNLeHBmNUNwQWdQQlZXUlR5T2c2aHM3aHBBMk5hMmVWZ2lmRVZfOGFEbDZRMXZQNk9UdlgwdlRCbTFsZGI4cDdBX3ZHbjJfc0E4bWlpTE84c3BOQkdEVEVLeHl3WWV1MFE0YUNLY2JvV21TenVIaGFlaEJIM0sxZDN6Q1VDR3FDdDFvUDBpREM4OEFnNm45WXZYZWZhaTRjTUlpY3dxa0ZnY0gyU1VZTDM2WVFOcHFOODJOWQ?oc=5",
+      "source": "valor.globo.com",
+      "published": "Tue, 01 Sep 2026 13:51:07 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar cai 0,28%, a R$5,18, com eleições, Ptax e exterior; no ano, queda é de 5,6% - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxORDBGRTZIcHRTVkZOY2dZc1ZJZmd3cmJNQkZQZTEtaHhSTkdkWUdjWnRjd1hCRXRHRjdfQXEwQ3BfV3RvVEt5Tms3VGlYV0d5NUg0Y1VxVDdhcUxselhGYUY1Q0JhUXlBRzJqQlBUSDl4Mkt3cUEySmEzWjMzbzZaMDg5TGZ6ckRhcWVmeloycFVoemNtQ0g0MVVpcHfSAaIBQVVfeXFMT1ZzMlJQb1JtTDlIbWlZbTg5ZkgwdnAtMGRZVWg2SHlTV1BnQXo4am9KSUlTVnhkU1AxaGxUX3dtUHlLZURJTWN2S0Z1TGc0bGE4aW13bTN5Mnd0OXFRbGdNeW9KZ2pKRkxGTzU0cUItX2ViZU9vUmRaX255dklmb3JIWU9USVdKZ0wzTU9FZFRMOGc4T1RJek9KRGRzangwS1Fn?oc=5",
+      "source": "InfoMoney",
+      "published": "Mon, 31 Aug 2026 20:50:04 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar opera perto da estabilidade a R$ 5,18 com PIB do Brasil e tensão no Oriente Médio no radar - portaldoagronegocio.com.br",
+      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPN0RLcFVNVTBBRl9icE9ZbXF2MmRweEZVemdmN2pxQ1Y3RkVReThmT3FBWmdKWFBMLTNpekJScVl4WU5vc2thXzRlaTdyUVdoRkJleG1jS1RTY3JOd0NPbW14dHplUFdtanRwZll3S3JLcWVpTWQ4ZlByYXNtZFVyLWpNQ2t3NE5OR3dwbXhEd1dlNldvLXpiakh6TW5TZmhud1JNLUgtNHVOUkdPM19PYUYwOEJydkM4em9xQzdFNzZ1R2RMak45aHptaU45MDczVEw2dVFhWFJRNTY4bU0zbjY0Y3JNRnN3RzFqTEE4X1ppWk1EZlBndDhZWDFpbzEx?oc=5",
+      "source": "portaldoagronegocio.com.br",
+      "published": "Tue, 01 Sep 2026 14:10:00 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Ibovespa tem forte alta com bancos e Petrobras (PETR4), na contramão de NY; dólar recua - Valor Investe",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNamx1NGJlRjdIeWlPcE5wM21GWDA2ZGk0UHlGMnZQSjBJOTY5VzlONlJINzdEZmp2T0l2aTR6Y1JQWnptV05HT3dSTUxYdWpreXNFaFMtQVNUUVRrNk91d2taV01Yc1k3clpDdElLRk1hU1IzSHdKUUJGTHpZdEc4UkFyLWd4SWpFRVpLcDNiUWRBaVRuNWJQRUk2clhZMERrQktQNFNkc1FPRU50S3l4eV9RY09FREh0SWhyeGY3Zko4Zmwyb0xBaXMzcnNkVnF6dUVEVG1Uc9IB5gFBVV95cUxQUkpSRzIxYkkwVDhQU2RyeDdPeVMyWnM5MHJVN3Q2VURlbXVYcG4tend4REJVTlMxdzdxa2JlVmhpMVVFNWxIWXFvc0xRUm5rZVo2YUlWV1R1RWZDNnFZWUV2RG9lSnA4NVRFeDEwYTd3YnV2MG9KOGt1WWxpeDRMbzdQM3V0RW9WYmo2andFWTNaMXY4NVNZOWdmSWRFWG5kVWVJQWk5Ull4ZGtEbHZ2LTRPRkxuUEpSN0NJbVdReUE0NUNoYjcweVRpT011bGFrMC1lMk10Q0VLbDU0RmFMZjFTVWpnQQ?oc=5",
+      "source": "Valor Investe",
+      "published": "Tue, 01 Sep 2026 16:42:44 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Ibovespa hoje sobe quase 2% com Petrobras, bancos e Vale em alta; dólar cai - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOc2k3WENCeDhjd3pKT1dxSDNDaF8wMk5HYjllQUtqX1p0RXZjdVlFTXFiU0dmMmdueV9Qd3p4YXd3TDlnNlVxQUw2QmY3bWZDQ1luZVMtSWszUWZfM3hlSnZLbENabzIyR0xZTEJZamUyNjA3Qy0yWmFYWmdUcXpVeVRWbXZBcVV1Rk9uZTVubWI1eFpSV3ZOck1EVFFWWGg3cG5uWTl4cTJwQkpmQ21fNnViYUtfS1YtV2ViXzVXQ2VtTW4xSnVxcld1UErSAdIBQVVfeXFMTWgyN2tTbENISXBJY0dlSjlXd1p1aDBCbmd1SVdGbTFOdl8zVUZXOWwzN2hLcS1OZlNEVC1PM0NrSzRNZTZqLW10bHV2c0RZSG9HY1V0MFg0UWl1NWxUaXU4MzR5YXZFVGVKWlc0UzdnQWdxbm9lNU1IWVN2REY4ckdDTVI2all1RlNMWl85dmFvYVRoVFFRZXRzX1JBN09Bc2VhMEdvWTVrWU9DV3dUS1pLYzBMcEtEdEdqbkRRejlfZWpHRkhpelJSVFM1dzMwX21B?oc=5",
+      "source": "Estadão",
+      "published": "Tue, 01 Sep 2026 15:03:01 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Itaú BBA: Investidor local volta à Bolsa e estrangeiro reduz ritmo de saída; saiba que tipo de ações eles estão escolhendo - moneytimes.com.br",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOTU55M1Rka2F0QXFENXBEbjYzMzNiUGVyYnBlVkFoMjZVeEV4cFN3VERlUDBvaUZxbktDeUoxdGtzSDhud0Y2M2M3WnY2eS1ydHZSRjgtNnY4NlZkQ25ybVFaMU0xalBmR2N6Z3d0N0hIVGtvUEkza1lBNmVySWtFOVE5dDZybHItaHpZN0dpdThZejZ6bXQtaGdKYXA0TTRyTkptdFFDbDJtM2pac0dCY3B6VnFjUmlvS1htZU92bDJWOVlzM3RQVHAtY1AtR0V3WUxER2tFYTJEYmVsazJEYnJqblZMUQ?oc=5",
+      "source": "moneytimes.com.br",
+      "published": "Tue, 01 Sep 2026 13:53:00 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Banco do Brasil volta a subir e salta mais de 3%; o que explica a alta? - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNMVVmZ056LVZ4WUNLc1JxWUVaSnEyN01ONWw0WGtNWFgwaHhYMjBnUHhyNTZTVkMwTXVtbEpxd1Z5RkRPZTNCUGk0WjNYRUtSVXFkWG1GS2NCNFFHRGRCek45ZV92cUlGb0NKNnl3em1lUmpvUHZUTG9kLTZLMU1rRnRGUHhCMk9fLUtleXpIbEZNTFZRZC1ZZHR1QmhZbkIwT0N3ZTZkZUpFVEw0TENwaXB0SEppQjlRbzUzSXNMODU1STVWTnfSAcsBQVVfeXFMTlE4TEM5QngzNGJJM2hTTzBGQWlCZWoyMFJZRDhZdnNvckRNNnpVM3BzbjQtbUV0MkpLc0JONlBKUFdaRFAzc1F6a0tVWTA1cWpZS2pPUlBBdEk0R0d1OFd1WmFOdFBkMGc3c0VxcjVjMnFuSnQxeDEwbXFXdHFtVHB2aldJQ1F3SEN5UEwzdzEzbUxDdHBzYXd0YlVXUmdjaWZGOE4tOTZSWEdKbjBiUkt1UTRST2FJbWpoZGxPQjVGMHBLbnlmaEYxYjg?oc=5",
+      "source": "Estadão",
+      "published": "Tue, 01 Sep 2026 18:35:57 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Itaú BBA vê volta seletiva à Bolsa e alívio no fluxo externo - SpaceMoney",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBxc2JIS1VIQmtxNlpHdGhCSVI4VHBTLXh4WmZRcUN0M29zWWt0WEEtY0hES3VQQ1ZzTS1xMUlIaUVXZEJwTlc0SVhLSVlnLTQtUk9PaHN6WUhfbmpQeUw5MklvODc1NmszWHdpUWZnRFZCd28?oc=5",
+      "source": "SpaceMoney",
+      "published": "Tue, 01 Sep 2026 14:12:29 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "PIB do Brasil desacelera e cresce 0,5% no segundo trimestre; consumo recua sob juros altos - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNZHBVbm5aVUVhSnNZbGhlWmZKd2w3bXdCTXdBTXRFb0FVTVp2dm4tVF9CS2xEX09xUFVyUERFbzBTODRCZEJEVzEyUXlIdFp2b3p5UWhmY096MmpWaHIwbzE5NlFvaGVzY2xBOWY2bnd5a2g2aHZlOEItVXZPRENXOUszcFh3RkxSSkR4VjExS1hCcy1hNWFzakJScDNLU0R2ellCQw?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Tue, 01 Sep 2026 12:01:00 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Terça-feira, 1º/9/2026 - Notícias sobre o mercado financeiro, com Álvaro Bandeira - Jornal do Brasil",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNaWVVTUxMNUJ3SnAtYVlGQ3MxUTNIZmFIcmhZOTR2Ui1SMDBXSFoxMTc5bktVUVNPVklocFhoR2ctTDV4WWRDYWxOVlhRUGJMUnVQRzMydDhwN2R1aDJtMDU5RXNkdkVacWtJSUtqd204YTBEN19XcVQ0TmltbmhPSEZQTDZWVXdHVklRbjBVbG1odURmVVNzZlVCZ09Ic3Bic2tEcGY3b21NQzNNT3lqdnVlcDRxYkEtNUF1ZW81UHRpVG1lcENZ?oc=5",
+      "source": "Jornal do Brasil",
+      "published": "Tue, 01 Sep 2026 16:35:00 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "PIB cresce 0,5% no 2º trimestre, mas economia desacelera - DComercio",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQbUZVUWNaaE1vcjJ4dVVnaDNMU0VEd09WbEROTUl4VEFOT2dwdXpOTnFIcTV4Q3RBa3cxSjRrbG1TUjd4Mk41alpQQzZQZll6U0JvazZJOXVjeDg5cFVUdkFPdXpGLW90aGZ0THoyUENsQk52aTVFZ3Z6amZ2cUVQSkJ6VXcxdW5jV1pXVWxmMndpeEFlODNWR3ZXSnE?oc=5",
+      "source": "DComercio",
+      "published": "Tue, 01 Sep 2026 14:00:00 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Crise leva gigantes do varejo à recuperação judicial - Terra",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNV2VrcjJ0WDU5eUVYMUNtVExRN3g3VEFvS0RSUkxmNmZRZW0zczZnMUxTZEVCc1RDU1llVEQ4ZXZlRDJKaUJzbVBQc19lSGtOUnFPLVNYQXlLdFV3RTJJQWxhUmk1N1E2Y01HQmlPbHUwai1oRTV2RXdBaGphbmdHQXZGcW9UUHdiV0xGWG9ab3RJMkdoUVdMUFRTT1dBVnhIZFVKX1k5NHlPY2tyWENsQjlac3pqUXFLNHpHVTFybHNRLW11VnhfZEx5cFg?oc=5",
+      "source": "Terra",
+      "published": "Tue, 01 Sep 2026 15:52:00 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Entrada na Bolsa dá mais força a gigante chinesa e põe varejo brasileiro contra a parede - Gazeta do Povo",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQQWxFU1NlU3hjOGtNc3FmMHoxcmhqb19hVzJkcHZ0NWtGYjhqVF9YZVYzVXNKOXU1bktpajFhUkIwYTNIZ1ZveWh4Y01FQkxtSzhveGhCVVdVMUhOUElhUDQxWjg5eU9XRGl2MUxXRGpDVjhIRUh5UkNWdFNFUUJZNlM3WkJGemRKZlc3VjFR?oc=5",
+      "source": "Gazeta do Povo",
+      "published": "Tue, 01 Sep 2026 00:15:00 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Shein abre capital e pressiona varejo brasileiro em crise - Tribuna do Paraná",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPWVJ0cnlfRzVBc0sxTHVYdnpuYXJETURsUmMzeHJMcmUtRUVsa01POEZBTE5wZkRRLWNZRjNIZ2FmRWNSS2doV0FQeDJLOWdteU1IbDFvLUNDNjJWbE15RVR5c3FPTHEta1lOcFhQeFU3UlBzQ1puTXhubHh5U3JuVFJ2TEthV2RPUGNCNjl4Wmc5ZzFhcEpNQk5OREpzZ1ZsbHRYS0NkXzPSAa4BQVVfeXFMUG43QUk0SVRmRi1SMmN1ZzVrZ25tRWZxemVWMEVPZ0p5dGNOTnpfcnBtbE1sbk44bTJBbWlLdE5UVEx0aTNKcUxXc1F4T0l3dGxGR0ZVMDAtZ1pGRkNybXA0cEh2bHRRY2RtaUQ2WDl2Ty04M1FScUEzSGJtWEttNW9RMWFWOFNReUVDSEloV0hDZDAtanoyUnNhdDh6YlhpWnd3djRvNlJVUkw2R0lB?oc=5",
+      "source": "Tribuna do Paraná",
+      "published": "Tue, 01 Sep 2026 03:07:00 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Crise leva gigantes do varejo à recuperação judicial - RADAR DIGITAL BRASÍLIA",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQU2hUMndHZ0pPb2g3anl6VWd1ZEVhWlI1Q0tpSHk1bkhLejhVb2ZYTkdKdlZUdEYzclE0RThvVmRpbU9GZkxoeUt4azg0ZzNxcFhqYnR3RGNvWHNxYmJCUXVBOWMwek1JX1owckM2WTU4eG9TdldCemNkeXlIQWFFc1FqZnRCNlp1S3hPUXBJYjNtckRnTGJrME42Tlh5NHF0S1RnS0VsNnNLbHFXOTB6SVVmbWxabXZUQVlNWE1lT08?oc=5",
+      "source": "RADAR DIGITAL BRASÍLIA",
+      "published": "Tue, 01 Sep 2026 15:19:37 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Entenda como a taxa das blusinhas, que pode ser derrubada nesta terça, afeta o varejo - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPMk5kYzJ4QnVQS2I5VjE4STlPYXMxaFNyWWFrdlpIamdpUGQ2MTBub0dPeGhET3lId18wTklOUXc5cVhqa2g4TmhqU2dDRjJxU2g3bVNVMmdmR0MyTmhZYlpiSnZfMWdkT09La19GUjUzdUhPU2cxSk9uVVJBR1l6OEVrQkl6eVpnOUZveTRwUDBPbVE0U3BwSTVjcWh3ZzNNSWdUX1ZyRTB1MHVIb2N6U042Vl9zR0FIU2kwaGdVbFBfT1NYOFJBRE13Z3ppYXB5?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Tue, 01 Sep 2026 07:30:00 GMT"
+    }
+  ],
+  "generated_at": "2026-09-01T16:24:08.759159-03:00"
+}
