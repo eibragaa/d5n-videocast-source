@@ -1,0 +1,27 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-08-31",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-FranciscaNeural",
+  "output": "/root/repositorio/d5n-videocast-source/manha-conectada/audio/manha-conectada-2026-08-31.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/manha-conectada/roteiros/source-manha-2026-08-31.md",
+  "sha256": "351d043f542d5a544c433700db08c70ef10b1cb71770eb04a50cf628eff9f883",
+  "text_gate": {
+    "words": 889,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 312.3,
+    "size": 8931412,
+    "bit_rate": 192014,
+    "lufs": -16.97,
+    "true_peak_dbtp": -1.67,
+    "lra": 3.1
+  },
+  "sources": [],
+  "generated_at": "2026-08-31T00:00:00-03:00"
+}

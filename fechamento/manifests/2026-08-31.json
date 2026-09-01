@@ -1,0 +1,27 @@
+{
+  "program": "FECHAMENTO DO MERCADO",
+  "date": "2026-08-31",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/fechamento/audio/fechamento-2026-08-31.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/fechamento/roteiros/source-fechamento-2026-08-31.md",
+  "sha256": "46f893698bac4155c284085e0e1e5b85b3594d2c7540c7c5ee06e812a75cebce",
+  "text_gate": {
+    "words": 889,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 312.3,
+    "size": 8931412,
+    "bit_rate": 192014,
+    "lufs": -16.97,
+    "true_peak_dbtp": -1.67,
+    "lra": 3.1
+  },
+  "sources": [],
+  "generated_at": "2026-08-31T00:00:00-03:00"
+}

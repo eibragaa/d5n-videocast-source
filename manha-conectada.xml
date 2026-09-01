@@ -28,7 +28,7 @@
     <podcast:locked owner="eibragaa@gmail.com">no</podcast:locked>
     <podcast:guid>manha-conectada.d5n-daily.netlify.app</podcast:guid>
     <atom:link href="https://d5n-daily.netlify.app/manha-conectada.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Thu, 27 Aug 2026 11:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2026 11:00:00 -0300</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/manha-conectada-cover.jpg</url>
       <title>Manhã Conectada</title>
@@ -36,6 +36,22 @@
     </image>
     <copyright>© 2026 Drop Five News</copyright>
     <generator>D5N Pipeline — Manhã Conectada</generator>
+    <item>
+      <title>Manhã Conectada — 31/08/2026</title>
+      <itunes:title>Manhã Conectada — 31/08/2026</itunes:title>
+      <itunes:episode>15</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>05:12</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
+      <guid isPermaLink="false">manha-conectada-2026-08-31</guid>
+      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
+      <enclosure url="https://d5n-daily.netlify.app/manha-conectada/audio/manha-conectada-2026-08-31.mp3" length="1394981" type="audio/mpeg"/>
+      <pubDate>Mon, 31 Aug 2026 11:00:00 -0300</pubDate>
+      <description>Manhã Conectada de 31/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:12.</description>
+      <itunes:summary>Manhã Conectada de 31/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:12.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 31/08/2026</strong></p><p>Manhã Conectada de 31/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:12.</p><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>Manhã Conectada — 27/08/2026</title>
       <itunes:title>Manhã Conectada — 27/08/2026</itunes:title>
