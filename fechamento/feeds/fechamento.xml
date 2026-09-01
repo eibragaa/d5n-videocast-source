@@ -44,23 +44,23 @@
       <itunes:episode>4</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>09:20</itunes:duration>
+      <itunes:duration>07:32</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg"/>
       <guid isPermaLink="false">fechamento-2026-09-01</guid>
       <link>https://d5n-daily.netlify.app/#fechamento</link>
-      <enclosure url="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-09-01.mp3" length="13441610" type="audio/mpeg"/>
+      <enclosure url="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-09-01.mp3" length="10846710" type="audio/mpeg"/>
       <pubDate>Tue, 01 Sep 2026 17:30:00 -0300</pubDate>
-      <description>Fechamento do Mercado de 01/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 9:20.</description>
-      <itunes:summary>Fechamento do Mercado de 01/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 9:20.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Fechamento do Mercado • 01/09/2026</strong></p><p>Fechamento do Mercado de 01/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 9:20.</p><ul><li>Dólar vira para queda após abrir em alta, com exterior e dados no radar - InfoMoney</li><li>Fechamento (31/08) | Nove sessões no azul: Ibovespa fecha em alta de 1%; no mês, tem queda de 0,33% - InvesTalk</li><li>Dólar recua a R$ 5,18, mas fecha agosto em alta; Ibovespa avança - UOL Economia</li></ul><p><a href="https://d5n-daily.netlify.app/#fechamento">Ouça no site</a></p>]]></content:encoded>
+      <description>Fechamento do Mercado de 01/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:32.</description>
+      <itunes:summary>Fechamento do Mercado de 01/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:32.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Fechamento do Mercado • 01/09/2026</strong></p><p>Fechamento do Mercado de 01/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:32.</p><ul><li>Dólar Bolsa fechamento hoje 1 de setembro de 2026 - UOL Economia</li><li>Dólar vira para queda após abrir em alta, com exterior e dados no radar - InfoMoney</li><li>Fechamento (31/08) | Nove sessões no azul: Ibovespa fecha em alta de 1%; no mês, tem queda de 0,33% - InvesTalk</li></ul><p><a href="https://d5n-daily.netlify.app/#fechamento">Ouça no site</a></p>]]></content:encoded>
   <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-09-01.mp3">
   <psc:chapters version="2.2">
     <psc:chapter start="00:00" title="Abertura"/>
-    <psc:chapter start="01:33" title="Radar Mercado"/>
-    <psc:chapter start="03:06" title="Dólar"/>
-    <psc:chapter start="04:40" title="Bolsas"/>
-    <psc:chapter start="06:13" title="Empresas"/>
-    <psc:chapter start="07:46" title="Encerramento"/>
+    <psc:chapter start="01:15" title="Radar Mercado"/>
+    <psc:chapter start="02:30" title="Dólar"/>
+    <psc:chapter start="03:46" title="Bolsas"/>
+    <psc:chapter start="05:01" title="Empresas"/>
+    <psc:chapter start="06:16" title="Encerramento"/>
   </psc:chapters>
   </podcast:chapters>
     </item>

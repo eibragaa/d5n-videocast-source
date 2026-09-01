@@ -455,8 +455,8 @@ def main() -> int:
     text_gate = validate_text(script, day)
     synthesize(script, voice)
     voice_metrics = probe(voice)
-    if not 350 <= float(voice_metrics["duration"]) <= 750:
-        raise RuntimeError(f"duração da voz fora da faixa: {voice_metrics['duration']:.1f}s (esperado 350-750s)")
+    if not 350 <= float(voice_metrics["duration"]) <= 650:
+        raise RuntimeError(f"duração da voz fora da faixa: {voice_metrics['duration']:.1f}s (esperado 350-650s)")
 
     mixer = SCRIPT_DIR / "fechamento_mixer.py"
     proc = run([sys.executable, str(mixer), "--voz", str(voice), "--output", str(output)], timeout=600)
