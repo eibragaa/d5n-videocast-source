@@ -120,7 +120,7 @@ def main() -> int:
                 "[0:a][key]sidechaincompress="
                 "threshold=0.018:ratio=8:attack=15:release=320[ducked];"
                 f"[ducked][voice]amix=inputs=2:normalize=0,"
-                f"afade=t=out:st={fade_start:.3f}:d=1.0[out]"
+                f"loudnorm=I=-17:TP=-1.5:LRA=11:linear=true[out]"
             ),
             "-map", "[out]",
             "-ar", "44100", "-ac", "1", "-c:a", "libmp3lame", "-b:a", "192k", str(output),
