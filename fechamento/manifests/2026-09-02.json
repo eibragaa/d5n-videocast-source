@@ -1,0 +1,196 @@
+{
+  "program": "FECHAMENTO DO MERCADO",
+  "date": "2026-09-02",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/fechamento/audio/fechamento-2026-09-02.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/fechamento/roteiros/source-fechamento-2026-09-02.md",
+  "sha256": "c2ccae0b83920e781a70ea2e62e3c15749361ea4ec737966ca992cfb9363b494",
+  "text_gate": {
+    "words": 1072,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 407.275102,
+    "size": 9775272,
+    "bit_rate": 192013,
+    "lufs": -18.03,
+    "true_peak_dbtp": -1.72,
+    "lra": 2.9
+  },
+  "sources": [
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa Hoje Ao Vivo: Bolsa dispara 3%, aos 186 mil, com nova pesquisa eleitoral - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQa2hmTTE3ak5sUzhjYXhnbTZkWkdVZjhuUHJlSV9tdFp0WUpsWmhZSTRZV1VuTV84TGpGcHQwSEdYcHhFUi01LTVvQXV4emk1TVROUEZXYUJ4QnBUVDJKNzZfbHZMbm1BTEtrZF9rempFRlFOaWJsbGJuZ09JMWQxQ3N0dndsSDVKRjJhdkg5Yw?oc=5",
+      "source": "InfoMoney",
+      "published": "Wed, 02 Sep 2026 16:23:11 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa dispara 1,30% e encosta nos 180 mil pontos com Petrobras (PETR4) e eleição no radar - suno.com.br",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNZGw0SFJOb25WZWFNSi01RWFobFJHT3VJYmtmZjhJWkRzRDdCRkQxdFUtcnFocTg2cHgwSHlsekhrR2pBNjBldWdaTWFGMkRxZUtQY2Rmb001Mmlub2RUQ3V6c3ZUOGI1TTV1VG1fWkdfeWR1Q1EtY3ZLb2VucnN6SlpWanZTeWNObXpqY2d30gGTAUFVX3lxTE9wekdncC1KN29acmxxSEtQTGhIOUt3SkN2YU9PTlhkRFllR1M1enR5cHJMa1BpWDBiRXAwMnpCMVdObWVKbkxJYkw3WDlUU1NPc3BuVjVEanl5QXRoSmFPbmtVNEJNNFI5OUdxQURvMG1FcWtPTFdoM1h2am03bWMxMkVZYzdKUG5GVGFydmRXRGtKQQ?oc=5",
+      "source": "suno.com.br",
+      "published": "Tue, 01 Sep 2026 21:35:07 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Dólar hoje recua a R$ 5,10 após pesquisa indicar disputa apertada pela Presidência - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNYkpIQXg5Y3I3YldXdER1bEprbFZLVHEycUtTU0l5QjdtdHdKVkhiRVJ3aC1ZWFhTcHl6djRsQ1B6NllRSUtfRFRmOVZDY1BwVmlOVFhvWC1TdXhUak5HbkJZTnc1RVFadUdtbDQyc2x3NkNpMEo0MDVoYkhOczc4T1FOQm8yX3BhSkMxNW1EZm5JUFNlUzJPbG5hNXbSAaIBQVVfeXFMTlYtcl9jVHJtMExjdEdEYUZFX0FjMjcxYy1KelhzVTVETmt4eGtBbExQd2U3d3E0MzVmSEN3TEpEVTU0bFFBRERoRFhWbU1wSGpsTUFNZnMteC0wOUktZXA5S2tnd1NISlZzMDF1SkpoaGg1eEk4dTZ1bl8wX1JHV1F6NU51b21DYkswSG1jcXJRQzJfSlp1Uk5HVzlBNmJTR1hR?oc=5",
+      "source": "InfoMoney",
+      "published": "Wed, 02 Sep 2026 15:28:46 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Fechamento do mercado financeiro | Diário do Grande ABC - Notícias e informações - Diário do Grande ABC",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE02c25uT2hLRm9LR0FsemU1elNzVlo3RW1Lallxdklra1l5UzAtalh6RXZfa1QySEYxc2VFYkhEUEpJVkk5cHpsSFV4ZUozNXY1bFFQNXF3NENkTkF2YWwyWjBUWnN4Tjh3TnE3Qm4tdUtNS1d1NWFPdVNnaTNwZw?oc=5",
+      "source": "Diário do Grande ABC",
+      "published": "Tue, 01 Sep 2026 21:32:00 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa Futuro amplia ganhos da véspera; política e guerra no Irã seguem em foco - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxORGhHZDgtX2NvUEtKWml3M1pwS2hBcFl0RGtkaXBzZ0ZTM3lUbnBGdGdTQ3Rfa1lnekpxMzBGejdjX3g2VklwUi1tMkktYUtkQ0JLRG91X0RaanJvdXF4eXlHMHZWeVowZlh6OHVuMXg2Z0JUZW5OVnZHQ2ltelZUTWgyd2hOY1UtVXJlN001YlFtTTR2VFhHSHVkRXRpcWhwM0tZVVNUZDhVajRONlZoZUd2SnA4Q2RJQXNlYVdLSnTSAcABQVVfeXFMTkRoR2Q4LV9jb1BLSlppdzNacEtoQXBZdERrZGlwc2dGUzN5VG5wRnRnU0N0X2tZZ3pKcTMwRno3Y194NlZJcFItbTJJLWFLZENCS0RvdV9EWmpyb3VxeHl5RzB2VnlaMGZYejh1bjF4NmdCVGVuTlZ2R0NpbXpWVE1oMndoTmNVLVVyZTdNNWJRbU00dlRYR0h1ZEV0aXFocDNLWVVTVGQ4VWo0TjZWaGVHdkpwOENkSUFzZWFXS0p0?oc=5",
+      "source": "InfoMoney",
+      "published": "Wed, 02 Sep 2026 12:16:52 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar hoje: siga ao vivo o valor da cotação - GZH",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQRzk1SkFSZnhia0RoNXlkMjBiVTlxWEpPRFM1bVNRSmZ6YlBqbmc4V3JzVlBLemRkVVN6YTdjRnFkcExJQW9oNkZ3MXJUb0lFXzZ6ZkRuTXRfckNkZW1PVlJadnJ2TW5iWkVSRFlEc3p6MTN1VVRjLWQxcWRmT3Nsb1RHdjFlWVR1MlUxXy11OGlZcll3YzdOOF9oZkNPZmhFWm1ONl9IYTlIbnQybzdYaEN2OTd0cWVWZmpIUkp0UE5hdGlBTGc?oc=5",
+      "source": "GZH",
+      "published": "Wed, 02 Sep 2026 18:00:00 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar à vista ronda a estabilidade, em linha com tendência global, antes de pesquisa eleitoral - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQeDA4TDFYV0dUdTFfY2pQa2Y5SHpmaUNtSkhmVzVITDVrQTJKZ0hlSzZkdDk1UUM0NFFQZ3NiczI1OXJhbWdNNnNlSUNVZjUzZEZRMlgxRGVXSkFCM21ZNEw3ejJHT08tcVhDRjNNNWVZc1FtYWNkRmttNHptRnZ6SDBESG02dkVEQ1JIQXhMTWY0LXE0X1Q1WnBRYWtHLWplMlNWUG5nRU8xV3YzbUZsSjRtYTdTbnRIYk1oS0gtc0twNVRiNDJEdjZueklFVllpVVlIM0luejNhbl9jYmJuYUtfeFXSAfMBQVVfeXFMT25TUWNGSUNoMnFBU19GN1pqaXRGVGlhVElBSXdnaDhLOVNmX01vNjUtVFJpVmlWWDZWMlpCOTdjVklVb0FFTHh6am04UGlKZndQaHV2UUFjb19heVVMcnFGM1E2SVJCUFdBdnR6ODc4VGpvZmdhU1RraE5MLW5ZMFV1UlE1WG53OUtsNllVSGx4QmVvSjAyaEI0czdPbUNUYnRaeGd5NlRYamxycEY1aGhjbWxVR0FQdUhtS0NNbGp0SnhSWW8xci1Ld0QzRndkSXNqQmduanZoSXRFS3lLM1VJTS1GUWFtX3lVdGR6d3ptNy1z?oc=5",
+      "source": "Valor Econômico",
+      "published": "Wed, 02 Sep 2026 12:40:35 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Ouro despenca ao menor nível em 3 semanas com alta do dólar, petróleo e juros nos EUA - ADVFN",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOUlN2bzNrczc1YzBIVGpkVXowZ2RFai1NNDA3YlMyclBXeV9jd1ZvWi1idnVvbWNsZVlSUHhQemd2OHFXSGFHd1RweDFRWFhzUEY2c3I4eFRaalYtSVJFV3lSLWxVcnBiLXplRVZIZUN0djFaN18tdVA5TmUwemU3MXhHb0xyNUg2c1VhaVZfaFVWSDU1ekE?oc=5",
+      "source": "ADVFN",
+      "published": "Wed, 02 Sep 2026 10:52:54 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar em setembro: o que esperar da moeda e até onde pode ir - Acia Araçatuba",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQVWJBa2dLMGk0alM2VW5LMVI3RlRwUGtmTy1nSmZsdmZ5MjVDcFBsUDJsRU53NnNoTVA4ZlYxVDA0SDJpN0dHeTBOdm5INmdlUWNHS2RKVV9NaVctWGJMSzJINkJuZ2NQN0hCandfSVQ1Wm9XNHdLOTBGemhaYjZqdlB0N1o?oc=5",
+      "source": "Acia Araçatuba",
+      "published": "Wed, 02 Sep 2026 07:07:13 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Só uma carteira bate o Ibovespa em agosto após saída de R$ 18,5 bilhões estrangeiros - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPYzd3QW1Ld2hkZlFsMDNSa1ZqekVEV0V0ZjJ1aDYtbURFLWV4cVk5VHhFSVJGUkFzZm9sQ2RabDBtVTAtdXNSazh2b2FaWTMzUlpGWW8tRDF0dXpuenBaZEZMQldOUzdFblBaX2w4blpuM2g0VjZkbTJ6M0RzMHY3RmNTbGJ0R25ITG9hanY0SldDb1lVNHBXT0ROVl9UUV9QQkxTZEdka2ZncGZpaFNWVERLVHZleFBtZk5nTEhJOXZYMGxkRkc2NmViWlBfMFI2b2fSAdcBQVVfeXFMUDRKN0dNVkFNd0s4THJoWkNZclVXRHhiblhRVUxoSnlUdE1uUUg5UjRBdXBzN0VWRlk2X1FLVHZzS2FkRVBLMzBKdWZaZ0djZXJYVFJBamg4MlB5dUN5MV9vUFFlN3Ytd0k2RkREeU1FTVhteXBiLU96QmpySG9ONHpQNVk2dDhIbi1sUkhQSDAxcjYzUnc2ay1pbFFNaXVRbkdXTFlCYk5RRGVYUHQtTWc3ZVBtREpNSXVvQ183bk4yMDR6NERuU1FCWkw2MmhLcmN6TThLN0k?oc=5",
+      "source": "Estadão",
+      "published": "Wed, 02 Sep 2026 15:03:58 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Ibovespa salta 3% com foco em disputa eleitoral mais acirrada - Terra",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPaEM4eEE2TDAwdkMwaHN5QWtSZG44NVljZ0tvRzJJZU9raW5PZ1dySzRLb2RMN0MwSlFaV3pUQkRSeHBBUWtHVUIwT19pQldmb3FVcm1TNmRPS2d0cmZNV3BxWGdLZ0pkYzU5NVBaNGpfZmROeGRDNXZNUGtZaE1GZTY3VWlvelJabFh3NWFPc1VJM3RhUUpKYzJQUFBBWnNBVHJLRGdib0h6UFRORXZ3TV9GV0tNTXRMNHBtNmxjVFMxMkJnemR5MGNpeXNieFZZZDB3S0hVQQ?oc=5",
+      "source": "Terra",
+      "published": "Wed, 02 Sep 2026 13:09:00 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "‘Trade eleições’ leva Ibovespa a se aproximar dos 180 mil pontos - Diário do Comércio",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBuYVVMTGphcjZJeE9QOERVUUIxWlJKTDhFemhsa1gtV3lMLXl4S1NmT0pOQ2xBdDhldW5zeG1seGZsU0ZYOW5FMHAzaTlKaWNNUnNRUk5EMlFPUENuNmgyM2tUZm1RdGNXTVdvZV9JWlZYVFk?oc=5",
+      "source": "Diário do Comércio",
+      "published": "Tue, 01 Sep 2026 21:38:00 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Gestores voltam à Bolsa, mas evitam ações mais arriscadas; veja as preferidas - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNblc1cHN6LXNPaVExd2MtZ0IwWG9fWE4zMllUUUtYRWR3TUlxNDRPNmc1RjVHYnUyTVlRUmJrNkFwaGpfTldmTmJmQUpYOHFwTFdKOVZ0VktfR095cVp2cXBoQWhicUVkMTl1ZlU2UHh2VlpXMGp2dV9HUzNxcWtpRFN3clVlRUpQX1ZxbFRZY0hBeHRtckU1RUt5X3RxSHVzcXRnUjVQcEVXcjZ2OWh2NmlyTjBuVkQwbEdFU29zRDhaNTV4aXBNWmtHa3IwTmxvNEgyUtIB2gFBVV95cUxQUzZuVDE0cE5VSGFSc0ZpYTJtT2FYbzFzaWlxaEY5QnhHWXpMYks2TVd0VDNEQ3FORjFYMjloSURlaTN6b2RmNkFrVWU2cDFqcEZjLXNOSHJHOUstcEllQ0Y0ckkwdnJPWWFja0xIakk4aGZuY0owQUhld1hkOVlSOVJoM01pcF9RX3Jwb0pSVW9hTklxN2hnSmtleUQxcGZoR0t5MDJIdU9yUFlQS2xicjNlbm9aOHlXdmZndzRaeUFtd1ZSTnJHbkFsNnUtY1hQRG9BWlEtUGdiQQ?oc=5",
+      "source": "Estadão",
+      "published": "Tue, 01 Sep 2026 20:34:00 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Ibovespa fecha em alta de 1,30% com fluxo externo - SpaceMoney",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPTEVSOEZ2RW1Fb24xQzZQZWlEcEp6RXJfUWJhNVpNY29qdGpldHhqbWFoaHZvT2RXLTBrU1RaLUtjU2xXbUZ3YnNPVWlmdk5CQ040UDBsWnJSNy1UdzRwZ2hCR2t5WTRDeHRzMVB6ODh6blZmUEtLcDJsTGMzVkV3aHFKWVBlNmpvanJCMklodmg0VHpYSjVz?oc=5",
+      "source": "SpaceMoney",
+      "published": "Tue, 01 Sep 2026 22:12:49 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Quarta-feira, 2/9/2026 - Notícias sobre o mercado financeiro, com Álvaro Bandeira - Jornal do Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPTVdzd3oxbjJhVkpacENFSk9uTXRVM2NGQm1Xc2JLeVZhRVhWOEJNNkF2c3J3Vjh3ZlJFd0J6ZVZIZjVYZzVjZTJhME5kWXdsRGhPWEFhbU9BMjVncG9nNWpseHB3YzZNUFVMWVpDZnI0Ym40Q2RvQWxiM2RHVjk1bnpnR0l3dUZnTUdWckg3VjQtd3ZIaU1mNkthXzl0QU9LRzB3R1RiMVNZdlVLTWxlZllLQTZDUEhCbTh5dXNpNjQtVjhGaVdHTg?oc=5",
+      "source": "Jornal do Brasil",
+      "published": "Wed, 02 Sep 2026 14:39:00 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Gazeta de Limeira - Gazeta de Limeira",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOVmNHUnM0U1pTZzY0aEw3U0hWd3VDWFJUdHNDX2J1VjIyMl9wTlB3T2dyR0VtVlgza2hVMEx6a1Zfc21BejFGMFI0NkNjT0tzcjFmd0pCLVA5MkRvdTVuN3hhc1ZCXzgtaklWQTBDTnNrdDdqaVZQYTBqLUpyN21iYV9ZTEZqTmw5OWkwVFhGY3gwZmRhSDR3S0x0Z3NBbFlqMzJoZlhWTzR5dHphTHhXUFBpbWxQZlUxSlhmQTJrRVVtaDVf?oc=5",
+      "source": "Gazeta de Limeira",
+      "published": "Wed, 02 Sep 2026 14:26:30 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Banco Central aponta maiores riscos do setor financeiro; veja quais são - UOL Economia",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQbnoyTG1iRndidGxrVHA5RXRYSi05VjZzVk5udkR5RWR2dTJFTmU0VFU1bjNRdmlKRlFWaWNKM2JzLUhoWDVMTWdiOGZsalRfbnJwMEU1RFY2Y2xiZkNrREwzczJNMGp0aDFGZlY0eW9VRmZBUktQN2llQ01SdHoxX0JaczlhQngxOXRlSC1nZGZuSVBBdlRxTnZrc0hGeUI3Y0VwQTBiQU8zbmJ6ejhNU0hIZmpmQ1VyV0QtSk5B?oc=5",
+      "source": "UOL Economia",
+      "published": "Wed, 02 Sep 2026 12:00:08 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Mercados Preditivos no Brasil: uma oportunidade adormecida - Capital Aberto",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOekEwZ0FsMDM1YTZ2Y3JfWE1tZW9wcXh5NTIzMWhIQXlRUUlVXzFibFlTbm5XNlJvZXNEcWVoTUs2R0FJOUg1M1RwWFhhU1lqNmJMNVhNUHpjYzVMZVhPVjhGY081ZHl2SjhCM1JhdG5lQlROYklpYUowSTdaLTNHemdyUXgxcmViVEhZYzV6cENjVFluSWxNb3I1RFliQURuY1VQX05sbHlDX1pNTzNDcWtOdG51eWdwU3BZdEtVejFfZVFqWUxlT0pheEdHdHdQUld3?oc=5",
+      "source": "Capital Aberto",
+      "published": "Wed, 02 Sep 2026 02:27:00 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "União Europeia endurece regra para carne bovina e Brasil corre contra o tempo para manter exportações - InvestNews",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNQ25wdm4zYWxPME00WVZ0NDVYX0NqM3ZzTWVlTFVPNC1RcWVGMFdvd3FETjdhQ0szdVVwZ3JqQkRERHk3c0xrLWdWNGFuVXczSG5vVVNMU191cmI2TGNjMEwweXJlb3UxYlVNdVB2WDNnYUpfMDlmRFNFWU11MVI1VFhBYVF4M3lFLWRrdTF0N0ZzSlFoMXNfb1pCVks3SExUeThKcDRUcDUyaHJ6eTNaV1U2N0lhNmNZM0gweWJJRWI0d053OHludzZyYU43dkZwbmlQaXpGM3LSAdgBQVVfeXFMTUNucHZuM2FsTzBNNFlWdDQ1WF9DajN2c01lZUxVTzQtUXFlRjBXb3dxRE43YUNLM3VVcGdyakJERER5N3NMay1nVjRhblV3M0hub1VTTFNfdXJiNkxjYzBMMHlyZW91MWJVTXVQdlgzZ2FKXzA5ZkRTRVlNdTFSNVRYQWFReDN5RS1ka3UxdDdGc0pRaDFzX29aQlZLN0hMVHk4SnA0VHA1MmhyenkzWldVNjdJYTZjWTNIMHliSUViNHdOdzh5bnc2cmFON3ZGcG5pUGl6RjNy?oc=5",
+      "source": "InvestNews",
+      "published": "Wed, 02 Sep 2026 12:58:53 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Varejo vende mais, mas fecha lojas e corta empregos: entenda a crise no Brasil | SEGS Portal Nacional de... - SEGS Portal Nacional",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQT2dSeGhwNHN4Ui13cWE4dXg4VDE1S09iMHlIVUZiTDI2WEEwRXVNd2pGaXRFUmhZb0NGaUN1OEhzdEk0amtqR3NxVTBnUlVjTVBvZFZsNk04dVhUaDdhcDZrUk9QZ0llNlpsa3F3bXFrS1d5Q3ozUk1XWUpkZTUzRDRMWXRWNnlSQ1JvN0RTSk1Nc0JPYVpveEFoclpYY19iRk5VS2tzSGhGLWlCOGlaZXVNcTlNZ9IBuwFBVV95cUxPT3pYOG5WU2FKVEV4X25EbU1qOERYVEZQNHpBQXg1SWNGOENvWElhczdZbGxIbXJGR1c4ajNHbDJPeDdkOTVsZGRROVhIQzlGYmhGd1VCWHpuTXRvZkMtSGRBUXJqcXNpdUFQdU51SWdtS25xYnRydjhzdGxXQklUS2RMakFLTzF1Wk8wQjNUaUZBOEhUVGNlZmMyN0tvN1pxUEJqM1VQOWE2ajdQeW1OVnJ6LUZlcWQwTXlZ?oc=5",
+      "source": "SEGS Portal Nacional",
+      "published": "Wed, 02 Sep 2026 17:22:36 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "A crise está ensinando o varejo a perder menos - Eletrolar News",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNcW1vbVN3UWo4UEVJdTVwWkR1NG1tZFUzVUs1RzJNT0N5NUZ0V3MxMktNVzFkanJHRlRXeEVVUm1EZHBoLXFscWJVVHpRNTF0QXZyN3NFZzYtQWVmTzEyTkMwSTM3akpicmNBbVlyT0JWRDhBRUQ5RWdhOEFDQ0xYY25n?oc=5",
+      "source": "Eletrolar News",
+      "published": "Wed, 02 Sep 2026 13:10:07 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Por que grandes varejistas estão entrando em recuperação judicial? - BPMoney",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPTEVoYlRiU1EwOHh0eld6N3daaVJiOEFNMkhYY2RmRUpycXlDcGtFRWJxU0txNW5EYUVUNC05OWJIMFhNZnltX08tUC1fOFN0b0xWYWZlV2VVemlYZFlHTllBTkg5OVl2RmZxSUczWlNqNm9RVm1hUFdjSG5aSVBmRVFVT1c3UWhVRGJrWklDWGxDNDExcjBTeDV0V2F6Rlk?oc=5",
+      "source": "BPMoney",
+      "published": "Wed, 02 Sep 2026 18:35:03 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Durigan: Juros são um problema, mas não podemos trazer elementos políticos para confundir - Terra",
+      "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxQT0UtOXJvWkZWNFdzRmVOTzVzZmFPOWUyaExjYjItYjJlUU82cUJQU29SellMQzF4ZjFQOW43TmMzUkVOMVhmUTlUN0xGQVRFSkRtX1NFVmttSTVuRFBSdy1fZ0RReW5QN1VQckh6X2xVajdQcktTT1dNRGl6Zk9oS1hfLWFwdm5JVUtWS0VNc1JrRHVkOUd3R09nOWNBejJ2MUZLRTF1ZDkyd002a2pkaGduelphR256MWhTME9zYmhyQ24wTHB5VnVETXpPcHlSR1M0VWF2YWt1UW5qaFNuMGNXQjNNYklJTHJFVDNBaDBXY0JuX1pFc1p2dEN5V0pxNkJKRHI1dDJQV3kwNDFzbw?oc=5",
+      "source": "Terra",
+      "published": "Wed, 02 Sep 2026 01:16:00 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Durigan: Juros são um problema, mas não podemos trazer elementos políticos para confundir - Tribuna do Sertão",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNTllfdDFfVUpJU0hTTkN1T3FnRVRGOVBKZnJhM3UwbXg3RzhvSkl3a01zbGxLdFpNU0NSeVNrQUxLbkwtNERqalpqaDgycGdPaUFzLVJGVEpaQ1BMZnpfWGI0U3JGcHJfallIUWZlQjUxWjNRbzNkdXhXTkZRODFEb1ltdzZmR0R2ZWN0QmhMQXFlOXl0aEFQdTRDNEx0VEFQM2VQR1JHb21fcUI2SmV1bW1SbmwyY3VNTjVtaGZ4NEgwaDBfcEJjWDZ5VnI1enNtRzFsc2JCSUlELWdBSndJUDh4aw?oc=5",
+      "source": "Tribuna do Sertão",
+      "published": "Wed, 02 Sep 2026 01:11:00 GMT"
+    }
+  ],
+  "generated_at": "2026-09-02T17:35:20.870593-03:00"
+}
