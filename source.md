@@ -1,5 +1,5 @@
 # DROP FIVE NEWS - Boletim Diario
-## Segunda-feira, 31 de Agosto de 2026
+## Quarta-feira, 2 de Setembro de 2026
 
 INSTRUCOES PARA APRESENTACAO (LEIA ANTES DE GRAVAR):
 - Idioma: portugues brasileiro (NAO use portugues de Portugal).
@@ -18,7 +18,7 @@ INSTRUCOES PARA APRESENTACAO (LEIA ANTES DE GRAVAR):
 
 
 INTRO:
-Bom dia. Drop Five News, com Thalita. Sejam bem-vindos ao boletim desta Segunda-feira, 31 de Agosto de 2026. Vamos aos principais acontecimentos do dia, organizados em quatro blocos.
+Bom dia. Drop Five News, com Thalita. Sejam bem-vindos ao boletim desta Quarta-feira, 2 de Setembro de 2026. Vamos aos principais acontecimentos do dia, organizados em quatro blocos.
 
 ---
 
