@@ -1,0 +1,203 @@
+{
+  "program": "FECHAMENTO DO MERCADO",
+  "date": "2026-09-03",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/fechamento/audio/fechamento-2026-09-03.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/fechamento/roteiros/source-fechamento-2026-09-03.md",
+  "sha256": "e6a33d50321dd3711d16bd057531ddb1b94746a16056dfe996af26424c4ff540",
+  "text_gate": {
+    "words": 1156,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 434.102857,
+    "size": 10419138,
+    "bit_rate": 192012,
+    "lufs": -18.03,
+    "true_peak_dbtp": -1.71,
+    "lra": 2.9
+  },
+  "sources": [
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa anda de lado, mas perde sequência de altas, em dia de correção; Vale cai - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPOHJtR2thaUYxTUtRM05sZ3djalljWTVmdEMydWUxSFFvcUJ1dTlUbUR2UWRxUTFzZDF0ak80VzBPeGt1dW0xZkY3X2ltVU1CWm5NcTJUcVdYWG9sYUkxb0syZUVHajg5c3Y3b2tZRmlHejdIbm9oYks2WXdfOTh3a1ZrRWtVZmdpYzZBdzFlSQ?oc=5",
+      "source": "InfoMoney",
+      "published": "Thu, 03 Sep 2026 20:33:09 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Vale e Petrobras pesam e Ibovespa B3 fecha na estabilidade; dólar mantém os R$ 5,10 - Bora Investir",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNTFdiWGQtcU83TnVpUjhINmxqMERLWlJjTTZ3elBjUlN6dm5ZNHdRS0IycG9GLU1INXZmZU5XM1FBWTB2TVR3eGZZdWduZER3dFVtVUE1bmJ5RTY4aE53VTZqT2ZrVnk5dVJkNHBxbTd2VnlibkQxdVotY0xiVkUxVTZTNGU4d2pqMWh1b3RQQXlhQjZmZXluQjJzdE95eE9LclVJb1FzV0tSUjlOejBFbDMtWkNQcHd2cVRuN1MtQWlaWE85eHNuZg?oc=5",
+      "source": "Bora Investir",
+      "published": "Thu, 03 Sep 2026 21:02:00 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa fecha estável com realização de lucros após rali; CSN sobe 6,7% - Bloomberg Línea Brasil",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQLURiYVU0YjZpT3JBZGp3YnFUZjVLVmhXOWRrcF8wM1FUcmt2d2JQVEFyQnpVdlQ0RFFfeVJHc29LbFBMTHpHdVFtTWFwQzhZcjBabmNJMjF4RVBoYzJUbHQyTUc4bExVeVJrMTlqdUNGb3Vqem5Zakl2Z09nSDdNOHBfOUhnYUhCZVphYmVjb202bmpUM0Y0RmZLQndjd0E1TndnX0FIVE9jWFhYR3RnellXNUtpQmdKRUxncVpyalIyZnJrMVFr0gHHAUFVX3lxTFAtRGJhVTRiNmlPckFkandicVRmNUtWaFc5ZGtwXzAzUVRya3Z3YlBUQXJCelV2VDREUV95Ukdzb0tsUExMekd1UW1NYXBDOFlyMFpuY0kyMXhFUGhjMlRsdDJNRzhsTFV5UmsxOWp1Q0ZvdWp6bllqSXZnT2dIN004cF85SGdhSEJlWmFiZWNvbTZualQzRjRGZktCd2N3QTVOd2dfQUhUT2NYWFhHdGd6WVc1S2lCZ0pFTGdxWnJqUjJmcmsxUWs?oc=5",
+      "source": "Bloomberg Línea Brasil",
+      "published": "Thu, 03 Sep 2026 17:51:00 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa passa por realização de lucros e termina estável após subir por 11 pregões seguidos - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNdWxCb0NLdVdOaGJzU0NqNUs0UUduNHNNRnYtNVdualhwVzBiemdjVjljZkxEcUZ5Mks3UFlDa2VTLU04SzdRb3Z1MXQ2RVV1QWpBbVpiekI5QkNhcnB3cHV1Tm02cGRadVlYV2FxNGpDSWZ5Q3JsZzhtXzZ0VTR0QkZ3OFMwcFF3cFJ0MHFwaVJxckFTQnhvSXJGRk54cllGQ05keGNmdFNDVkVxcmxNcV92cVVUekxNTkJLZUpDRXYzUnZ4QXI0N1U3R0VNM25mb0hZZHNkZHRhVDQ0V2lEdkF2enhCTXFpcVY3SXQ2a3N6R1HSAfMBQVVfeXFMTXVsQm9DS3VXTmhic1NDajVLNFFHbjRzTUZ2LTVXbmpYcFcwYnpnY1Y5Y2ZMRHFGeTJLN1BZQ2tlUy1NOEs3UW92dTF0NkVVdUFqQW1aYnpCOUJDYXJwd3B1dU5tNnBkWnVZWFdhcTRqQ0lmeUNybGc4bV82dFU0dEJGdzhTMHBRd3BSdDBxcGlScXJBU0J4b0lyRkZOeHJZRkNOZHhjZnRTQ1ZFcXJsTXFfdnFVVHpMTU5CS2VKQ0V2M1J2eEFyNDdVN0dFTTNuZm9IWWRzZGR0YVQ0NFdpRHZBdnp4Qk1xaXFWN0l0NmtzekdR?oc=5",
+      "source": "Valor Econômico",
+      "published": "Thu, 03 Sep 2026 20:24:48 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Fechamento do Mercado Financeiro de Hoje - Tribuna do Agreste",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQenZtek9XZmcwWURSYXVXZjdGcHdkNHRtcVl1d3dUZnpVM3lZenlZejlYT2lTTmxwc1FhVDQzaUg1LTU3YlRRVlh2YkU2OEs2b2RVTG1RQ19CUHY2ZklVZjJfV3lJU200SlQtc3JfTWZUT2dzcWZHQXg4UEVMUDRteWtNOXJxMUFJbUw2MGFKRXRzWXQ5d1ZOck5VUGxSMnFTOHc?oc=5",
+      "source": "Tribuna do Agreste",
+      "published": "Thu, 03 Sep 2026 21:33:00 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar engata quarta queda seguida, com declarações do Fed e eleições no Brasil no radar - ADVFN",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxObmlHQWZvRVctWHZoNWRiV2Q4dFM3QU1CWlFKcWlGVjFxVGVlSjNnTDFRWUNiYWU5VW9PRzRvdzJzUXJtbUljT0dHNFZBTnZmX1pJeFozMjduc1drT2RXLV9BOUdIdUhxdVFaX2wyQ2x6RkVkVFp2X0JrZ05CV0tLWnZxcnJQQUZveFlKTGZ3T2dyLWtJS0c1SzhaQ1VDcE5ZbUVkTUExQkNCSDQ4VWMyMWFvWmkyeHBWZ3dqeEQtdw?oc=5",
+      "source": "ADVFN",
+      "published": "Thu, 03 Sep 2026 20:25:26 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Iene japonês sobe 2% e bate maior cotação contra o dólar, dando pistas de juros altos - Investidor10",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOUy1GQ09aUTBnWmlObVd1UkwwUmNxZWRtbUc3NVh1NHhLTmgzLWJDM29lSGlud0RIaVRYSTdQQXpDaDQwZWdDdDU2YW02bGVGcFBMZ3hldXJiYkc4bTRyaVpIcmMzTV9ROG8tbkdVek5MNkNGZER4Q3Q1REEzVVBTVzNlMmVJZXkzY3FSRUdjSEsyLUJzMFJyV2VHNDg4VnFIQWlJamFUNUVmcjNNRXNhSEU2a0oxNFdXOTZqNHk0TFVUb1pWeFFBM3o1X3jSAcwBQVVfeXFMTlMtRkNPWlEwZ1ppTm1XdVJMMFJjcWVkbW1HNzVYdTR4S05oMy1iQzNvZUhpbndESGlUWEk3UEF6Q2g0MGVnQ3Q1NmFtNmxlRnBQTGd4ZXVyYmJHOG00cmlaSHJjM01fUThvLW5HVXpOTDZDRmREeEN0NURBM1VQU1czZTJlSWV5M2NxUkVHY0hLMi1CczBScldlRzQ4OFZxSEFpSWphVDVFZnIzTUVzYUhFNmtKMTRXVzk2ajR5NExVVG9aVnhRQTN6NV94?oc=5",
+      "source": "Investidor10",
+      "published": "Thu, 03 Sep 2026 20:12:00 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar hoje: siga ao vivo o valor da cotação - GZH",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQUFrd3R1ajMtTDcwVDFXVUdZcl9jMzhDV25vUm1rbjA4djQ1dDJPSU5NNS1Fb25JZ29GQ29NSms5SWJ6VlNvRS1zNlBIUUlnTXV2Z19KdHFGMlBhak9lNml6dXl3cldwckZibk5wWFlHcTJkcFp6bUV0NDNVUHBlM3c5UVRXTjlFcGx6bndXV1hZeTE5SzlZaWM2MFpvUEQtQTNpRTVxbVlLVHYtdmdZWG41amdNSG10dUc1Q3RuV0ZwVUVCamc?oc=5",
+      "source": "GZH",
+      "published": "Thu, 03 Sep 2026 19:59:36 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar zera perdas da manhã e fecha acima dos R$5,10 - Notícias Agrícolas",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOWnhkcEJ0NFE4R1NYZENVQmdnVUVhS1o5RC1hcEh0OEhETTNrVTF6dENoMS1VY1FrYnBYUUstSnRIa3kyNTBfeGI5dzR5WVhyZ2MySktxQWp5U0ZCTDZNdEJfMUNfUXBfVFBKZERSQ2hsLXk3azV5dDVLWjV1akRGYTltSHdsSEpJdUhteC04QnN1RkluNmZyQTFyVXV5aUlTWVd6SEN0NGFTdDR2YUozcnRRWTJYSndEVjNKQ19mOG43VThKdURMNdIByAFBVV95cUxOWnhkcEJ0NFE4R1NYZENVQmdnVUVhS1o5RC1hcEh0OEhETTNrVTF6dENoMS1VY1FrYnBYUUstSnRIa3kyNTBfeGI5dzR5WVhyZ2MySktxQWp5U0ZCTDZNdEJfMUNfUXBfVFBKZERSQ2hsLXk3azV5dDVLWjV1akRGYTltSHdsSEpJdUhteC04QnN1RkluNmZyQTFyVXV5aUlTWVd6SEN0NGFTdDR2YUozcnRRWTJYSndEVjNKQ19mOG43VThKdURMNQ?oc=5",
+      "source": "Notícias Agrícolas",
+      "published": "Thu, 03 Sep 2026 20:34:33 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar cai e fecha a R$ 5,10 à espera de pesquisa eleitoral e de olho em dados dos EUA; Ibovespa recua - G1",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1ENUZBbWVtb01Qck1raUdzQl9YOEVpN1hDVV9hb05WTDdQRXBuUHZIYXdDUUxOZk9uU3YxUWh4S0tCZ1lnbGhPTmxldVdndk1Vc0JIcVA3ZHJiRmUzd3VmTlVUelJycEpya3dISHFiY21RaTJvU0phVdIBhwFBVV95cUxObkFGMzAzdHVrVzlQcjJTMkZ0b1I1VWVFUmNwQ2t3T3NGd0dmUC1raE5HT2J4bExURjBlSkdvZzBTNWV3ckUzX2pGSGxaNVN2bzBjXzF2TjE0V3ZRT0I4aFBiUm9CdDQ4QlVMTGhWVEk1ZFhVUzRQb1VGV3VIeFFPaFBMQnJpcms?oc=5",
+      "source": "G1",
+      "published": "Thu, 03 Sep 2026 12:00:15 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Gringo voltou à Bolsa? Locais já compram, mas estrangeiro ainda testa o terreno - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQNUNuYWZoMmFmby1uS3FVbmdpQ2lBY2h6dExaM0hSc0cyS2kxTzlTVFZOM2wyV0NDdFNLVUZxOWExT2MxWkdPWXhHSlNVZ2xuazFkdjM3czAtVVhBMGtJbXlDS3U1VjBRVXNoWTdSQlRYdUtnQ3dGWFFKdTFKemhGZ29UUDBlaU12RFRwQUdMQUxFWG8xM0VURDlQVFFSQTZfRUlPTjdUQ0xLOWpuYlV1XzhrWk5hVmfSAbwBQVVfeXFMTm5qNGIxS0xFcUpwdWFTWTFDTGFvdnJRUklQdjZIUUZBSHg0dnJyeEFoSDNraDY4YWNXTjdEOFlmcF9BU1VLYy1rTy1jS2ExME80RzRyLVB4cnZBNU82NlgwXzVFZ3FhVml5LXZhTWVFOUNaSVVLdlkzMXZiTmdiTS1xZUdHXzZVUk5YZDFPVk0tZkh4Z0lvcnU4NXBRcTNkUHhuTjRyUlVmenRzTThldG1UdUltMmlmcGhSU0E?oc=5",
+      "source": "InfoMoney",
+      "published": "Thu, 03 Sep 2026 19:21:27 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Dólar cai a R$ 5,09 e Ibovespa supera 188 mil pontos com fluxo estrangeiro e cenário político no radar - Portal do Agronegócio",
+      "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxQUEtoTzZDZ2xPelRzTEwxbENKMmp4WnBlNmhRLXByVG1HX2hhVlRZNW1sUEJCQWEwNVZ3MEg3NkVISFN5azY1MmJHbVl5VGdzcnVTZHlEQ2ZDSDdWLXdHMHdsRVI3dTJhVXk0Vi03S2duOG05djBYcTVUbm1Fa0prV3BNMzVGb1hOUVYxa0otOVVPQlhNbnNWQ1VQN3JsUUZodm02Q1NGNFdyd3RvQlRVNFRhektHRlFYRXpJU29QX1I0WUhCUXB1YjZXaW53dTlQZDNWRUlRQ1I3VTRTUVJlYUFtRnVITi1zTWd1ekVzV2FNUjJFSV9YTDRwU0tJamQwcnZ0bzlULTc?oc=5",
+      "source": "Portal do Agronegócio",
+      "published": "Thu, 03 Sep 2026 14:00:00 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Estrangeiros tiram R$ 18,1 bilhões da Bolsa em agosto, em mês mais negativo de 2026 - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPZnczWVpfbVM2aEYzS3g4S1REYkNzbjdNdXNWVEsxNnlvRXJHeDFfMHBmeHJfNHJXd2tvVTVjYWx3US1NRThJUjdwNElDRGVhc3lxNldib0FUT0dvRWZrSUJFdUM1RV9aalJXbEpIVW1TbDhUUlY3djhTZXdRdkczU0lGMjEyZm45aGxWdnNYMVExOGRjNkkzUXdYV3VPWU5KTGNPZThsNVc1dUtObXRUNE9mOWc0SFdkUmM00gHAAUFVX3lxTE5tUllxVDFiaEwxQjh3SndVcFFNWVI4Qnc1ZmExT0htcWc3V0lSRGtJWGdOZVdMWXhrSzRtMTFOR19xQlU3LWVUcTJmUExGV0ZIaVBEeFRrb1VwelA4cmJwcW9BTE1YSlZtZlp3OHY3SzNqNHdFMDdBVkpRamdJWmdJUUZaZlliSkw2MXlRTHh2dkMxYUs4RENFM2hwUUswOW1uTmRzYWNVQXpHVVNQMXFVUExqM0luVUw2X2ZmTHVwRA?oc=5",
+      "source": "InfoMoney",
+      "published": "Thu, 03 Sep 2026 14:23:16 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Estrangeiros tiram R$18,1 bi em investimentos da Bolsa em agosto - MundoBA",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPTHZPNVVBUlNOcS1uZ3Q0VVhnRExGcEp0aFZTU3hmdE9lV25UWGhRUUl2LW9GU0dQalRQWmtJQVJSOWUtUERRMGVqRi1rbDNJUm9FRVI2azI2LV8wUW5hbU44ME1Zb3pkRndCVm5ZWWFCTnhGTUxVbnlaMWFKZGtPV2cwbzhESGZnZzBHcXp5NFlCc09LanZTVUtYOA?oc=5",
+      "source": "MundoBA",
+      "published": "Thu, 03 Sep 2026 18:34:00 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Petrobras (PETR4) bate recorde na Bolsa e sobe 2,84% com fluxo estrangeiro - Guia do Investidor",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVXNKN0Jjdm1KbFpNNXVmSDBoZXdPcGU2WmU3Sk91MlpLUnplQUpaN0c4djJyTFNENGwxbFdGbkxldGpsUVBTZnNMZzhveExabkVPYVI5ZjdwVTZZc1RXN3EwNTJkSmFSUXpLazRNT1RjdUJKbDBveHN2VDVoR2pBZENBRGZWQkJfNFlfLWpBS1RnbUxhTkNtc2gxUDEtVWFXWWFtRXR1RUQ4Tmk5eTF4Ng?oc=5",
+      "source": "Guia do Investidor",
+      "published": "Thu, 03 Sep 2026 09:25:03 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Pesquisa eleitoral movimenta mercado financeiro no Brasil - Canal Rural",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQemVBNkluNG82c19ZS19oVXJRTkQzWjlXX0JvNXhsQm1JYndiSWhISkdfWWtLVDgtYTE2OHRwQlFibGZkX3lzV1dGN0prajRIZ0huVk9KckpPMV95ZDE3V1JIZEI4NTAzWE9weGluSVhXbEczVVRJQ2dETHVfd25vbmoxbHJuRFpMbW5QUkgwTVl0X0xoclpsNVZ5TGFsUQ?oc=5",
+      "source": "Canal Rural",
+      "published": "Thu, 03 Sep 2026 11:05:59 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "68% dos executivos do setor financeiro espera aceleração da economia brasileira, diz PwC - Exame",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPY1pVU3dPTGJaNE1EVWRoWmtKdkxhRlBocGFmOTI2QTZ4aDBBMWJHX0s0YU1Yb0NhSDJ6bkJVS1pob0R2eGtRUW95cDNmRGhKQTQwNi1xd2FiQlJEVFNHeVV1SlJqNTJ1TnRJemxudXp2VlRxYlBGaFdTWjBBdFNESXM2SFZ4ZFdlMHkzaGxRam5KZTRFRW1vaFUxVVVlSGN4WFdpTmVmNE92Y0JvVHRBZWVLTm4?oc=5",
+      "source": "Exame",
+      "published": "Thu, 03 Sep 2026 19:59:08 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Investimentos financeiros de pessoas físicas cresceram 6,4% - Monitor Mercantil",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQVzgtT0h5eER5OUZZWTlCTGJTX3hjYU5WLVlCQ2w2cWUySk1fZVBHd2djMEZVVXNVcmpPRDBkYUlvT0VuT2laLWNmV0hNQktja3ZaOTFxYTdFQmU2ODJNdWN0WWRENG0wRFdYamVzbHJUX1lpZWhjZUlRQnYzdl9LMWZIMkl1cjNoNXZOUEMtTTV0VGVn?oc=5",
+      "source": "Monitor Mercantil",
+      "published": "Thu, 03 Sep 2026 21:45:43 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Ibovespa interrompe série de altas e cede puxado por Vale; dólar sobe - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPUHl6U1lEUS1VN20zeFpjTG00S0ZvSFlFaHVtZ3JMN05HTWJsU3VqVzVIV29mRy0xcmFYanA3MWlwZ2ozZU84eHJaRXhGWlN4SE1vWGdsMEo4UGZnVnBqT203N0lCajg3YVNpRU01MkxnWnNvS0JIdFRSNEk0a0lxVG5TNlpkd2EybVctaVpNQlA4LTN0RWFDZ3MtRDJTWEs4OUtFLQ?oc=5",
+      "source": "CNN Brasil",
+      "published": "Thu, 03 Sep 2026 12:35:21 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Brasil pode estar na antessala de uma crise de crédito no mercado imobiliário, diz gestor de fundos - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPbmI5WGhocEVnbGlRR3JWa1JnZHBpRy15ZlhBd2Rzb1l3cjBlNHRzUEx6Vk1uTVJkNm1YTHd2aU1CRWxuVU5ObzVwVnBDb3dzUVczU2RlMlp2LTVBUDhxRXNTSHN5dnh3UU5IZFNjQVFKa3did3RYVjY4QWVpY1c0MjlodFI5aFpVbm9yWnIyYWpEQ3FrNUR0Y1g0UERhSE9scVVXa0c0anY3WTROVVlsLU1qSXl3MkZZM0pTcXJFZldPVlJfckdEeU51WHJzUFl0alVNX2h1QXRwWDFhb0U4c2V6V0s?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Thu, 03 Sep 2026 10:00:00 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "‘Não há crise específica na economia brasileira’, diz Durigan sobre dificuldades de varejistas - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOMVJrWVZURng4VHNiY3MtMXJtMlBsS3F2TmE5bTk3NnR4VUo4anpZYW95MHRlRU9iRWp3NXpnWmxweUxndzFOclJNcVNrS0lpd0RiQlRzSC10U29BNGpMZmg2TDNhMFdjaFFCdThuRUlMVWtjZ0luODlISlJBcVA0Zi1UaFFhalNGR2hUdk1YRnhrblFJSjVOZG0zNTBBM2pfQUdmVTlyTkdvcnBydWRDR1F1aXNCMGtpYUVJTGFXZzFrSmJkZ3UyaFU2ejF4NTRmMUNmR2pGaFRqR0J50gHrAUFVX3lxTFBuTWRSRllQMV9haERQVnp2WVNQVEZ2T3U3eE5lZ3M4dDVmZGd0LUU5c1NnTEVsTVpxMml4NUpENjNPSjVySkduNW1YY3NSNXdIRFREekZ1Q1hsZ013MVBqNlllRWM5OGhMZG90UWQwR1UtMUJoX2E2U19qYm1CTGR1RllVSnFYRzh2aGhjZkdFTU9meFZTdnNIejluOVVYZGNyOGV3TTFtZEU3bXl3ZjNuQzNrS1hvQWpSc242clFZVVhJUHdwc0M0Uy1vTEw5OHJwd09nV29nRnNkeG1vT2dYcnQwLUVtaG5CSkU?oc=5",
+      "source": "Valor Econômico",
+      "published": "Thu, 03 Sep 2026 15:38:46 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "A nova geografia do varejo brasileiro - Diplomatique",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5jV1hwWTJTNEd3ZjZwS0ZyV29rcURENEI2bEFVRkZObl9wZVYzeFFhQkhIZVZxVW5yeXU3Q3ROOEdPTDBaWE5xdllIbTZUMzR5MUpmR01JVGFaU0xaQVRVb3QxUzg2Zk0zNzMwcUd4ZlhNUnN3?oc=5",
+      "source": "Diplomatique",
+      "published": "Thu, 03 Sep 2026 18:04:22 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "MINISTRO DA FAZENDA DIZ QUE VAREJO NÃO VIVE CRISE GENERALIZADA E ATRIBUI DIFICULDADES AOS JUROS - - Bahia Economica",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPaEZiWFIyOEVJSElYS3dTUm5BRXNpZEZDQzJoM1dqTzF6ekR6WGlNQUxKZUhxaVAxVDZabWJ3YVJpQjZIVjk1SHdLeVB4RjBZNjN1LWZHdDRqX0RJcFpDNHBBUF83YXp1OWpGdVNjNjN4eF9qY1dHRHN4amVJY3Z5Rm9wT1pNSzRZY3pNNmdXMHk1cTR2TlN1N0twLVliTWc2azliVGk2NzlwWk9EME5hVzVWN2hsVzFLZ1BKN1ZmbDJwSWhma1FtdFpMem9kMFh4VTdBb2JQRQ?oc=5",
+      "source": "- Bahia Economica",
+      "published": "Thu, 03 Sep 2026 17:36:00 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Crise no varejo? Dario Durigan afirma que não há, aponta causas - ISTOÉ DINHEIRO",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5NWUpra181eGNsZi1CU3pKS2pCR3l6bDFIOVJWSkpXdGxZdEJ5cDl0Z2oyNXVfZm9pZXZ3bjFZRGNTejZzSjhkR1U1ZE5ZVTVCT3d1bmxnOHZEbTVlU1Zic1RXM1FLVGtUbXFfa3NseG00dG5sOGd2OGNQUndhRVk?oc=5",
+      "source": "ISTOÉ DINHEIRO",
+      "published": "Thu, 03 Sep 2026 17:11:03 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Ministro da Fazenda nega crise no varejo, mas admite que juros altos pressionam consumo e empresas - Muita Informação",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPVFJLN3A1dzRuQ3FkdFg4bm1YWGVrekhUWkJiVFZaWTZ2TmpZdzRZM0FSSm5SY3JWU1U4SDV6eFpab2F3dTR1Q0l4LXlWLVdjakJWNVl1R0MxNHVyN2U4S2NhYkxmMC1vZUhQZXdiMmlIWEV1c0kzMjAwdVp5anlZNzU1anNaTWdXZFFBcWdIMnY1NFB4Sl9jOTlqNnFmZlRsRzg4bGRLdWFISlhqWkQ0VmVmXzBlek1ReVVkSG1abXd2ZjZhaW9kT2UtWVlzLU5RZ0FVWQ?oc=5",
+      "source": "Muita Informação",
+      "published": "Thu, 03 Sep 2026 22:28:00 GMT"
+    }
+  ],
+  "generated_at": "2026-09-03T21:10:28.641295-03:00"
+}

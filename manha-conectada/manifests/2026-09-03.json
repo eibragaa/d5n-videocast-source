@@ -1,0 +1,196 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-09-03",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-FranciscaNeural",
+  "output": "/root/repositorio/d5n-videocast-source/manha-conectada/audio/manha-conectada-2026-09-03.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/manha-conectada/roteiros/source-manha-2026-09-03.md",
+  "sha256": "3b4068388d38337d71b08d1ac7bb40cf61caca3835b86f38d06f3bdf2bb0e0ab",
+  "text_gate": {
+    "words": 908,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 339.565714,
+    "size": 8150247,
+    "bit_rate": 192015,
+    "lufs": -17.35,
+    "true_peak_dbtp": -1.72,
+    "lra": 2.0
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "INPE inicia operação de modelo próprio de previsão do tempo - Agência Brasil",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNNE92QVJpT1JwMVlHSlBNa3poZmFCQVNBY0tRWlFkZ0VDUXlfZVJLU0wzdHdvRjNBa0ZDek5SNWtpYkRHQXVsX1BnOGJfRkt5dUdaS19fTXdXSml4Zk56UFhYTmktdG5ScU90UjhsUmlZWjBqMnVIRVVMbi14MWVaWjRaVmNpc19nUTFCUDZqS0lBcmhjRmFEcG5JdnNiZUFpcW5XU0UwMkVBM1dPQUFoTTBxOUNtdlRPc3RPaVFyYw?oc=5",
+      "source": "Agência Brasil",
+      "published": "Thu, 03 Sep 2026 23:25:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Notícias sobre edital de 02 de setembro de 2026 - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMnJBV3gyakFCZTFwd1hhLWttdVJkakRtem1ocEpVMFdySE1QaHlSdS1BOHM3cWJoNDhyTjVjX0hDakFjeE5TSkNGSktEUHpRb2ZyZE5RdzJQZGsyTmtQWGxjN2lKeUFReTBVNWpmbXJkV25yRGxtNzBqVE5mTmJFc0IyTWttRVN50gGOAUFVX3lxTE9oRmp0b1FuVTFxWllLaGIzcW02T1FSbHBEMmJ4V0cybGVCY01Hck1BbjhsNDRHQkVqUENBYWlhLUtXbDBiRzNiUTVILUJMeUFTUF9YMXdMSEpSczlQNTBRNnZuYngwRHJxeU5HZEVmWnhWdklhR0hNWEViMktCTkt3dzFkZUJPLUlkaGJDamc?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Thu, 03 Sep 2026 20:49:10 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "BC proíbe publicidade em comprovantes do Pix a partir de março de 2027 - Agência Brasil",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQamVPWkUtMFVxZHdPMVZ2ekpMVlhRNzczUE02bXI3Y2VvN3JEaW9taXVaMVlwcUdhbzdqd1FPNVJQNlVxYndVV3dPeWhkd3BHbVplcTlqLWtHWWZWakN2MnpIN05UR3B0TWFBZ3I2VFRBU2FZWEU4c2NBOTRYTWlGTXFYT3I5bmd1V0dxTm1jYkNWSnZnQUR2MEF4d3dZOTJ2VkVnZ2V0NlFIeFVGN3ctZVhvcXVnZTZLc3JxSVRGWnhMTDBu?oc=5",
+      "source": "Agência Brasil",
+      "published": "Thu, 03 Sep 2026 21:21:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "UE suspende carnes do Brasil; entenda impacto e próximos passos - Agência Brasil",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPenUtWUxyUnkwUjVRdjZoY3hsY3JjRUhlTWVYZDFzbUk0WlB5WnV5dktSbGxtY2s4ay1tNS1fUVN5S3YtRXlwd3cyZERncUJNNTJCX2U3X3dKbF9sZ3phYkJoalJRTmhtcDhKYThHWDZZdUhySFNmeEk3REN0MmdiNlMwREhOUmNadzg2dFN4OXpFaHVTWUtUR0ZqM2JQNndFaExwSzF5UmxEMFhIa0R6Sjd5clgtZjh3SmpEUw?oc=5",
+      "source": "Agência Brasil",
+      "published": "Thu, 03 Sep 2026 21:08:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Mineradoras elogiam, mas municípios criticam PL de minerais críticos - Agência Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOYmJKN2lGdGlYYUdPNzdZMHFSclZBR1hmS193VXREMnhUcFhRWTBTWXJNcGdfZlQzNk8zRF9wdHpEc1hVVWNXSGMtY0V4VU1ob3ZtMDlNU1FMMm96WTNHaTh6allwQmQtTWxCemgtTXhmbGxDSEViYW5ZSkZ0TnNib2kyM2h0dHUtRW01NEtlVDBjTXZfa3RDem9IZ3VTUHdKYjFwZGRBZWVydWpnV0hsRmwtc09IMG5rakxPTWctUmtIRVctTE03a1JR?oc=5",
+      "source": "Agência Brasil",
+      "published": "Thu, 03 Sep 2026 20:50:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Fifa abre inscrição para voluntários da Copa do Mundo Feminina - Agência Brasil",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPRWthT1BiV1IzZlgtVnVkN2VVb3N2RXhfS1VMOERKal9ZMTY0U2h2Q3Z6U3ROaGhSTnZHY01OcUFVUldiakNNalFxbGZBbWQ5dUFOUkVLOXJQbVR3T1k5dFdPSTREc0x3eFJGTnpITnBWVzFxbXR0blZzVlhqcDh5am9GTkhKS01IN1BXaGtBNER1WWZvYWY2dF9zUjE4ZTZROVl3bFlmb0NNbHJIeDdzYVJJYm1pcHNVLUIyMXpZQUhkUkNzcnZfUVJFUzVyTENjLTNickpnZw?oc=5",
+      "source": "Agência Brasil",
+      "published": "Thu, 03 Sep 2026 23:50:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Não sei, pergunte aos iranianos, diz vice de Trump sobre fim da guerra no Irã - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQTi1reFBfRXNldlpQYl9wSXNrUzBRRDFaS0JBNGp1Z1YzMUVYSGhIa0xiaXVWRUlHWGNYUTNTZDgzTnlrbS1NRHdScXUtamRucEtpYS1KYzl2YURjNGhhbUZaQ1JKZWhWUkl3LWp1anE3MzJyeDNxU1RlcWxVWV84OVlHeHhPNnVwX1FVdm1VdExMUGlYNFE3Mml4OS0xbjF5dEk3OXlVcHFKWFdyZjNzQmQ3RFZNWG5wTGpyVGxKT0xzUjg?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Thu, 03 Sep 2026 22:24:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Mundo | Notícias | RTP Notícias - RTP",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5KMk1sa2FHVXRmTHluaExmYmtENzJSTWd3eDBUQ0RJRW42THV2SHM0SXVpX0k5cTJFRm41VG9hcjJhbGVfVG5YNQ?oc=5",
+      "source": "RTP",
+      "published": "Thu, 03 Sep 2026 20:06:52 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Durigan admite reestruturação de gastos logo após eleição - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQekFicW5Wc1dpVXZXbW1JVmxjLV8zWDhYZzJ4QlZ6M3JqdGh6dGdEZTFLVWZhbHM5MWpZbUlxTzk1S3d2cThNZDVneVlqMWVOQmdMeE9vNXloYmxaNFExa0tBdDA5OWlSSG9SX0pEbkFUT2VwRlRMQThFUjNHNE15SzRNMkJuLU1lU2ExTE9Gd0V1YUpUNHJUMGp6TjlMdGttZGlqUw?oc=5",
+      "source": "SBT News",
+      "published": "Thu, 03 Sep 2026 21:46:35 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Governo dos EUA apoia OpenAI em ação movida pelo New York Times - Jovem Pan",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQc2hmUnYtbWk2ekxaQnJVSE5NTUVPVHJQSlhSemxyMkpzVTE1ajM0NHEyWkZLSG92YjR6SlFhMVpOZEtxLXpIa2d0aTh6NjJNZGI4Q1VFWG1LVjljcHh5QXNMbjMtWWtSaW5wRUlVZGtQa19NNFItdXN0RnF0NHo3eTRJek9XWk1hN2cyU2dFaHlrTnU5ZmtWOV9R?oc=5",
+      "source": "Jovem Pan",
+      "published": "Thu, 03 Sep 2026 14:57:21 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Quem souber aplicar a tecnologia, a IA, vai liderar a inovação - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNQ0V3V1RiSzdUU2tBWnBNTnhBY21HSF9sUzJoTENVOWpTMkFBVnJteE5jbjgzcEtqd2RCaFhzc1JiS1kxRUdRY2lxcm40S00zNWFUM3VvRkx3aVVXSVhBb0tlSGFKNFpOM0FNbVlkdnBEaW9OekNBRGFYeWtBbDR2Y0pIeldXSmFEbGI4Z1ZYNlZtd2RaTE80UnVPVWVKT1JQRFRkZnd6NjI3TjJqSC1QZy1LMTNEd25yVHlRT3VHNXd6eHBMazVJTll2bmlEbW0xVkNrS1g0aFVGZ9IB6AFBVV95cUxONTN1RzZqTU1YTFFBLWtDVS1hcDFYT2lRT0oxaUNOVzBjRkRMSmYwTkJTWGhxOU5MQmVaRE16MHdZdFhCTER4dGNmSzBHYlhGMmlGQVl0TkVZSGFqMjhWOUVoZWx5Y3M4U2RxVC16d1lHQURxUXRIVHlCWjV0b0Y5MXpKTnlBTF9nUkdtdDhtY3JBdl92b2g4MUlhZW5LcENSRFFfbGV3TkhJYmZyYmdNcmZUaUpSdG1fWWdLX00xTlVjLWJtdDE1bC1uMFVGbnpPU3VuRGtNTmRXM0xqZWNIeXkwVjZfMTNQ?oc=5",
+      "source": "Valor Econômico",
+      "published": "Thu, 03 Sep 2026 22:36:02 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "HU sedia eventos sobre ciência, tecnologia e inteligência artificial na saúde - Universidade Federal de Alagoas",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNTHVqWU4zUmNfZG02dXo0T1hxMnoyUmZpdVVhSnU2ajZiVllRRl82VkF3VmNmVk94WFUtOFF3eDNfbmo4NzlYcHF4d2M0Qktndmt2U0tMMUZXemhYdEp4QlVaeUhjMnJFYWoyRGxiNFZBSkVSc0dCM2ZQQ0R5TG9UZEdLSFZvRWxrY1BaT2wzenVESzctaUEwME52ZDRVclF3OFVqNGF5VWlNU0dCRWs2aGtXbFJ1WUJBQUJONkJwN0NhTm5fb3FDZHFwYw?oc=5",
+      "source": "Universidade Federal de Alagoas",
+      "published": "Thu, 03 Sep 2026 18:57:50 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Pesquisa mostra avanço da inteligência artificial na rotina dos profissionais da contabilidade - ::Conselho Federal de Contabilidade:: |",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTm84bGxLZ28zYS0tc2FzTG9xTnhCNUhJVllNaTZfWFJSZDdFMjdKVC1kdG5vSUIwY1JIZWpRUlhGVmxBcEwzdHRyMkxGeW4yUGNvSzZGclhWYVNkQl9mNXdJZ0JBbkZrT3NyUG9xTEpmVW9uQkJkNXBiLW53dkhhWnZkdW1uTHBBRE9zeVdOdVEwVHQ4RnlqQ092VU1abVYtVTVrNUpTN24tbXVhYW8yNllOS2t4YzJ6OWtDS0szTU8?oc=5",
+      "source": "::Conselho Federal de Contabilidade:: |",
+      "published": "Thu, 03 Sep 2026 18:34:35 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "'Ter informação não significa ter conhecimento', diz CEO de nova plataforma brasileira de IA - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNTmF6ZVA5SC1WWnV4aUpueWFHSlZBRWhLV2V4ZmYtb3haRmt0Tmlxdk4zdVRWeE5WSEVNbF9XSE1fVTB6UmlUdTBzV2FPWlVXVUozMEFKQ0lTbk1VYUN1VW1KN2lKSHZZZWFrdTJnTjNqZVhFbWQtVHdhQnpUYVNxOU1RcmkxT3N5XzFIeXY3MEd5X3JzX21HWHJOS1E2MFh5X2ViQTFtVVliWFQ2aHdYNTZzeVFQcWNuSGpJSkRpMW9DbnVvZC13eTdCR0RoZHRTU2p6ZnQ5Y0NmRTA1Q2pJZ1l4cDk?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Thu, 03 Sep 2026 19:18:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "CVM prepara fiscalização 24 horas com inteligência artificial - Funds Society",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxObWZhS1BfVGtvR3dLMkVjT1F5VGxXeDY5eHY5MFB1WHA0S2xXMmU2ejZJYTJpNWllTnU0Q0Z2bHBHampiT3R6UlQ2eWE2Q3RPWHoxeXBobFlZczltNWNINmZzRlNLSU5iWE5adS04SUxfMzVMX09jeEZlMU4ySzhJM3J3aEdPS0ZxTGR6cWVhMUVEQU5Qc3Z1TFNzMTRPcHE4?oc=5",
+      "source": "Funds Society",
+      "published": "Thu, 03 Sep 2026 19:05:40 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Brasil contesta veto da União Europeia a carnes e ameaça retaliação - UOL Economia",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQSlgxbjdNQlBuaXdqSGlsN1FyOUZlOHBWejU2RGdSMkhlRUk2WjZBRi1ucEdDc212U0NDVGhUVHNlSnNFTTRrMndFOFY1WVRVSi1aWGdhMFgyOXVKaF9mSGoxRlR2X0Z2SjBtaVpYRmhxbWpzTlpseEw4aHpiOFZzUzlYUWp3bzRpMWI5dzEyWXkzUQ?oc=5",
+      "source": "UOL Economia",
+      "published": "Thu, 03 Sep 2026 22:15:56 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "‘Não há crise específica na economia brasileira’, diz Durigan sobre dificuldades de varejistas - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOMVJrWVZURng4VHNiY3MtMXJtMlBsS3F2TmE5bTk3NnR4VUo4anpZYW95MHRlRU9iRWp3NXpnWmxweUxndzFOclJNcVNrS0lpd0RiQlRzSC10U29BNGpMZmg2TDNhMFdjaFFCdThuRUlMVWtjZ0luODlISlJBcVA0Zi1UaFFhalNGR2hUdk1YRnhrblFJSjVOZG0zNTBBM2pfQUdmVTlyTkdvcnBydWRDR1F1aXNCMGtpYUVJTGFXZzFrSmJkZ3UyaFU2ejF4NTRmMUNmR2pGaFRqR0J50gHrAUFVX3lxTFBuTWRSRllQMV9haERQVnp2WVNQVEZ2T3U3eE5lZ3M4dDVmZGd0LUU5c1NnTEVsTVpxMml4NUpENjNPSjVySkduNW1YY3NSNXdIRFREekZ1Q1hsZ013MVBqNlllRWM5OGhMZG90UWQwR1UtMUJoX2E2U19qYm1CTGR1RllVSnFYRzh2aGhjZkdFTU9meFZTdnNIejluOVVYZGNyOGV3TTFtZEU3bXl3ZjNuQzNrS1hvQWpSc242clFZVVhJUHdwc0M0Uy1vTEw5OHJwd09nV29nRnNkeG1vT2dYcnQwLUVtaG5CSkU?oc=5",
+      "source": "Valor Econômico",
+      "published": "Thu, 03 Sep 2026 15:38:46 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Governo endurece tom com UE e ameaça reciprocidade por restrições à proteína animal - AgFeed",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPLTI1WHZqdWVYUUY4LW9SbHg5SU5lS0pRVjhyOHl5cXdJaDltUEI3NjZma1ZwMXpoZ0RqRkNWc1RPaWZEZ0JIbE1JN2FYTkxvTDhsRXJRR1ZkMlBzTUl5c2JFd29qOHhXUDFBcHFaSFRQRDJTVGlmQl9hX210YWhLbkVVTUMzbUZEWVZsZzh2ZURodXZld213Y2pvemlDYTkwRHRQWTdQck5pbmRnUFQzNWtFQ3g2UQ?oc=5",
+      "source": "AgFeed",
+      "published": "Thu, 03 Sep 2026 22:08:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Brasil e União Europeia negociam interligação entre o Pix e a rede de pagamentos da Europa - VEJA",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNMEdFYTFkYm5yZXZZOW92RXRrYzdmUzR4VUJEanlLMEJFQXhJb0ZHU0MwNEREWk94dFZRdmh2VXhaa1ZzUlE1em9VcHFlMlI0T3RrX21hMl93QjFKZ296cXlCT2RVelVYVDRzTUctUGVpUFVXakpRcHc4UFphSk5KWTMzTmUwNGN5VkxaTVItRWRzY2xKejhQa3NjNkhXZ01ibGlqWXA0NXAtQjc0M3B5RU0tQld4eVZSTml0QldSeGlvcTdx?oc=5",
+      "source": "VEJA",
+      "published": "Thu, 03 Sep 2026 20:33:33 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Acompanhe a agenda dos presidenciáveis para esta quinta (3) - Agência Brasil",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxORGxlZ2FObGdyVEZUMU1pOEh0NjEyWEJaTXdQZWFBcDYtVUlNYjZGa2pNRzlBcTZCanVYb2lYeF9GRlpCR045M2Nkb3lxaGJ6akRhemNxOWZrTGxPczdjSmhPRkczenN1SHRWOTB2YUpfakcySVB1ZUNfb0hKblJXQnFpQkZteFRlMEV6NnUyblpuQklTbWs1R2tEbjNBbnNpdmp4aUJpbDY4cGVYV0dTZk5yTml3azBWUC03ODZZRE5kUWpJNFdJeXpfX3Itdw?oc=5",
+      "source": "Agência Brasil",
+      "published": "Thu, 03 Sep 2026 11:54:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "[Agenda Funarte MG] Espetáculo “Mistérios Gozosos em Burleta Espivitada” chega a Belo Horizonte - www.gov.br",
+      "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPMXNxZ2JBVnBSS0N5RzZHbTl4VEdDaFM3V01rcnpBS3AwS1hTN2dETGJ5bXQ4cjMySmRsVVFMaGRZUHJBRk5NUklGNHZqRXhNTTlacXJkRXNVUURVYVFBVjVXX2xlV2V3WWpJNDc1ck5pY2ZBdk5qSWlERFU4Rl9KNTQ4NVIwZk4yVE4yUlBOWU5qWVF2TXg1czR2TmZ6OG1hYWxQZ1Aya0JtYWh1T2R6UlR5RjcxUnRnWk9RM1NaWGhnaFp6NHlBZmtiZHhmR3lSLVBqRUkxWlByRV93S0ctZkdfMXpPYmVNR0VmMmVkckZfVUNPQ1lmUQ?oc=5",
+      "source": "www.gov.br",
+      "published": "Thu, 03 Sep 2026 20:18:53 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "HF BRASIL/CEPEA: Estudo do Cepea revela a força da ABCM e reforça agenda de valorização da laranja de mesa - HF Brasil",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPaVhhRmx2ZW15VFhzdTlXZFFmM3JPUlBVWDRoSC1hZDVOR1JQb3VaMGI5NzRuNG14aTV3U0VVQVNmUHFuM0dZWlp3NjFyYXJ2Tl9Rd28xVzcyY05SUXZLYWluRjF0RjRwSGZvTjhuVUx0aWp2eURGYTRVTlJRQ1V3MTdJdUdfMnliM3NGbGlfMzViMXY4RDlpajh2ZE5fbk9jZGI1VGlBd0dtNUNTd0E3V0hRNGVBSTl2b2hRQW56WWJtVS1HdlFxT1laUUNOc0M4TGYyYmhHSWg?oc=5",
+      "source": "HF Brasil",
+      "published": "Thu, 03 Sep 2026 18:41:14 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Concurso Público: confira a programação das aulas de hoje! - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9RZzhuWTNNQjhfRUVRTXZSdHE3RGVseGI4VWNvMlJ3aHdqajY4QVVQV09pUHVfZkZYdXk3WnFiTjlMbS1YbXVEXzQ0d1BfTHhzcVpUQnUyazhOcXVObDdyWmlGdVZ6UkZXWmfSAW9BVV95cUxNb1U4ekpYaVQwOENfMXZ6X3pzUjhyMGNMS09DNFpYZkx2aUdsVFd6X2k4OTNZcW1HZi1mMlFlSndoS3pHLXdqZGV1NXJFbzAtYTZTWDBzZWVKb1JYLWkwRWxjWE1GNnh1QTlEd1EzV1E?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Thu, 03 Sep 2026 20:00:30 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "DECISÃO 2026: veja a agenda dos candidatos à Presidência nesta quinta (3) - Times Brasil | CNBC",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOLWJhamkxbEJlNlNHR2RWYUZnNkNvZ2gxNjlXN2p3UUFib0wwMGczbWktY0VRX25lbVBJcEh2TG5NbGYyZnZnOGplSGFvQXRQOERDMkpsVDRaazJkX1dpTGo1MGJWYWVqV2xtRjNYLVY4NGZaZkpnTl96a2x5V2RnMGNRVHVGdEhEOFcxbmZ1UTBLUE9sVEh5cE5HUmUzVE9iUXowZGxUWkU?oc=5",
+      "source": "Times Brasil | CNBC",
+      "published": "Thu, 03 Sep 2026 12:00:00 GMT"
+    }
+  ],
+  "generated_at": "2026-09-03T21:08:28.342685-03:00"
+}

@@ -35,7 +35,7 @@ RSS_CTA = (
 )
 TZ = ZoneInfo("America/Sao_Paulo")
 MIN_WORDS, MAX_WORDS = 600, 1100
-MIN_SECONDS, MAX_SECONDS = 225, 390
+MIN_SECONDS, MAX_SECONDS = 200, 500
 FORBIDDEN = (
     "e aí, pessoal", "se liga", "vale lembrar", "em um mundo", "não é apenas",
     "mais do que nunca", "mergulhar", "revolucionar", "game changer",
