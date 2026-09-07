@@ -30,7 +30,7 @@
     <podcast:locked owner="eibragaa@gmail.com">no</podcast:locked>
     <podcast:guid>fechamento.d5n-daily.netlify.app</podcast:guid>
     <atom:link href="https://d5n-daily.netlify.app/fechamento.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Thu, 03 Sep 2026 17:30:00 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 17:30:00 -0300</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/fechamento-cover.jpg</url>
       <title>Fechamento do Mercado</title>
@@ -38,6 +38,23 @@
     </image>
     <copyright>© 2026 Drop Five News</copyright>
     <generator>D5N Pipeline — Fechamento do Mercado</generator>
+    <item>
+      <title>Fechamento do Mercado — 07/09/2026</title>
+      <itunes:title>Fechamento do Mercado — 07/09/2026</itunes:title>
+      <itunes:episode>7</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>03:05</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg"/>
+      <guid isPermaLink="false">fechamento-2026-09-07</guid>
+      <link>https://d5n-daily.netlify.app/#fechamento</link>
+      <enclosure url="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-09-07.mp3" length="4456448" type="audio/mpeg"/>
+      <pubDate>Mon, 07 Sep 2026 17:30:00 -0300</pubDate>
+      <description>Fechamento do Mercado de 07/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 3:05.</description>
+      <itunes:summary>Fechamento do Mercado de 07/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 3:05.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Fechamento do Mercado • 07/09/2026</strong></p><p>Fechamento do Mercado de 07/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 3:05.</p><p><a href="https://d5n-daily.netlify.app/#fechamento">Ouça no site</a></p>]]></content:encoded>
+
+    </item>
     <item>
       <title>Fechamento do Mercado — 03/09/2026</title>
       <itunes:title>Fechamento do Mercado — 03/09/2026</itunes:title>

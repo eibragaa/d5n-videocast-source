@@ -1,0 +1,27 @@
+{
+  "program": "FECHAMENTO DO MERCADO",
+  "date": "2026-09-07",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": true,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/fechamento/audio/fechamento-2026-09-07.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/fechamento/roteiros/source-fechamento-2026-09-07.md",
+  "sha256": "f1e934445fd55776f4b8c093faa75700548aead54d0218aaeaf1a2d4fed20808",
+  "text_gate": {
+    "words": 1100,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 185,
+    "size": 4456448,
+    "bit_rate": 192009,
+    "lufs": -18.0,
+    "true_peak_dbtp": -1.5,
+    "lra": 2.5
+  },
+  "sources": [],
+  "generated_at": "2026-09-07T00:00:00-03:00"
+}
