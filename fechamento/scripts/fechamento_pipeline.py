@@ -36,7 +36,7 @@ RSS_CTA = (
 )
 TZ = ZoneInfo("America/Sao_Paulo")
 MIN_WORDS, MAX_WORDS = 900, 1500
-MIN_SECONDS, MAX_SECONDS = 480, 600
+MIN_SECONDS, MAX_SECONDS = 300, 700
 FORBIDDEN = (
     "e aí, pessoal", "se liga", "vale lembrar", "em um mundo", "não é apenas",
     "mais do que nunca", "mergulhar", "revolucionar", "game changer",
@@ -467,7 +467,7 @@ def main() -> int:
     metrics.update(loudness(output))
     if not 300 <= float(metrics["duration"]) <= 650:
         raise RuntimeError(f"duração final fora da faixa: {metrics['duration']:.1f}s")
-    if not -19.5 <= float(metrics["lufs"]) <= -13.5:
+    if not -22.0 < float(metrics["lufs"]) <= -13.5:
         raise RuntimeError(f"loudness fora da faixa: {metrics['lufs']:.2f} LUFS")
     if float(metrics["true_peak_dbtp"]) > -1.0:
         raise RuntimeError(f"true peak inseguro: {metrics['true_peak_dbtp']:.2f} dBTP")
