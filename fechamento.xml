@@ -30,7 +30,7 @@
     <podcast:locked owner="eibragaa@gmail.com">no</podcast:locked>
     <podcast:guid>fechamento.d5n-daily.netlify.app</podcast:guid>
     <atom:link href="https://d5n-daily.netlify.app/fechamento.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Tue, 01 Sep 2026 17:30:00 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 17:30:00 -0300</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/fechamento-cover.jpg</url>
       <title>Fechamento do Mercado</title>
@@ -39,28 +39,149 @@
     <copyright>© 2026 Drop Five News</copyright>
     <generator>D5N Pipeline — Fechamento do Mercado</generator>
     <item>
+      <title>Fechamento do Mercado — 09/09/2026</title>
+      <itunes:title>Fechamento do Mercado — 09/09/2026</itunes:title>
+      <itunes:episode>9</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>06:24</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg"/>
+      <guid isPermaLink="false">fechamento-2026-09-09</guid>
+      <link>https://d5n-daily.netlify.app/#fechamento</link>
+      <enclosure url="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-09-09.mp3" length="9215416" type="audio/mpeg"/>
+      <pubDate>Wed, 09 Sep 2026 17:30:00 -0300</pubDate>
+      <description>Fechamento do Mercado de 09/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:24.</description>
+      <itunes:summary>Fechamento do Mercado de 09/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:24.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Fechamento do Mercado • 09/09/2026</strong></p><p>Fechamento do Mercado de 09/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:24.</p><ul><li>Fechamento (08/09)| Ibovespa fecha em alta de 1,20%; dólar cai a R$ 5,0858 - InvesTalk</li><li>Ibovespa fecha em alta de mais de 1%, com eleições; dólar recua a R$ 5,08 - InfoMoney</li><li>Ibovespa sobe 1,20%, retoma os 187 mil pontos e reacende ‘trade eleitoral’ - suno.com.br</li></ul><p><a href="https://d5n-daily.netlify.app/#fechamento">Ouça no site</a></p>]]></content:encoded>
+  <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-09-09.mp3">
+  <psc:chapters version="2.2">
+    <psc:chapter start="00:00" title="Abertura"/>
+    <psc:chapter start="01:04" title="Radar Mercado"/>
+    <psc:chapter start="02:08" title="Dólar"/>
+    <psc:chapter start="03:12" title="Bolsas"/>
+    <psc:chapter start="04:16" title="Empresas"/>
+    <psc:chapter start="05:20" title="Encerramento"/>
+  </psc:chapters>
+  </podcast:chapters>
+    </item>
+    <item>
+      <title>Fechamento do Mercado — 08/09/2026</title>
+      <itunes:title>Fechamento do Mercado — 08/09/2026</itunes:title>
+      <itunes:episode>8</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>08:27</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg"/>
+      <guid isPermaLink="false">fechamento-2026-09-08</guid>
+      <link>https://d5n-daily.netlify.app/#fechamento</link>
+      <enclosure url="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-09-08.mp3" length="12171432" type="audio/mpeg"/>
+      <pubDate>Tue, 08 Sep 2026 17:30:00 -0300</pubDate>
+      <description>Fechamento do Mercado de 08/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 8:27.</description>
+      <itunes:summary>Fechamento do Mercado de 08/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 8:27.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Fechamento do Mercado • 08/09/2026</strong></p><p>Fechamento do Mercado de 08/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 8:27.</p><ul><li>Fechamento (08/09)| Ibovespa fecha em alta de 1,20%; dólar cai a R$ 5,0858 - InvesTalk</li><li>Ibovespa fecha em alta de mais de 1%, com eleições; dólar recua a R$ 5,08 - InfoMoney</li><li>Ibovespa sobe 1,20%, retoma os 187 mil pontos e reacende ‘trade eleitoral’ - suno.com.br</li></ul><p><a href="https://d5n-daily.netlify.app/#fechamento">Ouça no site</a></p>]]></content:encoded>
+  <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-09-08.mp3">
+  <psc:chapters version="2.2">
+    <psc:chapter start="00:00" title="Abertura"/>
+    <psc:chapter start="01:24" title="Radar Mercado"/>
+    <psc:chapter start="02:49" title="Dólar"/>
+    <psc:chapter start="04:13" title="Bolsas"/>
+    <psc:chapter start="05:38" title="Empresas"/>
+    <psc:chapter start="07:02" title="Encerramento"/>
+  </psc:chapters>
+  </podcast:chapters>
+    </item>
+    <item>
+      <title>Fechamento do Mercado — 07/09/2026</title>
+      <itunes:title>Fechamento do Mercado — 07/09/2026</itunes:title>
+      <itunes:episode>7</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>03:05</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg"/>
+      <guid isPermaLink="false">fechamento-2026-09-07</guid>
+      <link>https://d5n-daily.netlify.app/#fechamento</link>
+      <enclosure url="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-09-07.mp3" length="4456448" type="audio/mpeg"/>
+      <pubDate>Mon, 07 Sep 2026 17:30:00 -0300</pubDate>
+      <description>Fechamento do Mercado de 07/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 3:05.</description>
+      <itunes:summary>Fechamento do Mercado de 07/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 3:05.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Fechamento do Mercado • 07/09/2026</strong></p><p>Fechamento do Mercado de 07/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 3:05.</p><p><a href="https://d5n-daily.netlify.app/#fechamento">Ouça no site</a></p>]]></content:encoded>
+
+    </item>
+    <item>
+      <title>Fechamento do Mercado — 03/09/2026</title>
+      <itunes:title>Fechamento do Mercado — 03/09/2026</itunes:title>
+      <itunes:episode>6</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>07:14</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg"/>
+      <guid isPermaLink="false">fechamento-2026-09-03</guid>
+      <link>https://d5n-daily.netlify.app/#fechamento</link>
+      <enclosure url="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-09-03.mp3" length="10419138" type="audio/mpeg"/>
+      <pubDate>Thu, 03 Sep 2026 17:30:00 -0300</pubDate>
+      <description>Fechamento do Mercado de 03/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:14.</description>
+      <itunes:summary>Fechamento do Mercado de 03/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:14.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Fechamento do Mercado • 03/09/2026</strong></p><p>Fechamento do Mercado de 03/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:14.</p><ul><li>Ibovespa anda de lado, mas perde sequência de altas, em dia de correção; Vale cai - InfoMoney</li><li>Vale e Petrobras pesam e Ibovespa B3 fecha na estabilidade; dólar mantém os R$ 5,10 - Bora Investir</li><li>Ibovespa fecha estável com realização de lucros após rali; CSN sobe 6,7% - Bloomberg Línea Brasil</li></ul><p><a href="https://d5n-daily.netlify.app/#fechamento">Ouça no site</a></p>]]></content:encoded>
+  <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-09-03.mp3">
+  <psc:chapters version="2.2">
+    <psc:chapter start="00:00" title="Abertura"/>
+    <psc:chapter start="01:12" title="Radar Mercado"/>
+    <psc:chapter start="02:24" title="Dólar"/>
+    <psc:chapter start="03:37" title="Bolsas"/>
+    <psc:chapter start="04:49" title="Empresas"/>
+    <psc:chapter start="06:01" title="Encerramento"/>
+  </psc:chapters>
+  </podcast:chapters>
+    </item>
+    <item>
+      <title>Fechamento do Mercado — 02/09/2026</title>
+      <itunes:title>Fechamento do Mercado — 02/09/2026</itunes:title>
+      <itunes:episode>5</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>06:47</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg"/>
+      <guid isPermaLink="false">fechamento-2026-09-02</guid>
+      <link>https://d5n-daily.netlify.app/#fechamento</link>
+      <enclosure url="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-09-02.mp3" length="9775272" type="audio/mpeg"/>
+      <pubDate>Wed, 02 Sep 2026 17:30:00 -0300</pubDate>
+      <description>Fechamento do Mercado de 02/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:47.</description>
+      <itunes:summary>Fechamento do Mercado de 02/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:47.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Fechamento do Mercado • 02/09/2026</strong></p><p>Fechamento do Mercado de 02/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:47.</p><ul><li>Ibovespa Hoje Ao Vivo: Bolsa dispara 3%, aos 186 mil, com nova pesquisa eleitoral - InfoMoney</li><li>Ibovespa dispara 1,30% e encosta nos 180 mil pontos com Petrobras (PETR4) e eleição no radar - suno.com.br</li><li>Dólar hoje recua a R$ 5,10 após pesquisa indicar disputa apertada pela Presidência - InfoMoney</li></ul><p><a href="https://d5n-daily.netlify.app/#fechamento">Ouça no site</a></p>]]></content:encoded>
+  <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-09-02.mp3">
+  <psc:chapters version="2.2">
+    <psc:chapter start="00:00" title="Abertura"/>
+    <psc:chapter start="01:07" title="Radar Mercado"/>
+    <psc:chapter start="02:15" title="Dólar"/>
+    <psc:chapter start="03:23" title="Bolsas"/>
+    <psc:chapter start="04:31" title="Empresas"/>
+    <psc:chapter start="05:39" title="Encerramento"/>
+  </psc:chapters>
+  </podcast:chapters>
+    </item>
+    <item>
       <title>Fechamento do Mercado — 01/09/2026</title>
       <itunes:title>Fechamento do Mercado — 01/09/2026</itunes:title>
       <itunes:episode>4</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>09:20</itunes:duration>
+      <itunes:duration>07:32</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg"/>
       <guid isPermaLink="false">fechamento-2026-09-01</guid>
       <link>https://d5n-daily.netlify.app/#fechamento</link>
-      <enclosure url="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-09-01.mp3" length="13441610" type="audio/mpeg"/>
+      <enclosure url="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-09-01.mp3" length="10846710" type="audio/mpeg"/>
       <pubDate>Tue, 01 Sep 2026 17:30:00 -0300</pubDate>
-      <description>Fechamento do Mercado de 01/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 9:20.</description>
-      <itunes:summary>Fechamento do Mercado de 01/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 9:20.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>Fechamento do Mercado • 01/09/2026</strong></p><p>Fechamento do Mercado de 01/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 9:20.</p><ul><li>Dólar vira para queda após abrir em alta, com exterior e dados no radar - InfoMoney</li><li>Fechamento (31/08) | Nove sessões no azul: Ibovespa fecha em alta de 1%; no mês, tem queda de 0,33% - InvesTalk</li><li>Dólar recua a R$ 5,18, mas fecha agosto em alta; Ibovespa avança - UOL Economia</li></ul><p><a href="https://d5n-daily.netlify.app/#fechamento">Ouça no site</a></p>]]></content:encoded>
+      <description>Fechamento do Mercado de 01/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:32.</description>
+      <itunes:summary>Fechamento do Mercado de 01/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:32.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Fechamento do Mercado • 01/09/2026</strong></p><p>Fechamento do Mercado de 01/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 7:32.</p><ul><li>Dólar Bolsa fechamento hoje 1 de setembro de 2026 - UOL Economia</li><li>Dólar vira para queda após abrir em alta, com exterior e dados no radar - InfoMoney</li><li>Fechamento (31/08) | Nove sessões no azul: Ibovespa fecha em alta de 1%; no mês, tem queda de 0,33% - InvesTalk</li></ul><p><a href="https://d5n-daily.netlify.app/#fechamento">Ouça no site</a></p>]]></content:encoded>
   <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-09-01.mp3">
   <psc:chapters version="2.2">
     <psc:chapter start="00:00" title="Abertura"/>
-    <psc:chapter start="01:33" title="Radar Mercado"/>
-    <psc:chapter start="03:06" title="Dólar"/>
-    <psc:chapter start="04:40" title="Bolsas"/>
-    <psc:chapter start="06:13" title="Empresas"/>
-    <psc:chapter start="07:46" title="Encerramento"/>
+    <psc:chapter start="01:15" title="Radar Mercado"/>
+    <psc:chapter start="02:30" title="Dólar"/>
+    <psc:chapter start="03:46" title="Bolsas"/>
+    <psc:chapter start="05:01" title="Empresas"/>
+    <psc:chapter start="06:16" title="Encerramento"/>
   </psc:chapters>
   </podcast:chapters>
     </item>

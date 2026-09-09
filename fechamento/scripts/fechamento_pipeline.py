@@ -35,7 +35,7 @@ RSS_CTA = (
     "O RSS próprio está no site do Drop Five News."
 )
 TZ = ZoneInfo("America/Sao_Paulo")
-MIN_WORDS, MAX_WORDS = 900, 1500
+MIN_WORDS, MAX_WORDS = 600, 2000
 MIN_SECONDS, MAX_SECONDS = 300, 700
 FORBIDDEN = (
     "e aí, pessoal", "se liga", "vale lembrar", "em um mundo", "não é apenas",

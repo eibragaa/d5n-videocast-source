@@ -1,0 +1,203 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-09-09",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-FranciscaNeural",
+  "output": "/root/repositorio/d5n-videocast-source/manha-conectada/audio/manha-conectada-2026-09-09.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/manha-conectada/roteiros/source-manha-2026-09-09.md",
+  "sha256": "90c73ea72bae064dcfaa176e2d8c1569850315a234186bf5029a9d3aed7cde74",
+  "text_gate": {
+    "words": 1027,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 377.573878,
+    "size": 9062443,
+    "bit_rate": 192014,
+    "lufs": -17.4,
+    "true_peak_dbtp": -1.73,
+    "lra": 2.2
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Notícias sobre edital de 08 de setembro de 2026 - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMnJBV3gyakFCZTFwd1hhLWttdVJkakRtem1ocEpVMFdySE1QaHlSdS1BOHM3cWJoNDhyTjVjX0hDakFjeE5TSkNGSktEUHpRb2ZyZE5RdzJQZGsyTmtQWGxjN2lKeUFReTBVNWpmbXJkV25yRGxtNzBqVE5mTmJFc0IyTWttRVN50gGOAUFVX3lxTE9oRmp0b1FuVTFxWllLaGIzcW02T1FSbHBEMmJ4V0cybGVCY01Hck1BbjhsNDRHQkVqUENBYWlhLUtXbDBiRzNiUTVILUJMeUFTUF9YMXdMSEpSczlQNTBRNnZuYngwRHJxeU5HZEVmWnhWdklhR0hNWEViMktCTkt3dzFkZUJPLUlkaGJDamc?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Wed, 09 Sep 2026 07:28:52 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Dólar cai a R$ 5,08 e atinge menor valor em um mês - Agência Brasil",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNMF9RNzA3Y2t3aVpJZnc1T3g1X2tyWk1RVW1SUUlZVVlMOUUtc2pxdG54MXQ3c2NqbTg1eG9PMmx0Sk5fbERPekd4OTg3TXRYNm1SRGkwM21JdWVHRXJYU01GaEd6T1NIRk1VeU1BRUNhal9nOW1MY2kyUGxDd0JHVndYYjVlZkNIemlkMkNYQmhoWVhsb3JvaWljenpCa1BTVzhMMExGWQ?oc=5",
+      "source": "Agência Brasil",
+      "published": "Tue, 08 Sep 2026 22:50:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Quarta terá temporais em parte do Brasil; veja a previsão - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNd3BRZWlhRzZrbkVzRE4xRmI0aldrOUNkcDJ1UzdUYmxZU0llYjNPRzIwdF9CS3BjRnZPWEVDNFRJTVJqZWwtandCOHBhazV0WlhyQ25xM3laM3dsc2drbXJOUXgybl9YUjVHbV9BU2V6SFVmZkJVR0U3dTZWckVyc3hrZUtmTi1CWERXUE0wckRpQ21iS0pXRzJXMzFaY0k?oc=5",
+      "source": "SBT News",
+      "published": "Wed, 09 Sep 2026 09:31:32 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Veja como foi a terça-feira (8) dos candidatos a presidente - Agência Brasil",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQZjhFekJneUVqVFRQTXBMVjJzMFh1a3VZajdjVVBEcHNfUzhMeDdzOHdZaVVGVmtOb1Nnei1LNUlaUTZxVFcxT0ZSTmY5S0VkcV9fdjRfaTZmTjFvYkJtN1JOdkZJNFllb2xYUmNfMnpTakIyV2RzdlM3OTRINUcwTjVhdFBpcjJZRk9ySk9sSkNKRUxUVHhNVE5rM2ZhU1BoY2oxRzFMRG45UjdFdU9DQQ?oc=5",
+      "source": "Agência Brasil",
+      "published": "Wed, 09 Sep 2026 00:17:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Brasil supera Venezuela em estreia no Sul-Americano de vôlei feminino - Agência Brasil",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNeEpfdkpMOWNVZ3FLRE1OdzdONGswVDc2WEZzQzN5Mmx1QXpHQ2VwREhVaHJyWkt3Qm5vVnBHaEU0RWhfd1NGVEx6WlNYZWZFTHh0NXYwS3phS2ViZ3hhU05SNVUtTGVwR1ZCb1pWTHYzZVdGODZad012a28yUUFHRWNDS3NLcUxyMm5BSU1nY04ySXRYOWEtcGpsUENVc3I4RGRIRDlqWG9QaGRyZjJvVWhxSUVRd2wzbUlvYkc1U2hrUlN2ZEE?oc=5",
+      "source": "Agência Brasil",
+      "published": "Wed, 09 Sep 2026 00:46:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "O GLOBO e mais nove redações da América Latina participam do novo AI-Powered Next Gen News Sprint - O GLOBO",
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQRE5pYnZTRWtVWVRMR1JkVEZhRTZNVGpxR09HQnFjbllwMG1wUjV0WHZxQXlHalFRR1h5Z1F4azZQd2R0VVdOMmxXaEo4clBSSUpnNHV5VzZ5MzRhMVpFLURTbDlSbm83UmlsMndDWVVWTFYya1NqNHZjUEZwR3RMTHFRSm9yeGtqRWVKNFd4eU1FdnpfQUFOdTRhbUdNVkNuZy1MS0ZCQ0pDbXdwX0pPanV0dU5FY3EzcmEyT0dkOC1rdy1hcy1nNFJWSldLUzVlVkR4a1NUdktyTjhzSmFnd09weWtXMEll0gH3AUFVX3lxTFB1Yk5IY2JwYkpPTDM4YVlqT1RoWGJaenpFT2ZmcUgzbVVPVDFxTnVRZnBMNWlyc0hxZTBHTmJYa1FRLXphVEJGNjViek5wMkZEX3NGREI2YUFENGVZVFAxajdHVkRUd28yaE5RVFJGOTJsdEp4akllOGRUYVEycXVfdlM1ZjFOR2JsM0VuNDJnOG41ZTNXdDJXNnM4ajFxVlFXaTQ5b252UlpLblVYWmZRMVh1TG9JVTRPaS16OURqV0Z4eGs1NThOWWlkRGMwX2FZR2w0Rlh0NlFwdlNXZF94V1pMMUV6RDJlNHh4eDllTjlFRHFwMVk?oc=5",
+      "source": "O GLOBO",
+      "published": "Wed, 09 Sep 2026 05:15:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "EUA anunciam proibição de importações canadenses - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOdTlOQklMeFJfQ0NZdTJsN25xN2R1UXlwQTVWN25fMng1d3MxYlZaT1lUSXFSUENtc3RLdFJHQUdJRlR6elhpLTN2RkZUYUFXQWFndUhzeTN5ZWRYS3lzSnpUUXZvTFl1MDQybm1qSFhBYi10QzFyaEREcmw0QklOcnBZX2tncGJiRkZ3dmRRVC1Bd3BaUkpPRDkzSHFsbjNXekE?oc=5",
+      "source": "SBT News",
+      "published": "Wed, 09 Sep 2026 07:46:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Principais notícias do mundo na noite de hoje (8) - Tribuna do Sertão",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTk51Tmt5Q2hpWkN0WmdLR2wxdlp4SGE3MGpEcFdNUE15VExjdHFOQ0lkRlF1SVVMVGVpQWwxUTB3UlJXbTd5UGI2RUpPWVlvQ3AzSFYyaVhlM3I4MERRYmx6VktvRE5EcTMxQk0wVE1aSmhSemtDZXFFVDZyZ1FaTDRXZFBUdmtlVm5kay1ETVhYQXplUWdBdEtpMTBFNG5uSE1acmpkMmVpUQ?oc=5",
+      "source": "Tribuna do Sertão",
+      "published": "Tue, 08 Sep 2026 23:32:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Brasil bate o Canadá e vai às oitavas da Copa do Mundo feminina sub-20 - uol.com.br",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNS2lYZ0VpeU5SMEhHTmtkSjVRUXk2WnVobHhHVjdfSjVfbklWSUUtSGtpLUJZWS1oTk9VbjFvWkZmZzB4VE53bV85Z0ZGSDZLcW10Z2w3YmM4ZklpSVQ2c0V4TTNUOHlKbnJUY0RiX3A2M2VxalIwVEFfc1pfWHI1b3hMUzB0REFyRFI0ZUJybWVvQ2VSYW1tM3lxeWVQWjByRlpCcWNKSUhETEdDay03OHFZcy1hZw?oc=5",
+      "source": "uol.com.br",
+      "published": "Tue, 08 Sep 2026 14:53:59 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Amazônia tem mais de 2,7 mil espécies de peixes, aponta estudo - Agência Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSnN0SkxZbEZPTi0yeWl0ZU1XaVNieTBWRzZUbjBLLXNxSlBUdldLLWhEQjNGdHhqOFdoQ2xTRGNCTUFyY0lyZ0NyUzhWeWxWRi1YZGJwQ0xfQ2c1M1VRYzFBVkZMcElHVzIwend6dEdjak9wdVpqOW5HY2JJOVAxWHkxby0xMGlVMkpTT3JrckFqbTlDUXpXNUlFZU1GYld5VHpSSng5VEg4UWh1MWhWWHV2aFdhelFuS2NpcFZSc0w?oc=5",
+      "source": "Agência Brasil",
+      "published": "Tue, 08 Sep 2026 14:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Inteligência artificial para comprar carro? 57% dos consumidores já usam IA com essa finalidade - AutoPapo",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE4yLTluWkRXTExzWHN0UDJjWVFReWQySG1GWVRtejM4YmJWY1dLUjdTWW5GNWhNRUNWOG9peFNVWUNwYzVMaWl6MHNWeVRmMlNRdzU2UmRlMnFhRHBXVUpEYXFPa2tNdTJLLWU5VnZrYnczZDVIYXln?oc=5",
+      "source": "AutoPapo",
+      "published": "Wed, 09 Sep 2026 09:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "“Tecnologia virou ponto de partida”: a aposta da Gupy em agentes de IA para o RH - Exame",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQUUI2SGxYOWZudXBWZXZpN0h3WVdnLVU3SVlMOGQ2N1VsbGFCWEl5TVdFOXhNS2poS1o2OGJNcU5ZVEZYbmw1STF6SHFMTTZLakQ3SzluQXJDU2lMUUd6ekJoYjdVVTdGeURlT0xhRVpBQ0dwV3UxQUZ2aU1JUDhFbXQtdGRKNjFiRFdHZG9nMmNFcTMxVC1TSnJJUzAwcG9qemJaTFRZMko?oc=5",
+      "source": "Exame",
+      "published": "Wed, 09 Sep 2026 09:03:01 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Inteligência Artificial: estamos preparados para essa revolução na saúde? - VEJA RIO",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxORzZCSHBqZ1NCZ1pycVh3OVBLX1ZudGdDclptN0lhQlJuTXhraWdOSVY3SWtjNXhSNldLVm5CWmNjM0hpVjVXZmc1YkJWZlVTOWFyakh5VXRsZkVJczVTMlVwakE2TEVwTVp6ck15TTNqMzdweDBBaGhsRVdBMzlSSzJ6VjBaNHAxSUF1UTNZVkd1V1gxUVFLVWw1X3NEUHQ3VFRRdkNkTDg5a3NfZjVzVHRlQ3lCTHJJSmdUdmZSazMtdw?oc=5",
+      "source": "VEJA RIO",
+      "published": "Tue, 08 Sep 2026 20:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Saiba como desativar a Meta AI do WhatsApp; confira o passo a passo - O GLOBO",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQV0tkdnhKWUIzWVhTU1JIdG5OeW5JdlcyQzNtVUdPMUp2TlJ6b0hyT0t0UWhFWjlGZ0gxYklDcmFNdDJoMHNSXzlmbklSWUlMTzN5YUpDSEdjcUpGQnJ0RW05d1ppc1hiTFlnUGRBaERFaU5zZWhQcnBzNzVvMXltdlV1MDdzVXpJQ3VLNG1YbUZ3TlJOTWJVNjkzSlVja3JwSy1NbDFwWU1hS3NsX2wwVnUybldqU3J4aUlldlA0bnJoV3lPSkE5MzBySncyaXBQbk1NbEwySWxjT1U0cF84T9IB4AFBVV95cUxQV0tkdnhKWUIzWVhTU1JIdG5OeW5JdlcyQzNtVUdPMUp2TlJ6b0hyT0t0UWhFWjlGZ0gxYklDcmFNdDJoMHNSXzlmbklSWUlMTzN5YUpDSEdjcUpGQnJ0RW05d1ppc1hiTFlnUGRBaERFaU5zZWhQcnBzNzVvMXltdlV1MDdzVXpJQ3VLNG1YbUZ3TlJOTWJVNjkzSlVja3JwSy1NbDFwWU1hS3NsX2wwVnUybldqU3J4aUlldlA0bnJoV3lPSkE5MzBySncyaXBQbk1NbEwySWxjT1U0cF84Tw?oc=5",
+      "source": "O GLOBO",
+      "published": "Wed, 09 Sep 2026 06:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Os limites da IA na educação - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE4xZWxGRktkRVd2dFBYRzZUdWMzVFo1SmlDS3ZYakVQc3pGbm5aa0hkWmNKc2RMQk5OR01HbF9fQ1RpUE00ZFdkLTg2eHR1Z3RhZkNxYlZKMTZUSHlRbkNZTGwtOTU5cjc1S1Y2RjhYeThTdw?oc=5",
+      "source": "Estadão",
+      "published": "Wed, 09 Sep 2026 06:01:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Cartas de Leitores - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNNmNvVlRqOEVCRng0VzdyaHY0ODZqbndzV09kSFRCYkNwa2VmUERrQ0kySFdvMWxfNHVOVkF0d0JwWENsOHFWLVdyMWFOOEd3SVhDNUFtOE40RFFGVy1mQlhxamFDMlI3c3Q0Wm9wQThYMVVZSXpEQjlMSlRkRDl1T3dOVE5nc21KT0ptaThzV1ktYXRYVTREemJWZ9IBmwFBVV95cUxNNmNvVlRqOEVCRng0VzdyaHY0ODZqbndzV09kSFRCYkNwa2VmUERrQ0kySFdvMWxfNHVOVkF0d0JwWENsOHFWLVdyMWFOOEd3SVhDNUFtOE40RFFGVy1mQlhxamFDMlI3c3Q0Wm9wQThYMVVZSXpEQjlMSlRkRDl1T3dOVE5nc21KT0ptaThzV1ktYXRYVTREemJWZw?oc=5",
+      "source": "Valor Econômico",
+      "published": "Wed, 09 Sep 2026 08:00:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Empresas zumbi se multiplicam no Brasil sob peso de dívidas - InvestNews",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE0zemlKVm1INXRVbjZMSTRKeVZkV0dBR0dWMW1tWFFiZ0U0TGhBeVJ3bnpNSG1vUk9remoyeTg0UVQ3aWNXakR1cHpSV3RzQ09HNHJxbWYwUTJrMnIyRVU0TlUtNG8xV201RG1LLWdsTVAxdFpRQ280U0VUUzA5d0nSAYQBQVVfeXFMTzR1T29fcGJNLWlmNFA3Q3pCZHY5WjZTeGVrVElHVjJKUkRaY3RGSUJiQk96RmpseFRLMVpsX2x1SmRWdEJVYXRLb1VtVFRpZDRod3R3WDlsVVlucEpVX09LMVVHMk5rNXF5SExtbXZOX0hKS3dnekN6WXNBQ0U5Yk1DTnNG?oc=5",
+      "source": "InvestNews",
+      "published": "Wed, 09 Sep 2026 09:00:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Dinheiro esquecido nos bancos sobe para R$ 5,65 bilhões - Agência Brasil",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNbXc2R2IwekRMVGxFVnRJVV9OQmVTTVZ0UDVGNFgyZF82QVp2TVBFM0ZWTS1MeTVzSGozSTZ1SVlfVTBzMVAtY2NYM293Y09pMXZpWG9nbV9oREhjR2tZU1pyWHVHOGxURlRRTGxldTZrdU1hOGhTbFdYbGxITU5JSW5xUEk1aEtUSHV2empHNXJTWFl5NnAyZ1cyNjFWcnVoRmsxMHRwZkV2dEpoUm11aw?oc=5",
+      "source": "Agência Brasil",
+      "published": "Tue, 08 Sep 2026 19:42:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Com política das terras raras, o que falta para Brasil atrair investimentos - UOL Economia",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPcnBZWEpWR2gwRFhLbnl4VFVsTHprZm5nbTY1dFlsbnJQZU9WaXd5ZnJLSVo1LTh6VHhhMjRIelZMWlRjOU9GeVozdGFfbWdSVkMxVHpBSUs0ZmdpcjgyRXprLW5mek90aE9JQWNFRWRlZk1HUDFEV1FGbWtaZUx4N2EycXkyZ09XWDEtTGkzMEViam5jS3N5RQ?oc=5",
+      "source": "UOL Economia",
+      "published": "Wed, 09 Sep 2026 08:33:35 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Notícias Ao Vivo do Brasil e do Mundo - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPTUxPZDdSX3VCd1EzSzZIblZNN3ktLTZ0SkpLQmsydk10dnVzVzc2RS16OHlyNEVuQXNOWC1ka21XaTlXTHQzcUVEcnNnQk9YX28teXpub1RXc1F5REV0OWpPcWpCdzV0N2g1bXQ0WVAtb1I3V3ZkRFNRQWt6dTJ5aTZsNlFTSUotSFJ1SDEtNEh1aGx0WVlDcy02NGNCRmdyWWUtaWlRbTBZV3FsOE42bA?oc=5",
+      "source": "CNN Brasil",
+      "published": "Wed, 09 Sep 2026 06:00:35 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Confira a agenda dos presidenciáveis nesta terça-feira (8) - Agência Brasil",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOS1hDVHdudWNMQ2stc2FLWnRVcl9UY04xQndKQWVON3hIcDFnUlMtMklkQmdvX3FqUDFIUE50TndNcTVZbEVkRWdtQkg1cG0xVzhVZkxwRHVRWHF3RVU0TFRCazQyZ0hVT2lNZXJjaXNDa09IQXExaS1qM19FNGxwQUN5M3VZZXFGYkFHUm1HSkc4LVhfWHFnb0dBZElnOGFnT2xKR2JjTHZYRzJaWXNJalh3?oc=5",
+      "source": "Agência Brasil",
+      "published": "Tue, 08 Sep 2026 11:58:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Futebol na TV: a programação completa dos jogos de hoje, quarta-feira, 09 de setembro - Goal.com",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOejhoaWx4NWkzSzA1QW5uNWY0Y2lOQ0pRYUJJYnFhTHJtb1dfNFJUMlM5aGJ2TXVXVXJEQXZVUFNOUXNVMUVnY25VUVc4a1JyZS1MaEdxRlpzaVFqLUtlSF96WVZMSFloZGFHdE4xcUVvZXFzWnR6WHdhTFIwQ1djVmJKT3dfVUpPOVluczZTS181Um42N3BydHhVb2c3czBGeG9oMWZHT2VYaVl3Zmh3WG5xMWJsSGFHa3VN?oc=5",
+      "source": "Goal.com",
+      "published": "Wed, 09 Sep 2026 05:24:12 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "\"Vamos retomar no Paraná a agenda anticorrupção\", diz Moro à CNN - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPZENwdU10YnlvcnBvNzJmQ0FoeDI4M2VJRXpQT3oxaS15ZUpMXzZPRkgyNVdxM08xdGo3SmFWZ1BmYlFXQnJCeURUTWlSWk9FVHZTYWRBNGJTZm5CUEV3ZEl1SERNNGlTRFZTdGd0dGVLNFZwZkozREpRT0JYYmhsRjJGTGJYSlFjVFB0akFDQWNoMDRFTjBZTG9hUWR4SGhCeHc?oc=5",
+      "source": "CNN Brasil",
+      "published": "Wed, 09 Sep 2026 01:21:20 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda dos jogos de hoje (9/9) do Sul-Americano Feminino de Vôlei - No Ataque",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPSDV1YVJXLW54eVRibXlLbDNUNnZpV0pRWnRTOEMxbUNrb0toMm5aX2taNHljbTZrZThpZkdabzhtSGs2U0xLWE01WDU1bWRoWUdUQ3IzUGVVZGJQN0F3eGJ0WjJtODV4MTQ4alJ1cklJR3BRMnc2cWdobW9ZNTVLWXRINWJtOHJ6bXc2SVA0ZW9aSFdldmpUZW83TXdOQUNiTjM3djZKYmc5ZFdWcGVpOEhSNA?oc=5",
+      "source": "No Ataque",
+      "published": "Wed, 09 Sep 2026 03:00:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Concurso Público: confira a programação das aulas de hoje! - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9RZzhuWTNNQjhfRUVRTXZSdHE3RGVseGI4VWNvMlJ3aHdqajY4QVVQV09pUHVfZkZYdXk3WnFiTjlMbS1YbXVEXzQ0d1BfTHhzcVpUQnUyazhOcXVObDdyWmlGdVZ6UkZXWmfSAW9BVV95cUxNb1U4ekpYaVQwOENfMXZ6X3pzUjhyMGNMS09DNFpYZkx2aUdsVFd6X2k4OTNZcW1HZi1mMlFlSndoS3pHLXdqZGV1NXJFbzAtYTZTWDBzZWVKb1JYLWkwRWxjWE1GNnh1QTlEd1EzV1E?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Wed, 09 Sep 2026 05:30:26 GMT"
+    }
+  ],
+  "generated_at": "2026-09-09T06:44:56.198873-03:00"
+}

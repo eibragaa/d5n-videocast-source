@@ -30,7 +30,7 @@
     <podcast:locked owner="eibragaa@gmail.com">no</podcast:locked>
     <podcast:guid>fechamento.d5n-daily.netlify.app</podcast:guid>
     <atom:link href="https://d5n-daily.netlify.app/fechamento.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Tue, 08 Sep 2026 17:30:00 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 17:30:00 -0300</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/fechamento-cover.jpg</url>
       <title>Fechamento do Mercado</title>
@@ -38,6 +38,32 @@
     </image>
     <copyright>© 2026 Drop Five News</copyright>
     <generator>D5N Pipeline — Fechamento do Mercado</generator>
+    <item>
+      <title>Fechamento do Mercado — 09/09/2026</title>
+      <itunes:title>Fechamento do Mercado — 09/09/2026</itunes:title>
+      <itunes:episode>9</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>06:24</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/fechamento-cover.jpg"/>
+      <guid isPermaLink="false">fechamento-2026-09-09</guid>
+      <link>https://d5n-daily.netlify.app/#fechamento</link>
+      <enclosure url="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-09-09.mp3" length="9215416" type="audio/mpeg"/>
+      <pubDate>Wed, 09 Sep 2026 17:30:00 -0300</pubDate>
+      <description>Fechamento do Mercado de 09/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:24.</description>
+      <itunes:summary>Fechamento do Mercado de 09/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:24.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Fechamento do Mercado • 09/09/2026</strong></p><p>Fechamento do Mercado de 09/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:24.</p><ul><li>Fechamento (08/09)| Ibovespa fecha em alta de 1,20%; dólar cai a R$ 5,0858 - InvesTalk</li><li>Ibovespa fecha em alta de mais de 1%, com eleições; dólar recua a R$ 5,08 - InfoMoney</li><li>Ibovespa sobe 1,20%, retoma os 187 mil pontos e reacende ‘trade eleitoral’ - suno.com.br</li></ul><p><a href="https://d5n-daily.netlify.app/#fechamento">Ouça no site</a></p>]]></content:encoded>
+  <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-09-09.mp3">
+  <psc:chapters version="2.2">
+    <psc:chapter start="00:00" title="Abertura"/>
+    <psc:chapter start="01:04" title="Radar Mercado"/>
+    <psc:chapter start="02:08" title="Dólar"/>
+    <psc:chapter start="03:12" title="Bolsas"/>
+    <psc:chapter start="04:16" title="Empresas"/>
+    <psc:chapter start="05:20" title="Encerramento"/>
+  </psc:chapters>
+  </podcast:chapters>
+    </item>
     <item>
       <title>Fechamento do Mercado — 08/09/2026</title>
       <itunes:title>Fechamento do Mercado — 08/09/2026</itunes:title>

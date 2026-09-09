@@ -245,6 +245,8 @@ def main() -> int:
         return 1
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(rss, encoding="utf-8")
+    root = output.parent.parent.parent
+    (root / output.name).write_text(rss, encoding="utf-8")
     print(f"✅ {FEED_NAME} — {len(episodes)} episódios; mais recente: {episodes[-1].editorial_date}")
     return 0
 
