@@ -15,7 +15,7 @@ MC_ROOT = Path(__file__).resolve().parents[1]
 ASSETS = MC_ROOT / "assets" / "audio"
 STING = ASSETS / "transition-sting.mp3"
 MIN_SECONDS = 225
-MAX_SECONDS = 390
+MAX_SECONDS = 500
 LEAD_MS = 2000
 THEME_PAUSE_EXTRA_MS = 700
 
