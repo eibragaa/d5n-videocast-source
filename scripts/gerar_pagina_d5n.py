@@ -223,12 +223,11 @@ button{font-family:inherit}
 }
 .brand{
   font-family:var(--font-display);font-weight:800;font-size:1.05rem;
-  letter-spacing:-.01em;text-decoration:none;display:flex;align-items:baseline;gap:6px;
+  letter-spacing:-.01em;text-decoration:none;display:flex;align-items:center;gap:8px;
 }
 .brand-mark{
-  width:22px;height:22px;border-radius:6px;flex-shrink:0;align-self:center;
-  background:linear-gradient(135deg,var(--d5n),var(--mc) 55%,var(--fm));
-}
+  width:28px;height:28px;flex-shrink:0;display:block;
+  /* logo do Cardbook: sinal digital em movimento (fav...[truncated]
 .main-nav{display:flex;gap:var(--s1);margin-left:auto}
 .nav-link{
   font-size:.8rem;font-weight:500;color:var(--text-2);text-decoration:none;
