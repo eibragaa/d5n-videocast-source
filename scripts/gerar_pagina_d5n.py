@@ -45,6 +45,7 @@ PROGRAMS = {
         "byline": "Curadoria diária",
         "theme": "d5n",
         "ep_label": True,
+        "cover": "/podcast-cover.jpg",
     },
     "mc": {
         "badge": "MANHÃ CONECTADA",
@@ -54,6 +55,7 @@ PROGRAMS = {
         "byline": "Com Antonio",
         "theme": "mc",
         "ep_label": False,
+        "cover": "/manha-conectada-cover.jpg",
     },
     "fm": {
         "badge": "FECHAMENTO",
@@ -63,8 +65,11 @@ PROGRAMS = {
         "byline": "Com Antonio",
         "theme": "fm",
         "ep_label": False,
+        "cover": "/fechamento-cover.jpg",
     },
 }
+
+ARCHIVE_PAGE_SIZE = 20
 
 
 def esc(s: str) -> str:
@@ -206,6 +211,11 @@ button{font-family:inherit}
   background:color-mix(in srgb,var(--bg) 88%,transparent);
   backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border-soft);
+  transition:box-shadow var(--t-med) var(--ease),background var(--t-med) var(--ease);
+}
+.site-header.is-scrolled{
+  background:color-mix(in srgb,var(--bg) 96%,transparent);
+  box-shadow:0 8px 32px rgba(0,0,0,.35);
 }
 .header-inner{
   max-width:1200px;margin:0 auto;padding:0 var(--s5);
@@ -274,7 +284,17 @@ button{font-family:inherit}
 .container{max-width:1200px;margin:0 auto;padding:0 var(--s5)}
 
 /* ============ HERO ============ */
-.hero{padding:var(--s8) 0 var(--s7)}
+.hero{
+  position:relative;padding:var(--s9) 0 var(--s7);overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:-40% -20% auto;height:520px;pointer-events:none;
+  background:
+    radial-gradient(560px 300px at 18% 0%,rgba(91,141,239,.10),transparent 65%),
+    radial-gradient(480px 260px at 55% 10%,rgba(139,124,246,.08),transparent 65%),
+    radial-gradient(420px 240px at 88% 0%,rgba(63,185,127,.07),transparent 65%);
+}
+.hero > *{position:relative}
 .hero-eyebrow{
   font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
   color:var(--d5n);margin-bottom:var(--s4);display:flex;align-items:center;gap:var(--s3);
@@ -340,7 +360,16 @@ button{font-family:inherit}
 .program-card--mc{--accent:var(--mc);--accent-soft:var(--mc-soft);grid-area:side-a}
 .program-card--fm{--accent:var(--fm);--accent-soft:var(--fm-soft);grid-area:side-b}
 
-.pc-top{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);margin-bottom:var(--s5)}
+.pc-head{display:flex;gap:var(--s5);align-items:flex-start;margin-bottom:var(--s5)}
+.pc-cover{
+  width:88px;height:88px;flex-shrink:0;border-radius:var(--r-inner);
+  object-fit:cover;display:block;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow-1);
+}
+.program-card--d5n .pc-cover{width:112px;height:112px}
+.pc-head-text{min-width:0;flex:1}
+.pc-top{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);margin-bottom:var(--s3)}
 .pc-badge{
   display:inline-flex;align-items:center;gap:var(--s2);
   font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
@@ -484,11 +513,16 @@ button{font-family:inherit}
 .archive-month::after{content:"";flex:1;height:1px;background:var(--border-soft)}
 .archive-list{display:flex;flex-direction:column}
 .archive-row{
-  display:grid;grid-template-columns:86px 1fr auto auto 40px;
+  display:grid;grid-template-columns:44px 86px 1fr auto auto 40px;
   align-items:center;gap:var(--s4);
   padding:var(--s3) var(--s4);border-radius:var(--r-inner);
   border:1px solid transparent;cursor:pointer;
   transition:background var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease);
+}
+.archive-row[hidden]{display:none}
+.archive-thumb{
+  width:44px;height:44px;border-radius:10px;object-fit:cover;display:block;
+  border:1px solid var(--border-soft);
 }
 .archive-row:hover{background:var(--surface);border-color:var(--border-soft)}
 .archive-row.is-playing{background:var(--surface);border-color:var(--accent,var(--d5n))}
@@ -516,6 +550,25 @@ button{font-family:inherit}
 .archive-play:hover{border-color:var(--accent,var(--d5n));color:var(--accent,var(--d5n))}
 .archive-play svg{width:11px;height:11px}
 .archive-row.is-playing .archive-play{background:var(--accent,var(--d5n));color:#0B0E14;border-color:transparent}
+
+/* pagination */
+.archive-pagination{
+  display:flex;align-items:center;justify-content:center;gap:var(--s3);
+  margin-top:var(--s6);
+}
+.page-btn{
+  min-width:38px;height:38px;padding:0 12px;
+  font-family:var(--font-mono);font-size:.74rem;color:var(--text-2);
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r-btn);cursor:pointer;
+  transition:all var(--t-fast) var(--ease);
+}
+.page-btn:hover:not(:disabled){color:var(--text);border-color:var(--text-2)}
+.page-btn:disabled{opacity:.35;cursor:default}
+.page-btn.is-current{
+  color:#0B0E14;background:var(--text);border-color:var(--text);font-weight:600;
+}
+.page-info{font-family:var(--font-mono);font-size:.68rem;color:var(--muted)}
 
 /* ============ FOOTER ============ */
 .site-footer{
@@ -557,9 +610,12 @@ button{font-family:inherit}
   .hero{padding:var(--s7) 0 var(--s6)}
   .hero-stats{gap:var(--s5);flex-wrap:wrap}
   .program-card{padding:var(--s5)}
+  .pc-cover{width:72px;height:72px}
+  .program-card--d5n .pc-cover{width:84px;height:84px}
   .pc-actions{flex-direction:column}
   .btn{width:100%}
-  .archive-row{grid-template-columns:1fr auto 40px;grid-template-areas:"main date play" "main dur play"}
+  .archive-row{grid-template-columns:44px 1fr auto 40px;grid-template-areas:"thumb main date play" "thumb main dur play"}
+  .archive-thumb{grid-area:thumb}
   .archive-ep{display:none}
   .archive-main{grid-area:main}
   .archive-date{grid-area:date}
@@ -633,13 +689,18 @@ def program_card(key: str, eps: list[dict], featured: bool) -> str:
     cls = f"program-card program-card--{p['theme']}"
     return f"""
     <article class="{cls}" id="{key}" data-animate aria-labelledby="{pid}Name">
-      <div class="pc-top">
-        <span class="pc-badge">{esc(p['badge'])}</span>
-        <span class="pc-schedule">{esc(p['schedule'])}</span>
+      <div class="pc-head">
+        <img class="pc-cover" src="{esc(p['cover'])}" alt="Capa do programa {esc(p['name'])}" width="112" height="112" loading="lazy">
+        <div class="pc-head-text">
+          <div class="pc-top">
+            <span class="pc-badge">{esc(p['badge'])}</span>
+            <span class="pc-schedule">{esc(p['schedule'])}</span>
+          </div>
+          <h3 class="pc-name" id="{pid}Name">{esc(p['name'])}</h3>
+          <p class="pc-tagline">{esc(p['tagline'])}</p>
+          <div class="pc-byline"><span>{esc(p['byline'])}</span><span>{esc(p['schedule'])}</span></div>
+        </div>
       </div>
-      <h3 class="pc-name" id="{pid}Name">{esc(p['name'])}</h3>
-      <p class="pc-tagline">{esc(p['tagline'])}</p>
-      <div class="pc-byline"><span>{esc(p['byline'])}</span><span>{esc(p['schedule'])}</span></div>
       <div class="pc-divider"></div>
       <span class="pc-latest-label">Última edição</span>
       <div class="pc-latest-meta">
@@ -688,6 +749,7 @@ def archive_html(all_eps: list[dict]) -> str:
             f'      <div class="archive-row archive-row--{prog}" data-program="{prog}" '
             f'data-src="{esc(src)}" data-duration="{e["duration"]}" tabindex="0" role="button" '
             f'aria-label="Ouvir {esc(PROGRAMS[prog]["name"])} de {esc(fmt_date(d))}">'
+            f'<img class="archive-thumb" src="{esc(PROGRAMS[prog]["cover"])}" alt="" width="44" height="44" loading="lazy">'
             f'<span class="archive-ep">{esc(ep_txt)}</span>'
             f'<div class="archive-main">'
             f'<div class="archive-title">{esc(truncate(title, 70))}</div>'
@@ -855,21 +917,86 @@ document.querySelectorAll('.archive-row').forEach(row => {
   });
 });
 
-// archive filters
-function applyFilter(f){
-  document.querySelectorAll('.filter-chip').forEach(c =>
-    c.classList.toggle('is-active', c.dataset.filter === f));
-  document.querySelectorAll('.archive-row').forEach(r => {
-    r.style.display = (f === 'all' || r.dataset.program === f) ? '' : 'none';
-  });
+// archive filters + pagination
+const PAGE_SIZE = 20;
+let currentFilter = 'all';
+let currentPage = 1;
+
+function visibleRows(){
+  return Array.from(document.querySelectorAll('.archive-row'))
+    .filter(r => currentFilter === 'all' || r.dataset.program === currentFilter);
+}
+
+function renderArchive(){
+  const rows = visibleRows();
+  const totalPages = Math.max(1, Math.ceil(rows.length / PAGE_SIZE));
+  currentPage = Math.min(currentPage, totalPages);
+  const start = (currentPage - 1) * PAGE_SIZE;
+  const pageRows = new Set(rows.slice(start, start + PAGE_SIZE));
+
+  document.querySelectorAll('.archive-row').forEach(r => { r.hidden = !pageRows.has(r); });
   document.querySelectorAll('.archive-month').forEach(m => {
     let el = m.nextElementSibling, visible = false;
     while (el && !el.classList.contains('archive-month')){
-      if (el.classList.contains('archive-row') && el.style.display !== 'none') visible = true;
+      if (el.classList.contains('archive-row') && !el.hidden) visible = true;
       el = el.nextElementSibling;
     }
-    m.style.display = visible ? '' : 'none';
+    m.hidden = !visible;
   });
+
+  const nav = $('archivePagination');
+  if (nav){
+    nav.innerHTML = '';
+    if (totalPages > 1){
+      const prev = document.createElement('button');
+      prev.className = 'page-btn'; prev.type = 'button'; prev.textContent = '←';
+      prev.disabled = currentPage === 1;
+      prev.setAttribute('aria-label', 'Página anterior');
+      prev.addEventListener('click', () => { currentPage--; renderArchive(); });
+      nav.appendChild(prev);
+
+      const win = [];
+      for (let i = 1; i <= totalPages; i++){
+        if (i === 1 || i === totalPages || Math.abs(i - currentPage) <= 2) win.push(i);
+      }
+      let last = 0;
+      win.forEach(i => {
+        if (i - last > 1){
+          const gap = document.createElement('span');
+          gap.className = 'page-info'; gap.textContent = '…';
+          nav.appendChild(gap);
+        }
+        const b = document.createElement('button');
+        b.className = 'page-btn' + (i === currentPage ? ' is-current' : '');
+        b.type = 'button'; b.textContent = i;
+        b.setAttribute('aria-label', 'Página ' + i);
+        if (i === currentPage) b.setAttribute('aria-current', 'page');
+        b.addEventListener('click', () => { currentPage = i; renderArchive(); });
+        nav.appendChild(b);
+        last = i;
+      });
+
+      const next = document.createElement('button');
+      next.className = 'page-btn'; next.type = 'button'; next.textContent = '→';
+      next.disabled = currentPage === totalPages;
+      next.setAttribute('aria-label', 'Próxima página');
+      next.addEventListener('click', () => { currentPage++; renderArchive(); });
+      nav.appendChild(next);
+
+      const info = document.createElement('span');
+      info.className = 'page-info';
+      info.textContent = rows.length + ' episódios';
+      nav.appendChild(info);
+    }
+  }
+}
+
+function applyFilter(f){
+  currentFilter = f;
+  currentPage = 1;
+  document.querySelectorAll('.filter-chip').forEach(c =>
+    c.classList.toggle('is-active', c.dataset.filter === f));
+  renderArchive();
 }
 document.querySelectorAll('.filter-chip').forEach(c =>
   c.addEventListener('click', () => applyFilter(c.dataset.filter)));
@@ -897,7 +1024,16 @@ if (!reduceMotion && 'IntersectionObserver' in window){
   document.querySelectorAll('[data-animate]').forEach(el => el.classList.add('is-visible'));
 }
 
+// header scrolled state
+const header = document.querySelector('.site-header');
+if (header){
+  const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+}
+
 ['d5n','mc','fm'].forEach(initPlayer);
+renderArchive();
 })();
 """
 
@@ -1021,6 +1157,7 @@ def build_page(eps: dict[str, list[dict]], ticker_items: list[str]) -> str:
     <div class="archive-list" id="archiveList">
 {archive}
     </div>
+    <nav class="archive-pagination" id="archivePagination" aria-label="Paginação do arquivo"></nav>
   </section>
 
 </main>
@@ -1077,9 +1214,13 @@ def main() -> int:
         return 1
 
     ticker_items: list[str] = []
-    if INDEX_HTML.exists():
+    ticker_file = REPO / "data" / "ticker.txt"
+    if ticker_file.exists():
+        ticker_items = [l.strip() for l in ticker_file.read_text(encoding="utf-8").splitlines() if "|" in l]
+        print(f"  ticker: {len(ticker_items)} itens de data/ticker.txt")
+    elif INDEX_HTML.exists():
         ticker_items = extract_ticker(INDEX_HTML.read_text(encoding="utf-8"))
-        print(f"  ticker: {len(ticker_items)} itens preservados")
+        print(f"  ticker: {len(ticker_items)} itens preservados do HTML")
 
     page = build_page(eps, ticker_items)
 
