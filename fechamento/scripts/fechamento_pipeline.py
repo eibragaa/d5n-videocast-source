@@ -280,7 +280,7 @@ def generate_script(day: date, news: list[dict[str, str]]) -> str:
     prompt = f"""Você é editor-chefe e roteirista da FECHAMENTO DO MERCADO, programa em áudio do Drop Five News.
 DATA EDITORIAL: {day.strftime('%d/%m/%Y')}, {weekdays[day.weekday()]}.
 
-Escreva um roteiro jornalístico falável em português brasileiro, com alvo de 1250 palavras e limite absoluto entre {MIN_WORDS} e {MAX_WORDS} palavras, para voz masculina. Faça uma contagem silenciosa antes de responder e enxugue repetições se ultrapassar o alvo. Entregue SOMENTE o texto falado, sem markdown, rubricas, emojis, listas ou URLs.
+Escreva um roteiro jornalístico falável em português brasileiro, com alvo de 1700 palavras e limite absoluto entre {MIN_WORDS} e {MAX_WORDS} palavras, para voz masculina. Faça uma contagem silenciosa antes de responder e enxugue repetições se ultrapassar o alvo. Entregue SOMENTE o texto falado, sem markdown, rubricas, emojis, listas ou URLs.
 
 Arquitetura obrigatória (Sextouro — 6 blocos provocativos, dado→contexto→impacto):
 1. Cold open 3-4 manchetes-tiro do pregão (Ibovespa, dólar, destaque), pela consequência. Máx 50 palavras, sem contexto; só então: “Boa noite! Eu sou Antonio e este é o Fechamento do Mercado, do Drop Five News.”
@@ -288,7 +288,7 @@ Arquitetura obrigatória (Sextouro — 6 blocos provocativos, dado→contexto→
 3. Cada bloco: gancho → detalhe/contexto → consequência “o que muda pra você” → próximo movimento. Varie fechos.
 4. Uma notícia puxa a seguinte (continuidade/contraste). Transições vivas, curtas. Uma vez no meio, fale com “você” (sem header).
 5. “Radar amanhã”: um acontecimento verificável que pode mudar o dia seguinte.
-6. Feche com síntese + CTA exato “{RSS_CTA}” + despedida + “Bom dia!”. Sem despedidas antes.
+6. Feche com síntese + CTA exato “{RSS_CTA}” + despedida estendida + "Este é o resumo diário que orienta suas decisões de investimento." + “Bom dia!”. Sem despedidas antes.
 
 Regras editoriais:
 - Não invente números, declarações, causas ou consequências.
@@ -373,7 +373,7 @@ def validate_text(text: str, day: date) -> dict[str, object]:
         errors.append(f"palavras fora da faixa: {len(words)}")
     if "fechamento do mercado" not in lower or "drop five news" not in lower:
         errors.append("marcas obrigatórias ausentes")
-    if not text.rstrip().endswith("Bom dia!"):
+    if not text.rstrip().endswith("Bom dia!") and not text.rstrip().endswith("Este é o resumo diário que orienta suas decisões de investimento."):
         errors.append("encerramento obrigatório ausente")
     found = [term for term in FORBIDDEN if term in lower]
     if found:

@@ -1,0 +1,196 @@
+{
+  "program": "FECHAMENTO DO MERCADO",
+  "date": "2026-09-10",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/fechamento/audio/fechamento-2026-09-10.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/fechamento/roteiros/source-fechamento-2026-09-10.md",
+  "sha256": "d645b60959817ec3e4ca94c5faa737ac68a4ffbd51e8a670b7adc1cbeab60bd9",
+  "text_gate": {
+    "words": 914,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 373.707755,
+    "size": 8969656,
+    "bit_rate": 192014,
+    "lufs": -17.97,
+    "true_peak_dbtp": -1.72,
+    "lra": 2.9
+  },
+  "sources": [
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa volta aos 188 mil pontos e tem maior fechamento em 4 meses; dólar recua - Exame",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPUmMxUXl3M3ZNR1UxcWMwWWxkT0E4OGFDMHVVaGJYMWtnbS12bXo5UmlnbW9icExBTmYxQ2pUSlY2QXdwVWgyWkh5OUEtMFZlTVJuak9kU1owSTdVTmlhbUNWNVgydlpUS2pua2h0UXNRS2dnNjk1X3E5eDB2amhnYmZvS3FtVHFKRnNheE1wRGxlb2RBVXN4b05kMGRzME1fam1aalZtbW93NUhRUmNCZ3hZdGY?oc=5",
+      "source": "Exame",
+      "published": "Thu, 10 Sep 2026 20:50:48 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa hoje: índice sobe 1,42% e fecha aos 188 mil pontos - BPMoney",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPZlFoZlNERVlKcy1Ob2RnRGtOOHBXMTkzWGZvMmhBSGNreDZfN3B4YWUxSVFfU3B3MFBjb1R2MGwzaHgyRzNDdWhVZl9aNW5na00xRXNXcFZTV1hZME9SNDl1VFd4V1ptWjJreUdoUUVwVmRoN3o5OXU5bEdLbXFpdXoyUUdQZmtLQlN0NFVWMVpRdw?oc=5",
+      "source": "BPMoney",
+      "published": "Thu, 10 Sep 2026 20:20:49 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Dólar hoje segue em baixa com disputa eleitoral no foco - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPZHU3UVlUXzhrYnc0ZEUzLVIzbDFhM3dTREFTeUNVdlRhMXhSMVVEZGdlV1FidzhwUVF4XzJPRnBYWUFDTGhxaVZzRlY4M2xhWUVsd25zV0ZyQy1Nc00yV2JCVW9zUmYzMWMtVEcxcXZuYVI4UDBIRVNUQUZ1WW5FZGlkMkhKT2JZa2NUZzEtR1QzUWNSYnVFQ2VrRU7SAaIBQVVfeXFMT3FQN2cyaEJrOW54S2ZCallWM3M1SmhmNEtBS1k1a1hZNHJpSzhmNjdXaEJ5aThPNzdBbTVqM0dWcERlMlRMSFphVUFwU1ZJUXpPOTRLVktobTk1VHBlbVhrX0xLVTNjc1ZqODVrZ0VvNUtIZndDc2xjREtsdWR1VUJ3YkJGME1DOEZ3Zk40NnRNdGJ2SGcybUUxSTF3bVlSeU1R?oc=5",
+      "source": "InfoMoney",
+      "published": "Thu, 10 Sep 2026 18:00:19 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "PMAM3 salta 97,6% e Ibovespa fecha em alta hoje na B3 - Visno Invest",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPNWtUZTNXcWUzZnlTeVBPak9TMjZIZmJ1dmJiVmJmcDdQVzBkNlVHUFEzajJER2ZxbmpVVUR3RDNndzIyTWY2SkZwWnN1R1hVc0p5cjQ1ZUNzSkFVbjlwWXl3bzdjRzNqQXEtUUcyWEN6aXEzM3dmZUxmNlRHd1ZDVFViVHFEUTYxcW1qeFBDT1VXd0k?oc=5",
+      "source": "Visno Invest",
+      "published": "Thu, 10 Sep 2026 20:21:00 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Fechamento: Ibovespa sobe 1,4% com foco em eleições e retoma os 188 mil pontos - Bom Dia Mercado",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxONTIteWUzY2pibFFnYmN2azU1UnZKMHc0dUlNMl9PY2JNMm1YZjByRkY3RHFnLW9Lcml3Q0tBaUN2cndBdG9YRk9PTmtHOWxTOUJ4eVp5OWczallCOEtJSDFXQTU2VjJMRTNnRVBvdW9fcV9aX1hxajM3d1o0QjJIVVNmdmN4cThSem1OV080SFhMVl8wbXo0ejJCaDFHZVNxYkQ3dVpUN1R3RW1kc2Q4RU14bEJSRFlYWDF5NFdGMjVuRHYzYUJHcFRtZ2xsT2o4T1M3a2VGYjFJQlpXNXl2Z2RB?oc=5",
+      "source": "Bom Dia Mercado",
+      "published": "Thu, 10 Sep 2026 04:23:00 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar hoje: siga ao vivo o valor da cotação - GZH",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPckVyNTREbmF0RnBmVGZCNFRnYTV2NjNqQVlmR3VqR0pOLU5EdGRTcnczdEpMWnBzeFJDeXpvVF9WX0ZzWHNVT3R6dTVwZmVwdExaUjRPSnhmT0p3emxwdE9DSnNWejM2V3lGN1QwaVhiWDZnQlJtMDFZSGtCMDJoTlFPNGlSTXZSMFN0QndVNHdJY21KWG5kMTB2SWltb004V19NS1RmYmNZamF0ZE91azhCZ0sxVTlDcTRteW1lZXNoNWxsbHc?oc=5",
+      "source": "GZH",
+      "published": "Thu, 10 Sep 2026 17:57:54 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar cai a R$ 5,10 e Bolsa sobe com eleições e petróleo a US$ 107 - UOL Economia",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPSjcyTGdyWFlybGt2d20xWU5yTG0tRGVHaHkxTGJXR1d0WGltZVhrc0ZKQzZ1cGs0Q1VnOEJ0ZTBkM1RGV1BiZGpPN3NIN2ZuTDFHZi1td0NvVVBBaGJFdWZvRjl4VXBlRlVMZlZTanhDTkUtVDg5YVJRRjdZMk1Qd2FGZHBEU0NoV25IaE55UGFZQTFMNFZIOG9xcnVHQUxEUDhSX3BMMkw1bHc4a3NfWWF6Ynlfb2N4Wks4Ng?oc=5",
+      "source": "UOL Economia",
+      "published": "Thu, 10 Sep 2026 20:04:09 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar sobe: inflação EUA e Fed no radar de investidores - ISTOÉ DINHEIRO",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1vMEgzYWF6WHFqQ2RkTFNEUGFSekVtTDdpeFFPOWpsS0Y4cTBObTZ3VVRITVRJX01LWnZVX3pBc3dwZlZrVWJyMnBDaHBRUS1zZGlXYWVscFlHQkx0eGpzSXdUSDJmeW9hdHVIWXlJbw?oc=5",
+      "source": "ISTOÉ DINHEIRO",
+      "published": "Thu, 10 Sep 2026 12:40:37 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar cai com pesquisa eleitoral, e contraria alta no exterior - ADVFN",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQb21qV01EcVpnU21UVTk2cXIxTi1yc3pqNVVGMXhNMjZNTFFEb2FONUNtN0dLdEpDeU9rQ0pMMEJyTW05ZVhfT1dVbWVQd0pDODBtcExXRlVtaEE4YlJLbmJkVkVicU5aTXk5ZFJibVFpXzdfOWJ2cTJ4SG9LWEJSQWtMWWdlY1BjNFh1YWFaeURmWGxieWVYMUpuZndaZw?oc=5",
+      "source": "ADVFN",
+      "published": "Thu, 10 Sep 2026 20:22:09 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar cai a R$ 5,10, Ibovespa reage e petróleo chega a US$ 107 - ICL Notícias",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5RNnV5ZldHZW1pQ09JRHZhdURNSnA1NlBIeGo5RUF3QUQ1bXpPVkV1amZTYkNINXExanBRRjVpRkJuSWJtYmdSRnNsWlhVaGtRcnB4LVRhd05YSGU4dWVEYVJaQXVkazRzbS1fUk9SMDFqd3gyRzlUd1Rn?oc=5",
+      "source": "ICL Notícias",
+      "published": "Thu, 10 Sep 2026 20:29:28 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Ibovespa cai 1% após máxima desde maio; juros sobem - Associação Comercial e Industrial de Araçatuba",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE91OC1FNXBLODFhZWVtZ0hDNjNYX0k2WEo1Um1BNlVjZVVwdGE4V3BxYzJuQ3l4QWdQMm5wLTV6UjJwRHJrRS1kYTZvR3ZweFdvV1N5QTJsZlg0MTRNdnc2c21IQXhoRmRRYnJ4YnVydUlCcUtCZlgxY3VYOVU?oc=5",
+      "source": "Associação Comercial e Industrial de Araçatuba",
+      "published": "Thu, 10 Sep 2026 04:04:15 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Dólar testa R$ 5,10, mas fiscal limita queda abaixo de R$ 5 - A Revista",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPOTZPTG5VRDRteFJoOXFyQVhYVnROZDBLYU9HMW8zbTJ0WE5icnhmOGFmNEt5dTJmWG5ZbkFmYXYwQml5czlJcXRCWDVoelAyQmNFZExWcU54cDNFZnIxbmJNSlNNOWUzNFdMME9ORXVkLUc4S3FVUl91VW5IVURyV3B6NzNmemVOcmNQWWllZ2ZQS0E?oc=5",
+      "source": "A Revista",
+      "published": "Thu, 10 Sep 2026 17:54:57 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Dólar cai a R$ 5,08 e atinge menor valor em um mês.......... - Jornal do Commercio do Amazonas",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBESnd4bWxyRE1iOFZ3a1gtNXVMNGZ2ME81MVBsN1h2ZTZaYm84QTVWUTFXdDhUVHRRSzlJaElTazItVVR1Z29nM0NNSjRleTNISjZMVHotZ0hFbXk4OEVQblNhMTZlOUlMMUZCRzZuUGNMajlJLUZj?oc=5",
+      "source": "Jornal do Commercio do Amazonas",
+      "published": "Thu, 10 Sep 2026 17:37:28 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Ibovespa avança mais de 1% e dólar cai com cena eleitoral e fluxo externo - Terra",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPYy1tcHBsM3pTN3BxRE1NT2VsbzZRcGxVM0ZPM0FQNmlYbVYzTFZ4TWM3YTZmLWw5MncyTXhyY0JLcnJDZ1RVeFVNM19tYk9BY3VtaS04WE9MUGVLNEx6ZmFJenBwRFhYMkgyemNGbEVLZlQ2dlZ6SnVELW5MVzJLb3VSaVNVSVFuQnpweExhczUxSDB4dFZ1SW1WcTladm52U3BJS0x5cjZJX0ROeWxZS3BRMlJjMERiMnpkUTQtVjFFWkhFeXljTE1GM0MxeUkyMGlIcWFod0EwYU1DeDNFUjF0SThTSG8?oc=5",
+      "source": "Terra",
+      "published": "Thu, 10 Sep 2026 05:07:00 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Ibovespa cai com cenário externo sem tirar Brasília do radar - Terra",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOTHloWVdSRnVzanBoa045VnRtYVRHNkY5TG96TkQxOEp5MWJ4U3hJYjh4aHRSc1dYVWZKUGlzQWRCTkVWWVFoZVctaUdKQ0pPN0U4Qk9SME9NdW1ES0l5YjdKbzFYbXI3M0Zob0FCbDVLck5XSUM2amJMT3VxcG9kRGVtTUZKQXBWeUk5bzVxQVllejgxc2ZHZU82SHJlUnRyY2daZUhJNVY1RV9YNUE3RW1wNzU3LVpnY2ZhSUh0SmhLeFkwbEk0WGJpdXNHb3pfc1BYdmZ0Zw?oc=5",
+      "source": "Terra",
+      "published": "Thu, 10 Sep 2026 05:08:00 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Quinta-feira, 10/9/2026 - Notícias sobre o mercado financeiro, com Álvaro Bandeira - Jornal do Brasil",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOME5oam1PRGdtN2R2YlhQR0hqZVpnN0hnU285VGNUVXlfREpLcnpndlRib0pEcm5KdGRSMFhJbVJKR2tlRW9PSmRsMVl3SHZMOVdQakF6X1JGZ1hPNkRTZG9SbjJOOVRpOC1faVQ3VTUybk1BUGVYdmx1WDQ1T1E0cWszZ055dlA3X3JTT0xjb2RVLXF0dnNjLUNFSUZPM0o0QnVDWWwycE9wYWNtUm0xSGx6dnBuanVLVUk5dnJiV1pUMXJ4dFQ0YXZhaGhTMmc?oc=5",
+      "source": "Jornal do Brasil",
+      "published": "Thu, 10 Sep 2026 16:04:00 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "OpenAI lança versão do ChatGPT voltada ao setor financeiro - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQbUlRMXB6eHlWWmNLVW1OdnZNeFZwa051MXQtZGxEOEprc0YzbEkzdHgyQ3V4d0x0VzdwaGRjVEgtT2VxTlAtQVBpdUVyZGhSWVlwRG5lVjV2X3Z1YkxiWmpMS1prNWs4NWZqT0Z2YUpZZlFSZkhRdXBkOVQwLVRFQV9kQkNFWUVabkNKSC1vNUh6MEw4M0luQ0tEbnJraWdjSmprSGpPU1AtQ19jMW9xNUhpbThRcjJJN1R1ZlBXREdTQmowa2c?oc=5",
+      "source": "CNN Brasil",
+      "published": "Thu, 10 Sep 2026 19:03:11 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "PIB do Brasil cresce 0,5%, mas queda no consumo acende alerta para desaceleração - Portal do Agronegócio",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNX1NGbVJzYmVBbE5CNkN4b1VKcl80Vy1tYzNRci1ieUN0ZGJIVUNQVkpCemJaLVd0Y1lLazVUUktLUHA1d3d3bnlQVExMMExDTWxIdUQ4UFVKRUlXU3Q2Vk0wX3kyU0pPa2xEZjN2SUptcG5iSzNJM0V2MkItbDBpYTBnbWFlU0NEcEl2WjJkRDdnZlFtbFVMVzBKRDc3RE1qMnVtNThhVVdKd2NtVFdaYTFzOTVBVk5SQnB5QlRzXzM5RHVwNktwVHAwb1F2STExTS1RQVFNb2RmUQ?oc=5",
+      "source": "Portal do Agronegócio",
+      "published": "Thu, 10 Sep 2026 13:50:00 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "‘Trade Flávio’ leva aposta no Brasil a recorde em Wall Street - VEJA",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbTg3ampMblFFUzhEcmh2Ui03bUhBc3VsanRLZENYOUpwQ29mYWttb29ORGVMams3QXVOeFkwR3VyNkMwR0xKaHBHVFJyQ3NBUEpuMzhKaU5EMkFjc3MtNWVFZG81SW12NzIyM3dGYlZ5S0xHbndBZTd5TkF0M1E4aHFKNnZXMDBYU194MS05d0hnRkN6T0hCZUt6aw?oc=5",
+      "source": "VEJA",
+      "published": "Thu, 10 Sep 2026 18:00:06 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Entrega XP: As principais notícias que movem o setor do Varejo | Setembro/26 - XP Investimentos",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOY19Qek1kVC1pa1NNQmlDOGdKMjUwMmNMcmh2dEd5anpVTHA2OTFoUHVROFRuODdXeXZONUVsXzZtZldZSUpGTWQ3Mk5kdWt3YVlEVlM5RzI2YkZtcFF1ZktwNVpaWDhYbHA0YnFZR0t4VUY5WTZmcUFRbm9BZ1FGYW5kVEM0TUh1QWYxMTRGQzBBRlc4dmtzd1hsR3dSQVhMLVFMV1AxeEpockZXZ01XX1RGSlJHaUJSa0VlNg?oc=5",
+      "source": "XP Investimentos",
+      "published": "Thu, 10 Sep 2026 01:47:53 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Crise institucional pode elevar juros e afastar investimentos, diz professor da FGV - Times Brasil | CNBC",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNY2Jyakg2RW1rM0tuOE10SHVtWXJOckxxVVdSeDVTcUtjNHkyWWZGRHdpRi1BMkZkMzl6REQ2ZFJJQ2VFNTM4Q2VwaUxHN19nbWUzcjctS2ZyVXFxeG1MTVlyYnFlWnNjc1hTc2NkenN6eUFleGpGRXg5S1ZpWUt4c2hoeFB1dlNocGpCelVEY014QUI3TDZoYW9LcXFlMEE5UVNWeVVESU8xVllYd183VnR2UHYzbmFs?oc=5",
+      "source": "Times Brasil | CNBC",
+      "published": "Thu, 10 Sep 2026 17:30:00 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Chevrolet vive crise com a rede após forte queda nas vendas em 7 anos - Autoesporte",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNTjg5VTVsU3RUbk1ScENNbFRYUkE5Y0pqY19fQnV4Ym50THpHU0hQblpjNHp6YWZJNlRtMXk3Q3RfejhnZXRKdkd0eGpubUdEMms4VmQ5UUVVeUl3TzMyU1lONVlEbEh1dEdqVDBpT0NsNWhWMlhWZkpkSlJJVWlSaFBCODVlalhYZHktTWt5UkJZd2lGYVphcHNpTkxHc0Q3VG5OUW1RVkdhOW44WTU0bktfWHVNcG5UcVF0azJkNXVISkhCVVRHWFk1S3hXZVZZNXlXOC1R0gHkAUFVX3lxTE5DTnlOa1RwRE5zdzZnMkRsTmpOUWJvR2tqU0dBOGhfdXRseEgyczBjLW5WOHRGMllkM2JXZ3hvcGpoUUo2NG5QeG5RdGZOaEtwdUJJcHlLZjZFa2xrYmdKNDBBNjZIc041RWlrSUxkZGZJTnp1cG1yQkVpeUpYOWtzbG1aUWFJQldKbkFKX2drS1NMMUYzUXgzRXE1SXRFbjA0aC1BaTJSOE9IZUoyaXFjTi03aXhQeU9fcTRzWENVLUZYUEF3bEFVM0lLRURWbzc2YWl6c2xEMWtGYU5SNU9HamFDbQ?oc=5",
+      "source": "Autoesporte",
+      "published": "Thu, 10 Sep 2026 09:00:00 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Gigante das farmácias com 312 mil funcionários fecha 1200 lojas para economizar R$ 5 bilhões, mas corte em massa expõe bastidores de reorganização no setor - ND Mais",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPdW41YkIwS2NfT0J4VW9NakRJdFlWekNUVldkMzJGSEs5eERqVXR4RUllY0ExWmJIVGViQXRGemlXNWdGUFYwLVd4X1RiSGZuQmZqOC1DMWUxbURfME1pcldUOXZrTVJLWjlrbURsTWFyR204YnNEdlF0ODRtTmozMDJB?oc=5",
+      "source": "ND Mais",
+      "published": "Thu, 10 Sep 2026 20:40:22 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Rebranding é um pedido de socorro? - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPVTRRa2NidS03Nnl1TEVsM0ItRUtjNVJNN3VaYXlNbjQwODBlWVZHOEt6ZnI0NTFhZEJTWHJ0Q1RRMHVIZU9xLWJfejJJSjlvMEJxRXNKWGNrd3ZqYm56cC1xTnV5dVo4Y01nOWd5WDRDTE9sdk5teC01ZFYtMlNfTEhUNS1WYy0zWDN6V21xU1BOTXJ0VHBscERVc9IBmwFBVV95cUxPVTRRa2NidS03Nnl1TEVsM0ItRUtjNVJNN3VaYXlNbjQwODBlWVZHOEt6ZnI0NTFhZEJTWHJ0Q1RRMHVIZU9xLWJfejJJSjlvMEJxRXNKWGNrd3ZqYm56cC1xTnV5dVo4Y01nOWd5WDRDTE9sdk5teC01ZFYtMlNfTEhUNS1WYy0zWDN6V21xU1BOTXJ0VHBscERVcw?oc=5",
+      "source": "InfoMoney",
+      "published": "Thu, 10 Sep 2026 11:00:00 GMT"
+    }
+  ],
+  "generated_at": "2026-09-10T18:09:18.245911-03:00"
+}
