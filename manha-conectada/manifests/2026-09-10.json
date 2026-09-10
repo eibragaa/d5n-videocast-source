@@ -1,0 +1,203 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-09-10",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-FranciscaNeural",
+  "output": "/root/repositorio/d5n-videocast-source/manha-conectada/audio/manha-conectada-2026-09-10.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/manha-conectada/roteiros/source-manha-2026-09-10.md",
+  "sha256": "9f4c50784b7fe18502d67d5464de992750a9bacd9fe9906663ee9b541bfee30f",
+  "text_gate": {
+    "words": 826,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 303.960816,
+    "size": 7295729,
+    "bit_rate": 192017,
+    "lufs": -17.37,
+    "true_peak_dbtp": -1.74,
+    "lra": 2.0
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Brasil melhora desempenho escolar no longo prazo, mas patamar é baixo - Agência Brasil",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQZ09jbndlT1dPMjBGamo2c1V2VVdyOHBJTlZ0R28zdS1HZFRneE5uWHd4U1k5WUpSX09aa3B4MzBtdkRTVldKWGRsNE1kay1XRHRrZnBUUjl5V2Y4ZnkyZEpkdElXTjdCRnhpSkUtT1NzYm5ndjdEQ2Y3TDVRSkhOR25JNnQxS1ZfVEs1cGFIVS1sV0I0YkxDdVNPNUFqbDVXSmM3YmdNbXNrZFZtMHV5UGh5STVlcWhKbVZNR3VZbk9DUWlj?oc=5",
+      "source": "Agência Brasil",
+      "published": "Thu, 10 Sep 2026 11:02:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Concursos Sul: as principais OPORTUNIDADES de 2026! - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE01bkxsN2dzQV9WWUtTNzBXQ1V1RlFNc05rQUxxNVUxWVJZeURIN2I0RExkUXpISEY3SW1Db2xpTmJVTm1NZGt0aXduOWFJRnE4NS1VMzVOdXM5YWlwemRPZi01b1VCaWltbmfSAW9BVV95cUxQZzBUeEFXS2NsVklWWDY1WFU2U2pjUzl3Q1BzZFpxQXZRZ19WMmZ3SVYwY2ZoeGNXSEp2SjBhTmlvZXRRM195Vl9sWFNHaUpSSXJ2bjVaaWU4OGJlMEg4M2E1eFFHNFZSS2syUUk4YUU?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Thu, 10 Sep 2026 09:47:08 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "'Ancelotti revoluciona o Brasil': imprensa internacional destaca convocação da seleção com novidades - terra.com.br",
+      "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxOcHJsc3UyV0lYMmtJc1ZhS21ZMXNOU2xhNFVLSzVOSndvUXZhYjNKUDlfQ0RVSVpON1hheEZoZkVVaEU1QUpmaU9pSnYxTnVuSkExeWwzZDYxNTJBN3hsWG96YmlGWUQyQUgzTWRlTkxVd1gyMmZUTkxUQmdiQmxPMTZ5MkZkbnN0U1NPenNZcmlxVXJVZDF0aWhNZDFVbVlncWJOV3NhNHhxcjRzcWtyaEc0SnJhYlpsa0tnX0NpQU9RcUtIVlQwaGZKWkp1Nlk4WVY5VnJjX1Npa0hNWThfT29lVlg2U2hfZ1BEaXhSUVN4RG94YmFpTEwyTE9jMXhfLUk5OXJGalNRRGY1Ulo5Ni1fSQ?oc=5",
+      "source": "terra.com.br",
+      "published": "Thu, 10 Sep 2026 12:59:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Educação é prioridade para moradores de favelas do Rio nas eleições - Agência Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNk5mbGNSQzNkMGRjTV90RThnZ3VnRVFESEhTVHVuLTY1dTRJYllXZGVCSTd5M1N2bWw4SWJqUnVXcXEyb1hFbjE3ZjhGQUFDblhZdzFJOHBjS2tyVEVuSWhKd0h3OFcwMXpBWHlfQnBSdjlvS0IyaDFYYmhHVFAyUEVfNldTUktwdUFxVTREcjl5aGs0MmpkOXF5c3FxWU10REUtRG05czZsSDFlR0J4MERWMUdkeFBLcDFEVVFkLVVqMjA?oc=5",
+      "source": "Agência Brasil",
+      "published": "Thu, 10 Sep 2026 10:02:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA1cTN1MUFFQ1RuWmtsRUVoUWZlb0ZNWEZYYmpqcEhYa28tQXJBeGtwcUtTSmJxSzYzclNEQXgzUWRkcWZDS3RPN2stTE5qMjBxV0FnbkN1dUI2QXR0cENsbzlIcmFoNVhodkNlYjktY9IBdEFVX3lxTFBjelh4eG12QWI4NElTV3JINk13bDRzby02MFQ5RndaM0RLcTNhRnJxUXhOOWd3T2dVamRLckFIWGZjOC0yVGRRVmdmS083ZWdZWkJrUUFVSzJWbHdZZ3J5bWZwdWxPYTA0RzdBa3AwVzJYbzNE?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Thu, 10 Sep 2026 10:09:19 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Guerra com Irã terminará após midterms, diz Trump - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOekhYaFBhLVRXQ0U1dnFwMHNqMENlenpoLTc3WWZvUDNsejdoejdiMURmZFRHNFZVYnRleHF0RVN0Z0wxai03M0JMQ3NPcUhFX2g0anVmaDhYdU9obno4NEpQdThzcmduaTl0UTMwSFhMc3RUUmJFS3BMbGlsMlh5SEFZcUFCLUlCcVY5YWtxbDR5Vms?oc=5",
+      "source": "SBT News",
+      "published": "Thu, 10 Sep 2026 07:38:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "EUA anunciam que vão endurecer a guerra contra o narcotráfico no Equador - G1",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMkE5cno1Mld2R2NqRHlVREhxTDE5NFZHZjRiX0wzYkNnRExaWkhMdE85T0otalZPaHpnS0pmeTB1SkRFV1Q1MkQ4Z0FBcWcyWGZjMHN3SzdxUjhtQ092MmJJVE9qcUJ6Z0xqaDZBeUlfM0RVcUxUS20xLWdGdjRJajB5MHhvMTkyelg0d0xSeE1mMldhczVXa19yYWpTUEF5Xzk4dWpvMEFDU3FtaEpVcHNreFp2QkNUdzZyeEZLVjVZUdIB0AFBVV95cUxQbS1qSlU5QU15Q1ZrV3IxalFGQ0ZMNnlUWlNyQ2ktVk5HaTdMY0d6WmlOSlc1Z0ZNM2lHRk9Ca0trb3h1ODM1UV9TSWxEbkNVMkhQY2RTbkZQblE0MlFzbk1HUktNd005Ym5kQ3pJdUNSQ1RDVHFISWZNb3lIa2tELVVUMGVhQzRrV3pwaGx0N1Z2MU5qTjVzRHQ0ZVAxUUdxSTJmU0tyMVppNDBPcXU1ZF94U0RTTFN4d2g3cDNxT1JOUXQza3kxTmV1bUM0b0pI?oc=5",
+      "source": "G1",
+      "published": "Thu, 10 Sep 2026 00:02:59 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Notícias Ao Vivo do Brasil e do Mundo - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOUGR3OUVrSEdfTThSSWJXYnoyZ2FCa09HS29NTmIzMFY5ZkNTdjFVOGtfVHg4UXlvZlNlZlJFcTNPajUyZVVfV21DWWxfa2FRdngwdTA4cE5XS3NDMDVNYjRqVm82cXlGQWZqY1FiQjJFYWRxNjVxTlJ5TER3ZkdRWU9nQzNoc0tsVTdVeVo1S2ZSRktkSU8wd1JPNTJBMFlsaXpFRGNJR3R6ME5YQm53STRmZnNRZzJDMEFLSXItb3c?oc=5",
+      "source": "CNN Brasil",
+      "published": "Thu, 10 Sep 2026 05:30:30 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Entrega XP: As principais notícias que movem o setor do Varejo | Setembro/26 - XP Investimentos",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOY19Qek1kVC1pa1NNQmlDOGdKMjUwMmNMcmh2dEd5anpVTHA2OTFoUHVROFRuODdXeXZONUVsXzZtZldZSUpGTWQ3Mk5kdWt3YVlEVlM5RzI2YkZtcFF1ZktwNVpaWDhYbHA0YnFZR0t4VUY5WTZmcUFRbm9BZ1FGYW5kVEM0TUh1QWYxMTRGQzBBRlc4dmtzd1hsR3dSQVhMLVFMV1AxeEpockZXZ01XX1RGSlJHaUJSa0VlNg?oc=5",
+      "source": "XP Investimentos",
+      "published": "Thu, 10 Sep 2026 01:47:53 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Aliados de Trump alertam que conflito com Irã pode se estender até fim de seu mandato - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNZTgyQmd2TVA4V3NPc2FYbjVMa3FKNDZWTU1hWnExeFlLT2E3ck02UUVSR1RheEZ0cklhNVRnRE5qWmtfbFRzUm5UV0pyR295dGJrTDBEM18tS2tFYmRqOGRCemRBbV9HU0szc2RFZ2d0N1JKaldjcDVIOFJVcmtaTmJPMHBzZzNhYmFHbjlSREYwOWE2QU55UGJuQ0hqamJITDhLV1QzX3ljRFNyMTNrVEQ2R0RDM0p0NFJMVVh1cEZDY2vSAcMBQVVfeXFMTWU4MkJndk1QOFdzT3NhWG41TGtxSjQ2Vk1NYVpxMXhZS09hN3JNNlFFUkdUYXhGdHJJYTVUZ0ROalprX2xUc1JuVFdKckdveXRia0wwRDNfLUtrRWJkajhkQnpkQW1fR1NLM3NkRWdndDdSSmpXY3A1SDhSVXJrWk5iTzBwc2czYWJhR245UkRGMDlhNkFOeVBibkNIampiSEw4S1dUM195Y0RTcjEza1RENkdEQzNKdDRSTFVYdXBGQ2Nr?oc=5",
+      "source": "InfoMoney",
+      "published": "Thu, 10 Sep 2026 10:05:32 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Contabilizei mapeia os “campeões em IA” do time para potencializar uso da tecnologia na fintech - Época Negócios",
+      "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxPcFk5MHVMN1RVTDZFSWNpSEhuUTFCZVNYci11bEVwWkJ3Vk1Oc2l1SWlIa2lseFIwdWEzWVVudXR4Q2QtaEpxTllVYTJaWV8zU0Y4bThueFRPeE41TkFocmNSbVF4YUFjWVpOeF9rc0tqMEtpRFM1cElMU05VQm52MEZseUlxTWlBUlV3MUItQjJ3RjB4ajJqMEFfZDNBd1poYkxuN1F3VURKTWtMMkwwY05mWXVFUXNGV0tFdmJpaTVMTHBsZksycEpBdHptS3VXc254MllXUXFXb0hjeFE4bmFsaG8wOTR4VTV0aEJmUGtwRjdGa2N4S2pXYjF6dlZvNGhrTE9PX2FvNVVxNl9VSkltb3E4aWY1bEh1cUhzSU1SQdIBogJBVV95cUxPcFk5MHVMN1RVTDZFSWNpSEhuUTFCZVNYci11bEVwWkJ3Vk1Oc2l1SWlIa2lseFIwdWEzWVVudXR4Q2QtaEpxTllVYTJaWV8zU0Y4bThueFRPeE41TkFocmNSbVF4YUFjWVpOeF9rc0tqMEtpRFM1cElMU05VQm52MEZseUlxTWlBUlV3MUItQjJ3RjB4ajJqMEFfZDNBd1poYkxuN1F3VURKTWtMMkwwY05mWXVFUXNGV0tFdmJpaTVMTHBsZksycEpBdHptS3VXc254MllXUXFXb0hjeFE4bmFsaG8wOTR4VTV0aEJmUGtwRjdGa2N4S2pXYjF6dlZvNGhrTE9PX2FvNVVxNl9VSkltb3E4aWY1bEh1cUhzSU1SQQ?oc=5",
+      "source": "Época Negócios",
+      "published": "Thu, 10 Sep 2026 09:00:01 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Reinventar o trabalho com inteligência artificial - rhpravoce.com.br",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5XQl9NVFNjRGd0dkF4RjZCSmZoS0xGaE1qSk5Cb3dTMlpVd19RWGhmNWoyX2t5Sy05SHRqbEQ5cVlFdDFaYU03WVMtdExyUENzZEhiY2RuTVdMSGVfenJWdTlJelU3NnFBT3l0Vm5jTVIwSVU1NUkwOVV5ZWJZejA?oc=5",
+      "source": "rhpravoce.com.br",
+      "published": "Thu, 10 Sep 2026 12:36:40 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Elon Musk teme que \"Exterminador do Futuro\" vire uma realidade - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPbW9IQU1ZbXFOdjFFTW8xa1ZqNVAzaldLNVJYc3dXS1dwSmlXbUlEN0ViZENxbllWeE90MHJONGN1OTZ0U3dhLW9lMnNQa0JRbTMxUGR3YVhwQ3RwdXhtMHhRNmo2N2lYUUtSV2NuRVU0anM2Z3FkZHFmR24tNTR4YXplMEhGbjY3RjR3MF9ycDZ5TE4wZWd4RHRuRjgzdWVja0pRZmU0aVZJSVlLNXBrSFU2WDdKbnBtZ2oxUNIBwgFBVV95cUxNdTJfVUl4RS0zR2ZNNnR0dTZiTG1ZOU1SdEV4dGM5R2RmSXNyaXlnVzVBcWxZNEZxYjRfUkYwekw0aEJMM0hQZmpsUG9Md2JydWVCNlY1dWFGamFWTnFwMHV4My1nSmE2SmZXVWg1ZUZCcE52S0Z0azlPam1GNHNZbDlGTHRqWmFTZzRSMTJFbDVGYXZFclJhMkZSVXVTei1iRElETFNKMmVNZFFCdnppRVRPSENtS0NGcE52cFAwYzE1dw?oc=5",
+      "source": "Estadão",
+      "published": "Thu, 10 Sep 2026 09:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Pesquisa mostra avanço da inteligência artificial na rotina dos profissionais da contabilidade - Conselho Regional de Contabilidade do Maranhão",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNWDNuOEZCMTZuaThjUG9DQmVCeHNsU3kzSTVPcmZpaS1OSG5ndFY0Q0h3VzhLYTlnZFhWdDNPUXJVQ0I0RkVJaG5TWTRwRGFoMkt4S0gwYXBRa0REYTN2NzJDOWdXN3loUkdwQTEtRlE2cWNmWFpSRUxIYVBNd0hMVmVUbmFvT1dCdm1HWTVfMmFvRU8yOWdCb1pQMDFhT2JnY1dyT1BIdXNCZnpmLWZoWDExeGVvdE0wYk9vUUNQNnlVUQ?oc=5",
+      "source": "Conselho Regional de Contabilidade do Maranhão",
+      "published": "Thu, 10 Sep 2026 12:20:56 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Dia de ver de perto o futuro sendo construído no Piauí. ❤️🇧🇷 Comecei visitando uma escola de tempo integral em Teresina, conversando com os estudantes e conhecendo projetos de tecnologia, inteligência artificial e formação profissional. Depois, acompa - x.com",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1vYkk4RlF3Yl9ZeFkwNnRiQjl3eERrWjJ2bmRwRF9paktoZVVqbzhLRlJEMktsc0ZIY2E3WGRXQi05UkZTNG9mTVkta29NVFFVUTJtWG5ybGpRS25Ccl9FMnh3?oc=5",
+      "source": "x.com",
+      "published": "Thu, 10 Sep 2026 02:10:59 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Bayer aposta em remédio não hormonal para menopausa no Brasil, afirma executivo - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPTTJHaDhxRWhpaEdyUi1zdjBiMlN0Y2d3TDYzUTlTX1FDSlZ1WlR3SE9UcjliU3RkQUVVZkJKcWtNYndjclgtc1o3cUp1cUFaZVVBbmgtbXJZQ3dNRlFpQjZiU0N4elNjN043ZTRLS3E1TWxTQW5MSjhOOVZydk1tZ0c0TG9YMDhoazQxZ1E0aWM1dHhnTlhSVlFaSmdNZlhqaUVzcFlIakxuVUtiUkUwOUlGcXd5M0FCS3U1Nk16aXRGM3U1Um1iLUR3?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Thu, 10 Sep 2026 10:00:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "União entre o público e o privado: caminho para um Brasil mais justo e igualitário - Consultor Jurídico",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOdEtWNXhQUHZQVHRJNjNpc19UQUJudEpFVnNMV0VGeTJLdzJjeHRwZzcyUllJUHFWTGh5U1NKLUZJeGkycDN4NG4tMXQtZERmNjdYLUtIc2JHOWhrM0szbXJmV1gyMHRpSy02WXRQaExCeC02VFRtd0NYZG1iRWdxYVhHTnFWeThVeVk5bUNmNndyekoyX0Z5UzVaMWJOSHBrdjJNOHFVNFFUeUE3N3dIVFRZVk5TekU?oc=5",
+      "source": "Consultor Jurídico",
+      "published": "Thu, 10 Sep 2026 12:00:17 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Novas medidas para combustíveis terão impacto de R$ 7 bilhões por mês - Agência Brasil",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOeDZZRk1iTlk2VzhrdnBtZHp5X2ZvaWtjbjFWU19YODdXRjU5bFNKVFZsVVp5eWU0aGkxRWJtNE5SalNqckQtTVc3QlVvZkwtZHdraVBySjE0ankyalAzanFyTngwaUxOX29qV1RDLXFpc1dPS254b0pacjlVSERSbmgxZ2lzTDV2TTZPcjRVSUNOaVU5Qlk5dUMtbkFtQ3Y5OGRteFgtMURuQWstVS1WZ1pMNE9fdFVRbE9sUU9mQ0VueElN?oc=5",
+      "source": "Agência Brasil",
+      "published": "Wed, 09 Sep 2026 23:15:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Governo eleva previsão de crescimento da economia em 2022 - trademap.com.br",
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQZzJkU214NUItQUxGOFFhMVkxQl9DV1BEdF9NWGxLZmhEYlpQVWotWENJbVpQc0ZWY09VdEhmei1ZTmhYbWFwUzd1SVdhdS03R21vSDdjMDZJaUFjS0lJZ0NlTnRIY21MS1FsMEFZdlhqcGF3cG9qRVVKZXkzSnZTZVJpVUtOVU9xSktBSm1ZS3lmR2txMndFMmR2UWhQeTY4UlNxckdFX05FblhIQ2hEY185elA5R0d0NTBROWFGcGR1NDE3YzBLYmpfd09YTVpjOTZYd2VuaG1kY3BkSXNXTlVUbFdMQUJB?oc=5",
+      "source": "trademap.com.br",
+      "published": "Thu, 10 Sep 2026 11:42:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Setor de serviços no Brasil estagna em julho, aponta IBGE - ISTOÉ DINHEIRO",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5WNTBPcHE2TG1wTmttejRfTGQ3TW1pdmJZSm4tVS0zY2lmTlk4UjUycm84eFcyQ3NxYm5Ub0l4YUZlbHktT0U0T1Q3dkw4MkVLSGU4WEp4cGdubTlDMW9OQjZEdW91YjhqRko4TlpITVNIU0pHeTRCcHpYUUc?oc=5",
+      "source": "ISTOÉ DINHEIRO",
+      "published": "Thu, 10 Sep 2026 12:29:26 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda dos presidenciáveis hoje: Lula fica em Brasília, Flávio vai ao Norte e Zema visita o Ceará - Francês News",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPVlBnOHpEQzJsZUJhZllldHlZLVI5czVKV0dicnlxTnotaWE5dXN1YWpWMVdnNlI0V0RSWHEydTdXaWlXb1YwemhrSDU1bXFEOFBEZHI4ZTFzaHRROFZmaVVEUFVPbHdlTHFTNm1RYW42VXhfTGdENmM4dEN4ckFXTTgyMXdyMF9WSEd2NWNoZUJwY3R0cV90SFF3andfY2xSUVBpRjRSaEtXdWtIQ3lxQWFydFRCbUdxU2pkNUxDemQ3X3BIWkRoNFdNUXRDbXA5Rl9rdnJCeEtjbm15?oc=5",
+      "source": "Francês News",
+      "published": "Thu, 10 Sep 2026 09:45:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda para estimular investimentos no Brasil - Monitor Mercantil",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNVEFKYU9Tak5jMjNzYUdQT1N1cjgyMzVCb3F5Zk91RXc0RjR1eWJ3U2xJZHJvTVQ5Z3J5LWEyM3FqaTZSTndHRHAwWGw1bWg3Umk3aktvNnFTZTMtTWw5b1NqNlNiWEo3bWFRZ0ZWT0JWMk5ycU92SlBxaGxDel9GWkpRMTI?oc=5",
+      "source": "Monitor Mercantil",
+      "published": "Thu, 10 Sep 2026 00:28:15 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda dos jogos de hoje (10/9) do Sul-Americano Feminino de Vôlei - No Ataque",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNTUZKSlRlY0kzWFFyTENuV0l2c1haZWZUSTkxODd1eWpNYVRUbTFoZDBLV3ViVzBPQmRmelVVNXJSbjVLT0IxU1E1QmNkR045d24ybk1jclpndkVzcHdwUlc3Z19FWkl5WEFGM0lzX2d3UVBTYWZMMXlQbUdSclowRGpOMGd1cEJPMzhkb09PcWNkM0lwcTg4dmFEOFVEVEx4N2NRV2tLWHRTMjk2Yk1xeThadEs?oc=5",
+      "source": "No Ataque",
+      "published": "Thu, 10 Sep 2026 05:00:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Futebol na TV: a programação completa dos jogos de hoje, quinta-feira, 10 de setembro - Goal.com",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOejhoaWx4NWkzSzA1QW5uNWY0Y2lOQ0pRYUJJYnFhTHJtb1dfNFJUMlM5aGJ2TXVXVXJEQXZVUFNOUXNVMUVnY25VUVc4a1JyZS1MaEdxRlpzaVFqLUtlSF96WVZMSFloZGFHdE4xcUVvZXFzWnR6WHdhTFIwQ1djVmJKT3dfVUpPOVluczZTS181Um42N3BydHhVb2c3czBGeG9oMWZHT2VYaVl3Zmh3WG5xMWJsSGFHa3VN?oc=5",
+      "source": "Goal.com",
+      "published": "Thu, 10 Sep 2026 04:00:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Qual o horário e onde assistir a Inglaterra x Brasil - GZH",
+      "url": "https://news.google.com/rss/articles/CBMiqgJBVV95cUxPYlpKQ0RTYTE3c2JFTUdnRzlnT2JtY1h1MUJ4cEtVaXluNXhLWUlMTWszUnFMUWhpR0N1dF80ajMwXy1JNURmczdzalZJX3o5c0lGUDRWNEs1M2RoOTBqYWhYTy1seXdBZ1lOajNkaERTa3c4SXpKV29UWEc1V2xYNG91SDludk5OX1l6OHdDc183c0FjcVNtRTJaMnBwaTB0eVFESFVicXRJcm9lbkluWEg5NXN5Z2dyMEtJOHFfQjVLalF3SHlsS25XV2NpRUE4LWlQWlJnMHpjLWxnZldmbENWMnN6S1IyNExYSDVtN3FscVZvcEw3aTUweS1lZFVvaEk5RndrX0FwQVo3aEx5MU1JSTU3a3U0UUpsYUJ1a3RJUmpfSU5NcHNn?oc=5",
+      "source": "GZH",
+      "published": "Thu, 10 Sep 2026 10:02:45 GMT"
+    }
+  ],
+  "generated_at": "2026-09-10T10:03:56.455789-03:00"
+}

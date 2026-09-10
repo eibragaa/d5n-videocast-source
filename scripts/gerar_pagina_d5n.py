@@ -32,8 +32,8 @@ DIAS = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira',
 
 FEEDS = {
     "d5n": REPO / "podcast.xml",
-    "mc": REPO / "manha-conectada/feeds/manha-conectada.xml",
-    "fm": REPO / "fechamento/feeds/fechamento.xml",
+    "mc": REPO / "manha-conectada.xml",
+    "fm": REPO / "fechamento.xml",
 }
 
 PROGRAMS = {
