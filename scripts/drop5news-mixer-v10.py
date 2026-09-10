@@ -54,15 +54,15 @@ TRACKS = {
 LIGHT_TRACKS = {"NEW-INTRO.wav", "Cenario-global.wav", "Politica.wav", "Tech.wav", "TECNOLOGIA.wav"}
 MIN_SECONDS = 480
 MAX_SECONDS = 720
-PAUSE_MS = 300
-PAUSE_EXTRA_MS = 650
+PAUSE_MS = 150
+PAUSE_EXTRA_MS = 200
 HIGH_LUF = -16
 TRUE_PEAK = -1.5
 BITS = 192
-LEAD_MS = 3_000
-HEADER_BREATH_MS = 350
-GLOBAL_FADE_IN_MS = 800
-GLOBAL_FADE_OUT_MS = 2_000
+LEAD_MS = 1_500
+HEADER_BREATH_MS = 250
+GLOBAL_FADE_IN_MS = 400
+GLOBAL_FADE_OUT_MS = 1_200
 LIGHT_TRACK_GAIN_DB = -20.0
 HOT_TRACK_GAIN_DB = -26.0
 VOICE_TARGET_DBFS = -19.0
@@ -174,6 +174,12 @@ def synthesize_header(audio_dir: Path, name: str) -> Path | None:
     label = HEADER_LABELS.get(name)
     if label is None:
         return None
+    # 1. Tentar primeiro o header estático pré-gerado em assets/
+    static_header = REPO / "assets" / "audio" / "headers" / f"{name}_header.mp3"
+    if static_header.is_file() and static_header.stat().st_size > 1_000:
+        return static_header
+
+    # 2. Fallback: procurar no audio_dir
     target = audio_dir / f"{name}_header.mp3"
     if valid_header(target):
         return target
