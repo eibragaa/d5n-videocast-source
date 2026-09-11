@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Gera o index.html do D5N Daily a partir dos feeds RSS (fonte única de verdade).
 
+PROTEÇÃO: Este script é o ÚNICO que pode gerar index.html. 
+NUNCA editar index.html manualmente — edições manuais corromperam o site 2x.
+Sempre ajustar o gerador e re-rodar.
+
 Design system editorial premium: tokens centralizados, ProgramCard master
 com variações de tema por programa, players customizados, arquivo agrupado
 por mês. Zero bibliotecas externas além de Google Fonts.
