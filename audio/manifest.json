@@ -1,0 +1,148 @@
+{
+  "schema": 2,
+  "programa": "Drop Five News",
+  "tts_provider": "edge-tts-local",
+  "header_voice": "pt-BR-AntonioNeural",
+  "editorial_date": "2026-09-11",
+  "sections": [
+    "coldopen",
+    "intro",
+    "mundo",
+    "brasil",
+    "tecnologia",
+    "economia",
+    "interacao",
+    "ofertas",
+    "frase",
+    "recomendacoes",
+    "outro"
+  ],
+  "content_voices": [
+    "pt-BR-ThalitaMultilingualNeural",
+    "pt-BR-FranciscaNeural"
+  ],
+  "section_headers": {
+    "mundo": "mundo_header.mp3",
+    "brasil": "brasil_header.mp3",
+    "tecnologia": "tecnologia_header.mp3",
+    "economia": "economia_header.mp3",
+    "ofertas": "ofertas_header.mp3",
+    "frase": "frase_header.mp3",
+    "recomendacoes": "recomendacoes_header.mp3"
+  },
+  "presentation_mode": "sexta-dual-dinamica",
+  "section_voice_map": {
+    "coldopen": "pt-BR-ThalitaMultilingualNeural",
+    "intro": "pt-BR-FranciscaNeural",
+    "mundo": "pt-BR-ThalitaMultilingualNeural",
+    "brasil": "pt-BR-FranciscaNeural",
+    "tecnologia": "pt-BR-ThalitaMultilingualNeural",
+    "economia": "pt-BR-FranciscaNeural",
+    "interacao": "pt-BR-ThalitaMultilingualNeural",
+    "ofertas": "pt-BR-FranciscaNeural",
+    "frase": "pt-BR-ThalitaMultilingualNeural",
+    "recomendacoes": "pt-BR-FranciscaNeural",
+    "outro": "pt-BR-ThalitaMultilingualNeural"
+  },
+  "loudness_target_lufs": -16,
+  "true_peak_target_dbtp": -1.5,
+  "chapters": [
+    {
+      "id": "intro",
+      "start": 0.0,
+      "end": 43.382
+    },
+    {
+      "id": "mundo",
+      "start": 43.382,
+      "end": 198.806
+    },
+    {
+      "id": "brasil",
+      "start": 198.806,
+      "end": 310.59
+    },
+    {
+      "id": "tecnologia",
+      "start": 310.59,
+      "end": 382.574
+    },
+    {
+      "id": "economia",
+      "start": 382.574,
+      "end": 479.07
+    },
+    {
+      "id": "interacao",
+      "start": 479.07,
+      "end": 500.148
+    },
+    {
+      "id": "ofertas",
+      "start": 500.148,
+      "end": 521.836
+    },
+    {
+      "id": "frase",
+      "start": 521.836,
+      "end": 545.78
+    },
+    {
+      "id": "recomendacoes",
+      "start": 545.78,
+      "end": 584.156
+    },
+    {
+      "id": "outro",
+      "start": 584.156,
+      "end": 690.876
+    }
+  ],
+  "audio_beds": {
+    "coldopen": {
+      "file": "Cenario-global.wav",
+      "gain_db": -20.0
+    },
+    "intro": {
+      "file": "NEW-INTRO.wav",
+      "gain_db": -20.0
+    },
+    "mundo": {
+      "file": "Cenario-global.wav",
+      "gain_db": -20.0
+    },
+    "brasil": {
+      "file": "Politica.wav",
+      "gain_db": -20.0
+    },
+    "tecnologia": {
+      "file": "Tech.wav",
+      "gain_db": -20.0
+    },
+    "economia": {
+      "file": "Trilha_principal.wav",
+      "gain_db": -26.0
+    },
+    "interacao": {
+      "file": "NEW-INTRO.wav",
+      "gain_db": -20.0
+    },
+    "ofertas": {
+      "file": "Trilha_principal.wav",
+      "gain_db": -26.0
+    },
+    "frase": {
+      "file": "NEW-INTRO.wav",
+      "gain_db": -20.0
+    },
+    "recomendacoes": {
+      "file": "Cenario-global.wav",
+      "gain_db": -20.0
+    },
+    "outro": {
+      "file": "Vinheta2.wav",
+      "gain_db": -26.0
+    }
+  },
+  "output": "audio/d5n-ep068-2026-09-11.mp3"
+}
