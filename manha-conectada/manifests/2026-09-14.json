@@ -1,0 +1,189 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-09-14",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-FranciscaNeural",
+  "output": "/root/repositorio/d5n-videocast-source/manha-conectada/audio/manha-conectada-2026-09-14.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/manha-conectada/roteiros/source-manha-2026-09-14.md",
+  "sha256": "a4a05bcc3bc214f62525875de429688183b4f4b38db554fe208f561122fe2181",
+  "text_gate": {
+    "words": 759,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 288.679184,
+    "size": 6928970,
+    "bit_rate": 192018,
+    "lufs": -17.37,
+    "true_peak_dbtp": -1.74,
+    "lra": 1.9
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Eleições 2026: Crise no STF pode ter impacto decisivo na disputa presidencial, diz FT - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9NYjVvWWRMM1A4M25uZG9BU3htTGMzeTlsNWRyRXp1VVhnaUNZZ2NfcUFzNFZLTDNiaFBBRjhyVGZyOU1xV255WXdoZ2RfR3RHTEtlTzVJS19SUm4yTS0tanZn0gFnQVVfeXFMUERLWV9DbFJJYzJ3SVVlMXFoWXJrVWx3MzJ0aHBiaGR5T0RJdUhxSG5ITFdKVHNsSkxiVGFIZmhteWo2Xy1xdWRlM1FQV291eUItM1oxRy1JaDVkTUE5MENuM1Y3aUNLYw?oc=5",
+      "source": "BBC",
+      "published": "Mon, 14 Sep 2026 10:13:08 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Por dentro da rede de influenciadores que ataca o voto feminino no Brasil - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNcXAtNlVHUEFpMmNFTDNsbHdqaS1TWUdReVAtSS1VdVBPaW43ZXQwdVNEVGxRdWdvZFd4Rm53TjJvcGk5aEdoc0ozWnAyMjJBUm5mdmt3aWtHUXBnbC1USTFWWVBDN29BU2RPYXpUU3UtLTNsMUhRVVZyVzBFdGlKTkpkWDhacWF1LVpnYlpqM0V6OGhUZGFiZDV1dVN5N3ZQM1BYaWtTYWdGX1N3Rm1CdnRvNWVIWnA4TDdsNm8tQmhOUThUNUE?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Mon, 14 Sep 2026 11:44:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Notícias Ao Vivo do Brasil e do Mundo - cnnbrasil.com.br",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOV2p3SjNVR1pGVnJZVm9PY3FVTUt5cURQNDF3c0NlQkVmNmVMbjMtWklqNVQ5eGRIWGZJMndwV3BXMWFRcGphNFdiTmpqYUdvQ0dxMmlWUGo2UUZOckFMREtBUTJOdm85SFpNQ1UxNERWUEJrM3pfWklXS3FwZTVya21VeUlpdmFEN2s3T3Q5Y3ZPMTlmNWUxQ0xIb05vSzZTNFpBamgwQ2JTV2dNSVpBVExNblR0OERRUEVWMktmaERVdEhweDdnR0ZUQnA2Tk1qU0pqQnVKalIxR3AzX2VkVVlnV3VTZng1TTE5SjM4Zw?oc=5",
+      "source": "cnnbrasil.com.br",
+      "published": "Mon, 14 Sep 2026 09:00:04 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Mãe de Virginia Fonseca deixa de seguir amigos da filha e pessoas ligadas a Vini Jr. - Francês News",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQMmloMmV2T1NpVmNGenRlaWtqT180OWdDVjg0dGd4U0I2YjNwaTUxV1lKZlBGMm9aeTlYSnEwY29mUEoyanplR2xjWGxGWDZ6VEtpNHllbHU4WHlrUGJhRXdsckg3RUU3WFJUb0t4S0xrcExqUXJOQU1ualJ1cExVbTVPanlNTEpWRVVCMERFV2FuLTRFZmtCRFhyTVNaZGdtdWRiQmNKb256T09VQlJ2c0Y2NGRmQ0FSU2ROTWF6UU1kQmFvWFhtODVpaUQ?oc=5",
+      "source": "Francês News",
+      "published": "Mon, 14 Sep 2026 12:40:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Inmet emite novo alerta de perigo para parte do Sudeste - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNTEw4elVJbUJkNkZEQ2lOSU85X0QyNEt1YVYtbjBNV3dac2xNckhhS0RQOUM3Y1Z0cWNQMmFISHhHdHVZU0NZdVFkcW93VHFrOUxDb1B1WmJFLTRMVmVUVHlJd3FzckNCVTI3YUpLZlE3UldCc3hNa1p2Y3FPQ2ltUURlR1ZyVTQzbmI5LVdYRlJRYUVETEdITGU4TktjZw?oc=5",
+      "source": "SBT News",
+      "published": "Mon, 14 Sep 2026 10:15:05 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Ultradireita na América Latina restringe acesso a autoridades e desafia jornalismo - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOTi1kb2p3cVFUeEYzNHNaNDFPNUd4djMyVGRtYW1OU0FKbzdVcUYxc2NKRG5YcmlfYU9STUczOGFQNzU1d2wzd1lYWGhHTXFKQUpLeUkzYW1pNHk5T1IzM0hCQjR1T09xQXdvaGhTUVdiOGF4Z2R5SkpjakgwNnNETDlIR0lmVnB2MkJuTVpJWnQ5RFZtZVpIMjlEX3hNR3NOWTNfVHdLTkNfTXNXanZFWndHanc5RnFiOE1nWHVFVUlPbGlCNjh3ekNqeks?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Mon, 14 Sep 2026 02:00:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Presidente da Câmara dos EUA promete tentar viabilizar plano de Trump de pagar US$ 5 mil a americanos - G1",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQS0taXzBQX2VhME9peWFVUDhrTUgwOENUc3hfS240UGd3aUgwN1FRWVJxaFNvZTFoUkdHMTc3Qk1SdDRBdzhxWE8ydXh3aVp2UnVoN0syUFZYX3hPeUlPOFE0YTNFbmhWYTJxZzRYYWFSa3EtLVgwT3N3SWxqOVNPd3FWSXEzRlRHbHNIZdIBmwFBVV95cUxPaExTVXAtWXF0am9iOE1KOVdrTU92TnM5dHhCbzY4RlV1RmFaR0ExWkRlUzVyWEdnM05kVGRCakhJTlcxSE55VDRiRmtmVUhfVC1DYlQ3UTZXZWdNRm1BU1lvSUo3d1NRQUd1WHNlUDU3YzgtdTJhVXljd3BGakJBV0l2eXpTbnlUU0pteGtKVVJfQ096enJvSmF5MA?oc=5",
+      "source": "G1",
+      "published": "Sun, 13 Sep 2026 20:13:06 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Trump volta a prometer US$ 5 mil a americanos: \"Fácil\" - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPQUtvbjNtR3JrdWVSbjFiekx3T2p6RlF1d3Zwd05pcUp6dG8tV2Znd1RKME81aW16Vm50Uk1KTXZTZC1VNlhQZi03WlhsMnJ4bjdzNTRpSkFtaWczTlc4MW9XUVA5UzZTWGZ0V21wVll0N1p4czFPeGhQZE0tajM5dWNpNk11RGRMWUxaUVgxVFRZLXhoYVE?oc=5",
+      "source": "SBT News",
+      "published": "Mon, 14 Sep 2026 02:40:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Inteligência artificial está cada vez mais difícil de se controlar. Até quando os humanos vão se manter no comando? - G1",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPRlRIeXZUM0VCeWZndjc0aFVxcmlpcWhLZ3FSbjZEOEFMNEJNZXRXRXBjaHdmX3lsRVhOREY1Yk5DUWFvS3VBbmVaRVgycTE3X1ZxMGRHVEg1V0pCY183Tm5EZXdpbDFmaGtueWRsRmdoUW5wT24xTk9mX2c2b0FTLXZTMXJRSFBCVjdReGswOElnSjVRblgwbEpySDFKaUYxNXUwMXktT2FIS3NlWGt6cHo3eFc0bEZVZ1c2MGFYSW1nUlBkc3pXdF96X2JjN0tfUXNJVEtSX1QxN3BsanpTWUM3NEZ0UUNiWEpSNkRfN18wRDdBSXJDa3BlajZCMkHSAY4CQVVfeXFMTjFuUm56ZDA0Z2UyMFkyUDNRdEhsVlAxZFhTSFZ3ak90cHZNWE5temRzTmxjOUxvaTFqa2Utd2VMR1BUeWFvYVhoUUk2WUFZZjJ6X0xRcWd0YW43ZndhUXp4LVl4eXdtYkZSTjJLanhyOWdURndDSzI5Q3JGWThSNWJQc25xWGFhOHBabnI2bzNiTTdEVnUxNnpTR3BsS1FHYkZqd3NCb21neFRMMEJ6dE45VXVPWE4tdlJrbWFqRWFlOTBiUWN4SDdGVnQ2M3Rrb204T2xHcG1uVGFaSlo4TVRBN3I3X0lUV0RvZWh2bV9Yb18walU3b0FJTzNUUW5KaTBaQ3N3LWNjMGt2S19n?oc=5",
+      "source": "G1",
+      "published": "Mon, 14 Sep 2026 06:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Inteligência artificial, responsabilidade médica e segurança do paciente - Migalhas",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQek5NTDdsemJIcW5WMjdrVFJ6WE9idzJCYzBtMnYtNEJ6Wm5NTW5RUFlVUkhyallqeklaNjVZc1VhOUVLVklaOVJrNnJxdkU0STZZQy1ob3A3YnZ1MkpFT2FQV1hQSS04d050eV9HU2RIU2QzNHdWenVLLUtTVUotem90SHg2N0V6amRvaE1EYktHME1CWlR5Y29qanVvekdBdGhjLWd1eHlpWVJOdEdXdGR4N2NhSC1PYl9sN0RzTmtzZUZYWVVlWngzYndwMjZsYmJRME9n?oc=5",
+      "source": "Migalhas",
+      "published": "Mon, 14 Sep 2026 10:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Novos alertas sobre riscos da IA à humanidade reacendem debate sobre controle da tecnologia - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOb3RRTW9qNmdfOEdEQ3hEWVl2cW9NWi00Q2o2ZVd3VTZ3dnA5clhqdi1UTDhwVmZFQ0NmeXRIeHZQUURVanA3SmxrTGtuRjFJbXlKTFdmb3R5cnd3dzFyem5MNFdzWWxUUGprajFHSEI4MldJb05pdDNEdzRhU3FRNTlkQXFSSmJHalRDa3g2TlPSAZYBQVVfeXFMTkFUX0tSNTc5QlhjWVdPVW9OeFRVOFMtbDhxZVFEWGIzTng3V0hFQ0hOV0JLaU50WW1mVjR3MkhLUkNYNVk0ZGxVVFNNUFd0d1NUVUJrd0xtcTZUTEV3Q2pXY0lTOW5LN0pUSUNqeVdpSDhXOHdMcVlrVG9ZdHlFWlVXZ29ON2FBV1UwaGZzd2tCRWdOT2pn?oc=5",
+      "source": "Estadão",
+      "published": "Mon, 14 Sep 2026 11:51:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Como a China está agindo para manter a IA sob o controle humano - 14/09/2026 - Tec - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOSDdINWMzczE5WUdMaDNBRE1GaFlwWE9QR0JwU1pzMWJCZ3pDbmMwaHBOUkt3RG1HNTlYSmRiUTJrWE0ycUhoWEhuWHloQnZtMHVkc3ItT1dmdWU4QVZXRnloSUw2SGtraVhWbmFEYkI3TEZoSkQ2a0lVNHRMaG9WQVMyRGE0cEFqVWVFckpwbmVSX1M5N3FXOTB6SnJPaE9XaUpXRmhZWlN1eEpOam9PQg?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Mon, 14 Sep 2026 12:47:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Inteligência artificial e o novo paradigma da Justiça Eleitoral - Consultor Jurídico",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNT0o2SkxLYWZuSXJLZXhHRndZWS1lWmpuMzRNVXl6b1NLdFVsdjVsUnN6WTdxQTlickxaRFU3dXc2bjRabWxHRFJYdEkzbWNlSGI4czVCSVcwMWdseURNLXRSeTBZV282Tm9SWVdVcEdrS3p3UVEyeE9xRXNKRkhpVUw3TEplTmI1WEgxS2dEb1FUTHV3R09YYzNidzJqOFk?oc=5",
+      "source": "Consultor Jurídico",
+      "published": "Mon, 14 Sep 2026 11:00:10 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Superquarta com decisões de juros no Brasil e EUA agita o mercado na semana - UOL Economia",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQRFpSVzZZa3JKUVZDbWZjQUlVQmZNc2RqWG1lSFEzbVFvUndaSzlIcDBHOTJaT1NkcW42WU5TaFNiQmN1Rjl1YnNRcXNFNlg1bUVmMlF6TkJ4RExxblZ6ek5hY1BTeGpfR09lY0dKTE1sZ0d0VGhieUYyU1VtMnVWYWpZQ2thRUlZaC1OZ0U1eHNGU001TTVuR3dmcjdvR2daNWpFVTM3cU5RSXc?oc=5",
+      "source": "UOL Economia",
+      "published": "Mon, 14 Sep 2026 08:30:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Enquanto líderes de gigantes da IA defendem 'freio', Brasil foca mais em risco imediato do que no ‘existencial’ - O GLOBO",
+      "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQMzNacGE2MzhWcDZtU3lTc2FkUG9mNkhQc0VOeHNyWlpSYkRVeml6LVdhdzIxNDZFM21aN0N4ZHNvMEZHSkprN3hNNV96bmRUM0Y1ZkRHeTF1bVhGM2RiMUI3eHhFVW9JLWNMRDNkM3Z2QmVOTktlcXFDTFNDeDFyUHNQaU1iTy1wQmU2R2VWcTg2V1pnb3pUN1NocDJoSGJrb2dhY2pBb0tDdm5rQ3dzd2tDS0d3bUZGZEdoMndSRmk3OFZJV3pLcmE5NFdLMi0wcWZ3MTJ4T2JpVU5zZlRuX2xfa3F5OGhWOFYxTEVFQ2pjVldwYTg1MFJEU0NkVE5IUGNVLTVxMNIBlgJBVV95cUxPTXcwcHVaVTVkRXd6VGVKcFVrMzF2ajFOMk5nVTNib3hib3BMRjhKMzI5TTk3Q1I3cjg1eW45RzY4V3lqbXNyUWV1V0NrVTU1R0dTOWdnVE9QeV9pal93Wnp3cGVFVXhpSHlYYkVabGFBTGVXcDlPVWc3T0p5eDItR3hxTU5uNUI2enlIY3BxU0ptN2lCVU9JRHdmN25ySVNHRTFKNzNnSFhfVkJCYnJkREhucDZQcE1rVEgyajdGQVNXakVwQUtEMjU0T2Z5YVNRbGpHa0xFSy1jYklBRXRCNWJSdUE2VDBDeE50ZUE5bml1MXcwMGVGTVR0U19LSGN3b2QxM0FYNDltNDQzMUE0Wnk3TG1VZw?oc=5",
+      "source": "O GLOBO",
+      "published": "Mon, 14 Sep 2026 07:00:01 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Rivalidade EUA-China abre espaço para Brasil exportar mais - Gazeta do Povo",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPLXR4T0dGSm82TU01dEhCVk4yQnZ2VGtuTS04Y2hmZ0ltV1p3ckJNRGR1U3VNNzE1dl92ZFltVnVKZ1NIbzFiUWtMbDlVUWw4RjNPdjZ2dGs3T1pyZFBjX0N3NEY1NmprZUpMMVNVaVBDVU1ZTGxWTmZPeFdLUzUzNUVfVFVqeVo4cV91SlJEYWdaMV9Zd3JGZzNOYXRIa0k?oc=5",
+      "source": "Gazeta do Povo",
+      "published": "Mon, 14 Sep 2026 11:49:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Importação de vinhos pelo Brasil cresce 12,8% e movimenta US$ 273 milhões no semestre - VEJA",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOZmloRUxXQ1hpS2xUNkZTUEdrNWpYVVJXNHo3UXowUlhQMkdkUGpGQjdsRXpnOTlfdFZFbkpsLWhtT2pfYV8wQUJSdGJEdzRPb3ZoMEk0Q1dwUU9RSmJkWkRyRlZ6S3JJY25XSXhRVGllOWMyX004S0U0NWpjckVOcnFOclFFaDFpTmFJVnlKZ3RyUmNrdWZrNGFGcFpOcm5oMEhfdS1aM1dVeEY1dGZqVXlxNkNUOE1DdGc?oc=5",
+      "source": "VEJA",
+      "published": "Mon, 14 Sep 2026 12:48:28 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Brasil se aproxima dos EUA em exportações agrícolas com disputa China - Tribuna do Paraná",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOSENnNXJUWk96WklBNVZYVU5KdTEydlhfNXNJOTJ4QjdMSDV2OFY4azVMMFBHVkQySHQ4RFVWWlYyMkljNzZxbDFHaXIzRUsycWFaWUhPdDBpd2pGeml6elE4NGRTcVdCTURsN1VIbUZjbU9oTXBqUk42QW9DSUJCTkVrWmMxM0xkbF9yOTdnVExnQUN2M2x1R01LaFNGSDBmdWZHd0p3UW5SZzRZY1lBTFdta0kzWmg50gG-AUFVX3lxTE5zWE84RlR0QXhpbDFYZ2JnWi1ONU5DXzI5T1NyTFp4RjZXVmpNM0dHQkNTVk5OMFJ3ZUtSaFJEYTF2RzB5QkRZMzFvRVZlU0QxQkRDQ3RiT0hjN3d5YW4wTTc2QXZ2RUZmRTVlU3RvelhXUGpIMjEtVDNiNlhmdlVLakt0aDEwdXJBOXhKRG1iMEtSRjNIZktOeDJkZE1VNEJmcHpsVW1TQ0JBRGpsNEU5dkZHcnFUVXNMNjVmS1E?oc=5",
+      "source": "Tribuna do Paraná",
+      "published": "Mon, 14 Sep 2026 12:06:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda do dia: Boletim Focus é destaque - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNNzZnUFFuQzAxRDlXdlJfcmNGLXVjN2pUa3NBNnRRcTJZQnNBeFp6NmFCNHg4OGtRdkxodldoU3FGaTBDaWJKRDFyS2RERTl0bFlsanNVb0FmRGk0b2ZOcExNTGJNa250Vmx5R29HTERLTGRRdFZkS2FUemxLWGt5a2pRVURCUnpjQkJWYmZKdUdpUFViVmtObEdub23SAasBQVVfeXFMUGM5MjdsOVN4d1VuaDVxZ0o0cUVmalJEdlRCYndDOXZXbUJ0bk4xNVhqSnQtbkpIR0RsYjBjVm0weVpRT3dUYUJVOUxTeDB6bGRjUUE3M293YTdCZHFNaEVkZDFBMnh3SXB6dzJSU0NHTzhrQThGUkJNQkR5bDM5Sm8wU1NOeENWSDh1X0JobWUwckF0UmFIOEh5TG4xeE9wTjBHQWp1V1lhNHhV?oc=5",
+      "source": "Valor Econômico",
+      "published": "Mon, 14 Sep 2026 10:45:40 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "IBGE disponibiliza Agenda semanal com programações para os dias 14 a 20 de setembro - agenciadenoticias.ibge.gov.br",
+      "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxPQTBCbnhPS1ZwQXBQNXIzdV93NU9zaFhkeWl0c2Vib3RzeXZCbkJwNnVMOXp3TnB4NUQ5XzcxZGJpXzNvRlZmTHhqYnNFSUVFQjQzSUlPTkY1OFUxRHpLNy1veS1vemY3YVJidUYyT3JzWWxaMUtISlI2YmlLX3pWbGRHaDVva3FqRUlmM1A2Wko1dEF1NHc1M0k4NzBjZ1hwNlJJXzdQaHgwTnMwRlZTektxcWJabE1hWklZQUc5WnhnWGQ4V2NpNFRvTWtTdVJIOVEwcWVBSS1VdHNxOUZ4M214ajRxeFdQSDFnZk95b2tpR2pWelZaUTRVWGV0V3ZYXzF3LTNGd29jZw?oc=5",
+      "source": "agenciadenoticias.ibge.gov.br",
+      "published": "Mon, 14 Sep 2026 12:00:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Jogos Sul-Americanos, basquete, tênis e mais: veja a agenda do Brasil hoje - Olimpíada Todo Dia",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQMWZaZDFQTGFRUWF1WTNfTks3bVNUcFZZZEpsdEdtMFJzNlBDd21Va3NFUE1mTGo4SjczTFNlb1laTjFrVDdrWXZCeVJaZU5oSWZoMlVUZnFJZW9kZEhiZE03dUNscWJFNGp3dXg2WjNrSDVPcGVtSWdWM05ON0lXSlJBcElqSUFyVEdGcFdURnJQbzRMbm9kMnd0MHN2dlEwMUE?oc=5",
+      "source": "Olimpíada Todo Dia",
+      "published": "Mon, 14 Sep 2026 03:53:19 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Governo Lula: leia a agenda de ministros do governo nesta 2ª feira - Poder360",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNRG1pQy0wWkhBaUFnd05ob216UzN4UWZPblVpeGFqUUpINEcxVXZ1NzNOZHJIZnFUbkF5WmlrRmprV0V2VlRrZm9mWDdwWTd5eldFcjBOYUpJLWMxRFh6X1ZLcWw0UU04M0Y0aWhwS1lOWUtHYUI0R3JNQ1pfZnh3Y2RQcElLQ3JyMHJTUjhNaHh5Mm8yd05GREFRNHZIeHlRQjFCV0VlZl9McW1PaHdr?oc=5",
+      "source": "Poder360",
+      "published": "Mon, 14 Sep 2026 09:03:56 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Confira a agenda dos presidenciáveis nesta segunda-feira - Tribuna Hoje",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPYzF3ZlpPR0ZJMkFzYlBYWWU3cGpOSzBab2JJY2I4VGNaNTQteW10Nmt3ZTRVaEtnWlpURzlfTktJU09NdkQ2NmltdWxhSDA4SmtDU0tZOGFqZkhmQ0VyU0t6X1hIWmxlM0UtbUFzRlFOLTZfcENrTkFzR3lyblpuMkllT01fdERjSzlOZFBZLWQxNWFvYXhvS1JPQnh5Wm8xVzFoa1ZvdDBDdDZoM1h4cXNnOWxsTHc?oc=5",
+      "source": "Tribuna Hoje",
+      "published": "Mon, 14 Sep 2026 12:50:00 GMT"
+    }
+  ],
+  "generated_at": "2026-09-14T10:05:10.128243-03:00"
+}
