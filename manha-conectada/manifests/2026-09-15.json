@@ -1,0 +1,203 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-09-15",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-FranciscaNeural",
+  "output": "/root/repositorio/d5n-videocast-source/manha-conectada/audio/manha-conectada-2026-09-15.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/manha-conectada/roteiros/source-manha-2026-09-15.md",
+  "sha256": "1231e52572b2ee396431c7e481dc92f8759d898b82b387e4eb357b7dce3ea23e",
+  "text_gate": {
+    "words": 882,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 335.56898,
+    "size": 8054325,
+    "bit_rate": 192015,
+    "lufs": -17.2,
+    "true_peak_dbtp": -1.73,
+    "lra": 2.0
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA1cTN1MUFFQ1RuWmtsRUVoUWZlb0ZNWEZYYmpqcEhYa28tQXJBeGtwcUtTSmJxSzYzclNEQXgzUWRkcWZDS3RPN2stTE5qMjBxV0FnbkN1dUI2QXR0cENsbzlIcmFoNVhodkNlYjktY9IBdEFVX3lxTFBjelh4eG12QWI4NElTV3JINk13bDRzby02MFQ5RndaM0RLcTNhRnJxUXhOOWd3T2dVamRLckFIWGZjOC0yVGRRVmdmS083ZWdZWkJrUUFVSzJWbHdZZ3J5bWZwdWxPYTA0RzdBa3AwVzJYbzNE?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Tue, 15 Sep 2026 10:10:19 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Veja novidades do Move Brasil: de inclusão dos profissionais de transporte escolar a parcela-balão - Extra online",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPVVN2NkV4RnNHNWxsZHlQdENOek1oWEV4Q3pTTjZGS3RzZ3daZzlONEdZYkloNmhhd0Ewb043cURJcUhUZ0pYV3p0eEtsVG9EeVBnRFF2Q25vUHZsR1I5SGJGdmZDRTRoMTdqM2hBTjZMQVI5TDFmM3FlZ0hQLTdURWcwTC1hMWdxZmpydkZ3NzkzdVk1US1ac0dUSzNaSXhfdFpJelZXNi11RjJjZTRLVXRKWXJmM3lpQndLdUlQc1NmR0FOSWNwcWFTbXVNRm5VR2JGSkwzbm9aejJtVUNmbjlQR3otREXSAfYBQVVfeXFMUHBpSy1kdVpmY3VSUkhZWXRUaU1KUVIyZU9iVWtOYjExUmhkWUxjcXVRVVlHSV9wMTQtLXJBMWpoYTM5RG9fT0NXTHJBZUc1Zl9UV0JpOU4xc1pYbHhqRDNhS0tlT1NIODNJc05RbXlSN3E0UVE4dXNPdHEwNjNHdTVPUjFQeFgxOEdOVHZ4NDVJSGM3czFXT1B6Ml83SHVKR3dkVnVTRlJvSmtmR1dkd2VUVjJ4azUyNTBUOGwxOWxLOUM2c2hiZFlfQzZxa3hmVndTUzBHZWVUY3dzQlBwRnpfTWxyYzVpd1U5QjlTRDk5NlZMOUJB?oc=5",
+      "source": "Extra online",
+      "published": "Tue, 15 Sep 2026 08:00:01 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Lula sanciona Move Brasil, que dá crédito a motoristas de apps - UOL Economia",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNTnp5S1IwNHZxNWVDTkZ2UzRqX0tyUGdScmtHSS12TzBaWHZCWFhmN2JXQ1plb29iLUdrYVNfNXIzU0VONTB1Sm0yWVVwRjdQWHJJZ05iOV9rcXVScjNmd1RiZDE3R19wRTNQaWZ1M3hPdWYwYVppUGJ5UkhTS0ljU0hnem14aUo2RE9IZmh6XzhyLU01Y1pPM3dyLTBPVHFkRmc0MFpNTkJybGxyaG9OalJRdHFtcXhhXzREYTFIaw?oc=5",
+      "source": "UOL Economia",
+      "published": "Mon, 14 Sep 2026 23:28:53 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Operação Lívia mira grupo que viu morte em transmissão - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNVGtXeUdabU92aTVJSzZhTDRJUE9oWlpVLU8xZ2JXVzZoNXNKdnBRWjlnQ2VTNzQ0bzNUdEpqeHdpaVFLM1VIcGRRUGVmNjJRdGszMjVJUmJqQ1FOb2xVRUpRYWw5TDZFVm1XcmcxM2tVT2R3TXZQMENzYjBaLVNTX2pkRFZISWxjc3NDOXJmWHhjQV9OeWpIVlZGUWFEc3JKbG9wc3lfNE4?oc=5",
+      "source": "SBT News",
+      "published": "Tue, 15 Sep 2026 11:11:15 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Brasil: exportações de carne de porco crescem 8% em agosto - 3TRES3",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPRTBiTkNlSGZUd1hIRUhSTTZWWThQQmFsLTk1STYwWTFCMDNNUjdwNzlDZklVSkJubUh2OFp3TnVDV2VfQXFoTTQwNzFVcHFIVXlLSlJ2R01MbHk1YnA4TzBXcmpOOGFDSHhseTNBZlkzWDZKejNhVTdrZ3dRWFJ1d3VTVlg5S1JwaWtKNE5HNEtTUFprM2JPUDU3Vl84UDA5Zk9xTzVwMkl6dw?oc=5",
+      "source": "3TRES3",
+      "published": "Tue, 15 Sep 2026 00:00:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Pentágono admite escassez de munições devido à guerra no Irã - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOd2VsSklWdjkxSVhSZU1ZeUtYdU40WFk0S2NBckQtSkZiazkxTEJLd2lWSUxQd24tQldHaFFRWVRydXNmbmtwZDlWS29rTm83RDg3OHY4dzRPUkx2OXhDTkZucC1KbzhDRTBHazduNVRQMi1JVjVjR2ZBSFdMZmJkMTVNUDg4dUhQbnZlZF82aF9Eb2lnc1VPdWNiVlBlT1VnRjRz?oc=5",
+      "source": "SBT News",
+      "published": "Tue, 15 Sep 2026 08:45:23 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Juiz derruba regra de Trump que reduzia prazo de permanência de estudantes e jornalistas estrangeiros nos EUA - G1",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxObHQ0QkZsSjk5a0F0T0dQWmltWjVYUFJKODhtR2ZGc2NqNk1XY1RONG1oemVJS0FhNjZ6bWtGcmk4b3FsdmMtUi0tQUxWa2YzRkxFREdGX2RZN3piVWF6Yk1qRVctZEQzLW0zWFFka3dVc05oS3BGWmpiUGtUMEtjV01JbVRXOTZ1S2tSSjNPQmpBZ0ExdXJPYkU4X1JBbXlnVDJwejZvZkZ6U004andiWC1lSngxTDAyZGpldldHbVJ0Qm9wZmZqdVltdk44YmxSQ0l0OWQ1X0czM3VZRjd2bkZHbnRsODNQZTV6Qm1wRDNsTG_SAYICQVVfeXFMUDhjYWQxLWVxZlNGdVBlT19aWVNaYlV6Q0pwTWN0T0VCUmNNeFpTUFYxaF9OOXhvX0xGd0lxNjcydEZ3bXM0RUlrY1VtSVZmLWFkMTZsNjZJdGc4V1p2dTZuYjdwUDNPY3pJY19abHdsS0dyMFVteXpnbEFxSi0tT1hNVVZsLWM2azU4bGFpcXhnM3IxRUFNVVQ1SEZiN1JyQnprbWRwc3VISTdCcnpicl9VcGVhZWZVZ0ZnelJpNDZGNUxCanF0NU92bFNEQ3VZSmQ0LWJwT0otcnc5a2FqQTl5UFNhN25XN1VKZnNQSTFDQmwtaG1wY0F6eFBsR1hHNm5B?oc=5",
+      "source": "G1",
+      "published": "Mon, 14 Sep 2026 22:12:06 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Caio Souza e Lorrane Oliveira chegam embalados por títulos nacionais à Copa do Mundo de Ginástica Artística na Hungria - Terra",
+      "url": "https://news.google.com/rss/articles/CBMipAJBVV95cUxORkQyWnh2WlBUQ2N3WVdKQ3pxODRodENiVGZfWkY2eGFmSXptZUw1Y3d1Q2Nyd0UySGNIYmRpeDV2TVY1LUQ3Y2p3ekQ1SF8zSkRqVGJKTGpPMjI1dGQyZlFTUHJjV3FaLWpOaWNiaGZKcnpHUUJMd3pMQ2NidWxYejdPUUZlSFhGT2tXZnptRjNfZTNjSjhoX0twcmhlVjlld1dPWVdxT1ZjT19ib2lKMUdTS3hXRUZuYkhXVnF1MFBKc0R6ZTFoaEJnOXBma1pEZ2tZa0REY2JuN0FqRmZDUmlmRjlDVzZMallYNlBXNG8zLWR5WGs1TjdKZEVZTnctaC1FY05TRUZ3S05rZHUtSElxMFJ2RUpBaWdYUVdZY1JkTzl1?oc=5",
+      "source": "Terra",
+      "published": "Tue, 15 Sep 2026 12:09:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Documentário mostra o 11 de Setembro na passagem da memória à história - 14/09/2026 - Mundo - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQc1dsOW5EcFVYV3A1ZktqWjd1MVBfam5MT0Jkbmw3NzVhcjNGMXN0REVJa2FqUzk0SS1tSS1ib3ZYamlOWjV3SlBLbFhMOVF4YTRDSEc1SkhEaE9mQ1hWTTZJcG5DV054MmJFWVNVQWlaN1pKN2VNXzVDelBURFJNblhaZEo0ZEJhek9mbWJWUkJVZWNzMnRiTVNZbUJNQ3pqak8yNTJPTktyY1dMTy1SQjZrMWZlVnZOeFU1eg?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Tue, 15 Sep 2026 02:00:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Começou a maior feira de tecnologia do mundo: CES 2018 - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQTzFNemZFVjZpQzJSQTNlR1ozTzZMN1VmajB3Z2ZKMERCM2VfYWhGMHJPY2tINUdoVms5OGVRYkE4ekl0WENnRUlFaVA5RHY2b012MVJPQTJZSTJ5TjM0VWc3Sm9UN0NLeC1hUTYtNFBRa2hGdVc4OHl5aTlmam85YUZuNUxINnF2WTJEYXI0VDJvYk1hOFI4NXFrVldxeWw00gGmAUFVX3lxTFBIZnlSb3NFOFFPalNVV0tzc1hWZTBIZC1wZVNrX2xpT2VkdzVQQThYR3FhQVRmay1TTW1KMlljOXgxRHpsajNQZGJzMF9nWXRpcmItcHI2WnF3anZhMlRHWkFOdTVXaFVPN3I5TVRhMk9iTmp0ZEM4MXRvWG1HT3FXVmRxdzRDMHBXYzhYbjFWTEVTWDJTT2Z6WjJRQm5IbTVQUGUxM3c?oc=5",
+      "source": "Estadão",
+      "published": "Mon, 14 Sep 2026 21:23:17 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Inteligência artificial faz escolas buscarem equilíbrio entre tecnologia e aprendizado - G1",
+      "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOMGhvNmNQRFFOQTNnSkpRN2dsWmpueTJySlBWd1BldFRQWHhrMG5uMENhazJOYk04c3JLbFNxRU90SUtoZVdDanJKUVNkR19nMFcyanJ5UGlIZm9MOVRYVUpnZGY2MmhaWkstUFpsVUJoOG5XekIxZ0JEcjV5ODR3Tl9uSkdPMGpVZVBkMmFKOU80WGJnbVktNE1Cbkc4dnBXT2FpZUpFdVdDYmNqUG5VejJMSHE3eHJSWVhQTGVvMmlyeVR4aVF5TDhldVhFT2h6aFhReC1UTnp6blVlN3pHd2xVbzMybjRlWnBiNXJ6MHptSEJJMGRsU25zdmvSAYsCQVVfeXFMUEx0LTYyTGNyQmU3c3VGSU1qTzZoUFlmck54Q2JSZ2RRdWF4dFNUZmhZbDNwTnJWYlV2Skd3a0FiNkpCd1B6QlFHenVmMzF2bzZiOHlwLVZfU0tSR1Z3ZmlZSm9SVGJoMGxHWGFBajluU1I3VUFqX0tYODI1TENTM1R1b1dPaVZhdVZmTTNrU3RRSC1KMnA0anB2eTFKemsySnpjWnFsdGZfdUtsTzYySG1ERkhPejJ0a1RFUUpFNTQwVHgtWXNUVklodU5abUUyc2NsUkpHaFd1NmZlbUtlR1ZCMWlQeWNBR19vSkIzVnhNWDNISW05SFotQWNKNk5FWjhBQk1Vay1mZ1o4?oc=5",
+      "source": "G1",
+      "published": "Tue, 15 Sep 2026 12:31:35 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "IA avança dos testes para as operações das empresas - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPOF9tYlBrVy03dnZTa2xqRFoyY21Fb05yZUlWWGhqX2p5R2oxdHljdEk0OFkwR2pPOGRFOVpfQ000MllxZTNtd3JkZE1yRlFGWF96bWIyQm1fME1FV1pNQmROWUtOMVNielU4UDBseFM2WFM1d0wwcDB6dDZXVHBYclJzaUtKa1ZqQVRWUkR3anB2QUhrdFJrRFpjNUQ4RHdXbEFWMUZQZHVCYndHZkRZSlJR?oc=5",
+      "source": "CNN Brasil",
+      "published": "Tue, 15 Sep 2026 12:44:48 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Trump nega regular inteligência artificial, ONU vê ameaça à vida - Correio Braziliense",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQbnlPaWxNQ3p4SDEzWEZQbnZ1NHduamR5SzZyRVl3NlpkVHhKbjBRUXl5QXRBVElqQjg2Q1c4azl6OHd5djJfNkxoWlBUOFVucWJacGpWcnh6LTBTblpHcjJteHI2NEQ4eERMSER0bTVNY1AzMFhsMWFqOXc0MWRlMzNIWWZwX195dTJfV3NEcUQ3dnB2RFpKLXFlcEw1T0lLNzMzSnNReE84VVIzbEJUX0JFblpiSjZfVWZXa3JVRmJHTmpBZ3NV0gHMAUFVX3lxTE9SaVBNZk9xeXJMQkoyZDNiZml2NHhpbWZpSm56aWFRUUhCQWZBOGNTUUlWYnlFQzZkYVZyM211bUNoX2xjSUxCb3dzZFVwR3NIQWJPa255d09oVzlkNlN2UklZWGt5T19XVXdmZWxsSTFVN1ktT0JIQlc5U0FMTi1xTEFGWWtudU1fQmtndG03MlZyaEVsbndqYmVXYnVBcEpDUHlPbFVVWl9rXzZTbGdtOG5jcktaYzhiamM0c2hScWloMElTVkhjUTFsVg?oc=5",
+      "source": "Correio Braziliense",
+      "published": "Tue, 15 Sep 2026 08:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Petrolina oferece curso gratuito sobre tecnologia e Inteligência Artificial - Jornalismo - Sistema Opinião - tvguararapes.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQZGlBQlNqREpOck01VjAzUnVybE9QZEZrbS1YcXZ3LXJrMURfMXdnVl9KeENFZ1VqaGdfd2dNd3ZHR1ZsclhoLVVvWkZWNnU0ekdWTENlYnJ1YlU1eE5ibjY0a3dTNFNKOHd5akNsRUl4aU1NYkNnMHNvdEUzM2FaajB6alBNdkFaMmt0bGQydjUxSnNOUWFjNmNLLTdpSVNvMTZVVE0zNnR4N050LWZvT0tkQTNxOUU4ZkE?oc=5",
+      "source": "tvguararapes.com.br",
+      "published": "Tue, 15 Sep 2026 11:12:50 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Abandono de projetos de IA: 42% desistiram e o motivo não era o modelo - StartSe",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9SeWh0eWd0UGpYMnZqVm95UzY1bm5TaWxYTV9UU3dEVC1xUE9Ydm03ZVliTFU4VlFWVk5rcnNWanNXenFFZUpTVXdnVUtKTHlISklUZWpPTzI4WFRza0tReU55NG9tY2RhUHE5eDAwdUphMkZDdnR0bmk1TTQ?oc=5",
+      "source": "StartSe",
+      "published": "Tue, 15 Sep 2026 12:00:25 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Condições se esgotam, e consumo deixa de impulsionar economia brasileira - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPOVZqNVNzaTYtMUdYQWZPR20xRGRaVDc3Zlc5ZEJILVgySnVPbVFIa09lVmN2TlQwTF9yeXZncGpRZDIzX3RCTm9heUt6ZVh3Wk5aRGtscnFBWEl2VmphZG41ZktSLUlseXlySGhGZ2R5a1pWTzZPbzlVWGMxdThldTNfSnZ1UnREUVVaS3kwUTA2elNRa1VRbjNzZm5hTVI3VFdJa2NtRHNxS1JwbE1ZaXQyWEF3aDVMTHEwM3hrUktJV2lwVlHSAdQBQVVfeXFMT2Q0NFZ1M3ZNNy1nN1RWSUdMWU9KRFN5VklfaXpFYmtIRW1BY054N1Q1eXFkdUxDMlUxbW5icTRGWHlmWnk0YkxmbjVILVV0RHBtQ29VTnZvZHlnUU1rWmpvWElQQmJpZFJmUnpyYTZRMDFWNFhKcURnLXVqaVZzXy1jLTJsMWFMSGEwdlQtVVNnLXpObEFwRnRKSkJ5ZjZXWTAxZHVVM1lTel85WW1fUnlfTVU1OV9aZmZ2QzVWQ3VZbEN4d2FMbTBhUzk4REZUYy04WW8?oc=5",
+      "source": "Valor Econômico",
+      "published": "Tue, 15 Sep 2026 08:00:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Brasil precisa dobrar investimentos em infraestrutura, diz CNI - UOL Economia",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOU3Z0elBjX1MyNTZ3SmhVZEVBZ0FMV3dTRTZMRFBFb1M2V0Y1cERhcU1EM3M5dE05eHFrVjVpVEdxdkF3V0tWa1NTTEZqTFQ4UExzelVOdEVVbzJWX19KU2dOcnUxN25NX1hGNGVNYm9JWm5KQzI4bVhWOHhYVDM2NDkzMy0zTXpsNk5Cbkt3X1VyX3lMV3h2NFF4aDYwMW9Oa2FteGQ4NWw1cXo4akJuNVc3a1FnVnRSSS1fSjNKX2lyS3lj?oc=5",
+      "source": "UOL Economia",
+      "published": "Tue, 15 Sep 2026 10:55:40 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Ascensão de emergentes como Brasil e China desafia sistema multilateral de comércio - infomoney.com.br",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOV1kxUGM3RjhBU0RGemo4VWJWNTBwQ2tuYmJnTUNndmFXZkt6ajN1OGFMTEJIcTFJSkRnUUhvcTdyRGlRWGU1ZkQxSXo1MWdLb19ScGFSOXlhc2R1dndJVGc5SkpTUFhDLUoyanVkSFhRMVFOZWZEZlptUl9MODlwTTBLWEp6RWpKTXVXek93S0FaQWtmVUlUZWJCUWpSQzJaRlY2M0ZaeHh1dWNsMlhZLW0wX2xrN3p5RUg0cE9kQdIBxAFBVV95cUxQSVd3cVcyQTMwYlZhUXRNXzN4eHZ5aEZpTGE2TWZqOXNFcWdwZU9Rd0JnTXFGVEdRVUZTMmFUOVk4TjFmSU9ydno4bGRiclJqV0NvdFg4WUo4Mjlja3pYS1hxanpxdl9IN0Rwdl9CYXNDeWU5V24xaUFrZFdNZHZ1SDFnWnk3YVk4aThpdkgwLS05Ukg3aE1VbWJ1UEE3cDI4MlMwLWt4SVlmcHdvUUlucWFZR2lHUzRuT1MzTFpJOFJXOFZO?oc=5",
+      "source": "infomoney.com.br",
+      "published": "Tue, 15 Sep 2026 11:50:47 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Brasil precisa investir R$ 550 bilhões por ano em infraestrutura - Tribuna do Paraná",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQSGZheUc4Y0tFZUJ6eGMyNGo5RlY0aEhqdGVUNUJyVmpJay1qTEdQeFRwcFJ0RjAtRXM4cklXZGR1R0h0c3RwcWpQWDF4QUFGaE8zYnJ0Ym4zZkYxSk92OVM0XzVqTUFuN2RyZ0tGSXUydllWMmx0c3FXQmxKdEUzNG9vN3JjNFlYS3c3ZjFHdWp0eE1ZbEFwSVhVYjh4Mlhnaml0d2lzNDItRmJMcXd4RNIBtgFBVV95cUxQeFlvaVdOa3hrQW9tamV5N3Q4MS1pcXZTa1hKX2tPYXlBcENqZS1JMUJBX2JPRmFmMnFoTm91dFkxTGg5ZTRLNHZYbFlUWHE1cDQwSXNJbFgtWmFaTjA3eHg2aXptN2wwTHVIN29YcFBJZmFqOFpUdFh6R1ZlQmxuSGxwekpoXzBkYzk0enlZRU9Bbm5CcGZVTnVkZ293cFFCS1lJd3c0UEJrdVNaV21neUdFSDFKZw?oc=5",
+      "source": "Tribuna do Paraná",
+      "published": "Tue, 15 Sep 2026 11:06:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Vendas no varejo do Brasil recuam 0,8% em julho, diz IBGE - Money Times",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPTTBtcnJxdnZPbU90ODVnRkRJTWx6VjhIcDFYNWJ0cWdEdTBLbWloWEpzak1aSXhzVlpIdG9MdkpJbkE2UzIxQUdVbnJMNEpneHNSSFlKZW9ONThudVI1dU1KamNjOVd4OThic25NanZ6UTFtVGZ0S25qZTBsZS1PUk00Ykcxcl9HLXI1dmhpeHFhVmZt?oc=5",
+      "source": "Money Times",
+      "published": "Tue, 15 Sep 2026 12:22:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Sociedade civil tem papel-chave na agenda positiva para o Brasil - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNVEd4dU1iSkNaZE80VlB6by15SXVmMkpQQ3NDZ0UxeTRGaHBqeGdyWmVaWkVGQkNSQXAyQjFzYXpELUZPeWZlbTlub3RXOE1iT2RLaVBucGlnWnZYWWhVMHB3eWcyTWFWN0pkZzdFUzhtVlh6YWNEN2xVWmwtZkxOYTNPUlRBVUYyZzBUbURnTVdtVm9SZTNQRDVkSU53VzUwdnFGVUtB0gGmAUFVX3lxTE1UR3h1TWJKQ1pkTzRWUHpvLXlJdWYySlBDc0NnRTF5NEZocGp4Z3JaZVpaRUZCQ1JBcDJCMXNhekQtRk95ZmVtOW5vdFc4TWJPZEtpUG5waWdadlhZaFUwcHd5ZzJNYVY3SmRnN0VTOG1WWHphY0Q3bFVabC1mTE5hM09SVEFVRjJnMFRtRGdNV21Wb1JlM1BENWRJTndXNTB2cUZVS0E?oc=5",
+      "source": "Estadão",
+      "published": "Tue, 15 Sep 2026 11:00:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Seleção masculina de vôlei no Pré-Olímpico e Jogos Sul-Americanos são destaques - Olimpíada Todo Dia",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOc2lLTGxQNndySXAyMGZLWFRqc1JrYU9NSXBjZWJKQ1JGMThsX3JKb2EwNXlBblRnc1VRNC1RV1g1V3lpOTBfb1pEdmFQWGl1UkpnU2h1cjhRVTg5OU5DOTNTMzV1R0FHZ2kyeEFmYVB1eUE3MDZWQXpyMXVaNEpPYWFzREZaRVZUbFJLZXhqelpwUURVVDY2Skx0RlB5VTdTZl9BMDBUUHZVQXVNUC13MjIzVHBVM1gxX1E?oc=5",
+      "source": "Olimpíada Todo Dia",
+      "published": "Tue, 15 Sep 2026 07:34:31 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda de empresas: Petrobras assina contrato para compra de gás nos EUA; Telefônica aprova proventos - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNTXkxckxUZDZiZ1FsSGtjekg2dktnZlkzMVg4UzZlclZlbXRuQzBOdElybHZPMzBHSnZLcFBfd0NVdWF4WFVHLURxaEpiNkx5dmRRVExyOFJJV1A2SHowN0RQa1JfZGpDV3ZrV19aSjZVb0NmOGVncTNUODJCYTRBa3BOUHRfck13UFJxR1N4SkxLNlQwb1M5WG5YVTRieHBZZ3NUXzRxU3dOM2dEOWJ4TUxHQzVxMHNoVk11eFRoNDk3aWh3RzhBeE5ETXBEX2tSTXpKQnQzd0V6SXM1YWsycUhjeG1wRVFsaVFRcEpB0gH8AUFVX3lxTFBMSXBDZFA4QXQzb0xhWTg3YzQ4ZHhvYlpaZ2ZQWTcwNmp5d3pXakhtZGp0LXpFWlJYaFJyVk5ZUjJZN1NEVEtUUWtWeUNnc3E1RG95TGZMZUhNc1E4eTJaNUp6b0UyQUV4QVZHdU93N2h4RTl1Zm04V1BrcjI4akVpblRNYmRVbVFQRHdLd1RnS2xIZEJQMlBPaXZBb29pUFNfdWh1NWdRWUxndU40UFFhLU81VjJ0UUl4TDY0SEJ1dEU3X3QxS3kzTUl2dlVMeXFWaHRnVkdEOFU3dERVSk9QcG5ubnRCZVpMNmplbExyN3V5OTQ3dmtrUzM4OA?oc=5",
+      "source": "Valor Econômico",
+      "published": "Tue, 15 Sep 2026 11:17:42 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Primeiro dia da ‘Super Quarta’ divide agenda com crise no Supremo e pesquisa eleitoral; Ibovespa em dólar cai nesta terça-feira (15) - Money Times",
+      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQMUZlVGdvcjlCZHkydXZkYVc4LUsyeVotUDZYQl9oOWpaelBmcUZ4TFMwa25vWDl6Yl9GejJRLXRqamcwei1IOGFmOWttMzBXdVU4YXpBVnhpN052SFdvdE00RXlkQkRrV2JxeGR0bS1fMmZJQWU4ZzV6cVYyNzlQekxNZTlPYm9rZWgzRXpOV2RRN0UxWjc5UDhzTEtSV01YaFpULUxBWDZqZy1rQjJzTVNOQ1JwdUg2SWxVM1VUYTVnekRQdzNjUXA1Y3prcUVKVzVMREhxenI5S3NwTUEzTEdUN3U5ZHN0S2F3RldLX2wwOHNoOVE?oc=5",
+      "source": "Money Times",
+      "published": "Tue, 15 Sep 2026 10:06:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda dos candidatos à Presidência tem atos, reuniões e manifestação nesta terça-feira - Francês News",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNYkhnUHpYaWNiTGJDeGtLQWt0eXhtTWxBRzdiVWZyaTM3XzRnb2l0UFVxN0RRU1JoQWg3aEdKYzZZS1BseWZvZ0xZVWhublZQRnVtNG42Ylllb0dNQ05Dalp1NW10eG1hdk43Q3RucEdEYjEzc0tQdHJ4M2VpZm1fQWJ0X0VQWnZ2eWtJcExGZVBOQ0Z6QUtrWkFnaFYya0k1R0VLSWhxZG15WlBmSlZuazNEbmU0WDRES19Gd1RPTjdUR0ZBY0lyQmZMY1BpTjlL?oc=5",
+      "source": "Francês News",
+      "published": "Tue, 15 Sep 2026 09:45:00 GMT"
+    }
+  ],
+  "generated_at": "2026-09-15T10:02:37.033647-03:00"
+}

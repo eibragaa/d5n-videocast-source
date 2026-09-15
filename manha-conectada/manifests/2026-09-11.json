@@ -1,0 +1,203 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-09-11",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-FranciscaNeural",
+  "output": "/root/repositorio/d5n-videocast-source/manha-conectada/audio/manha-conectada-2026-09-11.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/manha-conectada/roteiros/source-manha-2026-09-11.md",
+  "sha256": "c416432923b74e5b0c0107b0496b8d18d067afb8983fd9e8b8cbb2ae033fb10a",
+  "text_gate": {
+    "words": 762,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 275.879184,
+    "size": 6621770,
+    "bit_rate": 192019,
+    "lufs": -17.13,
+    "true_peak_dbtp": -1.73,
+    "lra": 1.9
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Notícias sobre edital de 10 de setembro de 2026 - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMnJBV3gyakFCZTFwd1hhLWttdVJkakRtem1ocEpVMFdySE1QaHlSdS1BOHM3cWJoNDhyTjVjX0hDakFjeE5TSkNGSktEUHpRb2ZyZE5RdzJQZGsyTmtQWGxjN2lKeUFReTBVNWpmbXJkV25yRGxtNzBqVE5mTmJFc0IyTWttRVN50gGOAUFVX3lxTE9oRmp0b1FuVTFxWllLaGIzcW02T1FSbHBEMmJ4V0cybGVCY01Hck1BbjhsNDRHQkVqUENBYWlhLUtXbDBiRzNiUTVILUJMeUFTUF9YMXdMSEpSczlQNTBRNnZuYngwRHJxeU5HZEVmWnhWdklhR0hNWEViMktCTkt3dzFkZUJPLUlkaGJDamc?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Fri, 11 Sep 2026 08:00:03 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Confira como foi a quinta-feira (10) dos candidatos a presidente - Agência Brasil",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQQXZzb010Q3hTTldZOE44X0loRGsxX3NMRFJjVXc4SnFBY3ZlMnJpWnJpbzVzQU5CY2k2OF9CMmNETDFGTVY5Sk92TmxtRkRGLTBfSjg3dWRhb3liX2pEMWtoZG1pUXpCb20xWlFKRkR1V3UzNzM0NXJxcWE2TlF5a2pFMGVFVEw5akFkeEtxdnA4R0hsUjFnZnpwUXFYZkhNb2wtN042Q3NlNjdabjhlUEU0bk1rdGc?oc=5",
+      "source": "Agência Brasil",
+      "published": "Thu, 10 Sep 2026 23:25:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "As 'armas' da CBF para transformar venda da Copa do Brasil em negócio bilionário - Notícias da TV",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOSFFvYk9WLWVLZVlZSDhqTVVGZEs0YXdXQlpmZVBLSjBMRW5oelVPVE9rTzNlRmZ1d2pPRkdXNGRlVkFWTGpuUnBSOFhBZXVjNUNudThfdndnMVRTZkEwOWEwVm1xdlhtUTR6TDJ6djZZSm12SkI4QUIySlktcWpBTDg4clI4VnRTdXdjXzJVdkQyeGo4Vl8yQWRkZzc1WmVWWFY3MXVmZHUzVVBOT3U0Uk9faDNvOXN3Tk9CVk9XY2U4TDFsa0h1NHJWX25FRDJx0gHfAUFVX3lxTE1BT0NFYVdXX28zSW4zUEgyamxaWWQ4UDViZm5NZVE2ZnZyVFJTRVdXWWs0WFUtV2IydUdueElEU1RQNy1FazdYc0xGeGs1U09aRS1wckJaeGNGRXdrSml0UE1SdVczNjlkN1g2RGwyWERzZklpcUFsRE5ROEwtS2xwWWtnVXRXaTZZdU5VaDAyMmxLdU5uZ2Jsa3Nka3RlRS1idy1RTkpJNHhOSTRwX2hncjRnbVg1b2ZvN0hVcUM2c0FGb2hDeHhIV0xsblNTV09uN1FaNW51UzNPR0Jhdms?oc=5",
+      "source": "Notícias da TV",
+      "published": "Fri, 11 Sep 2026 09:10:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Programa CNH do Brasil aumenta pedidos de habilitação em mais de 200% - Agência Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNXzBYWkhVQXAtdTFYcTQxbmt6LXNfZk5vSkxpMk5XUmJMNC1oN1ZYQ042bVJEaENYbjlheEdfNEZTZVVrYm5fRnJ5NHQzZ0pQeFBRZEtVVVNOUzc5U0h0LWFvUjlycXhTU21BRUhieFdyMEZkVFpzS3RnTFVONVVGT3h2aG5ockxlYXpDS3VxM3JoYTlxOVpOVTZsUUNWcnlHbzhZZXFOUGwxVTlXMHRhYXFmcFhEV1UtOHl5bFVJZGk?oc=5",
+      "source": "Agência Brasil",
+      "published": "Thu, 10 Sep 2026 22:20:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA1cTN1MUFFQ1RuWmtsRUVoUWZlb0ZNWEZYYmpqcEhYa28tQXJBeGtwcUtTSmJxSzYzclNEQXgzUWRkcWZDS3RPN2stTE5qMjBxV0FnbkN1dUI2QXR0cENsbzlIcmFoNVhodkNlYjktY9IBdEFVX3lxTFBjelh4eG12QWI4NElTV3JINk13bDRzby02MFQ5RndaM0RLcTNhRnJxUXhOOWd3T2dVamRLckFIWGZjOC0yVGRRVmdmS083ZWdZWkJrUUFVSzJWbHdZZ3J5bWZwdWxPYTA0RzdBa3AwVzJYbzNE?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Fri, 11 Sep 2026 10:24:16 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "As teorias de conspiração sobre o 11 de Setembro que circulam até hoje - G1",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNQk1kUjJqSUJMOW4zZlJBRDFTeDNpcXFiTkJWWWxzSmRiZlRCUl8yQ254VlRlVnZtR1F5djJmT0lhQXowNUVFbjZyenJPRUtwLVZuQTZST3lQZ3c2SmFMQUpSYVZ3Z1g1bXZrYTJrcmdkZlJFUXNzOVNzUUZtU0x6MGJLN0JZOGZLdDk2Ui1lNnVveUtVS2VEa2pDTmtLeVlYNzBIczZsalVzckxybjgtNl9DZXRzNzRDZTF6SFAxY9IBzgFBVV95cUxNdHBGUHhLQndEQ2lwVzJpaU81TEpFRl82ajQyak5PQWJLYjdMWXlSOHZqM20yTTJUTm01TDJEM3hGbXhHSldjd0NRaUVDV0pMM0FNeHdfZEJXWkZrWWhWNmxRaEFwb3VZbWRia3BaeWpGQ0JyemJQemkwbUktMVRLM2pYWUNidXBycjEydG96bjhFZUI4M29aZ210aEQ0TmVXXzNzNkp2dVN6U2EyNF84cDQ4bWRXcnNZQXBCMHRsZHNLNW5QLTlkc1B1aUEwQQ?oc=5",
+      "source": "G1",
+      "published": "Fri, 11 Sep 2026 03:00:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "As duas faces da imigração no motor econômico do Texas - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQVjM1Yy04enFfVko0ajkzV09UWS1RdlVwX19Iem0yZVhOWGt0TV9LX1BvVGw0YmFzTWxubXY3YkdqUXh2UzNQUjNqYnM2eXBUZ0p3N2Y5amtwOTc4VlZ6NW9UQWdiekowLTBMb1c0UTMxR01hWnI2S3BaMXdhSkF2TTE2akY5dGRQdUtsX1NudTBvemN4d1pVQVZRZ0VrRl96dHY2eXk1NWU1X25ObklVSw?oc=5",
+      "source": "SBT News",
+      "published": "Fri, 11 Sep 2026 09:00:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "11/9: 'Não sei por que sobrevivi, mas hoje sou grata' - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPeF8xS1NpbDNZRHlZTnc4UmRIaHAzNm1IMnVOaEVsMk1XZXFldkN5ZUJSQkdlRWM4WmtlTWFfOGRHMFFWS1Zwa2VvZ0laMXZMOEZleTBTdEVqQU1KMUxXNVZzblRnSGpyclA2TTZXbDdJVm8zU0NhNjVuZmVzRG1sR0Zma2F1NDFpakFRbERwaTdaUmZD?oc=5",
+      "source": "SBT News",
+      "published": "Fri, 11 Sep 2026 09:00:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Opinião - O Mundo É uma Bola: Recomeçou mal, Carletto - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOcVV6UGFwcVppSnVCTXpFbFM5Q3FCMXJodXcwLVRET0xmVllGZmdMYk8tZG5CRlYtMUVSOHFwOWZrazl4N1pwVlZyRlRneV9Qa25FOEEweFBFUXpfeGZlRFI3Ym1SRXhNbGVoTjFKMnNUdGZkNENnOVJjbnZlM2tHR3V3ajdhellzSTd6N0Q5Q3F0VmVicmc?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Fri, 11 Sep 2026 02:05:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "“Mundo está em perigo”: por que este alerta sobre o risco da IA “quebrou” a internet? - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOMU9hTDRtNVJGZUdGRlFFVnZSaXE3ck5pZU9FVGpVTHR5c2MxaVlTWG0tMWVZTFRNN0MzaDg5aFNKelp5QU1OcGJMRFhLbFF4aXN6QThNZHA5ZmF1N28zRFNQejA4LU4wdndCYmxZZmlZWVdQYV9DZW1pcHJNek4tTno2dFBWWjJ1TUd4TG9TRlY1ejV3WDMtM3BVMjlfdFFMcUlDalZ6YVA3UlpTVTdKLVJrNGljUUdQYzduYTJYVGRZZnpNYTJ1ZdIByAFBVV95cUxOMU9hTDRtNVJGZUdGRlFFVnZSaXE3ck5pZU9FVGpVTHR5c2MxaVlTWG0tMWVZTFRNN0MzaDg5aFNKelp5QU1OcGJMRFhLbFF4aXN6QThNZHA5ZmF1N28zRFNQejA4LU4wdndCYmxZZmlZWVdQYV9DZW1pcHJNek4tTno2dFBWWjJ1TUd4TG9TRlY1ejV3WDMtM3BVMjlfdFFMcUlDalZ6YVA3UlpTVTdKLVJrNGljUUdQYzduYTJYVGRZZnpNYTJ1ZQ?oc=5",
+      "source": "InfoMoney",
+      "published": "Fri, 11 Sep 2026 08:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Avanço da inteligência artificial ou ‘roubo’ de pesquisa acadêmica? - O GLOBO",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNQTdxSktRNDFLQ3U3TEc2X0FuODNJemc4YVZLYTBaQWdQVTNseDRWMDh1WjJMMHBiTXJGOVRLYzhQNDdSeExiSnBZbVcxMTgxNXdjMzNDNk1Nd0R3ZDdWZlkwOGloRE44OU9zLTRnb1NueHpQRXEyU1hkRkdhbjVteXh4bGdlN1p2a0gtcnl2ZE1NaXVlNXlMQUFvRHhMeE5oZkFfbFNNeW9iMkduUnJGbEpMUFI2SmNwNE0yWFZieXAyX3J5Tjhzcy1DLXZzV0JwdzBwalh1S214UFE0TmfSAd4BQVVfeXFMTUE3cUpLUTQxS0N1N0xHNl9BbjgzSXpnOGFWS2EwWkFnUFUzbHg0VjA4dVoyTDBwYk1yRjlUS2M4UDQ3UnhMYkpwWW1XMTE4MTV3YzMzQzZNTXdEd2Q3VmZZMDhpaEROODlPcy00Z29Tbnh6UEVxMlNYZEZHYW41bXl4eGxnZTdadmtILXJ5dmRNTWl1ZTV5TEFBb0R4THhOaGZBX2xTTXlvYjJHblJyRmxKTFBSNkpjcDRNMlhWYnlwMl9yeU44c3MtQy12c1dCcHcwcGpYdUtteFBRNE5n?oc=5",
+      "source": "O GLOBO",
+      "published": "Fri, 11 Sep 2026 10:10:54 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Machine learning, análise de dados e gestão de risco: como a IA está transformando o mercado - Bora Investir",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPTm1zekhjM1VFNWxqZmc2Um1taDA2cFpNMmQ2bEswbDVtYjctaUtSZkJDUnpuTzQ5TkJLcTlPamE3akpPYy1KS0thVUdkTDA3NzhHTVZkOGlIMVQ2SUkwSXU1U3FfZmxfOWRtNUcwUElCZTMwbzBmTndaakhGSjlXelRMVm9FMEJxWDFsam5wMUNoWm5rRW9iUXZJUXRtT1VYTE14bXJ4Y2YyR0taaU9NU0x1UDNZZkZlZkpOS0tlTzNKYWZmTzlBSlhhX0dVQjBfYWozaUxR?oc=5",
+      "source": "Bora Investir",
+      "published": "Fri, 11 Sep 2026 13:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Na era da IA, crescer pode significar ser comprado — ou desaparecer - Exame",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOOVhBYlM5SGFvYWJJckxMMHFfZVRzSnU1R0lsLWpMOW81amVoZmVyMEwtTlJIbUZVSmtMbldwT1hQVEduTTFyaW1QaXhPdTFDWktYNjdBS3NjOGdWODNIMmMtenRYWHhGMUhxd0xRYmVNb3RiZVU3Slpwc2JLcFdoTFJSUDRRVE9la2dyaGFLbGxiTUZtWTdURW9Xdk50S2ZrU2p3TWg0MDhyanM?oc=5",
+      "source": "Exame",
+      "published": "Fri, 11 Sep 2026 10:56:01 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Sistema Cofen/Conselhos Regionais abre seminários com debates sobre inteligência artificial e comunicação - Cofen",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNNlhHUFlZUWJtMFZZQkx1cUlvT0RHemxWbk4tczg3d21BZ1RidGNVc2tXenZ5c041eGdQZ1BPMGZyZDVkRUlTai04R1dCOVdkV1czRE9YeG9ldkxuM3BZUTZtdFNfTkh3U1FMVDE5aGszcG13RjRMSjBodmxvcW9TTFJOTW0tVTFtb1pvYmRMa0Nfd191UVRiZDdjVEE4NmgwVkFIODZ4YWJNWjhyV0tQbGRhNHFjazdqeEM4b3A4ellaeF9KZzJrQ1lzOA?oc=5",
+      "source": "Cofen",
+      "published": "Thu, 10 Sep 2026 22:25:57 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Cloudera reforça aposta em bancos e telecom na América Latina em 2027 - startups.com.br",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQNkx1bVdxbG92YmRVcnUyWlFOSWFVOW5PT3cwdmRMQV9JNXJwVUxlejY2LVAwVGhtRXVRZ0J6VTNjN04tS1JNYVdGTktLSUZoODFlYXRuN19BRTMxTHJ5V2Jnc04tbkhCU0R2cVh5MFQyQ0dGOHJnRUpKUEc5QVVRNUpxVGZFOGxZM2k4b2RBMnprSTBjR25DTW9HNU95NXgzdlluWUFMRm9oTG5kUVJUdVdUc1B0eFZkdjlKWWdUN2ZKRU05OEE?oc=5",
+      "source": "startups.com.br",
+      "published": "Fri, 11 Sep 2026 12:56:30 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "‘Choque fiscal’, reformas, investimentos: o que os candidatos à Presidência propõem para a economia do Brasil? - Terra",
+      "url": "https://news.google.com/rss/articles/CBMingJBVV95cUxQWTVnY2I3Tm9vUVk4SXc0aUs0aExEcmpubkVqQnFmeWRoajltaE9MdmlEM3dzckc5WFpzd0ZEVUxBRmQ1NHlLZHZrMDhzS0cyRTdtanpDYUc2VDdEOUpYVHgzWUdwbndKMmxWMEFveDVOVVhEa20zUFlOb0Y1UFppbXhwMHVjcGtaV0dzWXBUTGFVaEZveTVabVpQRlduekxJbU9leGFpTXROWnc4b0d5TmxsbWUwMWdNdy1tb0ZHTER2UVBpMk5GTUZ0b29nVmFYX0hxOV9uYmpTb3pPSmRfd3YtZnhHaml2RTZVSlBHbHJjdDBRcENHSHUyNVVSOGdjV295RGw3YU1hc01BaVg0MkY1aW5mcU83NEM2aERR?oc=5",
+      "source": "Terra",
+      "published": "Fri, 11 Sep 2026 07:58:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "SAP Brasil lança Relatório de Sustentabilidade 2025 com avanços em economia circular, formação de talentos e IA responsável - SAP News Center",
+      "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQbTFaT25ITldkVFc2RXY5MTk4RG5McnhraGYxRS1IYnVNTC0tWjNxQS1aVUZ4dFQ5bmtLcDZvQnFoaEdIVXB5T256TFlXWVMydVN3amVuX1lIWkxGUXpqRkxsQ2NCQjVDQ3JMRF9FZF9ZSTJwVEY1VWx5UE5MRlVmdk10OGV0U3UyaXI3RGN6aGpnR05tTVhWbUNiN1M0ZE9xaWl1cFVsVnhfSzVNMXFWWFJxdS1VcGpxMTU3RTYxZ0xJWGttOUw0WnBHSFVsanZCZjNONkV3eVMtRktocEdpdThTVTdBNTl2SU1MYi1BX0M?oc=5",
+      "source": "SAP News Center",
+      "published": "Thu, 10 Sep 2026 23:35:20 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "CNH do Brasil gera economia de R$ 9,6 bi a condutores, diz ministério - Agência iNFRA",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQWl9waXZydVJWRkRULTFXZkU1cjlpeDNUSkZINFp1OUJYRW1kd1I3bHpTRWNSSEZjeV9pbkRvUmxHSXdyczA1UmxIYm5tSnpiSjZuRmZGUFdsTXQ4NjFtTm92MEpmUFdzeV9lUU9hZldFeFhTNWRFSWo1ZS1oeVBRaXZqYlZXVFZ5OFZjX1RhUGVrMmFJRGE1SEJpNk96QQ?oc=5",
+      "source": "Agência iNFRA",
+      "published": "Thu, 10 Sep 2026 22:38:27 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Transição energética no Brasil ‘é uma porcaria’ por ser cara e socialmente injusta, diz Elena Landau - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOWUF5Zm9XcEpHcjdUbW1jY1lYdTJaSGkxQ29ZWFkxcGpoRmZLcDR0WUtHSXBqalh3OVVRajVURlVfQXB0cmlwT0VlWTF4VjByNGEyYTE2VFBhcUVXZk9NMTFIMzV0REtnWnNOU3BPUlY2NE1ndlpxQkVyQUtXRDltSmFVUkpjQ29vb0dsbDZ2Zm1pc0ZTdzREMHpiRkVtajhaSlB4MUVlR3A5NUc2NFl6bld0ME9RTzE4RWJvRE9RLUFRQ2JZXzFVZVNZUUNkQ0XSAdQBQVVfeXFMTS13eDEzZmhmZEl0cGdwX3g5cGRvZkxzMXhiRzltTWZadk5MY2RFeEN2Wi1mUVpXQUlrVTVsT2tTLVVGcUdKSGt1RXZ1NDZWQWR3RGJoN1VZTjlUNnVNZWpHQUNkQU9iQ1p1YXdVaHhCdEVINXhRanlRRkF6TVBrWmM2NzZBLVRqNFZjV1R6Yml5NXY1TFBxajlhUE5XeTV0RjZMbEhxWXpkbl9rcklEc0NSUF9Kc1NGN0VWaGkyQzZRWjBZaHU1ZkxjMENkcnhlNUFpVXk?oc=5",
+      "source": "Estadão",
+      "published": "Thu, 10 Sep 2026 23:09:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Faturamento da indústria cai 2% em julho, segundo CNI - Agência Brasil",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNZmdkQXVLWmxzanY0ZE1yQkZEbjBmYzZZTDR6OFoteXRUTkhncU9yQ1ZRYUZDTEpwZ1V3Wm1BY1owMFNEVmJpX082bmNQOGlvSnQxMUtRQ0Z4SFBqM3NoMEpmd2FBUjM4d1JRZ1JPSzRLTVV5TldzWDlKY01UZzMzeXZqbEtheE9YODFfUUVXNHQwX29wNFhHLVB6VmhxTjNJYXNXenByVWVFTzNnVEE?oc=5",
+      "source": "Agência Brasil",
+      "published": "Thu, 10 Sep 2026 18:24:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda do dia: IPCA no Brasil e preços ao consumidor nos EUA são destaque - valor.globo.com",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNazFmN3JKbHZiajZzSm1uNTV3TjZrVUhJWmJ4WG9XblJ6T1E3Qk00R2Y3enhETHF0WFZORWRuRGZ1ZDVVSHF2WGxSWFBhT1FuRU5wcGpoWXVNaDFsTHB1QWN2aGxUSGVJRXUzWHVnMWpKd3VuOXo2Uk5IRFlBeTY1am0yT1RqZFViN2MwMXdMblNXN2QtMzRXd2ozLWJTZ2FlY1V5T05jNzhFQW9DT2dVa1l1a0xhTnkxaUZpdk1ONGVOOXZQcFk1WHpR0gHYAUFVX3lxTE5QVThZd0FxYmhLMlc4V05rZkR1V1VaOXVCRFlER05fOXZBOHFfZmhtc1llZHFQUG5NMzhMaWNaT3FnejhzT3IweFc0YTlrejFrNjdaN1UzdEFfSzl6TWZGTGZSOVd1ajY5ZENpUE8tdmU2dXhZbzlJZU5yM2JUNjNfb09VMjhGeGZNT1ByZmhiWnlQWGFaT1JyTnR4LWNsenNfYS1hVTF3SjdYYzZzeVVXNmhSMUxVcE8wXzhhQlZNbFBVaFZJU1ZJYlh4blZEaEltQlBpSHdHVg?oc=5",
+      "source": "valor.globo.com",
+      "published": "Fri, 11 Sep 2026 10:42:04 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "O dia do Brasil no esporte: confira a agenda desta sexta, 11 de setembro - Olimpíada Todo Dia",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNSF91SVpManpsOHdEcWZBcWFwMW5FVHlHemt3aWN1YWpWdDdKTUMzZW5iRG5pUm9NWldpZnBRQTR2UzBpeDB4bVNiWTJhTmd1c1VLZ0RnUzE3OUNkeDlxN0Y0R3RGcGZ1THJxZDZKTjZ6MXotVzlNY1p4MzZEUEtKV2J1ZVJhVmxlMlJvZEZwa0xza2xnc1ZOczBxM2NpdjhfY25MTUhYQ1RKLTJTYk1oa3FDSUE?oc=5",
+      "source": "Olimpíada Todo Dia",
+      "published": "Fri, 11 Sep 2026 05:51:59 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Concurso Público: confira a programação das aulas de hoje! - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9RZzhuWTNNQjhfRUVRTXZSdHE3RGVseGI4VWNvMlJ3aHdqajY4QVVQV09pUHVfZkZYdXk3WnFiTjlMbS1YbXVEXzQ0d1BfTHhzcVpUQnUyazhOcXVObDdyWmlGdVZ6UkZXWmfSAW9BVV95cUxNb1U4ekpYaVQwOENfMXZ6X3pzUjhyMGNMS09DNFpYZkx2aUdsVFd6X2k4OTNZcW1HZi1mMlFlSndoS3pHLXdqZGV1NXJFbzAtYTZTWDBzZWVKb1JYLWkwRWxjWE1GNnh1QTlEd1EzV1E?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Fri, 11 Sep 2026 06:22:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Futebol na TV: a programação completa dos jogos de hoje, sexta-feira, 11 de setembro - Goal.com",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOejhoaWx4NWkzSzA1QW5uNWY0Y2lOQ0pRYUJJYnFhTHJtb1dfNFJUMlM5aGJ2TXVXVXJEQXZVUFNOUXNVMUVnY25VUVc4a1JyZS1MaEdxRlpzaVFqLUtlSF96WVZMSFloZGFHdE4xcUVvZXFzWnR6WHdhTFIwQ1djVmJKT3dfVUpPOVluczZTS181Um42N3BydHhVb2c3czBGeG9oMWZHT2VYaVl3Zmh3WG5xMWJsSGFHa3VN?oc=5",
+      "source": "Goal.com",
+      "published": "Fri, 11 Sep 2026 06:00:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Confira a agenda dos presidenciáveis nesta sexta-feira - Tribuna Hoje",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNZVRYUzE3TkZKT0Q0RlNkRXhoMVVwNTUtbU9nVnZveVdSOTZudzk3WWI2Yi15bnF3VW4yNk5xRy1ZOHJKOU5wcFdiWFJ5eVl2Y3FxZkhseHBnOVRJSmpFNGtSMXdXYzBraWp4bWZ3UEU0cDNMUGZ5VS16VkMzbVRYNHZwaXBXZ1JNQkNSRUxHQnEteXlnZUFFNWIyWDItWThrOXFrV285akoxT3FudVFfczA2dXA?oc=5",
+      "source": "Tribuna Hoje",
+      "published": "Fri, 11 Sep 2026 12:41:00 GMT"
+    }
+  ],
+  "generated_at": "2026-09-11T10:12:00.688928-03:00"
+}
