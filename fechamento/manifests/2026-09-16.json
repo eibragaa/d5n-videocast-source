@@ -1,0 +1,203 @@
+{
+  "program": "FECHAMENTO DO MERCADO",
+  "date": "2026-09-16",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/fechamento/audio/fechamento-2026-09-16.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/fechamento/roteiros/source-fechamento-2026-09-16.md",
+  "sha256": "860c12a05f55fd2bb47aeb80635362a322ab2a76c27d4414936f97c410364475",
+  "text_gate": {
+    "words": 951,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 394.13551,
+    "size": 9459922,
+    "bit_rate": 192013,
+    "lufs": -18.02,
+    "true_peak_dbtp": -1.71,
+    "lra": 3.0
+  },
+  "sources": [
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa Hoje Ao Vivo: Bolsa recua após decisão do Fed e antes do Copom - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPWEFXZUFLU1hqcW9BRWtkM1gteWw3X3hya1pqb1NxTmVEc3dGblRGZVJPcVpGTFgxNEt6eF9fZ2FuaUFKS1gzSnVlMW81YnRMUVhXVVVPRFQtQjVmQUwzSHJRXzZSdnFIZ0paSzkxT2xZLWVNX0RaM3VOc2M3elIzM25malNLMzZnYTJtUjF2bw?oc=5",
+      "source": "InfoMoney",
+      "published": "Wed, 16 Sep 2026 19:24:34 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Os 30 minutos que selaram o destino da bolsa em Nova York — e do Ibovespa — após a alta dos juros nos EUA - Seu Dinheiro",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQSVB0dXFvT1B3MDAtTzUxaWczbS1ZX2Z1Vm9oNkw5ZGVHTEUxWUY3UkRhdi1QS1hXZXBVamJZcklRVGJLZmFSbGNaQjlEMjdoTVFzXy04a1ZXWnZYdmVzNE1WSDdsRFczTnZmcEZNaXhOWEVCd0VTeVhUOGEyekM5YjVpZFEzcjNmaDVXbzBvNndPUzdkNUZRYnp4cFpoeW1Wbk5zaGtBbVZGQ3Q0X0VRM2JoUDhfNVVveWtNN0ZyazVzdnY4QkttU052dFZpTlpHbTR3Zm9Ga3d0WmUwd0xEZlVsdHRMT0U?oc=5",
+      "source": "Seu Dinheiro",
+      "published": "Wed, 16 Sep 2026 20:19:22 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Dólar fica estável em R$ 5,15, e Bolsa cai após alta de juros nos EUA - UOL Economia",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOVEliQ003clZ3SVEydTZhWUZ4NE9GS283NmdWUGtucUJRYlQyNjA0SG1SbDQxUTV3ZERPdUJxQVdFNnMtcloyVVRTa1ptUWZvWTNhS0ZoVmZseHV6LXNobVlPRzZueEtWN0xnZXJ5RGN5WGE0SG9CQnBHMGZJdkpGbUxoYVpPM3pRSk5LVHB5R29LZ3BKaDQ1QkszZkVGb1doMzBNNTBFLVZoTExDMno3NTJLWE9IR0hzalAwRw?oc=5",
+      "source": "UOL Economia",
+      "published": "Wed, 16 Sep 2026 20:03:11 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Dólar tem leve alta após Fomc e com decisão do Copom no radar - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQM181aWFNWl9CVl94OXFsUGoySW5nNzdSQlZuSVM5WWZjazlQUTZhbGliUG9wbmNPU2dOSFpLZXliMEFWY2hGSnllQkVZQUgyWjlEY0FjenpaMXhyZkhrV2ZLdXJralhhaVJZRWVIc0xrcXhySV84V1lheGwteENuMWpUNm1ubC1BT01GOFR1MW9UdWJqN0xXYkxYSTDSAaIBQVVfeXFMT2wwT2NYQW5QeW9ZcE1Ec3RaUDdhVmwzRmQyeHVXd1hiNjhiMnZMSElDcDZrYWx6V0RJdjhfdVRfMFdfdEp5WWhRMnp1RGlIWlhmdmxwbmdzd2VmNFFLNHRrVlBBNnRfUlFhMXp0M0tDSG9NeldiX216RWxOYzBBUXc5dkNvaklUaVRjdEF3NFY4STA5X3ZPMWlkVkU0bHBDV1l3?oc=5",
+      "source": "InfoMoney",
+      "published": "Wed, 16 Sep 2026 18:57:25 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa sobe 0,54% com Petrobras (PETR4) antes da Super Quarta; Vale recua - suno.com.br",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQZjJtRDZVc1JIN2ZoaGlJcnFNMDlCSTVZc0MwRFpKS0J3WFcxdFpwQ2ZBdDllbHI2enBDRi1BY2JRMldJUFlsTTZfRDhkYmZzRUQyN19OanVLbmdXeHBmcXU3QkhtUXdsSk9kWHUxQk4wOW1GQWNOWmJjcVJMSkFSUlJwa3ZZOGlBVzNjWFlOMV82ZnPSAZMBQVVfeXFMUGYybUQ2VXNSSDdmaGhpSXJxTTA5Qkk1WXNDMERaSktCd1hXMXRacENmQXQ5ZWxyNnpwQ0YtQWNiUTJXSVBZbE02X0Q4ZGJmc0VEMjdfTmp1S25nV3hwZnF1N0JIbVF3bEpPZFh1MUJOMDltRkFjTlpiY3FSTEpBUlJScGt2WThpQVczY1hZTjFfNmZz?oc=5",
+      "source": "suno.com.br",
+      "published": "Tue, 15 Sep 2026 20:55:15 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar hoje: siga ao vivo o valor da cotação - GZH",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOangtS1FRaElHX2JEUWE4Zzk4WDVkUFlWaUMzdVN5NWMySlNXYWQ3cHU3N09CdjB0UHo3S19uNkVQYlJ2Z21WQmxVeC0wODlweHhUOEpMLUd4SlJ3Z2V4cGJCNG44VjZNSXNDeFFYbzZueGoyeXNzRm4zMlFXLUVwd3hUN1ptU1JIM2Y4b1UySGtXOGdMQUhsa2VpSERvZGJnZHN5OUFRUFZURTl0UE5lM2k2TFBFM1RNNU9tT2lsVjV2ejNFR1E?oc=5",
+      "source": "GZH",
+      "published": "Wed, 16 Sep 2026 18:02:15 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Após alta de juros nos EUA, dólar ronda R$ 5,14 e Bolsa cai; Copom no radar - UOL Economia",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOd1BSWG5WQmU5OHVVbzhxUk5aTmVEeEQ0eWFGNGtVVzZnQ3pka3c4c2dhMWpOZmJlQzI2Xzk3aEl2ajVzTG45SU5zOVcxdU16Y244OEQxRUVrSEw4eVZqNThpZk9lWU5lc0lNVWthTGtGbjRxVW5GSXNNeTJxaEVHSEUweHNJd1otendpcnpOcDlFS1UydWRMZENJWVdtb3RaaE5KLXdlb3V3MmZVNlMzSTFwbU5tTW5GOU1UaXJ6UkczaW9RcVFEek4zckxjVGx4?oc=5",
+      "source": "UOL Economia",
+      "published": "Wed, 16 Sep 2026 16:05:47 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar recua frente ao real com mercado à espera de Fed e Copom - valor.globo.com",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPYTRZTnRUamNvQUtlU3pfQTcwQk1uWU5TaXRnclZEUGVjWTdsWFdQb29CcVA3bUUtY0pYZGpSUldITmNIdnc1d2F3YVhyMGZpQTNkNk0xMFRvYS1tMXZTdnZzRF9Kc3B0R1VHN2pJOG91NE1jSkxhTm11OVVVaTF1aHF3aGxaWGJSdXFNUGdXdnQ3S2JYcVU4VmRxTkNGTVotUElRUXJIS0hvN253X1NobWREUmpPSlhfQXZaQtIBywFBVV95cUxNLUZzMkNVUkhOSkpOYzUydFV2RHd1XzVBdnltc2hvWVQ2TFctREExQXZsYWdiRklINDhkZkdSVUNoNFhBNXVLQm43TmdqdVpKTG1fdGE2bHBxRGV2T2lmUHczRWFuaUNYa2N5bXBrSmtPWEdEamtTcGZlUHpna0lEeFA2clZuZ0VhSExoUi1yQ2lwdFNwVks5NTYzdk40dGFmUkZ1U2JCZ0pMaWVtUlh0TDhXRnhocjRvWEMwSkVWNHlOamtmSHpDaXNmbw?oc=5",
+      "source": "valor.globo.com",
+      "published": "Wed, 16 Sep 2026 12:47:11 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar hoje: Moeda ganha força com expectativa sobre juros nos Estados Unidos - Brasil 61",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNTkJwYmhFZDRkVUdMaXRHRGNHU3FfZDJtS2ZIXzFEU21paWdvc2VvYjZfN2d0TERsTC1ETzJZSmlpVnhLRk1Eb21KdjRwYVZjWDlLTE1kODAtNDdzWHlvRE5ZNklsT3gxYnljLXBxc2xzSFBtSXVCLXFjZXI5bWV1clQxN1BNQlBUNDFpTUF5M2hfbjRUd2ZPMDREcERwYUhsbGFxb2k0S3dNZ1ktckNrOWNqWETSAbQBQVVfeXFMTU5CcGJoRWQ0ZFVHTGl0R0RjR1NxX2QybUtmSF8xRFNtaWlnb3Nlb2I2XzdndExEbEwtRE8yWUppaVZ4S0ZNRG9tSnY0cGFWY1g5S0xNZDgwLTQ3c1h5b0ROWTZJbE94MWJ5Yy1wcXNsc0hQbUl1Qi1xY2VyOW1ldXJUMTdQTUJQVDQxaU1BeTNoX240VHdmTzA0RHBEcGFIbGxhcW9pNEt3TWdZLXJDazljalhE?oc=5",
+      "source": "Brasil 61",
+      "published": "Wed, 16 Sep 2026 10:36:29 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar hoje abre em baixa à espera de decisões de juros do Fed e Copom - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPbDBPY1hBblB5b1lwTURzdFpQN2FWbDNGZDJ4dVd3WGI2OGIydkxISUNwNmthbHpXREl2OF91VF8wV190SnlZaFEyenVEaUhaWGZ2bHBuZ3N3ZWY0UUs0dGtWUEE2dF9SUWExenQzS0NIb016V2JfbXpFbE5jMEFRdzl2Q29qSVRpVGN0QXc0VjhJMDlfdk8xaWRWRTRscENXWXfSAaIBQVVfeXFMT2wwT2NYQW5QeW9ZcE1Ec3RaUDdhVmwzRmQyeHVXd1hiNjhiMnZMSElDcDZrYWx6V0RJdjhfdVRfMFdfdEp5WWhRMnp1RGlIWlhmdmxwbmdzd2VmNFFLNHRrVlBBNnRfUlFhMXp0M0tDSG9NeldiX216RWxOYzBBUXc5dkNvaklUaVRjdEF3NFY4STA5X3ZPMWlkVkU0bHBDV1l3?oc=5",
+      "source": "InfoMoney",
+      "published": "Wed, 16 Sep 2026 12:22:31 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Ibovespa em dólar e BDRs no índice: a Bolsa está ficando com sotaque gringo? - InvesTalk",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQUXdXdXZmblRrekcyaWVpYjlkU2hJNUx2cHd2WWpYRmJ0M1JwbU92MzQwMnlFX19RUjR2X3hMeGM3UGZKOUpyTUhGSFBmX3V5UFNHUFphbTB4VG8tRlNQd21TR1UyU2VpeEgzbFFQaHdOU3ZTNWJUU3hNV1B1MEhHd2luem5NaXN6b01oQmk0Tko3YjN4Z0JabTlJYzVTT3JBMmxyLTA5OF92MlRSQ1FWVmozUy1fRlRqLU5Z?oc=5",
+      "source": "InvesTalk",
+      "published": "Wed, 16 Sep 2026 17:40:00 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Brasil com desconto? A matemática que colocou o EWZ à frente dos emergentes em setembro - Valor Investe",
+      "url": "https://news.google.com/rss/articles/CBMinwJBVV95cUxOelBrWVRRM3hJVnZORElaRGZiY2lwRlpQaTJJVFAwN3JSM3dqek9rRjJZWTJKRG5iMnNGbUR0YXZtaXQ5VHhCQkZPUkZsSHBtVmRmTENQOHZwOHhaR0NNYi1XMzZmdmZxYVhzLWNGSkVNZUk4M1ZHeWRNdGdPUEpnQnRaSXpHYW1zMEFwYkRYdk9JVF9sMzczVDVybUk5M21LT3NDM1ZZLUdTMm9PZFd6ck91UHNDa2QzRUI3SGc0NDkxOEZBQjNKWkpwamFQMDNCT0E2ZllnNmtrMzNTSnFfUkItM1dTWUlhd0JqYVg1Y2Rwam13dnp6enFyWXlDQmdWV3FSMXhxNi1KSEpGQUlZSE85SDY2Z0dUYWRwT2RiWdIBnwJBVV95cUxOelBrWVRRM3hJVnZORElaRGZiY2lwRlpQaTJJVFAwN3JSM3dqek9rRjJZWTJKRG5iMnNGbUR0YXZtaXQ5VHhCQkZPUkZsSHBtVmRmTENQOHZwOHhaR0NNYi1XMzZmdmZxYVhzLWNGSkVNZUk4M1ZHeWRNdGdPUEpnQnRaSXpHYW1zMEFwYkRYdk9JVF9sMzczVDVybUk5M21LT3NDM1ZZLUdTMm9PZFd6ck91UHNDa2QzRUI3SGc0NDkxOEZBQjNKWkpwamFQMDNCT0E2ZllnNmtrMzNTSnFfUkItM1dTWUlhd0JqYVg1Y2Rwam13dnp6enFyWXlDQmdWV3FSMXhxNi1KSEpGQUlZSE85SDY2Z0dUYWRwT2RiWQ?oc=5",
+      "source": "Valor Investe",
+      "published": "Wed, 16 Sep 2026 09:00:00 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Os gringos estão de olho no Ibovespa, mas as eleições assustam; veja o que diz pesquisa com gestores que reúnem US$ 90 bi - Seu Dinheiro",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOcFZIQ1prbFZTWGRxT3hEYXQyVDAtMy1YQ2U4TkZ3WElOaUVmdENSNEFXVVVLVEZ3dTUxMzVGNHRMb25yeHg4eWhSN1ozV09sbFF5MkhPUDVINU1xQm1pdXMtRURuV05SeVVYMktwUGJvTGFCYlRXb3p1SVBlZ19VR2tEb0tzVUJqZjROLUQ0SlRNemx3UmgzM3VSNU9JRGNuY2pnQ0FzOU14M1RzUTdfVTZB?oc=5",
+      "source": "Seu Dinheiro",
+      "published": "Tue, 15 Sep 2026 21:46:37 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Ibovespa aos 250 mil pontos? Rali recente reacende debate, mas estruturação exige cautela fiscal - Gazeta da Semana",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPMWhzRDZ0NF82ME9WS3hJZnNWbktjbHhMZ3A5ZnkwSlduZ3VzUlQ0bDQwR1U3YzR2TFd5aWZoZHQxVjBLTjQ5ZnJPZ2w5NnRiMXJTUGl0d3FtRlVYQUx4d3Y0UTMzTzJxLXBKWGtValB1S0hFbkJfajNYbGhkQUItZnhTTHFNSW9PRkVZaXpIcVJUUTR3cERLQnRhWTR5R3hzUTh0MXJyTklyMzkxU251d3NIVWVheVZtSV9rX0duWWF6UzFYcWIySHdaS2EtNTlIakRYWHl5ZW5RUWs?oc=5",
+      "source": "Gazeta da Semana",
+      "published": "Wed, 16 Sep 2026 05:30:14 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Fundos de ações sofrem, mas cenário de longo prazo continua positivo - Acionista.com.br",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNeHhxWVhtbnVWWldsYm5FNDZaVnA4TDR0M0pRYThlcVlnVENKcy01aTRoUlA1Y3V0NUUxcVB3aVQ2amcycjFpME1RSWRVazJuOGNlZThaM1lfV2FVLUNtMjc4TjE5MGpvUklwQTVoQWtTckdOMlItcl9jM0tVdlRTMExQdUxZS3VuSlY3QnloMmxjQy1kcEpFRA?oc=5",
+      "source": "Acionista.com.br",
+      "published": "Wed, 16 Sep 2026 18:17:01 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Como os mercados financeiros reagiram à 'super terça política' - UOL Economia",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPRjgzemItQnNuOG9aVVpjYWxKMlFsQTZSOTZDZ2tPY2V5aE8zSWY4MWJPek1UWl9TOFM3VUdYb3ZjeUM4RFpGNjMtY1Z5OV9sYjJIc0p6Q3YxdHlRbEJVRkVib05BU0FFVzV4RTZjMEJvS1lyLWkzcE9SejY1QnhMd1FmR1ZoWGRoTUIySmhHcjg2ampHRzB2OVpiTzQ5am54VUVTZnRDaDh3c2JEbUhzVEtGVm16UmFud1kwS053?oc=5",
+      "source": "UOL Economia",
+      "published": "Wed, 16 Sep 2026 17:23:30 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "iFood anuncia investimento de R$ 24 bi no Brasil - Poder360",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOaGdYOTBxRlk3cFREaFYxVDBWMXc0RE0wOGRNaDJoZS0wRUUyLUtjTVZJLVpzeEsweDUwNXdiUE9uZkk4YVlXX0Jjb1VYTkpSMGtwYWIwUzQ2emtvX2RBTUM2YlRKR2JLQ2ZBSnU3WVA3MEpaWmF3QmFzd2oxZkxBaXJvb3F0aDlEU1ZPZ3BiY0lHaXJsZ0E?oc=5",
+      "source": "Poder360",
+      "published": "Wed, 16 Sep 2026 15:05:20 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Mulheres ampliam participação no mercado de criptomoedas e impulsionam nova fase da adoção de ativos digitais - al1.com.br",
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPVUVQTVdqMUJieXJHbjBpa2dyTmtBQmcyUnV2Y3dpYUMzdXZHUnFPbjFybVJGeXAyUzAwTlcxMWh4cUpiUU13cEswMjNIa1Z0VVB0cGYzNWhhU0NYRGZBcTRCcnF4OHJBaE4zSGJKcWh2WmlUdld6OVpQY0R1cWpaaGtmWGRPZkJYV1hmSUctbmpGYnJDRm1jZ0Fpdmh4LTkzWlM1M1FHTDBJaUttSU0xTFdDRnRzSk12ekNleVpoN0NHVlNlQjRtZ1NuTkxIZUFkM2IzamxUcUFOcjFMN0ZMcVcyZjQtb0Zx?oc=5",
+      "source": "al1.com.br",
+      "published": "Wed, 16 Sep 2026 17:08:20 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Super Quarta: corte da Selic e decisão do Fed colocam bolsa no radar - Investidor10",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNQmxxSlVzV3NmNkV3U1lpYmM2VzVJVHEzSjM1THpvYWZaR2N6ckw1ZXAyTDlSRVdRdFVDc1dsLU5VTFdvems3anh6WndyS0V1NTRWMW9oX1FnQWE3M0FSa0ZUTndvOFBOSzl6TUJnZFhxaG94LVM2T0hhamlOTWF2ZjE2RU5HVGp0YUdmWFNSLXVQN0lsd0JFOFJxbXpqZnpMRG45anA4WWZ5M2o1dVNXT3UyZDlyVU3SAbcBQVVfeXFMTUJscUpVc1dzZjZFd1NZaWJjNlc1SVRxM0ozNUx6b2FmWkdjenJMNWVwMkw5UkVXUXRVQ3NXbC1OVUxXb3prN2p4elp3cktFdTU0VjFvaF9RZ0FhNzNBUmtGVE53bzhQTks5ek1CZ2RYcWhveC1TNk9IYWppTk1hdmYxNkVOR1RqdGFHZlhTUi11UDdJbHdCRThScW16amZ6TERuOWpwOFlmeTNqNXVTV091MmQ5clVN?oc=5",
+      "source": "Investidor10",
+      "published": "Wed, 16 Sep 2026 11:10:34 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Ibovespa recua com \"prévia do PIB\" e expectativa sobre juros; dólar estável - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPTXBleFUyQ3VEeWh2LTk0bkIxbHBoVEhCblBDQjJNamRDUWQ0SzJVREJydGJfV1gzYm5ZQmszaGdSN1RRUDR3c2VHcXJZWFZ6X1hIb1hRSTkxRGswaTVLX2oyTllpVjM2Q1MzRU9TQXR6R3V5cGh5WmVWV1gxZGRoVkt6My1Sc0xhd1RVRWRzZ1M3TzNVRmZMSHBVWWNrc3E4ZWRobWpn?oc=5",
+      "source": "CNN Brasil",
+      "published": "Wed, 16 Sep 2026 12:39:50 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Varejo em crise: como FIDCs se tornaram chave para o negócio - InvestNews",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1MT2Q1UEdxSXZpdzg2NXlSTGFlWUJYek1VekY3ZWozU3dnRUVJZGhabFI0MzljY0lKak9QMW9rX2o3N042Wll4RW13LWsyWll4VWliN2NvWktyX3FOQzlWa1UtU3RtVk1DbVBrdU1MOG9hanVINVHSAXtBVV95cUxNQXJsQmFfOTJLMUtCdnJBbzRQTkhaOUd1d1FkUWdpeFdGR3pxd2kzUmp5THpGS0RVaGFYVmVXUWtNSGRTcEJkckZ1ZVA2enlHTUZPRXFPRi05M2FLb0o4YUszUkY2cXdJbkJwVkhYYi1XcG5NX0dKYlQyRlk?oc=5",
+      "source": "InvestNews",
+      "published": "Wed, 16 Sep 2026 09:00:00 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "‘O varejo não aprendeu a fazer bem o básico’, diz CEO da Decolar sobre crise do setor - Exame",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNU2o0NjFoSkJSNTl0N0tNbmo4Slp2QzFQTUZ1S1liUUx2X0pGaklDS1Z4X3BndmVVeENObWpVdHRtd1J4MnRhNDM5Y2NHYXZVNUtVYlNreEt4T3hwcV9EOERNaXZWRGJQOS1HLUViWW9tLTF2a2xNNUY5T0I4RF9QbHRrTmdvSWlLRmpfMEVhUFlLZm04dUJWbGlCaGJVbEFiREsyQWFyVUdrZzYzam13?oc=5",
+      "source": "Exame",
+      "published": "Wed, 16 Sep 2026 15:52:22 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Quando a crise do varejo chega às usinas solares - Diário do Nordeste",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOUThtbVp0ZlVuU01kMElyUWhVQ2RSUjlOYmM5Q1JJV25UMnFIZFR0SGpfLUlmUi1NMGVkbmFUeGlCMnU1OFVJMHRZZmlrWnh4TFRyeElTemEtcHdIMWE2S1dteEhHYVI4WnRRSzVPWTBaZnpaMWhTU1NhbVJhNjJCRmRDeDFydU50bWNpWHNpdy1sbTlwVjRzaFRHS0xDTk1wZTAtUjRZUUt2WUxseUhLYkxjYXZkQnN0SWkta0w2ZDZxZw?oc=5",
+      "source": "Diário do Nordeste",
+      "published": "Wed, 16 Sep 2026 09:00:51 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Varejo cai mais que o esperado em julho e reforça desaceleração - valor.globo.com",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQZFdWOC1YazNPOHpIdlMwWU1PMnduOUlFQWNpQ0VCdldGdkM1d2cwdGpLdXk4ZEVEOEFlMFZHRmFFWnl0Q19lUnozMXV3OG1odW1DZG9odG1sT1hCYmJJS0FmOVVWM1dVTzYzRG56Rm9Fbk5vUWhfMUtKRk8yLTNuNEZncmc3amp3eWZXMHdjS3QwamFyaV8xcy0wR0FDSDVxVGNaUU4tbHgwczdwU1ZFZTVJV2lQbXBhQjQ40gHKAUFVX3lxTE1NX3BQcUE4UVFjQ2Z2cFRrNGo1WlZjcVNSYnd3NkdZRWRQR2RaWDVzRmhCQXpmaHZpUDAtOS1Wd2Jrc3IybXJkYndGTDZGaDRldXdGY25ST1A4dTRrVm5QTTNTeVB0M21fOUltV214YlZSTnJabEptOHFjalp1RzlUbHR1NXhLbWRVY1pQcHNCaFBaSDIzMW5aRHYwamJIT1dMN0VDU1ZSQVlzaTFKSDZaS2hyTFhWeWJFdFdmc0JINFFYQnM4WkhWYXc?oc=5",
+      "source": "valor.globo.com",
+      "published": "Wed, 16 Sep 2026 08:00:00 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Super Quarta tem decisões de juros do Copom e Fed, IBC-Br e varejo nos EUA - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5RcHNKa2tVT2g4dVN3cGVuX0ptdlJqa1VVUEZMUEllenNoT21OSlZlVXhuaVZ0Unc1c2tORlZ2eDV4MFVYam5CU0VncUxaVVczUkZHdnFUYXhpSlBiSmhlOVlfYkU3U1NCUkE1dWdyS1h6QnZjbHNjZE9R0gF_QVVfeXFMT1ZJTXUwQzZaazJpMU1HWWVWOEtkbGFkNElzUEhUZ2RYcVJxcHFKTm9xcE11OFFRVXNNWFc1djJua2JCaVJvZlY3VWJ6aWhEcE5qSkgxckRNWEZUaThKSDZDbjBGdWRkR0haRFRSb0I2X0lUQWZzMVZDeVVPeWJmbw?oc=5",
+      "source": "InfoMoney",
+      "published": "Wed, 16 Sep 2026 08:53:12 GMT"
+    }
+  ],
+  "generated_at": "2026-09-16T17:33:08.858354-03:00"
+}
