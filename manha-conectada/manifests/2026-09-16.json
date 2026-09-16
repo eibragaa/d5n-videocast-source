@@ -1,0 +1,203 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-09-16",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-FranciscaNeural",
+  "output": "/root/repositorio/d5n-videocast-source/manha-conectada/audio/manha-conectada-2026-09-16.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/manha-conectada/roteiros/source-manha-2026-09-16.md",
+  "sha256": "810928ec77b2801655d030e852b03f3496d7d36d729cfdc3bdc0286a06c01a1e",
+  "text_gate": {
+    "words": 743,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 284.447347,
+    "size": 6827406,
+    "bit_rate": 192018,
+    "lufs": -17.24,
+    "true_peak_dbtp": -1.72,
+    "lra": 1.8
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Brasileiros que se consideram felizes caem de 89% para 61% - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPVGFnQ3pISXZ6TXpOa1R4emYxeDNWMjlVOVlIbmlFMzNDOHNaa3JIQWJIbzlXREVQVjVrVWV3aWI3NkVPZ3RRNHFxeFRqR251UEUxQWdMWEpSd3Z2TWk0c3l3bzlZUk5UWHZIOWczRHlKbG16bHdFd1RmY1A3Y1d0aVdRZ3ZheFVrMHdFb1lBT1UtdVpTMFFCcGcwUFV4UWM?oc=5",
+      "source": "SBT News",
+      "published": "Wed, 16 Sep 2026 08:55:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA1cTN1MUFFQ1RuWmtsRUVoUWZlb0ZNWEZYYmpqcEhYa28tQXJBeGtwcUtTSmJxSzYzclNEQXgzUWRkcWZDS3RPN2stTE5qMjBxV0FnbkN1dUI2QXR0cENsbzlIcmFoNVhodkNlYjktY9IBdEFVX3lxTFBjelh4eG12QWI4NElTV3JINk13bDRzby02MFQ5RndaM0RLcTNhRnJxUXhOOWd3T2dVamRLckFIWGZjOC0yVGRRVmdmS083ZWdZWkJrUUFVSzJWbHdZZ3J5bWZwdWxPYTA0RzdBa3AwVzJYbzNE?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Wed, 16 Sep 2026 13:38:26 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Concurso Banco do Brasil 2026: acompanhe as últimas atualizações - Qconcursos Folha Dirigida",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5nODZScDN6amNaVTBmSHZOdXpOVFUwTG54QU9lUjI0dnNyYU9pSDJQSHl4Qy10ZU5ydExHYm1Ubk5zRFlzVDVrd2s1RkwwcWF1OVRETTFXRklGR2U0VWMwR0dWeXNoZw?oc=5",
+      "source": "Qconcursos Folha Dirigida",
+      "published": "Wed, 16 Sep 2026 08:32:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Os bate-bocas entre ministros do STF sobre caso Moraes-Vorcaro durante a sessão extraordinária - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1faE5EbC1SdWxlYjBITWdCdTZGS1praXZsOUpYRlNsUDZiajZMam9HaHFyVkoyMi1PcTFLLWg5N1ZSemFQTndCNVlSR0pmbU5UZjZLTEVQdEdGcWpzMk5JQTk0a9IBaEFVX3lxTE1vcGdidUVUWVJfUU01MHE5VVlTczFIMFpvZEdHdlFUOHVLY3NnbXh6WFdzMnhnYlJSWWNjaER2ZDhlYXZpLVBrMTFYRVhDZldpcVp0Z0Fjc2RZeTduWGdiNnhmN0xwLXBf?oc=5",
+      "source": "BBC",
+      "published": "Wed, 16 Sep 2026 01:20:20 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Brasil tem 6 pizzarias entre as 100 melhores do mundo - BHAZ",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPV0hDaDdQbUVDdDdMNVJGTFA5cTljSThOOC1wMVI1M1k4dW1KMTE3YXA3eVc0Z09VNU4xUjhrYXV5UFc0alJGdEN0YzVxU3huWmRxRHlKd2tqR0ZjaWphUWptTk1uLUJnQm1nLXIzWXd2QVJhQjE1bTBOMWhVRUpCR01BcUZHOXZZWndQWTFfRmZ5QQ?oc=5",
+      "source": "BHAZ",
+      "published": "Wed, 16 Sep 2026 14:50:06 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Câmara dos EUA aprova restringir poderes de guerra de Trump - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPYlZKekVhUndxM093MGE0LUU5UndmejlMbFFFNFdBYVpMUmVhdUlHWDBib2FOOFhxa0VpalljXzhhSjBoU2w1cTJTck1JZzhyck54SElyNHlsR05LSG9DX0ZQbUY0NjhnMHFySElXR0p0Vy1uN3ZaX3BfX2xqcjZIRWtjZnRKNms5R01WSkRzSmp3eEI2N1hkV19uejhyUzV0c1E?oc=5",
+      "source": "SBT News",
+      "published": "Wed, 16 Sep 2026 07:52:13 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Por que as fábricas de carros mais modernas do mundo trabalham no escuro - UOL",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPeEJCc0QxUDRrQk1LblZCRV9CZTBNTXpGV1pyaWhOTHBFQ202ZTRBZHlvMnB4QVJUUVBKQTVKXzVzbE5Wai1EUWJwVmIwQktwc3FfVGR3WVpTZUlYX2YzUWd5SVgweHMtUTd2T2gwUXRnRHVJUEM3WlpOdjVWQzQ4ZnY3WXBuVDhodWJsX3N1UnBoTGpKTE1JbmlTcTRMTnl5UV9jRTdEajhBRUdsT1RwNTZ5U2dBbXBoZmFNTVQ2NWNobFppZkJVWFQyN0VLSWhr?oc=5",
+      "source": "UOL",
+      "published": "Wed, 16 Sep 2026 14:23:47 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Brasil mantém 72º em igualdade de gênero, mas indicador piora em 2026 - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOTTVHZU5RNmZVaVhfeS1zaW5LUl9HUUpZSGFUanJGV25DTlBiTmJSWExkZjBJMWVjb21leHc0a1lodGZIVWdQeTFnLWZaV212WUlIZGdrcWNJTHh3endxR0Y2OVh3SGtHNnBqVk9xOE1hTVRjZU9Hb1hPaHkwanc1dDduQXdWVjdpTkhldVZ0bXg2M09VQ0tmTWlDYzEyLWkxUm16eTZONUZkemdUaHNPelFvZE9yaExqZW9xNHo4WHU2NGx2OVFMN0kyVWtLYTVoS0t1QWdsZk52Rm1ndjJWWA?oc=5",
+      "source": "CNN Brasil",
+      "published": "Wed, 16 Sep 2026 05:00:48 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Helicóptero de reportagem cai em Los Angeles e deixa 3 mortos - G1",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPWVJTZnZHTUJ4ejdzZWNRZVZUR0hCVDhSUTNHeVJnN3FSbHY3V1dDSHU2Zm9ldVVzZjV6N3pDMmEySlNaeTlWN3JMTE80U0w2a05haEJ3Z2FLLS15NWxTakFkbFI0VE5uMmI2U1hHYzhteFNUaFZKVVI3Z1BLZW55anY1UHFqNk5abEHSAZgBQVVfeXFMUDJ4aHlfM25BZzJkVEpQamNLaEthMndmN1IxZHlyVTBvTE1wY1doYm44NDQ2dF9PQ3JSYVhNc3UyUUZJcU1xSjBQV0x1bzNOMFF4NEgxNmgxcjQyVkx4bUNCd3pWRnAtbnV3c3lnQ0JSRkNRSkZkWHY2RzZBUi1uaW9oeWFZel90UFBxSjBuU1pjSm0wVnRDUUs?oc=5",
+      "source": "G1",
+      "published": "Wed, 16 Sep 2026 03:14:56 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Vídeo: Câmera registra helicóptero de TV caindo ao cobrir acidente nos EUA; três pessoas morreram - Terra",
+      "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNNkhhLUptN3NEcVJYU0ljRV9MN3V3cUd1Y2UtN0Jncko2RnRyMHR3dHE2YU1NZE40eVZ2OHdlcUU1V2ZLVE1jNXVtTmE3czZGT3ZvZDJEbGRFSVI5elVsV2pGWHNjaTVTWE9Qd3N1dEV3NUVnWF9VX1ByRzNxeUstRy1mYzE2QzFFNktQUngwTzNsdzVHbjlZSGRBS1JQdlFDbzBhaTZKdVAzcDMtVjliM1hSZEVMaFN3SGZTX3FJNlpFSERCbFZGbUZ4MnBPWnBZNDQ0TW5CRUViZzVKSnRyNW5RR0huYzZndXJHcGlzZHJfVGJmQi1vR1NMd05OYmpYcktCeVRvTkhEVTM5a1JRODRDVdIBkwJBVV95cUxNNkhhLUptN3NEcVJYU0ljRV9MN3V3cUd1Y2UtN0Jncko2RnRyMHR3dHE2YU1NZE40eVZ2OHdlcUU1V2ZLVE1jNXVtTmE3czZGT3ZvZDJEbGRFSVI5elVsV2pGWHNjaTVTWE9Qd3N1dEV3NUVnWF9VX1ByRzNxeUstRy1mYzE2QzFFNktQUngwTzNsdzVHbjlZSGRBS1JQdlFDbzBhaTZKdVAzcDMtVjliM1hSZEVMaFN3SGZTX3FJNlpFSERCbFZGbUZ4MnBPWnBZNDQ0TW5CRUViZzVKSnRyNW5RR0huYzZndXJHcGlzZHJfVGJmQi1vR1NMd05OYmpYcktCeVRvTkhEVTM5a1JRODRDVQ?oc=5",
+      "source": "Terra",
+      "published": "Wed, 16 Sep 2026 14:32:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Por que há o temor sobre IA acabar com a humanidade — e existe mesmo o risco? - G1",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxObUw5RWZfR1FHVTk1N3k0eThtWlRHSTc1TGNoR0Z2Y3dlQXZodEZKV3FReXpmcXEySldlMUFISEYtM0ttdEJzZERkZjZSTXZCc1hGSEJHNDBlOUdoOEJ4X3ZZUXRfRUZxbTlrTUZieTA1RjJfQllKS2RyT211V2N5Y1dyc2psbVBoS3dJd01yYW9TQWxQa2ZFLWxoeTJsS2U1RmRLS1pQdXp0N201UER3NlJZV0dOVUVkSGdqZWhLaTJ0RHJwR1pUeG1TZ9IB2gFBVV95cUxOTVloQ2dQaXdjanVyNDhPSmhGTzBDaHk3MlNqY3cwWm94WlJaUURJYnVXNldkcjZocnloWEJaVGgwMGpLM0xPN2VhR1o3R2hrdG9rNGdLYUlkUElTU0licW1aNDdCNm9OUUh1NkE0UThaLUxqMVllMW9yajA0bVBVN25idTdHQnk1dV9qTkw2SGI4SkJrMVpGVFNNYndEN0pBQm9SM0xtWFZuNDFZaUpMQ2o5NjVMMmJRaXEyQmEyaWozMzIwd2FrOHJmOTNLMEdSQTNFaUVHS1RqUQ?oc=5",
+      "source": "G1",
+      "published": "Wed, 16 Sep 2026 05:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Evento em Santa Cruz do Sul coloca inteligência artificial e medicina em pauta - gauchazh.clicrbs.com.br",
+      "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOUjhQX2p2Uzl1YTlTNC1OUU5UU2p5QjI4d3M4eW1jVDl1ZVZ6b1VqejdmYUItRzdPbU9tQWUzaDFtMnI2eGx3Uk1FcGFEQ3hROWJNOUkyTHFJSjVMdF91ZGhxV0xqbUg5ZVo3TWVmSkp4ZE1Zc0NoTFJNMzZPM0NCdXJCN3dQb2xndHpESW9ZLThIbTl3dDhTaUFWcHVwaFc0RDN4d29rbG1xdVliZFhQRTF1cVBnVkNwTU1WeUozb0VmQ1diMHhGRGFvTnZHZENfclRNaVF1WXBtRUlPQkh6eUdiLWY2QTM2ZzJYdzZaU2R4OS1vNmFXT1FRNDlOUlF0ekdz?oc=5",
+      "source": "gauchazh.clicrbs.com.br",
+      "published": "Wed, 16 Sep 2026 15:02:37 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Fundação Gates destina US$ 1 bilhão para ampliar acesso à inteligência artificial - Portal IN - Pompeu Vasconcelos - Balada IN",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPcW5RX1lONmIzWW9jX3JnME1yRE45NkJCZFBTb3pwYTNKbUFXR3RlLW1HOHFYUlBfOFdZcVVXaHdLR1hJS2lzVmNMVGdEckFqWkg3Qk1veDhWRUM4TXREUEh1VVB1VHZUVENXWnBpOVdvSFdDU1R2dWNDc00yZm9DMGdNcW54S0JOVFpQNXYtU1pFcmVya2RYa2lxQVV5eWx1amF5eWFMOVQwUk11NGVaNEoyemdjSlVMVHc?oc=5",
+      "source": "Balada IN",
+      "published": "Wed, 16 Sep 2026 13:20:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Inteligência Artificial (IA) se torna realidade para viajantes e operadores do transporte rodoviário - technibus.com.br",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNM21zRURGam1XTGJuMmZxUGtIQkJtRlZKek1rMmU5UDlIdzJZRGpxT2Q1bkhyWTRTNUZlN1lOaktGVVQtdjFaT0JTeW1SdzVJOVY2S1dNQzgzSnAxbXE0SFdfbEZHby10dEhlME1aVzJiTFlXUGxsY2hESXZRbDg1YmNIaW5sQUR6V2djS1M2WjltNjdDWTd5Rl8ya0FKbzlxSDVxR0pZMWMzVEVvWFllOTdOR28zM2FveGFSdUlkaFZoQ0JadHh6eWp6eGM3V00?oc=5",
+      "source": "technibus.com.br",
+      "published": "Wed, 16 Sep 2026 14:32:33 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Por que a empresa brasileira compra IA: redução de custo é o décimo motivo - StartSe",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1MMHNSTVdnNTZRbXo4Rk5yVVhhZDBiM0ZuaW1ob2V6RHY5c0FJbG9hWWd2YmkzRXJaYkNKdlh2LTd0cHFkRk14VWxmZXE4VS1jdVZydlhIajVVLVY2RXIzdU13U2RGWDh4WEJCZ0E4bmhMUTRpZ3hF?oc=5",
+      "source": "StartSe",
+      "published": "Wed, 16 Sep 2026 13:04:57 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Não faz sentido combater inflação com taxa de juros - Brasil de Fato",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPNEd4Z2t1TXdDMVlzTXE0YkZUaTAzNWI1VVNwWE9NRXh6dkhjRDlZTzE2ek5YNFgxODBXamptbEtpUjBnNTNPMFlSQjVjU2lRbXk2NEpNd2dOYjI4QmgyRkxqU2Q2U2s2SkZWZ0U4Sk5PeHNuZjhSdWZIUjBfeGp5MmdLd0kxdFg4NWxiNnZZVW1XTnZoSmo2d1pDS2JkazcxSDZrelBIYXc1TlgtRVNjWGZkcy13TGtRWEJBNnRfQQ?oc=5",
+      "source": "Brasil de Fato",
+      "published": "Wed, 16 Sep 2026 14:28:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "iFood anuncia investimento de R$ 24 bilhões no Brasil; empresa vai acelerar desenvolvimento de IA - G1",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPaUZ1Tko0NnIydVpLMUdKcU9EZUdmTEVKbU9SN3o5cjhnbUhKZzQ1MFFEYUlVWDFmSzFRTW5GQW1kME5TVGF0QllqNV9XZFItVUFSRTFfZkx5OHg5RUR5dkVtNldFMFd2N1pfbHVLUnljSWtyNnZ0d3hPdF9IVEZkelQzb0dnZGvSAZYBQVVfeXFMTXluNFJ4YWtXczBPTTl1X2NVdFVNUzZVQXRqQXF4V2FvMzAzcDNPMmZ5Z2NwWFhLMzdCQnAydkI5WEhPQ1BNd3lFaG5uYmlTSHNsN1ZORE9oX2lJZVJpal9HaHhtUURxM1FIQTdFdzJSUkY4TXAyNDVHa0czLWxmUGVUYlNoSmxYcDlkbElyT3p1VDJjLTV3?oc=5",
+      "source": "G1",
+      "published": "Wed, 16 Sep 2026 11:01:36 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "\"Superquarta\": BC e Fed ajustam juros no Brasil e nos EUA - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQLUd4cloxTjFib3pLRXNiel9Dcjh3QUlNSF9HOW9pc1k2MjI2UTRIbFl2cFM3cDZiTDE1ZHkxUlZnWmhiZm1mYWxZOTNGU3cyMndpQ3k1Q3lPTzRUa1ZhbG9Ud19HRW1yT2U1ZkFJbjN4N0dOOGVNcXpwOE0yUzJrM3pFV21GWHd3Y3JpS3E2Z1R5eURyQnRldF84OGdmdDg?oc=5",
+      "source": "SBT News",
+      "published": "Wed, 16 Sep 2026 11:37:05 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "\"Prévia do PIB\": IBC-Br cai mais do que o esperado em julho - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOeWNjNjhYMTNLU2dLUUZrbDhlTHlER2FZOXQ5UXp6WXJGR25FdkRhazdOSE9KbFhKVFAyWDJJU2VHQnFkbWNQYlkyTHkzX0FGZzJaUDBmWGxSU1A0dkYzaC0yN3VNQ1NnNnBPVUhyQmxPUjNPb3ZVejFqMmVvZUI5eURqWmxuaFh6NnowNkJ0UDlWOGFlSnZDTkY4X21XZw?oc=5",
+      "source": "CNN Brasil",
+      "published": "Wed, 16 Sep 2026 12:07:36 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Brasil estagna em 72º no ranking global de igualdade de gênero do Fórum Econômico Mundial - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQRjllendXUTFiaWZKT1ZVSF9kcWN4TGVoWk9TV0FBZzlfbjM2eUxXdU5aZkVldnE1eGhFS0ZxRS1VVkpXTTktbjcyQld6ZDUwZkE5Ni1weXJVTHJNV0NDa24tbTZrQmxVM3l0Z2RuWWJ3cmNwOEZUZnFsRDZFS25fWWJCVDJicE0zQ2lWa1FEY3IzU0J4RlYyNDVINUZWTFdWclU1SjZhNmJzbUZJX05QT2RNUERjLTROVm5QMGI2UDBrSzJCRHlCNWhDY2pHRDlEQk1GY2VSdFg?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Wed, 16 Sep 2026 08:00:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda do dia: Decisões de juros no Brasil e nos EUA são destaque - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOV2U0M2VGdHJoaVpvS0VMbTRnRWJmZ3ZBc2ZITmFLUEhrcXFxYm5kS1dzZ1hrNG5RcVNGdDVySjdYUVdxTjJ3Mzluak1NSzM0bm1NdXZBTnJ1cFNFb0ozRmszT0Vjd2dkZWdKMzc3UXJ4WUo0WFNva2MzU2xsN09ZR09NdjVxOHAwZlVGSFZqUUFHekFaVUR4Vnl2ek9KbXI4WFhDX0xUbFMxSDU5eDU3MTJ0TjdkcDk5V0RTUkF1bmVKTXhFOVBIX1luMUQ2Z9IBzgFBVV95cUxOV2U0M2VGdHJoaVpvS0VMbTRnRWJmZ3ZBc2ZITmFLUEhrcXFxYm5kS1dzZ1hrNG5RcVNGdDVySjdYUVdxTjJ3Mzluak1NSzM0bm1NdXZBTnJ1cFNFb0ozRmszT0Vjd2dkZWdKMzc3UXJ4WUo0WFNva2MzU2xsN09ZR09NdjVxOHAwZlVGSFZqUUFHekFaVUR4Vnl2ek9KbXI4WFhDX0xUbFMxSDU5eDU3MTJ0TjdkcDk5V0RTUkF1bmVKTXhFOVBIX1luMUQ2Zw?oc=5",
+      "source": "Valor Econômico",
+      "published": "Wed, 16 Sep 2026 10:53:58 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Confira a agenda dos presidenciáveis nesta quarta-feira - Tribuna Hoje",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPTEh5cXpQT0I3N05xZTVaeVJoSzlPdmp6WjBpM0tidEtTOHNGeDdTdkxRSUxqb1JMVm9YM1h6S0ttVDFqaEdRZkFDYk5DQi1hWFdoLXVWUTlZdl9YZlQxV1MzWEs3Q25XRFZJTktsSXZDa1JfYXFfcl9XSE9hT04yYXJ5V3R0cV9FMndydVRMQXRFMEJtVEdxakJiTzZLX0VOdlMxMC04NE05eFR4V0I0Ml9WRmotdw?oc=5",
+      "source": "Tribuna Hoje",
+      "published": "Wed, 16 Sep 2026 13:45:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda de Lula: leia os compromissos do presidente 4ª feira - Poder360",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQX0dyOThad0U0ejdYRHdoYVhRVmtlcGR3aFZGaUdmTTVINHFsdE80eTIzbnp0OEVoUkcxRDNEZFhCV054dldmQXhDcGVfTWRRczVnWHYzSTFXclprRm5IdFhnWG9fY1M1TkFDODBmVWdEeWdveGwwekNTRFFmYkVFczlTY0lVMWlTckVnNGVTWFMxUWhoazZhY0ZueWVtWTk3ZkZF?oc=5",
+      "source": "Poder360",
+      "published": "Wed, 16 Sep 2026 09:20:02 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "O dia do Brasil no esporte: confira a agenda desta quarta, 16 de setembro - olimpiadatododia.com.br",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQd0hybC1QT3poQjdWS3lTbERQVHU1OXlZdEFRT3hqWkY2WGFUM3h6SkZmTTlEMV9FU2NEZjlUeG9KRmZtSjFIYVlrOWJPYXJpMmJBTzEtQXp0Q0o1dUJsRmV5YmVPOS1ydmtpOC15MHBXZ2JXeUl3ZDVycUxVNHlsYWVVd3FBZF92REpyb1BMSnNYVFdZOWI5bjJBZDNuMW1abDhPdzJMVUc1LXEzQjU1dUhBZlB6Z0RBY21hbUFSc2hTM2FnNlNmWGVFc2U?oc=5",
+      "source": "olimpiadatododia.com.br",
+      "published": "Wed, 16 Sep 2026 04:56:26 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Super Quarta, prévia do PIB, dólar, Ibovespa, mais agenda e pílulas da economia 17.09 - gauchazh.clicrbs.com.br",
+      "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxPc3FIb1NaOTZXWjdDaXk4cmp5MnYtQ3FTb3JLbDRCXzNmU2l6aC1OOHk1dUhhRnZteVcteDgwX2dCRWlQYzJlT1VIR0NYM2I0Vm5ZMWdPY1V0ODBiT2RZVDlsM09HZ3VTRXk2QUVZWW1TUW5vV3FmWE9MU2R3OHcwdy1reTFZcC04MV9vejlmRk9yOXlQZzF1QkY3ZUZKZlpkZXhKUFZXREo0MjlFZkRiWG5nanBCdlRfMjZrUW1YamdFSFBCM1liYUpNMFotSTdhNkdfYlY1MXRqVjFhM1NwN3hidV91OVM1SWFaUlpJZDM0T0w2bEpoZEozazU0SDN3ZHUyQkNndVR2cmJDaDA0dVJn?oc=5",
+      "source": "gauchazh.clicrbs.com.br",
+      "published": "Wed, 16 Sep 2026 11:03:45 GMT"
+    }
+  ],
+  "generated_at": "2026-09-16T12:57:43.203954-03:00"
+}
