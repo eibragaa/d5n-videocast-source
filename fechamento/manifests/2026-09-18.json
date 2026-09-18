@@ -1,0 +1,161 @@
+{
+  "program": "FECHAMENTO DO MERCADO",
+  "date": "2026-09-18",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/fechamento/audio/fechamento-2026-09-18.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/fechamento/roteiros/source-fechamento-2026-09-18.md",
+  "sha256": "6add229dc5c5c47bdda0118a25b00fe1741ba8374c71f15d7142ef530a1ba8cf",
+  "text_gate": {
+    "words": 1107,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 434.259592,
+    "size": 10422900,
+    "bit_rate": 192012,
+    "lufs": -17.95,
+    "true_peak_dbtp": -1.71,
+    "lra": 3.0
+  },
+  "sources": [
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa Hoje Ao Vivo: Bolsa recua com VALE3, PETR4 e bancos - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOekszRDQwdW95eWo0S29DM25IMXdzdHlXVThhcmt5QjdweXJDZ1ZqNzVITk1hWWVsOFFpQlozRnVGa3ZLYi0tcE1rWmpGS3JmUkZRQnB4b0NoUjY4UHNHSjlKZmtTcDZNNDhCMXYyTWNCc2FZUnprUG5lSXhXR0VjUWUwR2Y3VVNGeEROYm5GMA?oc=5",
+      "source": "InfoMoney",
+      "published": "Fri, 18 Sep 2026 17:57:38 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "AMBP3 salta 12,5% e Ibovespa recua 0,4% na B3 hoje - Visno Invest",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOYWpueUNhNVdONEZZbTBwRWZETUVWVnVBR1RMUDVsekpWMlBTajBNTlZ3NkNLV2xpQ0hTczhKclNBVzRRdVo2RE5YaFdsZFA5RWVGSmhWOXcyOTNLOWVMM2dvYTFONUEtMFozMUVocmpVUGs4RUxWU09DT19VNkx4aFNKMzBCWGdNakpYaQ?oc=5",
+      "source": "Visno Invest",
+      "published": "Fri, 18 Sep 2026 20:20:00 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa hoje: Juros do Japão em 31 anos agitam mercados globais - ISTOÉ DINHEIRO",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5rZzN2Zjl4MTlLQlhNcHBTQnZPNFRfM2lCeHc5dUw5cmVnOEtBN0NLYWlKSjB2dFdvY0p5MXM3M3ZQbTdFS2FPenVxbTlqZ0YzNW13S1NrbnNkbV9iMm53RkV2aG1uNFVSamZTNlp0c0xMeW85eFBOQVdtcw?oc=5",
+      "source": "ISTOÉ DINHEIRO",
+      "published": "Fri, 18 Sep 2026 13:28:09 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Dólar sobe a R$ 5,14 e Bolsa cai, com ajustes a juros e à política fiscal - UOL Economia",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNUkFjX3RSU3hRNWgtZHJKR1puNFpQLS1EcXRhT3IzMHBYcVhUREdtak1velppZ1VmdGljRHNVcXZncE41bXJWQnh4MExIaTRsUkFiNVFVZm9ESGNDSjV6SG1rWTNfLTVFaDBqWm82TnZXbzR0TmRuUVRSQTgwbFFOMXdqNVBNYXhTMmR0TnMwNHNvRWhtUHZkdmhybnpUNmVnQkdaVHlhTDJmdzV6dHBtbFVYVm0xcjlNWmxHbg?oc=5",
+      "source": "UOL Economia",
+      "published": "Fri, 18 Sep 2026 20:10:11 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa vira e fecha em alta com Vale (VALE3); temor fiscal perde força - suno.com.br",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBTQjdMdERZZGZIVy0waG5TOTVxVXI4NWtkS3JISTFRNGhEcDZaRHZNc2lLMUN4TXRWazAzR05yWnlrd01hWngwVk9aMm5jcU81MS1ldlRTNWlPbEhqcF9vSDdmeTdhSmVnYm1USzBObGl1aW5EVVo1VmR2WEs2Z9IBgwFBVV95cUxOeXZTOUhnTHFvQm5sSjkzaGhhYnlCUkpiSzFablNRZjZwTzloeTJ1V3k5UmxRalhaZnpsLWhHTEd1ZFAzR1dyalhqVE5ub1pCNF8zbHVCOXFRUEdiVktCNEdSMDd0QUZDbWx5dmRSU2kzTXBKeWh6N0o5TjhYYWV3OFp4NA?oc=5",
+      "source": "suno.com.br",
+      "published": "Thu, 17 Sep 2026 21:55:06 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Cotação dólar hoje: moeda sobe com juros globais e eleições - ISTOÉ DINHEIRO",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOcFEwb01hUElEYkRfQ3ZTd29Xdy1GSHVqdmxoWEt0WGFhT2VoM2tOQjBtSjZrM05ka0RQVVZ5TU9NVXprTVROOFNzMXV4aDh1RURkNHl6dVRyR0txTmxtbngtUkdmTEVQeWN1eTJ6ekJkaDZxN1A5cXpwb0o0cW1MdFF4bFU?oc=5",
+      "source": "ISTOÉ DINHEIRO",
+      "published": "Fri, 18 Sep 2026 16:53:43 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Soja: Farelo despenca em Chicago, mas dólar e prêmios seguram preços no Brasil - Notícias Agrícolas",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQMEFVTGJhRWxnYWxKdzNwY0FyWEJMWDRTMGxrclpiNTB2RWF1aEY5NW5uRGpIQk51bHd5VklSemswc09EYlY0amJxVVRMZVZ3VlBSWUo4MXlxVzFycV9oSUItczRZZVRRQndqYmdTbHFaQVJhV0xMaWZDMklOU1VIOThwUEVnT0VUaG1YSWwwQzBEZndoeUZObEtOZEdJeEszZ2RGTk14ZEFaVGFOeFpER1Y4N28wdmFVb2JpM2RPUlVDa2lVUU9HRU1TYWJGb1JiRVRkbVlR0gHbAUFVX3lxTE9LSEhQODJaM0hveWpjeDdteUpWRHRSem9SYm5lN3NnTlBzMkt5S3R0enZId3huTDJNSnAycTRBY2dIcjFRTVVjUHlkMEdpNzZVeWtRSXJvTHUyeWUtXzE1Tk10Wk9UV1FMYzJ1TVlzRHY5SFVncl81T2RwNUQzR0MwcWVpTFBXNVlhcWZKckE5T3hLV2VJd0dvLVRmVHZmWnhLNTZXeUptRG45OHZ0NWxGcFp3OG85SU5oSHI3Y0hpX0c4T2RKcVJrOUMwdzJTTS1ENXBoS2xvNmZ4dw?oc=5",
+      "source": "Notícias Agrícolas",
+      "published": "Fri, 18 Sep 2026 19:58:47 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar hoje sobe com aperto monetário global e cautela eleitoral - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQc3pINjFMSkZhMy1WTi0yMnM4SU1qUEstS2RTNWJoOTBOenFYbkdmRlByUnVYNER3bUJWdEJ6WE1ZaWg5b2IyOC1ob1NzYnBXZm1TMTN3SmR4bWtkNldvVjdZWGZSNHdScEZtSm5sX0NJX01jdlhHRUxEQnJtbFdKdEpKZ2JhUFRKd0d3STRxTEpDakVxWk1MWXdWcljSAaIBQVVfeXFMUEdISjNmSDBiZmVaLUJJc0FDQWNMRUJxMG1nVkdYRDkxUUhIQTlyaXA1aGlSbjBqR21EQ1dfM2JsVlp6aEdkcUNjOU90UzYybFJZendtOVJJNldDa0NPNTlxbnAwVTYyUjdQRUFTRDBlVGlXc2lZejhlNDRIWUJuUW5SSzhhLW4zWXV2MkMtUzFZY0t6MFJ3TzJPMF85c0ZOUWxR?oc=5",
+      "source": "InfoMoney",
+      "published": "Fri, 18 Sep 2026 16:03:11 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar avança com cenário eleitoral no Brasil e expectativas sobre juros nos EUA - ADVFN",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxONzVFeV9CLXhabVU4alF2NTBjWjQxZjNKdXlkSkVQNEJEdFVWUUt0THVQNGVTWGxZLUNyeDdtVHJfRWhIZHpKWlBUMU15RG0tZDdyRkUwWUZNY19PaGhYS2JUM05nb1Z4aVNYS0VveGstRS1KVThXMmF0MHMwYS01dldla3FxYzNZeEZRVUh0RDVxanNBMjFmTVd1S2ZJWUlBUi1vcThtUTNsYlV2dGU5ZTJndDI1UQ?oc=5",
+      "source": "ADVFN",
+      "published": "Fri, 18 Sep 2026 20:15:48 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Bolsa até o 1º turno: 6 gatilhos que podem mexer com o mercado - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNTng4Vmd5ZUZ0aGw4X0tUbU1kQlB5LXBxYTZ3UXlhRDh3MVBhV3pCcjdBMDJlUHhrZzBUX1haVVBEck5lQmtQLUR0STlNLXN1emY5c3VHcnc2bUR1TkRiaGY0RG80c2RxT1JqZE8ycTB5TjJDMlY2bXFqSEp5Qk9iMWd30gGHAUFVX3lxTE5HdGtfUGp3aTFtSmtmRUdramZEMXNtY085OTU5UC1sbHUzVGFscmtockNMaHRDdXZvWFBRWEZEUldFNVRxNUk0dGpGdk05RWNiWEFiVzJpM0ZaOWNGNjF4SkVyWm5IbUhKV0NiOHlPV0JXOU95Uno4aFVVYjN3Y2JSV3F5NURPVQ?oc=5",
+      "source": "InfoMoney",
+      "published": "Fri, 18 Sep 2026 18:51:50 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "O Grupo Hoa Phat (HPG) atrai capital estrangeiro e o mercado de ações está pronto para receber dezenas de bilhões de dólares em investimentos. - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQOXMtNVZ5MVBqbHhJSFg2cHo4VzZyUnZDOHVZeHM4OXJEWVhBeHdYM2NoYWpFdkxJWXNaNEdEb1NtXzhrRUlwNk02a0V5ZmtsS2JBc3pUN2psdmlabkNDanVWMEJHU2wyejVRemYxWXVyU19kT0pHZWVKQ3FnV3VpTVdEMWFtX0pQWGE1VkFXQTBIZFZnZExheEJqOVNpZGk2RlIzbHpoVUVSV2V0QTlhOWpNTDRxWWt4MHNEa3BTUGpzQQ?oc=5",
+      "source": "Vietnam.vn",
+      "published": "Fri, 18 Sep 2026 02:23:32 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Seis gatilhos que podem redesenhar a Bolsa até a eleição - spacemoney.com.br",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxORzE3ZkNpSllWbGRJYjhUYTRsOHFJRlpDSTY3aE5MU1J0aUVPc2YtYWNnQUsxaWY3RFhrUHp6WWdwSTlyOUNLY0xJb1FHYUREOXAyODdNX2w1WVNUa3RHN0ZxYm4zRlhQdmVOUEdEVlppdDh4MEQtak9zU1B0dkNRZmlOZ19rVmlCdHhOdG03elFvMHdLb1JJMQ?oc=5",
+      "source": "spacemoney.com.br",
+      "published": "Fri, 18 Sep 2026 19:19:00 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Mercado financeiro projeta corte da Selic para 13,75% - diariodigital.com.br",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQbDJYV0x6NlVyMi1pR09oaWtJMDc3MmJzanY4ZUR1OHA1ejJPdUZOT2xFREhiQ19ULWpnYVEtSV9JQm03SGo5UzlUamNaRlBkRDFoNDMtTG5LZFNZMmNTOUdyejlIaEdLREF5NnYtR2wzdVNMcnNzcW04el93SHBybmdkbnMzTVhnUGJWbHB0dENPQ19pbWZFTUp30gGaAUFVX3lxTFBSbDdpZFNZZk5aRE1qaTMydGVVejQ0VXlHTHpOZldEckhXaXo0anJxWWZpS0l6YWpfTzU2QUIzUFItNlpteDkzZU1kYjgwOWNpcVViTlpib0FWTUV3ZE4yZUxoLVgxTkpnQXpYeW4tRmxHeC0zbDhIMUt3eGF5VHJxTVZBSUFhbXJVbHNHckxBQV9GVGNtZkZrR3c?oc=5",
+      "source": "diariodigital.com.br",
+      "published": "Fri, 18 Sep 2026 15:37:00 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "A economia e a eleição presidencial - Monitor Mercantil",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9WWmtDYkU2U2ZleDBHaUF3ZmVOSVdodDRwVXJGNFFfSXpHcHJkUUVjNVI2WUk1OTY1ZFZfVHo0U1VyM1Z4bXRSdFNhOGk5cVdzN2JHQkhRQnRnMFR3NXM4NThRdy1HeUEyNXNwODVkMDZuOGw3cUFIb19R?oc=5",
+      "source": "Monitor Mercantil",
+      "published": "Fri, 18 Sep 2026 20:20:50 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "XP reúne investidores em Salvador para discutir cenário econômico e mercado financeiro - Revista Let's Go Bahia",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQXzNsdUIzWXQ3RWJhODBXN3RQNDFhaW9zQjk0YVZQWnllVUJYZ201R3RpXzdGcWtDcVN1UHJXLUk2OFdIOVY0cFFmU0pzLU1uRFM0cWRsN0FZdmM0MDdVUlpTM19adlFvaWE1UGFXQzNlVm5WSDBtRTA0R3VJbElWZ29WVXJhTEJYbTdiVnd2ekl6NTNLa29GcU16QjlqY1p3VG92Yk9sZ205dGV1Y0FhNXlVT3R0TnFEWTVFcnB3SU1TTWQwR21CUlhR?oc=5",
+      "source": "Revista Let's Go Bahia",
+      "published": "Fri, 18 Sep 2026 14:38:56 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Juros vão continuar em queda no Brasil ou novos cortes ficam para 2027? - UOL Economia",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTWpMY0s1cmJIVnFoeWhESTQtVExuYlVJU3FBMXhWRFR3aWtPYTdMLXB4endITGc2RHVfcUppYnlrRDcySW1uWnJGWEF5U1poQ09wWHhCck1fVFlLN0pDclgydWE1enBlaFlFQS11ZnVDclpWUTBiYU9uWjB4TzlRb0hUaXkyQ2xy?oc=5",
+      "source": "UOL Economia",
+      "published": "Fri, 18 Sep 2026 12:30:00 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "portal.impactto - instagram.com",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBHZmlhdFNYZmNYRkZxNXY5TFdOSGlrS1NOU1RUVkN3NHdwMkJqMnJwR1ZacXBGaTFmSWZuLUhOekg4NUdfb0JrMkpVLVBmVjBvYnc?oc=5",
+      "source": "instagram.com",
+      "published": "Fri, 18 Sep 2026 19:01:29 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Crise no varejo reforça importância do seguro de crédito para antecipar riscos | SEGS Portal Nacional de... - SEGS Portal Nacional",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNbzJLX2x3WDZZc05SQ2JwLUhnVWNtNkZTQ0xobnUyelk2MURRSzBnd0tHRVdJVWZpRWlHTndBMDV1SVJCQV96ZWJoQkpEU2g5MGJWY3JFNURBUGl1R0pwNnRxeFk0VlRzRkhJQVZiWVZTMll6eHJfS1NqTHRNQlF6REpHZkZYbE15UlJuSDlkdXdPMEFKMEI1YXRvQzZta09wV2hieUx4bFhIRGRaQkJ2T0pUck5sVk9O0gG-AUFVX3lxTE5lNEJhblJ1Qk12bDNLcGtkaXJ4NFNSdmI3Z0lreWQwZVNEMVVSeW03NmxaeHZqWjhyZExPVVhnLXhXcWF0QmFPdFhRbFZiLTRiSkNGcnVtMXhpNmU5a3ZESmFqMGhWcU43MGdXUFJkX3l5cEg0VzZ4Z2xPWWc5SHFXdHdpZTEzbEFhcno2VU1JRmJJZDZBa2dYWEgtTkE3SGJpR0ZYOGNfVFhXeGhMcVFNQ19yQ3huOVRpd0N1ZGc?oc=5",
+      "source": "SEGS Portal Nacional",
+      "published": "Fri, 18 Sep 2026 19:44:43 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Carlos Tomich, que encontrou cerca de 80 hectares de cacau abandonados após a crise da vassoura-de-bruxa no sul da Bahia, recuperou a lavoura e passou a fabricar chocolates na própria fazenda, com 18 mil quilos de cacau colhidos e R$ 3,9 milhões fat - Brasil 247",
+      "url": "https://news.google.com/rss/articles/CBMi4wJBVV95cUxOWTA2M1VWOFBEWjBSOTA5TWZQcEhremdoaEpjSHJLZ1dOeTNFVFFuYjl0SjV3cHl3UnlwSVNlbjJUakhIcW1BR25QM1JCRS1ZdzVjOGZhUFJLT2pNdW90UTVIWkFpNGUxNVpyOVB3bE52M2wzQ1JrQ0hYc2hrOHlmSU53TEwwOGxLTk5VeFA5RVM2OGoyVm1OZG1iLXRTMXNrQlpvMFkzM1hRVFFMZW12MXFyaU55ajZTd1VfR0E2QkgyQ3pwV0FuMEszdlN4OHktS1BpdUV3UXhjYkI1TWZYcl9MTWVtTFRaeDQ0ZnZPVEllZjd6U1BiTTBOdnpkVGt6eWc2MzlfbW4xcEV4LTV4WWRqWkFsNnpzRXhVZUU2V0RCb2QxaGFNTUxvNUFYamRwSVRfckYzOC03cVdmTkRBZ3lpMXkxX2FjWk1YdVBjeG9UQWQ3ZHYxV1BBZnROS3VzOTBB?oc=5",
+      "source": "Brasil 247",
+      "published": "Fri, 18 Sep 2026 11:45:00 GMT"
+    }
+  ],
+  "generated_at": "2026-09-18T17:33:03.355326-03:00"
+}
