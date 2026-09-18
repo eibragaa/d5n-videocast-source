@@ -1,0 +1,182 @@
+{
+  "program": "FECHAMENTO DO MERCADO",
+  "date": "2026-09-17",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-AntonioNeural",
+  "output": "/root/repositorio/d5n-videocast-source/fechamento/audio/fechamento-2026-09-17.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/fechamento/roteiros/source-fechamento-2026-09-17.md",
+  "sha256": "eeaa2bceddc841ab01e4a7936e5b6ac0e374b803258da42c3fb7b5ad9fdd5fe3",
+  "text_gate": {
+    "words": 1047,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 436.297143,
+    "size": 10471801,
+    "bit_rate": 192012,
+    "lufs": -17.88,
+    "true_peak_dbtp": -1.69,
+    "lra": 3.2
+  },
+  "sources": [
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa termina em alta, após experimentar queda forte, e acompanha exterior - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNLWx3dV9yaFExek40V3FjX2lwbFdUMXhRa3c1OElPQnZ0QzBaLXd5eUp4RDdmNG03ZGY0SjMyWm5sejNSTmpUVlVFM2RsMWs4cVdubnNMWDhvaENNbG10SmFMUG1KZ240OUQ2YVhkVThpZmIzNFgwOWlGek1sN3FnbXlrWmJZcXlpWEVjV1RmRQ?oc=5",
+      "source": "InfoMoney",
+      "published": "Thu, 17 Sep 2026 20:30:40 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa vira e fecha em alta com Vale (VALE3); temor fiscal perde força - suno.com.br",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBTQjdMdERZZGZIVy0waG5TOTVxVXI4NWtkS3JISTFRNGhEcDZaRHZNc2lLMUN4TXRWazAzR05yWnlrd01hWngwVk9aMm5jcU81MS1ldlRTNWlPbEhqcF9vSDdmeTdhSmVnYm1USzBObGl1aW5EVVo1VmR2WEs2Z9IBgwFBVV95cUxOeXZTOUhnTHFvQm5sSjkzaGhhYnlCUkpiSzFablNRZjZwTzloeTJ1V3k5UmxRalhaZnpsLWhHTEd1ZFAzR1dyalhqVE5ub1pCNF8zbHVCOXFRUEdiVktCNEdSMDd0QUZDbWx5dmRSU2kzTXBKeWh6N0o5TjhYYWV3OFp4NA?oc=5",
+      "source": "suno.com.br",
+      "published": "Thu, 17 Sep 2026 21:55:06 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Fechamento (17/09) | Bolsa recupera perdas e, com suporte de blue chips, marca leve alta de 0,24% - investalk.bb.com.br",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBrdTdxMEQxS2paMUpSRWJGQldpb2N5SFBDUS1EcHFnYmw1SlhSXzhVRGZBZjZyMmZqT3gzdzFBQUdOWFRWRDgxcUhPM19ZdjN3RXM5T3NiTFlQT1NhRkg4X28xN3RMSHNzd0dEeUR1clRnQzFVVHc?oc=5",
+      "source": "investalk.bb.com.br",
+      "published": "Thu, 17 Sep 2026 20:29:00 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Ibovespa sobe e dólar cai após 'trade eleitoral' superar temor fiscal, segundo analistas - Exame",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBwc1ZBWDFLNDJlNVZfNlZTZF9idVBwcjFBQzFCQTFfa18zbG9oNXlFbERCelZEZGVvTUNaNzRrRGR1b3pfS05yRThqRllhclNkOFUxZFY4eHVhMTRKMy10UUhzVUpaendiSGpzTHo5cGE0aFdDaDV4aXRn?oc=5",
+      "source": "Exame",
+      "published": "Thu, 17 Sep 2026 20:48:53 GMT"
+    },
+    {
+      "query": "Ibovespa hoje fechamento",
+      "title": "Aumento do Bolsa Família impacta Ibovespa e dólar, que oscilam sem viés - UOL Economia",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNTUZHVmREWUw2cHVseDM0XzI4UDEzaGg3NkJIbkItV0c4bEJhZkx4OHh6Y3JKTG92b2RnNjhxdmhsYXVaRlVzR0tEMHotUW1tNkswVDJha2ExMW05NXJaWmtrVEZkeHdfVnc1bzJXVkxRcUEzcXNPQ01KM0dmMFdGNkdrSUZKOE0zcHNSUnhVQ3NOOHE4WlhyZ3pfY3NJdGl5NWh1ODRrS3hBeVY0ODRCWUZ5V2s?oc=5",
+      "source": "UOL Economia",
+      "published": "Thu, 17 Sep 2026 16:07:15 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar tem baixa e real se recupera após reação negativa a reajuste do Bolsa Família - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPR3d1b0U1X0NPVHU0YU5DR0wxLVp3Y0l2SVpyZ1JQa3VtOENKRm5ac3dkSUREN293RFNlWEd6NFlhUTNyWWpJTTU2eWgtUGhDYnpaUWFOeEJGRzctRnBXNG94dlZ5REViLXl1NnJORHlBYlprVlE2MTNTQnhYcEZhTHViVkVEbU1UN09ndkdFa29LRUMwSWtMdEJHV0_SAaIBQVVfeXFMTVpYWW5xYkJjNXVuSFd0RkFlSXctNGZpNWttT2NkdWxBVmtJdHMxaXV2bFhLRExkeUxFSkozbG5pLVRFNFVYbE9KN3VKbmNkTzhFWC1WaWh6d2x5amNRQkwwUXVUN1ZUY2ppSHBHaHdrWE8yS0FISFFJR09zX1FidXpjWEpLV01jY0I4djVMc3N2TWtsOGI1aUFBMzdQUHZSWlNR?oc=5",
+      "source": "InfoMoney",
+      "published": "Thu, 17 Sep 2026 20:15:58 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar cai e Bolsa sobe com reajuste do Bolsa Família e eleições no radar - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNQi1aRUhOTkpuLTlZY04xM3VVUEtLUUlhTzVUdmZrV2NCV3ZiNk4wZE1jWkdGeEV0V012aXFBVWU1eE5KclRsbkVCWW52OXpZVmEyOWtkR1NKbmRNZnFBR0R5RUlhQzVCT0h2TG1Bd2RXcFl3NTFnNWFLTTA1MWtjYXNqWXdnOUpCLWNIV3VURWZyeDJjR0lfNzFFd3hXazlnUGxuOVpYak00RnE3OEJ1NDBJNDd2VFhXYUk1ekY3aWIxakdHNlA5VThGRWVLTmFyR0VzZHlB?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Thu, 17 Sep 2026 12:52:00 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar encerra sessão em queda e fecha a R$ 5,13 - Brasil 61",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcXRYeW1NNHpXTXlQZTFWXy1vSkl2SENTa2s0bUtFSWhzWkFUd0ZoY3loejhHajBKdVdfWnBIQ1Q3NEFsdkFVRGcwQnVjMm8xTUZHbmZJb0czQW5QVWRXdTNxZGtOTVpPRTk5M1VlUUE3TmM5QUYySnpNYU1iM21KdVJKMXBzVTNk0gGOAUFVX3lxTE1TVGktNHhUdlpYdkZnVnl5ZzJmV1VXLUVxNlJ5MWZUbElab2kxc2YwcWRJTi1YN2I0Rldta0k4NnNTZDhFVjlmQkNtaGtOT1cxcWxxQnNXLUsxQldBWUdEOVhjWmlOTF8tSTEwT0FaRTQ3RlV0bDBJdks5ZjM1R0xkUGZMSW1ObXRxUHRZeVE?oc=5",
+      "source": "Brasil 61",
+      "published": "Thu, 17 Sep 2026 22:00:00 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Dólar hoje: siga ao vivo o valor da cotação - GZH",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQRUhmczZnMEUzVXRfZC1CYlN2aG5Qa2FWdUpWQ01uTl9wU2szT09ramdadThCRVU2aFpjU2FSZUo0OGFWSERQUGhnZ0ktZ3B0V0RhQll0cXl6ODc1YXh5cGlka0VEU1RfNlJqMzdZblhjVFIyejRsUWgwX090ZHBVQ0ZNQ2R6VjVSM0VJZ3k2YklldVBza2FYTWVXVGxkeE4zMU1jZGlodGFZOFl6T2M0ZXp4MXB3SmhpNFFjLUVKU21JLVpBQVE?oc=5",
+      "source": "GZH",
+      "published": "Thu, 17 Sep 2026 20:41:01 GMT"
+    },
+    {
+      "query": "dólar cotação Brasil",
+      "title": "Ibovespa e dólar se recuperam após reajuste no Bolsa Família - InvestNews",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSklIeHVUdHRjU2lZS3UxR0pYd1BRU0Y2OXhCNDQwR0dGWG8tR203ajdEREc3QWF5TEEwbF9MYzFiZ2kzUm1WRC1hempHRllzZmpkTXMxZEdtLURrTENta2dsM2pUOUZwbFQ3dDZtMTEwQkNZNURRdmFFU3hRYjZ4WtIBhgFBVV95cUxQMEFycjJuQXFkUUwtMzB5b2plMUFoNXE5SURyMDRCT2VIRi1HLWExYVBJeFNZUVZzQ0xteDJrcWs3YjRiODE1bDc5UFVOWmlKaVkxMnk2MjN4UG1kZVJfQXhJd29hVUF0ejl2U3kzNERvT2ZVdkhwWE1XTUdUWUxKTlNnX1U2Zw?oc=5",
+      "source": "InvestNews",
+      "published": "Thu, 17 Sep 2026 21:27:47 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Estrangeiro voltou à Bolsa; Selic menor e Fed mais duro podem frear o rali? - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE01WUJ0LXZyVDdlT0FPZ2lPRkFoRnk0aUJ1bUN5dW9xSk4tanlqdW51dFFfMjJzZ3NYTnZRVXBuTnNEVjRlZjlKOC1ELU9vNXgwcU9TYVFrYnNtWHNiYUFkMTRDcHFNLXIxSDBTeU0yLVJITjU2XzJpcTI3bEzSAYIBQVVfeXFMT2NFbm5jQnN2VGNmRUYwQ0J2RUJNV21nRGpwRWNhSlc1REI5SDVfTHhWZnVZSFNwdXZwSzZILUMwMUhvTnBoQ3dEWGhyMkFrNmVOLW5PampGR3lKeFNRTVg4Q1BhbGlOOVZoYVdRTjVOZHUtT3VEdk1ZVmdoQ3gtQjNqZw?oc=5",
+      "source": "InfoMoney",
+      "published": "Thu, 17 Sep 2026 16:00:00 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Ibovespa hoje reage a Fed e Copom após decisões opostas sobre juros - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQVlN5UE5YYU54bzNKUEN2cGJRRFliWVQwbGZJT0MteTM4dWgxZjlsZ1didkpOQWczcHJodlQ5SVpka3hNZjM0b1hBb3ZjdkViU3ZNUW5ZUG9tUnpDR2NNbkJfUTdxU1F5SWd3NklZTnctVnVXVzZjemFyU1BoaGllS3JKNlBKRUxWNnNfLUM2MWE0elB4SnNXenBzd3ZLSVJfYWkyQWo3blZLUXlOcm0tVDEwdXktWXFsbEQzZzIwSVl5cm96LVhZN09n0gHKAUFVX3lxTFBWU3lQTlhhTnhvM0pQQ3ZwYlFEWWJZVDBsZklPQy15Mzh1aDFmOWxnV2J2Sk5BZzNwcmh2VDlJWmRreE1mMzRvWEFvdmN2RWJTdk1RbllQb21SekNHY01uQl9RN3FTUXlJZ3c2SVlOdy1WdVdXNmN6YXJTUGhoaWVLcko2UEpFTFY2c18tQzYxYTR6UHhKc1d6cHN3dktJUl9haTJBajduVktReU5ybS1UMTB1eS1ZcWxsRDNnMjBJWXlyb3otWFk3T2c?oc=5",
+      "source": "Estadão",
+      "published": "Thu, 17 Sep 2026 07:30:00 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Dólar abre em queda a R$ 5,13, após corte de juros no Brasil e alta nos EUA - BOL",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNaVdnU1ViUklPSHczVzNoWWJ4WkxDel85bHdmaHM3Yjd6amMwdmVSQ3o2dVVsMjcyZTV2ZS1OYmc4bTRORnhWZE0xR2RDNG5naHJxLUk0U1RUaURXYzNjUDB6Tlg3WmJCOTkxTHZ3ZnNoOGdFZmt0R0tsUXVidXJ1TGo1OXR1MlVrWklnRG54NjM3bVc2d0gtcXJocVA?oc=5",
+      "source": "BOL",
+      "published": "Thu, 17 Sep 2026 12:08:31 GMT"
+    },
+    {
+      "query": "Bolsa Brasil estrangeiro fluxo",
+      "title": "Por que, nos últimos 10 anos, nenhuma empresa de investimento estrangeiro direto (IED) foi listada na bolsa de valores? - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQY0djMVZBcFVMRXlMVWZ4UEo3aklPN2czeTRjMG5lOTJuTjc4VFVMWDItdGZfTXFHYjVwX0JXUG5RR3RrcWIxQ29Eek5Kb0VXWkNXQWt4WG1OZ0dYMHV6aXNYbGlfQXNBUDVPT0dsNFVKQkYyczhxUmpTd2d2clhVRXY5QThmbEJNdkE?oc=5",
+      "source": "Vietnam.vn",
+      "published": "Thu, 17 Sep 2026 11:40:10 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "XP REÚNE INVESTIDORES EM SALVADOR PARA DISCUTIR ECONOMIA E MERCADO - - Bahia Economica",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOWHlUUHN5S0gtckthY1pRTDlLc2ZuSVUwRnpfQkFIRFpNZXJ4cWpTLXVwMEhQRUl3dng0V3ppT3YzNElFTU5iOG9PQnNMUW8wT0JrWWtrS2xYRGFJTWFlZlpHdWRRR1ByMF9kTGFfeXh4anVCRV9TbzVLRGRYS2ZGSG0wLWo4NnFmekJFQW5tUUExZ3M1b2ZFSjYyYlBuQlBMR3RVUldKaHhQNUQwaUlmNg?oc=5",
+      "source": "- Bahia Economica",
+      "published": "Thu, 17 Sep 2026 19:59:00 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Rumos da economia e cenário global pautam debate na Serra Gaúcha - GZH",
+      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNY2Q0dHJmbHNKdzhhcmJ2cV9MNF9KNGxGeDdJX3dsU2tOTm5UaHhCckdSUlR0WUtIUGNoVWhMTXBOZ3JadFhfM1VnLTdHaFpLeVRXbzA1cVMtbmlGOWRVSjVPZnY1bVJpV2Q0UklmUWRuMXBRc3ZfMWtnQmpZY0U4ZVVzcVVNamM4dzVIczZBVUlPUVJlN2NkUXlQUy1LNFM3dWk3TUJQVkVQMFdodVI4b21yZ0d4Mll5SVJBV1ZEVVltTnc2c1pxYmVoZFZocThDVXRORlVqaG1LMmMzNDhLMUFOSDJEenFsUUNYNWZfYTV4UFhu?oc=5",
+      "source": "GZH",
+      "published": "Thu, 17 Sep 2026 22:00:13 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Governo terá que realocar novo orçamento para reajuste do Bolsa Família - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQWkM4LXJ2Z0Q3VkxtWlN1eldkV0VFUG83WmNGQXVvMXYwMmQ0R3lVa3hXVm9SYVBqb2RPWEhxTkpfWFdBa0RVSEFIUlBBemlzNHJkNGFpdTdrcXlnTzJZS3FoRG5mTjVqLXJ0cW5MTy1UamVYMUQ0RnFBN2thZVRpN3hyUENGMVh3QnA4M3Ixa3hLMTNydUZSdm1oemt2ZWN5M05FTUJmYnItRER3RWVmUm9yNzFIX1VsQzU3eGlfTGRvMGo4Zk9EWDdn?oc=5",
+      "source": "CNN Brasil",
+      "published": "Thu, 17 Sep 2026 20:22:52 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "'Não se reduz juros na canetada', diz Marcelo Kayath, cotado para Fazenda sob Flávio Bolsonaro - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPTHNLMTQ0c1NxU2VRNkQ2eU5uSzRjaXpQOUZCa3JrTTktOG03eEUtZjhZVWdLeTdYbHdNMnJZY0xzX3h0dDh6b0lfNktWZE5sSl82U216Q3dwZ1pmZllhNEthU2pLVldlbTV6WU9ZWUdvWG1ENHB5c01aUjYwVkhzNFI0dUpqUlk2YTJ5c1JuVWstc0hoMnFBdHpqdHVRYmdFZDhXcnJnbFB3U25zdzhVMUNDVGFheGZ0MjFidlVNUkJyWUFIZnBtUXhzdkRjdlZ3VE9NWmoyYlBmUQ?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Thu, 17 Sep 2026 12:40:00 GMT"
+    },
+    {
+      "query": "economia Brasil mercado financeiro",
+      "title": "Crise institucional no STF pode afetar investimentos, câmbio e juros no Brasil - AJN1",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQRkFXczJsVF8xRWtqblhYNEtsb0hHWks5SWJacVR6N05TazY2UGNlaFEtWW9FcklGQkgxaDZDa0lqVTExRmlsLTZiRDhKRnVvclhNUVBXQS1tYXBYcDVQdmpzUnhLUU8xTktXX0tnVEI3bFQ4Tm1rWC1XZmwtbWFzNU40ZFVwTDJKbTRod3NyMGIxZFFwOTFlSkpHZVppZlU?oc=5",
+      "source": "AJN1",
+      "published": "Thu, 17 Sep 2026 19:05:19 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Crise STF economia: riscos para investimentos - Acia Araçatuba",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE05VUtRYk9HVDl3dUdPSHNNdGN1VnBfUTFiVGxXUzdTUlhxeG8tVENZMGk2SUVnYTdFc0NONzhpcGRfN2tGczU1UXB4UGFTUk1adEowaDNFZ0hpS211MEdqZGd2Qkp3ck9QN0FTTEItT0R0d3hyakE?oc=5",
+      "source": "Acia Araçatuba",
+      "published": "Thu, 17 Sep 2026 10:11:24 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Crise de caixa acelera fusões e compras com grandes descontos no Brasil - bra1.com.br",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxORzJJUndFTFNzb2R3Nnkxa2xUOFdFaHFkMldmTGQxTTN6Qk8tSkw0dkNyajJZcGhRd3oxRkoyTC16bUJOcFRKVll4c2hXVUhKTkpJeTNodndHY3lHQVVaWXdyNmVza3lFOGtfeFVuclp3MklsTEF3eXdka3A3NjJSOGhVamZqdlV3d2pIUFZRamM0UV9DOEgydndpeUJRY19rbEJTSjdMM0x4aVdTRkpra1RqU1Y?oc=5",
+      "source": "bra1.com.br",
+      "published": "Thu, 17 Sep 2026 12:27:00 GMT"
+    },
+    {
+      "query": "varejo Brasil crise",
+      "title": "Brasil caminha para o pior ano de fechamento de empresas desde a greve dos caminhoneiros, aponta IBEVAR-FIA - Redação MT",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPNUprMF9lZUNaMUFId2FSQzhRZkhjbUNROFlQV2tyMWZsM2xlS3l2cU8wcXh6ZVN5Vi1jNVl6RFh6a1dwZGtScjd1RWJ2YW05ai04bDJCU1BMWjBpTFhzRUt0SVA5TVpqMzZoeWJnYlozcS1ia3U5NWFQczRMRG1YcWhQc3JyeTU4WGFHR3dtdlBIYk5BaWY4RW92X2hjU01LTmVwUTQ2Wk1NS0wwckNlbXhINGF5MzRKMEhOa2tmQ2ZMMW1YQmtBeHk2bkVoNVFuNUpLU1NiUW0?oc=5",
+      "source": "Redação MT",
+      "published": "Thu, 17 Sep 2026 02:33:12 GMT"
+    }
+  ],
+  "generated_at": "2026-09-17T22:28:40.802858-03:00"
+}
