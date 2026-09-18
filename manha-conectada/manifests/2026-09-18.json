@@ -1,0 +1,196 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-09-18",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-FranciscaNeural",
+  "output": "/root/repositorio/d5n-videocast-source/manha-conectada/audio/manha-conectada-2026-09-18.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/manha-conectada/roteiros/source-manha-2026-09-18.md",
+  "sha256": "d47226e25f50d37634e848322abf86b3f6381fb577db976c9e1322c4c737718f",
+  "text_gate": {
+    "words": 715,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 281.913469,
+    "size": 6766593,
+    "bit_rate": 192019,
+    "lufs": -17.4,
+    "true_peak_dbtp": -1.74,
+    "lra": 2.1
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Reajuste do Bolsa Família: Lula está usando o aumento como arma eleitoral? - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE42Q0tqc0ZHOE9ReWljalJxTkxYTHMyVS1hdlJadkFmUTBFV0ZRRE91SDNVbUZteDZLY3duT25xVGs0ZWxRYTZ6NFg0dVhUZmxNMWR5dTNvSUd4UktlandHck9LY9IBaEFVX3lxTFBPMThNN3dPcEJKVFpiZWN4cTRWMnA1SkU2SHNqU3RRR2MtZU81WlNLYVA2Ul8tRmxDTlRuc2dkLW9JeWZGMlBJeko2MVhyQmFDQ3ZZS3ZUVnN3RGRyXy1OQXNRM2hlcnl0?oc=5",
+      "source": "BBC",
+      "published": "Fri, 18 Sep 2026 08:15:32 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Notícias sobre edital de 17 de setembro de 2026 - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMnJBV3gyakFCZTFwd1hhLWttdVJkakRtem1ocEpVMFdySE1QaHlSdS1BOHM3cWJoNDhyTjVjX0hDakFjeE5TSkNGSktEUHpRb2ZyZE5RdzJQZGsyTmtQWGxjN2lKeUFReTBVNWpmbXJkV25yRGxtNzBqVE5mTmJFc0IyTWttRVN50gGOAUFVX3lxTE9oRmp0b1FuVTFxWllLaGIzcW02T1FSbHBEMmJ4V0cybGVCY01Hck1BbjhsNDRHQkVqUENBYWlhLUtXbDBiRzNiUTVILUJMeUFTUF9YMXdMSEpSczlQNTBRNnZuYngwRHJxeU5HZEVmWnhWdklhR0hNWEViMktCTkt3dzFkZUJPLUlkaGJDamc?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Fri, 18 Sep 2026 09:11:36 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "'Avenida Brasil 2': Nívea Maria assina com a Globo para fazer personagem inédita - UOL",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPM3lRMERrNjlRU1pyQzhlekRzUk8yQ3JmY296emxRNnA2aGxCdlEwaUQxa0llanF1bTVac1VINEcwV204VVRFd0l2LWFxSXIySkRiMkI4TzVyZGJuRGc0a3FFYlFDb3FmSHZLOGxvYTZDUVM0WWM4MVRjcWRBRWlGVGgxYjJ1NjdlMGhmRE84Z0JZT3ctRkZUWlNMQWRrMGg4X09VN3ZIRldJVVNOcjNKZTFZeWhqNGRTUmlCYnNYXzdlYm9qVVMzdjJhUFZualZBSkZjNEdKTllFQQ?oc=5",
+      "source": "UOL",
+      "published": "Fri, 18 Sep 2026 07:09:27 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Quem foi Anne Frank e 9 curiosidades sobre o diário mais famoso do mundo, que agora é objeto de polêmica no Brasil - Terra",
+      "url": "https://news.google.com/rss/articles/CBMipgJBVV95cUxPVlBUcFNYZl84ekppYVNLeEVqdWQ2ajE0ajJRSm5jMEI0RDRQNzZ2NmhfTUg2M2ZkbVdSdVdHTmNFM0ZDRVBNT3cwajh1OWpHWVIxLXVuN3g5Z0xkWjhnYlh0RXcydnc5OEF3THhCam5BM2FCd2dmMC1vR050TUp1dkV2Q2JIbXRUVmttcmZwWXF1dERLQUx6TnFTVU9JM3N0SElvZFJ6Si01ajNrUGZjZzVmbHFMZG94RXNWeGNwN3JLOUI1dkh4cDVycjlGajZRX3oyM3ozQmtGY0p1eVNKMWFEWHhiWDhGVFJtdkgxWmtDdGNJUEl4NVNnT1JPSTM5TFhmazAzUFF1WXp2WXI5TUc4Zm93ZlJFM0dkenZfdEJBTzBsR1E?oc=5",
+      "source": "Terra",
+      "published": "Fri, 18 Sep 2026 11:44:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Concurso Receita Federal 2026: acompanhe as últimas atualizações - Qconcursos Folha Dirigida",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBNMnZ3NTVHOW1nSEs5YUUxVldubXFzanMteVA5Y1pOZWJndzBBUEMtaDF1c214R3NwSnVLTEJhUUtLcDVyWDdIa2hIeUZXUWxNSm5jQVdfdGtOV2w5dTh1NEZsZkZwQQ?oc=5",
+      "source": "Qconcursos Folha Dirigida",
+      "published": "Thu, 17 Sep 2026 18:03:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Uma das principais empresas de IA do mundo revela situações em que a tecnologia agiu por conta própria; veja episódios - G1",
+      "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxOMEFFR2dlaW5JX2NEYll4ajFSQUdOWnRkQXpmQ00tLVlzWmd1cXU0dk9Da3BxbXZQMlVpMHpmakMxZlVQc3pIN1pCX1FqbTlpYWIzRVVCY3JOcmx6aVFaOFRnLS00S1A2YkNIbzNKSEk3eGtUZEthdkNjZV9OUU9SWWJjTDZyOVVOaW5pY0lQbU5odmpuQmJaM002NGs1Z25NYkdKNmUyWjdzRV93ZGt0dFhOOXNqZmdROGN0X0xvanVHNG84bGF0emtaSFZHb1pTSzNieVRWMnB5QkYtd0QxTzlRV1lqRGNsVE9xeGFTZEVvOW14am13R1MydlBVclFkZURoUms0a1NOa1XSAZoCQVVfeXFMTzV5SXA1enFPVmJtX3ViT0VxLXhHT1dMWUMxWExYSUZyUG1tYVZUYk9oTU9RdVdvcmluamc5U2NoUktsQTFVVHpib1cyb1BZTjRNNzhsVUhJR0hEclhFNUpCcEc1dTBmZWtUbGZvZGI1b0JoVkR5eXJVcnRQMldSZG41R3JTQmNjZmhFREw2RnY4MWpEMDJNS2V3WWFuZWoyZ0xPSUhONXN0bktiLTFGR3pGeG1KcDFNR05EY1BZd0gzTkc1Q3pMTEJWbFRpTHNpODV5dmJjS2NPZG5fUTk1U1g0UGFJOVdGM205SnBTV0pqVzJTZzBudWFSMGUzWk1SUWRfUy1WNGxsZFJGNXpteWROV0VOd255U1V3?oc=5",
+      "source": "G1",
+      "published": "Fri, 18 Sep 2026 01:10:37 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Quem foi Anne Frank e 9 curiosidades sobre o diário mais famoso do mundo, que agora é objeto de polêmica no Brasil - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5pTWt0UmxRT2s3VmNNbElKU2hmOGV1cVVIME1xbmJ6RjN3WUYtYjM3NFpqcDc4Y0FaREVEYm82OG1Da2o4Q2Y3YWRRNGx2SzFFT2VfM3pKX3hPVFRpcVd0MFRad9IBaEFVX3lxTE44ajl4MXFFaFVRaGltbmtobXVKWld4WUlKMWZhSm1pSDNvbXBmOEV2U2xibUhydGxHbVdwcEViWjVwb0VERG1DVU1DdU5pWGVSY3J2a2lUXzdTYXhub1JtSWxuaUl1TjFv?oc=5",
+      "source": "BBC",
+      "published": "Fri, 18 Sep 2026 11:43:55 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Clima extremo afeta o bolso do consumidor no mundo todo - noticias.uol.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQZXRnVzJPbVUxQkhyTVdYWExWd2ttcV9yVHNheTV0a1N0UXd4cXVSOUxYaUNvR25EZHNiSFpXYlhEM3MxaGpMNk1nS3BKeG5pZS1iLTV1NWpqVGlHM0pScnhCTGQ4QXJnaXllLVpUVy1odjk3OFByU2FSTS05eEgxZ3dsVVJkVHRnc19VN3hCeGQ2dnhQVDhXVEJQRkt0bS12Uk13UFJOQ1J5ZTZnZzloZEdVZ1hDQktDLUd4V2xDcGhBVDd4Zm1iZA?oc=5",
+      "source": "noticias.uol.com.br",
+      "published": "Fri, 18 Sep 2026 09:45:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Família acusa polícia de levar à morte suspeito de empurrar mulher na frente de ônibus em 2017 em Londres - Terra",
+      "url": "https://news.google.com/rss/articles/CBMioAJBVV95cUxNQXZIRnJzUXg2bmh3aGxUcXJwNU9FMDhUTHNFanQtbjBUb2U1dkNHRHRNWm91NmtqRWxnalgtRl9CclNJUEY0R0tpRzNVa1lDcDdQN2luNE1pdHB2eDRxV3hEdFlzQVpfOWxyb2w5TGdibEduYVB3YmtTWnNsV3dXdVFPOVpKV2Joc3VmaWlSamFGTFhjUmhFeWIzeUZkel9XUlk4aUcyWmtKRHJnYktabTd0Zk1RZXZRVk4yTWJtVGNvV3R4cFZXSnJVdWVZSzBudlUyZHFGMDhmc3VCcHlBU0JrX203U3hlVWhWX2E4RFFIdEdIVEhvVVhBdXRXM2VqcERXdFNXek9JamxOT3g3TmNwM05XVW10RHFiWXJsSGvSAaACQVVfeXFMTUF2SEZyc1F4Nm5od2hsVHFycDVPRTA4VExzRWp0LW4wVG9lNXZDR0R0TVpvdTZrakVsZ2pYLUZfQnJTSVBGNEdLaUczVWtZQ3A3UDdpbjRNaXRwdng0cVd4RHRZc0FaXzlscm9sOUxnYmxHbmFQd2JrU1pzbFd3V3VRTzlaSldiaHN1ZmlpUmphRkxYY1JoRXliM3lGZHpfV1JZOGlHMlprSkRyZ2JLWm03dGZNUWV2UVZOMk1ibVRjb1d0eHBWV0pyVXVlWUswbnZVMmRxRjA4ZnN1QnB5QVNCa19tN1N4ZVVoVl9hOERRSHRHSFRIb1VYQXV0VzNlanBEV3RTV3pPSWpsTk94N05jcDNOV1VtdERxYllybEhr?oc=5",
+      "source": "Terra",
+      "published": "Fri, 18 Sep 2026 11:14:52 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Operação encontra pontos de tráfico do PCC em São Paulo - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOWmlxeXFZUHhFb3VTeFlHRmxYbHFqTjlBR2R6MndCSlFaNjhZRlE2TjMxMVN6aEU1QzFka2pGeUl5TXFUNWMxemV2a3ItN0hQZXJqODRScWUwVmlIdzBTUzBhM2dHdFU0TU1WcVhXb3djQnl1WHE1ZEc5YWNKSGU2aThYWV9zSUtOQjdsRUVFU3drV0tjcTl6b2pJLXQ1NTg?oc=5",
+      "source": "SBT News",
+      "published": "Fri, 18 Sep 2026 12:45:08 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Pesquisa indica que 86% dos brasileiros apoiam uso de inteligência artificial na segurança pública - Terra",
+      "url": "https://news.google.com/rss/articles/CBMilAJBVV95cUxNVXU1UEZnY3BoMk00M3gxZ2VsVERTMFZnZWh4TTA4SHo1YTd6c3dlX1J1YUZnX0N0X3JlQjI1cTVZM01namk4NGFnbXE2S1JGcUx6U0hQdGFmZ3FsNWVibUdidG5HMzBxSmhmUXMwNUoxX3NMMVl5WDJDVXBzT1J1Q19ydUtCX0NfQWR1QTk4Q055dHRiRmlHQkctbThIUDk2eXdxYnVUQVpRRGp0LU4weG5ERDl6Zzd3dkMzRGpKX05SV091SWNQZHBXbVhHM0x1QWFXTkR5RTR2SHZFSUxsWnVibnBGTUVIcjRXQi1uTHNKNVpwbGEyWWFFU2dhMV9RaUlZTm5XcFZBQXRBYWtJVHRUU3k?oc=5",
+      "source": "Terra",
+      "published": "Fri, 18 Sep 2026 09:58:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Inteligência Artificial nos FLVs: Onde a Tecnologia Já Avança na Cadeia de Frutas e Hortaliças - HF Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQVm1zQzFmMWVmdVMzWV9naFl2a3dJV1c2OUk4aldHMzVoLTlrd0MxLVdUcGdJVTQxYVBhZy1qRVdVc3phWV8xaVg4bHRIOEpCUXpvbm1HWVNJY2kxX3Q5V05qeE9GV2JOaF9Yd3lpb3pudjBuSnd5ZmdpQjlORVlZRTh3Z2ZfZ1NwM2E4MzE5eGYzaFlPcHhCdEl5RFNjMWNJZzBFT0dWQkZhS2h0ZjFDNFRyOWU4ZnNidlZibHBMamVnWktjd20xUQ?oc=5",
+      "source": "HF Brasil",
+      "published": "Fri, 18 Sep 2026 00:55:27 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "CEOs de gigantes da tecnologia divergem sobre como conter riscos da inteligência artificial - Balada IN",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOSHlWUWJpU2xvcDljX2QtRUhWUjFSUHp6eTlObDhiYXJVejRTSEthRC1OS25oWGNZdWFpN3h4T29NdUJfOGs3Sjl2RjZsWjU5RkVsemxJcHhiQnYxNXhmbEs3cUY3WktzZWw1d3BIdUZCZFpma2MtZ1FtMUJrM3BhdEQtd283SElIdGNzZDR3Y0UyeVNUZlBQdjJQZU5Za0xXX3FldGdmUzVPaVY2b0FYeUhwVkRWTjBYU0NYR24yMGExTXkzR3VqZg?oc=5",
+      "source": "Balada IN",
+      "published": "Fri, 18 Sep 2026 03:01:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Tecnologias e Inteligência Artificial na educação: o desafio de orientar o aprendizado das novas gerações - Universidade Federal do Maranhão",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNOVhWZ3AxS09VTVRYd21BR2xPYW96djFIbnJvMzFNVEdybjItQk83TmxJR2VFSnJld2RKMVQtaUx4MXZmV3V1emdpUzhsX3k2WklQSGsybWdEa2E0ZFVYZ0JUcGRfWHBlTEk2YU9nSlptZlU1YzV3MGtOem5qWWUwWU1Qd2dhU3IwWFBlYnd3YXdDUUFBellqeE9BNmE4bHAxTW5UUzgwb2NSQk1ZcHBfakQtdnNXZG10UUdUT2xjMnhJTXNuMjQ3VTZiSEVnWmw3OThTWnNYVG5rRDl6RVFKNzRQRQ?oc=5",
+      "source": "Universidade Federal do Maranhão",
+      "published": "Thu, 17 Sep 2026 19:25:18 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Economia recua 0,4% na passagem de junho para julho, estima FGV - Money Times",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSGQ5NUpybWRHOG1LQThveVBpX2hWWk01OVFadll1NnYwUnU2Q1dQc2VEZE8zWXlOdU1nbzlSNzZZczBrSlU0TWlVY3dNME9qaHVlclF1YXZlOFZLZ3d6TXQtNTlaOHA1RlVhLU1ZZmdsOFVENm9VMjhMTHNSWkV5Y1I3c3hUSVEwb2RzT2ZaelFzSGYyTVhLblpRY20?oc=5",
+      "source": "Money Times",
+      "published": "Fri, 18 Sep 2026 07:07:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Bolsa Família: reajuste mantém distorção sobre crianças, dizem economistas - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOc2dWNHduZVA0NkZad3dMM2g2TTRMZVREbkVPQUQ1UFdmNDRJZGJHa1hWQ3JuT3l3R01KYTlOZEtRUmRiN2Zyd3pjRkZ0MktTazVieDVMa0QyRmNSTmp5cExRT0FsT3dDYjJoZVdTcTVwRDJfSV9NNlI0NDVLdkxQdDFSYjhEbFNxcDc1T3JERVBsZE5uN2dWbFpLS2Q4X0JCZmRiU0RrNzd1MEJtNm5PSi1vZUkwZ0dLWEV2YUZPU1ZvSlRrQkYwT3VIVQ?oc=5",
+      "source": "CNN Brasil",
+      "published": "Fri, 18 Sep 2026 06:49:19 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Tensão geopolítica leva chineses e investidores do Oriente Médio a ampliar apostas no Brasil - estadao.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPRnl2NTc5V3YweW9tbWtXRVc5ZWtqUUp5TnpTRm5FLUcyWVBURUVpZ2tFUFBIQk1LWFc5RG1LSGM5SmpDUEFDOVRCaERZRlU3OEtXMUVNZkdkcUU4cHo1QkY0LTRRZ0h0X0ZpeGkzLU0zZ2J1cWVqMG5IRGdzNUl5bV84TWVoSzNVbm9FczBKdUNhZFVxYUtVWVRjSllTS21ITVlPcHgwYVQxa1htY2UtUDdvdngzSWsybGVxSUJHdi0tTFRkNkttStIBzgFBVV95cUxObWhrM1Z2M3JNUTdNcFZRZUwxY1JGU2JjaUVnQlVwTzk0ckt1SFpRdTVkbDEtWU5PZDBwTVhSMk9sU0ZUcHlhaUZNN2ZQUEM3RWpnenRSVWJ1ajBiQVN1eFpLM0VrWGU0bEJZWGkxWmFsc0FhbnVWVWRaN1h4TVhHZDM2aTdvS1VBdm5XaTNlTUNiVzlaMS1aMV9LbDBtUlNLM0lCa0k2a2hhTTZZN2RVRi11MjB5RE1pN2xEbzVMOUd2cjJFdFA5OG05cjV4dw?oc=5",
+      "source": "estadao.com.br",
+      "published": "Fri, 18 Sep 2026 08:30:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "China pode ser um amortecedor, e não um choque, para a economia mundial - Brasil 247",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQTGZZUk5nYkFJanVvVUdya2FZSmZnaWFTakNKSUQtTDhhMVVFZlJPRkxfY05GSGI2RGZlTXFSQWZ0cDZHN2g3NExCTkpiS19ZVnVheVVSRmkwZnNRVGtVQ3JEVnRjTHVidjNHQTJZbWtNNUhGb3djbWFFN05RX3cwUUF1T0RITEttYVk1NmtpSmF3aVlwdW5fUVFZdEVBQS10dm9DY3VXbVludzQ?oc=5",
+      "source": "Brasil 247",
+      "published": "Fri, 18 Sep 2026 10:35:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Bets reduzem consumo e atividade econômica no Brasil, aponta pesquisa da USP - Times Brasil | CNBC",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNbkVBaGZ5akJoUFlxOGJjRVR2THhpdDVYLXVSeTIyVGNYUlJtNVlzRGhfUWpBcjlUY3lhWndlcEg5RGo2NGctVHVOb3lPOFRPRFVnOHgtVloxeEJ0OWVqMWZNRE5peWV6aW1BeV9Sb29MRjNxQmhaVEhGQzlmN2ZsSm1yMlNpRFZVeVpFUDhEV2ktNHBJeWMtbHh3ZXREUFc5S0JTT0U5SVdEY1A3U193?oc=5",
+      "source": "Times Brasil | CNBC",
+      "published": "Fri, 18 Sep 2026 09:30:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "O dia do Brasil no esporte: confira a agenda desta sexta, 18 de setembro - Olimpíada Todo Dia",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQSUVHS3NtTE90SzB2UjRES29fUEdpUTNaUDJMS3JUS0dyVWZ0QUlwcGU4YTZOR2NXTGZOcHFTVnBrODlHMzZJajJrZ1RHbHpDcWNYTU9VQVcwZUU4LXdVY2JOQkNCaVpUWEx5R0hzTXktamVfZjlGejJUdl9QWFQxcjFWck1Fd2ZsWmd0M3JjVW5meXlocXljN0ExNWNYeHdoMTg3YW5MQmtVbW1NNzZIeDM5Q0gtbVNuS254d0lTcG4?oc=5",
+      "source": "Olimpíada Todo Dia",
+      "published": "Fri, 18 Sep 2026 03:28:14 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Sociedade civil tem papel-chave na agenda positiva para o Brasil - estadao.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNdWU4MEVIcXVUQkhjQ0t3RFZWMUlSVDhGVWIyVGREZ1phWFZtdlRzSEJ0N2kxbTcwNmI5Y3pGYnNZOTJrdlpJYzZpUENydzNMRVFtOUcybVN2NTJvakhFZkVfX3lkZlc2Ry1MRmlSMDFaa2kzUTRlTkhfTVJJQ25IblNld2JhWGFQT3NNa0JxYnJTZXdzYWNqX0hOempqdmdmSkhvdnVUZkRWUjg?oc=5",
+      "source": "estadao.com.br",
+      "published": "Fri, 18 Sep 2026 07:58:33 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda de Lula: leia os compromissos do presidente nesta 6ª feira - Poder360",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQTUJsN29CNVMtUGo2X1dweXROdnVzcFdSWHE4WmZNMW1kM2hDRnpNS3M4NFlfdEU4QU9WRTUwMHJwNnRHOWpaMEFyMmRkakZ3MXlENUhHY1F5MWlLRTVpRkFtRlFYMl9ZSTBQN25UZE5uR3pZUlI4ZHpKOHFhS1lwam5DVlpCNG50a2pwRW5DT1NPNzFqc3BLcmdlcWR0LUNVd2k0MmZESml3SkRzMGxB?oc=5",
+      "source": "Poder360",
+      "published": "Fri, 18 Sep 2026 09:17:35 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Confira a agenda dos presidenciáveis nesta sexta-feira - Tribuna Hoje",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOZHNUV2tJUTZiUjNfV2NRV3pCWWh1TzBHbWhXbkNDZkdRMENVck5TLXJmcEh4TlZTSGFiYlkwUTd5UXUyX2k1aTVTUzdHOGdhTmtrY3RlOVNYTncyZEpBaGM4VXRYOV9MUzhUSU1HTkRUXzNmUEh1bEVCNE1FQU1MQVFhWHhsRXF5S3lXM1o3SnhFSm9OMFNrbFJkRHFRNi1DVkhVZVZLV2pLdktvV0tRMUdTbDI?oc=5",
+      "source": "Tribuna Hoje",
+      "published": "Fri, 18 Sep 2026 12:57:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Lula faz agenda de campanha em reduto do bolsonarismo - VEJA",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNaTdIUEVxckRxU0dHekQ4NjNRMDk1UmE1ZHhLV2sxdnVVcEVDblg5NGlvdUNCemJyMlNhVm96eUtPR3NuNEhMNnh6QUVTaEY1R2dpekhqVnF3THVXRDF1NkJ4cEc2RERSdTJ6YllKeVpjMnFEUFotY3RySlFfclZOMUZFS0N0XzVhX3RQUW9iTnh1N1E?oc=5",
+      "source": "VEJA",
+      "published": "Fri, 18 Sep 2026 09:00:43 GMT"
+    }
+  ],
+  "generated_at": "2026-09-18T10:06:20.315018-03:00"
+}
