@@ -53,12 +53,28 @@ python3 gerar_cards_pipeline.py --forcar 99
 
 ### Geração de imagens de fundo
 
-Primário: **Leonardo AI** (IA generativa)
-- Chave: `d6f18826-dfe3-4df2-b58b-3f669de8a3d6`
-- Custo: ~$0.012/imagem (~416 imagens com $5)
-- Prompt automático por categoria + título da notícia
-- Estilo: Cinematic, foto jornalística
-- Fallback: Bing Images (se IA falhar)
+Cadeia de 4 fontes (preferencia por ordem, primeira que funcionar):
+
+1. **Leonardo AI** (geração via IA) — `LEO_KEY` required
+   - Custo: ~$0.012/imagem (~416 imagens com $5)
+   - Prompt automático por categoria + título da notícia
+   - Estilo: Cinematic, foto jornalística, 1080×1344
+
+2. **Bing Image Search** (scraping) — gratuito, sem chave
+   - User-Agent Mozilla + Accept-Language pt-BR
+   - Filtros: remove logos, icons, avatares, SVGs, watches, shops, products
+   - Termos em inglês para mais resultados de fotojornalismo
+   - Até 3 estratégias por notícia (título+news photojournalism, palavra1+categoria photo, lookup por categoria)
+
+3. **Pixabay** (API oficial) — `PIXABAY_KEY` opcional
+   - `https://pixabay.com/api/?key=...&q=...&image_type=photo&per_page=5&orientation=horizontal`
+   - Gratuito com chave
+
+4. **Unsplash** (via source.unsplash.com) — gratuito, sem chave
+   - Redireciona para imagem aleatória da query
+   - ⚠️ status 503 intermittent — pode não estar disponível sempre
+
+Qualquer uma das 4 fontes garante imagem para o card. Se todas falharem, o card usa gradiente de emergência.
 
 ### Limitações atuais
 

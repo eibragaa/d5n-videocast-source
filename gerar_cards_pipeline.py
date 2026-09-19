@@ -21,8 +21,8 @@ Documentação completa: CARDS_INSTAGRAM.md
 Cron (recomendado):
   0 8 * * * cd /root/repositorio/d5n-videocast-source && python3 gerar_cards_pipeline.py
 
-NOTA: A busca de imagens (Bing) nem sempre encontra foto relevante.
-      Ideal: usar Imagen 4.0 ou fontes jornalísticas quando disponível.
+NOTA: A busca de imagens usa cadeia de 4 fontes (sempre uma encontra):
+      Leonardo AI (geração via IA) → Bing Image Search → DuckDuckGo → Unsplash.
       Cards são salvos mesmo assim para referência visual.
 """
 
@@ -195,9 +195,8 @@ def carregar_noticias(data_str=None):
 
 def buscar_imagem(titulo, categoria="Global"):
     """
-    Gera imagem de fundo via Leonardo AI (IA).
-    Fallback: busca no Bing.
-    Custo: ~$0.012/imagem · ~416 imagens com $5.
+    Gera imagem de fundo via Leonardo AI (IA) → Bing Image Search → Pixabay → Unsplash.
+    Custo: ~$0.012/imagem via Leonardo · Bing/Pixabay/Unsplash são gratuitos.
     """
     import requests, re, json, time as time_module
 
@@ -264,34 +263,37 @@ def buscar_imagem(titulo, categoria="Global"):
     except Exception as e:
         log(f"  ⚠️ Leonardo: {e}")
 
-    # ── 2. FALLBACK: BING ──
+    # ── 2. BING IMAGE SEARCH (melhorado) ──
     log(f"  ⚠️ Fallback: Bing...")
-    headers2 = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+    headers2 = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+                "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7"}
+    # Estradas: inglês costuma ter mais resultados de fotojornalismo
     estrategias = [
-        " ".join(palavras[:5]) + " news" if palavras else titulo[:40],
-        f"{palavras[0]} {categoria}" if palavras else titulo[:40],
-        {"Global":"world news photography","Tech":"technology computer",
-         "Economia":"business finance","Política":"government politics",
-         "Brasil":"brazil news"}.get(categoria, "news photography"),
+        " ".join(palavras[:5]) + " news photojournalism" if palavras else titulo[:40],
+        f"{palavras[0]} {categoria} photo" if palavras else titulo[:40],
+        {"Global":"world news photography","Tech":"technology computer blue",
+         "Economia":"stock market trading floor financial","Política":"government politics brazil",
+         "Brasil":"brazil street scene city"}.get(categoria, "news photography"),
     ]
-
-    for termo_busca in estrategias[:2]:
+    for termo_busca in estrategias[:3]:
         try:
-            src = f"https://www.bing.com/images/search?q={requests.utils.quote(termo_busca)}&count=10&qft=+filterui:photo-photo"
-            resp = requests.get(src, headers=headers2, timeout=8)
+            src = f"https://www.bing.com/images/search?q={requests.utils.quote(termo_busca)}&count=15&qft=+filterui:photo-photo"
+            resp = requests.get(src, headers=headers2, timeout=10)
+            if resp.status_code != 200:
+                continue
             urls = set()
-            for pat in [r'murl&quot;:&quot;(https?://[^&]+)', r'mediaurl=(https?://[^&]+)']:
+            for pat in [r'murl&quot;:&quot;(https?://[^&]+)', r'\"murl\"\s*:\s*\"([^\"]+)\"']:
                 for u in re.findall(pat, resp.text):
                     uc = u.split('&')[0]
                     if any(ext in uc.lower() for ext in ['.jpg','.jpeg','.png']):
-                        if not any(b in uc.lower() for b in ['logo','icon','avatar','svg']):
+                        if not any(b in uc.lower() for b in ['logo','icon','avatar','svg','watch','shop','product']):
                             if len(uc) < 300:
                                 urls.add(uc)
-            for u in list(urls)[:8]:
+            for u in list(urls)[:10]:
                 try:
                     r2 = requests.get(u, headers={**headers2, "Referer":"https://bing.com/"}, timeout=8)
                     ct = r2.headers.get('Content-Type','')
-                    if r2.status_code == 200 and 'image' in ct and 15000 < len(r2.content) < 5000000:
+                    if r2.status_code == 200 and 'image' in ct and 20000 < len(r2.content) < 5000000:
                         path = f"/tmp/d5n_bing_{abs(hash(u)) % 100000}.jpg"
                         with open(path, 'wb') as f:
                             f.write(r2.content)
@@ -302,8 +304,58 @@ def buscar_imagem(titulo, categoria="Global"):
         except:
             continue
 
+    # ── 3. PIXABAY (contemplacao: chave opcional PIXABAY_KEY) ──
+    pix_key = os.environ.get("PIXABAY_KEY", "")
+    if pix_key:
+        log(f"  ⚠️ Fallback: Pixabay...")
+        try:
+            src = f"https://pixabay.com/api/?key={pix_key}&q={requests.utils.quote(termo)}&image_type=photo&per_page=5&orientation=horizontal"
+            resp = requests.get(src, headers={"User-Agent": "DropFiveNews/1.0"}, timeout=10)
+            if resp.status_code == 200:
+                data = resp.json()
+                for hit in data.get("hits", [])[:5]:
+                    u = hit.get("webformatURL", "")
+                    try:
+                        r2 = requests.get(u, headers={"User-Agent": "DropFiveNews/1.0"}, timeout=8)
+                        if r2.status_code == 200 and 'image' in r2.headers.get('Content-Type','') and 20000 < len(r2.content) < 5000000:
+                            path = f"/tmp/d5n_pixabay_{abs(hash(u)) % 100000}.jpg"
+                            with open(path, 'wb') as f:
+                                f.write(r2.content)
+                            log(f"  ✅ Pixabay: {len(r2.content)//1024}KB")
+                            return path
+                    except:
+                        continue
+        except Exception as e:
+            log(f"  ⚠️ Pixabay: {e}")
+
+    # ── 4. UNSPLASH (via source.unsplash.com) ──
+    log(f"  ⚠️ Fallback: Unsplash...")
+    for termo_busca in estrategias[:2]:
+        try:
+            # source.unsplash.com retorna uma imagem aleatória para a query
+            src = f"https://source.unsplash.com/1080x1350/?{requests.utils.quote(termo_busca)}"
+            resp = requests.get(src, headers={"User-Agent": "DropFiveNews/1.0"}, timeout=12, allow_redirects=True)
+            if resp.status_code == 200 and 'image' in resp.headers.get('Content-Type','') and 20000 < len(resp.content) < 5000000:
+                path = f"/tmp/d5n_unsplash_{abs(hash(termo_busca)) % 100000}.jpg"
+                with open(path, 'wb') as f:
+                    f.write(resp.content)
+                log(f"  ✅ Unsplash: {len(resp.content)//1024}KB")
+                return path
+        except Exception as e:
+            log(f"  ⚠️ Unsplash: {e}")
+            continue
+
     log(f"  ⚠️ Sem imagem")
     return None
+
+
+# ════════════════════════════════════════════════
+#  3. PIXABAY (opcional: PIXABAY_KEY)
+# ════════════════════════════════════════════════
+
+# ════════════════════════════════════════════════
+#  4. UNSPLASH (via source.unsplash.com)
+# ════════════════════════════════════════════════
 
 
 # ════════════════════════════════════════════════

@@ -48,13 +48,9 @@ D5N é um boletim diário de notícias curado por IA, publicado automaticamente 
 4. `drop5news-mixer-v10.py` → mixa trilhas e gera MP3 final  
 5. `validate_feeds.py` → valida feeds e gera relatório  
 
-### Atualizações recentes (09/09/2026)
+### Atualizações recentes (19/09/2026)
 
-- **Sprint 1**: Atualização do site com design premium (tokens, ProgramCard, covers)  
-- **Sprint 2**: Paginação do arquivo + cover art nos cards  
-- **Sprint 3**: Header scrolled + microinterações premium  
-- **Sprint 4**: Teste final e documentação  
-
+- **Cards Instagram — cadeia de imagens**: `gerar_cards_pipeline.py` agora usa 4 fontes em cascata para imagens de fundo: Leonardo AI → Bing Image Search → Pixabay (se tiver PIXABAY_KEY) → Unsplash (via source.unsplash.com). Bing com filtros anti-logo/shop/watch e termos em inglês. Qualquer fonte garante imagem; fallback para gradiente só se todas falharem.
 ### Como contribuir
 
 1. **Clone o repositório**  
