@@ -1,0 +1,196 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-09-22",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-FranciscaNeural",
+  "output": "/root/repositorio/d5n-videocast-source/manha-conectada/audio/manha-conectada-2026-09-22.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/manha-conectada/roteiros/source-manha-2026-09-22.md",
+  "sha256": "37d0e9e09e40d825904e2316e65cf269a92e3bba885962b7279ed6c0e2976b90",
+  "text_gate": {
+    "words": 794,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 312.999184,
+    "size": 7512650,
+    "bit_rate": 192017,
+    "lufs": -17.22,
+    "true_peak_dbtp": -1.75,
+    "lra": 1.8
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Por que o Brasil abre os discursos na Assembleia da ONU? - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPVUoyS01CUzF5UFFqSm1zTF9sNlFQekhmTHdpazROOW1sT3ZOOGpzd0t0ZUJLWjJ2bDdoZEdrR2ZCV19rNjVuQzhJTmFLZHZjUkJLVlhpcXNtd09iUVAxVDhybkNIaTZfbU1mUjNsdFN6U3FTVTR5cnNJSHJra1ZhZU84RzBmZUNTeHE1dXl6aDZmOWVnTmRvbWNERDFNZw?oc=5",
+      "source": "SBT News",
+      "published": "Tue, 22 Sep 2026 10:41:38 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Notícias sobre edital de 18 de setembro de 2026 - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMnJBV3gyakFCZTFwd1hhLWttdVJkakRtem1ocEpVMFdySE1QaHlSdS1BOHM3cWJoNDhyTjVjX0hDakFjeE5TSkNGSktEUHpRb2ZyZE5RdzJQZGsyTmtQWGxjN2lKeUFReTBVNWpmbXJkV25yRGxtNzBqVE5mTmJFc0IyTWttRVN50gGOAUFVX3lxTE9oRmp0b1FuVTFxWllLaGIzcW02T1FSbHBEMmJ4V0cybGVCY01Hck1BbjhsNDRHQkVqUENBYWlhLUtXbDBiRzNiUTVILUJMeUFTUF9YMXdMSEpSczlQNTBRNnZuYngwRHJxeU5HZEVmWnhWdklhR0hNWEViMktCTkt3dzFkZUJPLUlkaGJDamc?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Tue, 22 Sep 2026 06:29:01 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Morte de Presley Gerber, filho de Cindy Crawford, está sendo investigada como possível overdose - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1tNU9HdnpSYmZiZmJIV3VockJxeXJFNURQSzZqSm5IZGlRQ25LeWVGczRCN3AxZDZ4ZTlZcW83RF8zYUpGdVhvVHJQa2ZKbGl2TEZqTmV2bmZRd21xQ0djNmFCckR0WE9U0gFoQVVfeXFMTW01T0d2elJiZmJmYkhXdWhyQnF5ckU1RFBLNmpKbkhkaVFDbkt5ZUZzNEI3cDFkNnhlOVlxbzdEXzNhSkZ1WG9UclBrZkpsaXZMRmpOZXZuZlF3bXFDR2M2YUJyRHRYT1Q?oc=5",
+      "source": "BBC",
+      "published": "Mon, 21 Sep 2026 21:15:02 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Lula discursa hoje na Assembleia da ONU; veja o que esperar - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQZjgwdVFZUEg1dVVkeF9RaU8tWVB3M2gtZDU1VGs0UElqWWUxZm4xNlBTRmt4MHczWUZJMnJIV3BqYlRfdC1wZEcwRnVRVzFwTWQ3T3FqcER5eTFmZkRkeTRETFVwaXZWbjNfR0JHWk1hZmhDZkd1UXduaDJwWGszWDNqSFJoMzhBNVdVVEdpQkxxRlFiY2xGZDdHd3R4dDJZ?oc=5",
+      "source": "SBT News",
+      "published": "Tue, 22 Sep 2026 08:38:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA1cTN1MUFFQ1RuWmtsRUVoUWZlb0ZNWEZYYmpqcEhYa28tQXJBeGtwcUtTSmJxSzYzclNEQXgzUWRkcWZDS3RPN2stTE5qMjBxV0FnbkN1dUI2QXR0cENsbzlIcmFoNVhodkNlYjktY9IBdEFVX3lxTFBjelh4eG12QWI4NElTV3JINk13bDRzby02MFQ5RndaM0RLcTNhRnJxUXhOOWd3T2dVamRLckFIWGZjOC0yVGRRVmdmS083ZWdZWkJrUUFVSzJWbHdZZ3J5bWZwdWxPYTA0RzdBa3AwVzJYbzNE?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Tue, 22 Sep 2026 08:57:19 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Por que a Fox News, conhecida pelo apoio a Trump, decidiu boicotar o presidente? - g1.globo.com",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPNUpac1pjWUlVLURhWVdCb0FYLU9NTXM5RDVwemo1eTk2YzdDcktYY2NRZFEySDQ0bkVYc3hxRzYtem40dVVzeTMwLXhEVzdXRTlzQzhkRlBTZ1VIMUFpZXNiUWVJcnotNnJNbnI3WnBVbkc3UmNqS2Z2ZVQxT0Y3M0JnT0hSNHhEQmU1XzI4elZEZU01N01DVHd6R194dU5XSEF0b3ltLUJfTVF3R2t3YmdDLXdMek54VlhDUlFVdHA1VGtjd2VketIB1wFBVV95cUxOUXNmRk1vXzZ4Sm1JS2N0bGNMR3k1cWpzRmlMUDFtY3hoY1hpRUdKWFpyNkpoeF82MzAzV0tpc3ZtUmlGcnJyclNQM0xPT2E5QlV6LW1Jd1BzRF9LM0VaVE5WamgtLXR5QnpzMS16RkFyQXVuMy05cFd3c0FUYkJJbjNtajNHY3g2TTVHMmZ2WmpGQTFnSF9CUXBoMXRyemV3eGt6TV9yZlRhZGRmREtwa3RMWmswZ0VSQWxHQzVpcENfLU9yZkVkaVd5VVdlcmNNeXg5ZW50bw?oc=5",
+      "source": "g1.globo.com",
+      "published": "Tue, 22 Sep 2026 03:00:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Lula abre Assembleia da ONU com discurso sobre guerras e soberania - Jornal Opção",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQSDBPc2hhTHZ3VFlkeFVVejdORTQ1WmgzV2dGZU05OWxFa2IwanZjQVhRd1JHNUo5Rk1qd1VpMFZLNkQxYV9RbFg5YzZfeUVmR1dtWHgyWldfSFpOdm4yTm5OX0xBTXlGWnFDZ0JYOUxub3dJSFlnU3ZSb0xJNmd5SVZQZG5jLWZvYTktRlVhVVNYb3d1alUxcHAxMU9XLW5mZk1JaWdOWFBNcU9TMldPTmRSTEVkMV9Ld0xPRHUyTQ?oc=5",
+      "source": "Jornal Opção",
+      "published": "Tue, 22 Sep 2026 12:15:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Por que a Flórida é o estado que mais executa condenados à morte nos EUA - 21/09/2026 - Mundo - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPejFNSTh5RVZieHNtb3plN1RabHV0MmdTaW1GWV9CM0xtX01DcnBHRWhSZGxTeDNHb2xBSXpwcnRkeWVwem5BVjhIVzVkcW9ad25ManBuUUhfLW1CbHozX05GR2RUYXNhSlEzNEttcDFMVlE5b0lPU3FJMzdEenBCYlZZSnZ2NkcxNmYyNDBzalp5YW9TYi10ZWI5ZW1FeVFfY1MzZUwwMFZROEJIeXVTakw1SEV3X2Zqb01ZRUIydw?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Mon, 21 Sep 2026 19:54:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "TVs americanas, incluindo Fox News, boicotam cobertura da Casa Branca - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOUWRNVmUwRXJRRnNPVktiR05peUVOckthZ0FXbmkwVmNpcXBELWNzVk5oMUFVaUdNRThjZGp0a01HRUpnX1hnY0tnT1hhOUpWWGtfRnEtX0tkQTk3TEFjZ2pQNXpkcmR6OXE5c2IwbmhLYnJmM3NwdnNXVVpQdTRhNFlHajVrbkNjcTRLc19jUWNfQnhqUldlTUdtenR4Rlh6SnBHN0tB0gGrAUFVX3lxTE5MQXhjZVZKTGctV2dPQ0V6TXF6LUJUZGN2VVdJYUN6OFBjNTAtQlZDeFVPSW51NDNpRHozZ09lV0pLVkliM1pPcXd3Z192QkprVjFXZGJCUkhBSDU3NlFGTDQ5dUctOU1MVjlqc05jMHpTQ21mS09aR203U01mcFpCYmlESlZ0dHBwTzRSRV9RUkt5UHRwYlVCb25XZUlVMm5mWXk5TUlaZ3VNSQ?oc=5",
+      "source": "InfoMoney",
+      "published": "Mon, 21 Sep 2026 21:58:08 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "DeepSeek e líderes de IA farão apresentação ao Conselho de Segurança da ONU sobre riscos da tecnologia - valor.globo.com",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNTXRlRlctSTREYmhwRUdfWExRbHZrRHNYejNtS29MN1RUTUtxREQ0STg4SG0wUFQ3eHlQcWhBR01RTWhqUmFoUHdzZE5hOFVCNWtnR2JjODlZV1JjNmVkUjczVThPZnFxTUFiN0lrWGJ2MXNqcEgwMFYyTUR6UWE5bmw1VXpBQmQ4cVdha1JRb082aVpxbmladC03NmRNR1M1YXNKX3FyN0V1WTlqeHVFX01sbVF5LXBHeGU1THNBZkcyY1NaMUJYQkJ6RG1zZDRTSEx4RXZwUzc5eWdBWldWYTJNTWtobWtURmU00gH6AUFVX3lxTE1NSmRPby10VWlsNktibmFwRFBEemFib2hKdUJ3a2JwZmJaTlZiempsUlBocExnWkdCWldFSjNGTklQV2huQU11enhZVEUyeU51S1pMazl2eGtCQjJDQ2Z6VTBOVTZGNWl3WUU4WmVQSmlCaDZtaWMxZGpUbVN5Qm9mZXV4VFdwcjNQSTQ0UDZ3ZldVa1Z4UU9pNjhhMU5CS01jMlE1dmd3OTZYdFdfbTY2blBZemNuU0pZaDQ0Y1RNN0tHU2lKRkY1alN0a2xyanpIWER6NXlpR1pLZGE2R0R4Y1pUbjQtZ3JVUHlEUTNwS3UtY2FTa2U1OXc?oc=5",
+      "source": "valor.globo.com",
+      "published": "Tue, 22 Sep 2026 11:05:41 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "A experiência infinita do consumidor não será construída apenas com tecnologia - ecommercebrasil.com.br",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPYnAxbEdqM1hQSmM4NEdOa19abmZpWEVLOGJWeV8zOUxzeGRXQWNxbllvNVdWMlFPQVMzUng4bFk4LS1xZjk1dG5TckI1d3BJMEV4QjN0WXJad2xYU1B1REtDU19DMGF4VDltdXViQ3Y2c3F6UzVfcnZkdFJXSlk2Nng5eGJ3UWJqUU5EVVJlYnpNS0RFMVhWRTZ2STJWNWRHaDBLRU8xeUdGUkFWYzZsWms5MVNfUnR6ejZfMURB?oc=5",
+      "source": "ecommercebrasil.com.br",
+      "published": "Tue, 22 Sep 2026 12:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "O que preocupa os brasileiros sobre a IA? Pesquisa revela resposta - Times Brasil | CNBC",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNY1Z5dlBkay1OdmpXNUZ1NlJEeHQxeXdqejV1SFVzRkw2OGFQX250Q3RzOVJSWDVaRENCNm9SX2l3UmVxT0pNOHI3R29FT0F2cGxWYTdSMlJfOGplTlFqazF5SGxUYllhbjVlTDhESTFhclM2Mlk5dUdSYmZOME9ZcTcyeWNyekgtZWNiaUFwNmFWSWExbS1XRS1QbGdxWFZXZHpfclltZm9JMW55UHlaLXlxZmZHbEotdHNxaWRrRFo3Ml85emJ3bUpTRm9SZW80T3d3?oc=5",
+      "source": "Times Brasil | CNBC",
+      "published": "Tue, 22 Sep 2026 12:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "As IAs estão sendo levadas a agir de forma humana demais? - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQaUpmS25zLUtSSXlQZDM2U3ZqX0FUNUtfSGlocGs2d28tTG44Mmc0RzZrbHZLelBMZjlZRnBMZDZreUxTOFZTcDhGY0d2ZmJfZ0FWdTBOVkQtME8xcmg0VERUU2xNSi1jbVRjaUJPVzY0MGplMWY3dkVrM1JwZjZnemE2T1FIUEg3TndDU3lmZklweHEwcGRJWGxnYUtXNkkyNzRXMNIBqgFBVV95cUxPNjNOWlZFd004Y1JmM3JhaFRpbWJ6bWFmbnZpcmt6ZHZBOW9WNDNRYXBZSk83OUlvd3VuTVlweUpmQW5YSVhBMmdQVEFIUmxnSlFSNE1obHhtWmNaei1nNTQ2NWZ5N2NmY2RtY3FyYjNEZmZfV2VWdFlEbHFUdTVtc29QZDBwZHdYOWpSaTNhc1Z1ekl6cVZQdnVrSVlnV0hTWXhQY0xjZ2I2dw?oc=5",
+      "source": "InfoMoney",
+      "published": "Tue, 22 Sep 2026 08:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "ONU debate controle da inteligência artificial após ataques de agentes e proposta de órgão global - olhardigital.com.br",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQWDRjNFlHNkJnVmhscVk5THdhS3dzaGhHQmVWUkNzTmRkTWtlbWp2V0ZTUG9nNkR0eGxBZHBocTkxRnNYdmgtSXRwUHM4QlB0cWljUzRZUGNQNXpzRlgxWk9tZkZBMk9wU096dEdZSUY3bldCOTdyMjJUZGMyeXRvRzdlSDZNU1hHQjhZbEx6Mlc2ZU13X1Rlc3pyUnJWS1dKcHpwYVR6M2ZDQTJYZ0tjNnZYRC03ekFmZi1ZVEpBYjR3akVnS3ViUjZuNGJCVU15WVNNc2ZEOG5pcTQtZmZvREE5OUNMUXdTTnh6YkJtSlQ3Mnc?oc=5",
+      "source": "olhardigital.com.br",
+      "published": "Tue, 22 Sep 2026 11:49:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Embrapa, Porto Digital e ITA: o que faz uma política de desenvolvimento dar certo no Brasil - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQMHhVQXNhNFFlN2dUYmk5bjZ6ejYyUnVHX3R3cXVUaVo2dHNJZ3ptel90ZThRWlAxcGlFYnVBX1hlTHBCS0RGT09mNmNIczZIakJxaG1CamZJT0stRDBGcW9DYnluNEVfNlYwc1lhTmJsS25jZG4wSGRucDltT1Qzb2J0YWs5ZXdfWjNDS2dkSkFaNEVfNEhCeGQ5UDFEVi02ZmpZMXpic0NucXJJXzJZY2VhYmU4UkYwbVdqYnZVTFhYUWZP0gHKAUFVX3lxTE1nZl9xQndvQ1JQXzJ4dGJ4TmJjOXdnSUxPRVNaVnk0UjVEUk1YaFhtU2ZnLXpqQ2tkeUZmUzU1c0tsVUM3M09VS0ZxcE5LSEhSejdfWDlEdDU4OVhmSFhGbW9pdTVWN1JkWko0YS1pVHJNajROOXhvdGpyTEVpdVN2TE5GS2MxQ2otbHZRNTlZTzRGRGlwcU9MbDZKaHNiSHI4ZHNHY1JaejR3dGZxS3htMTBUeGUxdGxaMkxUc1ViVXRzZFNJaDktTlE?oc=5",
+      "source": "Estadão",
+      "published": "Tue, 22 Sep 2026 08:30:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Um mundo em crise: desafio ou oportunidade para um Brasil mais competitivo? - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPY2JjdG13VkR4TVdKd3d3UFVkX0NyRzRiUElFalYwdHFOVGowZW0tZkZiQTBHTXR4aGpBbk92Uzd0MmdsaDlpeE42Q3hQeDhDSDZTc0hDNjdVVW9tZkI2QW9SV1FBYzAwZXBQbGlDRnpXQ1REZ0tlbExRNl9CMFN3MlVqUDRPMFFHRFVzcGJkYzE1Ukk0dHRkMHBtVjdHWTg1TW5CSVhmRzhMcklrQkl6LVNLVFFYcGstU3FCcGNEdUZHTkp3cjduR1FUSnNOX1dJZGdxWGVBZFEzemF6TzFEVktB?oc=5",
+      "source": "CNN Brasil",
+      "published": "Tue, 22 Sep 2026 08:11:33 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "O paradoxo da dívida pública: por que Brasil deve menos que países desenvolvidos, mas paga mais caro? - Money Times",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNWE9tZklPV0QxWFY2WVF1Q0ZqdzVxbmtRYjZhTy1xMHdJRFZKVkpmUk96THV1cllJeGROREpyNC1jWHdDcU9fMEE3VFI5cEdxZHR0dDE0S3N6VEpqdi1od1FmTGxXWWpVN0ZyRXc1ZENrQktyLWRQek5XNlhlWmlDeUlBVUNQUkVMSXJXMldsUjJJUTJubU9RMVZkR3lZbzdVdFlKOWpDMDVhVjljbVlJSXFuTnNydkM2T2t6XzF3?oc=5",
+      "source": "Money Times",
+      "published": "Tue, 22 Sep 2026 10:00:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Se os debates eleitorais fossem sérios... - valor.globo.com",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQY0QtMi1ETDBDT3R2ZTBfeWh4WUFlU3Fmd1RRT09ka2FQNzBOY21qWXM1ZTYzZHVXTFpaeEdxaFVnWGVrRENhc0tPcWJVSmJJaDJQdWVYRS1zX21vY19KYzZCLV82SUVSUnhOcjJFamJES3hzZkoyejFhRkVZUWF2YXgxX2xjaWhnQWN4a2xnY1A5cjVjUGNCT9IBmAFBVV95cUxQY0QtMi1ETDBDT3R2ZTBfeWh4WUFlU3Fmd1RRT09ka2FQNzBOY21qWXM1ZTYzZHVXTFpaeEdxaFVnWGVrRENhc0tPcWJVSmJJaDJQdWVYRS1zX21vY19KYzZCLV82SUVSUnhOcjJFamJES3hzZkoyejFhRkVZUWF2YXgxX2xjaWhnQWN4a2xnY1A5cjVjUGNCTw?oc=5",
+      "source": "valor.globo.com",
+      "published": "Tue, 22 Sep 2026 08:00:01 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Desaceleração mais forte do crédito deve ajudar a esfriar economia - Bem Paraná",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxON0dzV0FyenRHeXpWODJlYXF6djlMOFZNQ0R4VWtkWE01aE1veXgzbWFla0RzQWxRam5md1JXSnNaY2dja1Iwb2ZfUExtQXJ6d3JMZGxUa1BnY3FiU2NzRmtCRjBlbjZrR2RTS195RXlITjFTQm5JeVRZaHhvTHJkVEV4S1hkSWFfU184OWxpS0hTS292cmJSTmFpMXB6VVotRGxVUlJUazJvMkdiblZFWHFTMDPSAboBQVVfeXFMTkJyWEZNZGpjY3JUNzFwZ1lDNU1CTTBaQk9xbzFKb2dxV3haZnVWLTJybWUtTzJXeUZWTFQxbEdZVnM1X0VKQVZ6Z3RDalJ0Q0tvNkUzblIxVkxSWEZlSXQzaHdpdF9MYVNfbWRmdEF5MGNFV09XU1o5aUxwaUluSnVvSUhYNldSeGNIRFFyUVNMTy1oeDd0TF83Y1QtcU0xWEhZR0ZzbzVRWjYyRHF6TlItV2F0cEtvdzNR?oc=5",
+      "source": "Bem Paraná",
+      "published": "Tue, 22 Sep 2026 09:30:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda de Lula: leia os compromissos do presidente 3ª feira - Poder360",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPck83UDNGNFNaLWEzX3A3UlBwSUpiSC1iQV9PclVzRWJkUmFJbXlocVdNYmNuS2NnVW9HNGNaV0JQTVQwWE0zSDludm1HNzZGWUZGYUR3SFRiWXg0VFBseGxJVk9FOTA2Tldnd1JKNmE4SDZLNUV2V0w2ZTJtVGl5SXB5S3N2QXNKd2NoLTdsU3hyZVRLTXV2bklYT2twaXdkazJldFlB?oc=5",
+      "source": "Poder360",
+      "published": "Tue, 22 Sep 2026 09:17:08 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Calendário de episódios de Stranger Things 5: Veja datas e horários de estreia na Netflix - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQQUNYUkdRd0FvTXBwajV6aDh6SVdOeG9fYVhhYzNac0REeWVVM1pEczJkUm9vQ1g0Q1htNkpqQXhQczNnMHMyMWJVSFB5aUIxNVU4aXpGZm1WNUxDMm5JdVdnNl91eXphT2JhanVxa0UtamtIdHI1aTQzZk1kWWJwTUk4NEpYenNnRWlSUlh0QmtUa2l5N2pERTJBdEo3QTFmWmF6LXdrWnpHMm1BX0ZPcXdwS3lpWEkzWHVicnhQTkF5bTRfWUNWVE9qWEZIU0xOVndvTnp3a9IB3AFBVV95cUxOUGRTLWY4NVhxejFJMDNyWWFMeG5JN2dFSDVPeHFLRnRsaEx2eFdRQjR3TGJBREN6RWZnV3gxRkI3MWFSbjFPWkZwd3ZXMmVvQUtxRnVmVHNNZ1pkWngxS2pyM2hGVGNDbGZLckY1ZjN2bmhUS2JBemxqX0xQTW43eXNTZHpHNHZkc3FxX0QxeFFULW04dUpSdGZIOHFXNDZMNWtFSTRGb2lRODZhQkpfcWZnemJXSmFNeXk5bWNMODJfX2pXY2U0Uy1tUHo0NHZEU09ueFFndGJQbW45?oc=5",
+      "source": "Estadão",
+      "published": "Tue, 22 Sep 2026 09:11:36 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Conselho de minerais críticos deve ajudar na coordenação do setor, dizem empresas - valor.globo.com",
+      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNdlBPa3RqODB2UFdkZU1qRjlTVWlrT1BacTVpTXNVbUNjRGg4SGlhSWtIQXhwODRWQ2JPT0NjU1Zub2FwOENDRi1ZcGFaM0hMSDdDb2t1SlZkS1RNR0k4YTBQcmNQTU41TWxnNlRKd3BuZzFKWFY0YnB2d2VQUHdZVng4NmFnOWVUeWlkN200aXZsVkIyM3g3SlV5OXdtQ0I4VGFUNUpqUGJVU2p4SUZ1eVVUYnVfOU94RktodDZpWXNxaDFvd1pvWU1ZUjkyY2RUdEFuWVYzZ0g5NWlBdk9fanJjTnZ2bmhCUDBuZEE0bUowdU1EV3NQNWxB0gH6AUFVX3lxTE12UE9rdGo4MHZQV2RlTWpGOVNVaWtPUFpxNWlNc1VtQ2NEaDhIaWFJa0hBeHA4NFZDYk9PQ2NTVm5vYXA4Q0NGLVlwYVozSExIN0Nva3VKVmRLVE1HSThhMFByY1BNTjVNbGc2VEp3cG5nMUpYVjRicHZ3ZVBQd1lWeDg2YWc5ZVR5aWQ3bTRpdmxWQjIzeDdKVXk5d21DQjhUYVQ1SmpQYlVTanhJRnV5VVRidV85T3hGS2h0NmlZc3FoMW93Wm9ZTVlSOTJjZFR0QW5ZVjNnSDk1aUF2T19qcmNOdnZuaEJQMG5kQTRtSjB1TURXc1A1bEE?oc=5",
+      "source": "valor.globo.com",
+      "published": "Mon, 21 Sep 2026 21:58:24 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "IBRAM leva debate sobre minerais críticos e segurança energética à agenda global em Nova York - ibram.org.br",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBIWE1LQ3d4Q2hsa1Y1N1VYS2RFRlF4cmdHWHplX2J2T285aU9QNW52TlczYW1MY0phcWN4Z0pHMnVMbkdVeldGUnhBb3B3aWljY1VWSjcwTDdvbjFNaXhzbl9xSzdTS1hHSTA4cHJmekZpOFNwQVVJdTFn?oc=5",
+      "source": "ibram.org.br",
+      "published": "Tue, 22 Sep 2026 12:32:10 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda Brasil Mais Competitivo reúne setor produtivo - Portal Contabeis",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOSEI0R1Z2cG04WHVRcmhocmxSMThoeXJNUVgyZDd0cEdzQ2g0bHlNUWtSYmtJRTJJZzlxb1NiQVN5V2NqaENUWDZoUGlfTHI5UXF5eVNaR2xpUG5ZQ01fWFRsaXNVY0RqeGdLblJ6SkJSbEJoVXBOWHVwa0J4ODFkbXhZb0JTaTVlQkhwTGg4dkkxc2VsMGpUbHVpSGE5Zw?oc=5",
+      "source": "Portal Contabeis",
+      "published": "Mon, 21 Sep 2026 19:30:01 GMT"
+    }
+  ],
+  "generated_at": "2026-09-22T10:07:11.726584-03:00"
+}

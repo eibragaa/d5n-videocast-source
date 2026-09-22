@@ -28,7 +28,7 @@
     <podcast:locked owner="eibragaa@gmail.com">no</podcast:locked>
     <podcast:guid>manha-conectada.d5n-daily.netlify.app</podcast:guid>
     <atom:link href="https://d5n-daily.netlify.app/manha-conectada.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Fri, 18 Sep 2026 11:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 11:00:00 -0300</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/manha-conectada-cover.jpg</url>
       <title>Manhã Conectada</title>
@@ -36,6 +36,22 @@
     </image>
     <copyright>© 2026 Drop Five News</copyright>
     <generator>D5N Pipeline — Manhã Conectada</generator>
+    <item>
+      <title>Manhã Conectada — 22/09/2026</title>
+      <itunes:title>Manhã Conectada — 22/09/2026</itunes:title>
+      <itunes:episode>27</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>05:13</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/manha-conectada-cover.jpg"/>
+      <guid isPermaLink="false">manha-conectada-2026-09-22</guid>
+      <link>https://d5n-daily.netlify.app/#manha-conectada</link>
+      <enclosure url="https://d5n-daily.netlify.app/manha-conectada/audio/manha-conectada-2026-09-22.mp3" length="7512650" type="audio/mpeg"/>
+      <pubDate>Tue, 22 Sep 2026 11:00:00 -0300</pubDate>
+      <description>Manhã Conectada de 22/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:13.</description>
+      <itunes:summary>Manhã Conectada de 22/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:13.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>Manhã Conectada • 22/09/2026</strong></p><p>Manhã Conectada de 22/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:13.</p><ul><li>Por que o Brasil abre os discursos na Assembleia da ONU? - SBT News</li><li>Notícias sobre edital de 18 de setembro de 2026 - Estratégia Concursos</li><li>Morte de Presley Gerber, filho de Cindy Crawford, está sendo investigada como possível overdose - BBC</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>Manhã Conectada — 18/09/2026</title>
       <itunes:title>Manhã Conectada — 18/09/2026</itunes:title>
