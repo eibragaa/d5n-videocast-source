@@ -33,7 +33,7 @@
 <podcast:guid>d5n-daily.netlify.app</podcast:guid>
 <podcast:funding url="https://github.com/sponsors/eibragaa">Support D5N</podcast:funding>
     <atom:link href="https://d5n-daily.netlify.app/podcast.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 21 Sep 2026 03:06:40 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 03:08:54 -0400</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/podcast-cover.jpg</url>
       <title>Hoje no Drop Five News</title>
@@ -45,6 +45,53 @@
     <webMaster>eibragaa@gmail.com (Jean Braga)</webMaster>
     <generator>D5N Pipeline v2</generator>
     <item>
+      <title>D5N · Episódio #070 — 2026-09-22</title>
+      <itunes:title>D5N · Episódio #070 — 2026-09-22</itunes:title>
+      <itunes:episode>70</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>08:46</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep070-2026-09-22.mp3">
+            <psrc:chapter title="Abertura"/>
+      <psrc:chapter title="Brasil &amp; Política"/>
+      <psrc:chapter title="Encerramento"/>
+    </podcast:chapters>
+    <psc:chapters version="2.0">
+            <psc:chapter title="Abertura"/>
+      <psc:chapter title="Brasil &amp; Política"/>
+      <psc:chapter title="Encerramento"/>
+    </psc:chapters>
+      <guid isPermaLink="false">d5n-2026-09-22-ep070</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep070-2026-09-22.mp3" length="12627216" type="audio/mpeg"/>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News · Episódio #070 · 22/09/2026. Resumo do dia com curadoria inteligente. 8:46 min.
+
+⏱ 00:00 — Abertura
+⏱ 00:01 — Brasil &amp; Política
+⏱ 08:04 — Encerramento</description>
+      <itunes:summary>Drop Five News · Episódio #070 · 22/09/2026. Resumo do dia com curadoria inteligente. 8:46 min.
+
+⏱ 00:00 — Abertura
+⏱ 00:01 — Brasil &amp; Política
+⏱ 08:04 — Encerramento</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #070 · 22/09/2026</strong></p><p>🎧 8:46 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep070-2026-09-22.mp3">
+            <psrc:chapter title="Abertura"/>
+      <psrc:chapter title="Brasil &amp; Política"/>
+      <psrc:chapter title="Encerramento"/>
+    </podcast:chapters>
+    <psc:chapters version="2.0">
+            <psc:chapter title="Abertura"/>
+      <psc:chapter title="Brasil &amp; Política"/>
+      <psc:chapter title="Encerramento"/>
+    </psc:chapters><p>Drop Five News · Episódio #070 · 22/09/2026. Resumo do dia com curadoria inteligente. 8:46 min.
+
+⏱ 00:00 — Abertura
+⏱ 00:01 — Brasil &amp; Política
+⏱ 08:04 — Encerramento</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+    </item>
+    <item>
       <title>D5N · Episódio #069 — 2026-09-21</title>
       <itunes:title>D5N · Episódio #069 — 2026-09-21</itunes:title>
       <itunes:episode>69</itunes:episode>
@@ -52,14 +99,44 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:46</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-      
+          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep069-2026-09-21.mp3">
+            <psrc:chapter title="Abertura"/>
+      <psrc:chapter title="Brasil &amp; Política"/>
+      <psrc:chapter title="Encerramento"/>
+    </podcast:chapters>
+    <psc:chapters version="2.0">
+            <psc:chapter title="Abertura"/>
+      <psc:chapter title="Brasil &amp; Política"/>
+      <psc:chapter title="Encerramento"/>
+    </psc:chapters>
       <guid isPermaLink="false">d5n-2026-09-21-ep069</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep069-2026-09-21.mp3" length="12627216" type="audio/mpeg"/>
       <pubDate>Mon, 21 Sep 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News · Episódio #069 · 21/09/2026. Ouça o resumo de notícias do dia. 🎧 8:46 min.</description>
-      <itunes:summary>Drop Five News · Episódio #069 · 21/09/2026. Ouça o resumo de notícias do dia. 🎧 8:46 min.</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #069 · 21/09/2026</strong></p><p>🎧 8:46 minutos</p><p>Drop Five News · Episódio #069 · 21/09/2026. Ouça o resumo de notícias do dia. 🎧 8:46 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #069 · 21/09/2026. Resumo do dia com curadoria inteligente. 8:46 min.
+
+⏱ 00:00 — Abertura
+⏱ 00:01 — Brasil &amp; Política
+⏱ 08:04 — Encerramento</description>
+      <itunes:summary>Drop Five News · Episódio #069 · 21/09/2026. Resumo do dia com curadoria inteligente. 8:46 min.
+
+⏱ 00:00 — Abertura
+⏱ 00:01 — Brasil &amp; Política
+⏱ 08:04 — Encerramento</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #069 · 21/09/2026</strong></p><p>🎧 8:46 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep069-2026-09-21.mp3">
+            <psrc:chapter title="Abertura"/>
+      <psrc:chapter title="Brasil &amp; Política"/>
+      <psrc:chapter title="Encerramento"/>
+    </podcast:chapters>
+    <psc:chapters version="2.0">
+            <psc:chapter title="Abertura"/>
+      <psc:chapter title="Brasil &amp; Política"/>
+      <psc:chapter title="Encerramento"/>
+    </psc:chapters><p>Drop Five News · Episódio #069 · 21/09/2026. Resumo do dia com curadoria inteligente. 8:46 min.
+
+⏱ 00:00 — Abertura
+⏱ 00:01 — Brasil &amp; Política
+⏱ 08:04 — Encerramento</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
       <title>D5N · Episódio #068 — 2026-09-11</title>
