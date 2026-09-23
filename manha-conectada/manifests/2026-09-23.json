@@ -1,0 +1,203 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-09-23",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-FranciscaNeural",
+  "output": "/root/repositorio/d5n-videocast-source/manha-conectada/audio/manha-conectada-2026-09-23.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/manha-conectada/roteiros/source-manha-2026-09-23.md",
+  "sha256": "0bfa1cfd3cf8cf90c55b00a1258e2e949bb485a4822c6bccd37275d3547a6c32",
+  "text_gate": {
+    "words": 621,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 234.762449,
+    "size": 5634968,
+    "bit_rate": 192022,
+    "lufs": -17.42,
+    "true_peak_dbtp": -1.72,
+    "lra": 2.2
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Por que os candidatos a presidente querem construir mais data centers no Brasil - G1",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQRXNoSUVyMTlKd1ZacVhlVmRLOEtScVdqWGZ1SVBOT0Y2ZVAtZFdfRVlHWHVVd2o4S0JMMUVzR2JCSTIzdVZKcHpJUmY2TGZhTXIzNVRjbktwY2xsNHFoR3ZyeFEyZF9QcXJMNkNZcDA3WXRfc0xWdEZaaGJtSDl6TjN5TXRZM1ZiYlZzTm9Vem9XakduYUoxUkdVSWFFeW5FTTF2WnJGaFpLLXExVzMxdldHS09RcVZVSXpIZ1VscWs4VHo4cmRsUm05eWxUR2owM2fSAeABQVVfeXFMTlF4UUVRcmhxakhJck9NaHJLMWNDSm1CZDg0U2tYeXpBbmFaeGRCM1J0aTExanB6b2dVOXplYTdjX3VvN2F0ZS1SVGsxT1hlbmZEQmRGRGRFVkN6MmcybEtzcVd2X0lmTmx4cmU5dXo3eEpGcGZvQUhLS2V2eXlFZmt3ZEp1a29jUjBzbkg5MU1aZ0lQSTZSb2lsb1p3T2c3TGJJZlJiNS1ma01DdG5uZExzS2FtMHRGcm1WbWIzWWZGUGlPUUJtRFZtOHlCcmVRVWtPXzV5alRjSEVISjUza2U?oc=5",
+      "source": "G1",
+      "published": "Wed, 23 Sep 2026 10:21:39 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Viúva de Rick chega ao Brasil após mal-estar em voo e vai ao interior de SP - UOL",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOY28yT05pT0gyUjZkRTBIeXVnN2N3VVhiNjh5aV9mem5hNFRxMnFqQkhkcGFqYnh2M3ZMUl9VbTRlbXBZTHA2RWp1UWpEZV9JVGh4ZmZBNTAtSmZ2bF9GM01ZSmw1bmNPdmxWb21QdzB0LWV3Nk4xcGNZb2RTSmd1OWJiaTNFUG9tODhNTlpWb2I3U1ZwX3pURUprOW9MZWVoTzJPRHEzZzdKUFB3MHVDMlRwOA?oc=5",
+      "source": "UOL",
+      "published": "Wed, 23 Sep 2026 05:27:54 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Coluna do Túlio - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE56QmlvMmRnSWwtNkFzWEFNcmo3X0dqOW5hRmF0ZjFEUm1LdkRjMnhvalJxNmdCMGtrZm1TVDlDM05KZ2pQTUplQjM4NlZURnRCT2s3aG9TTmo4T1h5ZGJ3?oc=5",
+      "source": "SBT News",
+      "published": "Wed, 23 Sep 2026 10:40:24 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Concursos Sul: as principais OPORTUNIDADES de 2026! - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE01bkxsN2dzQV9WWUtTNzBXQ1V1RlFNc05rQUxxNVUxWVJZeURIN2I0RExkUXpISEY3SW1Db2xpTmJVTm1NZGt0aXduOWFJRnE4NS1VMzVOdXM5YWlwemRPZi01b1VCaWltbmfSAW9BVV95cUxQZzBUeEFXS2NsVklWWDY1WFU2U2pjUzl3Q1BzZFpxQXZRZ19WMmZ3SVYwY2ZoeGNXSEp2SjBhTmlvZXRRM195Vl9sWFNHaUpSSXJ2bjVaaWU4OGJlMEg4M2E1eFFHNFZSS2syUUk4YUU?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Wed, 23 Sep 2026 06:07:28 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Mendonça se manifesta sobre acusações de Moraes: 'Denunciação caluniosa e abuso de autoridade' - bbc.com",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBHaFc3S3cyVURyd0NrVGg3a0xvNHBKcWxQaWZrUmRvYVdlMEszdWttX256U0VKTnVLdWE0clJmZGJjRGVycy1fYzBWSG91T01lTS1jb3ZjdXItWG5ielpBa1pfd9IBaEFVX3lxTE95dVptYmNpektFbzV2NU9FcXFUREh5RVI4WFNMUEU3ckJtT01LejVILTYzMVN0ZjdDV1pieFlpMHpyeEhHTTF6VkZMYnB5MWlOZXppNHBJTXFxQjk3TG1pUENZakxRbDBw?oc=5",
+      "source": "bbc.com",
+      "published": "Tue, 22 Sep 2026 16:45:56 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Apelo da Arábia Saudita por ajuda militar contra houthis deixa Trump em saia-justa - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOYlU2cllVRDdZaGM4bzg5NWd1LTZHRWJROHZXUERnZjlFU2dqLUdXejhFbFktQVNiempEQTJiQWpGbWRpWmEwMzFTWEdSYXhfMmpLQzlPY3Z1eEF6QmxEQjhBVDh5M3hONmZ1alU3aF9Ea00xcnVROWZnT3g5NVYxajRPOWZ1YnF2SmhuRW9pY1ZZOEF5SHAzQ3BiOVdyZWJ0VG9LZzZkZXlrMWRRVFR6dDRYWE9HbGNwbWdUOEtaX2sxOGdGQTk1eVktWkc?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Wed, 23 Sep 2026 07:00:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Super El Niño: calor extremo pode causar 451 mil mortes - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNLVNLRmlpREI5c18zUHAxRmNPMDhxOVJxMXkyQV9mb3NmMmlET2dlYmNETEZCR2JGd1kyak1oUHRZMGFRS2I5OEl1aUxRWnExYktMYlpOZkVQaE1BUGlhTDlfbEFsdmJhU09jV2VCY1ZtR3BtajFySnR1OV95b1NuMlVFdlFUcVo5T0hkc0h3Qkg4Z2xEakFrQ0Vvbw?oc=5",
+      "source": "SBT News",
+      "published": "Wed, 23 Sep 2026 08:34:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Fachin precisa derrubar o sigilo do inquérito das fake news; seria o ‘fim do mundo’ para Moraes? - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOeURsYVlya2hYWUJaWFdWX05jM2RqVmlPWE9mdjAxdThEZlM2ekRyZTJKa1lLMVNhalpnNXQyaHFIY2xRWkZYaXlDMVJVYi1JWmJRNkk1amVLdklzUWoyVWNQVEhEZXZnUGg0OVhDaXJPb3A3aG1LUHVjXzFJUTBBeXdMbkZEYXl6ZVBqeGRMaVV1VkxlT1ZWNk9lTXR6bGhubjhVNlpOcmpBYkYzcEF0NGZCY08tOWFrTWVTU3l4bzVhQ2JSc0E5cDBfZS02Tks1RGpVeU95cDhNM0FlZk1jUl9FdWwzbkNjTmFj?oc=5",
+      "source": "Estadão",
+      "published": "Wed, 23 Sep 2026 08:37:20 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "VÍDEO: Após boicote da imprensa, Trump faz discurso inaudível por falta de microfone - G1",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQT05ySERYUGtLaEFQQkh4dVlLdVE3VkFJbWNzSTU3cVdKYVpLZ3ZpajBtb0x1VkZfUlctaGhfOTBaaER3emZmSUhCekt3ZGVGNngyVXlSYzR6eXBYOUxJcDdqdWdGQWJMY25DclgzRjM3bmJBN1BsbWp6ak1HaE83ZWdlcDBKbnF2OXJVZk9VR0NDbWQ0YUlQMlhOV1JNcldYRWtic3l6MUtVRlB6UTA1RWI0V21JSDh2azFsdHY5RlBEeFQ3Qy02YTdqY2tYRUXSAd4BQVVfeXFMTXhxRkN6bXd3SnFSRDFIWHJJM0JBME1JY2E0NXBrS3BDNEJJb0lJUmhvcjdyWHF0UEt1djBNbUlZQUQ3Q1ZJYmwwMExJTEg4RVQ3bHN4bkp2VHNPa0lQajEwaEN3Y0Jfc25tRlQxME5FLWRfdmphSWJUQUxkQ0dybWdZSlRXYkk0OGVDOVhMaU1ta2lybE91MU16RHFNdnRMMktreXhPeXIxV3l6ZFE4S2stdTBfa2hrUFFnUFV2N2ZZelhIZE5OYVRJRHBPYmEzWFlYcG9IbFV3dU9HUW9R?oc=5",
+      "source": "G1",
+      "published": "Tue, 22 Sep 2026 18:39:04 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Trump diz que ONU busca impor agenda de extrema-esquerda - Gazeta do Povo",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPekJYOU5NeU54YXYzUHpGbXRsSTlOb2tXUFJUMHVLTUpxS0hhRnpZR01lYm8wVW93LV9YeEpiRjlpemJ3QnhTT3VQd1FiVzB6MVpjVUUyWmdSazhsa0k2OWpRLWZiR0x5TjdTbmk5ZU5pUzQ1OGxQT1VDNUN2RkdGeUdtWWpZQQ?oc=5",
+      "source": "Gazeta do Povo",
+      "published": "Tue, 22 Sep 2026 15:31:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Pioneira da inteligência artificial faz apelo por supervisão independente para a tecnologia - O GLOBO",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNX1E4SlI4TnE1UEFnWHgzRWpncEQtT18yY0RGMjctU2hhZjdYVWlPSkRaVXV2cW5ZTXo2TWl2VWVpLXp0Si1OVGJlaFJQSWswd3lGTGtJWTlmSzB5NHpxY0RzbHFCc2JqTV9UWXVHZ2o1ZzlpbHNkS2JCZGwyMm0yakJSRzdaYTFVbEkzY2VBMVdqYVZtaXFGRDkwMlV3XzhETWJrOU01LU9WRFNwMFBnRkFNRWhJYi0yWkxQVmJtR3hJVGlEWEgxMzNxZzZROHp3ajZCbDBfRmZwUkFyT0J6SGpKX2JUdmpoTDR5UHJ4bTIwcUHSAYICQVVfeXFMUGN0M2VxbjB1YUVWd0toQ3lXVFQzWTBsVURPTkRNZ2VUSlZ6a2VyMDZYclRwTkY1LXl2UDhuNTh5M1IxS3Y3dUVnYkdKMDNSbTFOVFVGRlpBZDlNeUotemFuaFhsMWRyQXJaZk5DSF9NV2xqbGt0djl5MkRBTTNXcnplT0kzVGF4dGw1T2NRMmg1OUdiM3JZRzN2VmRiZTRSSXNIZG5HR1BMclZHLUwxSDVsTnZoN3FOX1RrOUh3VHJMUGd5WVFISkJEWllieEwyejI3cTRQQnl1ekh2bkxhVHE2NllwVkRNTldYS0xHejNjeUkyaWlFQmNTMGJwTjEwZUpn?oc=5",
+      "source": "O GLOBO",
+      "published": "Tue, 22 Sep 2026 22:11:18 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "IA na Indústria Alimentícia: Cases de Empresas Líderes - foodconnection.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOUmdibjRlWjdFcXBaWmRZQTAzb0RlRjRYc0xjS3cxY3lFMzFfZGtzOGVSMk9HNm9pYndJclN4VXM5NnZMdFl2V2xEUFpWbXY0emItTzB3VnFRNHNYZ0JoUFlNSW9feEM0ZkJYMHU1NWpXQV9obTJueXRRUmJUcWNTR2t5b1l5OXFHMi1aajR1YzBMWkVlenNwZTl3bUExbzNHT2ZN?oc=5",
+      "source": "foodconnection.com.br",
+      "published": "Wed, 23 Sep 2026 09:42:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Irã e inteligência artificial na agenda da Assembleia Geral da ONU - Folha PE",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQYnFnMDh6YVVjOF9SXzNzWHA4Vk5BSDRPc1ZIME1fUUg1Q3VrNUdRa3VILWlIMWdobEFqb3J4VjlaU09RVFphVkxrV3lqMUVSckdaVy02ekxVbEJ3VFZHTUgwRlM1ME14MHQ2N0YtblVweGhOeE9seFNLMjlWUEtsZHVCYTBXTWg1cjdKU1VLU3pwd2U5dzlNdXBKR2tES3VrLUlrRkJROWdlelhTS3pxM1R0T1hGUGhEU0pEejhCR0VpcHE4TTlpeWtR?oc=5",
+      "source": "Folha PE",
+      "published": "Wed, 23 Sep 2026 12:35:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Busca pelo monopólio da inteligência artificial - A Crítica",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNRmVHT3JVdkFETVFIWkdKU1d5UDNrdVVVNmUtWHhTOHZMbzJxQTE3cTRFZGxTaHFycUNRSHZETTN0SWJROFBHZW1nV0FGM0tDeTY1dVRCWUdpVkxXc0FVZFpLaklRc2NraHkwUkxpeWxYdmtxWWNCVnZodkpkeHZsalBFYWloZlVKT1FfczlHQndObzDSAZMBQVVfeXFMTUZlR09yVXZBRE1RSFpHSlNXeVAza3VVVTZlLVh4Uzh2TG8ycUExN3E0RWRsU2hxcnFDUUh2RE0zdEliUThQR2VtZ1dBRjNLQ3k2NXVUQllHaVZMV3NBVWRaS2pJUXNja2h5MFJMaXlsWHZrcVljQlZ2aHZKZHh2bGpQRWFpaGZVSk9RX3M5R0J3Tm8w?oc=5",
+      "source": "A Crítica",
+      "published": "Wed, 23 Sep 2026 11:54:11 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Deepfakes e fraudes financeiras: maior risco não está na tecnologia, mas na confiança - Gazeta do Povo",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPeGNXZFFmQ1VuY0c5YkFhaGh1c21tS2RuWHZyS0xJbTlHeG1jTFpicTVFX2tJSEQ4OTJ2MjlPRXNhb1VmVnZMNzVzQVUxVmVNV05Qc3htcXBjSXZadnRwMkllSVFoRWEyMWEwVWVDVG04cWpYOHhnT1BfTEZyWm5KVDI0eEFNeVl0ZVQzWUZmNkFQdFZOTkp3Q2pxUEFDbnU1TWdmX0FsTmd4aXp3NTRhVDJMeG1GcDlXMHhaMG1TYmxNem4xSHFFN29INmE5WWtCWXRkMmt2eWE?oc=5",
+      "source": "Gazeta do Povo",
+      "published": "Wed, 23 Sep 2026 09:00:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "OCDE eleva projeção para o PIB do Brasil em 2026 e rebaixa a de 2027 - infomoney.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZlQ0R1FDZlhOZ28wVzlUSW1CaVlFcTlYdjVYa3Nod1hNWGhKX1FnZThpWVVFZWJCVFJCbFhrS205OEhUZzBZVWhzS0xaUHd6LU1saFYxa3FKenlTVTRDUWpCUjY3TUZRNVF2V3NnR1MwZVpSQTYtUzhPeHpRQmhwaG1CSjFGdHY2TzdtbkxYdEI4NVlzdmM4UXZUUGtsVzdkLUQyc3lLWU5vaTTSAbABQVVfeXFMTnFJV3pFLWhCWGhfTElKM1Rsdkx0Q3dfQ2VrNDVUS01wUUNuRXVoOHY0QzhNWW1fSmRkR2QtVEJfTVlXN3JHQW1rM3JvNnctbmh3bWJTZ3dVbkQyd1h2YWE0UFhSeG9DTlpqVV9NS3AtOF9adGJuT3pnUFZLN3RtamwxaWVCcUxmSGJXOGp0SVk5bDdMWWV6OVJiZ3VOMUVOUkVWMV91eVhMdS1TQURGUjc?oc=5",
+      "source": "infomoney.com.br",
+      "published": "Wed, 23 Sep 2026 12:27:34 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Banco ABC Brasil promove encontro sobre economia e política brasileiras no Recife reunindo especialistas para discutir desenvolvimento de negócios na região - JC",
+      "url": "https://news.google.com/rss/articles/CBMiugJBVV95cUxPOTRWYlQ4ZFBHUDJtaXdwNUkzRVdRN3NWRE03YlhVc3V4NEZSUFY1VFNxbm91YmRCWkJLX2VqTUVEVVBGclZNSVVaZmQ1NGo4dHlfWG5nSWVZVlE2Szk0REViVm90alhtV1d4NzRHWGF2V1Z0czU3akQtS0t2c3kxWnlrdkJxNWVrMmYzRVZZeTZvYnQ1czU0dWdMSndnRzVGLXM5NEE0alpfYllFcUFjckRQdVJ0MHA0M3RFaGRBYWd6T1hPbkpoaFhZTDJPNWZTaHE0T0QzVHRFbmpESV8tR0szN2JRdnZ3aEd6Sl9WTnhNcF9kNGRSSUJwd3d5eE4xZWV2WVBScUZpTXRVRjF1S2F5bUdsdkVoOUwtY0pvZnkzRlE3aG9RQnhyZU1MS1dxbFZKTS0xOEFZZw?oc=5",
+      "source": "JC",
+      "published": "Wed, 23 Sep 2026 11:02:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Economia Azul: o Brasil diante de um oceano de oportunidades - Comex do Brasil",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNeWJiZHQxZXpmN1JSU1BIcVhkV2VQNTg1UDJfeFkwZ2lQV055NkZ4cUZDMDhTeU10RHk2OUJwZEZVZlhWY2FseElydFNHaWY0YlhITTJabDh0dnFhcFR1TlNlRTdQc3Q1VHhEQXV3MVJoUmpVT3JndGpTdEgtZlEwOWNKQ3NtUGM5RHlvWWRSNA?oc=5",
+      "source": "Comex do Brasil",
+      "published": "Wed, 23 Sep 2026 11:20:36 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Economia europeia tem se mostrado resiliente em meio a choque energético, dizem pesquisas - Money Times",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNcTN1OG9CMG0ybWdnREROMkR0OW1xX3pCc3cwT0JGNGgydHlmY3QyNjE0TXE2V2JQQmc1MmhRZWkzU3poUDAzQjJnOHJEaDF6UzNCZElDSjNsZTZNZThtcm9LM2NzeUFMdFVyaXJldXl0UmhQcVVrb1lIOHFVVTVxUkpIRXJBY3U1bjlTR1JKUGRlbnhiak1SMWI0NVE5dmNpVUVtWEhHaFYwYmhaVW93Z2JPazFuOV9zNFdIT2d3dThMdw?oc=5",
+      "source": "Money Times",
+      "published": "Wed, 23 Sep 2026 12:01:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Notícias Ao Vivo do Brasil e do Mundo - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNaUF1WVdZSzRmZExPbGJ4N1Z2eUFWbHlFRS13MThnNkFjMzU2azJYWHU1aXd3Ny1ubGw3UVBwQ3A5NXdoYXZYb2tpNjRSekphQUxLNzBYZVZBQWNNeVZQTFI4SVR1Xy1KejZZbi16TkFqTEJSLXBGdVVqRVIwOVUzM0pXS1FjTHJRa0VuZ21ldks0ODBUOWowSjg5ci1IRDdtYWNFNjFNLTVOTVFTTlE?oc=5",
+      "source": "CNN Brasil",
+      "published": "Wed, 23 Sep 2026 10:00:10 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Paraguai, Chile, Uruguai e Peru têm, mas o Brasil não. Por que o grau de investimento saiu da agenda? - NeoFeed",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQRlM0RkRBa2RZTXRTME4xWEQ0NWFUQ2N2bFN4eW5ueWZXWGtZVTJLVlZaQmpuTkJwQUVHQnlMQ2xSLUhYYW9OTnJibFJwdktRMW1lODMwVUdtMkJoek5sSS1EbC13bDdQOGhzVWVnZ3psMTZzZFViZFNGU05yQUJxSndQMzhoUTRRVm5mNzFDWHZPaDVGRzUtTU15OFBjRFBHMUg5Y2VaNGdQaFhrYUpnZUxWZS10c1FIUVdSS2dXaDJlMnFpd010OA?oc=5",
+      "source": "NeoFeed",
+      "published": "Wed, 23 Sep 2026 10:58:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Sem Lula em Goiás, ministro da Educação cumpre agenda em Goiânia e cita R$ 1,1 bilhão em investimentos - ADUFG",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOOFNFSkJsTldXQ2R6U01ra1I1YVVzZFNTZUlJUDVyOXNCTV9laTdwZ24zRWJveG9QdmdJTjFFOG5wZWNtU1ByNmc2QkFTOVR5NE5VbVM4dk9nenFrV2k2WGZRTjlJd0dmSGJtSFpIUktNQ0dLaVJEU3dHZm9wUWJIQlhRdWRrT1U2c3lLTWhtWWgwdVdVNHBkWjBFUHAtWlpuNVdOX1dISTQtdmZFME95b1h2eFpSTlFEbXVQZEduTWxDVTQzMHkxSG9mZnFNaW9zaFE?oc=5",
+      "source": "ADUFG",
+      "published": "Wed, 23 Sep 2026 11:45:45 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Brasil divulga agenda antes de amistoso com a Austrália; confira os horários - MundoBA",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOTVl0Smx4SGY0MUlCamN5c2R2Qy1CVzNDUWUwN2VENWVpMUdDU3JhdHlWRjA4Y3JvMU1vRnpHdUlIZnBlQXVEWWNnbUJjUm1kWFdibFduZHRkZkhMSGdyLTBKVTZrUm9vaHdYY2xjdlhOek0wMllHSjJwYXJOcXVzdEdZS3czcWw0MHgzWWNTd0tZd2pPbjRzeVEycEdvWWw4aXhGd2JCSnJteEE?oc=5",
+      "source": "MundoBA",
+      "published": "Wed, 23 Sep 2026 10:55:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Países recorrem a agências para obter resultados - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPYlp4bDdlSmI1WGY5SEJLSUJZclNYV2lId1RjRDhORU9OZmpLT3IxaHhTanBTd002NldmWmltWFFBcnB2Q3NueWRMaFg2MklKU21CQ1B0cW9mUDI1UFBlajNhVTBORnplU1cyWllPQnU2d2RydHB2TU4wbF8zQU1HUWV0bHQxSHA1RG1uaW0ybGNHWUR4X05aVW1JLUJHeDBIeE5xTU00eDJ3UUVjWHpFVWI2RF9Dd9IBtgFBVV95cUxPYlp4bDdlSmI1WGY5SEJLSUJZclNYV2lId1RjRDhORU9OZmpLT3IxaHhTanBTd002NldmWmltWFFBcnB2Q3NueWRMaFg2MklKU21CQ1B0cW9mUDI1UFBlajNhVTBORnplU1cyWllPQnU2d2RydHB2TU4wbF8zQU1HUWV0bHQxSHA1RG1uaW0ybGNHWUR4X05aVW1JLUJHeDBIeE5xTU00eDJ3UUVjWHpFVWI2RF9Ddw?oc=5",
+      "source": "Valor Econômico",
+      "published": "Wed, 23 Sep 2026 08:00:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Ibovespa hoje: nova pesquisa AtlasIntel coloca eleições de volta no radar - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPTzVkUzlJV0hGMngzbzhzRWtUbzdoUFU0Yi1ScVllb24xZ2dLNHZmWjhNeW1EMXNnSmNOdXZuR3cxb29yblhTelc1dEdoZ3dCNXNEWlUzRVRUMGdLQnJuOWZ0b25GRlNsYUcyMXBQbTc0R1ZsbGd3VHN0MlBSS3RFTUFVY29yTUY3OXZNcVFiY2phcGFGbE90ZThfYWxZclZsOHJmNFUwdG14MzZKakxsMkFQUVJ2OG81X1E5T2tsTE1jMHBVRWgwOVRkZzhKTFM00gHQAUFVX3lxTE9PNWRTOUlXSEYyeDNvOHNFa1RvN2hQVTRiLVJxWWVvbjFnZ0s0dmZaOE15bUQxc2dKY051dm5HdzFvb3JuWFN6VzV0R2hnd0I1c0RaVTNFVFQwZ0tCcm45ZnRvbkZGU2xhRzIxcFBtNzRHVmxsZ3dUc3QyUFJLdEVNQVVjb3JNRjc5dk1xUWJjamFwYUZsT3RlOF9hbFlyVmw4cmY0VTB0bXgzNkpqTGwyQVBRUnY4bzVfUTlPa2xMTWMwcFVFaDA5VGRnOEpMUzQ?oc=5",
+      "source": "Estadão",
+      "published": "Wed, 23 Sep 2026 07:30:00 GMT"
+    }
+  ],
+  "generated_at": "2026-09-23T10:07:44.874262-03:00"
+}
