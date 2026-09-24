@@ -59,14 +59,25 @@ if not counter_file.exists():
         counter_file.write_text(json_mod.dumps(json_content, ensure_ascii=False, indent=2))
         print("  ✓ episode-counter.json criado")
 
-# 3. Run the mixer to generate or validate audio
-print("\n[3/6] Executando mixer D5N...")
+# 3. Copiar manifests para audio_dir e executar mixer
+print("\n[3/6] Preparando manifestos e executando mixer D5N...")
+manifests_source = REPO / "manifests" / "d5n" / TODAY
+if manifests_source.exists():
+    print(f"  ▶ Copiando manifests de {manifests_source} para {audio_dir}")
+    import shutil as shutil_mod
+    shutil_mod.copytree(manifests_source, audio_dir, dirs_exist_ok=True)
+    print(f"  ✓ {len(list(manifests_source.glob('*.txt')))} manifests copiados")
+else:
+    print(f"  ⚠ Diretório de manifests não encontrado: {manifests_source}")
+    print(f"     O mixer precisa de arquivos .txt em {audio_dir}")
+
+print("  ▶ Executando mixer D5N...")
 try:
     result = subprocess.run(
         ["python3", "-B", "scripts/drop5news-mixer-v10.py",
          "--audio-dir", str(audio_dir),
          "--editorial-date", TODAY],
-        capture_output=True, text=True, cwd=REPO, timeout=60
+        capture_output=True, text=True, cwd=REPO, timeout=300
     )
     if result.returncode == 0:
         print(f"  ✓ Mixer executado com sucesso")

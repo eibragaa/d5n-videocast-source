@@ -3,7 +3,7 @@
   "programa": "Drop Five News",
   "tts_provider": "edge-tts-local",
   "header_voice": "pt-BR-AntonioNeural",
-  "editorial_date": "2026-09-11",
+  "editorial_date": "2026-09-24",
   "sections": [
     "coldopen",
     "intro",
@@ -15,10 +15,10 @@
     "ofertas",
     "frase",
     "recomendacoes",
+    "historia",
     "outro"
   ],
   "content_voices": [
-    "pt-BR-ThalitaMultilingualNeural",
     "pt-BR-FranciscaNeural"
   ],
   "section_headers": {
@@ -28,21 +28,23 @@
     "economia": "economia_header.mp3",
     "ofertas": "ofertas_header.mp3",
     "frase": "frase_header.mp3",
-    "recomendacoes": "recomendacoes_header.mp3"
+    "recomendacoes": "recomendacoes_header.mp3",
+    "historia": "historia_header.mp3"
   },
-  "presentation_mode": "sexta-dual-dinamica",
+  "presentation_mode": "solo-francisca",
   "section_voice_map": {
-    "coldopen": "pt-BR-ThalitaMultilingualNeural",
+    "coldopen": "pt-BR-FranciscaNeural",
     "intro": "pt-BR-FranciscaNeural",
-    "mundo": "pt-BR-ThalitaMultilingualNeural",
+    "mundo": "pt-BR-FranciscaNeural",
     "brasil": "pt-BR-FranciscaNeural",
-    "tecnologia": "pt-BR-ThalitaMultilingualNeural",
+    "tecnologia": "pt-BR-FranciscaNeural",
     "economia": "pt-BR-FranciscaNeural",
-    "interacao": "pt-BR-ThalitaMultilingualNeural",
+    "interacao": "pt-BR-FranciscaNeural",
     "ofertas": "pt-BR-FranciscaNeural",
-    "frase": "pt-BR-ThalitaMultilingualNeural",
+    "frase": "pt-BR-FranciscaNeural",
     "recomendacoes": "pt-BR-FranciscaNeural",
-    "outro": "pt-BR-ThalitaMultilingualNeural"
+    "historia": "pt-BR-FranciscaNeural",
+    "outro": "pt-BR-FranciscaNeural"
   },
   "loudness_target_lufs": -16,
   "true_peak_target_dbtp": -1.5,
@@ -50,52 +52,57 @@
     {
       "id": "intro",
       "start": 0.0,
-      "end": 43.382
+      "end": 21.006
     },
     {
       "id": "mundo",
-      "start": 43.382,
-      "end": 198.806
+      "start": 21.006,
+      "end": 68.734
     },
     {
       "id": "brasil",
-      "start": 198.806,
-      "end": 310.59
+      "start": 68.734,
+      "end": 134.798
     },
     {
       "id": "tecnologia",
-      "start": 310.59,
-      "end": 382.574
+      "start": 134.798,
+      "end": 193.134
     },
     {
       "id": "economia",
-      "start": 382.574,
-      "end": 479.07
+      "start": 193.134,
+      "end": 251.182
     },
     {
       "id": "interacao",
-      "start": 479.07,
-      "end": 500.148
+      "start": 251.182,
+      "end": 277.036
     },
     {
       "id": "ofertas",
-      "start": 500.148,
-      "end": 521.836
+      "start": 277.036,
+      "end": 339.476
     },
     {
       "id": "frase",
-      "start": 521.836,
-      "end": 545.78
+      "start": 339.476,
+      "end": 363.372
     },
     {
       "id": "recomendacoes",
-      "start": 545.78,
-      "end": 584.156
+      "start": 363.372,
+      "end": 401.596
+    },
+    {
+      "id": "historia",
+      "start": 401.596,
+      "end": 460.604
     },
     {
       "id": "outro",
-      "start": 584.156,
-      "end": 690.876
+      "start": 460.604,
+      "end": 520.828
     }
   ],
   "audio_beds": {
@@ -139,10 +146,14 @@
       "file": "Cenario-global.wav",
       "gain_db": -20.0
     },
+    "historia": {
+      "file": "file-9723d355.wav",
+      "gain_db": -26.0
+    },
     "outro": {
       "file": "Vinheta2.wav",
       "gain_db": -26.0
     }
   },
-  "output": "audio/d5n-ep068-2026-09-11.mp3"
+  "output": "/tmp/d5n_mixado_2026-09-24.mp3"
 }

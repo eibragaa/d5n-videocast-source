@@ -66,4 +66,37 @@ manifest_dir.mkdir(parents=True, exist_ok=True)
     encoding="utf-8"
 )
 
+
+# Seções adicionais (faltantes no gerador original)
+(manifest_dir / "frase.txt").write_text(
+    f"Quinta-feira, {TODAY}. A tecnologia continua a transformar a maneira como vivemos e trabalhamos. "
+    f"Com os avanços em inteligência artificial generativa, as oportunidades de inovação crescem sem parar.",
+    encoding="utf-8"
+)
+
+(manifest_dir / "ofertas.txt").write_text(
+    f"Nesta quinta-feira, {TODAY}, o mercado oferece oportunidades em setores como telecomunicações, "
+    f"energia renovável e infraestrutura de dados. Empresas estão em expansão e buscando talentos qualificados.",
+    encoding="utf-8"
+)
+
+(manifest_dir / "interacao.txt").write_text(
+    "E aí, você acompanhou as notícias da manhã? Deixe seu comentário aqui em baixo e conte o que você achou "
+    "das últimas informações sobre o mercado e a economia. Sua opinião importa!",
+    encoding="utf-8"
+)
+
+(manifest_dir / "historia.txt").write_text(
+    "Na história dos negócios, grandes empresas nasceram de ideias simples e persistência. "
+    "Hoje, mais do que nunca, a inovação e a criatividade são os motores do crescimento sustentável.",
+    encoding="utf-8"
+)
+
+(manifest_dir / "recomendacoes.txt").write_text(
+    "Para começar o dia bem informado, recomendamos acompanhar as notícias do G1, "
+    "as análises do Valor Econômico e os boletins do Banco Central. "
+    "Informação de qualidade é a base para decisões inteligentes.",
+    encoding="utf-8"
+)
+
 print(f"Manifests D5N criados com sucesso em: {manifest_dir}")
