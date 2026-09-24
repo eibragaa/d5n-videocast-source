@@ -57,52 +57,52 @@
     {
       "id": "mundo",
       "start": 22.422,
-      "end": 70.15
+      "end": 59.95
     },
     {
       "id": "brasil",
-      "start": 70.15,
-      "end": 134.87
+      "start": 59.95,
+      "end": 118.142
     },
     {
       "id": "tecnologia",
-      "start": 134.87,
-      "end": 193.59
+      "start": 118.142,
+      "end": 164.742
     },
     {
       "id": "economia",
-      "start": 193.59,
-      "end": 248.998
+      "start": 164.742,
+      "end": 209.086
     },
     {
       "id": "interacao",
-      "start": 248.998,
-      "end": 275.98
+      "start": 209.086,
+      "end": 236.068
     },
     {
       "id": "ofertas",
-      "start": 275.98,
-      "end": 319.724
+      "start": 236.068,
+      "end": 279.812
     },
     {
       "id": "frase",
-      "start": 319.724,
-      "end": 345.78
+      "start": 279.812,
+      "end": 305.868
     },
     {
       "id": "recomendacoes",
-      "start": 345.78,
-      "end": 389.956
+      "start": 305.868,
+      "end": 350.044
     },
     {
       "id": "historia",
-      "start": 389.956,
-      "end": 441.836
+      "start": 350.044,
+      "end": 401.924
     },
     {
       "id": "outro",
-      "start": 441.836,
-      "end": 536.788
+      "start": 401.924,
+      "end": 496.876
     }
   ],
   "audio_beds": {
@@ -155,5 +155,5 @@
       "gain_db": -26.0
     }
   },
-  "output": "/tmp/d5n_mixado_v10.mp3"
+  "output": "/tmp/d5n_mixado_2026-09-24.mp3"
 }
