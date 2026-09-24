@@ -1,0 +1,203 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-09-24",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-FranciscaNeural",
+  "output": "/root/repositorio/d5n-videocast-source/manha-conectada/audio/manha-conectada-2026-09-24.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/manha-conectada/roteiros/source-manha-2026-09-24.md",
+  "sha256": "b7716c8719a0198b1cbdccfba7cf1d2f3dad0f466beb227a73106937273b733c",
+  "text_gate": {
+    "words": 880,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 331.937959,
+    "size": 7967181,
+    "bit_rate": 192016,
+    "lufs": -17.38,
+    "true_peak_dbtp": -1.74,
+    "lra": 2.1
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Votos nulos, brancos e abstenções devem ser recorde este ano, aposta autor de livro sobre eleições no Brasil: 'Tem algo diferente desta vez' - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1XMzRRNEJkd1ZqRlgxMXc3VGdveUo5LWluNmUxYi1zSFhkbHRtZGRpd2lIVGszeUFhRHpFcVhqaWpZXzF0T1drdFMxZmQyOTMyVFdaZEVLS3EwVjRqT3E0VzBGQdIBaEFVX3lxTFBzR2J1NmItZzNEZFoyZm9NcVN5RHdxd0hMd095bXlFTTVlaUxLRTJjQnVTT3dUVGFweFdhT0F3OVVlZGxPeDdUWWtjLV9oV2ZvTlVOR2gzaVZnRTNVNUhqbVk1VG9BTDM4?oc=5",
+      "source": "BBC",
+      "published": "Thu, 24 Sep 2026 08:17:50 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Notícias sobre edital de 22 de setembro de 2026 - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMnJBV3gyakFCZTFwd1hhLWttdVJkakRtem1ocEpVMFdySE1QaHlSdS1BOHM3cWJoNDhyTjVjX0hDakFjeE5TSkNGSktEUHpRb2ZyZE5RdzJQZGsyTmtQWGxjN2lKeUFReTBVNWpmbXJkV25yRGxtNzBqVE5mTmJFc0IyTWttRVN50gGOAUFVX3lxTE9oRmp0b1FuVTFxWllLaGIzcW02T1FSbHBEMmJ4V0cybGVCY01Hck1BbjhsNDRHQkVqUENBYWlhLUtXbDBiRzNiUTVILUJMeUFTUF9YMXdMSEpSczlQNTBRNnZuYngwRHJxeU5HZEVmWnhWdklhR0hNWEViMktCTkt3dzFkZUJPLUlkaGJDamc?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Thu, 24 Sep 2026 08:38:09 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "El Niño pode provocar 450 mil mortes no mundo até fevereiro de 2027; Brasil está entre os países mais ameaçados - G1",
+      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQLWVZMU53UFhabGpsRGgzTmNoQ3oyUjhHb1FISlhsa2k1eVVhc1hrdEpQakwySkJSQ0FQdGJJd3hRLU5PWEp3TXFfVzZ4SVphSlpUa2UzTXFobXl2ZW1hUVZjOVh1dUFfYmhDaWUzVFZCZEdMME5iMzhQeFNUdkhSRHRJZzdCMnZ5Y2twRTdGTmZ3cmRBdU53NU9Cd3ZPSUYwUDlTVVdfQnMtcWROMlhNMUNWSzM0azRuVW5KRVFVU1ZkdVgzOEtGVHpldHU1Ynk4a3h2YlJqNWMyeEJrQk5HVXFkLVdfTTJWMnBmZ3AwV2UtR0lpdkxkY3pxMVpEQ2VNN3fSAZACQVVfeXFMUGxCVTRDWjg1dmJLTGhScTg3Y0tVSUQ1M0JzcjIteGg5S080alpJbE5ZSnlRNzVzR19WWGg1cWdiSDV0aU81cDl6Si1QN2VPOWlEQzFUcmY2ZUt3c2tTLTZSemY0UXVlQm53ZHdPYUJVUHBDS2kyMEZ6aUVvVW5NalRuRDZSQzAtV2xJTzV1RHF5bndpOXZGWlM1TUk4SkZsaVRWVTgwZWt1aTBBcHZCM2J1VnlndlhoOE1CaVVXaWxqNVRYa1c1STlTRXJzZVF6dHJRMTU2VjZ1NFFkZTBqcmJzMDZfTVZzSVFIUVRIaVVMdTVzNVc0ZjR1eF9MX1QzTnNZQnRQYWw3QlN5MUdYZ0E?oc=5",
+      "source": "G1",
+      "published": "Thu, 24 Sep 2026 00:13:56 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Lula deve publicar MP para acabar com as bets - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQVkNqUnBpT2thS2U1REd1WTRrMDJzUi1YeVd4bnNZdjNaeHVMUHBtbjdETW16b0h0amxiSjJsSGdSQ2p1Z21PWFlqeUdzMWJ3RjZiQUJyUVJIUjNvOFl5VmZKOG9ZeVpPWmVjY0pleTlYUjBOelpzNWhEamthSHo0Ml95MmhCY0ZMcFZlajZEbEpQUFR5X3hKU05FNkk?oc=5",
+      "source": "SBT News",
+      "published": "Wed, 23 Sep 2026 23:31:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Ameaça de Trump às exportações de diesel alarma mercado no Brasil - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQanRjZzlKejBQTnBWZVRVLUN2MzR3R3VvLU5xb1hGRzVId3BpYWlOa3RaWVFVTEl4SURfanlxWl9ZbTJ5by1Uc1BhdHRia1pGLXpnNnlfalBHMGl2UzRzT0RtTFFVUnJzcUlDWVFKNUtaX0UtYk5QMmpuTUVmZ2J1Q0RlX0FaRGszZktjUTg3d2VkQXR3c0FIcmFBLTdickh2S211SktSbFh3ZmN1SVFuSjdDWjBLSmFB?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Wed, 23 Sep 2026 20:18:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Justiça manda Trump liberar acesso de jornais à Casa Branca - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQXzhLanlmWFA5T0x0TlFmSU1lY1dtQWpkVVdBRERsR2pPcURDZ1kxbXRIc2lrbTI2VFR6QzU4UmhJZXE3cExKZjR2WGFuVDNDbjZwYWh5QWppWnYwYUFCeExDc0R0bEdISHIzRmtDdHh0T2hRbXo2ZkpuaFRfZ3JfNnlIZUlmaEJWUjljU0NHazFVa1FSY1N5MjIwZFhCN0g5ZEE?oc=5",
+      "source": "SBT News",
+      "published": "Thu, 24 Sep 2026 11:24:41 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "EUA: juiz manda Casa Branca restaurar acesso de veículos de mídia banidos por Trump - Midiamax",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNek5PWUxmSmNINzZMSHdzb1g2WERjcHFHX3hqWG5udVZJMW5Ualp0a2JtT3pvQUhGa05FU1lrZEpLQ2FoejM0d3l3eHpHNno4MTUxX2dnUHBZWXQ3WnJrNWhuN3BTR09UTmVJTUl3NVNpTDh6VUFOdG5VUmlFMENWclFQdmc2Qi1lcFNCdFRqeDBmb0lVY2ZacGZDU2h4MTNGX3FqRnJaalRXTDJt?oc=5",
+      "source": "Midiamax",
+      "published": "Thu, 24 Sep 2026 10:03:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Governo Trump é a fonte anônima de site banido por usar fonte anônima, diz jornal - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPT3NSUzBvZFZnMkpoc1VzT21fbEJhZFRBLXkteXBwbnhET2VjdFpMaGxrMERqRG85VnRkQmFidFpiUTZJZ0YyeEIyekhQdjZva3dvQ1lGb2hEc2tmNnpvamlPQVZSMThzUGN1UkloekRKcGp5ZldhQ0VETF81Z1lOVlVUU2k5UnZHT0p4ZFVFa3JkOWVRUnlrdWhzd2RkbENfMVNRTndPbWJKV0ZnSjB5YzZ1cHZOR0QwU3JnamMyYWxoZjBTMUFtbUFB?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Thu, 24 Sep 2026 00:38:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Europa pode ganhar país menor do que o Vaticano - G1",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxONXVRdG1FOG9lRHdUZU45SmN2R0tDSkNEVEI5NVB5aXB1UktsX0hCSkxWSk9PRjFNcjV2UmE4VkZENDY2cldHN19DdlJnSGdCclZKLWg5eUwtLTNuc3NvTEdIWWxLVkc1UC1lRlFaTzFmNjhQUG5nYzl3TVNuZ2hBa0RZZDMwZzZQcUxvbzNHaGMtdTNFOGtaczR1YkhQeEZw0gGvAUFVX3lxTE1hNjZBbHp6WHVqcTZ2aW9oOThpN1RVZFB5SW94S2tlOG05SVVQam02WmlLWVFSRm9NNVFab2FlSHZCdUVFaGpkX0w2OUpPTTJrbXBpNkF0OGZCVnBIZTVwd01wWFRoMkU4NENyWHBTNHdsNDMzTUF1MHBoX3FQSEhlT3JNOFFMQXVZUEZRNnNhMl9QWDlBNHllSTlMM09wQmlvd0REOGVsY0hTcmlYejA?oc=5",
+      "source": "G1",
+      "published": "Thu, 24 Sep 2026 05:00:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Principais notícias do mundo na noite de hoje (23) - Tribuna do Sertão",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNRFVsNzZVbXowN1RsMGdxMS1ELXFIN3ZUajBlNHhzQlJfdnhCMXpqUDZiMW82OW0yZmpNMC03bkw3RWtvVFAyR1RzOVZzQnh0UllNeXk5NkJJbkVseTQ3SU01UmFBZkY4VUNwRU5VamVja3hxWGYyZXdXQ3lGVUktc3pDTzNXN2wwWmUtcHRQQVRLZ1ZUSEY3MFlTQXVlM2VIX2xFbExvT2RvOHM?oc=5",
+      "source": "Tribuna do Sertão",
+      "published": "Wed, 23 Sep 2026 23:31:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Festival em SP une arte, tecnologia e inteligência artificial - Notícias - Canção Nova",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPUFJpMEh4UmFPajFJalA3NnFMRHdRMm1tWnZBLTF2YTRFTTVwaVppbWd0U3kwYVVVNERkUGpKVVU1WW1GSmNLNjg1U2FFREhyRUZIR1J4b2tudFRzNml0VUdULTFidndxZy1rNzVYVElSbXZWQkNlRG9OZncyMG9fNDNVM2dIQjNnbWc5dWRIZXdUemIxVVU0QXRyYXMzRjRYbmc?oc=5",
+      "source": "Notícias - Canção Nova",
+      "published": "Thu, 24 Sep 2026 12:24:08 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Setembro Amarelo: Inteligência artificial prometeu aliviar o trabalho. Por que ela também pode estar - IT Forum",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5aLXBraWplWFRJejJTQ0VfNWt5a3R2d1B2clhIRkxleFE1SlB1UTNFdGo2eHdSbGs0YmFFN1JQV041Q1hUQXpzSVRIVE9vQXhmUm5ZTVhBWUp4RFZ5c01rT21hM1ZZelhoMUZtSGJfeElyenhUbmk5ZdIBfkFVX3lxTFBxVDE2MWNXSjJUWjVyRXR1VDVHUGVBOEZ3WHFlbEJPOXM1Nm9iQkpqYk5MUnZHVS14amVvd1lIX25uZExRMVVMUXJyemw3SDJ1TDRlRjZrRnhiOG5sMnhOUV9zaTdMcWNhcTVHZ2lqeVpPYzJqZnJ0eks0MkxfUQ?oc=5",
+      "source": "IT Forum",
+      "published": "Thu, 24 Sep 2026 12:23:49 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Como a Igreja enxerga a Inteligência Artificial (IA) e as novas tecnologias? - Portal A12",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOYUtrelJldExLb0lhdTFkM0lQNXd5LV81Z0NydFRrYlp5SUNkRzNiMGF0YjVfMXBOeGN0bmhQamphNFI2cDBva1VUaVIxSVBfSDVvQXA4QVo0NWgxcTdjWjlacldoa19aUzRoc1RPaGJJZF9JLXFVekhEbTZGUGRPNU5KTlQtLXFtN2I0MHRqaWV4VHRVdHB6aFFzOUx4TE5RUV9LT1NSMzhpdTdNSmJPTWVsR2YtOVk?oc=5",
+      "source": "Portal A12",
+      "published": "Thu, 24 Sep 2026 12:26:49 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Falconi investe R$ 100 mi em tecnologia e IA e vê vendas de soluções avançarem 90% em 2026 - Época Negócios",
+      "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxOSVlnRXVlNmlkbGFSZV9Yb0lwUUJMUjNkMFl3eXVoRjJTZEdaZElSa0xPNzR2S1o0ajl1cEwtSTdGWkkzQXZjSG9pLVBkVU1QNVNMZnVTaldMeHhDTlJ5ZFdDenlfTlBMTUY1ZG1WZFlEbjVPcmp6TTJQRVo0TEpkNGFxRUF0YW1LeldLem9NRG9tVzROOXdnb3dPakxQVXYzZDFOWnJDZmJKOXhla296S2ljbjEwUTlfdHp6YUV4amxzSmRiYkxsTGdmdWJDdXFEblhUYnNuTkhHd1FaTWJDamRxTWtiMFhCMTRkTU1KY1lIVWdGQnlGaGVHOGo2TDJTWi05RG8wR2l3MTFId1VBWXZ5QmNfQdIBpAJBVV95cUxPandGT2VsM256WTZRS1ZMNzcxcWVXVUxEYXBpZEg1cGY4enZ4bFIwaHFsZktCTXMwT1hBOEFKelBaV0oyVE5xSHpUTXQtSTlzWHZGdUxsQk1UYnhOWmEwS055cmNucFJiYk9Xa292Qk1SWnFZcW1UMTRpV1A1S19UVms5VWROTjRfMTltNWkxNzZiM0p5dWRKSU1vWUo4RFdGZGdncVB1eU9YUGtsSERROGlDOTlXeVQ1ZS1COWtjUHpqNHZRRVc0WnRyVTVCSmE4LVZkanp6blQ3XzUwSDBtVFRNN1l5VW9yYUUyNFo0cndwZ2Q1aTkwSXJZdnJJb19sNmtxNlpWUmtzaXBONzlmVFNzVmJ6T3ZnS05UTnBxSE5mSGZt?oc=5",
+      "source": "Época Negócios",
+      "published": "Thu, 24 Sep 2026 09:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Funcern apoia pesquisa do IFG que utiliza nanotecnologia e inteligência artificial em busca de soluções sustentáveis - FUNCERN",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQcUdjN0hjc05TWVRDYk1jYTZjaml1bXI3Q1ZzczdZbFpnUU9YS1l4TElrTmc3aGsxbHJKN3h6MlN6dV9IQ3BhNDlRODJJWDV1WnBzMGpxbmp0WlVBUzhPakdmRklZRmJRUzdxWGpZSTZEQzdzZm9CdWZKSU1yUlNZMjNqcTJGV3JjZTZwdHlpMWpJVzFabnFVMnloQkF3RHBQeERWaXRhaDdSeGl5c3c4WEgyV2NpVnRmeHcyZlh6M1JUU1lNdE9GdVJSLU5xdXdVeVQ3Yl9WS0tOSEJPWHc?oc=5",
+      "source": "FUNCERN",
+      "published": "Thu, 24 Sep 2026 12:35:25 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Confiança do consumidor no Brasil cai para menor nível em quase 4 anos, diz FGV - 24/09/2026 - Economia - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPTUk5U291OUNVMkJQekhOTzlYMVlnVmJYcEVmVXN3V1p5VFU0OHJNdUY2VVdIbGdvUnVzeU5YZjd2TlVqX2hkdWtWbWgtc1hjSlJIdmkyYWxnMmpHS1c5RDdSMHFaaGJMOFFDaV9QbFFVUE1yN092VmdEMDZMWk9lcVZvbFFuUXRDcjB3YWhKVFlFc1pqMkxiQUVKZk5JUzIyQjNyUDQ1cE9tNkw2Yk1XRmhOcDV1Y0ZFcHB6UHQzSm8wU25qQUxMWERB?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Thu, 24 Sep 2026 12:14:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "China reduz compras de soja do Brasil antes de encontro entre Trump e Xi - InvestNews",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQaUZwVEdzUm9uUWJ1eWJiV1R3QVpOWWZWYUt0TGZHTWFtNXg2aGZKcWM4WGNNQ2sxcks2bi1CbUpuMGNCbGtHbjN0djFTR1hXdGgtVmtScFppUG5jYnZPYkR2N1JEbEZHeURqQ0FUZlQ4WVJEcWtIU1VvQ0txdnFDbzdkLUN6UWNLZTdSUTVsdVpOa0J3NkhHNENmYzNnaDctYkpER1I5N01jeGln0gGyAUFVX3lxTE4yRmI3b2tqeTRLSjR3WXBjMW95NlV5OHlZY0RwWWN4cFN3QTV6bm9OZ1BuNzhfVEV5Sk1ON1NPN1J2TGpoakVRU3NEdFh2Tmhxc3pOVThyRmNCU1UzWUo1LXlUcEhGem51eF80T2MxM3VKcWJWZEg5NDFKb3B6QXpzTjF6MHpxaU5vLVNfb3BKX2xpRmhXZkh6NVhBbDhQckpTWFhHSmZRVVRtenZuaktwSFE?oc=5",
+      "source": "InvestNews",
+      "published": "Thu, 24 Sep 2026 11:59:54 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "OCDE cita ‘demanda interna resiliente’ e eleva previsão do PIB brasileiro em 2026 - G1",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQSVNTMm9TcHFVQTQ0TlBfbS1ueWlGVkhsSUozVVpuWFQ1cTV2dDdpdVUxVkxyTHBGNkZDQUdHak5hOWlHOU1SQTI5QTB0NFplVFV0X21lYW5uUHFwNXpnRHliOW9sZ2FJbkxXRWJhWm9SZVptMXBaeDF6TkdyX3Z3VkdaNnBUNE1lRHl6WWM3REVNRUdZVnpXc1lVamVhVDd0ZXdhMms0eW9JcjdOSF9hWTUwS2xhVVFiWVNBT0g3ME1meHVXejR6M0Y0Q1N1dnUyWmZz0gHiAUFVX3lxTE9Tb0lEZE5tMG9mUVI0ZzNCMklRUW5MOXRKdEp4b0V1S3NLa2F1a0g3RGpLTzFJUmVwZ3B5d2tyTTZDdjhqMm8xaHRoUUJLMmNzVW4yUEZFQXQzeVZ4NW9lbHlSYUszWEpjMURSREZWd3FQZ2FTVERmOXFGakJxMmRSa1dudzNPRkNWNFFXUHM0TkN2aTRJM0tDNnlzQlpDTzlXWnN4c0QyYzVnRTh0TTFEaDY4YTJBSU9NNlg2cHNwOWEtalhIMmN1VUNxdjkwbjhicGJGSzdNZTZGWnUySEc5RXc?oc=5",
+      "source": "G1",
+      "published": "Wed, 23 Sep 2026 15:13:49 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Embrapa, Porto Digital e ITA: o que faz uma política de desenvolvimento dar certo no Brasil - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQMHhVQXNhNFFlN2dUYmk5bjZ6ejYyUnVHX3R3cXVUaVo2dHNJZ3ptel90ZThRWlAxcGlFYnVBX1hlTHBCS0RGT09mNmNIczZIakJxaG1CamZJT0stRDBGcW9DYnluNEVfNlYwc1lhTmJsS25jZG4wSGRucDltT1Qzb2J0YWs5ZXdfWjNDS2dkSkFaNEVfNEhCeGQ5UDFEVi02ZmpZMXpic0NucXJJXzJZY2VhYmU4UkYwbVdqYnZVTFhYUWZP0gHKAUFVX3lxTE1nZl9xQndvQ1JQXzJ4dGJ4TmJjOXdnSUxPRVNaVnk0UjVEUk1YaFhtU2ZnLXpqQ2tkeUZmUzU1c0tsVUM3M09VS0ZxcE5LSEhSejdfWDlEdDU4OVhmSFhGbW9pdTVWN1JkWko0YS1pVHJNajROOXhvdGpyTEVpdVN2TE5GS2MxQ2otbHZRNTlZTzRGRGlwcU9MbDZKaHNiSHI4ZHNHY1JaejR3dGZxS3htMTBUeGUxdGxaMkxUc1ViVXRzZFNJaDktTlE?oc=5",
+      "source": "Estadão",
+      "published": "Thu, 24 Sep 2026 04:25:12 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Banco Central corta projeção do PIB de 2026 de 2% para 1,8% - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQalJPV2ZFb2g1c3ZBejVabjF5QWxOcWcteEtjeU1DOFRjbHNhTjFlTmZ1NXJyOUI3cVZvTEViNGtQZHVUX3Q5YTRodkJ4YzZHaERVTUtRZ2FQOElnMmtfZ3RVQ2xUM3REZ1hYU0lza2RNZHNBTHdTWXFiOTFnWktpMjVpVHl4eE5LcEpVN0RaV3ZONlJTT0h2X1NZN2czY0dQeEpr?oc=5",
+      "source": "SBT News",
+      "published": "Thu, 24 Sep 2026 11:27:44 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda econômica de hoje (24): Brasil, EUA e BCE divulgam indicadores que podem mexer com os mercados - Money Times",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQejhjY3ZwRldReWhCQnVFSFl3SWVyWlBtQzhyaWVBRzhXTU93c3EyYjE1b1JNa3RJTlpBYkRabEcwbTNfSS0zUXE0Mzk5NV9iVTFOSnY3bmVVN09OaWx1OXRiUDhjOE84b3dZNk9hTHRyVVJGOUVGdmFTbGxVanl0Z05waGZldEE3d2c5R3Q5V3hnSXAzVTYxWEtjMUZWLU53UmFHcl8wTXVJbFlfRGRudE56Vmt0a1BQOWdNZzRqeHNKRTlWdEVhUTBTVGRzQQ?oc=5",
+      "source": "Money Times",
+      "published": "Thu, 24 Sep 2026 09:30:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda de Lula: leia os compromissos do presidente nesta 5ª feira - Poder360",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPOURsTVFobW1pTW1EQmZVaWpXSzdNbExtQjNYV1ZfSE4zQllBQl9CSVN3aEhISDhsNTIxc0J2dlhNaElvMmlTRkJkRTlEQVVOODI0M2t5dXV2Z1MxY3RFNVVQWnJ2STF6VjkxYXFrZWljbEtLY0RzXzZoTWJVbWluOHMyVFAzanQ0RUhwOW0tcktRTjhlQjVqZW5nMnZtWFpYeWJkaUZrOWQtVzVzU2c?oc=5",
+      "source": "Poder360",
+      "published": "Thu, 24 Sep 2026 09:17:10 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Notícia Agenda econômica de hoje (24): Brasil, EUA e BCE divulgam indicadores que podem mexer com os mercados - Kinvo",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQWjA3dzdubDV4U2tMY0xRRGZfZTlZOHdmaVVPRlJ5NVEtbGY1MTFNUkhwRDNEUlVMemh6bGVaQXJZZmFHQTEtVlRjckh1aHRHNmJkMU1OS2czem1KOHd2YWNGWlMyYmc2WE5QRElObHFlRi1pUDRxbDZUZDlKbUI2U0VLM2xOeTdEcWgycWJlZGRjSHhsTWN6bGdvelNnY2Q5clltMXhIeTByZW5PRGdxWVp2OG5zelZwN1RKUGRKcEZOS3BN?oc=5",
+      "source": "Kinvo",
+      "published": "Thu, 24 Sep 2026 09:09:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Atlético encara maratona após Data-Fifa: confira a agenda - Lance!",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNdWJvZzU2eWJ6Q0xSUjVjSl9JZldSWTlhRmd4WklpQmNhNWEwMER4OXBTSjdOcmRwSjFobDN3X21vSERsdF9ZNU93V1F3Rml6c1RSSTVSak1oUDlmUFp1U3MwTXRyazhyaGJnZW9nQm5JQkZwYmMwSzhHcE5OSGdhWV85dTJzUWthWVN0MDZtZDFkb3I1a1NoNGVGeEZDOGlobk9qWnlR?oc=5",
+      "source": "Lance!",
+      "published": "Thu, 24 Sep 2026 09:00:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Petróleo sobe forte, dólar, Ibovespa, mais agenda e pílulas da economia 24.09 - gauchazh.clicrbs.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxPSUZ3UjUyWkZxeGpxS2VUbFJlLUtMWV9TUk11UkdpLU1HMnRMX3oyU2RkR3lpOVBDUTF1UTRzQ2Z3RXFBZ3FlZWpnMHgzREZsR2EyRGg0dVRIbm1HZEQzOTdrZ2xCMENmMndVeU4wNkc1UlQtQUFIcjFHNFI1V1Q3aENaeW9STFFmZVJxcGRmMTB6N0lBSVFaZy1IMVl6Wk5MLUpkNmExNmhHSFNJNTNkVWdUdWNYSjZ3YzN4ZFJKbFptZ3hkRFRTb0U2NTlhOGEtLUZDLWlKVEJlSW1rRGJHRGFMZHR4NUVUaTVoeVlxVjdZOTNkamV3SGJsN0VXTHZfRk1CWW1lWjY?oc=5",
+      "source": "gauchazh.clicrbs.com.br",
+      "published": "Thu, 24 Sep 2026 11:00:58 GMT"
+    }
+  ],
+  "generated_at": "2026-09-24T10:03:37.175750-03:00"
+}
