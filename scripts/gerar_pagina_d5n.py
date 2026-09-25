@@ -778,7 +778,7 @@ def ticker_html(ticker_items: list[str]) -> str:
             head, rest = text.split(" — ", 1)
             a, b = head.strip(), rest.strip()
             longer, shorter = (a, b) if len(a) >= len(b) else (b, a)
-            if len(shorter) >= max(12, int(len(longer) * 0.35)) and longer.startswith(shorter):
+            if len(shorter) >= 12 and longer.startswith(shorter):
                 return a if len(a) >= len(b) else b
         return text
 
