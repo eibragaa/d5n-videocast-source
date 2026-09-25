@@ -197,7 +197,7 @@ CSS = r"""
   /* motion */
   --t-fast:150ms; --t-med:220ms; --ease:cubic-bezier(.4,0,.2,1);
 }
-html{font-size:16px;scroll-behavior:smooth}
+html{font-size:16px;scroll-behavior:smooth;scroll-padding-top:76px}
 body{
   background:var(--bg);color:var(--text);
   font-family:var(--font-body);font-weight:400;line-height:1.6;
@@ -693,7 +693,7 @@ def program_card(key: str, eps: list[dict], featured: bool) -> str:
     return f"""
     <article class="{cls}" id="{key}" data-animate aria-labelledby="{pid}Name">
       <div class="pc-head">
-        <img class="pc-cover" src="{esc(p['cover'])}" alt="Capa do programa {esc(p['name'])}" width="112" height="112" loading="lazy">
+        <img class="pc-cover" src="{esc(p['cover'])}" alt="Capa do programa {esc(p['name'])}" width="112" height="112" {'' if featured else 'loading="lazy"'}>
         <div class="pc-head-text">
           <div class="pc-top">
             <span class="pc-badge">{esc(p['badge'])}</span>
@@ -701,7 +701,7 @@ def program_card(key: str, eps: list[dict], featured: bool) -> str:
           </div>
           <h3 class="pc-name" id="{pid}Name">{esc(p['name'])}</h3>
           <p class="pc-tagline">{esc(p['tagline'])}</p>
-          <div class="pc-byline"><span>{esc(p['byline'])}</span><span>{esc(p['schedule'])}</span></div>
+          <div class="pc-byline"><span>{esc(p['byline'])}</span></div>
         </div>
       </div>
       <div class="pc-divider"></div>
@@ -770,12 +770,24 @@ def archive_html(all_eps: list[dict]) -> str:
 def ticker_html(ticker_items: list[str]) -> str:
     if not ticker_items:
         return ""
+
+    def dedupe_headline(text: str) -> str:
+        # "Manchete X — Manchete X (truncada)" → só a manchete
+        # Detecta duplicação mesmo quando a 2ª parte é prefixo truncado da 1ª.
+        if " — " in text:
+            head, rest = text.split(" — ", 1)
+            a, b = head.strip(), rest.strip()
+            longer, shorter = (a, b) if len(a) >= len(b) else (b, a)
+            if len(shorter) >= max(12, int(len(longer) * 0.35)) and longer.startswith(shorter):
+                return a if len(a) >= len(b) else b
+        return text
+
     items = []
     for it in ticker_items:
         cat, _, text = it.partition("|")
         dot = {"global": "global", "tech": "tech", "econ": "econ"}.get(cat.strip(), "global")
         items.append(
-            f'<span class="ticker-item"><span class="ticker-dot ticker-dot--{dot}"></span>{esc(text.strip())}</span>'
+            f'<span class="ticker-item"><span class="ticker-dot ticker-dot--{dot}"></span>{esc(dedupe_headline(text.strip()))}</span>'
         )
     # duplicate for seamless loop
     seq = "\n      ".join(items)
@@ -1186,7 +1198,7 @@ def extract_ticker(old_html: str) -> list[str]:
     """Extrai itens do ticker do HTML antigo: categoria|texto."""
     items = []
     for m in re.finditer(
-        r'<span class="ticker-dot dot-(global|tech|econ)"></span>(.*?)</span>',
+        r'<span class="ticker-dot ticker-dot--(global|tech|econ)"></span>(.*?)</span>',
         old_html, re.DOTALL,
     ):
         cat, text = m.group(1), m.group(2)
