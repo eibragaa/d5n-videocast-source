@@ -179,7 +179,7 @@ CSS = r"""
   --bg:#0B0E14; --surface:#10141D; --surface-2:#151B26; --surface-3:#1B2330;
   --border:#1E2634; --border-soft:#171E2A;
   /* text */
-  --text:#E8ECF2; --text-2:#9AA5B4; --muted:#5C6675;
+  --text:#E8ECF2; --text-2:#9AA5B4; --muted:#76839A;
   /* program accents */
   --d5n:#5B8DEF; --mc:#8B7CF6; --fm:#3FB97F;
   --d5n-soft:rgba(91,141,239,.12); --mc-soft:rgba(139,124,246,.12); --fm-soft:rgba(63,185,127,.12);
@@ -231,7 +231,14 @@ button{font-family:inherit}
 }
 .brand-mark{
   width:28px;height:28px;flex-shrink:0;display:block;
-  /* logo do Cardbook: sinal digital em movimento (fav...[truncated]
+  position:relative;
+  background:
+    radial-gradient(circle at 30% 50%,#00D4FF 0 5px,transparent 5.5px),
+    radial-gradient(circle at 30% 50%,transparent 7px,rgba(0,212,255,.9) 7.5px 9px,transparent 9.5px),
+    radial-gradient(circle at 30% 50%,transparent 11px,rgba(124,58,237,.8) 11.5px 13px,transparent 13.5px);
+  border-radius:7px;
+  box-shadow:0 0 0 1px rgba(0,212,255,.25),inset 0 0 12px rgba(0,212,255,.08);
+}
 .main-nav{display:flex;gap:var(--s1);margin-left:auto}
 .nav-link{
   font-size:.8rem;font-weight:500;color:var(--text-2);text-decoration:none;
@@ -291,11 +298,18 @@ button{font-family:inherit}
   position:relative;padding:var(--s9) 0 var(--s7);overflow:hidden;
 }
 .hero::before{
-  content:"";position:absolute;inset:-40% -20% auto;height:520px;pointer-events:none;
+  content:"";position:absolute;inset:-40% -20% auto;height:560px;pointer-events:none;
   background:
-    radial-gradient(560px 300px at 18% 0%,rgba(91,141,239,.10),transparent 65%),
-    radial-gradient(480px 260px at 55% 10%,rgba(139,124,246,.08),transparent 65%),
-    radial-gradient(420px 240px at 88% 0%,rgba(63,185,127,.07),transparent 65%);
+    radial-gradient(640px 320px at 16% 0%,rgba(91,141,239,.14),transparent 65%),
+    radial-gradient(520px 280px at 52% 8%,rgba(124,58,237,.12),transparent 65%),
+    radial-gradient(460px 260px at 88% 0%,rgba(63,185,127,.10),transparent 65%);
+  filter:saturate(1.1);
+}
+.hero::after{
+  content:"";position:absolute;inset:auto -20% -60%;height:360px;pointer-events:none;
+  background:
+    radial-gradient(520px 260px at 30% 100%,rgba(91,141,239,.07),transparent 70%),
+    radial-gradient(420px 220px at 75% 100%,rgba(124,58,237,.06),transparent 70%);
 }
 .hero > *{position:relative}
 .hero-eyebrow{
@@ -305,19 +319,20 @@ button{font-family:inherit}
 .hero-eyebrow::before{content:"";width:24px;height:1px;background:var(--d5n)}
 .hero-title{
   font-family:var(--font-display);font-weight:800;letter-spacing:-.03em;
-  font-size:clamp(2.2rem,5.2vw,3.6rem);line-height:1.05;max-width:14ch;
+  font-size:clamp(2.4rem,5.4vw,3.9rem);line-height:1.04;max-width:15ch;
+  text-wrap:balance;
 }
-.hero-title em{font-style:normal;color:var(--text-2)}
+.hero-title em{font-style:normal;background:linear-gradient(92deg,var(--d5n),var(--mc));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .hero-sub{
-  margin-top:var(--s4);font-size:1rem;color:var(--text-2);max-width:52ch;
+  margin-top:var(--s4);font-size:1.02rem;color:var(--text-2);max-width:52ch;
 }
 .hero-stats{
-  display:flex;gap:var(--s6);margin-top:var(--s6);
+  display:flex;gap:var(--s7);margin-top:var(--s6);
   padding-top:var(--s5);border-top:1px solid var(--border-soft);
 }
 .hstat{display:flex;flex-direction:column;gap:2px}
 .hstat strong{
-  font-family:var(--font-display);font-weight:700;font-size:1.35rem;letter-spacing:-.02em;
+  font-family:var(--font-display);font-weight:700;font-size:1.4rem;letter-spacing:-.02em;
 }
 .hstat span{
   font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
@@ -333,7 +348,7 @@ button{font-family:inherit}
 }
 .section-title{
   font-family:var(--font-display);font-weight:700;letter-spacing:-.02em;
-  font-size:clamp(1.5rem,3vw,2rem);
+  font-size:clamp(1.5rem,3vw,2.1rem);text-wrap:balance;
 }
 .section-sub{color:var(--text-2);font-size:.92rem;margin-top:var(--s2)}
 
@@ -346,14 +361,21 @@ button{font-family:inherit}
 .program-card{
   --accent:var(--d5n); --accent-soft:var(--d5n-soft);
   position:relative;display:flex;flex-direction:column;
-  background:var(--surface);border:1px solid var(--border);
+  background:linear-gradient(180deg,var(--surface-2) 0%,var(--surface) 55%);
+  border:1px solid var(--border);
   border-radius:var(--r-card);padding:var(--s6);
   transition:transform var(--t-med) var(--ease),border-color var(--t-med) var(--ease),box-shadow var(--t-med) var(--ease);
+}
+.program-card::after{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(420px 220px at 85% -8%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 70%);
+  opacity:0;transition:opacity var(--t-med) var(--ease);
 }
 .program-card:hover{
   transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 40%,var(--border));
   box-shadow:var(--shadow-2),0 0 0 1px color-mix(in srgb,var(--accent) 18%,transparent);
 }
+.program-card:hover::after{opacity:1}
 .program-card::before{
   content:"";position:absolute;top:0;left:var(--s6);right:var(--s6);height:2px;
   background:linear-gradient(90deg,var(--accent),transparent 70%);
@@ -368,7 +390,7 @@ button{font-family:inherit}
   width:88px;height:88px;flex-shrink:0;border-radius:var(--r-inner);
   object-fit:cover;display:block;
   border:1px solid var(--border);
-  box-shadow:var(--shadow-1);
+  box-shadow:var(--shadow-1),0 0 0 1px color-mix(in srgb,var(--accent) 12%,transparent);
 }
 .program-card--d5n .pc-cover{width:112px;height:112px}
 .pc-head-text{min-width:0;flex:1}
@@ -466,8 +488,8 @@ button{font-family:inherit}
   padding:11px 20px;border-radius:var(--r-btn);border:1px solid transparent;
   transition:all var(--t-fast) var(--ease);
 }
-.btn-primary{background:var(--accent);color:#0B0E14}
-.btn-primary:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:#0B0E14;box-shadow:0 4px 16px color-mix(in srgb,var(--accent) 28%,transparent)}
+.btn-primary:hover{filter:brightness(1.12);transform:translateY(-1px);box-shadow:0 6px 20px color-mix(in srgb,var(--accent) 38%,transparent)}
 .btn-primary:active{transform:translateY(0)}
 .btn-ghost{
   background:transparent;color:var(--text-2);border-color:var(--border);
@@ -488,7 +510,8 @@ button{font-family:inherit}
   padding:6px 11px;border-radius:var(--r-pill);cursor:pointer;
   transition:all var(--t-fast) var(--ease);
 }
-.pc-chip:hover{color:var(--text);border-color:var(--accent)}
+.pc-chip:hover{color:var(--text);border-color:var(--accent);background:var(--surface-3)}
+.pc-chip:active{transform:scale(.96)}
 .pc-chip.is-active{
   color:var(--accent);border-color:var(--accent);background:var(--accent-soft);
 }
@@ -662,7 +685,7 @@ def player_html(pid: str, dur: int) -> str:
       </div>"""
 
 
-def chips_html(eps: list[dict], pid: str, limit: int = 7) -> str:
+def chips_html(eps: list[dict], pid: str, limit: int = 5) -> str:
     chips = []
     for i, e in enumerate(eps[:limit]):
         src = local_path(e["url"])
