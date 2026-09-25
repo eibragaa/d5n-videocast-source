@@ -1,0 +1,223 @@
+headersOrigin = "config"
+redirectsOrigin = "config"
+plugins = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "/root/repositorio/d5n-videocast-source"
+publishOrigin = "config"
+
+[build.environment]
+HUGO_VERSION = ""
+
+[build.processing]
+skip_processing = true
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[[headers]]
+for = "/*"
+
+[headers.values]
+X-Content-Type-Options = "nosniff"
+X-Frame-Options = "DENY"
+Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+for = "/site.webmanifest"
+
+[headers.values]
+Content-Type = "application/manifest+json; charset=utf-8"
+Cache-Control = "public, max-age=3600"
+
+[[headers]]
+for = "/favicon.svg"
+
+[headers.values]
+Content-Type = "image/svg+xml"
+Cache-Control = "public, max-age=86400"
+
+[[headers]]
+for = "/social-card.png"
+
+[headers.values]
+Content-Type = "image/png"
+Cache-Control = "public, max-age=86400"
+
+[[headers]]
+for = "/feed.json"
+
+[headers.values]
+Content-Type = "application/json; charset=utf-8"
+
+[[headers]]
+for = "/d5n-feed.xml"
+
+[headers.values]
+Content-Type = "application/rss+xml; charset=utf-8"
+
+[[headers]]
+for = "/podcast.xml"
+
+[headers.values]
+Content-Type = "application/rss+xml; charset=utf-8"
+Cache-Control = "public, max-age=3600"
+
+[[headers]]
+for = "/manha-conectada.xml"
+
+[headers.values]
+Content-Type = "application/rss+xml; charset=utf-8"
+Cache-Control = "public, max-age=300, must-revalidate"
+
+[[headers]]
+for = "/og-image.png"
+
+[headers.values]
+Content-Type = "image/png"
+Cache-Control = "public, max-age=86400"
+
+[[headers]]
+for = "/podcast-cover.png"
+
+[headers.values]
+Content-Type = "image/png"
+Cache-Control = "public, max-age=86400"
+
+[[headers]]
+for = "/manha-conectada-cover.png"
+
+[headers.values]
+Content-Type = "image/png"
+Cache-Control = "public, max-age=86400"
+
+[[headers]]
+for = "/audio/*.mp3"
+
+[headers.values]
+Content-Type = "audio/mpeg"
+Cache-Control = "public, max-age=86400"
+Accept-Ranges = "bytes"
+
+[[headers]]
+for = "/*.md"
+
+[headers.values]
+Content-Type = "text/markdown; charset=utf-8"
+
+[[headers]]
+for = "/fechamento.xml"
+
+[headers.values]
+Content-Type = "application/rss+xml; charset=utf-8"
+Cache-Control = "public, max-age=300, must-revalidate"
+
+[[headers]]
+for = "/fechamento-cover.png"
+
+[headers.values]
+Content-Type = "image/png"
+Cache-Control = "public, max-age=86400"
+
+[[headers]]
+for = "/fechamento/*.mp3"
+
+[headers.values]
+Content-Type = "audio/mpeg"
+Cache-Control = "public, max-age=86400"
+Accept-Ranges = "bytes"
+
+[[redirects]]
+from = "/manha-conectada.xml"
+to = "/manha-conectada/feeds/manha-conectada.xml"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/manha-conectada-cover.png"
+to = "/manha-conectada/assets/manha-conectada-cover.png"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/audio/manha-conectada-*"
+to = "/manha-conectada/audio/manha-conectada-:splat"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/fechamento.xml"
+to = "/fechamento/feeds/fechamento.xml"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/fechamento-cover.png"
+to = "/fechamento/assets/fechamento-cover.png"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/audio/fechamento-*"
+to = "/fechamento/audio/fechamento-:splat"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/404"
+to = "/index.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
