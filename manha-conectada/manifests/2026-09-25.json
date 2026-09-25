@@ -1,0 +1,196 @@
+{
+  "program": "MANHÃ CONECTADA",
+  "date": "2026-09-25",
+  "timezone": "America/Sao_Paulo",
+  "prototype": false,
+  "business_day_override": false,
+  "voice": "pt-BR-FranciscaNeural",
+  "output": "/root/repositorio/d5n-videocast-source/manha-conectada/audio/manha-conectada-2026-09-25.mp3",
+  "source_file": "/root/repositorio/d5n-videocast-source/manha-conectada/roteiros/source-manha-2026-09-25.md",
+  "sha256": "fecbc262eecf16f26657151b9c50131fc343ecdc74c1cab13e27f6e35c11c239",
+  "text_gate": {
+    "words": 690,
+    "forbidden_hits": [],
+    "ending_ok": true,
+    "rss_cta_ok": true
+  },
+  "audio": {
+    "duration": 262.556735,
+    "size": 6302031,
+    "bit_rate": 192020,
+    "lufs": -17.37,
+    "true_peak_dbtp": -1.74,
+    "lra": 1.8
+  },
+  "sources": [
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Notícias sobre edital de 23 de setembro de 2026 - Estratégia Concursos",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMnJBV3gyakFCZTFwd1hhLWttdVJkakRtem1ocEpVMFdySE1QaHlSdS1BOHM3cWJoNDhyTjVjX0hDakFjeE5TSkNGSktEUHpRb2ZyZE5RdzJQZGsyTmtQWGxjN2lKeUFReTBVNWpmbXJkV25yRGxtNzBqVE5mTmJFc0IyTWttRVN50gGOAUFVX3lxTE9oRmp0b1FuVTFxWllLaGIzcW02T1FSbHBEMmJ4V0cybGVCY01Hck1BbjhsNDRHQkVqUENBYWlhLUtXbDBiRzNiUTVILUJMeUFTUF9YMXdMSEpSczlQNTBRNnZuYngwRHJxeU5HZEVmWnhWdklhR0hNWEViMktCTkt3dzFkZUJPLUlkaGJDamc?oc=5",
+      "source": "Estratégia Concursos",
+      "published": "Fri, 25 Sep 2026 08:19:54 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Austrália x Brasil: onde assistir ao vivo e horário - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPR2JlRFl2bmxEc2NQUGhheFBWMU1XUUlsS3N5TWdfUzhFN3p1OThHSmxaM0JrNy0yMnhuOTF6T0RhSnEtRVFOYkhjZzJjVGpxRS1uQWRsUHJGd3JWOHZpXzA3QkJNOW1TUzJoWkZhMWkzT3ZiYzNRRnhnT1BMYzNaaU5sZ0ZuVURMVTY5NjZhMHJmSlVQY0E?oc=5",
+      "source": "SBT News",
+      "published": "Fri, 25 Sep 2026 08:00:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Lula endurece discurso sobre bets; Flávio critica regulamentação atual, mas defende aposta esportiva - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1qeG1rMExiUUp6YnphR1QzTjhKX1JqZDdvRXR6a3VFWXhaVTBkblFEZnBLQjlDRU1Xbl9aT1o5cnZLblVLS0dDblhnaXFKbV9MMThiblMyNDdLYzlMdV9mU1NONNIBaEFVX3lxTE5mLThUd0t6Q3VmOGJxM0NoRXp2OU1sR1RGN19Kc21zMmE5WHFVLU93TWhpYTFITG1aNVhCOHFmVnd6S01JRVQ0eUFOT19ranNFcWVIcmN2ZmM3VkpkdVRnV3pkY0YyV0tr?oc=5",
+      "source": "BBC",
+      "published": "Thu, 24 Sep 2026 17:44:27 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Presidente Lula anuncia proibição das bets no Brasil nesta sexta - jb.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOYXV2MjdGZUdXbUJuV1lFYmJLdVBzWk55M1A5SUdhTExKM1ZtRFlad1BKQ1lGMmVqOFlacVlBMGMxRndHQ3NVX04xOU5rZ1pjRXdvTm01Wk5tUy1ZQndtXzNibmNQTThDanJMcVRhUGIweEwyR21CaWxJc2c4d1JsNEVSTDQ2TldqaVNNVExBTDRkS2FKTnZzd0s2aXE3c3NtZWc4T3N2T2taa0dLX2xWUDZfd9IBswFBVV95cUxOYXV2MjdGZUdXbUJuV1lFYmJLdVBzWk55M1A5SUdhTExKM1ZtRFlad1BKQ1lGMmVqOFlacVlBMGMxRndHQ3NVX04xOU5rZ1pjRXdvTm01Wk5tUy1ZQndtXzNibmNQTThDanJMcVRhUGIweEwyR21CaWxJc2c4d1JsNEVSTDQ2TldqaVNNVExBTDRkS2FKTnZzd0s2aXE3c3NtZWc4T3N2T2taa0dLX2xWUDZfdw?oc=5",
+      "source": "jb.com.br",
+      "published": "Fri, 25 Sep 2026 10:09:00 GMT"
+    },
+    {
+      "query": "Brasil últimas notícias",
+      "title": "Entre Lula e Flávio, Brasil dá as costas ao futuro, e Renan é candidato mais adequado, diz The Economist - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQTHpFQ0kxc2xDVHlkRmZwMDJTbHZsSEZnX0c2SUxCNTFMSllHQk5DNGNxUVlzSHJwR2p2aXg5cVd4QmRad0lsOTFkUjlJNjZPMmxlMkZIcEFPY25pUG12NFByaXFuS25ORlJNWUdpSFQ1ZjNMczdQN0xCLWNjSDFCdF9BdE9aYlpnMFV5cDg0alcweEZoVzZvY2Q3c01scmpaM3lOY1BBaUlwSURDVXN5VnppOHpwYXJvUnJDWWlZS1BkQ1E5NXJJdTIwYVJEckx6d1BZeHdjb2g0UERjcmtmZzdyU0ZNdw?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Thu, 24 Sep 2026 23:38:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Irã quer encerrar guerra, mas decisão depende dos EUA, diz presidente; Teerã propõe reabrir Estreito de Ormuz em 7 dias - G1",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE53U1hIN2FjWWFMQVRjWU80cWNYZ3YwSWVyMTdUdjkxQnRHcGlzNTdvbDk5WUgyVV9oRDJLNHhDNVl3cFpud0Q2MmFpV29hNmpIdnYzdVhNNl9aNlN3dWliY0V4OUZSenItMXB5R1NHUFFXaGd1dmxXYUF1TVRWdG_SAY4BQVVfeXFMUEQ3S1NqanZ2TFZWMXQ1TGFuV04wQzh2TlV0dFZoNGNtR2pmeXd1YWZaek5pSzZabVJTSGZwa0laRHFJV0FYVFZXOTVGU05WYXlMTlZUZ3QycE04d0g1TF9YcmVzeHpVUFNMN3Y3ZjBXajR6UlFBRjFmNFUtZG1VVWtuOE5xOXJGNENMQUV6Zw?oc=5",
+      "source": "G1",
+      "published": "Fri, 25 Sep 2026 10:09:46 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "O que você precisa saber da Assembleia Geral da ONU até agora - Folha de S.Paulo",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxObkxVTzlRaDJZOW14N3NMVmIzbjNhZjdHcVZaMVd5aU5CRDZXZkJMc3VEem9YSmZCSzNJTFp0WHpiRmJFcUZsQ1BZcEwwWDJPWkNmR2twbllqMzN1Vi10dFBESGR1VzQwbTNZS1BTakRFTFpZT1lFZnJKZGdHekpFSXpHWmRpVFlpWWJJaXctaVdZb0tpU1FTclB0TjctMXVpNGVXSHVPa29wejl3MklqUg?oc=5",
+      "source": "Folha de S.Paulo",
+      "published": "Fri, 25 Sep 2026 07:00:00 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Como opera a empresa por trás de despejo de idosa de 87 anos na Espanha - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1JczhhbUJwUTUyWXVuRnZNbXNpNURfOEVxeUFFclQ5S3JOU2dfUW10TkN1TW1ESzBfRjNieEpuN1ItQ2c3aF9UTDJRdWR4WTRjZVJuZVk2akIxSmpEcC1CLVNNVdIBaEFVX3lxTFA3cnFCWXM4U2FmUVBacVVGSWg4WUV5Z01jcTdCeHNZWjcxZF9VNklkUWRRVHVCejFjNkkxWjM0dVdFME91UTBTdkI2bkR2Rk9MYWZMZ1Zpc29fVWFtemNZc29zaVRlQW9J?oc=5",
+      "source": "BBC",
+      "published": "Fri, 25 Sep 2026 11:45:29 GMT"
+    },
+    {
+      "query": "mundo últimas notícias",
+      "title": "Seleção inicia nova etapa após Copa do Mundo de 2026 - SBT News",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPeHNMOGNFZVVUeV9IbHlPNkFtT3BDWkpFOTl4UU5TTDZjVTZkZHlTNUFkeUtBRnl0d1h2LVhFbjgzZERhLVliUVB0ajcxQUZNaHJ2bmx6ZnJzNDNySllJYkVmdEhOaUYwNnN1YWtiNWtQM0pYcGdCcGVCSXdvMFBsS1pxUU05UDhyVzloamxPZkhhVGdkOGJnZmRR?oc=5",
+      "source": "SBT News",
+      "published": "Fri, 25 Sep 2026 10:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "O que está em disputa no debate sobre o risco existencial da inteligência artificial - O GLOBO",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQMnJNM0xNSElUa1VjMXZRRjlxUWMxQy1jb2EybTJxdzM3TnVTV0xnYlJMSXUyeE8yRXBOQjNqMHMtVHJ2SlJPYnVHRk11LWJ2MGpxTjFUT2xZRWNnX00yVnViRy00NjdaNW1LVHpJSlZES2RrOXFHeldMSFFiVHhIWWlZMTJTRWM2ZjFaN0JtNzExbGktWllxUTlJY08tWTJBWTMzcHN2TGZBSld1TXVBWEpfb3FjbjFCckpvLTdMS21EdVA4NXJEOHN3NXVZREhEc2taMnNyZHBQeHJYcURqMjFXdFVYOWpMU2c?oc=5",
+      "source": "O GLOBO",
+      "published": "Fri, 25 Sep 2026 07:00:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "IA no trabalho: 71% dos leitores não temem a tecnologia - campograndenews.com.br",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQcFctdVF3RzFNZEoxYW1RdkJKenpDdWNzeU1KWUY4S0RraEFhNkdYbXNKWjJGc0NMY1VYbVZ0ZFBmU1Q5ZFc0aWlhRXJJVlpYbFI0Qy1YRGFESmlTaGlFektnMlpfT3UtQk94bTNsV21WRDFnTlVzTWRDUWQ4ckRyb3ZDV0VtRHg2NG5ISm9zZWZUVGpoUmhUdjFxTGN3ZlNDRUNLN2lBZzlVUFlYQ05tbDZ6bWFYYkliOEtJcdIBvAFBVV95cUxQZVRpRUxseUpXNkxRMGtyMlRoQ3lIOVg2Rmp6X1EzNXNoc0FZbmZQalBROXkwQ3o0aVNqbGJiTzV2V3V2WEdFcGh3enQxYzQtaFp3YmdvbTZKaVMtdmdFRlhIT2VCWlBjQlJndDlCSVBDeXE1VnI1MnFWa2szTEhzOEFCLUhjT1ZrMG5mSnJ6aFlwZWN5WUdoU29WUUlmejRidVJKdHd6Nzl1SllLcDdBLWYxamRiZUZnajFVeA?oc=5",
+      "source": "campograndenews.com.br",
+      "published": "Fri, 25 Sep 2026 11:06:00 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "Curso superior de Tecnologia em Inteligência Artificial abre 150 vagas - InfoEducação",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOOURiMjg0c3hQaFFONXBSWGZQTGhxVXZJeGQza09WQUpOVTRkWi1rdHNQZjlnZ01IS3gwVzJEeHEzZU5IT1RCeVJWTUxqZWJDR1FWekFEVUN1TGFNeEluaTJ5bmFIUG83cGU5QXBwR3l6c3oyU1BBdUpXSmcwRWtMeDFBaEdsajgzc25aeHg3RXZETXhOYi13cVdPMkhQd2d4?oc=5",
+      "source": "InfoEducação",
+      "published": "Fri, 25 Sep 2026 12:40:05 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "O que os presidenciáveis propõem para o futuro da tecnologia no Brasil? - theconversation.com",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPTWJOV3hlMF84ZF9DR0JMa2NSYVFfMURDM2tBOXJyaDQwb1QtQ3ZMTHJ6S3F4MUp1T0k3LVNURnRmcEtwNWhQQlk5SEZuVjktY2hCeXlKMkkzTTY2VEp1a3otMVlPVVZHcW1jYzdWVjZCaDRUdzZGWEZiVEd2WmhITC1mNUlHcTlBT0I1NkY3cEUtNHlyMFcwWmtnR2JwZU5BUHA1R051TGY?oc=5",
+      "source": "theconversation.com",
+      "published": "Fri, 25 Sep 2026 12:21:02 GMT"
+    },
+    {
+      "query": "tecnologia inteligência artificial",
+      "title": "A inteligência Artificial já dá retorno? Murilo Alencar aponta o que separa pilotos de resultados - Estadão Blue Studio",
+      "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOb0hUOXBPUE1HUS0xN1dFQi1iVGNlZnZPTDFfYWhPNEZ1RDRuREtobHRHVy15dFBSQnZGZmU0SloxMlE5dlZLZ2dzeFNjaktuY21ZUFRnalNhOHhqdU9FWjJSODhubWYyRTJDZ3ZLUDVoTHJwaUlKbFJ3Mm1tcFdDaGdQdmx1bnZ1MDlaeXpobndwaTkxWmwwakJvNkFpQzNXaDhnN2lYQ3Q5TzJlc3dsZ2pZM0dqcnBWV3U2UVhlR0NzSUM0ejNRWjU4WEhXMUtwSDJsWFBuQjNKdXFTMzNwbmU4WmlQNTIwM2VyZjdZZVNuSzhhcUVTcWFhNGNYZw?oc=5",
+      "source": "Estadão Blue Studio",
+      "published": "Fri, 25 Sep 2026 12:11:15 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Tarifaço golpeou a produção de madeira do Brasil em 2025 - Globo Rural",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQ2VIclBmQ0RGcWh0b2YxRlQzeXRYRUlFT1ZXaDVtWVNsTkRha0FGc0M5Ym5HOU1PZXQ3VnpLUlA0ZklrYzVCb1F5S0FRNWxsanBGSi1uSkFRd2Q5RnJfZmhMV0hvQnpENjFxWDhZRlcybEtLbzliMEhCbEVYOVJwMUx1TEV3bHo4ZG52bXp5SERtOUF6cEtfVmJtR2JHeEJMZVBObXJyVWhpM25oM0F6aW1haEQxemJfZ2xaT3dSRUdoajJlRUHSAcYBQVVfeXFMTkNlSHJQZkNERnFodG9mMUZUM3l0WEVJRU9WV2g1bVlTbE5EYWtBRnNDOWJuRzlNT2V0N1Z6S1JQNGZJa2M1Qm9ReUtBUTVsbGpwRkotbkpBUXdkOUZyX2ZoTFdIb0J6RDYxcVg4WUZXMmxLS285YjBIQmxFWDlScDFMdUxFd2x6OGRudm16eUhEbTlBenBLX1ZibUdiR3hCTGVQTm1yclVoaTNuaDNBemltYWhEMXpiX2dsWk93UkVHaGoyZUVB?oc=5",
+      "source": "Globo Rural",
+      "published": "Fri, 25 Sep 2026 08:04:00 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Selic: quanto a economia precisa desacelerar para os juros caírem? - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOU054UE5qZmtPNGtjdWJQUVBCRlFockx6VWlUdGVvQmZoMFBWN2Z4NF9tekF3SDNIM2FpeWcydVFMdmVSMEk0QkxLUmsxRnEzWHF3bXNEVFFjdndJRFgtX2dKVzgyVmxtdERDRG1KbHJfeHZNOE5Pa0dFNlp2VFp5dEJOdUd2YnFDNkhxdjdadzhsbGdOTERWcFRIV21YRGxYNWhkb2l1YUZmVGE3OXFuZkVlS25uVmVaS25nMTNaQkFjY3N0LTZleXlFeUhnUWhoRWZUVkVURGFaNVJKa3c?oc=5",
+      "source": "CNN Brasil",
+      "published": "Fri, 25 Sep 2026 07:25:42 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Brasil começa a reconstruir ferrovias, mas ainda tem uma longa estrada pela frente - veja.abril.com.br",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOUlJBQ21feFNwQ1h3a0lNYXhBcUxrU1FOcjMwckhJSHhoMFdtVmhsUld0elEyTUY4OE5sbHhaTmdFM2JwWC1uVkxPVGFpaTFEb19oOENUZF9WWmJid2NfVmUtTl9KdERJM2tOZjI4OTZMUVJDa2FPMDJnUzYyRVpuV3k3bHJiOHlQWDBwNVdKTVQzcllpcVZ0bXNsMndiOEViNmFyd0QtNXJnSHpsOUhpbmpQN0R3S3dh?oc=5",
+      "source": "veja.abril.com.br",
+      "published": "Fri, 25 Sep 2026 10:01:31 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "Sem a China, Brasil e EUA iniciam consultas na OMC sobre tarifas - Poder360",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNeFRuN0RzZWk2cEI1dG9oZWx3b1dIQ094c1d0ZURfVTNySnJDWlcxaXppbm1vRXptb0NJdmlvSDJOTmd5OFhnNGdJdTdDblFVR2NfVmJZV1BLU2lSU295Y2E1YlhZMkllSHY1Y0JTaWRxRzBwZ1lkV2VRX2xzMTR2RWFWS2FFczZYRHFHeUxaZkpzZUlnYzIwcHlMMkxPUWRROFdYc2w4UjhBR2c?oc=5",
+      "source": "Poder360",
+      "published": "Fri, 25 Sep 2026 08:46:13 GMT"
+    },
+    {
+      "query": "economia Brasil",
+      "title": "BC reduz projeção de crescimento da economia para 1,8% - Brasil de Fato",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNdUJDSXN4bHNJYTZmT1ZxV1FoNzJ2M3p4cHJ2M2VDZkhBUW44YzFuWmtlOVo3emVFb1kyZFFOQnNuS2JqRGR3RHJEYU5YN0RmdGYtWlhJbTg2Q3BQTHgyTFhiN1VJSnBRQWwteUtsMVFlNjRqWHZJY0Vna0JGTE9WT2x2NThwNHdRM0RFOEVsTHViWFYxOEN0NnJ5Qzg?oc=5",
+      "source": "Brasil de Fato",
+      "published": "Thu, 24 Sep 2026 16:41:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Agenda de Lula: leia os compromissos do presidente nesta 6ª feira - Poder360",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQaURzeDBXbG8zRVRvdjVCVWViMHhUUVJHU1ZaYmkxZVRwQ2lrZHoxdS1NZGdtRWQyNEI5UEs2R0t6bUR2b0tzTmkxcEE2eDN4NmFXbzFSRDQwdnIyMVFCM1dtOWdsUVVGRW4yZG51RkpEVlBRWU1NSGRhRF9jQnpGRHBfRE0yNTJxdnZ6NmZmWF9vQXFXcUJNMFBVWFJuT3ZBMHNXaXdhQmdvbzlFbEE?oc=5",
+      "source": "Poder360",
+      "published": "Fri, 25 Sep 2026 09:06:11 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Prévia da inflação no Brasil, confiança do consumidor nos EUA e mais destaques hoje - InfoMoney",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOd3pHSk5zR1ljVTBfTUUzdjNmbDBRbGdfeVhEVGZPWW0ybU9TMld0SV8xTFRFZjUwOVViRktNQ3dxdTQzNnJJbHY5UEVidG8zSzFiY1duaWJTUUEyWVRRdW4tUUFGaFprd19vR0s1YnZhTXQxUU1xRXpnN21BYk9yRkZhcXJabEgtYzYtU0txTVo3dC1mcEHSAZsBQVVfeXFMUDZsOUw0aGUxZTh6aE5PZkZKWHZrc3RiUVJhd05YY3dWLVAzVGVNVm1sTXNoZkZPV2J1UWp3Vlh6ejQyZ0wwNzM2T21iMmJwXzc5VHpEMTY2eEN3SVlLX3JrdVBId2p0WWRTdmFlcEN1OHJlRzdmLTBXdFlRWl9yWUZTc3dJZUI1N09OTzRBM2JHS2t0NFZLS2hPVGs?oc=5",
+      "source": "InfoMoney",
+      "published": "Fri, 25 Sep 2026 09:16:02 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Mimo, musical com Claudia Raia, espetáculo com Moreno Veloso, peça com Odilon Wagner e mais: veja agenda cultural - G1",
+      "url": "https://news.google.com/rss/articles/CBMiqgJBVV95cUxQcHVUZnMxWHp1S29xTEdoMElBaWRMeEhQeDlTaTBwdUh4Xzd2VVFoMVBxeVY1M21qTVh1ZUNJZFVwOTc2eHptOVdZVFE5TkRPX3dHNGFuWG5fWl9XT0VGYjYzazFxSlFHOG9IUGlpbkxzRHlIWnNfSHRIOUtmSDJ6QUxOckI0RkhYLWhHUVJkb0tzU2RzYUxfcm9ueTJpeE1RbUdVSFpSUjFjZnVpcUNoa1VycDJiLUNNSTc1MnZhcDJsT2NFVHRIWE9vVFZnVTk3MVZ6ZjI3UnRCM0g0dE1sSVVPbWJjMFk0SGpBQ2lVemJUYXFjdlVDOTgwUUNfTUQwal8yRGNYa2MyMmZob2hwQWhBdHdnbk1lU21rVHRvLVM4VHJmTnNEOU5B0gGqAkFVX3lxTFBwdVRmczFYenVLb3FMR2gwSUFpZEx4SFB4OVNpMHB1SHhfN3ZVUWgxUHF5VjUzbWpNWHVlQ0lkVXA5NzZ4em05V1lUUTlORE9fd0c0YW5Ybl9aX1dPRUZiNjNrMXFKUUc4b0hQaWluTHNEeUhac19IdEg5S2ZIMnpBTE5yQjRGSFgtaEdRUmRvS3NTZHNhTF9yb255Mml4TVFtR1VIWlJSMWNmdWlxQ2hrVXJwMmItQ01JNzUydmFwMmxPY0VUdEhYT29UVmdVOTcxVnpmMjdSdEIzSDR0TWxJVU9tYmMwWTRIakFDaVV6YlRhcWN2VUM5ODBRQ19NRDBqXzJEY1hrYzIyZmhvaHBBaEF0d2duTWVTbWtUdG8tUzhUcmZOc0Q5TkE?oc=5",
+      "source": "G1",
+      "published": "Fri, 25 Sep 2026 09:58:01 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "IPCA-15 e outros cinco indicadores que podem mexer com as bolsas de valores hoje (25) - Money Times",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNUFFibkg5VnA4T2VsNUF5eVE2cW4tUm1INnF1M1RtV1UzSHhVQVQ3bU0zVXlwVDFPMU5obEpQOXM4WjVLWGFZamtHakZmUVZMMjdyOWcyZ2N2TGpQSHFzSUQyYThvODlRbXIwdE9DT0VZSjVIby0yMlVuV1BuX096OE15cGlVemxueVJzaU5HYmxRSk5XLU5oMEtxdVhtRkpsa3lfRU1GWkxSalByNzl4cmlKTUFKdU0?oc=5",
+      "source": "Money Times",
+      "published": "Fri, 25 Sep 2026 09:30:00 GMT"
+    },
+    {
+      "query": "agenda Brasil hoje",
+      "title": "Austrália x Brasil hoje: escalação, horário e onde assistir - Terra",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOUWhheW1XMVhoWVFRVGg0Njkxb3VrcnZLYTBteGhrUWVVV2JST3ZsWVNWdjMxOG9HN1Vmc2xVTWRJUUo4S2h4WEctSGlqNTQzekN6Qk83NEJyQmpoWHJEbkszU3BWRW9iMWpndU5DM1dtdnVjRm5SRkVzdXV1Ml9RTU16b1c1cXdvWTNmYkdGa2x4eVZDVW50QWF0RzBTOFlZOGphYVNMWDlEVEZkeFdoQVMwZXpEQXlJa3RBT1FxSHZyWVBtX2NyakhzQlBwTV9tTW1B?oc=5",
+      "source": "Terra",
+      "published": "Fri, 25 Sep 2026 10:43:00 GMT"
+    }
+  ],
+  "generated_at": "2026-09-25T10:02:35.938429-03:00"
+}
