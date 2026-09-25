@@ -3,7 +3,7 @@
   "programa": "Drop Five News",
   "tts_provider": "edge-tts-local",
   "header_voice": "pt-BR-AntonioNeural",
-  "editorial_date": "2026-09-24",
+  "editorial_date": "2026-09-25",
   "sections": [
     "coldopen",
     "intro",
@@ -19,6 +19,7 @@
     "outro"
   ],
   "content_voices": [
+    "pt-BR-ThalitaMultilingualNeural",
     "pt-BR-FranciscaNeural"
   ],
   "section_headers": {
@@ -31,19 +32,19 @@
     "recomendacoes": "recomendacoes_header.mp3",
     "historia": "historia_header.mp3"
   },
-  "presentation_mode": "solo-francisca",
+  "presentation_mode": "sexta-dual-dinamica",
   "section_voice_map": {
-    "coldopen": "pt-BR-FranciscaNeural",
+    "coldopen": "pt-BR-ThalitaMultilingualNeural",
     "intro": "pt-BR-FranciscaNeural",
-    "mundo": "pt-BR-FranciscaNeural",
+    "mundo": "pt-BR-ThalitaMultilingualNeural",
     "brasil": "pt-BR-FranciscaNeural",
-    "tecnologia": "pt-BR-FranciscaNeural",
+    "tecnologia": "pt-BR-ThalitaMultilingualNeural",
     "economia": "pt-BR-FranciscaNeural",
-    "interacao": "pt-BR-FranciscaNeural",
+    "interacao": "pt-BR-ThalitaMultilingualNeural",
     "ofertas": "pt-BR-FranciscaNeural",
-    "frase": "pt-BR-FranciscaNeural",
+    "frase": "pt-BR-ThalitaMultilingualNeural",
     "recomendacoes": "pt-BR-FranciscaNeural",
-    "historia": "pt-BR-FranciscaNeural",
+    "historia": "pt-BR-ThalitaMultilingualNeural",
     "outro": "pt-BR-FranciscaNeural"
   },
   "loudness_target_lufs": -16,
@@ -52,57 +53,57 @@
     {
       "id": "intro",
       "start": 0.0,
-      "end": 22.422
+      "end": 22.35
     },
     {
       "id": "mundo",
-      "start": 22.422,
-      "end": 59.95
+      "start": 22.35,
+      "end": 73.126
     },
     {
       "id": "brasil",
-      "start": 59.95,
-      "end": 118.142
+      "start": 73.126,
+      "end": 136.43
     },
     {
       "id": "tecnologia",
-      "start": 118.142,
-      "end": 164.742
+      "start": 136.43,
+      "end": 183.318
     },
     {
       "id": "economia",
-      "start": 164.742,
-      "end": 209.086
+      "start": 183.318,
+      "end": 207.622
     },
     {
       "id": "interacao",
-      "start": 209.086,
-      "end": 236.068
+      "start": 207.622,
+      "end": 233.604
     },
     {
       "id": "ofertas",
-      "start": 236.068,
-      "end": 279.812
+      "start": 233.604,
+      "end": 263.596
     },
     {
       "id": "frase",
-      "start": 279.812,
-      "end": 305.868
+      "start": 263.596,
+      "end": 290.324
     },
     {
       "id": "recomendacoes",
-      "start": 305.868,
-      "end": 350.044
+      "start": 290.324,
+      "end": 334.5
     },
     {
       "id": "historia",
-      "start": 350.044,
-      "end": 401.924
+      "start": 334.5,
+      "end": 387.796
     },
     {
       "id": "outro",
-      "start": 401.924,
-      "end": 496.876
+      "start": 387.796,
+      "end": 483.396
     }
   ],
   "audio_beds": {
@@ -155,5 +156,5 @@
       "gain_db": -26.0
     }
   },
-  "output": "/tmp/d5n_mixado_2026-09-24.mp3"
+  "output": "/tmp/d5n_mixado_2026-09-25.mp3"
 }
