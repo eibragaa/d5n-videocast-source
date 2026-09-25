@@ -266,7 +266,7 @@ button{font-family:inherit}
 }
 .menu-btn svg{width:18px;height:18px}
 
-/* ============ TICKER ============ */
+/* ============ TICKER ============ [truncated]
 .ticker{
   border-bottom:1px solid var(--border-soft);background:var(--surface);
   overflow:hidden;height:36px;display:flex;align-items:stretch;
