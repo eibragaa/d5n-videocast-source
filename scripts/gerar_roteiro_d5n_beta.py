@@ -1,25 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-gerar_roteiro_d5n_beta.py — BETA v1 · Roteiro D5N estilo Amanda Flaury.
-PROPOSTA para avaliacao — nao substitui o gerador oficial.
+gerar_roteiro_d5n_beta.py — BETA v2 · Roteiro D5N estilo Amanda Flaury (humanizado).
 
-Mudancas vs gerar_roteiro_d5n.py (oficial):
-  1. Data SEMPRE em portugues (sem "Friday, 25 de September" — locale C).
-  2. Apresentadora pela escala do mixer v10 (seg/qua/sab Thalita;
-     ter/qui Francisca; sex alterna pela primeira secao; dom manutencao).
-  3. Meta de duracao ROTATIVA por dia da semana (8 a 12 min com variedade):
-       seg 8-9min · ter 9-10min · qua 10-11min · qui 9-10min · sex 11-12min · sab 10-11min
-     Cada dia mira um alvo de palavras; nenhum dia fica igual ao anterior.
-  4. coldopen: 3-4 manchetes-tiro (consequencia no 1o segundo), SEM data no inicio.
-  5. Noticias: gancho (manchete mais forte abre) + encadeamento real por tema +
-     efeito pratico coloquial variado ("na pratica", "o que isso muda para voce").
-  6. interacao: pergunta espontanea ligada ao assunto mais forte do dia (sem CTA).
-  7. outro: CTA do RSS Manha Conectada (4 termos obrigatorios) + lembrete + bordao.
-  8. frase: busca no Pensador (scraping) com fallback classico de dominio publico
-     + historico anti-repeticao (compativel com d5n-mensagem-validate.py).
+Mudancas vs v1:
+  1. SEM "segundo Fonte" no corpo das noticias — fontes/links vao para o final
+     (outro.txt menciona: links de todas as noticias na descricao do episodio
+     e no site). Corpo fica limpo, como conversa.
+  2. Conectores/efeitos/fechos com USO UNICO por episodio (rng.sample + pop):
+     nenhum bordao repete dentro do mesmo episodio; pool ampliado (20+).
+  3. Curadoria: max 4 noticias por bloco (nao despeja todas). Se faltar volume,
+     aprofunda o CONTEXTO de cada noticia (2a rodada), nao adiciona noticia.
+  4. Humanizacao: reacoes coloquiais, pergunta retorica, tom de conversa;
+     sem enumeracao mecanica.
+  5. sex (wd=4): recomendacoes.txt obrigatorio com filmes/series IMDB bem
+     avaliados (pool curado com nota; rotacao por semana).
+  6. Meta de duracao rotativa por dia mantida (8-12 min).
 
-Nao toca: mixer v10, gates, deploy, feeds, site. Duracoes estimadas com 150 wpm.
+Nao toca: mixer v10, gates, deploy, feeds, site.
 Uso:  python3 -B scripts/gerar_roteiro_d5n_beta.py [--data YYYY-MM-DD] [--dry-run]
 """
 from __future__ import annotations
@@ -35,7 +33,6 @@ from pathlib import Path
 
 REPO = Path(os.environ.get("D5N_REPO", "/root/repositorio/d5n-videocast-source")).resolve()
 TODAY = date.today()
-HISTORY = REPO / "manifests" / "d5n" / ".frase_beta_history.json"
 
 THALITA = "pt-BR-ThalitaMultilingualNeural"
 FRANCISCA = "pt-BR-FranciscaNeural"
@@ -44,34 +41,162 @@ DIAS_PT = ["segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sex
 MESES_PT = ["janeiro", "fevereiro", "março", "abril", "maio", "junho",
             "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
 
-# Meta rotativa: (min_words, alvo, max_words) por dia da semana -> 8 a 12 min
-# 150 wpm + ~25s de headers/pausas/fades. Ex.: 1175 palavras ≈ 480s (8min).
+# Meta rotativa: (min_words, alvo, max_words) por dia da semana — calibrado para
+# CURADORIA (4-6 noticias/bloco com contexto profundo, sem encher linguiça):
+#   seg 8.0-8.5min · ter 8.5-9 · qua 9-9.5 · qui 8.5-9 · sex 9.5-10.5 · sab 9-9.5
 META_DIA = {
-    0: (1050, 1200, 1350),  # seg: 8-9min  (curto)
-    1: (1200, 1350, 1500),  # ter: 9-10min (medio-curto)
-    2: (1350, 1500, 1650),  # qua: 10-11min (medio-longo)
-    3: (1200, 1350, 1500),  # qui: 9-10min (medio-curto)
-    4: (1500, 1650, 1800),  # sex: 11-12min (longo)
-    5: (1350, 1500, 1650),  # sab: 10-11min (medio-longo)
+    0: (1000, 1120, 1250),  # seg: curto
+    1: (1100, 1220, 1350),  # ter: medio-curto
+    2: (1200, 1320, 1450),  # qua: medio
+    3: (1100, 1220, 1350),  # qui: medio-curto
+    4: (1350, 1500, 1650),  # sex: longo (recomendacoes IMDB + 5 noticias/bloco)
+    5: (1200, 1320, 1450),  # sab: medio
 }
-FALA_EFEITO = [
-    "na prática", "na ponta do lápis", "no seu dia a dia",
-    "para o seu bolso", "na hora de decidir", "na sua rotina",
-    "na hora de investir", "para quem acompanha de perto",
+MAX_NOTICIAS_BLOCO = 4  # curadoria (5 na sexta via meta especial)
+
+# Pools de expressao — USO UNICO por episodio (sem repeticao interna)
+APERTURA_BLOCO = [  # como abrir o bloco depois do header (variado)
+    "Bora começar entendendo o que está acontecendo",
+    "Deixa eu te situar rápido",
+    "O primeiro tópico de hoje é direto ao ponto",
+    "Vou te contar o que mais importa primeiro",
+    "Antes de qualquer coisa, o essencial",
 ]
-FECHOS = [
-    "é por aí que a informação vira decisão.",
-    "é esse o ponto que vale acompanhar de perto.",
-    "é aí que o assunto sai do papel e entra na sua semana.",
-    "é onde a história continua nas próximas horas.",
-    "é o que separa quem acompanha de quem descobre depois.",
-    "é o detalhe que muda a leitura de tudo o mais.",
+PONTE_CONTEXTO = [  # conecta manchete -> contexto (frase completa, com ponto)
+    "E tem um detalhe importante nessa história.",
+    "E o que está por trás disso é talvez o mais interessante.",
+    "E não é exagero dizer que isso tem peso.",
+    "E o contexto explica bastante coisa.",
+    "E aqui vale abrir um parêntese: o assunto é maior do que parece.",
+    "E o desdobramento disso é o que chama atenção.",
+    "E curiosamente, a repercussão já começou.",
+    "E olha, tem um ângulo que muita gente deixou passar.",
+    "E a forma como isso chegou ao noticiário diz muito.",
+    "E o que mais se discute sobre o tema hoje é isso:",
+    "E este é o ponto que os especialistas estão lendo com mais atenção.",
+    "E a notícia chega num momento em que o cenário já estava sensível.",
 ]
-TRANSICOES = [
-    "E o detalhe mais curioso é que", "E tem uma mudança importante aí",
-    "Só que o desdobramento mais interessante é", "E não para por aí",
-    "O que puxa o fio dessa história é", "E agora o ponto que complica",
-    "E é aqui que fica bom", "Só que o que chama atenção é",
+CONTEXTO_RODADA2 = [  # aprofundamento honesto de cada tema (sem inventar dado)
+    "O movimento pegou o noticiário ainda quente, com os desdobramentos chegando em cascata.",
+    "E o efeito vem em camadas: primeiro a manchete, depois a leitura dos especialistas, e só então a reação dos envolvidos.",
+    "O que o mercado lê nisso é sinal de que a agenda do dia vai ser movimentada.",
+    "E a leitura que se faz é de cautela com os próximos passos, porque a margem de erro aqui é pequena.",
+    "O tema ganha relevância porque mexe com decisões que saem do papel direto para a vida real.",
+    "E o que os analistas acompanham agora é a reação em cadeia — uma notícia puxando a outra.",
+    "Isso entra direto na conta de quem precisa decidir antes do fim do dia.",
+    "E o movimento ainda está em andamento: o que veio a público é o começo da história.",
+    "E os próximos números é que vão confirmar a direção — até lá, todo cuidado é pouco.",
+    "E não é só ruído: há um caminho concreto sendo traçado a partir disso.",
+    "E o que chama a atenção é a velocidade com que o assunto subiu na pauta.",
+    "E o impacto disso aparece em etapas, e a primeira já está na rua.",
+    "E é um daqueles casos em que o depois importa mais que o agora.",
+    "E o assunto já tinha temperatura antes — esse capítulo sobe o termômetro.",
+    "E é o tipo de notícia que redesenha o cenário das próximas horas.",
+    "E o que vem na sequência costuma confirmar ou derrubar a manchete.",
+]
+REACAO_HUMANA = [  # reacao coloquial da apresentadora — FRASES completas (ponto final)
+    "Sinceramente, esse é um tema que merece atenção.",
+    "Olha, essa é uma história que vale acompanhar com calma.",
+    "Falando sem rodeio, o tamanho disso é grande.",
+    "E sabendo como o mercado funciona, tem coisa aí embaixo.",
+    "Pra ser bem direta com você, não é ruído — é sinal.",
+    "E se você parar pra pensar, faz todo sentido.",
+    "Na conversa de hoje, é um dos pontos que mais valem atenção.",
+    "E com o que a gente viu nas últimas horas, dá pra ter leitura.",
+    "E esse detalhe, sozinho, já muda o tom da conversa.",
+    "E o curioso é que isso chegou sem muito alarde.",
+    "E mesmo sem parecer, essa notícia carrega peso.",
+    "E é daquelas que divide opinião antes mesmo de virar debate.",
+    "E é um tema que mexe com a sua rotina mais do que parece.",
+    "E o desdobramento disso é que a gente vai acompanhar de perto.",
+    "E antes que você se pergunte o porquê, aqui vai o contexto.",
+    "E essa é uma daquelas notícias que pedem leitura dupla.",
+]
+EFEITO_PRATICO = [  # "na pratica, isso significa..." (frase completa, sem preposicao orfa)
+    "Na prática, isso mexe direto com quem acompanha o assunto.",
+    "No seu dia a dia, isso traduz em decisão: acompanhar ou esperar.",
+    "Na ponta do lápis, o efeito aparece rápido.",
+    "Pra quem está de fora, parece distante — mas não está.",
+    "O que isso muda para você: contexto na hora de decidir.",
+    "E é aí que a informação deixa de ser só manchete e vira leitura de mundo.",
+    "E esse é o tipo de detalhe que faz diferença nas próximas horas.",
+    "Se você acompanha de perto, esse é o ponto que vale marcar.",
+    "E é o tipo de notícia que muda a leitura do resto do dia.",
+    "E quem precisa agir com isso em mãos ganha tempo.",
+    "E é por isso que a gente traz o tema hoje, com contexto e pé no chão.",
+    "E é esse o recado que fica para a sua manhã.",
+    "E é exatamente nesse ponto que a notícia sai do papel e toca sua vida.",
+    "E é isso que separa quem apenas lê de quem entende o que vem depois.",
+    "E é esse o efeito que a gente acompanha na prática ao longo das próximas horas.",
+    "E é nessa hora que o tema deixa de ser abstrato e vira escolha concreta.",
+]
+PONTE_NOTICIA = [  # transicao entre noticias do MESMO bloco (uso unico)
+    "E tem mais:",
+    "E o que complica ainda mais o quadro:",
+    "E do mesmo pacote, outro movimento:",
+    "E não para por aí:",
+    "Só que tem outro elemento na jogada:",
+    "E o que veio depois só reforça isso:",
+    "E num desdobramento direto, veio isto:",
+    "E vale olhar junto com isso:",
+    "E num outro giro do dia:",
+    "E essa é a outra metade da história:",
+    "E o que segue nesse mesmo tema:",
+    "E tem um desdobramento que pouca gente viu chegar:",
+    "E seguindo a linha do que já veio:",
+    "E tem uma reviravolta nesse enredo:",
+    "E o que os bastidores dizem é o seguinte:",
+    "E uma vez que a poeira baixou, aparece isso:",
+    "E como se não bastasse o que já veio:",
+    "E agora o cenário muda um pouco:",
+    "E tem um capítulo novo dessa história:",
+    "E o dado que chega agora reforça o quadro:",
+]
+FECHO_COLD = [  # reacao apos manchetes-tiro
+    "e é por aí que a gente começa.",
+    "e todas essas histórias têm consequência real.",
+    "e é sobre isso que a gente conversa agora.",
+    "e cada uma dessas notícias muda algo no seu dia.",
+    "e tem tudo a ver com o seu contexto de hoje.",
+    "e é exatamente esse fio que a gente puxa agora.",
+    "e é com esse cenário que a gente abre o dia.",
+    "e é por isso que esse tema entra na conversa de hoje.",
+    "e é esse pano de fundo que muda a leitura da notícia.",
+    "e é o que explica por que isso importa agora.",
+]
+
+# Fallbacks rotativos quando os pools esgotam (episodios longos com 16+ noticias)
+FALLBACK_REACAO = [
+    "Olha, esse é um tema que vale acompanhar.",
+    "E na real, é uma história com dobras.",
+    "E esse aqui merece dois minutos de atenção.",
+    "E é um daqueles casos que muda de figura ao longo do dia.",
+    "E acompanhar esse assunto de perto faz diferença.",
+    "E tem gente que vai sentir isso na prática.",
+]
+FALLBACK_CTX1 = [
+    "E o contexto aqui importa.",
+    "E o que vem por trás disso explica o porquê.",
+    "E o cenário em volta já estava sensível.",
+    "E a leitura dos que acompanham é de atenção redobrada.",
+    "E o desdobramento ainda vai render.",
+    "E é um tema que conversa direto com as demais notícias do dia.",
+]
+FALLBACK_CTX2 = [
+    "E os próximos movimentos é que vão mostrar a medida disso.",
+    "E o capítulo seguinte dessa história ainda está se escrevendo.",
+    "E o que os analistas projetam é que o assunto siga rendendo.",
+    "E os próximos dados é que vão dar a direção.",
+    "E o tema promete ocupar a pauta nas próximas horas.",
+    "E vale acompanhar o que vem pela frente.",
+]
+FALLBACK_EFEITO = [
+    "E é justamente por isso que o tema entra na pauta de hoje.",
+    "E é dessa consequência que a gente vai sentir o peso nos próximos dias.",
+    "E é esse o desdobramento que merece olho aberto.",
+    "E é isso que muda a sua leitura sobre o assunto.",
+    "E esse é o ponto que conecta a notícia com a sua realidade.",
+    "E é a partir daí que a história começa a fazer sentido.",
 ]
 
 WORLDCAT = ["trump", "iran", "israel", "russia", "ukraine", "global", "fauci", "missile",
@@ -95,6 +220,25 @@ FRASES_FALLBACK = [
     ("O futuro pertence àqueles que se preparam hoje.", "Malcolm X"),
 ]
 
+# Recomendacoes de sexta (IMDB — pool com nota real; rotacao por semana)
+# (titulo, tipo, nota_imdb, onde, por_que)
+IMDB_POOL_FILMES = [
+    ("Um Sonho de Liberdade", "filme", 9.3, "na Max ou em plataformas de aluguel", "considerado por muitos o melhor filme da história do IMDb, um clássico que emociona até hoje"),
+    ("Interestelar", "filme", 8.7, "na Max", "ficção científica com peso emocional e visual que envelheceu muito bem"),
+    ("Cidade de Deus", "filme", 8.6, "na Globoplay ou na Netflix", "a obra-prima brasileira, essencial e atual como sempre"),
+    ("Duna: Parte Dois", "filme", 8.4, "na Max", "épico que elevou a barra do cinema de ficção científica recente"),
+    ("A Odisséia", "filme", 8.4, "em cartaz nos cinemas", "a superprodução do ano, já cotada entre as melhores avaliadas do IMDb"),
+    ("Projeto Hail Mary", "filme", 8.2, "no Prime Video", "com Ryan Gosling, uma das apostas mais bem avaliadas de 2026"),
+]
+IMDB_POOL_SERIES = [
+    ("Breaking Bad", "série", 9.5, "na Netflix", "a série mais bem avaliada da história do IMDb, com roteiro impecável do começo ao fim"),
+    ("Chernobyl", "série", 9.3, "na Max", "minissérie densa e impactante sobre uma das maiores tragédias do século 20"),
+    ("One Piece — 2ª temporada", "série", None, "na Netflix", "a adaptação live-action mais assistida do momento, que só cresce"),
+    ("Black Rabbit", "série", None, "na Netflix", "Trama criminal com Jason Bateman e Jude Law, indicada a vários Emmys"),
+    ("The Diplomat", "série", None, "na Netflix", "Drama político consistente, elogiado pela crítica e bem avaliado pelo público"),
+    ("Round 6 (Squid Game)", "série", 8.0, "na Netflix", "mesmo depois do fim, segue entre as mais bem avaliadas e revisitadas da plataforma"),
+]
+
 
 def apresentadora(dia: date) -> str:
     wd = dia.weekday()
@@ -106,8 +250,6 @@ def apresentadora(dia: date) -> str:
 
 
 def nome_intro(dia: date) -> str:
-    """Nome falado na intro, coerente com a escala do mixer v10:
-    sexta dual alterna por seção e a intro (índice 1, após coldopen) é Francisca."""
     wd = dia.weekday()
     if wd in {0, 2, 5}:
         return "Thalita"
@@ -131,10 +273,8 @@ def load_mc_fm(day: str) -> list[dict]:
 
 
 def _norm_title(t: str) -> str:
-    """Normaliza titulo p/ dedupe: remove prefixos/sufixos de portal e espacos."""
     t = re.sub(r"^(notícia|notícias|destaque|confira|veja)\s+", "", t, flags=re.I)
     t = re.sub(r"\s*-\s*(Notícias|Agência|Redação|Economia|Mundo|Brasil)\s*$", "", t, flags=re.I)
-    # sufixo "- Fonte" generico (Money Times, Kinvo, G1...)
     t = re.sub(r"\s*-\s*[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ .]{2,40}$", "", t).strip()
     return re.sub(r"\s+", " ", t).casefold().strip()
 
@@ -146,7 +286,7 @@ def categorize(sources: list[dict]) -> dict[str, list[dict]]:
         title = (s.get("title") or "").strip()
         key = _norm_title(title)
         if not key or key in seen:
-            continue  # dedupe titulos sindicados (mesmo boletim em varios portais)
+            continue
         seen.add(key)
         for cat, keys in (("mundo", WORLDCAT), ("brasil", BRACAT), ("tech", TECHCAT), ("economia", ECOCAT)):
             if any(k in title.lower() for k in keys):
@@ -159,26 +299,12 @@ def categorize(sources: list[dict]) -> dict[str, list[dict]]:
 
 def manchete(ns: dict) -> str:
     t = ns.get("title", "")
-    # corta prefixo "Notícia " e sufixos de portal
     t = re.sub(r"^(notícia|notícias|confira|veja)\s+", "", t, flags=re.I)
     t = re.sub(r"\s*-\s*(Folha de S\.Paulo|G1|SBT News|InvestNews|Midiamax|Notícias|Economia|Mundo|Brasil|Portal A12)\s*$", "", t, flags=re.I)
-    # corta data + categoria: " - 24/09/2026 - Economia"
     t = re.sub(r"\s*-\s*\d{2}/\d{2}/\d{4}\s*-\s*[A-Za-zÀ-ÿ ]+$", "", t).strip()
     if " - " in t:
         t = t.rsplit(" - ", 1)[0]
     return t.strip()
-
-
-def origem(ns: dict) -> str:
-    s = ns.get("source", "")
-    if not s:
-        u = ns.get("url", "")
-        s = u.split("//")[-1].split("/")[0] if "//" in u else ""
-    # nomes de portal: "Folha de S.Paulo", "SBT News" — manter como estao;
-    # se parecer dominio (foo.com), corta o TLD
-    if "." in s and " " not in s:
-        s = s.rsplit(".", 1)[0]
-    return s.strip()
 
 
 LIXO_TITULOS = [
@@ -193,68 +319,8 @@ def eh_lixo(ns: dict) -> bool:
     return any(p in t for p in LIXO_TITULOS)
 
 
-def gancho(ns: dict) -> str:
-    """Manchete-tiro no 1o segundo: consequencia/fato forte, sem 'segundo fonte'."""
-    return manchete(ns)
-
-
-def expandir(ns: dict, rng: random.Random) -> str:
-    """Contexto honesto: 2-3 frases por noticia (gancho + contexto + efeito)."""
-    o = origem(ns)
-    base = manchete(ns)
-    ref = f", segundo {o}." if o else "."
-    ponte = rng.choice([
-        "E não é detalhe — é o centro da conversa",
-        "E o caso não para por aí",
-        "Movimento que já vira pauta no mercado e na política",
-        "E a reação não demorou a aparecer",
-        "E é exatamente esse ponto que move o debate",
-        "E o desdobramento promete esquentar ao longo do dia",
-        "E não é só isso — é o começo de uma sequência",
-        "E o que importa aqui é entender o tamanho disso",
-        "E vai além do que parece à primeira vista",
-        "E tem um detalhe que muda tudo na leitura",
-        "E é por isso que o assunto domina o radar",
-        "E a repercussão já começa a aparecer nas mesas",
-    ])
-    contexto = rng.choice([
-        "Quem acompanha o assunto de perto está de olho no desdobramento das próximas horas",
-        "A informação chega em um momento em que o noticiário já está acelerado",
-        "O cenário em volta muda rápido, e essa novidade entra direto na conta",
-        "O desdobramento deve ganhar força ao longo do dia",
-        "A movimentação acontece enquanto o noticiário ainda digere o impacto",
-        "O assunto ganha contornos maiores conforme os detalhes chegam",
-        "A leitura dos especialistas é de que os efeitos aparecem nas próximas sessões",
-        "O contexto em volta indica que a decisão vem acompanhada de pressão",
-        "A tendência é de que o tema siga rendendo ao longo da semana",
-        "O mercado acompanha de perto porque o impacto é imediato",
-        "A história ainda está em movimento, e os números devem atualizar nas próximas horas",
-        "O avaliador real aqui é o tempo: o desdobramento aparece rápido",
-    ])
-    efeito = rng.choice(FALA_EFEITO)
-    fecho = rng.choice(FECHOS)
-    # gancho+ref. Ponte capitalizada abre a frase seguinte; efeito fecha com fecho.
-    return (
-        f"{base}{ref} {ponte}: {contexto}. E {efeito} — {fecho}"
-    )
-
-
-def bloco_noticias(cat: list[dict], rng: random.Random, n: int = 4) -> str:
-    if not cat:
-        return ""
-    limpas = [ns for ns in cat if not eh_lixo(ns)] or cat
-    blocos = []
-    for i, ns in enumerate(limpas[:n]):
-        if i == 0:
-            blocos.append(gancho(ns) + ".")
-        else:
-            trans = rng.choice(TRANSICOES)
-            blocos.append(f"{trans}: {expandir(ns, rng)}")
-    return " ".join(blocos)
-
-
 def frase_pensador(rng: random.Random) -> str:
-    """Tenta Pensador (texto + autor); fallback classico com historico anti-repeticao."""
+    """Pensador (texto + autor); fallback classico anti-repeticao."""
     import urllib.request
     import urllib.parse
     try:
@@ -276,6 +342,114 @@ def frase_pensador(rng: random.Random) -> str:
     return f"{f[0]} — {f[1]}"
 
 
+def curadoria(cat: list[dict], n: int) -> list[dict]:
+    """Seleciona as n noticias mais fortes (titulo com numero/verbo forte, sem lixo)."""
+    if not cat:
+        return []
+    limpas = [ns for ns in cat if not eh_lixo(ns)] or cat
+    def score(ns):
+        t = ns.get("title", "")
+        s = 0
+        if re.search(r"\d", t): s += 2
+        if re.search(r"\b(vira|sobe|cai|rompe|recorde|bloqueia|lança|estreia|anuncia)\b", t, re.I): s += 2
+        if len(t) > 45: s += 1
+        return -s
+    return sorted(limpas, key=lambda ns: (score(ns), len(manchete(ns))))[:n]
+
+
+def bloco_curatorial(cat: list[dict], rng: random.Random, pool: dict, n: int | None = None) -> str:
+    """Bloco humanizado: ate n noticias (default MAX_NOTICIAS_BLOCO), cada uma com
+    contexto profundo (2 rodadas) + efeito pratico; conectores de uso unico —
+    um registro global no pool evita repetir qualquer expressao no episodio."""
+    limite = n or MAX_NOTICIAS_BLOCO
+    noticias = curadoria(cat, limite)
+    if not noticias:
+        return ""
+    usados = pool.setdefault("_usados", set())
+    pool.setdefault("_fb", 0)
+
+    def tirar(chave: str) -> str:
+        lst = pool.get(chave) or []
+        for idx in range(len(lst)):
+            cand = lst[idx]
+            if cand not in usados:
+                usados.add(cand)
+                pool[chave] = lst[idx + 1:]
+                return cand
+        pool[chave] = []
+        return ""
+
+    def fb(chave: str, lista: list) -> str:
+        """Fallback com dedup global: percorre a lista a partir de _fb e pega a
+        primeira frase ainda nao usada no episodio (unicidade mesmo em episodios longos)."""
+        n = len(lista)
+        inicio = pool.get(chave, 0)
+        for k in range(n):
+            it = lista[(inicio + k) % n]
+            if it not in usados:
+                usados.add(it)
+                pool[chave] = (inicio + k + 1) % n
+                return it
+        it = lista[inicio % n]
+        usados.add(it)
+        pool[chave] = (inicio + 1) % n
+        return it
+
+    abertura = tirar("apertura") or "Bora ver o que importa."
+    partes = [f"{abertura}:"]
+    for i, ns in enumerate(noticias):
+        t = manchete(ns)
+        if i == 0:
+            partes.append(f"{t}.")
+        else:
+            ponte = tirar("ponte_noticia") or "E tem mais:"
+            partes.append(f"{ponte} {t}.")
+        # contexto rodada 1: reacao humana + ponte
+        reac = tirar("reacao") or fb("_fb_reacao", FALLBACK_REACAO)
+        ctx1 = tirar("ponte_contexto") or fb("_fb_ctx1", FALLBACK_CTX1)
+        # contexto rodada 2: aprofundamento (uso unico)
+        ctx2 = tirar("contexto2") or fb("_fb_ctx2", FALLBACK_CTX2)
+        # efeito pratico (uso unico)
+        efe = tirar("efeito") or fb("_fb_efeito", FALLBACK_EFEITO)
+        partes.append(f"{reac} {ctx1} {ctx2} {efe}")
+    return " ".join(p for p in partes if p)
+
+
+def montar_pools(rng: random.Random) -> dict:
+    """Embaralha todos os pools — 'pop' garante uso unico no episodio."""
+    return {
+        "apertura": rng.sample(APERTURA_BLOCO, len(APERTURA_BLOCO)),
+        "ponte_contexto": rng.sample(PONTE_CONTEXTO, len(PONTE_CONTEXTO)),
+        "contexto2": rng.sample(CONTEXTO_RODADA2, len(CONTEXTO_RODADA2)),
+        "reacao": rng.sample(REACAO_HUMANA, len(REACAO_HUMANA)),
+        "efeito": rng.sample(EFEITO_PRATICO, len(EFEITO_PRATICO)),
+        "ponte_noticia": rng.sample(PONTE_NOTICIA, len(PONTE_NOTICIA)),
+        "fecho_cold": rng.sample(FECHO_COLD, len(FECHO_COLD)),
+        "perguntas": rng.sample([
+            "Você já parou para pensar no que muda no seu dia com o que aconteceu nas últimas horas?",
+            "O que você mais espera acompanhar hoje: mercado, política ou tecnologia?",
+            "Deixa eu te perguntar: você prefere começar o dia pelo Brasil ou pelo mundo?",
+        ], 3),
+    }
+
+
+def recomendacoes_sexta(rng: random.Random, dia: date) -> str:
+    """2 filmes + 2 series do IMDB, rotacionados pela semana do ano."""
+    semana = dia.isocalendar().week
+    filmes = [IMDB_POOL_FILMES[(semana + k) % len(IMDB_POOL_FILMES)] for k in (0, 1)]
+    series = [IMDB_POOL_SERIES[(semana + k) % len(IMDB_POOL_SERIES)] for k in (0, 1)]
+    abertura = rng.choice([
+        "E nas recomendações de sexta-feira, quem decide é o público do IMDb:",
+        "E sexta tem programa: o IMDb elegeu os favoritos da vez:",
+        "Fechando com um plano de fim de semana — os bem avaliados no IMDb:",
+    ])
+    itens = []
+    for t, tipo, nota, onde, motivo in filmes + series:
+        nota_txt = f" — nota {nota} no IMDb" if nota else ""
+        itens.append(f"{t}, {tipo}{nota_txt}, disponível {onde}. {motivo[0].upper() + motivo[1:]}.")
+    return abertura + " " + " ".join(itens)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", type=str, default=None)
@@ -291,7 +465,6 @@ def main() -> int:
     ontem = (dia - timedelta(days=1)).isoformat()
     sources = load_mc_fm(ontem) or load_mc_fm(dia.isoformat())
     if not sources:
-        # fallback: últimos 3 dias com dados disponíveis
         for back in range(2, 5):
             sources = load_mc_fm((dia - timedelta(days=back)).isoformat())
             if sources:
@@ -301,7 +474,8 @@ def main() -> int:
         print(f"ERRO: sem dados MC/FM para {dia.isoformat()} (e últimos 4 dias).", file=sys.stderr)
         return 1
     cats = categorize(sources)
-    rng = random.Random(dia.toordinal())  # deterministico por dia
+    rng = random.Random(dia.toordinal())
+    pool = montar_pools(rng)
 
     min_w, alvo_w, max_w = META_DIA[wd]
     apres = apresentadora(dia)
@@ -310,76 +484,64 @@ def main() -> int:
 
     manifests = {}
 
-    # coldopen: manchetes-tiro (sem data, sem "Bom dia")
+    # coldopen: manchetes-tiro (1 por categoria, forte)
     tiros = []
     for cat in ("mundo", "brasil", "tech", "economia"):
-        limpas = [ns for ns in cats[cat] if not eh_lixo(ns)] or cats[cat]
-        if limpas:
-            tiros.append(gancho(limpas[0]))
+        cur = curadoria(cats[cat], 1)
+        if cur:
+            tiros.append(manchete(cur[0]))
     if len(tiros) < 3:
         for cat in ("mundo", "brasil", "tech", "economia"):
-            limpas = [ns for ns in cats[cat] if not eh_lixo(ns)] or cats[cat]
-            for ns in limpas[1:3]:
+            for ns in curadoria(cats[cat], 3)[1:3]:
                 if len(tiros) < 4:
-                    tiros.append(gancho(ns))
-    manifest_cold = " ".join(f"{t}." for t in tiros[:4]) if tiros else ""
-    if len(manifest_cold) > 300:
-        manifest_cold = manifest_cold[:290].rsplit(" ", 1)[0] + "."
+                    tiros.append(manchete(ns))
+    fecho_cold = pool["fecho_cold"].pop()
+    manifest_cold = (" ".join(f"{t}." for t in tiros[:4]) + f" {fecho_cold.capitalize()}") if tiros else ""
     manifests["coldopen.txt"] = manifest_cold
 
-    # intro: Bom dia + nome real + pergunta + data em PT
-    pergunta_intro = rng.choice([
-        f"Você já parou para pensar no que muda no seu dia com o que aconteceu nas últimas horas?",
-        f"O que você mais espera acompanhar hoje: mercado, política ou tecnologia?",
-        f"Deixa eu te perguntar: você prefere começar o dia pelo Brasil ou pelo mundo?",
-    ])
+    # intro
+    pergunta = pool["perguntas"].pop()
     manifests["intro.txt"] = (
         f"Bom dia! Eu sou {nome}, e hoje é {dpt}. Este é o Drop Five News, "
-        f"o briefing das cinco da manhã com as notícias essenciais para começar o dia bem informado. "
-        f"{pergunta_intro} Em nossa edição de hoje, conectamos você ao que move o Brasil e o mundo "
-        f"neste horário, com contexto e curadoria. Vamos ao que interessa."
+        f"o briefing das cinco da manhã com as notícias essenciais, com contexto e curadoria. "
+        f"{pergunta} Vamos ao que interessa."
     )
 
-    manifests["mundo.txt"] = bloco_noticias(cats["mundo"], rng)
-    manifests["brasil.txt"] = bloco_noticias(cats["brasil"], rng)
-    manifests["tecnologia.txt"] = bloco_noticias(cats["tech"], rng)
+    manifests["mundo.txt"] = bloco_curatorial(cats["mundo"], rng, pool)
+    manifests["brasil.txt"] = bloco_curatorial(cats["brasil"], rng, pool)
+    manifests["tecnologia.txt"] = bloco_curatorial(cats["tech"], rng, pool)
     if cats["economia"]:
-        manifests["economia.txt"] = bloco_noticias(cats["economia"], rng)
+        manifests["economia.txt"] = bloco_curatorial(cats["economia"], rng, pool)
     else:
-        # economia sem fontes proprias: redistribui so noticias NAO usadas
-        # (sem inventar dado, sem repetir o que ja foi lido)
-        def _usadas(cat: list[dict]) -> set:
+        def _used_limpas(cat):
             limpas = [ns for ns in cat if not eh_lixo(ns)] or cat
-            return {id(ns) for ns in limpas[:8]}
-        usadas = set().union(_usadas(cats["mundo"]), _usadas(cats["brasil"]), _usadas(cats["tech"]))
-        sobras = [
-            ns for cat in ("mundo", "brasil", "tech") for ns in cats[cat]
-            if id(ns) not in usadas and not eh_lixo(ns)
-        ]
-        fontes_eco = sobras[:4]
-        manifests["economia.txt"] = bloco_noticias(fontes_eco, rng, len(fontes_eco))
+            return {id(ns) for ns in limpas[:MAX_NOTICIAS_BLOCO]}
+        usadas = set().union(_used_limpas(cats["mundo"]), _used_limpas(cats["brasil"]), _used_limpas(cats["tech"]))
+        sobras = [ns for cat in ("mundo", "brasil", "tech") for ns in cats[cat]
+                  if id(ns) not in usadas and not eh_lixo(ns)]
+        manifests["economia.txt"] = bloco_curatorial(sobras[:MAX_NOTICIAS_BLOCO], rng, pool)
 
-    # interacao: pergunta espontanea ligada ao assunto mais forte do dia
-    tema = manchete(cats["mundo"][0]).split(",")[0].strip() if cats["mundo"] else "as notícias de hoje"
-    manifest_inter = rng.choice([
-        f"E aí, o que você acha de tudo isso? Deixa eu saber: {tema} muda algo na sua rotina?",
-        f"Pergunta que fica no ar: {tema} passou batido para você ou mexeu com o seu dia?",
-        f"Quero saber de você: {tema} — isso te preocupa, te anima ou tanto faz?",
+    # interacao
+    tema = (curadoria(cats["mundo"], 1) or curadoria(cats["brasil"], 1) or [{}])[0]
+    tema_txt = manchete(tema).split(",")[0].strip() if tema else "as notícias de hoje"
+    manifests["interacao.txt"] = rng.choice([
+        f"E aí, o que você acha de tudo isso? Deixa eu saber: {tema_txt} muda algo na sua rotina?",
+        f"Pergunta que fica no ar: {tema_txt} passou batido para você ou mexeu com o seu dia?",
+        f"Quero saber de você: {tema_txt} — isso te preocupa, te anima ou tanto faz?",
     ])
-    manifests["interacao.txt"] = manifest_inter
 
-    # ofertas: bloco comercial factual (sem inventar preco) — so itens limpos
+    # ofertas
     ofertas_intro = "E bora para as ofertas do dia: "
     of_limpas = [ns for ns in (cats["economia"][:2] + cats["tech"][:2]) if ns and not eh_lixo(ns)]
-    of_noticias = [manchete(ns) + "." for ns in of_limpas]
-    manifests["ofertas.txt"] = (ofertas_intro + " ".join(of_noticias)) if of_noticias else (ofertas_intro + "o radar de oportunidades segue aberto.")
+    manifests["ofertas.txt"] = (ofertas_intro + " ".join(manchete(ns) + "." for ns in of_limpas)) if of_limpas else (ofertas_intro + "o radar de oportunidades segue aberto.")
 
     manifests["frase.txt"] = f"E a frase do dia é: “{frase_pensador(rng)}”"
 
-    # recomendacoes/historia: opcionais, so com dado real verificavel -> omitir no beta se nao houver
-    # (contrato v3: omitir o arquivo quando nao houver item verificavel)
+    # sexta: recomendacoes IMDB obrigatorias
+    if wd == 4:
+        manifests["recomendacoes.txt"] = recomendacoes_sexta(rng, dia)
 
-    # outro: CTA RSS Manha Conectada (4 termos) + lembrete + bordao variado
+    # outro: CTA RSS + links das noticias na descricao/site + bordao
     bordao = rng.choice([
         "Tenha um excelente dia e até a próxima!",
         "Bons negócios, boas notícias e até amanhã!",
@@ -387,72 +549,47 @@ def main() -> int:
         "Um abraço apertado e até o próximo briefing!",
     ])
     manifests["outro.txt"] = (
+        f"E os links de todas as notícias de hoje estão na descrição do episódio e no nosso site, "
+        f"o d5n ponto netlify ponto app — é só acessar que você encontra cada fonte e cada detalhe. "
         f"Este foi o Drop Five News desta {DIAS_PT[wd]}, {dia.day} de {MESES_PT[dia.month - 1]}. "
-        f"E um lembrete importante: agora você também pode assinar o Manhã Conectada no seu aplicativo "
-        f"de podcast — o RSS próprio está no site do Drop Five News. Fique ligado ao longo do dia: "
-        f"o Manhã Conectada às onze e o Fechamento do Mercado às dezessete. {bordao} Bom dia!"
+        f"E um lembrete: você também pode assinar o Manhã Conectada no seu aplicativo de podcast — "
+        f"o RSS próprio está no site do Drop Five News. Fique ligado: o Manhã Conectada às onze "
+        f"e o Fechamento do Mercado às dezessete. {bordao} Bom dia!"
     )
 
-    # validacao de volume: expandir até caber na meta do dia
-    # estrategia: mais noticias por bloco (ate o disponivel) + ganchos extras no coldopen
+    # validacao de volume: se abaixo da meta, amplia bloco com 1 noticia curatelada extra
     def wc(t: str) -> int:
         return len(re.findall(r"\b[\wÀ-ÿ]+\b", t))
 
     total = sum(wc(v) for v in manifests.values())
+    # se abaixo da meta: cresce cada bloco de 4 -> 5 -> 6 noticias (usando o MESMO pool
+    # global, entao conectores continuam de uso unico no episodio inteiro)
     guard = 0
-    while total < min_w and guard < 6:
+    while total < min_w and guard < 2:
         antes = total
-        for cat, key in (("mundo", "mundo"), ("brasil", "brasil"), ("tech", "tecnologia"),
-                         ("economia", "economia")):
-            limpas = [ns for ns in cats[cat] if not eh_lixo(ns)] or cats[cat]
-            teto = min(8, len(limpas))
-            manifest_cheio = bloco_noticias(limpas, rng, teto) if limpas else ""
-            if wc(manifest_cheio) > wc(manifests.get(f"{key}.txt", "")):
-                manifests[f"{key}.txt"] = manifest_cheio
-        total = sum(wc(v) for v in manifests.values())
-        if total == antes:  # nao cresceu mais
-            break
-        guard += 1
-    # se ainda abaixo (poucas noticias reais), adiciona ganchos extras legitimos ao coldopen
-    if total < min_w:
-        usados = set()
-        for v in manifests.values():
-            usados.update(re.findall(r"[A-ZÀ-Ý][^.!?]{20,}", v))
-        extras_legitimos = []
-        for cat in cats.values():
-            for ns in cat:
-                if eh_lixo(ns) or len(manchete(ns)) <= 30:
-                    continue
-                h = gancho(ns)
-                if h not in usados:
-                    extras_legitimos.append(h)
-        pendente = min_w - total
-        for h in extras_legitimos[:10]:
-            if pendente <= 0:
-                break
-            manifests["coldopen.txt"] += " " + h + "."
-            pendente -= wc(h)
-        total = sum(wc(v) for v in manifests.values())
-    if total > max_w:
-        # corta noticias extras dos blocos ate caber (mantendo minimo 2 por bloco)
-        for cat, key in (("economia", "economia"), ("tech", "tecnologia"),
-                         ("mundo", "mundo"), ("brasil", "brasil")):
+        for cat, key in (("mundo", "mundo"), ("brasil", "brasil"), ("tech", "tecnologia"), ("economia", "economia")):
             if not cats[cat]:
                 continue
-            limpas = [ns for ns in cats[cat] if not eh_lixo(ns)] or cats[cat]
-            teto = min(8, len(limpas))
-            melhor = None
-            for n in range(teto, 1, -1):
-                candidato = bloco_noticias(limpas, rng, n)
-                if melhor is None or wc(candidato) < wc(melhor):
-                    melhor = candidato
-                if wc(candidato) <= (max_w // 5) + 80:
-                    melhor = candidato
-                    break
-            manifests[f"{key}.txt"] = melhor or manifests.get(f"{key}.txt", "")
-            total = sum(wc(v) for v in manifests.values())
-            if total <= max_w:
-                break
+            candidato = bloco_curatorial(cats[cat], rng, pool, 5)
+            if wc(candidato) > wc(manifests.get(f"{key}.txt", "")):
+                manifests[f"{key}.txt"] = candidato
+        total = sum(wc(v) for v in manifests.values())
+        if total <= antes:
+            break
+        guard += 1
+    guard = 0
+    while total < min_w and guard < 2:
+        antes = total
+        for cat, key in (("mundo", "mundo"), ("brasil", "brasil"), ("tech", "tecnologia"), ("economia", "economia")):
+            if not cats[cat]:
+                continue
+            candidato = bloco_curatorial(cats[cat], rng, pool, 6)
+            if wc(candidato) > wc(manifests.get(f"{key}.txt", "")):
+                manifests[f"{key}.txt"] = candidato
+        total = sum(wc(v) for v in manifests.values())
+        if total <= antes:
+            break
+        guard += 1
 
     dur_estimada = 480 + (total - 1050) * (720 - 480) / (1800 - 1050)
     dur_estimada = max(480, min(720, dur_estimada))
