@@ -3,7 +3,8 @@
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
      xmlns:atom="http://www.w3.org/2005/Atom"
      xmlns:content="http://purl.org/rss/1.0/modules/content/"
-     xmlns:podcast="https://podcastindex.org/namespace/1.0">
+     xmlns:podcast="https://podcastindex.org/namespace/1.0"
+     xmlns:psc="http://podlove.org/simple-chapters">
   <channel>
     <title>Manhã Conectada</title>
     <link>https://d5n-daily.netlify.app/#manha-conectada</link>
@@ -51,6 +52,20 @@
       <description>Manhã Conectada de 29/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:24.</description>
       <itunes:summary>Manhã Conectada de 29/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:24.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 29/09/2026</strong></p><p>Manhã Conectada de 29/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:24.</p><ul><li>“Modera Brasil”: em novo aplicativo do Meu SUS Digital, população poderá medir o seu consumo de álcool e verificar riscos para a saúde - bvsms.saude.gov.br</li><li>Rio: operação policial na Maré deixa um morto e 10 feridos - Agência Brasil</li><li>Notícias sobre edital de 25 de setembro de 2026 - Estratégia Concursos</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-09-29.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:52" title="Agenda"/>
+      <psc:chapter start="01:45" title="Clima &amp; País"/>
+      <psc:chapter start="02:38" title="Mundo"/>
+      <psc:chapter start="03:31" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:52" title="Agenda"/>
+      <psc:chapter start="01:45" title="Clima &amp; País"/>
+      <psc:chapter start="02:38" title="Mundo"/>
+      <psc:chapter start="03:31" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 25/09/2026</title>
@@ -67,6 +82,20 @@
       <description>Manhã Conectada de 25/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:23.</description>
       <itunes:summary>Manhã Conectada de 25/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:23.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 25/09/2026</strong></p><p>Manhã Conectada de 25/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:23.</p><ul><li>Notícias sobre edital de 23 de setembro de 2026 - Estratégia Concursos</li><li>Austrália x Brasil: onde assistir ao vivo e horário - SBT News</li><li>Lula endurece discurso sobre bets; Flávio critica regulamentação atual, mas defende aposta esportiva - BBC</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-09-25.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:52" title="Agenda"/>
+      <psc:chapter start="01:45" title="Clima &amp; País"/>
+      <psc:chapter start="02:37" title="Mundo"/>
+      <psc:chapter start="03:30" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:52" title="Agenda"/>
+      <psc:chapter start="01:45" title="Clima &amp; País"/>
+      <psc:chapter start="02:37" title="Mundo"/>
+      <psc:chapter start="03:30" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 24/09/2026</title>
@@ -83,6 +112,20 @@
       <description>Manhã Conectada de 24/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:32.</description>
       <itunes:summary>Manhã Conectada de 24/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:32.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 24/09/2026</strong></p><p>Manhã Conectada de 24/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:32.</p><ul><li>Votos nulos, brancos e abstenções devem ser recorde este ano, aposta autor de livro sobre eleições no Brasil: 'Tem algo diferente desta vez' - BBC</li><li>Notícias sobre edital de 22 de setembro de 2026 - Estratégia Concursos</li><li>El Niño pode provocar 450 mil mortes no mundo até fevereiro de 2027; Brasil está entre os países mais ameaçados - G1</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-09-24.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:06" title="Agenda"/>
+      <psc:chapter start="02:12" title="Clima &amp; País"/>
+      <psc:chapter start="03:19" title="Mundo"/>
+      <psc:chapter start="04:25" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:06" title="Agenda"/>
+      <psc:chapter start="02:12" title="Clima &amp; País"/>
+      <psc:chapter start="03:19" title="Mundo"/>
+      <psc:chapter start="04:25" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 23/09/2026</title>
@@ -99,6 +142,20 @@
       <description>Manhã Conectada de 23/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 3:55.</description>
       <itunes:summary>Manhã Conectada de 23/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 3:55.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 23/09/2026</strong></p><p>Manhã Conectada de 23/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 3:55.</p><ul><li>Por que os candidatos a presidente querem construir mais data centers no Brasil - G1</li><li>Viúva de Rick chega ao Brasil após mal-estar em voo e vai ao interior de SP - UOL</li><li>Coluna do Túlio - SBT News</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-09-23.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:47" title="Agenda"/>
+      <psc:chapter start="01:34" title="Clima &amp; País"/>
+      <psc:chapter start="02:21" title="Mundo"/>
+      <psc:chapter start="03:08" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:47" title="Agenda"/>
+      <psc:chapter start="01:34" title="Clima &amp; País"/>
+      <psc:chapter start="02:21" title="Mundo"/>
+      <psc:chapter start="03:08" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 22/09/2026</title>
@@ -115,6 +172,20 @@
       <description>Manhã Conectada de 22/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:13.</description>
       <itunes:summary>Manhã Conectada de 22/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:13.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 22/09/2026</strong></p><p>Manhã Conectada de 22/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:13.</p><ul><li>Por que o Brasil abre os discursos na Assembleia da ONU? - SBT News</li><li>Notícias sobre edital de 18 de setembro de 2026 - Estratégia Concursos</li><li>Morte de Presley Gerber, filho de Cindy Crawford, está sendo investigada como possível overdose - BBC</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-09-22.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:02" title="Agenda"/>
+      <psc:chapter start="02:05" title="Clima &amp; País"/>
+      <psc:chapter start="03:07" title="Mundo"/>
+      <psc:chapter start="04:10" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:02" title="Agenda"/>
+      <psc:chapter start="02:05" title="Clima &amp; País"/>
+      <psc:chapter start="03:07" title="Mundo"/>
+      <psc:chapter start="04:10" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 18/09/2026</title>
@@ -131,6 +202,20 @@
       <description>Manhã Conectada de 18/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:42.</description>
       <itunes:summary>Manhã Conectada de 18/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:42.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 18/09/2026</strong></p><p>Manhã Conectada de 18/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:42.</p><ul><li>Reajuste do Bolsa Família: Lula está usando o aumento como arma eleitoral? - BBC</li><li>Notícias sobre edital de 17 de setembro de 2026 - Estratégia Concursos</li><li>'Avenida Brasil 2': Nívea Maria assina com a Globo para fazer personagem inédita - UOL</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-09-18.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:56" title="Agenda"/>
+      <psc:chapter start="01:52" title="Clima &amp; País"/>
+      <psc:chapter start="02:49" title="Mundo"/>
+      <psc:chapter start="03:45" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:56" title="Agenda"/>
+      <psc:chapter start="01:52" title="Clima &amp; País"/>
+      <psc:chapter start="02:49" title="Mundo"/>
+      <psc:chapter start="03:45" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 16/09/2026</title>
@@ -147,6 +232,20 @@
       <description>Manhã Conectada de 16/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:44.</description>
       <itunes:summary>Manhã Conectada de 16/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:44.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 16/09/2026</strong></p><p>Manhã Conectada de 16/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:44.</p><ul><li>Brasileiros que se consideram felizes caem de 89% para 61% - SBT News</li><li>Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos</li><li>Concurso Banco do Brasil 2026: acompanhe as últimas atualizações - Qconcursos Folha Dirigida</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-09-16.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:56" title="Agenda"/>
+      <psc:chapter start="01:53" title="Clima &amp; País"/>
+      <psc:chapter start="02:50" title="Mundo"/>
+      <psc:chapter start="03:47" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:56" title="Agenda"/>
+      <psc:chapter start="01:53" title="Clima &amp; País"/>
+      <psc:chapter start="02:50" title="Mundo"/>
+      <psc:chapter start="03:47" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 15/09/2026</title>
@@ -163,6 +262,20 @@
       <description>Manhã Conectada de 15/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:36.</description>
       <itunes:summary>Manhã Conectada de 15/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:36.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 15/09/2026</strong></p><p>Manhã Conectada de 15/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:36.</p><ul><li>Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos</li><li>Veja novidades do Move Brasil: de inclusão dos profissionais de transporte escolar a parcela-balão - Extra online</li><li>Lula sanciona Move Brasil, que dá crédito a motoristas de apps - UOL Economia</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-09-15.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:07" title="Agenda"/>
+      <psc:chapter start="02:14" title="Clima &amp; País"/>
+      <psc:chapter start="03:21" title="Mundo"/>
+      <psc:chapter start="04:28" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:07" title="Agenda"/>
+      <psc:chapter start="02:14" title="Clima &amp; País"/>
+      <psc:chapter start="03:21" title="Mundo"/>
+      <psc:chapter start="04:28" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 14/09/2026</title>
@@ -179,6 +292,20 @@
       <description>Manhã Conectada de 14/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:49.</description>
       <itunes:summary>Manhã Conectada de 14/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:49.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 14/09/2026</strong></p><p>Manhã Conectada de 14/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:49.</p><ul><li>Eleições 2026: Crise no STF pode ter impacto decisivo na disputa presidencial, diz FT - BBC</li><li>Por dentro da rede de influenciadores que ataca o voto feminino no Brasil - Folha de S.Paulo</li><li>Notícias Ao Vivo do Brasil e do Mundo - cnnbrasil.com.br</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-09-14.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:57" title="Agenda"/>
+      <psc:chapter start="01:55" title="Clima &amp; País"/>
+      <psc:chapter start="02:53" title="Mundo"/>
+      <psc:chapter start="03:51" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:57" title="Agenda"/>
+      <psc:chapter start="01:55" title="Clima &amp; País"/>
+      <psc:chapter start="02:53" title="Mundo"/>
+      <psc:chapter start="03:51" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 11/09/2026</title>
@@ -195,6 +322,20 @@
       <description>Manhã Conectada de 11/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:36.</description>
       <itunes:summary>Manhã Conectada de 11/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:36.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 11/09/2026</strong></p><p>Manhã Conectada de 11/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:36.</p><ul><li>Notícias sobre edital de 10 de setembro de 2026 - Estratégia Concursos</li><li>Confira como foi a quinta-feira (10) dos candidatos a presidente - Agência Brasil</li><li>As 'armas' da CBF para transformar venda da Copa do Brasil em negócio bilionário - Notícias da TV</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-09-11.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:55" title="Agenda"/>
+      <psc:chapter start="01:50" title="Clima &amp; País"/>
+      <psc:chapter start="02:45" title="Mundo"/>
+      <psc:chapter start="03:40" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:55" title="Agenda"/>
+      <psc:chapter start="01:50" title="Clima &amp; País"/>
+      <psc:chapter start="02:45" title="Mundo"/>
+      <psc:chapter start="03:40" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 10/09/2026</title>
@@ -211,6 +352,20 @@
       <description>Manhã Conectada de 10/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:04.</description>
       <itunes:summary>Manhã Conectada de 10/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:04.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 10/09/2026</strong></p><p>Manhã Conectada de 10/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:04.</p><ul><li>Brasil melhora desempenho escolar no longo prazo, mas patamar é baixo - Agência Brasil</li><li>Concursos Sul: as principais OPORTUNIDADES de 2026! - Estratégia Concursos</li><li>'Ancelotti revoluciona o Brasil': imprensa internacional destaca convocação da seleção com novidades - terra.com.br</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-09-10.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:00" title="Agenda"/>
+      <psc:chapter start="02:01" title="Clima &amp; País"/>
+      <psc:chapter start="03:02" title="Mundo"/>
+      <psc:chapter start="04:03" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:00" title="Agenda"/>
+      <psc:chapter start="02:01" title="Clima &amp; País"/>
+      <psc:chapter start="03:02" title="Mundo"/>
+      <psc:chapter start="04:03" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 09/09/2026</title>
@@ -227,6 +382,20 @@
       <description>Manhã Conectada de 09/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:36.</description>
       <itunes:summary>Manhã Conectada de 09/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:36.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 09/09/2026</strong></p><p>Manhã Conectada de 09/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:36.</p><ul><li>Nacional estreia documentário que lembra histórico programa PRK-30 - Agência Brasil</li><li>Notícias sobre edital de 08 de setembro de 2026 - Estratégia Concursos</li><li>Crise no STF ameaça repetir 'estrago' da Lava Jato nas instituições e na campanha eleitoral, diz professora da FGV - BBC</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-09-09.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:19" title="Agenda"/>
+      <psc:chapter start="02:38" title="Clima &amp; País"/>
+      <psc:chapter start="03:57" title="Mundo"/>
+      <psc:chapter start="05:16" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:19" title="Agenda"/>
+      <psc:chapter start="02:38" title="Clima &amp; País"/>
+      <psc:chapter start="03:57" title="Mundo"/>
+      <psc:chapter start="05:16" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 08/09/2026</title>
@@ -243,6 +412,20 @@
       <description>Manhã Conectada de 08/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:22.</description>
       <itunes:summary>Manhã Conectada de 08/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:22.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 08/09/2026</strong></p><p>Manhã Conectada de 08/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:22.</p><ul><li>Dólar cai a R$ 5,08 e atinge menor valor em um mês - Agência Brasil</li><li>Ruas vazias, bares cheios, novela no telão: relembre como Brasil parou para ver o último capítulo de ‘Avenida Brasil’ - G1</li><li>Veja como foi a terça-feira (8) dos candidatos a presidente - Agência Brasil</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-09-08.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:16" title="Agenda"/>
+      <psc:chapter start="02:32" title="Clima &amp; País"/>
+      <psc:chapter start="03:49" title="Mundo"/>
+      <psc:chapter start="05:05" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:16" title="Agenda"/>
+      <psc:chapter start="02:32" title="Clima &amp; País"/>
+      <psc:chapter start="03:49" title="Mundo"/>
+      <psc:chapter start="05:05" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 07/09/2026</title>
@@ -259,6 +442,26 @@
       <description>Manhã Conectada de 07/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:43.</description>
       <itunes:summary>Manhã Conectada de 07/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:43.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 07/09/2026</strong></p><p>Manhã Conectada de 07/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:43.</p><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-09-07.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:35" title="Agenda"/>
+      <psc:chapter start="01:10" title="Clima &amp; País"/>
+      <psc:chapter start="01:46" title="Mundo"/>
+      <psc:chapter start="02:21" title="Tecnologia"/>
+      <psc:chapter start="02:56" title="Economia"/>
+      <psc:chapter start="03:32" title="Sinal 11"/>
+      <psc:chapter start="04:07" title="Encerramento"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:35" title="Agenda"/>
+      <psc:chapter start="01:10" title="Clima &amp; País"/>
+      <psc:chapter start="01:46" title="Mundo"/>
+      <psc:chapter start="02:21" title="Tecnologia"/>
+      <psc:chapter start="02:56" title="Economia"/>
+      <psc:chapter start="03:32" title="Sinal 11"/>
+      <psc:chapter start="04:07" title="Encerramento"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 03/09/2026</title>
@@ -275,6 +478,20 @@
       <description>Manhã Conectada de 03/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:40.</description>
       <itunes:summary>Manhã Conectada de 03/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:40.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 03/09/2026</strong></p><p>Manhã Conectada de 03/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:40.</p><ul><li>INPE inicia operação de modelo próprio de previsão do tempo - Agência Brasil</li><li>Notícias sobre edital de 02 de setembro de 2026 - Estratégia Concursos</li><li>BC proíbe publicidade em comprovantes do Pix a partir de março de 2027 - Agência Brasil</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-09-03.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:08" title="Agenda"/>
+      <psc:chapter start="02:16" title="Clima &amp; País"/>
+      <psc:chapter start="03:24" title="Mundo"/>
+      <psc:chapter start="04:32" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:08" title="Agenda"/>
+      <psc:chapter start="02:16" title="Clima &amp; País"/>
+      <psc:chapter start="03:24" title="Mundo"/>
+      <psc:chapter start="04:32" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 01/09/2026</title>
@@ -291,6 +508,20 @@
       <description>Manhã Conectada de 01/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:59.</description>
       <itunes:summary>Manhã Conectada de 01/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:59.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 01/09/2026</strong></p><p>Manhã Conectada de 01/09/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:59.</p><ul><li>Meirelles: Brasil terá que fazer "ajuste fiscal muito sério" - SBT News</li><li>Entrega XP: As principais notícias que movem o setor do Varejo | Setembro/26 - XP Investimentos</li><li>Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-09-01.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:11" title="Agenda"/>
+      <psc:chapter start="02:23" title="Clima &amp; País"/>
+      <psc:chapter start="03:35" title="Mundo"/>
+      <psc:chapter start="04:47" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:11" title="Agenda"/>
+      <psc:chapter start="02:23" title="Clima &amp; País"/>
+      <psc:chapter start="03:35" title="Mundo"/>
+      <psc:chapter start="04:47" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 31/08/2026</title>
@@ -307,6 +538,26 @@
       <description>Manhã Conectada de 31/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:12.</description>
       <itunes:summary>Manhã Conectada de 31/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:12.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 31/08/2026</strong></p><p>Manhã Conectada de 31/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:12.</p><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-08-31.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:39" title="Agenda"/>
+      <psc:chapter start="01:18" title="Clima &amp; País"/>
+      <psc:chapter start="01:57" title="Mundo"/>
+      <psc:chapter start="02:36" title="Tecnologia"/>
+      <psc:chapter start="03:15" title="Economia"/>
+      <psc:chapter start="03:54" title="Sinal 11"/>
+      <psc:chapter start="04:33" title="Encerramento"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:39" title="Agenda"/>
+      <psc:chapter start="01:18" title="Clima &amp; País"/>
+      <psc:chapter start="01:57" title="Mundo"/>
+      <psc:chapter start="02:36" title="Tecnologia"/>
+      <psc:chapter start="03:15" title="Economia"/>
+      <psc:chapter start="03:54" title="Sinal 11"/>
+      <psc:chapter start="04:33" title="Encerramento"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 27/08/2026</title>
@@ -323,6 +574,20 @@
       <description>Manhã Conectada de 27/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:12.</description>
       <itunes:summary>Manhã Conectada de 27/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:12.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 27/08/2026</strong></p><p>Manhã Conectada de 27/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:12.</p><ul><li>Brasil Urgente ao vivo: assista ao programa agora - band.com.br</li><li>Notícias sobre edital de 26 de agosto de 2026 - Estratégia Concursos</li><li>Colapso glacial: o fenômeno que causou a enchente repentina na fronteira entre Nepal e Tibete - BBC</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-08-27.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:14" title="Agenda"/>
+      <psc:chapter start="02:28" title="Clima &amp; País"/>
+      <psc:chapter start="03:43" title="Mundo"/>
+      <psc:chapter start="04:57" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:14" title="Agenda"/>
+      <psc:chapter start="02:28" title="Clima &amp; País"/>
+      <psc:chapter start="03:43" title="Mundo"/>
+      <psc:chapter start="04:57" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 17/08/2026</title>
@@ -339,6 +604,20 @@
       <description>Manhã Conectada de 17/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:56.</description>
       <itunes:summary>Manhã Conectada de 17/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:56.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 17/08/2026</strong></p><p>Manhã Conectada de 17/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:56.</p><ul><li>Hayden Panettiere: o que se sabe sobre a morte da atriz de 'Heroes' aos 36 anos - bbc.com</li><li>EUA consideram novas sanções contra Alexandre de Moraes, diz jornal britânico - terra.com.br</li><li>Discord tem até esta segunda para suspender lives no Brasil - SBT News</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-08-17.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:59" title="Agenda"/>
+      <psc:chapter start="01:58" title="Clima &amp; País"/>
+      <psc:chapter start="02:57" title="Mundo"/>
+      <psc:chapter start="03:56" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:59" title="Agenda"/>
+      <psc:chapter start="01:58" title="Clima &amp; País"/>
+      <psc:chapter start="02:57" title="Mundo"/>
+      <psc:chapter start="03:56" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 14/08/2026</title>
@@ -355,6 +634,20 @@
       <description>Manhã Conectada de 14/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:16.</description>
       <itunes:summary>Manhã Conectada de 14/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:16.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 14/08/2026</strong></p><p>Manhã Conectada de 14/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 6:16.</p><ul><li>Lula: Estou tentando falar com Trump para não se meter nas coisas do Brasil - UOL Notícias</li><li>Notícias sobre edital de 13 de agosto de 2026 - estrategiaconcursos.com.br</li><li>Os perfis no Instagram que espalham desinformação e aplicam golpe em migrantes que tentam chegar a Ceuta - BBC</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-08-14.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:15" title="Agenda"/>
+      <psc:chapter start="02:30" title="Clima &amp; País"/>
+      <psc:chapter start="03:45" title="Mundo"/>
+      <psc:chapter start="05:00" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:15" title="Agenda"/>
+      <psc:chapter start="02:30" title="Clima &amp; País"/>
+      <psc:chapter start="03:45" title="Mundo"/>
+      <psc:chapter start="05:00" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 11/08/2026</title>
@@ -371,6 +664,20 @@
       <description>Manhã Conectada de 11/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:18.</description>
       <itunes:summary>Manhã Conectada de 11/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:18.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 11/08/2026</strong></p><p>Manhã Conectada de 11/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:18.</p><ul><li>Notícias sobre edital de 10 de agosto de 2026 - Estratégia Concursos</li><li>Lula busca se reaproximar de Trump - Assine o Meio</li><li>Chuva forte atinge parte do Brasil nesta terça; veja onde - SBT News</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-08-11.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:03" title="Agenda"/>
+      <psc:chapter start="02:07" title="Clima &amp; País"/>
+      <psc:chapter start="03:10" title="Mundo"/>
+      <psc:chapter start="04:14" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:03" title="Agenda"/>
+      <psc:chapter start="02:07" title="Clima &amp; País"/>
+      <psc:chapter start="03:10" title="Mundo"/>
+      <psc:chapter start="04:14" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 10/08/2026</title>
@@ -387,6 +694,20 @@
       <description>Manhã Conectada de 10/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:40.</description>
       <itunes:summary>Manhã Conectada de 10/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:40.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 10/08/2026</strong></p><p>Manhã Conectada de 10/08/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:40.</p><ul><li>Desenrola Adimplentes começa hoje após ajustes para atrair os bancos - O GLOBO</li><li>Piauí lidera ranking de calor e baixa umidade no Brasil - SBT News</li><li>Saiba como pressionar os senadores para acabar com a escala 6x1 - TVT News</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-08-10.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:56" title="Agenda"/>
+      <psc:chapter start="01:52" title="Clima &amp; País"/>
+      <psc:chapter start="02:48" title="Mundo"/>
+      <psc:chapter start="03:44" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:56" title="Agenda"/>
+      <psc:chapter start="01:52" title="Clima &amp; País"/>
+      <psc:chapter start="02:48" title="Mundo"/>
+      <psc:chapter start="03:44" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 31/07/2026</title>
@@ -403,6 +724,20 @@
       <description>Manhã Conectada de 31/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:57.</description>
       <itunes:summary>Manhã Conectada de 31/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:57.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 31/07/2026</strong></p><p>Manhã Conectada de 31/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:57.</p><ul><li>Terremoto de magnitude 5,6 é registrado perto da fronteira entre Peru e Brasil - G1</li><li>Notícias sobre edital de 29 de julho de 2026 - Estratégia Concursos</li><li>Espanha mobiliza Exército em Ceuta após entrada de 49 mil migrantes em 24 horas; ao menos 18 morreram - BBC</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-07-31.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:59" title="Agenda"/>
+      <psc:chapter start="01:58" title="Clima &amp; País"/>
+      <psc:chapter start="02:58" title="Mundo"/>
+      <psc:chapter start="03:57" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:59" title="Agenda"/>
+      <psc:chapter start="01:58" title="Clima &amp; País"/>
+      <psc:chapter start="02:58" title="Mundo"/>
+      <psc:chapter start="03:57" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 30/07/2026</title>
@@ -419,6 +754,20 @@
       <description>Manhã Conectada de 30/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:34.</description>
       <itunes:summary>Manhã Conectada de 30/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:34.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 30/07/2026</strong></p><p>Manhã Conectada de 30/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:34.</p><ul><li>Crise diplomática causada por Milei: Brasil e Argentina podem romper relação? - g1.globo.com</li><li>Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos</li><li>Após deixar 5 mortes, ventania deve perder força no Sudeste - SBT News</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-07-30.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:06" title="Agenda"/>
+      <psc:chapter start="02:13" title="Clima &amp; País"/>
+      <psc:chapter start="03:20" title="Mundo"/>
+      <psc:chapter start="04:27" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:06" title="Agenda"/>
+      <psc:chapter start="02:13" title="Clima &amp; País"/>
+      <psc:chapter start="03:20" title="Mundo"/>
+      <psc:chapter start="04:27" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 29/07/2026</title>
@@ -435,6 +784,20 @@
       <description>Manhã Conectada de 29/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:46.</description>
       <itunes:summary>Manhã Conectada de 29/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:46.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 29/07/2026</strong></p><p>Manhã Conectada de 29/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:46.</p><ul><li>Move Brasil: crédito para motoristas de app e táxi patina, e governo já prevê emprestar menos de um terço do previsto - O GLOBO</li><li>Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos</li><li>Com governo Milei, exportações à Argentina seguem em queda - SBT News</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-07-29.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:57" title="Agenda"/>
+      <psc:chapter start="01:54" title="Clima &amp; País"/>
+      <psc:chapter start="02:51" title="Mundo"/>
+      <psc:chapter start="03:48" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:57" title="Agenda"/>
+      <psc:chapter start="01:54" title="Clima &amp; País"/>
+      <psc:chapter start="02:51" title="Mundo"/>
+      <psc:chapter start="03:48" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 28/07/2026</title>
@@ -451,6 +814,20 @@
       <description>Manhã Conectada de 28/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:00.</description>
       <itunes:summary>Manhã Conectada de 28/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:00.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 28/07/2026</strong></p><p>Manhã Conectada de 28/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:00.</p><ul><li>Notícias sobre edital de 24 de julho de 2026 - Estratégia Concursos</li><li>Mercados hoje: investidores repercutem dados de inflação no Brasil - Bora Investir</li><li>Brasil registra alta nos casos de HIV - Sociedade ON</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-07-28.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:00" title="Agenda"/>
+      <psc:chapter start="02:00" title="Clima &amp; País"/>
+      <psc:chapter start="03:00" title="Mundo"/>
+      <psc:chapter start="04:00" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:00" title="Agenda"/>
+      <psc:chapter start="02:00" title="Clima &amp; País"/>
+      <psc:chapter start="03:00" title="Mundo"/>
+      <psc:chapter start="04:00" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 27/07/2026</title>
@@ -467,6 +844,20 @@
       <description>Manhã Conectada de 27/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:49.</description>
       <itunes:summary>Manhã Conectada de 27/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:49.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 27/07/2026</strong></p><p>Manhã Conectada de 27/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:49.</p><ul><li>Argentina não pedirá desculpas ao Brasil pelas falas de Milei, diz jornal - UOL Notícias</li><li>Incêndio atinge prédio às margens da Avenida Brasil, em Irajá; bombeiros retiram moradores - O GLOBO</li><li>Após Trump pausar bombardeios, Irã sinaliza que suspenderá ataques - CNN Brasil</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-07-27.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:57" title="Agenda"/>
+      <psc:chapter start="01:55" title="Clima &amp; País"/>
+      <psc:chapter start="02:53" title="Mundo"/>
+      <psc:chapter start="03:51" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:57" title="Agenda"/>
+      <psc:chapter start="01:55" title="Clima &amp; País"/>
+      <psc:chapter start="02:53" title="Mundo"/>
+      <psc:chapter start="03:51" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 24/07/2026</title>
@@ -483,6 +874,20 @@
       <description>Manhã Conectada de 24/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:45.</description>
       <itunes:summary>Manhã Conectada de 24/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:45.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 24/07/2026</strong></p><p>Manhã Conectada de 24/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:45.</p><ul><li>Tarifaço de Trump: veja a cronologia e como ficam as novas tarifas para o Brasil - G1</li><li>Brasil Urgente ao vivo: assista ao programa agora - band.com.br</li><li>Brasil reage a novas tarifas dos EUA e anuncia acionamento da Lei da Reciprocidade - Francês News</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-07-24.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:57" title="Agenda"/>
+      <psc:chapter start="01:54" title="Clima &amp; País"/>
+      <psc:chapter start="02:51" title="Mundo"/>
+      <psc:chapter start="03:48" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:57" title="Agenda"/>
+      <psc:chapter start="01:54" title="Clima &amp; País"/>
+      <psc:chapter start="02:51" title="Mundo"/>
+      <psc:chapter start="03:48" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 23/07/2026</title>
@@ -499,6 +904,20 @@
       <description>Manhã Conectada de 23/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:24.</description>
       <itunes:summary>Manhã Conectada de 23/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:24.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 23/07/2026</strong></p><p>Manhã Conectada de 23/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 5:24.</p><ul><li>Como nova tarifa contra o Brasil faz parte de estratégia maior de Trump para inimigos (e aliados) - G1</li><li>China quer depender menos do agro brasileiro: o plano chinês — e por que isso assusta o Brasil - BBC</li><li>Brasil Urgente ao vivo: assista ao programa agora - band.com.br</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-07-23.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:04" title="Agenda"/>
+      <psc:chapter start="02:09" title="Clima &amp; País"/>
+      <psc:chapter start="03:14" title="Mundo"/>
+      <psc:chapter start="04:19" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="01:04" title="Agenda"/>
+      <psc:chapter start="02:09" title="Clima &amp; País"/>
+      <psc:chapter start="03:14" title="Mundo"/>
+      <psc:chapter start="04:19" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 21/07/2026</title>
@@ -515,6 +934,20 @@
       <description>Manhã Conectada de 21/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:58.</description>
       <itunes:summary>Manhã Conectada de 21/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:58.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 21/07/2026</strong></p><p>Manhã Conectada de 21/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:58.</p><ul><li>EUA podem perder para o Brasil o papel de maior exportador agrícola do mundo, diz Financial Times - BBC</li><li>Governo se reúne com setores afetados pelo tarifaço dos EUA - SBT News</li><li>Concursos Abertos: milhares de vagas e iniciais de até R$ 32 mil - Estratégia Concursos</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-07-21.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:59" title="Agenda"/>
+      <psc:chapter start="01:59" title="Clima &amp; País"/>
+      <psc:chapter start="02:58" title="Mundo"/>
+      <psc:chapter start="03:58" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:59" title="Agenda"/>
+      <psc:chapter start="01:59" title="Clima &amp; País"/>
+      <psc:chapter start="02:58" title="Mundo"/>
+      <psc:chapter start="03:58" title="Tecnologia"/>
+    </psc:chapters>
     </item>
     <item>
       <title>Manhã Conectada — 20/07/2026</title>
@@ -531,6 +964,20 @@
       <description>Manhã Conectada de 20/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:54.</description>
       <itunes:summary>Manhã Conectada de 20/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:54.</itunes:summary>
       <content:encoded><![CDATA[<p><strong>Manhã Conectada • 20/07/2026</strong></p><p>Manhã Conectada de 20/07/2026. Briefing das notícias que definiram a manhã, com apresentação de Antonio. Duração: 4:54.</p><ul><li>Trump quer punir o Brasil por sucesso do Pix, diz vencedor do Nobel - band.com.br</li><li>Queda da Argentina mantém Brasil da era Pelé como último bi consecutivo - UOL</li><li>Análise: tarifaço ao Brasil é medida política? - G1</li></ul><p><a href="https://d5n-daily.netlify.app/#manha-conectada">Ouça no site</a></p>]]></content:encoded>
+    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/manha-conectada/chapters/2026-07-20.json">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:58" title="Agenda"/>
+      <psc:chapter start="01:57" title="Clima &amp; País"/>
+      <psc:chapter start="02:56" title="Mundo"/>
+      <psc:chapter start="03:55" title="Tecnologia"/>
+    </podcast:chapters>
+    <psc:chapters version="2.2">
+            <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:58" title="Agenda"/>
+      <psc:chapter start="01:57" title="Clima &amp; País"/>
+      <psc:chapter start="02:56" title="Mundo"/>
+      <psc:chapter start="03:55" title="Tecnologia"/>
+    </psc:chapters>
     </item>
   </channel>
 </rss>

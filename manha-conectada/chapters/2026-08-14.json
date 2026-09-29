@@ -1,0 +1,63 @@
+{
+  "schema": 2,
+  "editorial_date": "2026-08-14",
+  "audio_duration": 376.0,
+  "chapters": [
+    {
+      "id": "intro",
+      "label": "Abertura",
+      "start": 0,
+      "end": 47,
+      "duration": 47
+    },
+    {
+      "id": "seg1",
+      "label": "Agenda",
+      "start": 47,
+      "end": 94,
+      "duration": 47
+    },
+    {
+      "id": "seg2",
+      "label": "Clima & País",
+      "start": 94,
+      "end": 141,
+      "duration": 47
+    },
+    {
+      "id": "seg3",
+      "label": "Mundo",
+      "start": 141,
+      "end": 188,
+      "duration": 47
+    },
+    {
+      "id": "seg4",
+      "label": "Tecnologia",
+      "start": 188,
+      "end": 235,
+      "duration": 47
+    },
+    {
+      "id": "seg5",
+      "label": "Economia",
+      "start": 235,
+      "end": 282,
+      "duration": 47
+    },
+    {
+      "id": "seg6",
+      "label": "Sinal 11",
+      "start": 282,
+      "end": 329,
+      "duration": 47
+    },
+    {
+      "id": "seg7",
+      "label": "Encerramento",
+      "start": 329,
+      "end": 376,
+      "duration": 47
+    }
+  ]
+}

@@ -33,7 +33,7 @@
 <podcast:guid>d5n-daily.netlify.app</podcast:guid>
 <podcast:funding url="https://github.com/sponsors/eibragaa">Support D5N</podcast:funding>
     <atom:link href="https://d5n-daily.netlify.app/podcast.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Tue, 29 Sep 2026 09:53:57 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 10:57:51 -0400</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/podcast-cover.jpg</url>
       <title>Hoje no Drop Five News</title>
@@ -52,7 +52,7 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:02</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep075-2026-09-29.mp3">
+          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-29.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Economia"/>
@@ -88,7 +88,7 @@
 ⏱ 04:12 — Mundo
 ⏱ 06:14 — Tecnologia &amp; Inovações
 ⏱ 07:23 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #075 · 29/09/2026</strong></p><p>🎧 8:02 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep075-2026-09-29.mp3">
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #075 · 29/09/2026</strong></p><p>🎧 8:02 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-29.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Economia"/>
@@ -120,7 +120,7 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:03</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep074-2026-09-25.mp3">
+          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-25.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Economia"/>
@@ -156,7 +156,7 @@
 ⏱ 04:06 — Mundo
 ⏱ 05:32 — Tecnologia &amp; Inovações
 ⏱ 07:24 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #074 · 25/09/2026</strong></p><p>🎧 8:03 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep074-2026-09-25.mp3">
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #074 · 25/09/2026</strong></p><p>🎧 8:03 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-25.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Economia"/>
@@ -188,7 +188,7 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:16</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep072-2026-09-24.mp3">
+          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-24.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Economia"/>
@@ -224,7 +224,7 @@
 ⏱ 04:22 — Mundo
 ⏱ 06:08 — Tecnologia &amp; Inovações
 ⏱ 07:36 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #072 · 24/09/2026</strong></p><p>🎧 8:16 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep072-2026-09-24.mp3">
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #072 · 24/09/2026</strong></p><p>🎧 8:16 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-24.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Economia"/>
@@ -256,7 +256,7 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:46</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep070-2026-09-22.mp3">
+          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-22.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Encerramento"/>
@@ -280,7 +280,7 @@
 ⏱ 00:00 — Abertura
 ⏱ 00:01 — Brasil &amp; Política
 ⏱ 08:04 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #070 · 22/09/2026</strong></p><p>🎧 8:46 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep070-2026-09-22.mp3">
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #070 · 22/09/2026</strong></p><p>🎧 8:46 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-22.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Encerramento"/>
@@ -303,7 +303,7 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:46</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep069-2026-09-21.mp3">
+          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-21.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Encerramento"/>
@@ -327,7 +327,7 @@
 ⏱ 00:00 — Abertura
 ⏱ 00:01 — Brasil &amp; Política
 ⏱ 08:04 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #069 · 21/09/2026</strong></p><p>🎧 8:46 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep069-2026-09-21.mp3">
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #069 · 21/09/2026</strong></p><p>🎧 8:46 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-21.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Encerramento"/>
@@ -350,7 +350,7 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>11:30</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep068-2026-09-11.mp3">
+          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-11.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Economia"/>
@@ -378,7 +378,7 @@
 ⏱ 00:01 — Brasil &amp; Política
 ⏱ 01:57 — Economia
 ⏱ 10:34 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #068 · 11/09/2026</strong></p><p>🎧 11:30 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep068-2026-09-11.mp3">
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #068 · 11/09/2026</strong></p><p>🎧 11:30 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-11.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Economia"/>
@@ -404,7 +404,7 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>11:30</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep067-2026-09-10.mp3">
+          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-10.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Economia"/>
@@ -432,7 +432,7 @@
 ⏱ 00:01 — Brasil &amp; Política
 ⏱ 01:57 — Economia
 ⏱ 10:34 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #067 · 10/09/2026</strong></p><p>🎧 11:30 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep067-2026-09-10.mp3">
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #067 · 10/09/2026</strong></p><p>🎧 11:30 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-10.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Economia"/>
@@ -458,7 +458,7 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>11:25</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep066-2026-08-31.mp3">
+          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-08-31.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Economia"/>
@@ -486,7 +486,7 @@
 ⏱ 00:01 — Brasil &amp; Política
 ⏱ 06:20 — Economia
 ⏱ 10:30 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #066 · 31/08/2026</strong></p><p>🎧 11:25 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep066-2026-08-31.mp3">
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #066 · 31/08/2026</strong></p><p>🎧 11:25 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-08-31.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Economia"/>
@@ -512,7 +512,7 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>09:11</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep065-2026-08-27.mp3">
+          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-08-27.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Economia"/>
@@ -544,7 +544,7 @@
 ⏱ 03:26 — Economia
 ⏱ 05:09 — Mundo
 ⏱ 08:27 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #065 · 27/08/2026</strong></p><p>🎧 9:11 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep065-2026-08-27.mp3">
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #065 · 27/08/2026</strong></p><p>🎧 9:11 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-08-27.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Economia"/>
@@ -573,7 +573,7 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>09:41</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep061-2026-08-18.mp3">
+          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-08-18.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Economia"/>
@@ -609,7 +609,7 @@
 ⏱ 06:19 — Mundo
 ⏱ 07:47 — Tecnologia &amp; Inovações
 ⏱ 08:54 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #061 · 18/08/2026</strong></p><p>🎧 9:41 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep061-2026-08-18.mp3">
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #061 · 18/08/2026</strong></p><p>🎧 9:41 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-08-18.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Economia"/>
@@ -641,7 +641,7 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>09:21</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep060-2026-08-17.mp3">
+          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-08-17.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Economia"/>
@@ -673,7 +673,7 @@
 ⏱ 03:00 — Economia
 ⏱ 05:52 — Mundo
 ⏱ 08:36 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #060 · 17/08/2026</strong></p><p>🎧 9:21 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/audio/d5n-ep060-2026-08-17.mp3">
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #060 · 17/08/2026</strong></p><p>🎧 9:21 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-08-17.json">
             <psrc:chapter title="Abertura"/>
       <psrc:chapter title="Brasil &amp; Política"/>
       <psrc:chapter title="Economia"/>

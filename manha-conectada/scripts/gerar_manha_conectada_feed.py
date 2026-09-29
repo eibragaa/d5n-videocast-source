@@ -17,6 +17,14 @@ from urllib.parse import unquote, urlparse
 from xml.sax.saxutils import escape, quoteattr
 from zoneinfo import ZoneInfo
 
+# Rótulos de capítulo canônicos do MC — mesma lista do D5N/FM, mantida em
+# _shared_chapters.py. Este gerador é stand-alone (roda fora do repo raiz),
+# então duplica a lista em vez de importar.
+MC_CHAPTER_LABELS = [
+    "Abertura", "Agenda", "Clima & País", "Mundo", "Tecnologia",
+    "Economia", "Sinal 11", "Encerramento",
+]
+
 BASE_URL = "https://d5n-daily.netlify.app"
 FEED_NAME = "manha-conectada.xml"
 IMAGE_URL = f"{BASE_URL}/manha-conectada-cover.jpg"
@@ -119,6 +127,85 @@ def _duration(value: int) -> str:
     return f"{minutes:02d}:{seconds:02d}"
 
 
+def _calc_mc_chapters(num_sources: int, dur: int) -> list[dict]:
+    """Timestamps proporcionais, mesmo esquema do Fechamento.
+
+    O MC nunca teve chapters: o gerador não emitia podcast:chapters nem
+    psc:chapters. O _shared_chapters.py já tinha MC_CHAPTER_LABELS prontos e
+    nunca eram usados por aqui.
+    """
+    labels = [lab for lab in MC_CHAPTER_LABELS if lab]
+    if num_sources and num_sources < len(labels) - 2:
+        labels = labels[: num_sources + 2]
+    if not labels:
+        return []
+    step = dur / len(labels)
+    return [
+        {"id": "intro" if i == 0 else f"seg{i}",
+         "label": label,
+         "start": int(i * step)}
+        for i, label in enumerate(labels)
+    ]
+
+
+def _chapters_rss(chapters: list[dict], src: str, dur: int) -> str:
+    """podcast:chapters + psc:chapters, no mesmo formato do Fechamento.
+
+    O src aponta para manha-conectada/chapters/<data>.json — o padrão só
+    resolve chapters embutidos no áudio (atoms ID3 CHAP/ctoc) quando o src é o
+    próprio MP3, e o mixer não os escreve.
+    """
+    if not chapters:
+        return ""
+    rows = [
+        f'      <psc:chapter start="{_duration(int(ch["start"]))}" '
+        f'title="{escape(ch["label"])}"/>'
+        for ch in chapters
+    ]
+    inner = "\n".join(rows)
+    return (
+        f'    <podcast:chapters version="1.2" src="{src}">\n'
+        f"      {inner}\n"
+        f"    </podcast:chapters>\n"
+        f'    <psc:chapters version="2.2">\n'
+        f"      {inner}\n"
+        f"    </psc:chapters>"
+    )
+
+
+def write_chapters_json(repo: Path, episodes: list[Episode]) -> int:
+    """Grava manha-conectada/chapters/<data>.json para cada episódio."""
+    out_dir = repo / "chapters"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    written = 0
+    for episode in episodes:
+        if episode.duration <= 0:
+            continue
+        step = episode.duration / max(len(MC_CHAPTER_LABELS), 1)
+        chapters = []
+        for index, label in enumerate(MC_CHAPTER_LABELS):
+            start = int(index * step)
+            end = int(episode.duration) if index == len(MC_CHAPTER_LABELS) - 1 else int((index + 1) * step)
+            chapters.append({
+                "id": "intro" if index == 0 else f"seg{index}",
+                "label": label,
+                "start": start,
+                "end": end,
+                "duration": end - start,
+            })
+        payload = {
+            "schema": 2,
+            "editorial_date": episode.editorial_date.isoformat(),
+            "audio_duration": float(episode.duration),
+            "chapters": chapters,
+        }
+        (out_dir / f"{episode.editorial_date.isoformat()}.json").write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
+        written += 1
+    return written
+
+
 def build_feed(repo: Path) -> tuple[str, list[Episode]]:
     episodes = load_episodes(repo)
     numbered = {episode.editorial_date: number for number, episode in enumerate(episodes, 1)}
@@ -142,6 +229,9 @@ def build_feed(repo: Path) -> tuple[str, list[Episode]]:
             + (f"<ul>{headline_html}</ul>" if headline_html else "")
             + f'<p><a href="{BASE_URL}/#manha-conectada">Ouça no site</a></p>'
         )
+        chapters = _calc_mc_chapters(len(episode.headlines), episode.duration)
+        chapters_url = f"{BASE_URL}/manha-conectada/chapters/{episode.editorial_date.isoformat()}.json"
+        chapters_xml = _chapters_rss(chapters, chapters_url, episode.duration)
         items.append(
             f"""    <item>
       <title>Manhã Conectada — {date_br}</title>
@@ -158,6 +248,7 @@ def build_feed(repo: Path) -> tuple[str, list[Episode]]:
       <description>{escape(description)}</description>
       <itunes:summary>{escape(description)}</itunes:summary>
       <content:encoded><![CDATA[{content_html}]]></content:encoded>
+{chapters_xml}
     </item>"""
         )
 
@@ -167,7 +258,8 @@ def build_feed(repo: Path) -> tuple[str, list[Episode]]:
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
      xmlns:atom="http://www.w3.org/2005/Atom"
      xmlns:content="http://purl.org/rss/1.0/modules/content/"
-     xmlns:podcast="https://podcastindex.org/namespace/1.0">
+     xmlns:podcast="https://podcastindex.org/namespace/1.0"
+     xmlns:psc="http://podlove.org/simple-chapters">
   <channel>
     <title>Manhã Conectada</title>
     <link>{BASE_URL}/#manha-conectada</link>
@@ -247,6 +339,9 @@ def main() -> int:
     output.write_text(rss, encoding="utf-8")
     root = output.parent.parent.parent
     (root / output.name).write_text(rss, encoding="utf-8")
+    n_chapters = write_chapters_json(args.repo, episodes)
+    if n_chapters:
+        print(f"   ✓ {n_chapters} capítulos MC em manha-conectada/chapters/")
     print(f"✅ {FEED_NAME} — {len(episodes)} episódios; mais recente: {episodes[-1].editorial_date}")
     return 0
 

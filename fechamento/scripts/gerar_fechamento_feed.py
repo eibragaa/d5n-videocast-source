@@ -186,7 +186,11 @@ def build_feed(repo: Path) -> tuple[str, list[Episode]]:
             + f'<p><a href="{BASE_URL}/#fechamento">Ouça no site</a></p>'
         )
         ep_url = episode.enclosure_url
-        chapters_xml = _build_chapters_rss(episode.chapters, ep_url, episode.duration)
+        # O src do podcast:chapters aponta para o documento de capítulos, não
+        # para o MP3: o padrão só resolve chapters embutidos (atoms ID3
+        # CHAP/ctoc) quando o src é o próprio áudio, e o mixer não os escreve.
+        chapters_url = f"{BASE_URL}/fechamento/chapters/{episode.editorial_date}.json"
+        chapters_xml = _build_chapters_rss(episode.chapters, chapters_url, episode.duration)
         items.append(
             f"""    <item>
       <title>Fechamento do Mercado — {date_br}</title>
@@ -268,6 +272,44 @@ def feed_has_episode(feed_data: bytes | str, editorial_date: str) -> bool:
     return False
 
 
+def write_chapters_json(repo: Path, episodes: list["Episode"]) -> int:
+    """Grava fechamento/chapters/<data>.json para cada episódio com capítulos.
+
+    O src do podcast:chapters aponta para este arquivo. Sem ele a tag aponta
+    para um 404 (ou para o MP3, que não tem atoms CHAP/ctoc). Mesmo schema do
+    chapters/<data>.json do D5N, para o player do site e os players externos
+    lerem a mesma estrutura.
+    """
+    out_dir = repo / "chapters"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    written = 0
+    for episode in episodes:
+        if not episode.chapters or episode.duration <= 0:
+            continue
+        cursor = 0
+        chapters = []
+        for index, ch in enumerate(episode.chapters):
+            end = int(episode.duration) if index == len(episode.chapters) - 1 else int(ch.start)
+            chapters.append({
+                "id": f"seg{index}" if index else "intro",
+                "label": ch.title,
+                "start": int(ch.start),
+                "end": max(end, int(ch.start)),
+                "duration": max(end, int(ch.start)) - int(ch.start),
+            })
+            cursor = end
+        payload = {
+            "schema": 2,
+            "editorial_date": episode.editorial_date.isoformat(),
+            "audio_duration": float(episode.duration),
+            "chapters": chapters,
+        }
+        date_file = out_dir / f"{episode.editorial_date.isoformat()}.json"
+        date_file.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        written += 1
+    return written
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo", type=Path, default=Path(os.environ.get("FECHAMENTO_ROOT", Path(__file__).parents[1])))
@@ -295,6 +337,9 @@ def main() -> int:
     output.write_text(rss, encoding="utf-8")
     root = output.parent.parent.parent
     (root / output.name).write_text(rss, encoding="utf-8")
+    n_chapters = write_chapters_json(args.repo, episodes)
+    if n_chapters:
+        print(f"   ✓ {n_chapters} capítulos FM em fechamento/chapters/")
     print(f"✅ {FEED_NAME} — {len(episodes)} episódios; mais recente: {episodes[-1].editorial_date}")
     return 0
 

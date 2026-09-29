@@ -147,6 +147,12 @@ def _fmt_dur(seconds: float) -> str:
 def build_chapters_rss(chapters: list[dict], ep_url: str, dur_sec: float, has_timing: bool = True) -> str:
     """Bloco podcast:chapters (PSRC) + psc:chapters (Podlove).
 
+    O atributo src do podcast:chapters aponta para o ARQUIVO DE CAPÍTULOS, não
+    para o MP3. O padrão espera um documento separado (JSON/PSC) — apontar para
+    o .mp3 só funciona se o áudio tiver os atoms ID3 CHAP/ctoc embutidos, e
+    nenhum dos nossos mixers os escreve. O src virava um link que não resolvia
+    em nenhum player. Os players que funcionam usam o psc:chapters inline.
+
     has_timing=False: D5N coldopen.txt não tem timing real — omite startTime
     para não mostrar timestamps falsos nos players.
     """

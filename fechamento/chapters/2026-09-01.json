@@ -1,0 +1,49 @@
+{
+  "schema": 2,
+  "editorial_date": "2026-09-01",
+  "audio_duration": 452.0,
+  "chapters": [
+    {
+      "id": "intro",
+      "label": "Abertura",
+      "start": 0,
+      "end": 0,
+      "duration": 0
+    },
+    {
+      "id": "seg1",
+      "label": "Radar Mercado",
+      "start": 75,
+      "end": 75,
+      "duration": 0
+    },
+    {
+      "id": "seg2",
+      "label": "Dólar",
+      "start": 150,
+      "end": 150,
+      "duration": 0
+    },
+    {
+      "id": "seg3",
+      "label": "Bolsas",
+      "start": 226,
+      "end": 226,
+      "duration": 0
+    },
+    {
+      "id": "seg4",
+      "label": "Empresas",
+      "start": 301,
+      "end": 301,
+      "duration": 0
+    },
+    {
+      "id": "seg5",
+      "label": "Encerramento",
+      "start": 376,
+      "end": 452,
+      "duration": 76
+    }
+  ]
+}
