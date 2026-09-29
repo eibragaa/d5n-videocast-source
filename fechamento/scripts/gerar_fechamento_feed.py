@@ -132,21 +132,25 @@ def _duration(seconds: int) -> str:
     return _fmt_time(seconds)
 
 
-def _build_chapters_rss(chapters: tuple[Chapter, ...], ep_url: str, dur: int) -> str:
-    """Gera podcast:chapters + psc:chapters.
-    
-    FM sources não têm start_ms — gera labels sem startTime (compatível com todos players).
-    O agregador/usuário clica no nome do capítulo e o player busca esse ponto no áudio.
+def _build_chapters_rss(chapters: tuple[Chapter, ...], chapters_url: str, dur: int) -> str:
+    """podcast:chapters (só src) + psc:chapters (capítulos inline).
+
+    O podcast:chapters do padrão Podcasting 2.0 leva APENAS o src. Aninhar
+    psc:chapters dentro dele mistura dois namespaces e reprova em leitor
+    estrito. Os capítulos que os players leem vão no psc:chapters.
     """
     if not chapters:
         return ""
-    lines = ['  <podcast:chapters version="1.2" src="{ep_url}">']
-    lines.append('  <psc:chapters version="2.2">')
-    for ch in chapters:
-        lines.append(f'    <psc:chapter start="{_fmt_time(ch.start)}" title="{ch.title}"/>')
-    lines.append("  </psc:chapters>")
-    lines.append("  </podcast:chapters>")
-    return "\n".join(lines).format(ep_url=ep_url)
+    inner = "\n".join(
+        f'      <psc:chapter start="{_fmt_time(ch.start)}" title="{escape(ch.title)}"/>'
+        for ch in chapters
+    )
+    return (
+        f'    <podcast:chapters version="1.2" src="{chapters_url}"/>\n'
+        f'    <psc:chapters version="2.2">\n'
+        f"{inner}\n"
+        f"    </psc:chapters>"
+    )
 
 
 FM_CHAPTER_LABELS = [

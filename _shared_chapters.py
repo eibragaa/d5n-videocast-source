@@ -144,40 +144,39 @@ def _fmt_dur(seconds: float) -> str:
     return f"{h:02d}:{m:02d}:{s:02d}" if h else f"{m:02d}:{s:02d}"
 
 
-def build_chapters_rss(chapters: list[dict], ep_url: str, dur_sec: float, has_timing: bool = True) -> str:
-    """Bloco podcast:chapters (PSRC) + psc:chapters (Podlove).
+def build_chapters_rss(chapters: list[dict], chapters_url: str, dur_sec: float, has_timing: bool = True) -> str:
+    """podcast:chapters (só src) + psc:chapters (capítulos inline).
 
-    O atributo src do podcast:chapters aponta para o ARQUIVO DE CAPÍTULOS, não
-    para o MP3. O padrão espera um documento separado (JSON/PSC) — apontar para
-    o .mp3 só funciona se o áudio tiver os atoms ID3 CHAP/ctoc embutidos, e
-    nenhum dos nossos mixers os escreve. O src virava um link que não resolvia
-    em nenhum player. Os players que funcionam usam o psc:chapters inline.
+    O podcast:chapters do padrão Podcasting 2.0 leva APENAS o src, apontando
+    para o documento de capítulos. Filhos só existem quando o src é o próprio
+    MP3 com atoms ID3 CHAP/ctoc — nunca é o nosso caso. Emitir psrc:chapter ou
+    psc:chapter dentro de podcast:chapters mistura namespaces e reprova em
+    leitor estrito.
+
+    Os capítulos que os players leem vão no psc:chapters (Podlove).
 
     has_timing=False: D5N coldopen.txt não tem timing real — omite startTime
     para não mostrar timestamps falsos nos players.
     """
     if not chapters:
         return ""
-    psrc_blocks = []
-    for ch in chapters:
-        if has_timing:
-            start_ms = int(float(ch["start"]) * 1000)
-            psrc_blocks.append(
-                f'      <psrc:chapter startTime="{start_ms}" '
-                f'title="{escape(ch["label"])}"/>'
-            )
-        else:
-            # Sem timing — só label (Spotify/Apple ignoram se não houver)
-            psrc_blocks.append(
-                f'      <psrc:chapter title="{escape(ch["label"])}"/>'
-            )
-    psrc_inner = "\n".join(psrc_blocks)
+    if has_timing:
+        inner = "\n".join(
+            f'      <psc:chapter start="{_fmt_dur(float(ch["start"]))}" '
+            f'title="{escape(ch["label"])}"/>'
+            for ch in chapters
+        )
+    else:
+        # Sem timing real: so o rotulo. Timestamp inventado e pior que nenhum —
+        # o player pula para o ponto errado e o ouvinte perde o trecho.
+        inner = "\n".join(
+            f'      <psc:chapter title="{escape(ch["label"])}"/>'
+            for ch in chapters
+        )
     return f"""\
-    <podcast:chapters version="1.2" src="{ep_url}">
-      {psrc_inner}
-    </podcast:chapters>
+    <podcast:chapters version="1.2" src="{chapters_url}"/>
     <psc:chapters version="2.0">
-      {psrc_inner.replace('psrc:', 'psc:')}
+{inner}
     </psc:chapters>"""
 
 

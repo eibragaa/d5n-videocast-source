@@ -127,48 +127,46 @@ def _duration(value: int) -> str:
     return f"{minutes:02d}:{seconds:02d}"
 
 
-def _calc_mc_chapters(num_sources: int, dur: int) -> list[dict]:
-    """Timestamps proporcionais, mesmo esquema do Fechamento.
+def _calc_mc_chapters(dur: int) -> list[dict]:
+    """Timestamps proporcionais dos 8 blocos fixos do MC.
 
-    O MC nunca teve chapters: o gerador não emitia podcast:chapters nem
-    psc:chapters. O _shared_chapters.py já tinha MC_CHAPTER_LABELS prontos e
-    nunca eram usados por aqui.
+    A contagem de fontes não entra: o MC tem 8 blocos editoriais fixos e
+    truncar por num_sources deixava o episódio com 5 capítulos e o fim sem
+    "Sinal 11"/"Encerramento".
     """
-    labels = [lab for lab in MC_CHAPTER_LABELS if lab]
-    if num_sources and num_sources < len(labels) - 2:
-        labels = labels[: num_sources + 2]
-    if not labels:
+    if dur <= 0:
         return []
-    step = dur / len(labels)
+    step = dur / len(MC_CHAPTER_LABELS)
     return [
-        {"id": "intro" if i == 0 else f"seg{i}",
-         "label": label,
+        {"id": "intro" if i == 0 else f"seg{i}", "label": label,
          "start": int(i * step)}
-        for i, label in enumerate(labels)
+        for i, label in enumerate(MC_CHAPTER_LABELS)
     ]
 
 
 def _chapters_rss(chapters: list[dict], src: str, dur: int) -> str:
-    """podcast:chapters + psc:chapters, no mesmo formato do Fechamento.
+    """podcast:chapters + psc:chapters.
 
-    O src aponta para manha-conectada/chapters/<data>.json — o padrão só
-    resolve chapters embutidos no áudio (atoms ID3 CHAP/ctoc) quando o src é o
-    próprio MP3, e o mixer não os escreve.
+    O podcast:chapters do padrão Podcasting 2.0 leva APENAS o src, apontando
+    para o documento de capítulos; os filhos só existem quando o src é o
+    próprio áudio (atoms ID3). Emitir psc:chapter dentro de podcast:chapters
+    mistura dois namespaces e reprova em leitor estrito — o feed inteiro
+    parou de carregar, não só os capítulos.
+
+    Os capítulos inline vão no psc:chapters (Podlove), que é o que os players
+    externos leem de fato.
     """
     if not chapters:
         return ""
-    rows = [
+    inner = "\n".join(
         f'      <psc:chapter start="{_duration(int(ch["start"]))}" '
         f'title="{escape(ch["label"])}"/>'
         for ch in chapters
-    ]
-    inner = "\n".join(rows)
+    )
     return (
-        f'    <podcast:chapters version="1.2" src="{src}">\n'
-        f"      {inner}\n"
-        f"    </podcast:chapters>\n"
+        f'    <podcast:chapters version="1.2" src="{src}"/>\n'
         f'    <psc:chapters version="2.2">\n'
-        f"      {inner}\n"
+        f"{inner}\n"
         f"    </psc:chapters>"
     )
 
@@ -229,7 +227,7 @@ def build_feed(repo: Path) -> tuple[str, list[Episode]]:
             + (f"<ul>{headline_html}</ul>" if headline_html else "")
             + f'<p><a href="{BASE_URL}/#manha-conectada">Ouça no site</a></p>'
         )
-        chapters = _calc_mc_chapters(len(episode.headlines), episode.duration)
+        chapters = _calc_mc_chapters(episode.duration)
         chapters_url = f"{BASE_URL}/manha-conectada/chapters/{episode.editorial_date.isoformat()}.json"
         chapters_xml = _chapters_rss(chapters, chapters_url, episode.duration)
         items.append(
