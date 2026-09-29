@@ -27,7 +27,11 @@ Isso descarta falha atual de geração/publicação do feed. Não prova que os d
 
 **6. Jobs duplicados e um inválido.** Três jobs disputavam a produção diária; um apontava para um script bloqueado por estar fora do diretório permitido.
 
-**7. Cadastro nos diretórios externos nunca foi feito por código.** Apple e Spotify exigem submissão/claim inicial. A documentação do Spotify diz que episódios novos costumam aparecer em algumas horas, podendo levar até 24; a Apple costuma refletir mudanças em algumas horas.
+**7. O guard de design apontava para o gerador errado.** `scripts/validar_design.py` validava `scripts/gerar_pagina_d5n.py` (layout v2, obsoleto desde ago/2026), enquanto o pipeline executa `gerar_pagina_d5n.py` na raiz. O guard exigia tokens e marcadores que o gerador real nunca emite, bloqueando todo commit com 34 falso-positivos. Pior: exigia um `grid-template-areas` cujo teste provou que o CSS do site estava sendo descartado.
+
+**8. O gerador em uso tinha um bloco CSS órfão.** Uma edição corrompida duplicou o bloco `.filter-btn` e deixou uma declaração órfã, fazendo o browser descartar todas as regras seguintes. Além disso, `--brand-cyan` e `--chapter-weight` eram consumidos por `var()` sem nunca serem declarados, e `--muted` (#64748b) ficava em 3.98:1 sobre o fundo, abaixo de WCAG AA.
+
+**9. Cadastro nos diretórios externos nunca foi feito por código.** Apple e Spotify exigem submissão/claim inicial. A documentação do Spotify diz que episódios novos costumam aparecer em algumas horas, podendo levar até 24; a Apple costuma refletir mudanças em algumas horas.
 
 ## Correções aplicadas
 
@@ -53,10 +57,19 @@ Isso descarta falha atual de geração/publicação do feed. Não prova que os d
 ### Coletor de trends
 - `d5n-trends-diario.py` agrupa as manchetes pelos quatro pilares que o gate exige, e falha se algum ficar sem notícias.
 
+### Site e guard de design
+- `gerar_pagina_d5n.py`: removido o bloco CSS órfão que descartava as regras seguintes; declarados `--brand-cyan` (#67e8f9) e `--chapter-weight`; `--muted` passou de #64748b (3.98:1) para #8a99ad (6.53:1), atendendo WCAG AA.
+- `scripts/validar_design.py`: passou a validar o gerador da raiz (o que o pipeline usa), a ler todos os blocos `:root` em vez do primeiro, e a derivar os tokens esperados do próprio design system — mantendo o poder de detectar token que sumiu, sem lista fixa que envelhece a cada redesign. O arquivo legado `scripts/gerar_pagina_d5n.py` só é verificado quanto a lixo injetado.
+- Verificado que o guard ainda detecta os três modos de falha reais: comentário CSS quebrado, token usado sem declaração e contraste abaixo de 4.5:1.
+
 ### Jobs
 - `d5n-podcast-diario-fixed` pausado (script inválido, sempre bloqueado).
 - `d5n-podcast-daily-wrapper` corrigido para o caminho relativo aceito pelo agendador.
 - `d5n-trends-diario` mantém o script e agora executa com sucesso.
+
+## Publicação
+
+Commit `fd6a13b` no `master` e no `origin/master`. Após o push, o verificador público rodou contra o episódio #075 e passou em todas as checagens, confirmando que o deploy do Netlify propagou.
 
 ## Pendente: depende de acesso às contas
 
