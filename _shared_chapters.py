@@ -137,6 +137,37 @@ def load_program_chapters(kind: str, date_str: str, duration: float) -> list[dic
     return _paragraph_chapters(source_path, labels, duration)
 
 
+def chapters_from_manifest(derived: list[dict], manifest_path: Path) -> list[dict]:
+    """Usa os timings reais do manifesto, se existirem, mantendo os rótulos.
+
+    O manifesto do mixer tem os tempos exatos de cada bloco (medidos do MP3),
+    mas só o id — o rótulo editorial vem da derivação sobre o coldopen. O
+    podcast:chapters apontava para o manifesto enquanto o psc:chapters inline
+    saía sem `start`, porque `psc:chapter` exige start. Rótulo sem tempo não
+    navega: o player ignora ou joga o ouvinte no lugar errado.
+
+    Se os dois conjuntos tiverem o mesmo tamanho, casa por posição. Com
+    quantidades diferentes, mantém a derivação: sincronizar 11 blocos reais
+    com 6 rótulos por índice inventaria capítulos.
+    """
+    try:
+        data = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return derived
+    real = data.get("chapters") or []
+    if not real or not derived or len(real) != len(derived):
+        return derived
+    merged = []
+    for index, chapter in enumerate(derived):
+        merged.append({
+            "id": chapter["id"],
+            "label": chapter["label"],
+            "start": float(real[index].get("start", chapter.get("start", 0.0))),
+            "end": float(real[index].get("end", chapter.get("end", 0.0))),
+        })
+    return merged
+
+
 def _fmt_dur(seconds: float) -> str:
     """HH:MM:SS ou MM:SS."""
     h, rem = divmod(int(seconds), 3600)

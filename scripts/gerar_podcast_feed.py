@@ -20,7 +20,7 @@ MANIFEST_FILE = REPO / "episode-manifest.json"
 sys.path.insert(0, str(REPO))
 from _shared_chapters import (
     load_program_chapters, build_chapters_rss,
-    build_chapters_description, _fmt_dur
+    build_chapters_description, chapters_from_manifest, _fmt_dur
 )
 
 CHANNEL_DESC = (
@@ -88,15 +88,18 @@ def main() -> None:
         guid = f"d5n-{ep['date']}-ep{ep['num']}"
 
         # Carrega capítulos do roteiro se existir
-        # D5N coldopen.txt não tem timing real — gera labels sem startTime
         chapters = load_program_chapters("d5n", ep["date"], dur_sec)
+        # Os timings reais vêm do manifesto do mixer; os rótulos, do coldopen.
+        chapters = chapters_from_manifest(
+            chapters, REPO / "chapters" / f"{ep['date']}.json"
+        )
         # O src do podcast:chapters aponta para o documento de capítulos
         # (chapters/<data>.json), que existe e tem timings reais. Apontar para o
         # MP3 só funcionaria com atoms ID3 CHAP/ctoc embutidos, e o mixer v10
         # não os escreve — o link não resolvia em nenhum player.
         chapters_url = f"{BASE_URL}/chapters/{ep['date']}.json"
         chapters_rss = build_chapters_rss(
-            chapters, chapters_url, dur_sec, has_timing=False
+            chapters, chapters_url, dur_sec, has_timing=True
         )
         chapters_desc = build_chapters_description(chapters, dur_sec)
 
