@@ -852,8 +852,9 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   *,*::before,*::after {{ box-sizing:border-box; margin:0; padding:0; }}
   :root {{
     --bg:#0d1117; --surface:#131920; --border:#1e2733; --border-lt:#192028;
-    --text:#e2e8f0; --muted:#64748b; --faint:#1e2d3d; --accent:#94a3b8;
+    --text:#e2e8f0; --muted:#8a99ad; --faint:#1e2d3d; --accent:#94a3b8;
     --accent-dim:#334155; --global:#6db88a; --tech:#60a5d4; --econ:#a89060; --red:#e06060;
+    --brand-cyan:#67e8f9; --chapter-weight:1;
   }}
   html {{ font-size:16px; scroll-behavior:smooth; }}
   body {{
@@ -947,19 +948,6 @@ def gerar_html(date, data_br, data_curta, noticias, podcast, episodios, coverage
   }}
   .search-bar input::placeholder {{ color:var(--faint); }}
   .filter-buttons {{
-    display:flex; gap:0.5rem; margin-bottom:1.5rem; flex-wrap:wrap;
-  }}
-  .filter-btn {{
-    padding:0.5rem 1rem; background:var(--surface); border:1px solid var(--border);
-    border-radius:6px; color:var(--text-secondary); font-size:0.85rem;
-    cursor:pointer; transition:all 0.2s;
-  }}
-  .filter-btn:hover {{ background:var(--surface-raised); color:var(--text); }}
-  .filter-btn.active {{
-    background:var(--accent); border-color:var(--accent); color:#fff;
-  }}
-
-  .news-list {{ display:flex; flex-direction:column; }}
     display:flex; gap:0.5rem; margin-bottom:1.5rem; flex-wrap:wrap;
   }}
   .filter-btn {{
@@ -2032,10 +2020,18 @@ def main():
     print(f"✅ d5n-feed.xml — {len(feed_r)} bytes")
 
     # Gera feed RSS de podcast para players externos (Apple Podcasts, Spotify)
-    subprocess.run(
+    feed_result = subprocess.run(
         [sys.executable, f"{BASE}/scripts/gerar_podcast_feed.py"],
+        capture_output=True, text=True,
         timeout=60, cwd=BASE, env={**os.environ, "D5N_BASE": BASE}
     )
+    if feed_result.stdout.strip():
+        print(feed_result.stdout.strip())
+    if feed_result.returncode != 0:
+        if feed_result.stderr.strip():
+            print(feed_result.stderr.strip(), file=sys.stderr)
+        print(f"ERRO: gerar_podcast_feed.py falhou (código {feed_result.returncode})", file=sys.stderr)
+        sys.exit(1)
 
     print(f"\n📊 {len(noticias)} notícias, {len(episodios)} episódios")
     print(f"🌐 https://d5n-daily.netlify.app/")

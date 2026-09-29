@@ -1,0 +1,21 @@
+# Dependências de runtime do pipeline D5N (áudio, TTS e feeds RSS).
+#
+# O cron DEVE usar o venv /root/venv-d5n-audio — é o único interpretador com
+# estas dependências. O agendador Hermes executa scripts .py com o runtime do
+# próprio gateway, que NÃO tem nenhum destes pacotes; por isso os scripts
+# chamam o venv explicitamente e validam os imports antes de começar.
+#
+# Requer ffmpeg e ffprobe no PATH (/usr/bin/ffmpeg, /usr/bin/ffprobe).
+#
+# Instalação / atualização:
+#   /root/venv-d5n-audio/bin/python3 -m pip install -r requirements-d5n.txt
+
+pydub==0.25.1
+edge-tts==7.2.7
+feedparser==6.0.14
+
+# Python 3.13 removeu o módulo audioop da stdlib; o pydub importa pyaudioop
+# como fallback e falha sem este backport.
+audioop-lts==0.2.2
+
+PyYAML==6.0.3

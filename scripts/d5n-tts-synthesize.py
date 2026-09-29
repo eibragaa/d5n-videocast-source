@@ -18,7 +18,11 @@ from pathlib import Path
 try:
     import edge_tts
 except ImportError:
-    print("ERRO: edge_tts não instalado. Instale com: pip install edge-tts")
+    print(
+        f"ERRO: edge_tts não está instalado no interpretador {sys.executable}. "
+        "Instale no venv D5N com: "
+        "/root/venv-d5n-audio/bin/python3 -m pip install edge-tts"
+    )
     sys.exit(1)
 
 REPO = Path(os.environ.get("D5N_REPO", "/root/repositorio/d5n-videocast-source")).resolve()

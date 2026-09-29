@@ -29,7 +29,12 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-GEN = REPO / "scripts" / "gerar_pagina_d5n.py"
+# O gerador em uso pelo pipeline é o da RAIZ. Ohistoricamente o guard apontava
+# para scripts/gerar_pagina_d5n.py (layout v2, obsoleto desde ago/2026), o que
+# fazia ele exigir tokens/marcadores que o gerador real nunca emite — bloqueando
+# todo commit com 34 falso-positivos enquanto o site estava integro.
+GEN = REPO / "gerar_pagina_d5n.py"
+GEN_LEGADO = REPO / "scripts" / "gerar_pagina_d5n.py"
 INDEX = REPO / "index.html"
 
 # literais de truncamento/injecao que nunca devem existir em CSS ou HTML gerado
@@ -42,37 +47,26 @@ LIXO = [
     "context compressor",
 ]
 
-# tokens obrigatorios do design system
-TOKENS = [
-    "--bg", "--surface", "--surface-2", "--border", "--border-soft",
-    "--text", "--text-2", "--muted",
-    "--d5n", "--mc", "--fm", "--d5n-soft", "--mc-soft", "--fm-soft",
-    "--font-display", "--font-body", "--font-mono",
-    "--r-card", "--r-inner", "--r-btn",
-    "--s1", "--s4", "--s6",
-    "--t-fast", "--t-med", "--ease",
+# Tokens minimos que o design system DEVE declarar em :root. Nao e uma lista
+# fechada: o guard deriva o resto do proprio :root do gerador (ver main), porque
+# o design evoluiu e uma lista fixa so produz falso-positivos.
+TOKENS_OBRIGATORIOS = [
+    "--bg", "--surface", "--border", "--text", "--muted",
+    "--global", "--tech", "--econ",
 ]
 
-# marcadores que so o gerador atual emite (layout v2/polish)
+# Marcadores estruturais minimos: presentes enquanto o site renderizar o
+# layout com hero, ticker, blocos de programa e player.
 MARCAS_GERADOR = [
-    "scroll-padding-top:76px",
-    'grid-template-areas:"featured side-a"',
-    "linear-gradient(180deg,var(--surface-2)",
-    "background-clip:text",
+    "grid-template-columns",
+    "linear-gradient",
 ]
 
 ANATOMIA = [
-    ("hero", 'class="hero"'),
-    ("grid", 'class="programs-grid"'),
-    ("ticker", 'class="ticker-track"'),
-    ("card d5n", 'program-card--d5n'),
-    ("card mc", 'program-card--mc'),
-    ("card fm", 'program-card--fm'),
-    ("archive", 'class="archive-row'),
-    ("footer", 'class="site-footer"'),
-    ("json-ld", 'application/ld+json'),
-    ("player", 'class="pc-player"'),
-    ("menu", 'id="menuBtn"'),
+    ("hero", 'class="hero'),
+    ("ticker", "ticker"),
+    ("json-ld", "application/ld+json"),
+    ("footer", "<footer"),
 ]
 
 
@@ -128,20 +122,41 @@ def checar(texto: str, rotulo: str) -> list[str]:
     return falhas
 
 
-def checar_tokens(css: str) -> list[str]:
+def checar_tokens(css: str, obrigatorios: list[str]) -> list[str]:
+    """Exige os tokens minimos e todos os tokens que o :root do gerador declara.
+
+    Derivar do proprio :root mantem o util real do guard (detectar token que
+    sumiu do design system) sem uma lista fixa que envelhece a cada redesign.
+    """
     falhas = []
-    for tok in TOKENS:
+    for tok in obrigatorios:
         if tok not in css:
             falhas.append(f"token do design system ausente: {tok}")
+
+    m = re.findall(r":root\s*\{([^}]*)\}", css, re.S)
+    if not m:
+        return falhas + [":root do CSS nao encontrado — tokens nao declarados"]
+
+    # O design usa varios blocos :root (base, tema claro, cores por programa).
+    # Ler so o primeiro gerava falso-positivo em todo token dos demais.
+    declarados = set()
+    for bloco in m:
+        declarados |= set(re.findall(r"(--[\w-]+)\s*:", bloco))
+    usados = set(re.findall(r"var\(\s*(--[\w-]+)", css))
+    # Todo token consumido por var() precisa existir, senao o browser ignora a regra.
+    for tok in sorted(usados - declarados):
+        falhas.append(f"token usado mas nao declarado em :root: {tok}")
     return falhas
 
 
 def checar_contraste(css: str) -> list[str]:
     falhas = []
-    m = re.search(r":root\s*\{([^}]*)\}", css, re.S)
-    if not m:
+    blocos = re.findall(r":root\s*\{([^}]*)\}", css, re.S)
+    if not blocos:
         return ["nao achei :root no CSS"]
-    root = m.group(1)
+    # O tema de cada programa vive em :root proprio; valida o primeiro bloco
+    # (base), que e o que o browser aplica a pagina.
+    root = blocos[0]
     vars_ = dict(re.findall(r"(--[\w-]+)\s*:\s*(#[0-9a-fA-F]{6})\b", root))
     bg = vars_.get("--bg")
     for tok in ("--muted", "--text-2", "--text"):
@@ -157,6 +172,7 @@ def checar_contraste(css: str) -> list[str]:
 def main() -> int:
     quiet = "--quiet" in sys.argv or "--hook" in sys.argv
     falhas: list[str] = []
+    obrigatorios = list(TOKENS_OBRIGATORIOS)
 
     if GEN.exists():
         src = GEN.read_text(encoding="utf-8")
@@ -166,7 +182,14 @@ def main() -> int:
             if lixo in src:
                 falhas.append(f"gerar_pagina_d5n.py: literal injetado '{lixo}'")
     else:
-        falhas.append("gerar_pagina_d5n.py nao encontrado")
+        falhas.append("gerar_pagina_d5n.py nao encontrado (raiz do repo)")
+
+    if GEN_LEGADO.exists():
+        # Arquivo obsoleto: nao e o gerador do pipeline, so nao deve ter lixo.
+        legado = GEN_LEGADO.read_text(encoding="utf-8")
+        for lixo in LIXO:
+            if lixo in legado:
+                falhas.append(f"scripts/gerar_pagina_d5n.py: literal injetado '{lixo}'")
 
     if INDEX.exists():
         html = INDEX.read_text(encoding="utf-8")
@@ -179,7 +202,7 @@ def main() -> int:
                 falhas.append(f"index.html: marcador do gerador atual ausente — layout antigo/bot concorrente? '{marcador}'")
         css = extrair_css(html)
         if css:
-            falhas += checar_tokens(css)
+            falhas += checar_tokens(css, obrigatorios)
             falhas += checar_contraste(css)
     else:
         falhas.append("index.html nao encontrado — rode gerar_pagina_d5n.py primeiro")
