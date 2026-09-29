@@ -31,6 +31,9 @@ from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont
 import requests
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts"))
+from d5n_data_ptbr import data_extenso, hoje_editorial  # noqa: E402
+
 # ════════════════════════════════════════════════
 #  CONFIG
 # ════════════════════════════════════════════════
@@ -92,12 +95,11 @@ def extrair_data_br(data_str=None):
     if data_str:
         try:
             d = datetime.strptime(data_str, "%Y-%m-%d")
-            meses = ["","Janeiro","Fevereiro","Março","Abril","Maio","Junho",
-                     "Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"]
-            dias = ["Segunda","Terça","Quarta","Quinta","Sexta","Sábado","Domingo"]
-            return f"{dias[d.weekday()]}, {d.day} de {meses[d.month]} de {d.year}"
-        except: pass
-    return datetime.now().strftime("%d de %B de %Y")
+            return data_extenso(d)
+        except Exception:
+            pass
+    return data_extenso(hoje_editorial())
+
 
 def data_curta(data_br):
     meses = {"Janeiro":"JAN","Fevereiro":"FEV","Março":"MAR","Abril":"ABR","Maio":"MAI","Junho":"JUN",

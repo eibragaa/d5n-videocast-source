@@ -6,13 +6,21 @@ Gera conteúdo com volume suficiente para o mixer v10 (480-720s de narração).
 """
 import json
 import os
+import sys
 from pathlib import Path
-from datetime import date, timedelta
+from datetime import timedelta
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from d5n_data_ptbr import data_curta, data_extenso, hoje_editorial  # noqa: E402
 
 REPO = Path(os.environ.get("D5N_REPO", "/root/repositorio/d5n-videocast-source")).resolve()
-TODAY = date.today().isoformat()
-TODAY_DATE = date.today()
-YESTERDAY = (date.today() - timedelta(days=1)).isoformat()
+
+# Fuso editorial America/Sao_Paulo via helper compartilhado: o cron roda no
+# America/Manaus e date.today() pode cair no dia errado perto da meia-noite.
+TODAY_DATE = hoje_editorial()
+TODAY = TODAY_DATE.isoformat()
+YESTERDAY = (TODAY_DATE - timedelta(days=1)).isoformat()
+
 
 # Vozes
 THALITA = "pt-BR-ThalitaMultilingualNeural"
@@ -134,7 +142,7 @@ manifests["coldopen.txt"] = (
 
 # intro
 manifests["intro.txt"] = (
-    f"Bom dia! Eu sou Francisca, e hoje é {TODAY_DATE.strftime('%A, %d de %B de %Y')}. "
+    f"Bom dia! Eu sou Francisca, e hoje é {data_extenso(TODAY_DATE)}. "
     f"Este é o Drop Five News, o seu briefing das 05 horas da manhã com as "
     f"notícias essenciais para começar o dia bem informado. "
     f"Separe um tempo para ouvir: em 9 minutos, conectamos você ao que move "

@@ -90,7 +90,12 @@ def carregar_noticias(source_path=None, data_str=None):
 
     # Extrair data
     data_match = re.search(r'(\d+ de \w+ de \d{4})', content)
-    data_br = data_match.group(1) if data_match else datetime.now().strftime("%d de %B de %Y")
+    if data_match:
+        data_br = data_match.group(1)
+    else:
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts"))
+        from d5n_data_ptbr import data_extenso, hoje_editorial
+        data_br = data_extenso(hoje_editorial())
 
     # Pilar atual
     pilar_atual = ''
