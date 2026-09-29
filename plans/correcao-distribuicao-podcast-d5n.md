@@ -31,7 +31,9 @@ Isso descarta falha atual de geração/publicação do feed. Não prova que os d
 
 **8. O gerador em uso tinha um bloco CSS órfão.** Uma edição corrompida duplicou o bloco `.filter-btn` e deixou uma declaração órfã, fazendo o browser descartar todas as regras seguintes. Além disso, `--brand-cyan` e `--chapter-weight` eram consumidos por `var()` sem nunca serem declarados, e `--muted` (#64748b) ficava em 3.98:1 sobre o fundo, abaixo de WCAG AA.
 
-**9. Cadastro nos diretórios externos nunca foi feito por código.** Apple e Spotify exigem submissão/claim inicial. A documentação do Spotify diz que episódios novos costumam aparecer em algumas horas, podendo levar até 24; a Apple costuma refletir mudanças em algumas horas.
+**9. A apresentadora anunciava dia e mês em inglês.** O intro usava `strftime('%A, %d de %B de %Y')`, que segue o locale do processo. No cron o locale é `C`, então a saída era "Thursday, 28 de May of 2026" em um podcast inteiro em português. Pior, `date.today()` roda no fuso do sistema (`America/Manaus`), que perto da meia-noite pode cair no dia errado para o conteúdo editorial.
+
+**10. Cadastro nos diretórios externos nunca foi feito por código.** Apple e Spotify exigem submissão/claim inicial. A documentação do Spotify diz que episódios novos costumam aparecer em algumas horas, podendo levar até 24; a Apple costuma refletir mudanças em algumas horas.
 
 ## Correções aplicadas
 
@@ -67,9 +69,18 @@ Isso descarta falha atual de geração/publicação do feed. Não prova que os d
 - `d5n-podcast-daily-wrapper` corrigido para o caminho relativo aceito pelo agendador.
 - `d5n-trends-diario` mantém o script e agora executa com sucesso.
 
+## Datas em português e fuso editorial
+
+- `scripts/d5n_data_ptbr.py` (novo): tabelas de dia da semana e mês em PT-BR, sem depender do locale do sistema. Expõe `data_extenso`, `data_extenso_curta`, `data_curta`, `sigla_mes` e `hoje_editorial` (fuso `America/Sao_Paulo`).
+- `scripts/gerar_roteiro_d5n.py` usa o helper no intro e passa a derivar a data do fuso editorial em vez de `date.today()`.
+- `gerar_cards_pipeline.py` e `gerar_cards_instagram_d5n.py` tinham fallback em inglês quando não achavam a data no conteúdo; agora usam o mesmo helper.
+- `tests/test_d5n_data_ptbr.py` (novo): 8 testes cobrindo PT-BR, independência de locale, os sete dias da semana, fuso, e uma guarda anti-regressão que falha se `%A`/`%B` voltarem ao roteiro.
+
+Verificado: o intro gerado agora diz "terça-feira, 29 de setembro de 2026" e o TTS de `pt-BR-FranciscaNeural` sintetiza o trecho sem nomes em inglês.
+
 ## Publicação
 
-Commit `fd6a13b` no `master` e no `origin/master`. Após o push, o verificador público rodou contra o episódio #075 e passou em todas as checagens, confirmando que o deploy do Netlify propagou.
+Commits `fd6a13b`, `57c65eb` e `87ecb27` no `master` e no `origin/master`. Após o push, o verificador público rodou contra o episódio #075 e passou em todas as checagens, confirmando que o deploy do Netlify propagou.
 
 ## Pendente: depende de acesso às contas
 
