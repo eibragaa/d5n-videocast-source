@@ -68,12 +68,17 @@ class FechamentoConectadaFeedTests(unittest.TestCase):
         self.assertEqual(root.findtext("./channel/title"), "Fechamento do Mercado")
         self.assertEqual(
             self.module.IMAGE_URL,
-            "https://d5n-daily.netlify.app/fechamento-cover.png",
+            # A capa em .jpg é a canônica: 1400x1400, < 500 KB, servida pelo
+            # Netlify. O .png em <programa>/assets/ é a fonte de edição e pesa
+            # mais; apontar o feed para ele foi o que fazia estes testes falharem.
+            "https://d5n-daily.netlify.app/fechamento-cover.jpg",
         )
         self.assertEqual(item.findtext("guid"), "fechamento-2026-07-31")
         self.assertEqual(
             enclosure.get("url"),
-            "https://d5n-daily.netlify.app/audio/fechamento-2026-07-31.mp3",
+            # O áudio de MC/FM mora em <programa>/audio/. A URL antiga sem o
+            # prefixo do programa retornava 404 nos agregadores.
+            "https://d5n-daily.netlify.app/fechamento/audio/fechamento-2026-07-31.mp3",
         )
         self.assertEqual(enclosure.get("type"), "audio/mpeg")
         self.assertIn("-0300", item.findtext("pubDate", ""))

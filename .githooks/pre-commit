@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# Portão de qualidade local — espelha o job "quality" do CI.
+#
+# Instalar com:  git config core.hooksPath .githooks
+# (feito no setup do clone; sem isso o hook não é lido pelo git)
+#
+# Mantém local e CI com o mesmo critério: nenhum commit passa se a suíte ou o
+# guard de design reprovarem. O hook anterior vivia só em .git/hooks/ e não era
+# versionado — o CI nunca o via.
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+PY="${D5N_PY:-/root/venv-d5n-audio/bin/python3}"
+if [ ! -x "$PY" ]; then
+    PY="python3"
+fi
+
+falhou=0
+
+# 1. Guard de design: CSS parseável, tokens declarados, contraste AA.
+if ! "$PY" -B scripts/validar_design.py --quiet; then
+    echo "✗ Guard de design reprovou — rode 'python3 -B scripts/validar_design.py' para o detalhe." >&2
+    echo "  Não use --no-verify: o problema costuma ser CSS descartado pelo browser." >&2
+    falhou=1
+fi
+
+# 2. Suíte de testes. Só aborta se algum teste falhar de verdade — um teste
+#    ausente não pode virar um bloqueio permanente que ensina a usar --no-verify.
+if ! output=$("$PY" -m unittest discover -s tests -p 'test_*.py' 2>&1); then
+    if printf '%s' "$output" | grep -qE '^(FAIL|ERROR):'; then
+        printf '%s\n' "$output" | grep -E '^(FAIL|ERROR):' >&2
+        echo "✗ Suíte de testes reprovou. Corrija antes de commitar." >&2
+        falhou=1
+    fi
+fi
+
+# 3. Nada de __pycache__ ou mídia solta no staging.
+if git diff --cached --name-only | grep -qE '(^|/)__pycache__/|\.pyc$'; then
+    echo "✗ Há __pycache__ ou .pyc no staging — rode 'git rm -r --cached' neles." >&2
+    falhou=1
+fi
+
+exit "$falhou"

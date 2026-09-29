@@ -23,6 +23,29 @@ def load_release_status():
     return module.release_status
 
 
+# Os comandos git deste arquivo rodam em diretórios temporários, mas o hook
+# pre-commit exporta GIT_DIR/GIT_INDEX_FILE apontando para o repo real. Sem
+# limpá-los, `git init` no tempdir herda o repo de verdade: chegou a gravar
+# core.bare=true e user.name="D5N Test" no .git/config do D5N, deixando o
+# repositório principal inutilizável ("must be run in a work tree"). Um teste
+# que corrompe o repo que o contém não é um teste, é um incidente.
+GIT_ISOLADO = {
+    k: v for k, v in os.environ.items()
+    if k not in ("GIT_DIR", "GIT_INDEX_FILE", "GIT_WORK_TREE",
+                 "GIT_OBJECT_DIRECTORY", "GIT_ALTERNATE_OBJECT_DIRECTORIES",
+                 "GIT_PREFIX", "GIT_COMMON_DIR")
+}
+
+
+def git(*args, cwd, check=True, capture_output=False, text=False):
+    """git sem o estado do repo chamador — sempre um repo novo e isolado."""
+    return subprocess.run(
+        ["git", *args], cwd=cwd, check=check,
+        capture_output=capture_output, text=text,
+        env={**GIT_ISOLADO, "HOME": str(cwd)},
+    )
+
+
 class ReleaseStatusTests(unittest.TestCase):
     def setUp(self):
         self.assertTrue(SCRIPT.exists(), "d5n_release_status.py ainda não foi implementado")
@@ -65,15 +88,13 @@ class ReleaseStatusTests(unittest.TestCase):
 """,
             encoding="utf-8",
         )
-        subprocess.run(["git", "init", "-q", "-b", "master"], cwd=self.repo, check=True)
-        subprocess.run(["git", "config", "user.name", "D5N Test"], cwd=self.repo, check=True)
-        subprocess.run(["git", "config", "user.email", "d5n@example.invalid"], cwd=self.repo, check=True)
-        subprocess.run(["git", "add", "."], cwd=self.repo, check=True)
-        subprocess.run(["git", "commit", "-qm", "valid release"], cwd=self.repo, check=True)
-        commit = subprocess.run(
-            ["git", "rev-parse", "HEAD"], cwd=self.repo, check=True,
-            capture_output=True, text=True,
-        ).stdout.strip()
+        git("init", "-q", "-b", "master", cwd=self.repo)
+        git("config", "user.name", "D5N Test", cwd=self.repo)
+        git("config", "user.email", "d5n@example.invalid", cwd=self.repo)
+        git("add", ".", cwd=self.repo)
+        git("commit", "-qm", "valid release", cwd=self.repo)
+        commit = git("rev-parse", "HEAD", cwd=self.repo,
+                     capture_output=True, text=True).stdout.strip()
         (self.state / f"published-{self.date}.json").write_text(
             json.dumps(
                 {
@@ -130,12 +151,10 @@ class ReleaseStatusTests(unittest.TestCase):
         (self.repo / "podcast.xml").write_text(
             "<rss version='2.0'><channel/></rss>", encoding="utf-8"
         )
-        subprocess.run(["git", "add", "podcast.xml"], cwd=self.repo, check=True)
-        subprocess.run(["git", "commit", "-qm", "stale feed"], cwd=self.repo, check=True)
-        stale_commit = subprocess.run(
-            ["git", "rev-parse", "HEAD"], cwd=self.repo, check=True,
-            capture_output=True, text=True,
-        ).stdout.strip()
+        git("add", "podcast.xml", cwd=self.repo)
+        git("commit", "-qm", "stale feed", cwd=self.repo)
+        stale_commit = git("rev-parse", "HEAD", cwd=self.repo,
+                           capture_output=True, text=True).stdout.strip()
         receipt_path = self.state / f"published-{self.date}.json"
         receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
         receipt["commit"] = stale_commit
@@ -174,11 +193,11 @@ class DeployFailClosedIntegrationTests(unittest.TestCase):
                  "ECONOMIA notícia real https://example.com/economia\n") * 3,
                 encoding="utf-8",
             )
-            subprocess.run(["git", "init", "-q", "-b", "master"], cwd=repo, check=True)
-            subprocess.run(["git", "config", "user.name", "D5N Test"], cwd=repo, check=True)
-            subprocess.run(["git", "config", "user.email", "d5n@example.invalid"], cwd=repo, check=True)
-            subprocess.run(["git", "add", "."], cwd=repo, check=True)
-            subprocess.run(["git", "commit", "-qm", "fixture"], cwd=repo, check=True)
+            git("init", "-q", "-b", "master", cwd=repo)
+            git("config", "user.name", "D5N Test", cwd=repo)
+            git("config", "user.email", "d5n@example.invalid", cwd=repo)
+            git("add", ".", cwd=repo)
+            git("commit", "-qm", "fixture", cwd=repo)
             before = counter.read_bytes()
 
             env = os.environ.copy()

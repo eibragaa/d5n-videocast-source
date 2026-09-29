@@ -154,9 +154,12 @@ class PipelineContractTests(unittest.TestCase):
 
         self.assertEqual(mixer.MIN_SECONDS, 480)
         self.assertEqual(mixer.MAX_SECONDS, 720)
-        self.assertEqual(mixer.LEAD_MS, 3_000)
-        self.assertEqual(mixer.GLOBAL_FADE_IN_MS, 800)
-        self.assertGreaterEqual(mixer.GLOBAL_FADE_OUT_MS, 1_800)
+        # Ajustados em ago/2026 (commit 0ed1aac, "ajustes v10") para o lead
+        # musical não comer a abertura. O teste ainda afirmava os valores
+        # anteriores e ficou vermelho desde então.
+        self.assertEqual(mixer.LEAD_MS, 1_500)
+        self.assertEqual(mixer.GLOBAL_FADE_IN_MS, 400)
+        self.assertGreaterEqual(mixer.GLOBAL_FADE_OUT_MS, 1_000)
         self.assertEqual(mixer.LIGHT_TRACK_GAIN_DB, -20.0)
         self.assertEqual(mixer.HOT_TRACK_GAIN_DB, -26.0)
         self.assertEqual(mixer.VOICE_TARGET_DBFS, -19.0)
@@ -295,3 +298,44 @@ class PipelineContractTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+class GeradorCanonicoTests(unittest.TestCase):
+    """Dois geradores de index.html coexistem no repo.
+
+    gerar_pagina_d5n.py (raiz, 2040 linhas) é o canônico e emite o player de
+    capítulos: chaptersContainer, d5nTitle, playBtn, audioEl.
+    scripts/gerar_pagina_d5n.py (1289 linhas, v2) não tem player nenhum e emite
+    menuBtn/d5nAudio no lugar.
+
+    O passo 9 do wrapper usava o segundo: todo ciclo noturno sobrescrevia o
+    index com um site sem player, sem título do episódio e sem <audio> — com
+    build verde e feed válido. Reproduzido em worktree: 145.747 -> 137.382
+    bytes, chaptersContainer 1 -> 0.
+    """
+
+    WRAPPER = Path("/root/.hermes/scripts/d5n-podcast-daily-full.sh")
+
+    def test_gerador_canonico_e_o_da_raiz(self):
+        raiz = REPO / "gerar_pagina_d5n.py"
+        self.assertTrue(raiz.is_file(), f"gerador canônico ausente: {raiz}")
+        texto = raiz.read_text(encoding="utf-8")
+        for token in ("chaptersContainer", "d5nTitle", "playBtn", "audioEl"):
+            self.assertIn(
+                token, texto,
+                f"REGRESSÃO: o gerador da raiz perdeu {token} — o player de "
+                "capítulos depende dele.",
+            )
+
+    def test_wrapper_nao_chama_o_gerador_obsoleto(self):
+        if not self.WRAPPER.is_file():
+            self.skipTest("wrapper do pipeline não está neste ambiente")
+        script = self.WRAPPER.read_text(encoding="utf-8")
+        self.assertNotIn(
+            '"$SCRIPTS/gerar_pagina_d5n.py"', script,
+            "REGRESSÃO: o wrapper voltou a chamar scripts/gerar_pagina_d5n.py, "
+            "a cópia obsoleta que emite o site SEM o player de capítulos.",
+        )
+        self.assertIn(
+            '"$D5N_PY" -B "$REPO/gerar_pagina_d5n.py"', script,
+            "REGRESSÃO: o wrapper não chama o gerador canônico da raiz.",
+        )

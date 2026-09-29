@@ -359,19 +359,21 @@ def find_latest_podcast():
 
     O podcast é público de segunda a sábado; domingo não gera episódio, mas o
     site continua exibindo o último player disponível.
+
+    ATENÇÃO: load_episode_history() já devolve o histórico do mais novo para o
+    mais antigo. Usar reversed() aqui percorria na ordem inversa e devolvia o
+    episódio MAIS ANTIGO (o #004, de 28/05, em vez do #075) — o player principal
+    ficava com o áudio de maio e o título com o número de setembro.
     """
     history = load_episode_history()
     if not history:
         return None
-    from datetime import datetime as _dt
-    for entry in reversed(history):
+    for entry in history:
         f = entry["file"]
         path = f"{AUDIO_DIR}/{f}"
         if not os.path.exists(path):
             continue
-        try:
-            ep_date = _dt.strptime(entry["date"], "%Y-%m-%d")
-        except (KeyError, TypeError, ValueError):
+        if not re.match(r"^\d{4}-\d{2}-\d{2}$", str(entry.get("date", ""))):
             continue
         dur = get_duration(path)
         voice_name = historical_voice_name(entry["date"])
@@ -388,13 +390,16 @@ def find_latest_podcast():
     return None
 
 def list_episodes():
-    """Lista episódios do histórico persistente (reverso, mais recente primeiro).
-    Inclui voz do dia e duração para cada episódio existente."""
-    from datetime import datetime as _dt
+    """Lista episódios do histórico persistente (mais recente primeiro).
+
+    Sem o reversed(): o histórico já vem do mais novo para o mais antigo, e a
+    inversão fazia o archive abrir no episódio #004 em vez do #075.
+    Inclui voz do dia e duração para cada episódio existente.
+    """
 
     history = load_episode_history()
     eps = []
-    for entry in reversed(history):
+    for entry in history:
         f = entry["file"]
         path = f"{AUDIO_DIR}/{f}"
         exists = os.path.exists(path)

@@ -139,13 +139,17 @@ def checar_tokens(css: str, obrigatorios: list[str]) -> list[str]:
 
     # O design usa varios blocos :root (base, tema claro, cores por programa).
     # Ler so o primeiro gerava falso-positivo em todo token dos demais.
-    declarados = set()
-    for bloco in m:
-        declarados |= set(re.findall(r"(--[\w-]+)\s*:", bloco))
+    #
+    # Alem disso, nao basta ler :root: o tema por programa declara tokens dentro
+    # de regras de classe (.nav-link--mc{--nav-accent:var(--mc)}). Um token
+    # declarado ali e' legitimo e o browser resolve normalmente. Varrer QUALQUER
+    # declaracao de custom property no CSS inteiro cobre os dois casos e ainda
+    # pega o token que sumiu do design system.
+    declarados = set(re.findall(r"(--[\w-]+)\s*:", css))
     usados = set(re.findall(r"var\(\s*(--[\w-]+)", css))
     # Todo token consumido por var() precisa existir, senao o browser ignora a regra.
     for tok in sorted(usados - declarados):
-        falhas.append(f"token usado mas nao declarado em :root: {tok}")
+        falhas.append(f"token usado mas nao declarado: {tok}")
     return falhas
 
 

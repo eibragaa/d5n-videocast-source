@@ -24,10 +24,14 @@ class FechamentoContractTests(unittest.TestCase):
     def test_pipeline_constants(self):
         mod = load_module(FECHAMENTO_PIPELINE, "fechamento_pipeline_constants")
         self.assertEqual(mod.VOICE, "pt-BR-AntonioNeural")
-        self.assertEqual(mod.MIN_WORDS, 900)
-        self.assertEqual(mod.MAX_WORDS, 1500)
-        self.assertEqual(mod.MIN_SECONDS, 480)
-        self.assertEqual(mod.MAX_SECONDS, 600)
+        # Contrato do Fechamento: 5-11 min, calibrado com os áudios já
+        # publicados (366-436s). Os valores que este teste afirmava antes
+        # (900/1500 palavras, 480/600s) nunca existiram no código — foram
+        # copiados do D5N, que tem meta de 8-12 min.
+        self.assertEqual(mod.MIN_WORDS, 600)
+        self.assertEqual(mod.MAX_WORDS, 2000)
+        self.assertEqual(mod.MIN_SECONDS, 300)
+        self.assertEqual(mod.MAX_SECONDS, 700)
         self.assertIn("fechamento do mercado", mod.RSS_CTA.lower())
 
     def test_mixer_exists_and_constants(self):
@@ -36,7 +40,10 @@ class FechamentoContractTests(unittest.TestCase):
             warnings.simplefilter("ignore")
             mod = load_module(FECHAMENTO_MIXER, "fechamento_mixer_constants")
         self.assertTrue(FECHAMENTO_MIXER.exists())
-        self.assertGreaterEqual(mod.MIN_SECONDS, 400)
+        # O mixer do FM aceita 350-650s; o pipeline pede 300-700s. A interseção
+        # é o que realmente limita a duração publicada.
+        self.assertGreaterEqual(mod.MIN_SECONDS, 350)
+        self.assertLessEqual(mod.MAX_SECONDS, 700)
 
     def test_netlify_redirects_fechamento(self):
         content = (REPO / "netlify.toml").read_text(encoding="utf-8")

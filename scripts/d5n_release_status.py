@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import subprocess
 import xml.etree.ElementTree as ET
@@ -53,6 +54,24 @@ def _result(editorial_date: str, published: bool, reason: str, **extra: Any) -> 
         "reason": reason,
         **extra,
     }
+
+
+def _git_env(repo):
+    """Ambiente de git que aponta para `repo`, ignorando o do chamador.
+
+    GIT_DIR/GIT_INDEX_FILE/GIT_WORK_TREE herdados fazem qualquer git ler o
+    repositório de quem chamou em vez do repositário informado em `cwd`. Num hook
+    pre-commit esses vars apontam para o repo real, e o verificador passa a
+    conferir o deploy errado.
+    """
+    env = {
+        k: v for k, v in os.environ.items()
+        if k not in ("GIT_DIR", "GIT_INDEX_FILE", "GIT_WORK_TREE",
+                     "GIT_OBJECT_DIRECTORY", "GIT_ALTERNATE_OBJECT_DIRECTORIES",
+                     "GIT_PREFIX", "GIT_COMMON_DIR")
+    }
+    env["HOME"] = str(repo)
+    return env
 
 
 def release_status(repo: Path, state_dir: Path, editorial_date: str) -> dict[str, Any]:
@@ -134,6 +153,12 @@ def release_status(repo: Path, state_dir: Path, editorial_date: str) -> dict[str
     # O recibo só é confiável se o feed estiver no próprio commit enviado ao
     # remoto. Conferir apenas o arquivo de trabalho permitia um podcast.xml
     # atualizado localmente, mas ausente do deploy (a falha de 30-31/07/2026).
+    #
+    # O env precisa ser higienizado: GIT_DIR/GIT_INDEX_FILE do chamador fazem
+    # `git show` ler o repositório errado, e o resultado era o verificador dizer
+    # "commit_missing_podcast_feed" para um commit que continha o feed. Pior: em
+    # teste, o git.init com GIT_DIR herdado gravou core.bare no .git/config do
+    # repo real. Um verificador que lê o repo errado não verifica nada.
     try:
         committed_feed = subprocess.run(
             ["git", "show", f"{commit}:podcast.xml"],
@@ -141,6 +166,7 @@ def release_status(repo: Path, state_dir: Path, editorial_date: str) -> dict[str
             capture_output=True,
             check=False,
             timeout=10,
+            env=_git_env(repo),
         )
     except (OSError, subprocess.TimeoutExpired):
         return _result(editorial_date, False, "commit_feed_unavailable")

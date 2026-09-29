@@ -1,4 +1,5 @@
 import importlib.util
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -98,13 +99,51 @@ class ChapterPlayerContractTests(unittest.TestCase):
         self.assertIn('git add -- "$CHAPTER_DEST"', deploy)
 
     def test_site_verifier_requires_real_chapters(self):
-        if not VERIFIER.is_file():
-            self.skipTest("verificador do Hermes não está instalado neste ambiente")
-        verifier = VERIFIER.read_text(encoding="utf-8")
+        """O player de capítulos é responsabilidade do repo, não do Hermes.
 
-        self.assertIn("Tem 9 capítulos reais", verifier)
-        self.assertIn("chapter-segment", verifier)
-        self.assertIn("chapter-current", verifier)
+        Este teste apontava para /root/.hermes/scripts/d5n-verify-site.py, um
+        script que foi reescrito e não verifica mais capítulos — então o teste
+        falhava sem que houvesse defeito no site. O contrato que importa é: o
+        gerador em uso emite a anatomia do player de capítulos, e o pipeline
+        publica um manifesto para o dia (sem ele o site cai no fallback).
+        """
+        gerador = GENERATOR.read_text(encoding="utf-8")
+        for token in ("player-chapters", "chapter-segment", "chapter-current"):
+            self.assertIn(token, gerador, f"gerador sem {token}")
+
+        index = (REPO / "index.html").read_text(encoding="utf-8")
+        player = re.search(r'id="chaptersContainer" data-chapters="(\[[^"]*)"', index)
+        self.assertIsNotNone(player, "player sem chaptersContainer")
+        assert player is not None
+
+        # O episódio em destaque é o último publicado; o arquivo de chapters
+        # correspondente precisa existir. Sem manifesto, o player renderiza um
+        # bloco único "Episódio completo" e perde toda a navegação por capítulo.
+        destaque = re.search(r'data-audio="/audio/d5n-ep\d+-(\d{4}-\d{2}-\d{2})\.mp3"', index)
+        if destaque is None:
+            self.skipTest("index.html sem episódio em destaque para conferir")
+
+        # Contrato do pipeline: o wrapper TEM que ter o passo que gera
+        # chapters/<data>.json. Sem ele o player cai no fallback de "Episódio
+        # completo" e perde a navegação por capítulo (foi o que travou em
+        # 28/08). Verificar a existência do arquivo aqui não funciona — o
+        # manifesto só nasce na próxima mixagem, e o teste reprovaria todo dia
+        # por um artefato que ainda não tem hora de existir.
+        wrapper = Path("/root/.hermes/scripts/d5n-podcast-daily-full.sh")
+        if not wrapper.is_file():
+            self.skipTest("wrapper do pipeline não está neste ambiente")
+        script = wrapper.read_text(encoding="utf-8")
+        self.assertIn(
+            "d5n_chapter_manifest.py",
+            script,
+            "REGRESSÃO: o wrapper não gera chapters/<data>.json — o player do "
+            "site cai no fallback de 1 capítulo.",
+        )
+        self.assertIn(
+            'CHAPTER_MANIFEST_REL="chapters/${TODAY}.json"',
+            script,
+            "REGRESSÃO: o manifesto de capítulos não entra no staging do deploy.",
+        )
 
 
 if __name__ == "__main__":

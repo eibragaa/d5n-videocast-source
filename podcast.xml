@@ -33,7 +33,7 @@
 <podcast:guid>d5n-daily.netlify.app</podcast:guid>
 <podcast:funding url="https://github.com/sponsors/eibragaa">Support D5N</podcast:funding>
     <atom:link href="https://d5n-daily.netlify.app/podcast.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Tue, 29 Sep 2026 07:04:48 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 09:05:36 -0400</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/podcast-cover.jpg</url>
       <title>Hoje no Drop Five News</title>
@@ -70,7 +70,7 @@
     </psc:chapters>
       <guid isPermaLink="false">d5n-2026-09-29-ep075</guid>
       <link>https://d5n-daily.netlify.app/</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep075-2026-09-29.mp3" length="11579602" type="audio/mpeg"/>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep075-2026-09-29.mp3" length="11580856" type="audio/mpeg"/>
       <pubDate>Tue, 29 Sep 2026 00:00:00 -0400</pubDate>
       <description>Drop Five News · Episódio #075 · 29/09/2026. Resumo do dia com curadoria inteligente. 8:02 min.
 
