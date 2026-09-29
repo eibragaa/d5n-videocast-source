@@ -35,6 +35,14 @@ Isso descarta falha atual de geração/publicação do feed. Não prova que os d
 
 **10. Cadastro nos diretórios externos nunca foi feito por código.** Apple e Spotify exigem submissão/claim inicial. A documentação do Spotify diz que episódios novos costumam aparecer em algumas horas, podendo levar até 24; a Apple costuma refletir mudanças em algumas horas.
 
+**11. `podcast:chapters` apontava para o `.mp3`, que não tem capítulos embutidos.** O padrão Podcasting 2.0 só resolve chapters quando o áudio traz os atoms ID3 `CHAP`/`ctoc`. Nenhum dos três mixers os escreve — verificado nos MP3 de D5N e FM: `CHAP`, `ctoc` e `cmark` ausentes. O `src` apontava para o enclosure, que não resolve em nenhum player.
+
+**12. `podcast:chapters` com filhos derrubava o feed inteiro.** O elemento é vazio por definição quando o `src` é um documento externo; filhos só existem quando o `src` é o próprio áudio com atoms ID3. O gerador emitia `psrc:chapter` (D5N) e `psc:chapters` aninhado (MC e FM) — mistura de namespaces que leitor estrito rejeita, e o sintoma é o **feed inteiro parando de carregar**, não apenas os capítulos sumindo. Confirmado no leitor do usuário.
+
+**13. `psc:chapter` sem `start` não navega.** O Podlove Simple Chapters exige `start`; `title` sozinho não é definição válida. O D5N emitia 104 tags só com rótulo, porque o `coldopen.txt` não tem tempos e o gerador usava `has_timing=False`. Os tempos existiam em `chapters/<data>.json` (11 blocos medidos do MP3, com `start`/`end` exatos) mas sem os rótulos, que vêm da derivação sobre o coldopen.
+
+**14. Manhã Conectada nunca teve capítulos em nenhum commit do histórico.** `_shared_chapters.py` já tinha `MC_CHAPTER_LABELS` prontos e sem uso; `gerar_manha_conectada_feed.py` nunca implementou. Além disso faltava declarar `xmlns:psc` no canal — sem ele o feed fica inválido.
+
 ## Correções aplicadas
 
 ### Ambiente de execução
@@ -69,6 +77,46 @@ Isso descarta falha atual de geração/publicação do feed. Não prova que os d
 - `d5n-podcast-daily-wrapper` corrigido para o caminho relativo aceito pelo agendador.
 - `d5n-trends-diario` mantém o script e agora executa com sucesso.
 
+## Capítulos nos três programas
+
+Corrigido em 29/09/2026, depois de o usuário reportar que o podcast parou de carregar no leitor.
+
+- `_shared_chapters.py`: `chapters_from_manifest()` casa os timings reais do manifesto do mixer (só `id`, `start`, `end`) com os rótulos da derivação sobre o coldopen. Casa por posição quando as quantidades batem; quando não batem, mantém a derivação em vez de inventar capítulo.
+- `podcast:chapters` passou a ser elemento vazio com `src` apontando para o JSON de capítulos (`chapters/<data>.json`, `manha-conectada/chapters/`, `fechamento/chapters/`), nunca para o `.mp3`.
+- `psc:chapters` (Podlove) carrega os capítulos inline, todos com `start` e `title`. O D5N deixou de usar `has_timing=False`.
+- MC ganhou chapters: `_calc_mc_chapters()` com os 8 blocos editoriais fixos. A contagem de fontes não entra — antes truncava em 5 capítulos e perdia "Sinal 11" e "Encerramento".
+- FM passou a gravar `fechamento/chapters/<data>.json` (13 arquivos).
+- `xmlns:psc` declarado no canal do MC, que não tinha.
+
+Resultado medido no ar: D5N 104 capítulos, MC 248, FM 78, todos com `start`, nenhum `podcast:chapters` com filho.
+
+### Contratos de capítulo no portão
+
+`tests/test_chapters_rss_contracts.py` (novo, 4 testes) reprova: `podcast:chapters` com filho, `psc:chapter` sem `start` ou sem `title`, capítulos fora de ordem dentro do item, e `src` em `.mp3` ou fora de JSON. Verificado que pegam a regressão: reintroduzidos os dois defeitos, os testes falham.
+
+A lição que motivou o teste: parse XML e presença da tag não são contrato de podcast. Os defeitos 12 e 13 passaram pela validação anterior porque ela só checava se o feed parseava e se a tag existia — e ambos reprovam no leitor. O sintoma era o feed inteiro parando de carregar, não os capítulos sumindo.
+
+## Portão de qualidade no pipeline
+
+- Passo 10 de `d5n-podcast-daily-full.sh`: roda `scripts/validar_design.py` e a suíte de testes entre gerar o index e commitar. Reprovar aborta com `exit 1` e **zero commits** — fail-closed.
+- Verificado nos dois sentidos: gerador emitindo CSS inválido reprova e cancela a publicação; gerador íntegro publica e o feed público responde OK.
+- Armadilha registrada: sabotar o `index.html` em disco não prova nada, porque o passo 9 regenera o index antes do passo 10 e o CSS quebrado some. O que reprova de verdade é o gerador emitir CSS inválido.
+- `.github/quality.yml` foi descartado. Seria uma segunda cópia do mesmo portão em outra máquina, exigindo token com escopo `workflow` que o token OAuth não tem.
+
+## Mixagem: divergência entre os três programas
+
+**Ainda não corrigido — é o maior item em aberto.** Medido com `ffmpeg loudnorm` nos últimos episódios:
+
+| | D5N | MC | FM |
+|---|---|---|---|
+| Loudness integrado | -16,3 LUFS | -17,4 | -17,9 |
+| True peak | -1,7 dB | -1,7 | -1,7 |
+| LRA | 2,1–2,4 | 1,8–2,1 | 2,9–3,0 |
+
+Causa: três mixers independentes. `drop5news-mixer-v10.py` usa `HIGH_LUF = -16` e cadeia própria (fade por seção, `VOICE_TARGET_DBFS`, gain por trilha). `amanha_conectada_mixer.py` e `fechamento_mixer.py` são quase o mesmo script, com `loudnorm=I=-17` hardcoded. O FM ainda resolve `INTRO` e `BED` pelo diretório de assets do MC, como fallback — está pegando áudio do outro programa.
+
+Variação de ~1,6 LU entre programas, audível fora de player que normalize. O caminho é um módulo único de loudness e cabeçalho, consumido pelos três mixers, com teste de contrato que reprova se divergir mais que 0,3 LU.
+
 ## Datas em português e fuso editorial
 
 - `scripts/d5n_data_ptbr.py` (novo): tabelas de dia da semana e mês em PT-BR, sem depender do locale do sistema. Expõe `data_extenso`, `data_extenso_curta`, `data_curta`, `sigla_mes` e `hoje_editorial` (fuso `America/Sao_Paulo`).
@@ -88,6 +136,20 @@ Commits `fd6a13b`, `57c65eb` e `87ecb27` no `master` e no `origin/master`. Após
 - Se houve migração de feed, aplicar o procedimento oficial de redirecionamento/aviso de feed novo.
 - Fazer a submissão/claim inicial onde o programa ainda não estiver cadastrado.
 - Registrar plataforma, URL do programa, URL RSS cadastrada, estado de aprovação e data da última atualização. Não armazenar credenciais no repositório.
+
+## Em aberto (não depende de conta)
+
+**1. Mixagem desigual entre os três programas.** Detalhado acima. É o maior item: enquanto não for corrigido, os três não têm a mesma edição. Requisito do usuário: mixagem similar, variação só de trilha de fundo.
+
+**2. 59 dos 64 capítulos antigos do D5N continuam com 1 capítulo.** O conserto vale a partir do #075. Para trás exigiria reprocessar todos os MP3, porque os tempos só existem no manifesto do dia.
+
+**3. Roteiros do D5N não são gerados desde 31/08.** O cron das 04h falhava por falta de manifest; o wrapper ganhou a etapa de roteiro no dia 29/09. O próximo ciclo precisa ser observado para confirmar que sustenta.
+
+**4. `HTTP 401` da auditoria semanal.** Não investigado.
+
+**5. Git LFS.** O repositório tem 1,7 GB de MP3 versionados como arquivo comum.
+
+**6. Três programas num repositório só.** Separação em repos próprios é discutível e não foi feita.
 
 ## Critérios de aceite
 

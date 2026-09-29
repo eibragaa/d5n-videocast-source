@@ -8,7 +8,61 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/), e este 
 
 ## [Unreleased]
 
+### Fixed
+- **Os três feeds voltaram a carregar em leitores de podcast** (29/09/2026). Quatro
+  defeitos de capítulos, três introduzidos no mesmo dia e um nunca visto:
+  - `podcast:chapters` apontava para o `.mp3`, que não tem atoms ID3 `CHAP`/`ctoc` —
+    nenhum dos três mixers os escreve, então o link não resolvia em nenhum player.
+    Agora aponta para o JSON de capítulos de cada programa.
+  - `podcast:chapters` com filhos (`psrc:chapter` no D5N, `psc:chapters` aninhado em
+    MC e FM) derrubava o **feed inteiro**, não só os capítulos. O elemento é vazio
+    quando o `src` é documento externo. Sintoma reportado pelo usuário.
+  - `psc:chapter` sem `start`: 104 tags só com rótulo no D5N. O Podlove Simple
+    Chapters exige `start`; os tempos existiam em `chapters/<data>.json` e agora
+    são casados com os rótulos por `chapters_from_manifest()`.
+  - Manhã Conectada nunca teve capítulos em nenhum commit. Implementado com os
+    8 blocos editoriais fixos; a contagem de fontes não entra e truncava em 5.
+- **Player do site servia o episódio errado** — título do #075 com áudio do #004.
+  `find_latest_podcast` iterava `reversed(history)` sobre lista já ordenada do mais
+  novo para o mais antigo.
+- **Wrapper usava gerador de `index.html` obsoleto** — `scripts/gerar_pagina_d5n.py`
+  (v2, 1.289 linhas, sem player) em vez de `gerar_pagina_d5n.py` na raiz (canônico,
+  2.040 linhas, com player). Cada madrugada sobrescrevia o site sem player, sem
+  título do episódio e sem `<audio>`, com build verde e feed válido.
+- **`test_d5n_release_status` corrompia o repositório real** — gravava
+  `core.bare=true` no `.git/config`, deixando o repo principal como "must be run in
+  a work tree". Corrigido com env isolado no script e helper `git()` no teste.
+- **59 dos 64 capítulos antigos do D5N** seguem com 1 capítulo (fallback). Conserto
+  vale a partir do #075.
+
 ### Added
+- **Portão de qualidade no pipeline** — passo 10 de `d5n-podcast-daily-full.sh` roda
+  `scripts/validar_design.py` e a suíte de testes entre gerar o index e commitar.
+  Reprovar aborta com `exit 1` e zero commits (fail-closed). Verificado nos dois
+  sentidos: gerador emitindo CSS inválido cancela a publicação; gerador íntegro
+  publica e o feed público responde OK.
+- **Contratos de capítulo** — `tests/test_chapters_rss_contracts.py`, 4 testes que
+  reprovam `podcast:chapters` com filho, `psc:chapter` sem `start`/`title`,
+  capítulos fora de ordem e `src` em `.mp3`. Verificado que pegam a regressão.
+  Motivados pelo fato de que parse XML e presença de tag não são contrato de
+  podcast: os defeitos acima passavam pela validação anterior e reprovavam no leitor.
+- **`_shared_chapters.chapters_from_manifest()`** — casa os timings reais do
+  manifesto do mixer com os rótulos da derivação, por posição, sem inventar
+  capítulo quando as quantidades não batem.
+- **`xmlns:psc` no canal do MC**, que não declarava o namespace.
+
+### Removed
+- **`.github/quality.yml`** — seria uma segunda cópia do portão em outra máquina,
+  exigindo token com escopo `workflow` que o token OAuth não tem. O portão vive no
+  wrapper e no hook local.
+
+### Known issues
+- **Mixagem desigual entre os três programas** — medido em 29/09/2026: D5N
+  -16,3 LUFS, MC -17,4, FM -17,9 (true peak -1,7 dB nos três). Três mixers
+  independentes, com `HIGH_LUF=-16` no D5N e `loudnorm=I=-17` hardcoded em MC e FM.
+  O FM ainda resolve intro e bed pelo diretório de assets do MC. É o maior item em
+  aberto: enquanto não for corrigido, os três não têm a mesma edição.
+
 - **Mixer v10 premium** (`scripts/drop5news-mixer-v10.py`) — contrato D5N v3 com 12 seções:
   `coldopen, intro, mundo, brasil, tecnologia, economia, interacao, ofertas, frase,
   recomendacoes, historia, outro`. CTA integrado ao `outro` (não há mais seção `cta`).
