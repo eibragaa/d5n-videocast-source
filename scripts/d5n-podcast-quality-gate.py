@@ -12,6 +12,11 @@ from pathlib import Path
 
 AUDIO_DIR = Path(os.environ.get("D5N_AUDIO_DIR", "/tmp/d5n_audio"))
 MIXED = Path(os.environ.get("D5N_MIXED_FILE", "/tmp/d5n_mixado_v10.mp3"))
+
+# A analise loudnorm do ffmpeg e CPU-bound e roda ~2.3x mais devagar num
+# Cortex-A7 de 1.2GHz que num x86: um episodio de 11 min leva ~158s ali contra
+# ~68s aqui. O timeout de 120s era justo no host antigo e estourava neste.
+LOUDNESS_TIMEOUT = int(os.environ.get("D5N_LOUDNESS_TIMEOUT", "120"))
 MANIFEST = AUDIO_DIR / "manifest.json"
 EXPECTED = {
     "schema": 2,
@@ -87,7 +92,7 @@ def measure_loudness(errors: list[str]) -> dict:
         "-af", "loudnorm=I=-16:TP=-1.5:LRA=11:print_format=json",
         "-f", "null", "-",
     ]
-    p = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+    p = subprocess.run(cmd, capture_output=True, text=True, timeout=LOUDNESS_TIMEOUT)
     match = re.search(r"\{\s*\"input_i\".*?\}", p.stderr, re.S)
     if not match:
         fail(errors, "não foi possível medir loudness com ffmpeg")
