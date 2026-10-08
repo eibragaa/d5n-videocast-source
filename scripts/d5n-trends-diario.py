@@ -60,7 +60,36 @@ def default_sources():
             "name": "InfoMoney",
             "url": "https://www.infomoney.com.br/feed/",
         },
-    ]
+        # Volume: com os 7 feeds acima o roteiro do dia ficava em ~6.0k chars,
+        # abaixo do minimo de 7.6k (480s) do mixer. Estes 3 entram para
+        # garantir materia em mundo e economia, as categorias mais fracas.
+        #
+        # Testei 12 candidatos em 07/10/2026 e so estes 3 devolvem itens:
+        #   CNN Brasil .............. 60 itens  (ok)
+        #   Folha de S.Paulo/mundo .. 100 itens  (ok)
+        #   MoneyTimes ..............  10 itens  (ok)
+        #   Agencia Brasil ..........  10 itens  (ok)
+        # Nao respondem (0 itens): valor.globo.com/rss/, economia.estadao.com.br/rss,
+        # economia.uol.com.br/feed, terra.com.br/rss/*, g1.globo.com/rss/g1/mundo,
+        # g1.globo.com/rss/g1/mercado, congressonacional.leg.br, 12.senado.leg.br.
+        # Nao voltar a testar os mortos sem curl -sL -A "Mozilla/5.0" | grep -c item.
+        {
+            "name": "CNN Brasil",
+            "url": "https://www.cnnbrasil.com.br/feed/",
+        },
+        {
+            "name": "Folha Mundo",
+            "url": "https://feeds.folha.uol.com.br/mundo/rss091.xml",
+        },
+        {
+            "name": "MoneyTimes",
+            "url": "https://www.moneytimes.com.br/feed/",
+        },
+        {
+            "name": "Agencia Brasil",
+            "url": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        },
+            ]
 
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; D5N-Bot/1.0)"}

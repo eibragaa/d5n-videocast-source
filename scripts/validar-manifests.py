@@ -45,13 +45,24 @@ MOJIBAKE = re.compile(r"[�ÃÂ][\x80-\xbf\u0080-\u00ff]?")
 
 # Palavras que quase sempre indicam texto corrompido ou não revisado.
 SUSPECT = re.compile(
-    r"\b(?:"                  # início de palavra
+    r"\b(?:"
     r"trending|placeholder|lorem|ipsum|todo|xxx+|asdf|qwerty|"  # ruído
     r"government|governments|republicans|republicano|ingles|english|"
     r"watch|looking|people|team|make|made|about|their|start|"
     r"the|and|for|with|from|this|that|what|when|here|"
     r"\w+ed\b|\w+ing\b"
     r")\b", re.I)
+
+# Siglas em ingles que sao nome proprio legitimo e casam com as regras acima:
+# "Fed" (Federal Reserve) termina em "ed", "earnings" em "ing". Sem esta
+# lista, uma manchete real de mercado reprovava o roteiro inteiro por causa
+# do nome de uma instituicao americana.
+SIGLAS_OK = {
+    "fed", "feds", "nvidia", "tesla", "boeing", "ford", "visa",
+    "mastercard", "paypal", "spotify", "airbnb", "ikea", "bmw",
+    "shell", "apple", "meta", "google", "netflix", "intel", "amd",
+    "nvidia", "qualcomm", "stellantis", "peugeot", "renault", "vw",
+}
 
 
 def bad_chars(text: str) -> list[str]:
@@ -88,6 +99,8 @@ def check(path: Path) -> list[str]:
         errs.append(f"mojibake: {MOJIBAKE.search(text).group(0)!r}")
 
     sus = SUSPECT.findall(text)
+    # descarta as siglas/nomes proprios legitimos em ingles
+    sus = [s for s in sus if s.lower() not in SIGLAS_OK]
     if sus:
         errs.append(f"palavras suspectas (ruido/ingles/gerundio): {sorted(set(sus))[:10]}")
 
@@ -112,6 +125,20 @@ DATE_RE = re.compile(r"\b(\d{4})-(\d{2})-(\d{2})\b")
 # "redes sociais" / "aplicativo de mensagens" para nao perder a manchete.
 CTA_RE = re.compile(r"instagram|siga|segue a gente|me segue", re.I)
 GOODBYE_RE = re.compile(r"\b(?:tchau|até amanhã|até mais|valeu|falou)\b", re.I)
+
+
+def _sem_acento(s: str) -> str:
+    """Texto minusculo sem acento, para comparar com o que foi falado.
+
+    Precisa porque `text.lower()` preserva o acento: "quarta-feira" continua
+    com o "a" acentuado, entao comparar a tupla acentuada de DIAS contra o
+    texto dava falso negativo e a checagem de dia da semana nunca disparava.
+    """
+    for a, b in (("ç", "c"), ("ã", "a"), ("á", "a"), ("é", "e"), ("ê", "e"),
+                 ("í", "i"), ("ó", "o"), ("ô", "o"), ("ú", "u"), ("ü", "u"),
+                 ("â", "a"), ("à", "a")):
+        s = s.replace(a, b)
+    return s
 
 
 def check_gate_rules(text: str, path: Path) -> list[str]:
@@ -152,9 +179,48 @@ def check_dates(text: str, path: Path) -> list[str]:
             errs.append(f"afirma que HOJE e '{w}', mas o editorial e {hoje_mes}")
     # Segunda=0 ... Domingo=6
     real_dia = DIAS[editorial.weekday()]
+    low_plain = _sem_acento(low)
+
+    # So e erro quando o texto AFIRMA que o dia de hoje e aquele. Uma NOTICIA
+    # pode citar outro dia legitimamente — "Mega-Sena pode pagar R$ 100 milhoes
+    # nesta quinta-feira" e um sorteio real, e "o TSE julga nesta quinta" e
+    # data marcada. A versao anterior barrava qualquer mencao e reprovava o
+    # roteiro inteiro por causa de uma manchete de loteria, que e conteudo bom.
+    #
+    # Aceita o dia com e sem "-feira" (o texto falado diz "hoje e quinta") e
+    # com o verbo de ser, porque `low` reduz "é" a "e".
     for dia in DIAS:
-        if dia in low and dia != real_dia:
-            errs.append(f"citando '{dia}' mas o editorial e {real_dia}")
+        if dia == real_dia:
+            continue
+        for vp in {dia, dia.split("-")[0]}:
+            vp = _sem_acento(vp)
+            # Procura um marcador temporal seguido do dia, com palavras de
+            # preenchimento entre eles ("hoje e quinta", "foi na quinta-feira").
+            #
+            # "nesta/neste" exigem uma clausula que PRIMEIRE o dia como data de
+            # hoje: a forma de erro real no roteiro era "o foco desta quinta
+            # feira", que vem com o verbo 'reune' logo depois. Noticia real
+            # ("Mega-Sena paga nesta quinta", "o TSE julga nesta quinta") vem
+            # com verbo de evento depois e precisa passar.
+            m = re.search(
+                r"(?:hoje|ontem|amanh[ãa]n?o?)\b[^.]{0,24}?\b" + re.escape(vp),
+                low_plain)
+            if m:
+                errs.append(
+                    f"afirma que o dia e '{dia}', mas o editorial e {real_dia}")
+                break
+            m = re.search(
+                # "nesta" / "neste" / "desta" — a forma que o gerador usa no
+                # bloco brasil e ofertas e "nesta {DIA_SEMANA}", mas o roteiro
+                # reescrito a mao vira "o foco desta quinta-feira".
+                r"(?:n[ae]st[ae]|d[ae]st[ae])\s+" + re.escape(vp)
+                + r"\b[^.]{0,40}?\b(reune|sera|esta|passa|movimenta|"
+                  r"acontece|ocorre|volta|tem|ha)",
+                low_plain)
+            if m:
+                errs.append(
+                    f"afirma que o dia e '{dia}', mas o editorial e {real_dia}")
+                break
     # Data ISO crua no meio do texto lido em voz alta.
     if DATE_RE.search(text):
         errs.append(f"data ISO crua no texto falado: {DATE_RE.search(text).group(0)}")

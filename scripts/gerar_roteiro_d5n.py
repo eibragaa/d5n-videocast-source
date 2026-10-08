@@ -53,7 +53,14 @@ ECOCAT = ["ibovespa", "bolsa", "dólar", "fechamento", "mercado", "ações", "wp
 
 
 def load_mc_fm(day: str):
-    """Carrega manifestos MC e FM de um dia específico."""
+    """Carrega manifestos MC e FM de um dia especifico.
+
+    Ordem de preferencia: MC/FM (sao a fonte editorial, ja categorizada), e se
+    nao houver (eles pararam em 29/09/2026), cai no manifest de trends do dia,
+    gerado por trends_para_manifest.py a partir dos RSSs coletados. Sem isso o
+    roteiro cai no fallback e sai com 3.4k chars, abaixo do minimo de 480s do
+    mixer — foi o que travou o D5N apos a queda do host.
+    """
     sources = []
     mc_json = REPO / "manha-conectada" / "manifests" / f"{day}.json"
     fm_json = REPO / "fechamento" / "manifests" / f"{day}.json"
@@ -64,6 +71,23 @@ def load_mc_fm(day: str):
                 sources.extend(data.get("sources", []))
             except Exception:
                 pass
+    if sources:
+        return sources
+
+    trends = REPO / "manifests" / "d5n" / "trends" / f"{day}.json"
+    if not trends.exists():
+        trends = REPO / "manifests" / "d5n" / "trends" / f"{YESTERDAY}.json"
+    if trends.exists():
+        try:
+            data = json.loads(trends.read_text())
+            # o manifest de trends ja vem com "categoria"; o categorize() do
+            # gerador recalcula por palavra-chave e daria o mesmo resultado.
+            fontes = data.get("sources", [])
+            print(f"[dados] sem MC/FM de {day}; usando {len(fontes)} manchetes "
+                  f"de trends ({trends.name})")
+            return fontes
+        except Exception as e:
+            print(f"[dados] trends {trends} ilegivel: {e}")
     return sources
 
 
@@ -165,8 +189,45 @@ def manchetes_abertura(limite: int = 7) -> list:
         i += 1
     return intercalado
 
+
+# Deduplicacao entre secoes: o mesmo fato pode ser classificado em duas
+# categorias (a Anac ja apareceu em mundo E em economia, dita duas vezes com 2
+# minutos de distancia). Consome cada manchete em uma unica secao, na ordem
+# em que as secoes sao montadas.
+_USADAS: set = set()
+
+
+def noticias(categoria: str, minimo: int, teto: int) -> str:
+    """Monta o texto das noticias de uma secao, sem repetir o que ja saiu.
+
+    `minimo` e o piso, `teto` o maximo confortavel. O mixer recusa o episodio
+    abaixo de 480s (~7.6k chars), e com os 7 feeds originais o roteiro parava
+    em ~6.0k: sobrava materia de qualidade (80 manchetes, 46 delas fora do
+    ar) mas o teto fixo nao deixava entrar.
+
+    Por isso o teto sobe sozinho quando o episodio ainda esta curto: e melhor
+    12 noticias de tecnologia bem faladas do que um episodio que o mixer
+    recusa. O piso continua valendo — 15 noticias de economia seguidas seria
+    outra coisa, e `economia` quase sempre tem menos que o piso mesmo.
+    """
+    disponiveis = [n for n in cats[categoria] if manchete(n) not in _USADAS]
+    if not disponiveis:
+        return ""
+    if len(disponiveis) <= minimo:
+        escolhidas = disponiveis
+    else:
+        escolhidas = disponiveis[:minimo]
+        if len(disponiveis) > teto:
+            # sobe ate o teto; um piso global de chars e tratado no fim
+            escolhidas = disponiveis[:teto]
+    for n in escolhidas:
+        _USADAS.add(manchete(n))
+    return " ".join(fmt_news(n) for n in escolhidas)
+
 abertura = manchetes_abertura()
 if abertura:
+    for n in abertura:
+        _USADAS.add(manchete(n))
     manifests["coldopen.txt"] = " ".join(fmt_news(n) for n in abertura).strip()
 else:
     manifests["coldopen.txt"] = (
@@ -193,7 +254,7 @@ world_intro = (
     "enquanto tensionamentos geopolíticos mantêm a volatilidade elevada. "
 )
 if cats["mundo"]:
-    world_news = " ".join(fmt_news(n) for n in cats["mundo"][:5])
+    world_news = noticias("mundo", 6, 10)
     manifests["mundo.txt"] = f"{world_intro}{world_news}"
 else:
     manifests["mundo.txt"] = f"{world_intro} A atenção está nos mercados emergentes e nas negociações comerciais entre grandes potências."
@@ -211,7 +272,7 @@ brasil_intro = (
     f"pesa decisões que impactam a estabilidade do país. "
 )
 if cats["brasil"]:
-    brasil_news = " ".join(fmt_news(n) for n in cats["brasil"][:5])
+    brasil_news = noticias("brasil", 6, 10)
     manifests["brasil.txt"] = f"{brasil_intro}{brasil_news}"
 else:
     manifests["brasil.txt"] = f"{brasil_intro} A economia doméstica sente os ecos da crise internacional e das decisões de política monetária."
@@ -224,7 +285,7 @@ tech_intro = (
     "para este setor em constante transformação. "
 )
 if cats["tech"]:
-    tech_news = " ".join(fmt_news(n) for n in cats["tech"][:4])
+    tech_news = noticias("tech", 5, 9)
     manifests["tecnologia.txt"] = f"{tech_intro}{tech_news}"
 else:
     manifests["tecnologia.txt"] = f"{tech_intro} Startups e grandes corporações competem por talentos e parcerias estratégicas."
@@ -237,7 +298,7 @@ eco_intro = (
     "de ontem mostram movimentos de capital em diferentes setores. "
 )
 if cats["economia"]:
-    eco_news = " ".join(fmt_news(n) for n in cats["economia"][:4])
+    eco_news = noticias("economia", 4, 8)
     manifests["economia.txt"] = f"{eco_intro}{eco_news}"
 else:
     manifests["economia.txt"] = f"{eco_intro} A atenção está nos resultados corporativos e na agenda de publicações econômicas."
@@ -263,7 +324,11 @@ ofertas_intro = (
     f"dados. Empresas estão em expansão e buscando talentos qualificados. "
 )
 if cats["economia"] or cats["tech"]:
-    ofertas_news = " ".join(fmt_news(n) for n in (cats["economia"][:2] + cats["tech"][:2]))
+    # Sem deduplicar: SpaceX e Meta ja saem em tecnologia, e repetir a noticia
+    # em ofertas so ocupava tempo com o mesmo fato dito de outro jeito.
+    _oferta_n = [n for n in (cats["economia"][:3] + cats["tech"][:3])
+                 if manchete(n) not in _USADAS]
+    ofertas_news = " ".join(fmt_news(n) for n in _oferta_n)
     manifests["ofertas.txt"] = f"{ofertas_intro}{ofertas_news}"
 else:
     manifests["ofertas.txt"] = f"{ofertas_intro} Acompanhe as vagas e oportunidades na nossa página de cursos."
@@ -345,26 +410,81 @@ manifests["outro.txt"] = (
     "Drop Five News de amanha as cinco da manha. Ate amanha, e boa semana!"
 )
 
+# Preenchimento final: se o episodio ainda esta curto para o mixer, completa
+# com as manchetes que sobram. Com 80 coletadas sobravam 46 fora do ar e o
+# roteiro parava em ~6.6k chars, quase 1k abaixo do minimo de 480s.
+#
+# Distribui o excedente respeitando o teto de cada secao (o validar-manifests
+# reprova acima de 2600 chars por secao: encher tudo em mundo.txt dava 2824 e
+# o roteiro inteiro era rejeitado por causa de um unico bloco). Alterna entre
+# as secoes para caber em todas.
+#
+# Vem DEPOIS das secoes fixas (frase, historia, outro), entao nunca atropela a
+# historia do dia nem o encerramento.
+DENSIDADE_D5N = 15.9
+MIN_CHARS = int(480 * DENSIDADE_D5N)   # ~7.632 chars = 480s
+TETO_SECAO = 2500   # folga sobre o limite de 2600 do validador
+
+
+def _sobra(cat: str) -> list:
+    return [n for n in cats[cat] if manchete(n) not in _USADAS]
+
+
+# Secoes por onde o excedente pode entrar, na ordem em que faz sentido
+# editorialmente: o ouvinte nao deve ouvir 25 noticias de tecnologia seguidas.
+_DESTINO = [
+    ("tech", "mundo"), ("mundo", "mundo"), ("brasil", "brasil"),
+    ("mundo", "economia"), ("tech", "tecnologia"), ("brasil", "economia"),
+]
+
+total_bytes = sum(len(v) for v in manifests.values())
+if total_bytes < MIN_CHARS:
+    for _cat, _bloco in _DESTINO:
+        if total_bytes >= MIN_CHARS:
+            break
+        # nao estoura a secao de destino
+        folga = TETO_SECAO - len(manifests[f"{_bloco}.txt"])
+        if folga < 200:
+            continue
+        extra = _sobra(_cat)[:8]
+        if not extra:
+            continue
+        add = " ".join(fmt_news(n) for n in extra)
+        if len(add) > folga:
+            # cabe so o que couber: recorta por manchete, nunca no meio de uma
+            while extra and len(add) > folga:
+                extra.pop()
+                add = " ".join(fmt_news(n) for n in extra)
+            if not extra:
+                continue
+        manifests[f"{_bloco}.txt"] += " " + add
+        for n in extra:
+            _USADAS.add(manchete(n))
+        total_bytes = sum(len(v) for v in manifests.values())
+        print(f"[preenchimento] +{len(extra)} de '{_cat}' em {_bloco}.txt "
+              f"(total {total_bytes} chars)")
+
 total_bytes = sum(len(v) for v in manifests.values())
 
-# Densidade de fala: o mixer v10 so aceita 480-720s de audio. O roteiro precisa
-# ter texto suficiente para isso, e a densidade de referencia e a do video
-# audits (TecMundo 07/10/2026): 13.011 chars em 14min37s = 14.9 chars/s.
+# Densidade de fala: o mixer v10 so aceita 480-720s de audio.
 #
-# Sem este AVISO, o roteiro saia com 3.636 chars (~254s) e so descobriamos o
-# problema quando o mixer recusava o episodio. Agora avisa na geracao.
-DENSIDADE_REF = 14.9
-MIN_CHARS = int(480 * DENSIDADE_REF)   # ~7150 chars = 480s
+# Medido no D5N de verdade (ep076, 498.44s com 7.937 chars spoken) = 15.9
+# chars/s. A referencia TecMundo (14min37s, 13.011 chars) = 14.9 chars/s. A
+# diferenca e pequena, entao o minimo e calculado pela densidade REAL do D5N,
+# nao pela da referencia: 480s * 15.9 = ~7.640 chars.
+#
+# A estimativa por chars/s e so um aviso na geracao. O mixer decide: ele mede
+# a duracao do audio e recusa fora de 480-720s.
 for name, content in manifests.items():
     path = manifest_dir / name
     path.write_text(content, encoding="utf-8")
 
 print(f"Manifests D5N criados com sucesso em: {manifest_dir}")
 print(f"Total: {len(manifests)} secoes, {total_bytes} chars "
-      f"(~{total_bytes/DENSIDADE_REF:.0f}s de audio na densidade de referencia)")
+      f"(~{total_bytes/DENSIDADE_D5N:.0f}s de audio na densidade medida do D5N)")
 if total_bytes < MIN_CHARS:
     faltam = MIN_CHARS - total_bytes
     print(f"[AVISO] roteiro curto: {total_bytes} chars < {MIN_CHARS} "
           f"(faltam ~{faltam} para o minimo de 480s do mixer). "
-          f"Causa provavel: MC/FM do dia sem noticias suficientes; "
-          f"o mixer vai recusar o episodio.")
+          f"Materiais: {len(all_news)} noticias coletadas. "
+          f"O mixer vai recusar o episodio.")
