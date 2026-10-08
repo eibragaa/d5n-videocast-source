@@ -1,0 +1,27 @@
+{
+  "03-10": {
+    "ano": 1990,
+    "detalhe": "a bandeira preta vermelha e dourada foi erguida no Portao de Brandenburg na meia noite",
+    "fechamento": "naquela noite dois paises viraram um e Berlim voltou a ser capital",
+    "fonte": "https://pt.wikipedia.org/wiki/Reunifica%C3%A7%C3%A3o_da_Alemanha",
+    "titulo": "a Alemanha se reunifica e a Republica Democratica deixa de existir",
+    "wikidata": "Q56039",
+    "wikipedia": "Reunificação da Alemanha"
+  },
+  "04-10": {
+    "ano": 1957,
+    "detalhe": "o sinal de radio pitou nos receptores ocidentais poucos dias depois do lancamento",
+    "fechamento": "aquele bip abriu a corrida espacial e a era dos dispositivos portateis",
+    "fonte": "https://pt.wikipedia.org/wiki/Sputnik_1",
+    "titulo": "a Uniao Sovietica lanca o Sputnik 1 e o mundo ouve o primeiro satelite artificial",
+    "wikidata": "Q80811"
+  },
+  "07-10": {
+    "ano": 1959,
+    "detalhe": "em quarenta minutos de voo a sonda tomou vinte e nove imagens cobrindo setenta por cento da face oculta",
+    "fechamento": "aquela face nunca tinha sido vista da Terra e continua nao sendo",
+    "fonte": "https://pt.wikipedia.org/wiki/Luna_3",
+    "titulo": "a sonda sovietica Luna 3 fotografa pela primeira vez o lado oculto da lua",
+    "wikidata": "Q942814"
+  }
+}

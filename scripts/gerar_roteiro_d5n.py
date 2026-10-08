@@ -11,7 +11,9 @@ from pathlib import Path
 from datetime import timedelta
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from d5n_data_ptbr import data_curta, data_extenso, hoje_editorial  # noqa: E402
+from d5n_data_ptbr import (  # noqa: E402
+    data_curta, data_extenso, hoje_editorial, MESES as MESES_NOMES,
+)
 
 REPO = Path(os.environ.get("D5N_REPO", "/root/repositorio/d5n-videocast-source")).resolve()
 
@@ -20,6 +22,16 @@ REPO = Path(os.environ.get("D5N_REPO", "/root/repositorio/d5n-videocast-source")
 TODAY_DATE = hoje_editorial()
 TODAY = TODAY_DATE.isoformat()
 YESTERDAY = (TODAY_DATE - timedelta(days=1)).isoformat()
+
+# O dia da semana e a data falada em voz alta sao lidos de uma vez e usados em
+# varios trechos. "quinta-feira" estava hardcoded em tres lugares e o episodio
+# falava o dia errado em qualquer dia que nao fosse quinta.
+DIAS_SEMANA = (
+    "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira",
+    "sexta-feira", "sábado", "domingo",
+)
+DIA_SEMANA = DIAS_SEMANA[TODAY_DATE.weekday()]
+DATA_FALADA = f"{TODAY_DATE.day} de {MESES_NOMES[TODAY_DATE.month - 1]}"
 
 
 # Vozes
@@ -130,20 +142,44 @@ manifest_dir.mkdir(parents=True, exist_ok=True)
 
 manifests = {}
 
-# coldopen — manchetes de abertura
-mundo_txt = " ".join(fmt_news(n) for n in cats["mundo"][:4]) if cats["mundo"] else ""
-brasil_txt = " ".join(fmt_news(n) for n in cats["brasil"][:3]) if cats["brasil"] else ""
-eco_txt = " ".join(fmt_news(n) for n in cats["economia"][:2]) if cats["economia"] else ""
-manifests["coldopen.txt"] = (
-    f"{TODAY}. O Ibovespa reage a movimentos internacionais enquanto o cenário "
-    f"corporativo acelera em inteligência artificial e telecomunicações. "
-    f"{mundo_txt} {brasil_txt} {eco_txt}"
-).strip()
+# ── coldopen: manchetes concretas, modelo TecMundo ───────────────────────────
+# Antes: uma frase sintetica generica ("O Ibovespa reage a movimentos
+# internacionais...") que nao dizia nada. O video de referencia abre com 10
+# manchetes em 40 segundos: verbo + fato concreto, sem adjetivo, ja sem dizer
+# a data (a intro faz isso logo em seguida).
+# Puxa as manchetes mais varias categorias, alternadas, para nao sair 3 de
+# economia seguidas.
+def manchetes_abertura(limite: int = 7) -> list:
+    # Copia antes de consumir: `fila.pop(0)` nas listas de cats[] esvaziava a
+    # fonte, e como a mesma lista alimenta as secoes mundo/brasil/tec/economia
+    # mais abaixo, o coldopen saia vazio e as secoes perdiam as primeiras
+    # noticias (foi o que aconteceu no teste com 44 fontes reais).
+    filas = [list(cats["mundo"]), list(cats["brasil"]),
+             list(cats["tech"]), list(cats["economia"])]
+    intercalado: list = []
+    i = 0
+    while len(intercalado) < limite and any(filas):
+        fila = filas[i % len(filas)]
+        if fila:
+            intercalado.append(fila.pop(0))
+        i += 1
+    return intercalado
+
+abertura = manchetes_abertura()
+if abertura:
+    manifests["coldopen.txt"] = " ".join(fmt_news(n) for n in abertura).strip()
+else:
+    manifests["coldopen.txt"] = (
+        "Os principais mercados abrem em movimento enquanto o Brasil acompanha "
+        "a agenda economica do dia. Os detalhes vem a seguir."
+    )
 
 # intro
+# "briefing" e palavra inglesa: o validador editorial barra ruido/ingles no
+# texto falado. Troquei por "panorama", que e o que o Jean ouve no referencia.
 manifests["intro.txt"] = (
     f"Bom dia! Eu sou Francisca, e hoje é {data_extenso(TODAY_DATE)}. "
-    f"Este é o Drop Five News, o seu briefing das 05 horas da manhã com as "
+    f"Este é o Drop Five News, o seu panorama das 05 horas da manhã com as "
     f"notícias essenciais para começar o dia bem informado. "
     f"Separe um tempo para ouvir: em 9 minutos, conectamos você ao que move "
     f"o Brasil e o mundo neste horário. Vamos ao que interessa."
@@ -163,8 +199,13 @@ else:
     manifests["mundo.txt"] = f"{world_intro} A atenção está nos mercados emergentes e nas negociações comerciais entre grandes potências."
 
 # brasil
+# "a agenda econômica da quinta-feira" estava hardcoded: na quarta-feira o
+# episodio falava o dia errado. Puxa do helper. E a data ISO (2026-10-07) nao
+# pode ser falada: TTS le "2026" como "duas mil e vinte e seis". O validador
+# barra data ISO crua no texto.
 brasil_intro = (
-    f"No Brasil, o foco da quinta-feira, {TODAY}, reúne a agenda econômica "
+    f"No Brasil, o foco da {DIA_SEMANA}, {TODAY_DATE.day} de "
+    f"{MESES_NOMES[TODAY_DATE.month - 1]}, reúne a agenda econômica "
     f"em Brasília com discussões sobre equilíbrio fiscal e projetos prioritários "
     f"no Congresso. O cenário político mantém alta tensão, enquanto o Judiciário "
     f"pesa decisões que impactam a estabilidade do país. "
@@ -202,20 +243,24 @@ else:
     manifests["economia.txt"] = f"{eco_intro} A atenção está nos resultados corporativos e na agenda de publicações econômicas."
 
 # interacao
+# O quality gate barra CTA fora do encerramento: mandar "siga no Instagram"
+# aqui reprovava o episodio. Fica so o convite a comentar, que e o que a secao
+# promete; os canais ficam no outro.txt.
 manifests["interacao.txt"] = (
-    "E aí, você acompanhou as notícias da manhã? Deixe seu comentário aqui "
-    "em baixo e conte o que você achou das últimas informações sobre o mercado "
-    "e a economia. Sua opinião importa! Você também pode seguir o @ojeanbraga.s "
-    "no Instagram para atualizações em tempo real e participar do grupo exclusivo "
-    "no Telegram com outros profissionais que acompanham o mercado de capitais "
-    "e economia brasileira todos os dias. Conto com você!"
+    "E ai, voce acompanhou as noticias da manha? Deixe seu comentario aqui "
+    "em baixo e conte o que voce achou das ultimas informacoes sobre o mercado "
+    "e a economia brasileira. Sua opiniao importa!"
 )
 
 # ofertas
+# "quinta-feira" estava hardcoded no codigo: num dia de quarta-feira o episodio
+# saia com o dia errado falado em voz alta. Puxa do helper, que ja resolve o
+# fuso editorial.
 ofertas_intro = (
-    f"Nesta quinta-feira, {TODAY}, o mercado oferece oportunidades em setores "
-    f"como telecomunicações, energia renovável e infraestrutura de dados. "
-    f"Empresas estão em expansão e buscando talentos qualificados. "
+    f"Nesta {DIA_SEMANA}, {TODAY_DATE.day} de "
+    f"{MESES_NOMES[TODAY_DATE.month - 1]}, o mercado oferece oportunidades em "
+    f"setores como telecomunicações, energia renovável e infraestrutura de "
+    f"dados. Empresas estão em expansão e buscando talentos qualificados. "
 )
 if cats["economia"] or cats["tech"]:
     ofertas_news = " ".join(fmt_news(n) for n in (cats["economia"][:2] + cats["tech"][:2]))
@@ -223,58 +268,103 @@ if cats["economia"] or cats["tech"]:
 else:
     manifests["ofertas.txt"] = f"{ofertas_intro} Acompanhe as vagas e oportunidades na nossa página de cursos."
 
-# frase
-manifests["frase.txt"] = (
-    f"Quinta-feira, {TODAY}. A tecnologia continua transformando a maneira como "
-    f"vivemos e trabalhamos. Com os avanços em inteligência artificial "
-    f"generativa, as oportunidades de inovação crescem sem parar. A chave para "
-    f"o sucesso está em adaptar-se rapidamente a essas mudanças e investir em "
-    f"conhecimento contínuo. Quem não evolui, é ultrapassado."
-)
+# frase — mensagem do dia de um pensador, com a citacao do banco
+# Antes: "Quinta-feira, {data}. A tecnologia continua..." — nao era citacao de
+# ninguem, era motivacao genérica que soava como frase de pensador. Agora a
+# citacao vem do arquivo verificado, com o autor e a obra, e a personagem nao
+# inventa: se nao houver citacao para o dia, o trecho fica para revisao.
+# A citacao e texto de terceiro: exige `fonte` conferida no banco, nao gerada.
+from frase_do_dia import citacao_para  # noqa: E402
 
-# recomendacoes
+_fr = citacao_para(TODAY_DATE.day, TODAY_DATE.month)
+if _fr:
+    manifests["frase.txt"] = (
+        f"A mensagem do dia e de {_fr['autor']}. {_fr['citacao']} "
+        f"({_fr['obra']}). {_fr['ponto']}"
+    )
+else:
+    manifests["frase.txt"] = (
+        "Nao temos citacao verificada para esta data. Este trecho precisa de "
+        "revisao antes de ir ao ar."
+    )
+    print(f"[AVISO] frase do dia sem citacao no banco para "
+          f"{TODAY_DATE.day:02d}-{TODAY_DATE.month:02d}")
+
+# recomendacoes — direto, no modelo TecMundo.
+# Antes: "recomendamos acompanhar... sugerimos revisar sua carteira... vale
+# conferir", tudo indireto e sem destino. No video de referencia cada item e
+# verbo + onde: "confira no site", "ative o lembrete", "pesquise no Google".
+# Mantem as sessoes do D5N (G1/Valor/Banco Central, site, MC e FM), mas cada
+# linha vira um comando com destino explicito.
 manifests["recomendacoes.txt"] = (
-    "Para começar o dia bem informado, recomendamos acompanhar as notícias do G1, "
-    "as análises do Valor Econômico e os boletins do Banco Central. "
-    "Informação de qualidade é a base para decisões inteligentes. "
-    "Além disso, sugerimos revisar sua carteira de investimentos, "
-    "verificar os relatórios corporativos publicados esta semana "
-    "e manter um olhar atento sobre a agenda de publicações econômicas "
-    "que podem impactar seus ativos. "
-    "Na seção de tecnologia, vale conferir as novidades em IA generativa "
-    "e os lançamentos de hardware que podem moldar o próximo trimestre. "
-    "E não esqueça de ouvir o Manhã Conectada às 11h e o Fechamento do Mercado às 17h."
+    "Para fechar o dia: abra o site do Drop Five News e confira o episodio "
+    "completo com os capitulos, para pular direto ao tema que te interessa. "
+    "Se quiser o dado da manha, ouve o Manha Conectada as onze. "
+    "Se quiser o fechamento do mercado, volta no Fechamento do Mercado as "
+    "dezessete horas. Para o texto das noticias, le o G1 e o Valor Economico. "
+    "E ativa o lembrete do podcast para nao perder nenhum episodio."
 )
 
-# historia
-manifests["historia.txt"] = (
-    "Na história dos negócios, grandes empresas nasceram de ideias simples e "
-    "persistência. Hoje, mais do que nunca, a inovação e a criatividade são "
-    "os motores do crescimento sustentável. Empresas que começaram em garagens "
-    "ou em pequenos escritórios agora lideram setores estratégicos da economia "
-    "global. A lição é clara: quem tem visão de longo prazo e executa com "
-    "consistência constrói uma vantagem competitiva duradoura. "
-    "Nomes que hoje dominam o cenário — bancos, embaixadoras e gigantes da "
-    "tecnologia — todos passaram por fases de incerteza, ajustando rotas, "
-    "redefinindo modelos e acreditando em transformações que, no início, "
-    "pareciam ousadas demais. O padrão se repete: inovação disruptiva, "
-    "capital de risco e coragem para desafiar consensos. Investir nisso "
-    "exige olhar além do ciclo de notícias de hoje."
-)
+# historia — fato real que aconteceu NESTE dia do calendario
+# Antes: texto motivacional sobre negocios, sem nenhum fato. Agora segue o
+# padrao do video de referencia: um evento que ocorreu em (dia, mes) de algum
+# ano, com a data falada em voz alta e um fechamento que da sentido ao fato.
+# O texto vem do banco curado (assets/historia-das-datas.json), nunca gerado:
+# um LLM escrevendo "fato historico" produz data e nome errados com muita
+# naturalidade. Ver a data antes de publicar e obrigatorio.
+from historia_do_dia import entrada_para  # noqa: E402
 
-# outro
+_h = entrada_para(TODAY_DATE.day, TODAY_DATE.month)
+if _h:
+    # so a primeira letra, para nao rebaixar "Luna 3" e "Terra" — .capitalize()
+    #(lowercases) transformava o nome proprio em "luna 3" e a TTS falava errado.
+    def _ini(t: str) -> str:
+        return t[:1].upper() + t[1:]
+
+    manifests["historia.txt"] = (
+        f"E nao aconteceu na historia da tecnologia. {TODAY_DATE.day} de "
+        f"{MESES_NOMES[TODAY_DATE.month - 1]} de {_h['ano']}. "
+        f"{_ini(_h['titulo'])}. {_ini(_h['detalhe'])}. {_ini(_h['fechamento'])}."
+    )
+else:
+    # Sem fato registrado para a data: o quality gate barra o episodio para
+    # revisao humana. Prefere nao publicar a inventar.
+    manifests["historia.txt"] = (
+        "Nao temos um fato historico confirmado para esta data. Este trecho "
+        "precisa de revisao antes de ir ao ar."
+    )
+    print(f"[AVISO] historia do dia sem entrada no banco para "
+          f"{TODAY_DATE.day:02d}-{TODAY_DATE.month:02d}: revisar antes de publicar")
+
+# outro — só a saudação, sem repetir data nem nome do programa.
+# A intro ja anuncia data e programa; repetir no encerramento era o que o
+# Jean apontou. No video de referencia o encerramento e seco: "Curta,
+# compartilhe e se inscreva. Ate amanha."
 manifests["outro.txt"] = (
-    f"Este foi o Drop Five News desta quinta-feira, {TODAY}. Fique ligado ao "
-    f"longo do dia para o Manhã Conectada às 11h e o Fechamento do Mercado "
-    f"às 17h, com análises aprofundadas do que movimentou as bolsas hoje. "
-    f"Lembre-se de ativar as notificações do podcast para receber cada "
-    f"episódio automaticamente. Tenha um excelente dia e até a próxima!"
+    "Era isso por hoje. Curte, compartilhe e se inscreva para nao perder o "
+    "Drop Five News de amanha as cinco da manha. Ate amanha, e boa semana!"
 )
 
 total_bytes = sum(len(v) for v in manifests.values())
+
+# Densidade de fala: o mixer v10 so aceita 480-720s de audio. O roteiro precisa
+# ter texto suficiente para isso, e a densidade de referencia e a do video
+# audits (TecMundo 07/10/2026): 13.011 chars em 14min37s = 14.9 chars/s.
+#
+# Sem este AVISO, o roteiro saia com 3.636 chars (~254s) e so descobriamos o
+# problema quando o mixer recusava o episodio. Agora avisa na geracao.
+DENSIDADE_REF = 14.9
+MIN_CHARS = int(480 * DENSIDADE_REF)   # ~7150 chars = 480s
 for name, content in manifests.items():
     path = manifest_dir / name
     path.write_text(content, encoding="utf-8")
 
 print(f"Manifests D5N criados com sucesso em: {manifest_dir}")
-print(f"Total: {len(manifests)} seções, {total_bytes} bytes (~{total_bytes/14.3:.0f}s TTS)")
+print(f"Total: {len(manifests)} secoes, {total_bytes} chars "
+      f"(~{total_bytes/DENSIDADE_REF:.0f}s de audio na densidade de referencia)")
+if total_bytes < MIN_CHARS:
+    faltam = MIN_CHARS - total_bytes
+    print(f"[AVISO] roteiro curto: {total_bytes} chars < {MIN_CHARS} "
+          f"(faltam ~{faltam} para o minimo de 480s do mixer). "
+          f"Causa provavel: MC/FM do dia sem noticias suficientes; "
+          f"o mixer vai recusar o episodio.")
