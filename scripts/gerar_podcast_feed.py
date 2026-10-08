@@ -122,10 +122,12 @@ def main() -> None:
             )
         desc_escaped = escape(desc)
 
+        # O chapters_rss NAO entra aqui: o <item> ja o recebe abaixo, e
+        # repetir dentro do CDATA publicava podcast:chapters/psc:chapters
+        # duas vezes por episodio. Player estrito pode reprovar o feed.
         content_html = (
             f"<p><strong>D5N · Episódio #{ep['num']} · {date_br}</strong></p>"
             f"<p>🎧 {dur_sec // 60}:{seconds:02d} minutos</p>"
-            f"{chapters_rss}"
             f"<p>{escape(desc)}</p>"
             f"<p>👉 <a href=\"{BASE_URL}/\">Ouça no site</a></p>"
         )

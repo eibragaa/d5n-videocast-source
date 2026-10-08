@@ -11,6 +11,27 @@ from xml.sax.saxutils import escape
 
 # ── Labels dos capítulos por programa ────────────────────────────────────────
 
+# Rotulo editorial de cada BLOCO do D5N, pelo id que o mixer grava no
+# manifesto. O psc:chapters usava antes a lista de 6 rotulos abaixo, casada
+# por PESO DE FRASE do coldopen — o que jogava "Mundo" para 05:40 quando o
+# Mundo comeca em 00:20. Com os 12 ids reais, cada capitulo cai no tempo
+# medido do MP3.
+D5N_SECTION_LABELS = {
+    "coldopen": "Abertura",
+    "intro": "Abertura",
+    "mundo": "Mundo",
+    "brasil": "Brasil & Política",
+    "tecnologia": "Tecnologia & Inovações",
+    "economia": "Economia",
+    "interacao": "Interação",
+    "ofertas": "Oportunidades",
+    "frase": "Frase do Dia",
+    "recomendacoes": "Recomendações",
+    "historia": "História do Dia",
+    "outro": "Encerramento",
+}
+SECTION_LABELS = D5N_SECTION_LABELS
+
 D5N_CHAPTER_LABELS = [
     "Abertura", "Brasil & Política", "Economia", "Mundo",
     "Tecnologia & Inovações", "Encerramento",
@@ -138,34 +159,45 @@ def load_program_chapters(kind: str, date_str: str, duration: float) -> list[dic
 
 
 def chapters_from_manifest(derived: list[dict], manifest_path: Path) -> list[dict]:
-    """Usa os timings reais do manifesto, se existirem, mantendo os rótulos.
+    """Usa os timings REAIS do manifesto do mixer, com rotulo editorial proprio.
 
-    O manifesto do mixer tem os tempos exatos de cada bloco (medidos do MP3),
-    mas só o id — o rótulo editorial vem da derivação sobre o coldopen. O
-    podcast:chapters apontava para o manifesto enquanto o psc:chapters inline
-    saía sem `start`, porque `psc:chapter` exige start. Rótulo sem tempo não
-    navega: o player ignora ou joga o ouvinte no lugar errado.
+    O manifesto tem os tempos exatos de cada bloco (medidos do MP3) e o id da
+    secao. A derivacao sobre o coldopen (`load_program_chapters`) estima os
+    tempos por PESO DE FRASE — com 4 frases no coldopen ela produzia 5
+    capitulos inventados, e "Mundo" caia em 05:40 quando o Mundo real comeca
+    em 00:20. O ouvinte pulava para o lugar errado.
 
-    Se os dois conjuntos tiverem o mesmo tamanho, casa por posição. Com
-    quantidades diferentes, mantém a derivação: sincronizar 11 blocos reais
-    com 6 rótulos por índice inventaria capítulos.
+    Antes esta funcao so casava os tempos reais quando `len(real) == len(derived)`
+    (11 blocos vs 6 rotulos), ou seja NUNCA no D5N de hoje — e descartava os
+    tempos reais, publicando os estimados. Agora o manifesto manda: os blocos
+    reais sao a fonte da verdade, cada um com rotulo editorial do seu id.
+
+    Fallback: sem manifesto legivel, devolve a derivacao (com os timings
+    estimados) em vez de nao ter capitulo nenhum.
     """
     try:
         data = json.loads(manifest_path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         return derived
     real = data.get("chapters") or []
-    if not real or not derived or len(real) != len(derived):
+    if not real:
         return derived
+
+    # Rotulo editorial por id de secao. O id do manifesto ja e o nome da
+    # secao (intro, mundo, brasil...), entao so falta rotular.
+    from_secao = {c["id"]: c for c in derived if isinstance(c, dict) and "id" in c}
     merged = []
-    for index, chapter in enumerate(derived):
+    for chapter in real:
+        cid = str(chapter.get("id") or "").strip()
+        base = from_secao.get(cid, {})
+        label = base.get("label") or SECTION_LABELS.get(cid) or cid.replace("_", " ").title()
         merged.append({
-            "id": chapter["id"],
-            "label": chapter["label"],
-            "start": float(real[index].get("start", chapter.get("start", 0.0))),
-            "end": float(real[index].get("end", chapter.get("end", 0.0))),
+            "id": cid or label.lower(),
+            "label": label,
+            "start": float(chapter.get("start", 0.0)),
+            "end": float(chapter.get("end", 0.0)),
         })
-    return merged
+    return merged or derived
 
 
 def _fmt_dur(seconds: float) -> str:
