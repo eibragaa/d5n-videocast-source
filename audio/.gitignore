@@ -13,3 +13,8 @@ historia.mp3
 outro.mp3
 manifest.json
 silence_1sec*.mp3
+
+# Roteiros copiados de manifests/d5n/<data>/ — regenerados a cada run.
+# Sem estas linhas eles entram no git e sujam o diff de todo episodio.
+*.txt
+*_header.mp3

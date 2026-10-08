@@ -33,7 +33,7 @@
 <podcast:guid>d5n-daily.netlify.app</podcast:guid>
 <podcast:funding url="https://github.com/sponsors/eibragaa">Support D5N</podcast:funding>
     <atom:link href="https://d5n-daily.netlify.app/podcast.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Tue, 29 Sep 2026 11:14:23 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 22:24:59 -0400</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/podcast-cover.jpg</url>
       <title>Hoje no Drop Five News</title>
@@ -45,6 +45,55 @@
     <webMaster>eibragaa@gmail.com (Jean Braga)</webMaster>
     <generator>D5N Pipeline v2</generator>
     <item>
+      <title>D5N · Episódio #076 — 2026-10-07</title>
+      <itunes:title>D5N · Episódio #076 — 2026-10-07</itunes:title>
+      <itunes:episode>76</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>08:18</itunes:duration>
+      <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
+          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-10-07.json"/>
+    <psc:chapters version="2.0">
+      <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
+      <psc:chapter start="01:11" title="Economia"/>
+      <psc:chapter start="05:40" title="Mundo"/>
+      <psc:chapter start="07:38" title="Encerramento"/>
+    </psc:chapters>
+      <guid isPermaLink="false">d5n-2026-10-07-ep076</guid>
+      <link>https://d5n-daily.netlify.app/</link>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep076-2026-10-07.mp3" length="11963916" type="audio/mpeg"/>
+      <pubDate>Wed, 07 Oct 2026 00:00:00 -0400</pubDate>
+      <description>Drop Five News · Episódio #076 · 07/10/2026. Resumo do dia com curadoria inteligente. 8:18 min.
+
+⏱ 00:00 — Abertura
+⏱ 00:01 — Brasil &amp; Política
+⏱ 01:11 — Economia
+⏱ 05:40 — Mundo
+⏱ 07:38 — Encerramento</description>
+      <itunes:summary>Drop Five News · Episódio #076 · 07/10/2026. Resumo do dia com curadoria inteligente. 8:18 min.
+
+⏱ 00:00 — Abertura
+⏱ 00:01 — Brasil &amp; Política
+⏱ 01:11 — Economia
+⏱ 05:40 — Mundo
+⏱ 07:38 — Encerramento</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #076 · 07/10/2026</strong></p><p>🎧 8:18 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-10-07.json"/>
+    <psc:chapters version="2.0">
+      <psc:chapter start="00:00" title="Abertura"/>
+      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
+      <psc:chapter start="01:11" title="Economia"/>
+      <psc:chapter start="05:40" title="Mundo"/>
+      <psc:chapter start="07:38" title="Encerramento"/>
+    </psc:chapters><p>Drop Five News · Episódio #076 · 07/10/2026. Resumo do dia com curadoria inteligente. 8:18 min.
+
+⏱ 00:00 — Abertura
+⏱ 00:01 — Brasil &amp; Política
+⏱ 01:11 — Economia
+⏱ 05:40 — Mundo
+⏱ 07:38 — Encerramento</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+    </item>
+    <item>
       <title>D5N · Episódio #075 — 2026-09-29</title>
       <itunes:title>D5N · Episódio #075 — 2026-09-29</itunes:title>
       <itunes:episode>75</itunes:episode>
@@ -52,51 +101,14 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:02</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-29.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="02:21" title="Economia"/>
-      <psc:chapter start="04:12" title="Mundo"/>
-      <psc:chapter start="06:14" title="Tecnologia &amp; Inovações"/>
-      <psc:chapter start="07:23" title="Encerramento"/>
-    </psc:chapters>
+      
       <guid isPermaLink="false">d5n-2026-09-29-ep075</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep075-2026-09-29.mp3" length="11580856" type="audio/mpeg"/>
       <pubDate>Tue, 29 Sep 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News · Episódio #075 · 29/09/2026. Resumo do dia com curadoria inteligente. 8:02 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 02:21 — Economia
-⏱ 04:12 — Mundo
-⏱ 06:14 — Tecnologia &amp; Inovações
-⏱ 07:23 — Encerramento</description>
-      <itunes:summary>Drop Five News · Episódio #075 · 29/09/2026. Resumo do dia com curadoria inteligente. 8:02 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 02:21 — Economia
-⏱ 04:12 — Mundo
-⏱ 06:14 — Tecnologia &amp; Inovações
-⏱ 07:23 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #075 · 29/09/2026</strong></p><p>🎧 8:02 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-29.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="02:21" title="Economia"/>
-      <psc:chapter start="04:12" title="Mundo"/>
-      <psc:chapter start="06:14" title="Tecnologia &amp; Inovações"/>
-      <psc:chapter start="07:23" title="Encerramento"/>
-    </psc:chapters><p>Drop Five News · Episódio #075 · 29/09/2026. Resumo do dia com curadoria inteligente. 8:02 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 02:21 — Economia
-⏱ 04:12 — Mundo
-⏱ 06:14 — Tecnologia &amp; Inovações
-⏱ 07:23 — Encerramento</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #075 · 29/09/2026. Ouça o resumo de notícias do dia. 🎧 8:02 min.</description>
+      <itunes:summary>Drop Five News · Episódio #075 · 29/09/2026. Ouça o resumo de notícias do dia. 🎧 8:02 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #075 · 29/09/2026</strong></p><p>🎧 8:02 minutos</p><p>Drop Five News · Episódio #075 · 29/09/2026. Ouça o resumo de notícias do dia. 🎧 8:02 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
       <title>D5N · Episódio #074 — 2026-09-25</title>
@@ -106,51 +118,14 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:03</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-25.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="02:24" title="Economia"/>
-      <psc:chapter start="04:06" title="Mundo"/>
-      <psc:chapter start="05:32" title="Tecnologia &amp; Inovações"/>
-      <psc:chapter start="07:24" title="Encerramento"/>
-    </psc:chapters>
+      
       <guid isPermaLink="false">d5n-2026-09-25-ep074</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep074-2026-09-25.mp3" length="11603425" type="audio/mpeg"/>
       <pubDate>Fri, 25 Sep 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News · Episódio #074 · 25/09/2026. Resumo do dia com curadoria inteligente. 8:03 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 02:24 — Economia
-⏱ 04:06 — Mundo
-⏱ 05:32 — Tecnologia &amp; Inovações
-⏱ 07:24 — Encerramento</description>
-      <itunes:summary>Drop Five News · Episódio #074 · 25/09/2026. Resumo do dia com curadoria inteligente. 8:03 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 02:24 — Economia
-⏱ 04:06 — Mundo
-⏱ 05:32 — Tecnologia &amp; Inovações
-⏱ 07:24 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #074 · 25/09/2026</strong></p><p>🎧 8:03 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-25.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="02:24" title="Economia"/>
-      <psc:chapter start="04:06" title="Mundo"/>
-      <psc:chapter start="05:32" title="Tecnologia &amp; Inovações"/>
-      <psc:chapter start="07:24" title="Encerramento"/>
-    </psc:chapters><p>Drop Five News · Episódio #074 · 25/09/2026. Resumo do dia com curadoria inteligente. 8:03 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 02:24 — Economia
-⏱ 04:06 — Mundo
-⏱ 05:32 — Tecnologia &amp; Inovações
-⏱ 07:24 — Encerramento</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #074 · 25/09/2026. Ouça o resumo de notícias do dia. 🎧 8:03 min.</description>
+      <itunes:summary>Drop Five News · Episódio #074 · 25/09/2026. Ouça o resumo de notícias do dia. 🎧 8:03 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #074 · 25/09/2026</strong></p><p>🎧 8:03 minutos</p><p>Drop Five News · Episódio #074 · 25/09/2026. Ouça o resumo de notícias do dia. 🎧 8:03 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
       <title>D5N · Episódio #072 — 2026-09-24</title>
@@ -160,51 +135,14 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:16</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-24.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="02:23" title="Economia"/>
-      <psc:chapter start="04:22" title="Mundo"/>
-      <psc:chapter start="06:08" title="Tecnologia &amp; Inovações"/>
-      <psc:chapter start="07:36" title="Encerramento"/>
-    </psc:chapters>
+      
       <guid isPermaLink="false">d5n-2026-09-24-ep072</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep072-2026-09-24.mp3" length="11926926" type="audio/mpeg"/>
       <pubDate>Thu, 24 Sep 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News · Episódio #072 · 24/09/2026. Resumo do dia com curadoria inteligente. 8:16 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 02:23 — Economia
-⏱ 04:22 — Mundo
-⏱ 06:08 — Tecnologia &amp; Inovações
-⏱ 07:36 — Encerramento</description>
-      <itunes:summary>Drop Five News · Episódio #072 · 24/09/2026. Resumo do dia com curadoria inteligente. 8:16 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 02:23 — Economia
-⏱ 04:22 — Mundo
-⏱ 06:08 — Tecnologia &amp; Inovações
-⏱ 07:36 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #072 · 24/09/2026</strong></p><p>🎧 8:16 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-24.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="02:23" title="Economia"/>
-      <psc:chapter start="04:22" title="Mundo"/>
-      <psc:chapter start="06:08" title="Tecnologia &amp; Inovações"/>
-      <psc:chapter start="07:36" title="Encerramento"/>
-    </psc:chapters><p>Drop Five News · Episódio #072 · 24/09/2026. Resumo do dia com curadoria inteligente. 8:16 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 02:23 — Economia
-⏱ 04:22 — Mundo
-⏱ 06:08 — Tecnologia &amp; Inovações
-⏱ 07:36 — Encerramento</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #072 · 24/09/2026. Ouça o resumo de notícias do dia. 🎧 8:16 min.</description>
+      <itunes:summary>Drop Five News · Episódio #072 · 24/09/2026. Ouça o resumo de notícias do dia. 🎧 8:16 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #072 · 24/09/2026</strong></p><p>🎧 8:16 minutos</p><p>Drop Five News · Episódio #072 · 24/09/2026. Ouça o resumo de notícias do dia. 🎧 8:16 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
       <title>D5N · Episódio #070 — 2026-09-22</title>
@@ -214,36 +152,14 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:46</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-22.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="08:04" title="Encerramento"/>
-    </psc:chapters>
+      
       <guid isPermaLink="false">d5n-2026-09-22-ep070</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep070-2026-09-22.mp3" length="12627216" type="audio/mpeg"/>
       <pubDate>Tue, 22 Sep 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News · Episódio #070 · 22/09/2026. Resumo do dia com curadoria inteligente. 8:46 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 08:04 — Encerramento</description>
-      <itunes:summary>Drop Five News · Episódio #070 · 22/09/2026. Resumo do dia com curadoria inteligente. 8:46 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 08:04 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #070 · 22/09/2026</strong></p><p>🎧 8:46 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-22.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="08:04" title="Encerramento"/>
-    </psc:chapters><p>Drop Five News · Episódio #070 · 22/09/2026. Resumo do dia com curadoria inteligente. 8:46 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 08:04 — Encerramento</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #070 · 22/09/2026. Ouça o resumo de notícias do dia. 🎧 8:46 min.</description>
+      <itunes:summary>Drop Five News · Episódio #070 · 22/09/2026. Ouça o resumo de notícias do dia. 🎧 8:46 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #070 · 22/09/2026</strong></p><p>🎧 8:46 minutos</p><p>Drop Five News · Episódio #070 · 22/09/2026. Ouça o resumo de notícias do dia. 🎧 8:46 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
       <title>D5N · Episódio #069 — 2026-09-21</title>
@@ -253,36 +169,14 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>08:46</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-21.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="08:04" title="Encerramento"/>
-    </psc:chapters>
+      
       <guid isPermaLink="false">d5n-2026-09-21-ep069</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep069-2026-09-21.mp3" length="12627216" type="audio/mpeg"/>
       <pubDate>Mon, 21 Sep 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News · Episódio #069 · 21/09/2026. Resumo do dia com curadoria inteligente. 8:46 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 08:04 — Encerramento</description>
-      <itunes:summary>Drop Five News · Episódio #069 · 21/09/2026. Resumo do dia com curadoria inteligente. 8:46 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 08:04 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #069 · 21/09/2026</strong></p><p>🎧 8:46 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-21.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="08:04" title="Encerramento"/>
-    </psc:chapters><p>Drop Five News · Episódio #069 · 21/09/2026. Resumo do dia com curadoria inteligente. 8:46 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 08:04 — Encerramento</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #069 · 21/09/2026. Ouça o resumo de notícias do dia. 🎧 8:46 min.</description>
+      <itunes:summary>Drop Five News · Episódio #069 · 21/09/2026. Ouça o resumo de notícias do dia. 🎧 8:46 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #069 · 21/09/2026</strong></p><p>🎧 8:46 minutos</p><p>Drop Five News · Episódio #069 · 21/09/2026. Ouça o resumo de notícias do dia. 🎧 8:46 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
       <title>D5N · Episódio #068 — 2026-09-11</title>
@@ -292,41 +186,14 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>11:30</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-11.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="01:57" title="Economia"/>
-      <psc:chapter start="10:34" title="Encerramento"/>
-    </psc:chapters>
+      
       <guid isPermaLink="false">d5n-2026-09-11-ep068</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep068-2026-09-11.mp3" length="16582573" type="audio/mpeg"/>
       <pubDate>Fri, 11 Sep 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News · Episódio #068 · 11/09/2026. Resumo do dia com curadoria inteligente. 11:30 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 01:57 — Economia
-⏱ 10:34 — Encerramento</description>
-      <itunes:summary>Drop Five News · Episódio #068 · 11/09/2026. Resumo do dia com curadoria inteligente. 11:30 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 01:57 — Economia
-⏱ 10:34 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #068 · 11/09/2026</strong></p><p>🎧 11:30 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-11.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="01:57" title="Economia"/>
-      <psc:chapter start="10:34" title="Encerramento"/>
-    </psc:chapters><p>Drop Five News · Episódio #068 · 11/09/2026. Resumo do dia com curadoria inteligente. 11:30 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 01:57 — Economia
-⏱ 10:34 — Encerramento</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #068 · 11/09/2026. Ouça o resumo de notícias do dia. 🎧 11:30 min.</description>
+      <itunes:summary>Drop Five News · Episódio #068 · 11/09/2026. Ouça o resumo de notícias do dia. 🎧 11:30 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #068 · 11/09/2026</strong></p><p>🎧 11:30 minutos</p><p>Drop Five News · Episódio #068 · 11/09/2026. Ouça o resumo de notícias do dia. 🎧 11:30 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
       <title>D5N · Episódio #067 — 2026-09-10</title>
@@ -336,41 +203,14 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>11:30</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-10.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="01:57" title="Economia"/>
-      <psc:chapter start="10:34" title="Encerramento"/>
-    </psc:chapters>
+      
       <guid isPermaLink="false">d5n-2026-09-10-ep067</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep067-2026-09-10.mp3" length="16582573" type="audio/mpeg"/>
       <pubDate>Thu, 10 Sep 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News · Episódio #067 · 10/09/2026. Resumo do dia com curadoria inteligente. 11:30 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 01:57 — Economia
-⏱ 10:34 — Encerramento</description>
-      <itunes:summary>Drop Five News · Episódio #067 · 10/09/2026. Resumo do dia com curadoria inteligente. 11:30 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 01:57 — Economia
-⏱ 10:34 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #067 · 10/09/2026</strong></p><p>🎧 11:30 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-09-10.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="01:57" title="Economia"/>
-      <psc:chapter start="10:34" title="Encerramento"/>
-    </psc:chapters><p>Drop Five News · Episódio #067 · 10/09/2026. Resumo do dia com curadoria inteligente. 11:30 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 01:57 — Economia
-⏱ 10:34 — Encerramento</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #067 · 10/09/2026. Ouça o resumo de notícias do dia. 🎧 11:30 min.</description>
+      <itunes:summary>Drop Five News · Episódio #067 · 10/09/2026. Ouça o resumo de notícias do dia. 🎧 11:30 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #067 · 10/09/2026</strong></p><p>🎧 11:30 minutos</p><p>Drop Five News · Episódio #067 · 10/09/2026. Ouça o resumo de notícias do dia. 🎧 11:30 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
       <title>D5N · Episódio #066 — 2026-08-31</title>
@@ -424,46 +264,14 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>09:11</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-08-27.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="03:26" title="Economia"/>
-      <psc:chapter start="05:09" title="Mundo"/>
-      <psc:chapter start="08:27" title="Encerramento"/>
-    </psc:chapters>
+      
       <guid isPermaLink="false">d5n-2026-08-27-ep065</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep065-2026-08-27.mp3" length="13231585" type="audio/mpeg"/>
       <pubDate>Thu, 27 Aug 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News · Episódio #065 · 27/08/2026. Resumo do dia com curadoria inteligente. 9:11 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 03:26 — Economia
-⏱ 05:09 — Mundo
-⏱ 08:27 — Encerramento</description>
-      <itunes:summary>Drop Five News · Episódio #065 · 27/08/2026. Resumo do dia com curadoria inteligente. 9:11 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 03:26 — Economia
-⏱ 05:09 — Mundo
-⏱ 08:27 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #065 · 27/08/2026</strong></p><p>🎧 9:11 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-08-27.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="03:26" title="Economia"/>
-      <psc:chapter start="05:09" title="Mundo"/>
-      <psc:chapter start="08:27" title="Encerramento"/>
-    </psc:chapters><p>Drop Five News · Episódio #065 · 27/08/2026. Resumo do dia com curadoria inteligente. 9:11 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 03:26 — Economia
-⏱ 05:09 — Mundo
-⏱ 08:27 — Encerramento</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #065 · 27/08/2026. Ouça o resumo de notícias do dia. 🎧 9:11 min.</description>
+      <itunes:summary>Drop Five News · Episódio #065 · 27/08/2026. Ouça o resumo de notícias do dia. 🎧 9:11 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #065 · 27/08/2026</strong></p><p>🎧 9:11 minutos</p><p>Drop Five News · Episódio #065 · 27/08/2026. Ouça o resumo de notícias do dia. 🎧 9:11 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
       <title>D5N · Episódio #061 — 2026-08-18</title>
@@ -473,51 +281,14 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>09:41</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-08-18.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="03:36" title="Economia"/>
-      <psc:chapter start="06:19" title="Mundo"/>
-      <psc:chapter start="07:47" title="Tecnologia &amp; Inovações"/>
-      <psc:chapter start="08:54" title="Encerramento"/>
-    </psc:chapters>
+      
       <guid isPermaLink="false">d5n-2026-08-18-ep061</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep061-2026-08-18.mp3" length="13965731" type="audio/mpeg"/>
       <pubDate>Tue, 18 Aug 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News · Episódio #061 · 18/08/2026. Resumo do dia com curadoria inteligente. 9:41 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 03:36 — Economia
-⏱ 06:19 — Mundo
-⏱ 07:47 — Tecnologia &amp; Inovações
-⏱ 08:54 — Encerramento</description>
-      <itunes:summary>Drop Five News · Episódio #061 · 18/08/2026. Resumo do dia com curadoria inteligente. 9:41 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 03:36 — Economia
-⏱ 06:19 — Mundo
-⏱ 07:47 — Tecnologia &amp; Inovações
-⏱ 08:54 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #061 · 18/08/2026</strong></p><p>🎧 9:41 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-08-18.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="03:36" title="Economia"/>
-      <psc:chapter start="06:19" title="Mundo"/>
-      <psc:chapter start="07:47" title="Tecnologia &amp; Inovações"/>
-      <psc:chapter start="08:54" title="Encerramento"/>
-    </psc:chapters><p>Drop Five News · Episódio #061 · 18/08/2026. Resumo do dia com curadoria inteligente. 9:41 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 03:36 — Economia
-⏱ 06:19 — Mundo
-⏱ 07:47 — Tecnologia &amp; Inovações
-⏱ 08:54 — Encerramento</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #061 · 18/08/2026. Ouça o resumo de notícias do dia. 🎧 9:41 min.</description>
+      <itunes:summary>Drop Five News · Episódio #061 · 18/08/2026. Ouça o resumo de notícias do dia. 🎧 9:41 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #061 · 18/08/2026</strong></p><p>🎧 9:41 minutos</p><p>Drop Five News · Episódio #061 · 18/08/2026. Ouça o resumo de notícias do dia. 🎧 9:41 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
       <title>D5N · Episódio #060 — 2026-08-17</title>
@@ -527,46 +298,14 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>09:21</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
-          <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-08-17.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="03:00" title="Economia"/>
-      <psc:chapter start="05:52" title="Mundo"/>
-      <psc:chapter start="08:36" title="Encerramento"/>
-    </psc:chapters>
+      
       <guid isPermaLink="false">d5n-2026-08-17-ep060</guid>
       <link>https://d5n-daily.netlify.app/</link>
       <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep060-2026-08-17.mp3" length="13474838" type="audio/mpeg"/>
       <pubDate>Mon, 17 Aug 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News · Episódio #060 · 17/08/2026. Resumo do dia com curadoria inteligente. 9:21 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 03:00 — Economia
-⏱ 05:52 — Mundo
-⏱ 08:36 — Encerramento</description>
-      <itunes:summary>Drop Five News · Episódio #060 · 17/08/2026. Resumo do dia com curadoria inteligente. 9:21 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 03:00 — Economia
-⏱ 05:52 — Mundo
-⏱ 08:36 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #060 · 17/08/2026</strong></p><p>🎧 9:21 minutos</p>    <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-08-17.json"/>
-    <psc:chapters version="2.0">
-      <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:01" title="Brasil &amp; Política"/>
-      <psc:chapter start="03:00" title="Economia"/>
-      <psc:chapter start="05:52" title="Mundo"/>
-      <psc:chapter start="08:36" title="Encerramento"/>
-    </psc:chapters><p>Drop Five News · Episódio #060 · 17/08/2026. Resumo do dia com curadoria inteligente. 9:21 min.
-
-⏱ 00:00 — Abertura
-⏱ 00:01 — Brasil &amp; Política
-⏱ 03:00 — Economia
-⏱ 05:52 — Mundo
-⏱ 08:36 — Encerramento</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+      <description>Drop Five News · Episódio #060 · 17/08/2026. Ouça o resumo de notícias do dia. 🎧 9:21 min.</description>
+      <itunes:summary>Drop Five News · Episódio #060 · 17/08/2026. Ouça o resumo de notícias do dia. 🎧 9:21 min.</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #060 · 17/08/2026</strong></p><p>🎧 9:21 minutos</p><p>Drop Five News · Episódio #060 · 17/08/2026. Ouça o resumo de notícias do dia. 🎧 9:21 min.</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
       <title>D5N · Episódio #059 — 2026-08-14</title>

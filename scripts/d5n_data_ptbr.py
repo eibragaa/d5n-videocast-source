@@ -26,7 +26,7 @@ DIAS_SEMANA = (
 # Sem acento inicial: a data ja vem precedida por "de" nos textos.
 MESES = (
     "janeiro", "fevereiro", "março", "abril", "maio", "junho",
-    "julho", "agosto", "setembro", "outembro", "novembro", "dezembro",
+    "julho", "agosto", "setembro", "outubro", "novembro", "dezembro",
 )
 
 MESES_CURTOS = {

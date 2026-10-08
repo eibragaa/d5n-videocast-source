@@ -23,8 +23,15 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 
-OUTPUT_DIR = Path("/root/.hermes/cron/output")
 TODAY = date.today().isoformat()
+
+# O --output e anunciado no help mas nunca lido: OUTPUT_DIR ficava preso ao
+# path do host antigo (/root/.hermes/...), dando Permission denied em qualquer
+# install fora de root.
+if "--output" in sys.argv:
+    _i = sys.argv.index("--output")
+    OUTPUT_DIR = Path(sys.argv[_i + 1] if _i + 1 < len(sys.argv) else ".")
+OUT_FILE = OUTPUT_DIR / f"drop5news-trends-{TODAY}.txt"
 
 
 def default_sources():
@@ -110,7 +117,7 @@ def main():
                 output.append(f"Fonte: {e['source']} — {e['url']}")
                 output.append("")
     
-    out_file = OUTPUT_DIR / f"drop5news-trends-{TODAY}.txt"
+    out_file = OUT_FILE
     out_file.write_text("\n".join(output), encoding="utf-8")
     print(f"\nSalvo: {out_file}")
 

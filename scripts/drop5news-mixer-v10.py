@@ -59,7 +59,12 @@ PAUSE_EXTRA_MS = 200
 HIGH_LUF = -16
 TRUE_PEAK = -1.5
 BITS = 192
-LEAD_MS = 1_500
+# O coldopen e a UNICA secao sem header de voz: todas as outras tem
+# <secao>_header.mp3, que cobre os primeiros 500ms enquanto o fade_in do bed
+# sobe do zero. Sem esse lead maior o episodio abre a -34.5 dB, 13.8 dB abaixo
+# das outras secoes (-20.7 dB) — o pior momento possivel para causar a
+# primeira impressao. Medido no ep076.
+LEAD_MS = 3_000
 HEADER_BREATH_MS = 250
 GLOBAL_FADE_IN_MS = 400
 GLOBAL_FADE_OUT_MS = 1_200
@@ -155,8 +160,10 @@ def track_for(name: str, voice_ms: int) -> tuple[Path, float]:
         path = ASSET_DIR / FALLBACK_TRACK
         filename = FALLBACK_TRACK
     require(path)
-    # As camas leves medem cerca de -19 LUFS; as quentes, cerca de -12 LUFS.
-    # Ganhos distintos mantêm a cama bem abaixo da voz já nivelada.
+    # Os beds medem -17.5 dB (leves) e -10 dB (quentes) na origem; com -20/-26
+    # ficam 14-26 dB sob a voz. Medido no ep076: subir para -11/-14 muda so
+    # 0.3 dB no episodio final, porque o loudnorm I=-16 renormaliza o mix
+    # inteiro — o ganho da cama so muda a RELACAO voz/cama antes do loudnorm.
     gain = LIGHT_TRACK_GAIN_DB if filename in LIGHT_TRACKS else HOT_TRACK_GAIN_DB
     return path, gain
 
