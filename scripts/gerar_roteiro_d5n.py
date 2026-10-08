@@ -401,13 +401,26 @@ else:
     print(f"[AVISO] historia do dia sem entrada no banco para "
           f"{TODAY_DATE.day:02d}-{TODAY_DATE.month:02d}: revisar antes de publicar")
 
-# outro — só a saudação, sem repetir data nem nome do programa.
-# A intro ja anuncia data e programa; repetir no encerramento era o que o
-# Jean apontou. No video de referencia o encerramento e seco: "Curta,
-# compartilhe e se inscreva. Ate amanha."
+# outro — saudação + como ouvir. NÃO repete data nem se anuncia de novo.
+#
+# Melhoria 3 do Jean: a intro já diz a data e o nome do programa, e o
+# encerramento repetia a frase inteira. O que fica aqui é só a saudação e o
+# caminho para ouvir — no modelo TecMundo, onde o encerramento é seco e todo
+# acionável ("confira no site", "ative o lembrete").
+#
+# Os 4 termos abaixo não são opcional: o quality gate BLOQUEIA o episódio sem
+# eles (RSS_CTA_TERMS). A conciliação é essa — os termos são sobre COMO OUVIR,
+# não sobre repetir data e saudação, que era o que o Jean pediu para tirar.
+# `casefold()` NORMALIZA ACENTO? NAO. Testado: "Manha Conectada" com a
+# "Manha" sem acento nao casa com o termo "manhã conectada", e o gate bloqueia
+# o episodio. O texto falado vai para o TTS, que precisa do acento correto
+# mesmo — entao se escreve acentuado, como sempre foi.
 manifests["outro.txt"] = (
-    "Era isso por hoje. Curte, compartilhe e se inscreva para nao perder o "
-    "Drop Five News de amanha as cinco da manha. Ate amanha, e boa semana!"
+    "Era isso por hoje. Curte, compartilhe e se inscreva. Para acompanhar o dia "
+    "a dia, ouve o Manhã Conectada às onze horas: procure o programa no aplicativo "
+    "de podcast, ou use o RSS próprio do site do Drop Five News, onde estão "
+    "também o Fechamento do Mercado das dezessete horas. Ative o lembrete para "
+    "não perder nenhum episódio. Até amanhã, e boa semana!"
 )
 
 # Preenchimento final: se o episodio ainda esta curto para o mixer, completa

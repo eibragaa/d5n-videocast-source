@@ -33,7 +33,7 @@
 <podcast:guid>d5n-daily.netlify.app</podcast:guid>
 <podcast:funding url="https://github.com/sponsors/eibragaa">Support D5N</podcast:funding>
     <atom:link href="https://d5n-daily.netlify.app/podcast.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 07 Oct 2026 22:58:55 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 02:12:44 -0400</lastBuildDate>
     <image>
       <url>https://d5n-daily.netlify.app/podcast-cover.jpg</url>
       <title>Hoje no Drop Five News</title>
@@ -45,70 +45,70 @@
     <webMaster>eibragaa@gmail.com (Jean Braga)</webMaster>
     <generator>D5N Pipeline v2</generator>
     <item>
-      <title>D5N · Episódio #076 — 2026-10-07</title>
-      <itunes:title>D5N · Episódio #076 — 2026-10-07</itunes:title>
-      <itunes:episode>76</itunes:episode>
+      <title>D5N · Episódio #077 — 2026-10-07</title>
+      <itunes:title>D5N · Episódio #077 — 2026-10-07</itunes:title>
+      <itunes:episode>77</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>08:18</itunes:duration>
+      <itunes:duration>09:09</itunes:duration>
       <itunes:image href="https://d5n-daily.netlify.app/podcast-cover.jpg"/>
           <podcast:chapters version="1.2" src="https://d5n-daily.netlify.app/chapters/2026-10-07.json"/>
     <psc:chapters version="2.0">
       <psc:chapter start="00:00" title="Abertura"/>
-      <psc:chapter start="00:19" title="Mundo"/>
-      <psc:chapter start="01:11" title="Brasil &amp; Política"/>
-      <psc:chapter start="02:20" title="Tecnologia &amp; Inovações"/>
-      <psc:chapter start="03:20" title="Economia"/>
-      <psc:chapter start="04:19" title="Interação"/>
-      <psc:chapter start="04:44" title="Oportunidades"/>
-      <psc:chapter start="05:15" title="Frase do Dia"/>
-      <psc:chapter start="05:41" title="Recomendações"/>
-      <psc:chapter start="06:26" title="História do Dia"/>
-      <psc:chapter start="07:04" title="Encerramento"/>
+      <psc:chapter start="00:22" title="Mundo"/>
+      <psc:chapter start="02:25" title="Brasil &amp; Política"/>
+      <psc:chapter start="04:01" title="Tecnologia &amp; Inovações"/>
+      <psc:chapter start="05:32" title="Economia"/>
+      <psc:chapter start="06:02" title="Interação"/>
+      <psc:chapter start="06:14" title="Oportunidades"/>
+      <psc:chapter start="06:30" title="Frase do Dia"/>
+      <psc:chapter start="06:48" title="Recomendações"/>
+      <psc:chapter start="07:15" title="História do Dia"/>
+      <psc:chapter start="07:39" title="Encerramento"/>
     </psc:chapters>
-      <guid isPermaLink="false">d5n-2026-10-07-ep076</guid>
+      <guid isPermaLink="false">d5n-2026-10-07-ep077</guid>
       <link>https://d5n-daily.netlify.app/</link>
-      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep076-2026-10-07.mp3" length="11963916" type="audio/mpeg"/>
+      <enclosure url="https://d5n-daily.netlify.app/audio/d5n-ep077-2026-10-07.mp3" length="13178297" type="audio/mpeg"/>
       <pubDate>Wed, 07 Oct 2026 00:00:00 -0400</pubDate>
-      <description>Drop Five News · Episódio #076 · 07/10/2026. Resumo do dia com curadoria inteligente. 8:18 min.
+      <description>Drop Five News · Episódio #077 · 07/10/2026. Resumo do dia com curadoria inteligente. 9:09 min.
 
 ⏱ 00:00 — Abertura
-⏱ 00:19 — Mundo
-⏱ 01:11 — Brasil &amp; Política
-⏱ 02:20 — Tecnologia &amp; Inovações
-⏱ 03:20 — Economia
-⏱ 04:19 — Interação
-⏱ 04:44 — Oportunidades
-⏱ 05:15 — Frase do Dia
-⏱ 05:41 — Recomendações
-⏱ 06:26 — História do Dia
-⏱ 07:04 — Encerramento</description>
-      <itunes:summary>Drop Five News · Episódio #076 · 07/10/2026. Resumo do dia com curadoria inteligente. 8:18 min.
+⏱ 00:22 — Mundo
+⏱ 02:25 — Brasil &amp; Política
+⏱ 04:01 — Tecnologia &amp; Inovações
+⏱ 05:32 — Economia
+⏱ 06:02 — Interação
+⏱ 06:14 — Oportunidades
+⏱ 06:30 — Frase do Dia
+⏱ 06:48 — Recomendações
+⏱ 07:15 — História do Dia
+⏱ 07:39 — Encerramento</description>
+      <itunes:summary>Drop Five News · Episódio #077 · 07/10/2026. Resumo do dia com curadoria inteligente. 9:09 min.
 
 ⏱ 00:00 — Abertura
-⏱ 00:19 — Mundo
-⏱ 01:11 — Brasil &amp; Política
-⏱ 02:20 — Tecnologia &amp; Inovações
-⏱ 03:20 — Economia
-⏱ 04:19 — Interação
-⏱ 04:44 — Oportunidades
-⏱ 05:15 — Frase do Dia
-⏱ 05:41 — Recomendações
-⏱ 06:26 — História do Dia
-⏱ 07:04 — Encerramento</itunes:summary>
-      <content:encoded><![CDATA[<p><strong>D5N · Episódio #076 · 07/10/2026</strong></p><p>🎧 8:18 minutos</p><p>Drop Five News · Episódio #076 · 07/10/2026. Resumo do dia com curadoria inteligente. 8:18 min.
+⏱ 00:22 — Mundo
+⏱ 02:25 — Brasil &amp; Política
+⏱ 04:01 — Tecnologia &amp; Inovações
+⏱ 05:32 — Economia
+⏱ 06:02 — Interação
+⏱ 06:14 — Oportunidades
+⏱ 06:30 — Frase do Dia
+⏱ 06:48 — Recomendações
+⏱ 07:15 — História do Dia
+⏱ 07:39 — Encerramento</itunes:summary>
+      <content:encoded><![CDATA[<p><strong>D5N · Episódio #077 · 07/10/2026</strong></p><p>🎧 9:09 minutos</p><p>Drop Five News · Episódio #077 · 07/10/2026. Resumo do dia com curadoria inteligente. 9:09 min.
 
 ⏱ 00:00 — Abertura
-⏱ 00:19 — Mundo
-⏱ 01:11 — Brasil &amp; Política
-⏱ 02:20 — Tecnologia &amp; Inovações
-⏱ 03:20 — Economia
-⏱ 04:19 — Interação
-⏱ 04:44 — Oportunidades
-⏱ 05:15 — Frase do Dia
-⏱ 05:41 — Recomendações
-⏱ 06:26 — História do Dia
-⏱ 07:04 — Encerramento</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
+⏱ 00:22 — Mundo
+⏱ 02:25 — Brasil &amp; Política
+⏱ 04:01 — Tecnologia &amp; Inovações
+⏱ 05:32 — Economia
+⏱ 06:02 — Interação
+⏱ 06:14 — Oportunidades
+⏱ 06:30 — Frase do Dia
+⏱ 06:48 — Recomendações
+⏱ 07:15 — História do Dia
+⏱ 07:39 — Encerramento</p><p>👉 <a href="https://d5n-daily.netlify.app/">Ouça no site</a></p>]]></content:encoded>
     </item>
     <item>
       <title>D5N · Episódio #075 — 2026-09-29</title>

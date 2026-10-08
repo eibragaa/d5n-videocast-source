@@ -1,62 +1,62 @@
 {
     "schema": 2,
     "editorial_date": "2026-10-07",
-    "audio_duration": 498.44,
+    "audio_duration": 549.016,
     "chapters": [
         {
             "id": "intro",
             "start": 0.0,
-            "end": 19.974
+            "end": 22.59
         },
         {
             "id": "mundo",
-            "start": 19.974,
-            "end": 71.07
+            "start": 22.59,
+            "end": 145.742
         },
         {
             "id": "brasil",
-            "start": 71.07,
-            "end": 140.782
+            "start": 145.742,
+            "end": 241.142
         },
         {
             "id": "tecnologia",
-            "start": 140.782,
-            "end": 200.086
+            "start": 241.142,
+            "end": 332.718
         },
         {
             "id": "economia",
-            "start": 200.086,
-            "end": 259.27
+            "start": 332.718,
+            "end": 362.518
         },
         {
             "id": "interacao",
-            "start": 259.27,
-            "end": 284.356
+            "start": 362.518,
+            "end": 374.5
         },
         {
             "id": "ofertas",
-            "start": 284.356,
-            "end": 315.98
+            "start": 374.5,
+            "end": 390.644
         },
         {
             "id": "frase",
-            "start": 315.98,
-            "end": 341.676
+            "start": 390.644,
+            "end": 408.132
         },
         {
             "id": "recomendacoes",
-            "start": 341.676,
-            "end": 386.172
+            "start": 408.132,
+            "end": 435.772
         },
         {
             "id": "historia",
-            "start": 386.172,
-            "end": 424.348
+            "start": 435.772,
+            "end": 459.572
         },
         {
             "id": "outro",
-            "start": 424.348,
-            "end": 498.44
+            "start": 459.572,
+            "end": 549.016
         }
     ]
 }
