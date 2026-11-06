@@ -31,6 +31,9 @@ TODAY = date.today().isoformat()
 if "--output" in sys.argv:
     _i = sys.argv.index("--output")
     OUTPUT_DIR = Path(sys.argv[_i + 1] if _i + 1 < len(sys.argv) else ".")
+else:
+    import os
+    OUTPUT_DIR = Path(os.environ.get("D5N_TRENDS", "/home/mxqpro/repo/d5n/manifests/d5n/trends"))
 OUT_FILE = OUTPUT_DIR / f"drop5news-trends-{TODAY}.txt"
 
 
@@ -105,7 +108,7 @@ def fetch_feed(source):
         content = resp.content
         feed = feedparser.parse(content)
         entries = []
-        for entry in feed.entries[:8]:
+        for entry in feed.entries[:30]:
             title = getattr(entry, "title", "").strip()
             link = getattr(entry, "link", "").strip()
             published = getattr(entry, "published", "") or ""

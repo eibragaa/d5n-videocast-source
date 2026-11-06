@@ -32,5 +32,14 @@
     "titulo": "o Franklin National Bank quebra e vira a maior falencia bancaria da historia dos Estados Unidos",
     "wikidata": "Q1445042",
     "wikipedia": "8 de outubro"
+  },
+  "06-11": {
+    "ano": 1860,
+    "titulo": "Abraham Lincoln é eleito presidente dos EUA",
+    "detalhe": "Nas eleições de 1860, Abraham Lincoln venceu a corrida presidencial, marcando a ascensão do Partido Republicano.",
+    "fechamento": "Sua eleição precipitou a secessão dos estados do sul e foi um ponto crucial na história americana.",
+    "fonte": "https://www.britannica.com/event/Abraham-Lincoln-presidential-election-1860",
+    "wikidata": "Q42485",
+    "wikipedia": "Eleição presidencial dos Estados Unidos de 1860"
   }
 }

@@ -15,7 +15,7 @@ from d5n_data_ptbr import (  # noqa: E402
     data_curta, data_extenso, hoje_editorial, MESES as MESES_NOMES,
 )
 
-REPO = Path(os.environ.get("D5N_REPO", "/root/repositorio/d5n-videocast-source")).resolve()
+REPO = Path(os.environ.get("D5N_REPO", "/home/mxqpro/repo/d5n-videocast-source")).resolve()
 
 # Fuso editorial America/Sao_Paulo via helper compartilhado: o cron roda no
 # America/Manaus e date.today() pode cair no dia errado perto da meia-noite.
@@ -35,7 +35,7 @@ DATA_FALADA = f"{TODAY_DATE.day} de {MESES_NOMES[TODAY_DATE.month - 1]}"
 
 
 # Vozes
-THALITA = "pt-BR-ThalitaMultilingualNeural"
+THALITA = "pt-BR-FranciscaNeural"
 FRANCISCA = "pt-BR-FranciscaNeural"
 
 # Categorias de notícias
@@ -44,9 +44,13 @@ WORLDCAT = ["trump", "iran", "israel", "russia", "ukraine", "global", "fauci", "
 BRACAT = ["brasil", "brasília", "congresso", "bolsonaro", "lula", "stf", "tc-", "brb",
           "delator", "precatório", "eleições", "flávio", "pt", "psdb", "ministro",
           "presidente", "governo", "senado", "câmara", "tribunal"]
-TECHCAT = ["inteligência artificial", "ia", "tecnologia", "data center", "cripto",
+TECHCAT = ["inteligência artificial", "tecnologia", "data center", "cripto",
            "binance", "mastercard", "stablecoin", "galaxy", "baleia", "computação",
-           "chip", "nvidia", "open", "ai", "cloud", "servidor"]
+           "chip", "nvidia", "open", "cloud", "servidor", "smartphone", "software",
+           # "ia" SO como palavra inteira. Antes a busca era por substring e
+           # "anuncia" casava com "ia " — a manchete "Republicanos anuncia apoio
+           # a Flávio Bolsonaro" caia em tech em vez de brasil.
+           " ia ", " ia.", " ia,", " IA "]
 ECOCAT = ["ibovespa", "bolsa", "dólar", "fechamento", "mercado", "ações", "wpp",
           "zillow", "investimento", "cryptoquant", "commodities", "renda",
           "juros", "selic", "inflação", "exportação", "importação", "câmbio"]
@@ -91,6 +95,19 @@ def load_mc_fm(day: str):
     return sources
 
 
+def casa(termo: str, titulo: str) -> bool:
+    """Casamento de palavra-chave, sem falso positivo por substring.
+
+    "ia " casava dentro de "anuncia", "pt" dentro de "aceite", "meta" dentro
+    de "metal". Chave de 1-4 letras precisa de fronteira de palavra; as maiores
+    podem seguir como substring.
+    """
+    if len(termo.strip()) >= 5:
+        return termo in titulo
+    pad = f" {titulo} "
+    return f" {termo} " in pad or f" {termo}." in pad or f" {termo}," in pad
+
+
 def categorize(sources):
     """Categoriza notícias em seções."""
     cats = {"mundo": [], "brasil": [], "tech": [], "economia": []}
@@ -98,19 +115,19 @@ def categorize(sources):
         title = s.get("title", "").lower()
         matched = False
         for k in WORLDCAT:
-            if k in title:
+            if casa(k, title):
                 cats["mundo"].append(s)
                 matched = True
                 break
         if not matched:
             for k in BRACAT:
-                if k in title:
+                if casa(k, title):
                     cats["brasil"].append(s)
                     matched = True
                     break
         if not matched:
             for k in TECHCAT:
-                if k in title:
+                if casa(k, title):
                     cats["tech"].append(s)
                     matched = True
                     break
@@ -144,9 +161,17 @@ def src_name(ns):
 
 
 def fmt_news(ns):
-    t = manchete(ns)
-    s = src_name(ns)
-    return f"{t}, segundo {s}."
+    """Monta a noticia falada.
+
+    Antes terminava com ", segundo {fonte}" em TODA noticia: 42 vezes num
+    episodio de 7.856 chars. Ouvir o nome da fonte depois de cada manchete vira
+    ruído — o ouvinte não naviga por crédito, e o video de referencia nao faz
+    isso. Agora a fonte so aparece quando ela e a informacao (ou seja, quase
+    nunca: a manchete ja carrega o fato).
+
+    A fonte continua no manifest e no site, que é onde ela é útil.
+    """
+    return manchete(ns) + "."
 
 
 # Carregar dados reais
@@ -181,12 +206,21 @@ def manchetes_abertura(limite: int = 7) -> list:
     filas = [list(cats["mundo"]), list(cats["brasil"]),
              list(cats["tech"]), list(cats["economia"])]
     intercalado: list = []
+    vistos: set = set()
     i = 0
     while len(intercalado) < limite and any(filas):
         fila = filas[i % len(filas)]
-        if fila:
-            intercalado.append(fila.pop(0))
         i += 1
+        if not fila:
+            continue
+        n = fila.pop(0)
+        # dedupe tambem aqui: o trends pode trazer a mesma URL em categorias
+        # diferentes, e a mesma manchete sairia duas vezes seguidas no coldopen
+        chave = manchete(n)[:60]
+        if chave in vistos:
+            continue
+        vistos.add(chave)
+        intercalado.append(n)
     return intercalado
 
 
@@ -447,11 +481,21 @@ def _sobra(cat: str) -> list:
 # editorialmente: o ouvinte nao deve ouvir 25 noticias de tecnologia seguidas.
 _DESTINO = [
     ("tech", "mundo"), ("mundo", "mundo"), ("brasil", "brasil"),
-    ("mundo", "economia"), ("tech", "tecnologia"), ("brasil", "economia"),
+    ("mundo", "economia"), ("tech", "tecnologia"), ("economia", "economia"),
+    # "brasil" so entra em mais de um destino como ultimo recurso: se
+    # aparecesse duas vezes aqui, a segunda passagem pegaria de novo as
+    # manchetes que a primeira ja tinha acrescentado — a marca em _USADAS e
+    # feita no fim de cada iteracao, entao a mesma categoria lida duas vezes
+    # seguidas devolvia o mesmo lote. Foi assim que "Republicanos anuncia
+    # apoio a Flávio Bolsonaro" saiu 2x dentro de brasil.txt.
+    ("brasil", "tecnologia"),
 ]
 
 total_bytes = sum(len(v) for v in manifests.values())
 if total_bytes < MIN_CHARS:
+    # _USADAS e atualizado DENTRO do laco, nao no fim: antes cada destino era
+    # lido uma vez e a marcacao vinha depois, entao dois destinos da mesma
+    # categoria pegavam o mesmo lote e a manchete saia duas vezes seguidas.
     for _cat, _bloco in _DESTINO:
         if total_bytes >= MIN_CHARS:
             break
@@ -462,6 +506,10 @@ if total_bytes < MIN_CHARS:
         extra = _sobra(_cat)[:8]
         if not extra:
             continue
+        # marca ANTES de montar o texto, para que uma segunda passagem da mesma
+        # categoria nao repita o lote
+        for n in extra:
+            _USADAS.add(manchete(n))
         add = " ".join(fmt_news(n) for n in extra)
         if len(add) > folga:
             # cabe so o que couber: recorta por manchete, nunca no meio de uma
@@ -471,8 +519,6 @@ if total_bytes < MIN_CHARS:
             if not extra:
                 continue
         manifests[f"{_bloco}.txt"] += " " + add
-        for n in extra:
-            _USADAS.add(manchete(n))
         total_bytes = sum(len(v) for v in manifests.values())
         print(f"[preenchimento] +{len(extra)} de '{_cat}' em {_bloco}.txt "
               f"(total {total_bytes} chars)")

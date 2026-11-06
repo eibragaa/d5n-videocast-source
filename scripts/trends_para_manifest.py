@@ -26,7 +26,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from d5n_data_ptbr import hoje_editorial  # noqa: E402
 
-REPO = Path(os.environ.get("D5N_REPO", "/root/repositorio/d5n-videocast-source")).resolve()
+REPO = Path(os.environ.get("D5N_REPO", "/home/mxqpro/repo/d5n-videocast-source")).resolve()
 TRENDS = Path(os.environ.get("D5N_TRENDS", str(Path.home() / "d5n-trends")))
 
 # Mesmo vocabulario do gerar_roteiro_d5n.py, estendido.
@@ -39,11 +39,16 @@ BRACAT = ["brasil", "brasilia", "congresso", "bolsonaro", "lula", "stf", "tc-",
           "presidente", "governo", "senado", "camara", "tribunal", "planalto",
           "saude", "inss", "mei", "imposto", "receita federal", "anac", "bndes",
           "petrobras", "ibovespa", "b3 ", "bovespa"]
-TECHCAT = ["inteligencia artificial", "ia ", "ia,", "ia.", "tecnologia", "data center",
-           "cripto", "bitcoin", "stablecoin", "galaxy", "nvidia", "openai", "google",
-           "apple", "samsung", "meta", "spacex", "chip", "semiconductor", "cloud",
-           "software", "app", "smartphone", "robot", "automacao", "telegram",
-           "windows", "microsoft", "amazon", "tesla", "intel"]
+TECHCAT = ["inteligencia artificial", "tecnologia", "data center", "cripto",
+           "bitcoin", "stablecoin", "galaxy", "nvidia", "openai", "google",
+           "apple", "samsung", "meta ", "spacex", "chip", "semiconductor",
+           "cloud", "software", "smartphone", "robot", "automacao", "telegram",
+           "windows", "microsoft", "amazon", "tesla", "intel",
+           # "ia " SO como palavra inteira. Antes a busca era por substring e
+           # "anuncia" casava com "ia " — o resultado era a manchete
+           # "Republicanos anuncia apoio a Flávio Bolsonaro" classificada como
+           # tech, e ela saia falada duas vezes seguidas no episodio.
+           " ia ", " ia.", " ia,", " IA "]
 ECOCAT = ["ibovespa", "bolsa", "dolar", "fechamento", "mercado", "acoes", "wpp",
           "investimento", "commodity", "renda", "juros", "selic", "inflacao",
           "exportacao", "importacao", "cambio", "tarifa", "economia", "pib",
@@ -99,6 +104,13 @@ def parse_trends(txt: Path) -> list[dict]:
     if titulo:  # titulo sem linha Fonte (ultimo do arquivo)
         itens.append({"title": titulo, "source": "fonte", "url": ""})
     # limpa entradas sem titulo e normaliza encoding
+    #
+    # Dedupe por URL (ou por titulo, quando nao ha URL): o G1 publica a mesma
+    # noticia em varias secoes do feed e o coletor traz a mesma URL 2-3 vezes.
+    # Sem isso a mesma manchete era falada duas vezes seguidas no coldopen —
+    # 5 URLs repetidas em 80 itens de 08/10.
+    vistos: set = set()
+    vistos_norm: set = set()
     saida = []
     for it in itens:
         t = it.get("title", "").strip()
@@ -110,6 +122,18 @@ def parse_trends(txt: Path) -> list[dict]:
                 t = t.encode("latin-1").decode("utf-8")
             except (UnicodeDecodeError, UnicodeEncodeError):
                 t = t.replace("�", "")
+        chave = (it.get("url") or t[:60]).lower()
+        if chave in vistos:
+            continue
+        # Dedupe tambem por TITULO normalizado: InfoMoney e MoneyTimes
+        # publicaram a mesma noticia ("Republicanos anuncia apoio a Flávio
+        # Bolsonaro") em URLs distintas, e ela saia falada duas vezes seguidas.
+        # A URL so nao pega isso.
+        norm = re.sub(r"[^a-z0-9]", "", t.lower())[:45]
+        if norm and norm in vistos_norm:
+            continue
+        vistos.add(chave)
+        vistos_norm.add(norm)
         it["title"] = t
         it.setdefault("source", "fonte")
         it["categoria"] = classificar(t)
