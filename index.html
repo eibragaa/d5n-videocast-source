@@ -8,7 +8,9 @@
 <meta name="description" content="Drop Five News: notícias essenciais, contexto e tecnologia em um podcast diário, de segunda a sábado.">
 <meta name="author" content="Drop Five News">
 <link rel="canonical" href="https://d5n-daily.netlify.app/">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icons/d5n-icon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/icons/d5n-icon-128.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="Drop Five News" href="/podcast.xml">
 <link rel="alternate" type="application/rss+xml" title="Manhã Conectada" href="/manha-conectada.xml">
@@ -89,13 +91,8 @@ button{font-family:inherit}
 }
 .brand-mark{
   width:28px;height:28px;flex-shrink:0;display:block;
-  position:relative;
-  background:
-    radial-gradient(circle at 30% 50%,#00D4FF 0 5px,transparent 5.5px),
-    radial-gradient(circle at 30% 50%,transparent 7px,rgba(0,212,255,.9) 7.5px 9px,transparent 9.5px),
-    radial-gradient(circle at 30% 50%,transparent 11px,rgba(124,58,237,.8) 11.5px 13px,transparent 13.5px);
   border-radius:7px;
-  box-shadow:0 0 0 1px rgba(0,212,255,.25),inset 0 0 12px rgba(0,212,255,.08);
+  object-fit:cover;
 }
 .main-nav{display:flex;gap:var(--s1);margin-left:auto}
 .nav-link{
@@ -539,7 +536,7 @@ button{font-family:inherit}
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="/" aria-label="Drop Five News — página inicial">
-      <span class="brand-mark" aria-hidden="true"></span>D5N
+      <img src="/icons/d5n-icon-32.png" alt="D5N" class="brand-mark" width="28" height="28" aria-hidden="true">D5N
     </a>
     <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
