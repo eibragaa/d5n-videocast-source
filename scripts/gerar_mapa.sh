@@ -4,8 +4,8 @@
 
 set -euo pipefail
 
-REPO_DIR="/root/repositorio/d5n-videocast-source"
-OUTPUT="${1:-/root/repositorio/d5n-videocast-source/mapa.md}"
+REPO_DIR="/home/mxqpro/repo/d5n"
+OUTPUT="${1:-/home/mxqpro/repo/d5n/mapa.md}"
 
 # Obter lista de diretórios e arquivos importantes
 echo "# Mapa do Repositório D5N" > "$OUTPUT"

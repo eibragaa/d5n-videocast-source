@@ -59,8 +59,8 @@
 
 **Status:** ✅ Concluído
 **Arquivos alterados:**
-- `/root/repositorio/d5n-videocast-source/scripts/amanha-conectada-pipeline.sh`
-- `/root/repositorio/d5n-videocast-source/source-amanha-2026-07-11.md`
+- `/home/mxqpro/repo/d5n/scripts/amanha-conectada-pipeline.sh`
+- `/home/mxqpro/repo/d5n/source-amanha-2026-07-11.md`
 
 **Correções:**
 1. Pipeline agora calcula `WEEKDAY_PT` via Python e injeta no prompt do LLM

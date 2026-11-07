@@ -5,8 +5,8 @@
   "prototype": false,
   "business_day_override": false,
   "voice": "pt-BR-FranciscaNeural",
-  "output": "/root/repositorio/d5n-videocast-source/manha-conectada/audio/manha-conectada-2026-08-31.mp3",
-  "source_file": "/root/repositorio/d5n-videocast-source/manha-conectada/roteiros/source-manha-2026-08-31.md",
+  "output": "/home/mxqpro/repo/d5n/manha-conectada/audio/manha-conectada-2026-08-31.mp3",
+  "source_file": "/home/mxqpro/repo/d5n/manha-conectada/roteiros/source-manha-2026-08-31.md",
   "sha256": "351d043f542d5a544c433700db08c70ef10b1cb71770eb04a50cf628eff9f883",
   "text_gate": {
     "words": 889,

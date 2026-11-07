@@ -31,10 +31,10 @@ import sys
 from datetime import date, timedelta
 from pathlib import Path
 
-REPO = Path(os.environ.get("D5N_REPO", "/root/repositorio/d5n-videocast-source")).resolve()
+REPO = Path(os.environ.get("D5N_REPO", "/home/mxqpro/repo/d5n-videocast-source")).resolve()
 TODAY = date.today()
 
-THALITA = "pt-BR-ThalitaMultilingualNeural"
+THALITA = "pt-BR-FranciscaNeural"
 FRANCISCA = "pt-BR-FranciscaNeural"
 
 DIAS_PT = ["segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado", "domingo"]

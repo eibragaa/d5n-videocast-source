@@ -19,7 +19,7 @@ Uso:
 Documentação completa: CARDS_INSTAGRAM.md
 
 Cron (recomendado):
-  0 8 * * * cd /root/repositorio/d5n-videocast-source && python3 gerar_cards_pipeline.py
+  0 8 * * * cd /home/mxqpro/repo/d5n && python3 gerar_cards_pipeline.py
 
 NOTA: A busca de imagens usa cadeia de 4 fontes (sempre uma encontra):
       Leonardo AI (geração via IA) → Bing Image Search → DuckDuckGo → Unsplash.
@@ -38,7 +38,7 @@ from d5n_data_ptbr import data_extenso, hoje_editorial  # noqa: E402
 #  CONFIG
 # ════════════════════════════════════════════════
 
-REPO = "/root/repositorio/d5n-videocast-source"
+REPO = "/home/mxqpro/repo/d5n"
 ARQUIVO_DIR = f"{REPO}/2026"
 OUTPUT_DIR = f"{REPO}/cards-instagram"
 SOURCE_FILE = f"{REPO}/source.md"

@@ -86,7 +86,7 @@ Qualquer uma das 4 fontes garante imagem para o card. Se todas falharem, o card 
 
 ```bash
 # Executar diariamente junto com o deploy
-0 8 * * * cd /root/repositorio/d5n-videocast-source && python3 gerar_cards_pipeline.py
+0 8 * * * cd /home/mxqpro/repo/d5n && python3 gerar_cards_pipeline.py
 ```
 
 ### Para melhorar (próximos passos)

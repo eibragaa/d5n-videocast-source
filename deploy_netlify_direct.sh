@@ -5,7 +5,7 @@
 
 set -euo pipefail
 DATE=$(date +%Y-%m-%d)
-REPO="/root/repositorio/d5n-videocast-source"
+REPO="/home/mxqpro/repo/d5n"
 LOG="/tmp/deploy-netlify-direct-${DATE}.log"
 SITE_ID="${1:-${NETLIFY_SITE_ID:-d5n-daily}}"
 

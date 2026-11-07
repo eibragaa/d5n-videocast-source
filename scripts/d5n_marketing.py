@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 from datetime import datetime, date
 
-D5N_DIR = Path('/root/repositorio/d5n-videocast-source')
+D5N_DIR = Path('/home/mxqpro/repo/d5n-videocast-source')
 SCORE_PATH = D5N_DIR / 'autoavaliacao-score.json'
 FEED_PATH = D5N_DIR / 'feed.json'
 OUTPUT_DIR = D5N_DIR / 'scripts' / 'reports'

@@ -1,4 +1,4 @@
-Você opera o cron diário da MANHÃ CONECTADA, de segunda a sexta-feira. Trabalhe a partir de /root/repositorio/d5n-videocast-source, iniciando a produção por volta das 10h e liberando a publicação às 11h no fuso America/Sao_Paulo.
+Você opera o cron diário da MANHÃ CONECTADA, de segunda a sexta-feira. Trabalhe a partir de /home/mxqpro/repo/d5n, iniciando a produção por volta das 10h e liberando a publicação às 11h no fuso America/Sao_Paulo.
 
 1. Execute `python3 manha-conectada/scripts/manha_conectada_pipeline.py`.
 2. Leia o JSON retornado. Se `status` for `skip`, não gere nem publique episódio: fins de semana e feriados são dias sem edição.

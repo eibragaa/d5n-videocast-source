@@ -6,7 +6,7 @@
 set -euo pipefail
 
 STATE_DIR="/root/.hermes/state/d5n"
-MANIFESTS_DIR="/root/repositorio/d5n-videocast-source/manifests/d5n"
+MANIFESTS_DIR="/home/mxqpro/repo/d5n/manifests/d5n"
 FALHAS_FILE="$STATE_DIR/falhas.json"
 DATA=$(date +%Y-%m-%d)
 HOJE="$DATA"
@@ -47,7 +47,7 @@ fi
 echo "⚠️ D5N: sem manifests para hoje ($HOJE). Tentando gerar..."
 
 # Verificar se existe o script de geração de manifests
-GERADOR="/root/repositorio/d5n-videocast-source/scripts/gerar_manifests.py"
+GERADOR="/home/mxqpro/repo/d5n/scripts/gerar_manifests.py"
 if [ -f "$GERADOR" ]; then
   echo "Executando gerador de manifests..."
   if python3 "$GERADOR" --data "$HOJE" 2>&1; then

@@ -6,7 +6,7 @@
 
 set -euo pipefail
 
-REPO_DIR="/root/repositorio/d5n-videocast-source"
+REPO_DIR="/home/mxqpro/repo/d5n"
 REPORT_FILE="${1:-/root/.hermes/state/d5n/auditoria-$(date +%Y-%m-%d).md}"
 STATE_DIR="/root/.hermes/state/d5n"
 MANIFESTS_DIR="$REPO_DIR/manifests"

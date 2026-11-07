@@ -7,7 +7,7 @@ Libre Baskerville + DM Sans · Ticker com dots · Player custom · Scroll-reveal
 import os, sys, re, json, argparse
 from datetime import datetime, timedelta
 
-BASE = "/root/repositorio/d5n-videocast-source"
+BASE = "/home/mxqpro/repo/d5n"
 AUDIO_DIR = f"{BASE}/audio"
 ARQUIVO_DIR = f"{BASE}/2026"
 COUNTER_FILE = f"{BASE}/episode-counter.json"

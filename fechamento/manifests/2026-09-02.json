@@ -5,8 +5,8 @@
   "prototype": false,
   "business_day_override": false,
   "voice": "pt-BR-AntonioNeural",
-  "output": "/root/repositorio/d5n-videocast-source/fechamento/audio/fechamento-2026-09-02.mp3",
-  "source_file": "/root/repositorio/d5n-videocast-source/fechamento/roteiros/source-fechamento-2026-09-02.md",
+  "output": "/home/mxqpro/repo/d5n/fechamento/audio/fechamento-2026-09-02.mp3",
+  "source_file": "/home/mxqpro/repo/d5n/fechamento/roteiros/source-fechamento-2026-09-02.md",
   "sha256": "c2ccae0b83920e781a70ea2e62e3c15749361ea4ec737966ca992cfb9363b494",
   "text_gate": {
     "words": 1072,

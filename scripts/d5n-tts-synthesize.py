@@ -14,6 +14,7 @@ import os
 import sys
 from datetime import date
 from pathlib import Path
+import xml.sax.saxutils as _xml
 
 try:
     import edge_tts
@@ -25,10 +26,10 @@ except ImportError:
     )
     sys.exit(1)
 
-REPO = Path(os.environ.get("D5N_REPO", "/root/repositorio/d5n-videocast-source")).resolve()
+REPO = Path(os.environ.get("D5N_REPO", "/home/mxqpro/repo/d5n-videocast-source")).resolve()
 
 # Vozes usadas pelo mixer v10
-THALITA = "pt-BR-ThalitaMultilingualNeural"
+THALITA = "pt-BR-FranciscaNeural"
 FRANCISCA = "pt-BR-FranciscaNeural"
 
 SECCOES = [
@@ -67,11 +68,22 @@ def get_voice_map(audio_dir: Path, editorial_date: date) -> dict[str, str]:
         }
 
 
+def _ssml_wrap(text: str, voice: str) -> str:
+    """Envolve o texto em SSML forçando pt-BR, evitando auto-detect de idioma
+    da voz multilíngue (ThalitaMultilingual)."""
+    safe = _xml.escape(text)
+    return (
+        '<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="pt-BR">'
+        f'<voice name="{voice}"><lang xml:lang="pt-BR">{safe}</lang></voice>'
+        '</speak>'
+    )
+
+
 async def synthesize_one(name: str, text: str, voice: str, output: Path) -> bool:
     """Sintetiza um texto em áudio usando edge_tts."""
     print(f"  Sintetizando {name} ({voice})...", end=" ", flush=True)
     try:
-        communicate = edge_tts.Communicate(text, voice)
+        communicate = edge_tts.Communicate(_ssml_wrap(text, voice), voice)
         await communicate.save(str(output))
         if output.stat().st_size > 5000:
             print(f"✓ ({output.stat().st_size / 1024:.1f} KB)")

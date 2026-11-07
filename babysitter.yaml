@@ -47,7 +47,7 @@ checks:
   timeout: 15
   type: http
   url: https://d5n-daily.netlify.app
-- command: cd /root/repositorio/d5n-videocast-source && git diff --quiet && git diff
+- command: cd /home/mxqpro/repo/d5n && git diff --quiet && git diff
     --cached --quiet
   critical: false
   detail: Há arquivos modificados não commitados
@@ -93,9 +93,9 @@ checks:
   type: command
 - command: >-
     if [ -d /tmp/d5n_audio ]; then
-      cd /root/repositorio/d5n-videocast-source &&
+      cd /home/mxqpro/repo/d5n &&
       python3 scripts/d5n_daily_release_gate.py
-      --history-dir /root/repositorio/d5n-videocast-source/podcast-scripts;
+      --history-dir /home/mxqpro/repo/d5n/podcast-scripts;
     else
       echo SKIP_NO_ACTIVE_BUILD;
     fi
@@ -105,6 +105,6 @@ checks:
   name: Gate diário de qualidade antes da publicação
   timeout: 120
   type: command
-path: /root/repositorio/d5n-videocast-source
+path: /home/mxqpro/repo/d5n
 project: Drop Five News
 version: 1

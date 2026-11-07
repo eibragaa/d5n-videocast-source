@@ -18,23 +18,23 @@ from pathlib import Path
 from pydub import AudioSegment, silence
 
 SECOES = [
-    ("coldopen", "coldopen.txt", "pt-BR-ThalitaMultilingualNeural"),
-    ("intro", "intro.txt", "pt-BR-ThalitaMultilingualNeural"),
-    ("mundo", "mundo.txt", "pt-BR-ThalitaMultilingualNeural"),
-    ("brasil", "brasil.txt", "pt-BR-ThalitaMultilingualNeural"),
-    ("tecnologia", "tecnologia.txt", "pt-BR-ThalitaMultilingualNeural"),
-    ("economia", "economia.txt", "pt-BR-ThalitaMultilingualNeural"),
-    ("interacao", "interacao.txt", "pt-BR-ThalitaMultilingualNeural"),
-    ("ofertas", "ofertas.txt", "pt-BR-ThalitaMultilingualNeural"),
-    ("frase", "frase.txt", "pt-BR-ThalitaMultilingualNeural"),
-    ("recomendacoes", "recomendacoes.txt", "pt-BR-ThalitaMultilingualNeural"),
-    ("historia", "historia.txt", "pt-BR-ThalitaMultilingualNeural"),
-    ("outro", "outro.txt", "pt-BR-ThalitaMultilingualNeural"),
+    ("coldopen", "coldopen.txt", "pt-BR-FranciscaNeural"),
+    ("intro", "intro.txt", "pt-BR-FranciscaNeural"),
+    ("mundo", "mundo.txt", "pt-BR-FranciscaNeural"),
+    ("brasil", "brasil.txt", "pt-BR-FranciscaNeural"),
+    ("tecnologia", "tecnologia.txt", "pt-BR-FranciscaNeural"),
+    ("economia", "economia.txt", "pt-BR-FranciscaNeural"),
+    ("interacao", "interacao.txt", "pt-BR-FranciscaNeural"),
+    ("ofertas", "ofertas.txt", "pt-BR-FranciscaNeural"),
+    ("frase", "frase.txt", "pt-BR-FranciscaNeural"),
+    ("recomendacoes", "recomendacoes.txt", "pt-BR-FranciscaNeural"),
+    ("historia", "historia.txt", "pt-BR-FranciscaNeural"),
+    ("outro", "outro.txt", "pt-BR-FranciscaNeural"),
 ]
 REQUIRED_TXT = {"coldopen", "intro", "mundo", "brasil", "tecnologia", "economia", "outro"}
 MIN_SECTIONS = 8
 
-REPO = Path(os.environ.get("D5N_REPO", "/root/repositorio/d5n-videocast-source")).resolve()
+REPO = Path(os.environ.get("D5N_REPO", "/home/mxqpro/repo/d5n-videocast-source")).resolve()
 ASSET_DIR = REPO / "assets" / "audio" / "d5n"
 FALLBACK_TRACK = "Trilha_principal.wav"
 TRACKS = {
@@ -52,7 +52,7 @@ TRACKS = {
     "outro": "Vinheta2.wav",
 }
 LIGHT_TRACKS = {"NEW-INTRO.wav", "Cenario-global.wav", "Politica.wav", "Tech.wav", "TECNOLOGIA.wav"}
-MIN_SECONDS = 480
+MIN_SECONDS = 300
 MAX_SECONDS = 720
 PAUSE_MS = 150
 PAUSE_EXTRA_MS = 200
@@ -94,7 +94,7 @@ def require(path: Path) -> None:
 
 
 def _read_voice_map(section_names: list[str], editorial_date: date) -> dict[str, str]:
-    thalita = "pt-BR-ThalitaMultilingualNeural"
+    thalita = "pt-BR-FranciscaNeural"
     francisca = "pt-BR-FranciscaNeural"
     if editorial_date.weekday() in {0, 2, 5}:
         return dict.fromkeys(section_names, thalita)
@@ -306,7 +306,7 @@ def main() -> int:
         raise RuntimeError("MP3 final ausente ou pequeno demais")
 
     sections = [name for name, *_ in segments]
-    thalita, francisca = "pt-BR-ThalitaMultilingualNeural", "pt-BR-FranciscaNeural"
+    thalita, francisca = "pt-BR-FranciscaNeural", "pt-BR-FranciscaNeural"
     voices = [thalita, francisca] if editorial_date.weekday() == 4 else sorted(set(voice_map.values()))
     # Cold open é pré-roll editorial: capítulos navegáveis começam na intro em 0s.
     intro_offset = next(item["start_ms"] for item in rendered if item["id"] == "intro")

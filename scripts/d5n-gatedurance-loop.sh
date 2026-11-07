@@ -20,11 +20,11 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-SCRIPTS="/root/repositorio/d5n-videocast-source/scripts"
+SCRIPTS="/home/mxqpro/repo/d5n/scripts"
 GATE="$SCRIPTS/d5n-gatedurance-script-gate.py"
 AUTOCORRECT="$SCRIPTS/d5n-gatedurance-autocorrect.py"
 RESTORE="$SCRIPTS/d5n-gatedurance-snapshot-restore.py"
-REPO="/root/repositorio/d5n-videocast-source"
+REPO="/home/mxqpro/repo/d5n"
 
 echo "=== GateDurance Loop — $DATE ==="
 

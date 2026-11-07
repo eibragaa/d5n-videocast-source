@@ -5,8 +5,8 @@
   "prototype": true,
   "business_day_override": true,
   "voice": "pt-BR-AntonioNeural",
-  "output": "/root/repositorio/d5n-videocast-source/audio/manha-conectada-2026-07-19-prototipo.mp3",
-  "source_file": "/root/repositorio/d5n-videocast-source/source-manha-2026-07-19.md",
+  "output": "/home/mxqpro/repo/d5n/audio/manha-conectada-2026-07-19-prototipo.mp3",
+  "source_file": "/home/mxqpro/repo/d5n/source-manha-2026-07-19.md",
   "sha256": "92d5631c00426dd00704e843a66428d25886334abd7a1970b03762e9fc9e83c0",
   "text_gate": {
     "words": 665,

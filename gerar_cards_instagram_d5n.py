@@ -21,7 +21,7 @@ from PIL import Image, ImageDraw, ImageFont
 import textwrap
 
 # ── CONFIGURAÇÃO ──
-REPO = "/root/repositorio/d5n-videocast-source"
+REPO = "/home/mxqpro/repo/d5n"
 ARQUIVO_DIR = f"{REPO}/2026"
 OUTPUT_DIR = f"{REPO}/cards-instagram"
 SOURCE_FILE = f"{REPO}/source.md"

@@ -5,7 +5,7 @@
 set -euo pipefail
 
 DATE="${D5N_DATE:-$(TZ=America/Sao_Paulo date +%Y-%m-%d)}"
-REPO="${D5N_REPO:-/root/repositorio/d5n-videocast-source}"
+REPO="${D5N_REPO:-/home/mxqpro/repo/d5n}"
 STATE_DIR="${D5N_STATE_DIR:-/root/.hermes/logs/d5n-deploy}"
 CRON_AUDIO="${D5N_CRON_AUDIO:-/root/.hermes/cron/output}"
 CRON_AUDIO_D5N="${D5N_CRON_AUDIO_D5N:-/root/.hermes/profiles/d5n/cron/output}"

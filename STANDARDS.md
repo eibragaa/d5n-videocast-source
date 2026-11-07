@@ -210,7 +210,7 @@ Se o `BASE_URL` ou o caminho no enclosure for mudado, verificar:
 
 | Programa | Apresentador | Voz TTS | Tom | BG Rotativo | Intro |
 |---|---|---|---|---|---|
-| **D5N** | Thalita/Francisca | `pt-BR-ThalitaMultilingualNeural` | Diário, ágil, 12 seções | *(intocado)* | *(intocado)* |
+| **D5N** | Thalita/Francisca | `pt-BR-FranciscaNeural` | Diário, ágil, 12 seções | *(intocado)* | *(intocado)* |
 | **MC** | Francisca | `pt-BR-FranciscaNeural` | Matinal, acolhedor | `bg-mc-{03,04,06}.mp3` (rotativo/dia) | `intro-mc-{03,04,06}.mp3` |
 | **FM** | Antonio | `pt-BR-AntonioNeural` | Mercado, closing | `bg-fm-{01,07}.mp3` (rotativo/dia) | `intro-fm-{01,07}.mp3` |
 

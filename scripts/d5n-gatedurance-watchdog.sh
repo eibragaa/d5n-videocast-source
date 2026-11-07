@@ -18,7 +18,7 @@ set -uo pipefail
 
 DATE="$(TZ=America/Sao_Paulo date +%Y-%m-%d)"
 AUDIO_DIR="/tmp/d5n_audio"
-REPO="/root/repositorio/d5n-videocast-source"
+REPO="/home/mxqpro/repo/d5n"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in

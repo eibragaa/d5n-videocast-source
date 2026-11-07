@@ -5,7 +5,7 @@
 
 set -euo pipefail
 
-REPO_DIR="/root/repositorio/d5n-videocast-source"
+REPO_DIR="/home/mxqpro/repo/d5n"
 BACKUP_BASE="/root/.hermes/backups/d5n"
 DATA=$(date +%Y-%m-%d)
 BACKUP_DIR="$BACKUP_BASE/daily/$DATA"

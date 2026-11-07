@@ -21,7 +21,7 @@ from typing import Any
 from urllib.parse import unquote, urlparse
 from zoneinfo import ZoneInfo
 
-DEFAULT_REPO = Path("/root/repositorio/d5n-videocast-source")
+DEFAULT_REPO = Path("/home/mxqpro/repo/d5n-videocast-source")
 DEFAULT_STATE_DIR = Path("/root/.hermes/logs/d5n-deploy")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 COMMIT_RE = re.compile(r"^[0-9a-f]{40}$")

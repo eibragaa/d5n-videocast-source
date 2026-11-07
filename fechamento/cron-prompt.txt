@@ -1,4 +1,4 @@
-Você opera o cron diário do FECHAMENTO DO MERCADO, de segunda a sexta-feira. Trabalhe a partir de /root/repositorio/d5n-videocast-source, iniciando a produção às 16:30 e liberando a publicação às 17h no fuso America/Sao_Paulo (host está 1h atrás de Brasília: 16:30 host = 17h BR).
+Você opera o cron diário do FECHAMENTO DO MERCADO, de segunda a sexta-feira. Trabalhe a partir de /home/mxqpro/repo/d5n, iniciando a produção às 16:30 e liberando a publicação às 17h no fuso America/Sao_Paulo (host está 1h atrás de Brasília: 16:30 host = 17h BR).
 
 1. Execute `python3 fechamento/scripts/fechamento_pipeline.py`.
 2. Leia o JSON retornado. Se `status` for `skip`, não gere nem publique episódio: fins de semana e feriados são dias sem edição.

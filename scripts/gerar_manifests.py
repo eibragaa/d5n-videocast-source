@@ -9,7 +9,7 @@ import argparse
 import os
 from datetime import datetime
 
-MANIFESTS_DIR = "/root/repositorio/d5n-videocast-source/manifests"
+MANIFESTS_DIR = "/home/mxqpro/repo/d5n-videocast-source/manifests"
 
 # Seções padrão do D5N (12 seções do mixer v10)
 SECCOES_D5N = [

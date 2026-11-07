@@ -22,7 +22,7 @@ import io
 from pathlib import Path
 
 SITE_ID = "cc6d8958-b9b0-42b0-a008-b8dda2ba57fc"
-REPO = Path("/root/repositorio/d5n-videocast-source")
+REPO = Path("/home/mxqpro/repo/d5n")
 TOKEN_FILE = Path("/root/.netlify-token")
 
 def log(msg):

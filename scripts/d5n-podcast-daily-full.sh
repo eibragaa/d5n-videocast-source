@@ -17,7 +17,7 @@
 
 set -euo pipefail
 
-REPO="/root/repositorio/d5n-videocast-source"
+REPO="/home/mxqpro/repo/d5n"
 SCRIPTS="$REPO/scripts"
 TODAY="${1:-$(date +%Y-%m-%d)}"
 AUDIO_DIR="$REPO/audio"

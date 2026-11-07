@@ -14,7 +14,7 @@ from pathlib import Path
 import re
 import sys
 
-REPO = Path("/root/repositorio/d5n-videocast-source")
+REPO = Path("/home/mxqpro/repo/d5n-videocast-source")
 
 print("=== CRITICAL IMPROVEMENTS FOR D5N, MC, FM PIPELINES ===\n")
 

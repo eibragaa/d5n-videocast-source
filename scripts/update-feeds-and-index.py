@@ -5,7 +5,7 @@ from pathlib import Path
 import subprocess
 import sys
 
-REPO = Path("/root/repositorio/d5n-videocast-source")
+REPO = Path("/home/mxqpro/repo/d5n-videocast-source")
 
 def run_script(script_path: Path, description: str):
     if not script_path.exists():

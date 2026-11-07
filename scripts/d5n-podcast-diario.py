@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 from datetime import date, timedelta
 
-REPO = Path("/root/repositorio/d5n-videocast-source")
+REPO = Path("/home/mxqpro/repo/d5n-videocast-source")
 TODAY = date.today().isoformat()  # ex: 2026-09-10
 YESTERDAY = (date.today() - timedelta(days=1)).isoformat()  # ex: 2026-09-09
 

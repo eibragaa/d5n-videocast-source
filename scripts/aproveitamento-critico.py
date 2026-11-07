@@ -13,7 +13,7 @@ import re, json, subprocess
 from collections import Counter
 from pathlib import Path
 
-REPO = Path("/root/repositorio/d5n-videocast-source")
+REPO = Path("/home/mxqpro/repo/d5n-videocast-source")
 html = (REPO / "index.html").read_text(encoding="utf-8")
 
 checks = []

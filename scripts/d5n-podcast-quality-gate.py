@@ -32,7 +32,7 @@ SECTION_ORDER = (
 )
 REQUIRED_SECTIONS = {"coldopen", "intro", "mundo", "brasil", "tecnologia", "economia", "outro"}
 MIN_SECTIONS = 8
-THALITA = "pt-BR-ThalitaMultilingualNeural"
+THALITA = "pt-BR-FranciscaNeural"
 FRANCISCA = "pt-BR-FranciscaNeural"
 FORBIDDEN = ("cinto", "DropFiveNews", "Drop News")
 ENGLISH_DATE = re.compile(

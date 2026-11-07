@@ -26,26 +26,26 @@ from pydub import AudioSegment, silence
 
 # Ordem canônica das seções (contrato D5N v2). CTA depois das notícias, antes do outro.
 SECOES = [
-    ("intro",       "intro.txt",       "pt-BR-ThalitaMultilingualNeural"),
-    ("mundo",       "mundo.txt",       "pt-BR-ThalitaMultilingualNeural"),
-    ("brasil",      "brasil.txt",      "pt-BR-ThalitaMultilingualNeural"),
-    ("saude",       "saude.txt",       "pt-BR-ThalitaMultilingualNeural"),
-    ("ciencia",     "ciencia.txt",     "pt-BR-ThalitaMultilingualNeural"),
-    ("politica",    "politica.txt",    "pt-BR-ThalitaMultilingualNeural"),
-    ("tecnologia",  "tecnologia.txt",  "pt-BR-ThalitaMultilingualNeural"),
-    ("economia",    "economia.txt",    "pt-BR-ThalitaMultilingualNeural"),
-    ("ofertas",     "ofertas.txt",     "pt-BR-ThalitaMultilingualNeural"),
-    ("frase",       "frase.txt",       "pt-BR-ThalitaMultilingualNeural"),
-    ("historia",    "historia.txt",    "pt-BR-ThalitaMultilingualNeural"),
-    ("cta",         "cta.txt",         "pt-BR-ThalitaMultilingualNeural"),
-    ("outro",       "outro.txt",       "pt-BR-ThalitaMultilingualNeural"),
+    ("intro",       "intro.txt",       "pt-BR-FranciscaNeural"),
+    ("mundo",       "mundo.txt",       "pt-BR-FranciscaNeural"),
+    ("brasil",      "brasil.txt",      "pt-BR-FranciscaNeural"),
+    ("saude",       "saude.txt",       "pt-BR-FranciscaNeural"),
+    ("ciencia",     "ciencia.txt",     "pt-BR-FranciscaNeural"),
+    ("politica",    "politica.txt",    "pt-BR-FranciscaNeural"),
+    ("tecnologia",  "tecnologia.txt",  "pt-BR-FranciscaNeural"),
+    ("economia",    "economia.txt",    "pt-BR-FranciscaNeural"),
+    ("ofertas",     "ofertas.txt",     "pt-BR-FranciscaNeural"),
+    ("frase",       "frase.txt",       "pt-BR-FranciscaNeural"),
+    ("historia",    "historia.txt",    "pt-BR-FranciscaNeural"),
+    ("cta",         "cta.txt",         "pt-BR-FranciscaNeural"),
+    ("outro",       "outro.txt",       "pt-BR-FranciscaNeural"),
 ]
 
 # Blocos obrigatórios (se o .txt existir mas o .mp3 não, bloqueia)
 REQUIRED_TXT = {"intro", "mundo", "brasil", "tecnologia", "economia", "ofertas", "outro"}
 
 # Trilha de fundo — fallback para assets da Manhã Conectada (as do D5N se perderam).
-_ASSET_DIR = Path("/root/repositorio/d5n-videocast-source/assets/audio")
+_ASSET_DIR = Path("/home/mxqpro/repo/d5n-videocast-source/assets/audio")
 TRILHA = _ASSET_DIR / "manha-conectada" / "bg-music.mp3"
 INTRO_JINGLE = _ASSET_DIR / "manha-conectada" / "intro-jingle.mp3"
 STING = _ASSET_DIR / "manha-conectada" / "transition-sting.mp3"
@@ -66,7 +66,7 @@ def require(path: Path) -> None:
 
 def _read_voice_map(audio_dir: Path, editorial_date: date) -> dict:
     """Constrói o mapa de voz por seção conforme a escala semanal (data editorial)."""
-    thalita = "pt-BR-ThalitaMultilingualNeural"
+    thalita = "pt-BR-FranciscaNeural"
     francisca = "pt-BR-FranciscaNeural"
     wd = editorial_date.weekday()  # 0=seg ... 6=dom
     # Seções efetivamente presentes (com roteiro) — base para a alternância.
@@ -196,7 +196,7 @@ def main() -> int:
 
     # Manifesto (contrato do quality gate)
     secs = [nome for nome, *_ in segments]
-    thalita = "pt-BR-ThalitaMultilingualNeural"
+    thalita = "pt-BR-FranciscaNeural"
     francisca = "pt-BR-FranciscaNeural"
     usadas = sorted({voice_map[nome] for nome, *_ in segments})
     if editorial_date.weekday() == 4:

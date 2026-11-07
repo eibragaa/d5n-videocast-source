@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 from datetime import date
 
-REPO = Path("/root/repositorio/d5n-videocast-source")
+REPO = Path("/home/mxqpro/repo/d5n-videocast-source")
 TODAY = date.today().isoformat()
 YESTERDAY = "2026-09-23"
 
